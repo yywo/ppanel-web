@@ -1,0 +1,60 @@
+{
+  "name": "ppanel-web",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://github.com/web-ppanel/ppanel-web",
+  "bugs": {
+    "url": "https://github.com/web-ppanel/ppanel-web/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/web-ppanel/ppanel-web.git"
+  },
+  "license": "GUN",
+  "scripts": {
+    "build": "turbo build",
+    "clean": "turbo run clean",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "locale": "turbo locale",
+    "openapi": "turbo openapi",
+    "prepare": "./scripts/prepare.sh",
+    "prettier": "prettier -c --write \"**/**\"",
+    "release": "semantic-release",
+    "setup:components": "node ./scripts/setup-components.mjs",
+    "setup:lobehub": "./scripts/lobehub-setup.sh"
+  },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{js,jsx,cjs,mjs}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --parser=typescript --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@repo/commitlint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@umijs/openapi": "^1.13.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "semantic-release": "^21.1.2",
+    "semantic-release-config-gitmoji": "^1.5.3",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3"
+  },
+  "packageManager": "pnpm@9.12.3",
+  "engines": {
+    "node": ">=18"
+  },
+  "pnpm": {
+    "overrides": {
+      "react-is": "rc"
+    }
+  }
+}
