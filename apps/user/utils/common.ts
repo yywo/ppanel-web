@@ -44,7 +44,7 @@ export function Logout() {
   const cookies = new Cookies(null, { path: '/' });
   cookies.remove('Authorization');
   const pathname = location.pathname;
-  if (!['', '/'].includes(pathname)) {
+  if (!['', '/', '/auth', '/tos'].includes(pathname)) {
     setRedirectUrl(location.pathname);
     location.href = `/`;
   }
