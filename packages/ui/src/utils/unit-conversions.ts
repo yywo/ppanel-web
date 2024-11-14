@@ -1,4 +1,4 @@
-import { evaluate } from 'mathjs';
+import { evaluate, format } from 'mathjs';
 
 export function unitConversion(
   type: 'centsToDollars' | 'dollarsToCents' | 'bitsToMb' | 'mbToBits' | 'bytesToGb' | 'gbToBytes',
@@ -21,4 +21,12 @@ export function unitConversion(
     default:
       throw new Error('Invalid conversion type');
   }
+}
+
+export function evaluateWithPrecision(expression: string) {
+  const result = evaluate(expression);
+
+  const formatted = format(result, { notation: 'fixed', precision: 2 });
+
+  return Number(formatted);
 }

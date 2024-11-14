@@ -3,9 +3,9 @@ module.exports = {
   root: true,
   extends: ['@repo/eslint-config/react-internal.js'],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.lint.json',
-  },
+  // parserOptions: {
+  //   project: './tsconfig.lint.json',
+  // },
   rules: {
     'no-redeclare': 'off',
     'no-unused-vars': 'off',

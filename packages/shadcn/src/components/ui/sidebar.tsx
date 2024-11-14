@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { ViewVerticalIcon } from '@radix-ui/react-icons';

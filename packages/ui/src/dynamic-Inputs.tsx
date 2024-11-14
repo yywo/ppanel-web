@@ -1,18 +1,15 @@
 import { Button } from '@shadcn/ui/button';
 import { CircleMinusIcon, CirclePlusIcon } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Combobox } from './combobox';
-import { EnhancedInput } from './enhanced-input';
+import { EnhancedInput, EnhancedInputProps } from './enhanced-input';
 
-interface FieldConfig {
+interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
   type: 'text' | 'number' | 'select';
-  placeholder?: string;
-  prefix?: string;
-  suffix?: string;
-  min?: number;
-  max?: number;
   options?: { label: string; value: string }[];
+  internal?: boolean;
+  calculateValue?: (value: Record<string, any>) => any;
 }
 
 interface ObjectInputProps<T> {
@@ -26,8 +23,31 @@ export function ObjectInput<T extends Record<string, any>>({
   onChange,
   fields,
 }: ObjectInputProps<T>) {
+  const [internalState, setInternalState] = useState<T>(value);
+
+  useEffect(() => {
+    setInternalState(value);
+  }, [value]);
+
   const updateField = (key: keyof T, fieldValue: string | number) => {
-    onChange({ ...value, [key]: fieldValue });
+    let updatedInternalState = { ...internalState, [key]: fieldValue };
+    fields.forEach((field) => {
+      if (field.calculateValue && field.name === key) {
+        const newValue = field.calculateValue(updatedInternalState);
+        updatedInternalState = newValue;
+      }
+    });
+    setInternalState(updatedInternalState);
+
+    const filteredValue = Object.keys(updatedInternalState).reduce((acc, fieldKey) => {
+      const field = fields.find((f) => f.name === fieldKey);
+      if (field && !field.internal) {
+        acc[fieldKey as keyof T] = updatedInternalState[fieldKey as keyof T];
+      }
+      return acc;
+    }, {} as T);
+
+    onChange(filteredValue);
   };
 
   return (
@@ -38,14 +58,14 @@ export function ObjectInput<T extends Record<string, any>>({
             <Combobox<string, false>
               placeholder={fieldProps.placeholder}
               options={options}
-              value={value[name]}
+              value={internalState[name]}
               onChange={(fieldValue) => {
                 updateField(name, fieldValue);
               }}
             />
           ) : (
             <EnhancedInput
-              value={value[name]}
+              value={internalState[name]}
               onValueChange={(fieldValue) => updateField(name, fieldValue)}
               type={type}
               {...fieldProps}
@@ -56,7 +76,6 @@ export function ObjectInput<T extends Record<string, any>>({
     </div>
   );
 }
-
 interface ArrayInputProps<T> {
   value?: T[];
   onChange: (value: T[]) => void;

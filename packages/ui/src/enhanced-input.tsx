@@ -2,7 +2,8 @@ import { Input } from '@shadcn/ui/input';
 import { cn } from '@shadcn/ui/lib/utils';
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 
-interface EnhancedInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
+export interface EnhancedInputProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
   prefix?: ReactNode;
   suffix?: ReactNode;
   formatInput?: (value: string | number) => string;
@@ -39,7 +40,7 @@ export function EnhancedInput({
   }, [initialValue, formatInput]);
 
   const processValue = (inputValue: string) => {
-    let processedValue: number | string = inputValue?.trim();
+    let processedValue: number | string = inputValue?.toString().trim();
     if (processedValue && props.type === 'number') processedValue = Number(processedValue);
     return formatOutput ? formatOutput(processedValue) : processedValue;
   };

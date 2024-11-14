@@ -43,7 +43,7 @@ importers:
     dependencies:
       '@iconify/react':
         specifier: ^5.0.2
-        version: 5.0.2(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.0.2(react@19.0.0-rc-380f5d67-20241113)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -52,13 +52,13 @@ importers:
         version: link:../../packages/shadcn
       '@tanstack/react-query':
         specifier: ^5.60.2
-        version: 5.60.2(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.60.2(react@19.0.0-rc-380f5d67-20241113)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.60.2
-        version: 5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-7ac8e612-20241113))(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-380f5d67-20241113))(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       ahooks:
         specifier: ^3.8.1
-        version: 3.8.1(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.8.1(react@19.0.0-rc-380f5d67-20241113)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -73,37 +73,37 @@ importers:
         version: 5.0.8
       next:
         specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-intl:
         specifier: ^3.25.1
-        version: 3.25.1(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.25.1(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-runtime-env:
         specifier: ^3.2.2
-        version: 3.2.2(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.2.2(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-themes:
         specifier: ^0.4.3
-        version: 0.4.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 0.4.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       nextjs-toploader:
         specifier: ^3.7.15
-        version: 3.7.15(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.7.15(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       radash:
         specifier: ^12.1.0
         version: 12.1.0
       react:
         specifier: rc
-        version: 19.0.0-rc-7ac8e612-20241113
+        version: 19.0.0-rc-380f5d67-20241113
       react-dom:
         specifier: rc
-        version: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+        version: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
       react-turnstile:
         specifier: ^1.1.4
-        version: 1.1.4(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 1.1.4(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       universal-cookie:
         specifier: ^7.2.2
         version: 7.2.2
       zustand:
         specifier: ^5.0.1
-        version: 5.0.1(@types/react@18.3.12)(react@19.0.0-rc-7ac8e612-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-7ac8e612-20241113))
+        version: 5.0.1(@types/react@18.3.12)(react@19.0.0-rc-380f5d67-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-380f5d67-20241113))
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -128,7 +128,7 @@ importers:
     dependencies:
       '@iconify/react':
         specifier: ^5.0.2
-        version: 5.0.2(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.0.2(react@19.0.0-rc-380f5d67-20241113)
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -137,19 +137,19 @@ importers:
         version: link:../../packages/shadcn
       '@stripe/react-stripe-js':
         specifier: ^2.9.0
-        version: 2.9.0(@stripe/stripe-js@4.10.0)(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 2.9.0(@stripe/stripe-js@4.10.0)(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       '@stripe/stripe-js':
         specifier: ^4.10.0
         version: 4.10.0
       '@tanstack/react-query':
         specifier: ^5.60.2
-        version: 5.60.2(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.60.2(react@19.0.0-rc-380f5d67-20241113)
       '@tanstack/react-query-next-experimental':
         specifier: ^5.60.2
-        version: 5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-7ac8e612-20241113))(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-380f5d67-20241113))(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       ahooks:
         specifier: ^3.8.1
-        version: 3.8.1(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.8.1(react@19.0.0-rc-380f5d67-20241113)
       axios:
         specifier: ^1.7.7
         version: 1.7.7
@@ -158,49 +158,49 @@ importers:
         version: 4.2.0
       framer-motion:
         specifier: ^11.11.16
-        version: 11.11.16(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 11.11.16(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       lucide-react:
         specifier: ^0.456.0
-        version: 0.456.0(react@19.0.0-rc-7ac8e612-20241113)
+        version: 0.456.0(react@19.0.0-rc-380f5d67-20241113)
       mathjs:
         specifier: ^13.2.2
         version: 13.2.2
       next:
         specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-intl:
         specifier: ^3.25.1
-        version: 3.25.1(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.25.1(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-runtime-env:
         specifier: ^3.2.2
-        version: 3.2.2(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.2.2(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       next-themes:
         specifier: ^0.4.3
-        version: 0.4.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 0.4.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       nextjs-toploader:
         specifier: ^3.7.15
-        version: 3.7.15(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 3.7.15(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       qrcode.react:
         specifier: ^4.1.0
-        version: 4.1.0(react@19.0.0-rc-7ac8e612-20241113)
+        version: 4.1.0(react@19.0.0-rc-380f5d67-20241113)
       radash:
         specifier: ^12.1.0
         version: 12.1.0
       react:
         specifier: rc
-        version: 19.0.0-rc-7ac8e612-20241113
+        version: 19.0.0-rc-380f5d67-20241113
       react-dom:
         specifier: rc
-        version: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+        version: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
       react-turnstile:
         specifier: ^1.1.4
-        version: 1.1.4(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+        version: 1.1.4(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       universal-cookie:
         specifier: ^7.2.2
         version: 7.2.2
       zustand:
         specifier: ^5.0.1
-        version: 5.0.1(@types/react@18.3.12)(react@19.0.0-rc-7ac8e612-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-7ac8e612-20241113))
+        version: 5.0.1(@types/react@18.3.12)(react@19.0.0-rc-380f5d67-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-380f5d67-20241113))
     devDependencies:
       '@repo/eslint-config':
         specifier: workspace:*
@@ -7128,10 +7128,10 @@ packages:
   react-devtools-core@5.3.2:
     resolution: {integrity: sha512-crr9HkVrDiJ0A4zot89oS0Cgv0Oa4OG1Em4jit3P3ZxZSKPMYyMjfwMqgcJna9o625g8oN87rBm8SWWrSTBZxg==}
 
-  react-dom@19.0.0-rc-7ac8e612-20241113:
-    resolution: {integrity: sha512-bbuSvwR89fSfpRPTSbG+m/Ur2eqHIKwSzhux57AkC+NVVnwARA7TdLLEWp6GmzXLtSbt3yqw4N0HcEoICvjgBg==}
+  react-dom@19.0.0-rc-380f5d67-20241113:
+    resolution: {integrity: sha512-jd/2ktaIZieYI76xBPAfEXFfg9XQE/GM++rbItliRJJ6pN205aS3JxGc7WAdm3SkaeIHLwK+V6d+FziVg7g5Eg==}
     peerDependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   react-dom@19.0.0-rc-ed15d500-20241110:
     resolution: {integrity: sha512-V9wIC4SOsBvRKYvfKXRg2Rzgh5BymnI7qlO63U68gt6agfGExRPUyTH1CnlQwR0mnqxbEEfUBFr6MoYtF/bY3A==}
@@ -7158,8 +7158,8 @@ packages:
     peerDependencies:
       react: '*'
 
-  react-is@19.0.0-rc-7ac8e612-20241113:
-    resolution: {integrity: sha512-B8wC8ziQLH0Deh68Pd04YtsWRzikdLoXyfvSqaWYTmApVgabiOsRDhyrAf+7dTdKfh4U7gE9r25lYSRa4i4VPQ==}
+  react-is@19.0.0-rc.1:
+    resolution: {integrity: sha512-D6AbvUGS+i2lK3yC1a+iSicqWhIenYGxYUd7j0JJxunlk0RSAy/yRo58Mh5JJcAVQfNhej20nCwJVehYpNwNiA==}
 
   react-markdown@9.0.1:
     resolution: {integrity: sha512-186Gw/vF1uRkydbsOIkcGXw7aHq0sZOCRFFjGrr7b9+nVZg4UfA4enXCaxm4fUzecU38sWfrNDitGhshuU7rdg==}
@@ -7251,8 +7251,8 @@ packages:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
-  react@19.0.0-rc-7ac8e612-20241113:
-    resolution: {integrity: sha512-/pDTAIK17lYvlY5SUC6Pb/aK/mqn+Biz38pl3lxJV9XjuDdm1EYC7w6pHsORKfiSLuudJtCiV4G8VyMleTbwNw==}
+  react@19.0.0-rc-380f5d67-20241113:
+    resolution: {integrity: sha512-wtdbqto84bAgLqzfJpIpV6m9L5hUPVDb9vM/sGJ4K2z2PVf7t/OOG8xQFUSI6cEfQ1yN0X7qYfUchoVmbebW4g==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -7498,8 +7498,8 @@ packages:
   scheduler@0.24.0-canary-efb381bbf-20230505:
     resolution: {integrity: sha512-ABvovCDe/k9IluqSh4/ISoq8tIJnW8euVAWYt5j/bg6dRnqwQwiGO1F/V4AyK96NGF/FB04FhOUDuWj8IKfABA==}
 
-  scheduler@0.25.0-rc-7ac8e612-20241113:
-    resolution: {integrity: sha512-9YKvoO+2s+BIkQVn4rlpCfp88nM12R+W4j07OisQ7F7P4zL/gOH9ttqpA7dL4j7mPg+SPLFbNLmMvptIlQXuZA==}
+  scheduler@0.25.0-rc-380f5d67-20241113:
+    resolution: {integrity: sha512-F0DjPvSUAj8+PgdujbWDg5qPu9d1+IiOLJKhvknnbk6H+53aqb+CwwAXgHqkjdPfVk81zFbPHaFjQEQReDzH8w==}
 
   scheduler@0.25.0-rc-ed15d500-20241110:
     resolution: {integrity: sha512-7y78hEtogCIfAr1XytMxvgtuccmQTtnx99Fdna4atfTpuahKkRqp1NB+HBGYFi5i2jCzRiNXgNhSQQw+h7Mmgw==}
@@ -9901,10 +9901,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@iconify/react@5.0.2(react@19.0.0-rc-7ac8e612-20241113)':
+  '@iconify/react@5.0.2(react@19.0.0-rc-380f5d67-20241113)':
     dependencies:
       '@iconify/types': 2.0.0
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   '@iconify/types@2.0.0': {}
 
@@ -11372,12 +11372,12 @@ snapshots:
       '@sinonjs/commons': 3.0.1
     optional: true
 
-  '@stripe/react-stripe-js@2.9.0(@stripe/stripe-js@4.10.0)(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)':
+  '@stripe/react-stripe-js@2.9.0(@stripe/stripe-js@4.10.0)(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)':
     dependencies:
       '@stripe/stripe-js': 4.10.0
       prop-types: 15.8.1
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
 
   '@stripe/stripe-js@4.10.0': {}
 
@@ -11396,16 +11396,16 @@ snapshots:
 
   '@tanstack/query-core@5.59.20': {}
 
-  '@tanstack/react-query-next-experimental@5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-7ac8e612-20241113))(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)':
+  '@tanstack/react-query-next-experimental@5.60.2(@tanstack/react-query@5.60.2(react@19.0.0-rc-380f5d67-20241113))(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)':
     dependencies:
-      '@tanstack/react-query': 5.60.2(react@19.0.0-rc-7ac8e612-20241113)
-      next: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
-      react: 19.0.0-rc-7ac8e612-20241113
+      '@tanstack/react-query': 5.60.2(react@19.0.0-rc-380f5d67-20241113)
+      next: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
 
-  '@tanstack/react-query@5.60.2(react@19.0.0-rc-7ac8e612-20241113)':
+  '@tanstack/react-query@5.60.2(react@19.0.0-rc-380f5d67-20241113)':
     dependencies:
       '@tanstack/query-core': 5.59.20
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   '@tanstack/react-table@8.20.5(react-dom@19.0.0-rc-ed15d500-20241110(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -12210,14 +12210,14 @@ snapshots:
       screenfull: 5.2.0
       tslib: 2.8.1
 
-  ahooks@3.8.1(react@19.0.0-rc-7ac8e612-20241113):
+  ahooks@3.8.1(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       '@babel/runtime': 7.26.0
       dayjs: 1.11.13
       intersection-observer: 0.12.2
       js-cookie: 3.0.5
       lodash: 4.17.21
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
       react-fast-compare: 3.2.2
       resize-observer-polyfill: 1.5.1
       screenfull: 5.2.0
@@ -14075,12 +14075,12 @@ snapshots:
     dependencies:
       simplesignal: 2.1.7
 
-  framer-motion@11.11.16(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  framer-motion@11.11.16(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       tslib: 2.8.1
     optionalDependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
 
   framer-motion@11.11.16(react-dom@19.0.0-rc-ed15d500-20241110(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -15276,9 +15276,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  lucide-react@0.456.0(react@19.0.0-rc-7ac8e612-20241113):
+  lucide-react@0.456.0(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   maath@0.10.8(@types/three@0.170.0)(three@0.170.0):
     dependencies:
@@ -16035,23 +16035,23 @@ snapshots:
 
   netmask@2.0.2: {}
 
-  next-intl@3.25.1(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  next-intl@3.25.1(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.7
       negotiator: 1.0.0
-      next: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
-      react: 19.0.0-rc-7ac8e612-20241113
-      use-intl: 3.25.1(react@19.0.0-rc-7ac8e612-20241113)
+      next: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      use-intl: 3.25.1(react@19.0.0-rc-380f5d67-20241113)
 
-  next-runtime-env@3.2.2(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  next-runtime-env@3.2.2(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      next: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
-      react: 19.0.0-rc-7ac8e612-20241113
+      next: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
 
-  next-themes@0.4.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  next-themes@0.4.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
 
   next-themes@0.4.3(react-dom@19.0.0-rc-ed15d500-20241110(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -16085,7 +16085,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       '@next/env': 15.0.3
       '@swc/counter': 0.1.3
@@ -16093,9 +16093,9 @@ snapshots:
       busboy: 1.6.0
       caniuse-lite: 1.0.30001680
       postcss: 8.4.31
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
-      styled-jsx: 5.1.6(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
+      styled-jsx: 5.1.6(react@19.0.0-rc-380f5d67-20241113)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.0.3
       '@next/swc-darwin-x64': 15.0.3
@@ -16110,13 +16110,13 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextjs-toploader@3.7.15(next@15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113))(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  nextjs-toploader@3.7.15(next@15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113))(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      next: 15.0.3(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113)
+      next: 15.0.3(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113)
       nprogress: 0.2.0
       prop-types: 15.8.1
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
 
   no-case@2.3.2:
     dependencies:
@@ -16674,7 +16674,7 @@ snapshots:
     dependencies:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
-      react-is: 19.0.0-rc-7ac8e612-20241113
+      react-is: 19.0.0-rc.1
     optional: true
 
   prismjs@1.27.0: {}
@@ -16697,7 +16697,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-      react-is: 19.0.0-rc-7ac8e612-20241113
+      react-is: 19.0.0-rc.1
 
   property-information@5.6.0:
     dependencies:
@@ -16724,9 +16724,9 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qrcode.react@4.1.0(react@19.0.0-rc-7ac8e612-20241113):
+  qrcode.react@4.1.0(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   qss@3.0.0: {}
 
@@ -16772,10 +16772,10 @@ snapshots:
       - utf-8-validate
     optional: true
 
-  react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113):
+  react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
-      scheduler: 0.25.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
+      scheduler: 0.25.0-rc-380f5d67-20241113
 
   react-dom@19.0.0-rc-ed15d500-20241110(react@18.3.1):
     dependencies:
@@ -16799,7 +16799,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  react-is@19.0.0-rc-7ac8e612-20241113: {}
+  react-is@19.0.0-rc.1: {}
 
   react-markdown@9.0.1(@types/react@18.3.12)(react@18.3.1):
     dependencies:
@@ -16940,16 +16940,16 @@ snapshots:
       react: 18.3.1
       react-dom: 19.0.0-rc-ed15d500-20241110(react@18.3.1)
 
-  react-turnstile@1.1.4(react-dom@19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113))(react@19.0.0-rc-7ac8e612-20241113):
+  react-turnstile@1.1.4(react-dom@19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113))(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
-      react-dom: 19.0.0-rc-7ac8e612-20241113(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      react-dom: 19.0.0-rc-380f5d67-20241113(react@19.0.0-rc-380f5d67-20241113)
 
   react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
 
-  react@19.0.0-rc-7ac8e612-20241113: {}
+  react@19.0.0-rc-380f5d67-20241113: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -17023,7 +17023,7 @@ snapshots:
       lodash: 4.17.21
       react: 18.3.1
       react-dom: 19.0.0-rc-ed15d500-20241110(react@18.3.1)
-      react-is: 19.0.0-rc-7ac8e612-20241113
+      react-is: 19.0.0-rc.1
       react-smooth: 4.0.1(react-dom@19.0.0-rc-ed15d500-20241110(react@18.3.1))(react@18.3.1)
       recharts-scale: 0.4.5
       tiny-invariant: 1.3.3
@@ -17283,7 +17283,7 @@ snapshots:
       loose-envify: 1.4.0
     optional: true
 
-  scheduler@0.25.0-rc-7ac8e612-20241113: {}
+  scheduler@0.25.0-rc-380f5d67-20241113: {}
 
   scheduler@0.25.0-rc-ed15d500-20241110: {}
 
@@ -17758,10 +17758,10 @@ snapshots:
     optionalDependencies:
       '@babel/core': 7.26.0
 
-  styled-jsx@5.1.6(react@19.0.0-rc-7ac8e612-20241113):
+  styled-jsx@5.1.6(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       client-only: 0.0.1
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   sucrase@3.35.0:
     dependencies:
@@ -18290,11 +18290,11 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.12
 
-  use-intl@3.25.1(react@19.0.0-rc-7ac8e612-20241113):
+  use-intl@3.25.1(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
       '@formatjs/fast-memoize': 2.2.3
       intl-messageformat: 10.7.6
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
 
   use-sidecar@1.1.2(@types/react@18.3.12)(react@18.3.1):
     dependencies:
@@ -18308,9 +18308,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  use-sync-external-store@1.2.2(react@19.0.0-rc-7ac8e612-20241113):
+  use-sync-external-store@1.2.2(react@19.0.0-rc-380f5d67-20241113):
     dependencies:
-      react: 19.0.0-rc-7ac8e612-20241113
+      react: 19.0.0-rc-380f5d67-20241113
     optional: true
 
   util-deprecate@1.0.2: {}
@@ -18544,10 +18544,10 @@ snapshots:
       '@types/react': 18.3.12
       react: 18.3.1
 
-  zustand@5.0.1(@types/react@18.3.12)(react@19.0.0-rc-7ac8e612-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-7ac8e612-20241113)):
+  zustand@5.0.1(@types/react@18.3.12)(react@19.0.0-rc-380f5d67-20241113)(use-sync-external-store@1.2.2(react@19.0.0-rc-380f5d67-20241113)):
     optionalDependencies:
       '@types/react': 18.3.12
-      react: 19.0.0-rc-7ac8e612-20241113
-      use-sync-external-store: 1.2.2(react@19.0.0-rc-7ac8e612-20241113)
+      react: 19.0.0-rc-380f5d67-20241113
+      use-sync-external-store: 1.2.2(react@19.0.0-rc-380f5d67-20241113)
 
   zwitch@2.0.4: {}
