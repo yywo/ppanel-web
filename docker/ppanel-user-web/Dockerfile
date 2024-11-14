@@ -5,8 +5,9 @@ FROM base AS builder
 
 WORKDIR /app
 
+COPY . .
+
 # Install dependencies based on the preferred package manager
-COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 # Omit --production flag for TypeScript devDependencies
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
@@ -16,10 +17,8 @@ RUN \
   else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
   fi
 
-COPY . .
-
-# Build Next.js based on the preferred package manager
-RUN npx turbo build --filter=ppanel-user-web...
+RUN npx turbo telemetry disable
+RUN npx turbo build --filter=ppanel-user-web
 
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
 
