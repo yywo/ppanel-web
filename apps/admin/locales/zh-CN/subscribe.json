@@ -21,6 +21,7 @@
     "discountDescription": "基于单价设置折扣",
     "discountMonths": "月",
     "discountPercent": "折扣比",
+    "discount_price": "折扣价格",
     "duration": "时长（月）",
     "inventory": "库存",
     "name": "名称",

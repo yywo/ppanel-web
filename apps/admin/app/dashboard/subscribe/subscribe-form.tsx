@@ -5,7 +5,7 @@ import { Combobox } from '@repo/ui/combobox';
 import { ArrayInput } from '@repo/ui/dynamic-Inputs';
 import { JSONEditor } from '@repo/ui/editor';
 import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { unitConversion } from '@repo/ui/utils';
+import { evaluateWithPrecision, unitConversion } from '@repo/ui/utils';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@shadcn/ui/accordion';
 import { Button } from '@shadcn/ui/button';
 import { Checkbox } from '@shadcn/ui/checkbox';
@@ -448,6 +448,33 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   max: 100,
                                   placeholder: t('form.discountPercent'),
                                   suffix: '%',
+                                  calculateValue: (data) => {
+                                    const { unit_price } = form.getValues();
+                                    return {
+                                      ...data,
+                                      price: evaluateWithPrecision(
+                                        `${unit_price} * ${data.months} * ${data.discount} / 100`,
+                                      ),
+                                    };
+                                  },
+                                },
+                                {
+                                  name: 'price',
+                                  placeholder: t('form.discount_price'),
+                                  type: 'number',
+                                  min: 0,
+                                  formatInput: (value) => unitConversion('centsToDollars', value),
+                                  formatOutput: (value) => unitConversion('dollarsToCents', value),
+                                  internal: true,
+                                  calculateValue: (data) => {
+                                    const { unit_price } = form.getValues();
+                                    return {
+                                      ...data,
+                                      discount: evaluateWithPrecision(
+                                        `${data.price} / ${data.months} / ${unit_price} * 100`,
+                                      ),
+                                    };
+                                  },
                                 },
                               ]}
                               value={field.value}

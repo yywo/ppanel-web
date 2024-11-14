@@ -21,6 +21,7 @@
     "discountDescription": "Set discount based on unit price",
     "discountMonths": "Months",
     "discountPercent": "Discount Percentage",
+    "discount_price": "Discount Price",
     "duration": "Duration (months)",
     "inventory": "Inventory",
     "name": "Name",
