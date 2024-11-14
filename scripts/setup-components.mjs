@@ -1,5 +1,5 @@
 import { spawn } from 'child_process';
-import { readdir, readFile, writeFile } from 'fs/promises';
+import { readdir, readFile, rm, writeFile } from 'fs/promises';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -14,6 +14,7 @@ const replacementsByDirectory = {
     { from: '@/lib/utils', to: '../../lib/utils' },
     { from: '@/components/ui', to: '.' },
     { from: '@/hooks', to: '../../hooks' },
+    { from: '@/data', to: '../../data' },
   ],
   hooks: [{ from: '@/components', to: '../components' }],
 };
@@ -41,6 +42,11 @@ async function replaceInFile(filePath) {
   let content = await readFile(filePath, 'utf8');
   let modified = false;
 
+  // Add ts-ignore at the top of the file
+  if (!content.startsWith('// @ts-nocheck')) {
+    content = `// @ts-nocheck\n${content}`;
+  }
+
   // Determine the appropriate replacement set based on the directory
   let replacements;
   if (filePath.includes(`${join('src', 'components')}`)) {
@@ -51,7 +57,7 @@ async function replaceInFile(filePath) {
     replacements = replacementsByDirectory.default;
   }
 
-  replacements.forEach(({ from, to }) => {
+  replacements?.forEach(({ from, to }) => {
     if (content.includes(from)) {
       // Replace all occurrences of `from` with `to`
       content = content.replace(new RegExp(from, 'g'), to);
@@ -75,26 +81,6 @@ async function replaceInFiles(dir) {
     console.log('All files updated successfully.');
   } catch (error) {
     console.error('Error updating files:', error.message);
-  }
-}
-
-// Fetch and format MagicUI component URLs
-// Components Docs: https://magicui.design/docs
-async function fetchMagicUIUrls() {
-  try {
-    const response = await fetch('https://magicui.design/r/index.json');
-    if (!response.ok) {
-      throw new Error(`Error fetching MagicUI component list: ${response.statusText}`);
-    }
-    const components = await response.json();
-
-    if (!Array.isArray(components)) {
-      throw new Error('Invalid format for MagicUI component list.');
-    }
-    return components.map((item) => `https://magicui.design/r/${item.name}`);
-  } catch (error) {
-    console.error(error.message);
-    return [];
   }
 }
 
@@ -132,29 +118,37 @@ async function installComponents() {
   try {
     console.log('Installing all default Shadcn components in directory:', targetDir);
 
-    // Step 1: Install all default Shadcn components
-    await runCommand('npx', ['shadcn@latest', 'add', '-y', '-a', '-o'], {
+    // Install AceternityUI a Shadcn components
+    await runCommand('npx', ['aceternity-ui@latest', 'add', '-y', '-o', '-a'], {
       cwd: targetDir,
       shell: true,
     });
 
-    console.log('Fetching MagicUI component URLs...');
-    const magicComponentUrls = await fetchMagicUIUrls();
-
-    console.log('Installing MagicUI components in directory:', targetDir);
-    console.log('Fetched component URLs:', magicComponentUrls);
-    // Step 2: Install MagicUI components
-    await runCommand('npx', ['shadcn@latest', 'add', '-y', '-a', '-o', ...magicComponentUrls], {
+    // Install all default Shadcn components
+    await runCommand('npx', ['shadcn@latest', 'add', '-y', '-o', '-a'], {
       cwd: targetDir,
       shell: true,
     });
 
     console.log('All components successfully installed');
 
-    // Step 3: Replace paths in installed files
+    // Replace paths in installed files
     const targetSrcDir = join(targetDir, 'src');
     console.log('Replacing paths in target directory:', targetSrcDir);
     await replaceInFiles(targetSrcDir);
+
+    // Step 3: Remove `example` and `blocks` directories from `components`
+    const componentsDir = join(targetSrcDir, 'components');
+    const exampleDir = join(componentsDir, 'example');
+    const blocksDir = join(componentsDir, 'blocks');
+
+    console.log('Removing example and blocks directories...');
+    await Promise.all([
+      rm(exampleDir, { recursive: true, force: true }),
+      rm(blocksDir, { recursive: true, force: true }),
+    ]);
+
+    console.log('Example and blocks directories removed successfully.');
   } catch (error) {
     console.error('An error occurred during the installation process:', error.message);
     console.error(error.stack);

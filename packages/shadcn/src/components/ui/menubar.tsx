@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from '@radix-ui/react-icons';

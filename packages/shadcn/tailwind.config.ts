@@ -101,150 +101,17 @@ const config = {
             height: '0',
           },
         },
-        'background-position-spin': {
-          '0%': {
-            backgroundPosition: 'top center',
-          },
-          '100%': {
-            backgroundPosition: 'bottom center',
-          },
-        },
-        'meteor': {
-          '0%': {
-            transform: 'rotate(215deg) translateX(0)',
-            opacity: '1',
-          },
-          '70%': {
-            opacity: '1',
-          },
-          '100%': {
-            transform: 'rotate(215deg) translateX(-500px)',
-            opacity: '0',
-          },
-        },
-        'marquee': {
-          from: {
-            transform: 'translateX(0)',
-          },
+        'scroll': {
           to: {
-            transform: 'translateX(calc(-100% - var(--gap)))',
-          },
-        },
-        'marquee-vertical': {
-          from: {
-            transform: 'translateY(0)',
-          },
-          to: {
-            transform: 'translateY(calc(-100% - var(--gap)))',
-          },
-        },
-        'shimmer-slide': {
-          to: {
-            transform: 'translate(calc(100cqw - 100%), 0)',
-          },
-        },
-        'spin-around': {
-          '0%': {
-            transform: 'translateZ(0) rotate(0)',
-          },
-          '15%, 35%': {
-            transform: 'translateZ(0) rotate(90deg)',
-          },
-          '65%, 85%': {
-            transform: 'translateZ(0) rotate(270deg)',
-          },
-          '100%': {
-            transform: 'translateZ(0) rotate(360deg)',
-          },
-        },
-        'ripple': {
-          '0%, 100%': {
-            transform: 'translate(-50%, -50%) scale(1)',
-          },
-          '50%': {
-            transform: 'translate(-50%, -50%) scale(0.9)',
-          },
-        },
-        'grid': {
-          '0%': {
-            transform: 'translateY(-50%)',
-          },
-          '100%': {
-            transform: 'translateY(0)',
-          },
-        },
-        'shiny-text': {
-          '0%, 90%, 100%': {
-            'background-position': 'calc(-100% - var(--shiny-width)) 0',
-          },
-          '30%, 60%': {
-            'background-position': 'calc(100% + var(--shiny-width)) 0',
-          },
-        },
-        'border-beam': {
-          '100%': {
-            'offset-distance': '100%',
-          },
-        },
-        'gradient': {
-          to: {
-            backgroundPosition: 'var(--bg-size) 0',
-          },
-        },
-        'orbit': {
-          '0%': {
-            transform: 'rotate(0deg) translateY(calc(var(--radius) * 1px)) rotate(0deg)',
-          },
-          '100%': {
-            transform: 'rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)',
-          },
-        },
-        'shine': {
-          '0%': {
-            'background-position': '0% 0%',
-          },
-          '50%': {
-            'background-position': '100% 100%',
-          },
-          'to': {
-            'background-position': '0% 0%',
-          },
-        },
-        'pulse': {
-          '0%, 100%': {
-            boxShadow: '0 0 0 0 var(--pulse-color)',
-          },
-          '50%': {
-            boxShadow: '0 0 0 8px var(--pulse-color)',
-          },
-        },
-        'rainbow': {
-          '0%': {
-            'background-position': '0%',
-          },
-          '100%': {
-            'background-position': '200%',
+            transform: 'translate(calc(-50% - 0.5rem))',
           },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'background-position-spin': 'background-position-spin 3000ms infinite alternate',
-        'meteor': 'meteor 5s linear infinite',
-        'marquee': 'marquee var(--duration) infinite linear',
-        'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
-        'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
-        'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
-        'ripple': 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
-        'grid': 'grid 15s linear infinite',
-        'shiny-text': 'shiny-text 8s infinite',
-        'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
-        'gradient': 'gradient 8s linear infinite',
-        'orbit': 'orbit calc(var(--duration)*1s) linear infinite',
-        'shine': 'shine var(--duration) infinite linear',
-        'pulse': 'pulse var(--duration) ease-out infinite',
-        'rainbow': 'rainbow var(--speed, 2s) infinite linear',
+        'scroll':
+          'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
       },
     },
   },

@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { DotFilledIcon } from '@radix-ui/react-icons';

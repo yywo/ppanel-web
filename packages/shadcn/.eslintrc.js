@@ -8,7 +8,11 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
+    '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
     'no-redeclare': 'off',
     'no-unused-vars': 'off',
+    'no-undef': 'off',
   },
 };

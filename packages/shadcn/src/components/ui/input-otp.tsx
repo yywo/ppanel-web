@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { MinusIcon } from '@radix-ui/react-icons';

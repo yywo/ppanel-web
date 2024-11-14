@@ -10,10 +10,8 @@ import {
   UsersIcon,
 } from '@repo/ui/lotties';
 import { Button, buttonVariants } from '@shadcn/ui/button';
-import Marquee from '@shadcn/ui/marquee';
 import { AnimationProps, motion, MotionProps } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { useMemo } from 'react';
 
@@ -241,46 +239,6 @@ export default function Page() {
       <ScrollAnimationWrapper>
         <motion.div className='aspect-[2/1] w-full overflow-hidden' variants={scrollAnimation}>
           <GlobalMapIcon className='-mt-[25%] w-full' />
-        </motion.div>
-      </ScrollAnimationWrapper>
-      <ScrollAnimationWrapper>
-        <motion.div
-          className='relative mx-auto flex items-center justify-center overflow-hidden py-6'
-          variants={scrollAnimation}
-        >
-          <Marquee pauseOnHover className='[--duration:20s]'>
-            {[
-              'facebook',
-              'google',
-              'hbo',
-              'instagram',
-              'netflix',
-              'primevideo',
-              'reddit',
-              'snapchat',
-              'spotify',
-              'twitch',
-              'twitter',
-              'whatsapp',
-              'youtube',
-            ].map((logo) => (
-              <div
-                className='mx-10 flex shrink-0 items-center justify-center dark:invert'
-                key={logo}
-              >
-                <Image
-                  src={`/index/${logo}.png`}
-                  alt={logo}
-                  width={120}
-                  height={48}
-                  className='h-12 w-auto object-contain'
-                />
-              </div>
-            ))}
-          </Marquee>
-
-          <div className='from-background absolute inset-y-0 left-0 w-12 bg-gradient-to-r to-transparent'></div>
-          <div className='from-background absolute inset-y-0 right-0 w-12 bg-gradient-to-l to-transparent'></div>
         </motion.div>
       </ScrollAnimationWrapper>
     </main>

@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
