@@ -13,25 +13,31 @@ import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const config = await getGlobalConfig({ skipErrorHandler: true }).then((res) => res.data.data!);
-  const site = config?.site || {};
-  return {
-    title: {
-      default: `${site.site_name}`,
-      template: `%s | ${site.site_name}`,
-    },
-    description: site.site_desc,
-    icons: {
-      icon: site.site_logo
-        ? [
-            {
-              url: site.site_logo,
-              sizes: 'any',
-            },
-          ]
-        : [],
-    },
-  };
+  try {
+    const config = await getGlobalConfig({ skipErrorHandler: true }).then((res) => res.data.data!);
+    const site = config.site || {};
+    return {
+      title: {
+        default: `${site.site_name}`,
+        template: `%s | ${site.site_name}`,
+      },
+      description: site.site_desc,
+      icons: {
+        icon: site.site_logo
+          ? [
+              {
+                url: site.site_logo,
+                sizes: 'any',
+              },
+            ]
+          : [],
+      },
+    };
+  } catch (error) {
+    return {
+      title: { default: 'PPanel', template: '%s | PPanel' },
+    };
+  }
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
