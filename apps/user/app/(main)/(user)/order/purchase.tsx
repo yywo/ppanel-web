@@ -76,11 +76,11 @@ export default function Purchase({
         if (!open) setSubscribe(undefined);
       }}
     >
-      <DialogContent className='flex h-full max-w-screen-lg flex-col overflow-hidden border-none md:h-auto'>
-        <DialogHeader>
+      <DialogContent className='flex h-full max-w-screen-lg flex-col overflow-hidden border-none p-0 md:h-auto'>
+        <DialogHeader className='p-6 pb-0'>
           <DialogTitle>{t('buySubscription')}</DialogTitle>
         </DialogHeader>
-        <div className='grid w-full gap-3 lg:grid-cols-2'>
+        <div className='grid w-full flex-grow gap-3 overflow-auto p-6 pt-0 lg:grid-cols-2'>
           <Card className='border-transparent shadow-none md:border-inherit md:shadow'>
             <CardContent className='grid gap-3 p-0 text-sm md:p-6'>
               <SubscribeDetail
@@ -110,7 +110,7 @@ export default function Purchase({
                     quantity: Number(value),
                   });
                 }}
-                className='flex flex-wrap gap-2'
+                className='flex flex-wrap gap-0.5 *:w-20 md:gap-2'
               >
                 <div className='relative'>
                   <RadioGroupItem value='1' id='1' className='peer sr-only' />
@@ -154,7 +154,7 @@ export default function Purchase({
               </div>
               <div className='font-semibold'>{t('paymentMethod')}</div>
               <RadioGroup
-                className='grid grid-cols-5 gap-2'
+                className='mb-6 grid grid-cols-5 gap-2'
                 value={params.payment}
                 onValueChange={(value) => {
                   setParams({

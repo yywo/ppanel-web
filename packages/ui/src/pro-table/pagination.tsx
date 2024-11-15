@@ -21,11 +21,11 @@ interface PaginationProps<TData> {
 export function Pagination<TData>({ table, text }: PaginationProps<TData>) {
   return (
     <div className='flex flex-wrap items-center justify-between gap-2'>
-      <div className='text-muted-foreground flex-1 whitespace-nowrap'>
+      <div className='text-muted-foreground flex-1 whitespace-nowrap text-center sm:text-left'>
         {text?.textPageOf?.(table.getState().pagination.pageIndex + 1, table.getPageCount()) ||
           `Page ${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
       </div>
-      <div className='flex items-center gap-2'>
+      <div className='flex flex-grow items-center justify-center gap-2 sm:justify-end'>
         <div className='flex items-center space-x-2'>
           <p className='font-medium'>{text?.textRowsPerPage || 'Rows per page'}</p>
           <Select
