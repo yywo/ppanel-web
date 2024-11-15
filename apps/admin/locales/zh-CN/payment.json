@@ -27,6 +27,7 @@
   "key": "KEY",
   "notifyUrl": "自定义通知域（可选）",
   "notifyUrlDescription": "网关通知将发送到此域",
+  "payForRecommendations": "支付推荐",
   "pid": "PID",
   "saveSuccess": "保存成功",
   "showName": "显示名称",

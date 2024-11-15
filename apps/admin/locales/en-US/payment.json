@@ -27,6 +27,7 @@
   "key": "KEY",
   "notifyUrl": "Custom Notification Domain (optional)",
   "notifyUrlDescription": "Gateway notifications will be sent to this domain",
+  "payForRecommendations": "Pay for Recommendations",
   "pid": "PID",
   "saveSuccess": "Save Successful",
   "showName": "Display Name",
