@@ -2,13 +2,12 @@
 
 import { Button } from '@shadcn/ui/button';
 import { cn } from '@shadcn/ui/lib/utils';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
 import 'katex/dist/katex.min.css';
 import { Check, Copy } from 'lucide-react';
 import { useCallback, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
@@ -39,39 +38,38 @@ function CodeBlock({ className, children, dark, ...props }: CodeBlockProps) {
 
   if (match) {
     return (
-      <div className='group relative w-full'>
-        <div className='bg-muted flex items-center justify-between gap-4 rounded-t-lg px-4 py-2 text-sm font-semibold'>
+      <div className='group relative my-4 w-full overflow-hidden rounded-lg'>
+        <div className='bg-muted flex items-center justify-between gap-4 px-4 py-2 text-sm font-semibold'>
           <span className='lowercase [&>span]:text-xs'>{match[1]}</span>
           <Button
             variant='ghost'
-            size='sm'
+            size='icon'
             onClick={() => handleCopy(String(children).replace(/\n$/, ''))}
-            className='absolute right-2 top-2 z-20 opacity-0 transition-opacity duration-200 group-hover:opacity-100'
+            className='absolute right-2 top-0 z-20 p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-100'
           >
             {copied ? <Check size={16} /> : <Copy size={16} />}
           </Button>
         </div>
 
-        <ScrollArea className='max-h-96 w-full overflow-auto'>
-          <SyntaxHighlighter
-            {...props}
-            PreTag='div'
-            language={match[1]}
-            style={dark ? oneDark : oneLight}
-            showLineNumbers
-            customStyle={{
-              margin: 0,
-            }}
-          >
-            {String(children).replace(/\n$/, '')}
-          </SyntaxHighlighter>
-        </ScrollArea>
+        <SyntaxHighlighter
+          {...props}
+          PreTag='div'
+          language={match[1]}
+          style={oneDark}
+          showLineNumbers
+          customStyle={{
+            margin: 0,
+            borderRadius: 0,
+          }}
+        >
+          {String(children).replace(/\n$/, '')}
+        </SyntaxHighlighter>
       </div>
     );
   }
 
   return (
-    <code {...props} className={cn(className, 'bg-muted rounded border font-semibold')}>
+    <code {...props} className={cn(className, 'rounded border font-semibold')}>
       {children}
     </code>
   );

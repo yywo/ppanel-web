@@ -36,10 +36,10 @@ export default function Page() {
               <div className='flex flex-col justify-center pb-14 lg:flex-auto lg:pb-20'>
                 <UserAuthForm />
               </div>
-              <div className='flex items-center justify-between'>
-                <div className='text-primary flex gap-5 text-sm font-semibold'>
+              <div className='flex items-center justify-end'>
+                {/* <div className='text-primary flex gap-5 text-sm font-semibold'>
                   <Link href='/tos'>{t('tos')}</Link>
-                </div>
+                </div> */}
                 <div className='flex items-center gap-5'>
                   <LanguageSwitch />
                   <ThemeSwitch />

@@ -26,7 +26,7 @@ export function EnhancedInput({
   ...props
 }: EnhancedInputProps) {
   const getProcessedValue = (inputValue: unknown) => {
-    const newValue = String(inputValue ?? '');
+    const newValue = inputValue === '' || inputValue === 0 ? '' : String(inputValue ?? '');
     return formatInput ? formatInput(newValue) : newValue;
   };
 
@@ -47,16 +47,19 @@ export function EnhancedInput({
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     let inputValue = e.target.value;
-    if (props.type === 'number') {
+    if (props.type === 'number' && inputValue) {
       const numericValue = Number(inputValue);
       if (!isNaN(numericValue)) {
         const min = Number.isFinite(props.min) ? props.min : -Infinity;
         const max = Number.isFinite(props.max) ? props.max : Infinity;
         inputValue = String(Math.max(min!, Math.min(max!, numericValue)));
       }
+      setValue(inputValue === '0' ? '' : inputValue);
+    } else {
+      setValue(inputValue);
     }
-    setValue(inputValue);
     const outputValue = processValue(inputValue);
+    console.log();
     onValueChange?.(outputValue);
   };
 

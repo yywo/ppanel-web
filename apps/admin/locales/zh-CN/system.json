@@ -24,7 +24,7 @@
     "smtpAccount": "SMTP 账号",
     "smtpAccountDescription": "用于身份验证的邮件账号。",
     "smtpEncryptionMethod": "SMTP 加密方式",
-    "smtpEncryptionMethodDescription": "选择是否启用 SSL 加密。",
+    "smtpEncryptionMethodDescription": "选择是否启用 SSL/TLS 加密。",
     "smtpPassword": "SMTP 密码",
     "smtpPasswordDescription": "该 SMTP 账号的密码。",
     "smtpServerAddress": "SMTP 服务器地址",

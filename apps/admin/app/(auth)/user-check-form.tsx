@@ -1,4 +1,3 @@
-import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react';
 import { Button } from '@shadcn/ui/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@shadcn/ui/form';
@@ -18,22 +17,20 @@ export default function UserCheckForm({
   initialValues: any;
 }) {
   const t = useTranslations('auth.check');
-  const { common } = useGlobalStore();
-  const { register } = common;
+  // const { common } = useGlobalStore();
+  // const { register } = common;
   const formSchema = z.object({
-    email: z
-      .string()
-      .email(t('email'))
-      .refine(
-        (email) => {
-          if (!register.enable_email_domain_suffix) return true;
-          const domain = email.split('@')[1] as string;
-          return register.email_domain_suffix_list.split('\n').includes(domain);
-        },
-        {
-          message: t('whitelist'),
-        },
-      ),
+    email: z.string().email(t('email')),
+    // .refine(
+    //   (email) => {
+    //     if (!register.enable_email_domain_suffix) return true;
+    //     const domain = email.split('@')[1] as string;
+    //     return register.email_domain_suffix_list.split('\n').includes(domain);
+    //   },
+    //   {
+    //     message: t('whitelist'),
+    //   },
+    // ),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({

@@ -24,7 +24,7 @@
     "smtpAccount": "SMTP Account",
     "smtpAccountDescription": "The email account used for authentication.",
     "smtpEncryptionMethod": "SMTP Encryption Method",
-    "smtpEncryptionMethodDescription": "Choose whether to enable SSL encryption.",
+    "smtpEncryptionMethodDescription": "Choose whether to enable SSL/TLS encryption.",
     "smtpPassword": "SMTP Password",
     "smtpPasswordDescription": "The password for the SMTP account.",
     "smtpServerAddress": "SMTP Server Address",
