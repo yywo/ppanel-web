@@ -11,7 +11,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <SidebarLeft />
       <SidebarInset className='relative flex-grow overflow-hidden'>
         <Header />
-        <div className='h-[calc(100vh-56px)] gap-4 overflow-auto p-4'>{children}</div>
+        <div className='h-[calc(100vh-56px)] flex-grow gap-4 overflow-auto p-4'>{children}</div>
       </SidebarInset>
     </SidebarProvider>
   );
