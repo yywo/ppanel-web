@@ -5,7 +5,7 @@ import { cn } from '@shadcn/ui/lib/utils';
 import 'katex/dist/katex.min.css';
 import { Check, Copy } from 'lucide-react';
 import { useCallback, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown, { Components } from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import rehypeKatex from 'rehype-katex';
@@ -20,7 +20,7 @@ interface CodeBlockProps {
   [key: string]: unknown;
 }
 
-function CodeBlock({ className, children, dark, ...props }: CodeBlockProps) {
+function CodeBlock({ className, children, ...props }: CodeBlockProps) {
   const [copied, setCopied] = useState(false);
   const match = className?.startsWith('language-') ? /language-(\w+)/.exec(className) : null;
 
@@ -77,10 +77,10 @@ function CodeBlock({ className, children, dark, ...props }: CodeBlockProps) {
 
 interface MarkdownProps {
   children: string;
-  dark?: false;
+  components?: Components;
 }
 
-export function Markdown({ children, dark }: MarkdownProps) {
+export function Markdown({ children, components }: MarkdownProps) {
   return (
     <ReactMarkdown
       className='prose dark:prose-invert w-full max-w-[unset] break-words'
@@ -197,8 +197,9 @@ export function Markdown({ children, dark }: MarkdownProps) {
           <pre className={cn('overflow-x-auto rounded-b-lg p-0', className)} {...props} />
         ),
         code(props) {
-          return <CodeBlock {...(props as CodeBlockProps)} dark={dark} />;
+          return <CodeBlock {...(props as CodeBlockProps)} />;
         },
+        ...components,
       }}
     >
       {children}

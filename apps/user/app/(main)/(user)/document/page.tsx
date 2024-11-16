@@ -1,110 +1,92 @@
 'use client';
 
-import { ProList } from '@/components/pro-list';
-import { queryDocumentDetail, queryDocumentList } from '@/services/user/document';
-import { Markdown } from '@repo/ui/markdown';
-import { formatDate } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { queryDocumentList } from '@/services/user/document';
+import { getTutorialList } from '@/utils/tutorial';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
 import { useQuery } from '@tanstack/react-query';
-import { ChevronLeft } from 'lucide-react';
-import { useTranslations } from 'next-intl';
-import { Fragment, useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
+import { DocumentButton } from './document-button';
+import { TutorialButton } from './tutorial-button';
 
 export default function Page() {
+  const locale = useLocale();
   const t = useTranslations('document');
-  const [tags, setTags] = useState<string[]>([]);
-  const [selected, setSelected] = useState<number>();
 
   const { data } = useQuery({
-    enabled: !!selected,
-    queryKey: ['queryDocumentDetail', selected],
+    queryKey: ['queryDocumentList'],
     queryFn: async () => {
-      const { data } = await queryDocumentDetail({
-        id: selected!,
-      });
-      return data.data;
+      const response = await queryDocumentList();
+      const list = response.data.data?.list || [];
+      return {
+        tags: Array.from(new Set(list.reduce((acc: string[], item) => acc.concat(item.tags), []))),
+        list,
+      };
+    },
+  });
+  const { tags, list: DocumentList } = data || { tags: [], list: [] };
+
+  const { data: TutorialList } = useQuery({
+    queryKey: ['getTutorialList', locale],
+    queryFn: async () => {
+      const list = await getTutorialList();
+      return list.get(locale);
     },
   });
 
   return (
-    <Fragment>
-      {selected ? (
-        <Card>
-          <CardHeader className='pb-2'>
-            <div className='flex items-center justify-between'>
-              <Button variant='outline' onClick={() => setSelected(undefined)}>
-                <ChevronLeft className='size-4' />
-                {t('back')}
-              </Button>
-              <CardTitle className='font-medium'>{data?.title}</CardTitle>
-              <CardDescription>{formatDate(data?.updated_at)}</CardDescription>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <Markdown>{data?.content || ''}</Markdown>
-          </CardContent>
-        </Card>
-      ) : (
-        <ProList<API.DocumentItem, { tag: string }>
-          params={[
-            {
-              key: 'tag',
-              placeholder: t('category'),
-              options: tags.map((item) => ({
-                label: item,
-                value: item,
-              })),
-            },
-          ]}
-          request={async (_, filter) => {
-            const response = await queryDocumentList();
-            const list = response.data.data?.list || [];
-            setTags(
-              Array.from(new Set(list.reduce((acc: string[], item) => acc.concat(item.tags), []))),
-            );
-            const filterList = list.filter((item) =>
-              filter.tag ? item.tags.includes(filter.tag) : true,
-            );
-            return {
-              list: filterList,
-              total: filterList.length || 0,
-            };
-          }}
-          renderItem={(item) => {
-            return (
-              <Card className='overflow-hidden'>
-                <CardHeader className='bg-muted/50 flex flex-row items-center justify-between gap-2 space-y-0 p-3'>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardDescription>
-                    <Button
-                      size='sm'
-                      onClick={() => {
-                        setSelected(item.id);
-                      }}
-                    >
-                      {t('read')}
-                    </Button>
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className='p-3 text-sm'>
-                  <ul className='grid gap-3 *:flex *:flex-col lg:grid-cols-2'>
-                    <li>
-                      <span className='text-muted-foreground'>{t('tags')}</span>
-                      <span>{item.tags.join(', ')}</span>
-                    </li>
-                    <li className='font-semibold'>
-                      <span className='text-muted-foreground'>{t('updatedAt')}</span>
-                      <time>{formatDate(item.updated_at)}</time>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            );
-          }}
-        />
+    <div className='space-y-4'>
+      {DocumentList?.length > 0 && (
+        <>
+          <h2 className='flex items-center gap-1.5 font-semibold'>{t('document')}</h2>
+          <Tabs defaultValue='all'>
+            <TabsList className='h-full flex-wrap'>
+              <TabsTrigger value='all'>{t('all')}</TabsTrigger>
+              {tags?.map((item) => (
+                <TabsTrigger key={item} value={item}>
+                  {item}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            <TabsContent value='all'>
+              <DocumentButton items={DocumentList} />
+            </TabsContent>
+            {tags?.map((item) => (
+              <TabsContent value={item} key={item}>
+                <DocumentButton
+                  items={DocumentList.filter((docs) => (item ? docs.tags.includes(item) : true))}
+                />
+              </TabsContent>
+            ))}
+          </Tabs>
+        </>
       )}
-    </Fragment>
+
+      {TutorialList && TutorialList?.length > 0 && (
+        <>
+          <h2 className='flex items-center gap-1.5 font-semibold'>{t('tutorial')}</h2>
+          <Tabs defaultValue={TutorialList?.[0]?.title}>
+            <TabsList className='h-full flex-wrap'>
+              {TutorialList?.map((tutorial) => (
+                <TabsTrigger key={tutorial.title} value={tutorial.title}>
+                  {tutorial.title}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+            {TutorialList?.map((tutorial) => (
+              <TabsContent key={tutorial.title} value={tutorial.title}>
+                <TutorialButton
+                  key={tutorial.path}
+                  items={
+                    tutorial.subItems && tutorial.subItems?.length > 0
+                      ? tutorial.subItems
+                      : [tutorial]
+                  }
+                />
+              </TabsContent>
+            ))}
+          </Tabs>
+        </>
+      )}
+    </div>
   );
 }
