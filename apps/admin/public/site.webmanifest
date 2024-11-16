@@ -1,7 +1,6 @@
 {
-  "background_color": "#FFFFFF",
-  "description": "PPanel is a pure, professional, and perfect open-source proxy panel tool, designed to be your ideal choice for learning and practical use.",
-  "display": "standalone",
+  "name": "PPanel",
+  "short_name": "PPanel",
   "icons": [
     {
       "src": "/pwa-192x192.png",
@@ -28,8 +27,8 @@
       "purpose": "maskable"
     }
   ],
-  "name": "PPanel",
-  "short_name": "PPanel",
   "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF"
 }

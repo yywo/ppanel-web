@@ -13,31 +13,45 @@ import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
 
 export async function generateMetadata(): Promise<Metadata> {
-  try {
-    const config = await getGlobalConfig({ skipErrorHandler: true }).then((res) => res.data.data!);
-    const site = config.site || {};
-    return {
-      title: {
-        default: `${site.site_name}`,
-        template: `%s | ${site.site_name}`,
-      },
-      description: site.site_desc,
-      icons: {
-        icon: site.site_logo
-          ? [
-              {
-                url: site.site_logo,
-                sizes: 'any',
-              },
-            ]
-          : [],
-      },
-    };
-  } catch (error) {
-    return {
-      title: { default: 'PPanel', template: '%s | PPanel' },
-    };
-  }
+  let site: API.SiteConfig | undefined;
+
+  await getGlobalConfig({ skipErrorHandler: true })
+    .then((res) => {
+      const config = res.data.data;
+      site = config?.site || undefined;
+    })
+    .catch((error) => {
+      console.error('Error fetching global config:', error);
+    });
+
+  const defaultMetadata = {
+    title: {
+      default: site?.site_name || `PPanel`,
+      template: `%s | ${site?.site_name || 'PPanel'}`,
+    },
+    description: site?.site_desc || '',
+    icons: {
+      icon: site?.site_logo
+        ? [
+            {
+              url: site.site_logo,
+              sizes: 'any',
+            },
+          ]
+        : [
+            { url: '/favicon.ico', sizes: '48x48' },
+            { url: '/favicon.svg', type: 'image/svg+xml' },
+          ],
+      apple: site?.site_logo || '/apple-touch-icon.png',
+    },
+    manifest: '/site.webmanifest',
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+      { media: '(prefers-color-scheme: dark)', color: '#000000' },
+    ],
+  };
+
+  return defaultMetadata;
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
