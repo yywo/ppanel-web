@@ -4,7 +4,7 @@ import { currentUser } from '@/services/admin/user';
 import { getGlobalConfig } from '@/services/common/common';
 import '@shadcn/ui/globals.css';
 import { Toaster } from '@shadcn/ui/sonner';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
@@ -45,14 +45,17 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: site?.site_logo || '/apple-touch-icon.png',
     },
     manifest: '/site.webmanifest',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
-      { media: '(prefers-color-scheme: dark)', color: '#000000' },
-    ],
   };
 
   return defaultMetadata;
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();

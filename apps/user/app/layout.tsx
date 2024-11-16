@@ -8,7 +8,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
 import { cookies } from 'next/headers';
-import { Metadata } from 'next/types';
+import { Metadata, Viewport } from 'next/types';
 import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
 
@@ -45,13 +45,16 @@ export async function generateMetadata(): Promise<Metadata> {
       apple: site?.site_logo || '/apple-touch-icon.png',
     },
     manifest: '/site.webmanifest',
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
-      { media: '(prefers-color-scheme: dark)', color: '#000000' },
-    ],
   };
   return defaultMetadata;
 }
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FFFFFF' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
+  ],
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
