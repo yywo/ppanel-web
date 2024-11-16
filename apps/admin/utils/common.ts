@@ -12,7 +12,7 @@ export function getLocale() {
   const defaultLocale = locales.includes(browserLocale) ? browserLocale : '';
   const cookies = new Cookies(null, { path: '/' });
   const cookieLocale = cookies.get('locale') || '';
-  const locale = cookieLocale || defaultLocale || NEXT_PUBLIC_DEFAULT_LANGUAGE || locales[0];
+  const locale = cookieLocale || defaultLocale || NEXT_PUBLIC_DEFAULT_LANGUAGE;
   return locale;
 }
 
