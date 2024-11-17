@@ -2,6 +2,17 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
+/** Query User Affiliate GET /v1/public/user/affiliate */
+export async function queryUserAffiliate(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.QueryUserAffiliateResponse }>(
+    '/v1/public/user/affiliate',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** Query User Balance Log GET /v1/public/user/balance_log */
 export async function queryUserBalanceLog(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.QueryUserBalanceLogListResponse }>(

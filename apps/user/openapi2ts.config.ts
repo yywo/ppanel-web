@@ -9,7 +9,7 @@ const config = [
     requestLibPath: "import request from '@/utils/request';",
     schemaPath: 'https://swagger.ppanel.dev/user.json',
     serversPath: './services',
-    projectName: 'admin',
+    projectName: 'user',
   },
 ];
 

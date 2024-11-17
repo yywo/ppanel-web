@@ -211,6 +211,11 @@ declare namespace API {
     total: number;
   };
 
+  type QueryUserAffiliateResponse = {
+    list: UserAffiliate[];
+    total: number;
+  };
+
   type QueryUserBalanceLogListResponse = {
     list: UserBalanceLog[];
     total: number;
@@ -343,6 +348,14 @@ declare namespace API {
   type UpdateUserTicketStatusRequest = {
     id: number;
     status: number;
+  };
+
+  type UserAffiliate = {
+    email: string;
+    avatar: string;
+    telegram: number;
+    registered_at: number;
+    enable: boolean;
   };
 
   type UserBalanceLog = {

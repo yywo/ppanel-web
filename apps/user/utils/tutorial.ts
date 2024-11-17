@@ -1,8 +1,9 @@
-const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-tutorial@main';
+const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-tutorial';
 
 export async function getTutorial(path: string): Promise<string> {
   try {
     const url = `${BASE_URL}/${path}`;
+    await fetch(url.replace('cdn', 'purge'));
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -24,9 +25,7 @@ type TutorialItem = {
 
 export async function getTutorialList() {
   return await getTutorial('SUMMARY.md').then((markdown) => {
-    const map = parseTutorialToMap(
-      markdown.replace(/en-us/gi, 'en-US').replace(/zh-cn/gi, 'zh-CN'),
-    );
+    const map = parseTutorialToMap(markdown);
     map.forEach((value, key) => {
       map.set(
         key,

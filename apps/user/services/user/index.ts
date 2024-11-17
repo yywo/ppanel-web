@@ -9,7 +9,6 @@ import * as payment from './payment';
 import * as subscribe from './subscribe';
 import * as ticket from './ticket';
 import * as user from './user';
-
 export default {
   announcement,
   document,
