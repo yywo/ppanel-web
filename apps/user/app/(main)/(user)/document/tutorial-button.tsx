@@ -8,6 +8,7 @@ import { useOutsideClick } from '@shadcn/ui/hooks/use-outside-click';
 import { cn } from '@shadcn/ui/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { useEffect, useId, useRef, useState } from 'react';
 
 interface Item {
@@ -15,6 +16,8 @@ interface Item {
   title: string;
 }
 export function TutorialButton({ items }: { items: Item[] }) {
+  const t = useTranslations('document');
+
   const [active, setActive] = useState<Item | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
@@ -143,7 +146,7 @@ export function TutorialButton({ items }: { items: Item[] }) {
                 'rounded-full',
               )}
             >
-              阅读
+              {t('read')}
             </motion.button>
           </motion.div>
         ))}

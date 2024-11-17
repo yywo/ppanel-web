@@ -9,9 +9,11 @@ import { useOutsideClick } from '@shadcn/ui/hooks/use-outside-click';
 import { cn } from '@shadcn/ui/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { useEffect, useId, useRef, useState } from 'react';
 
 export function DocumentButton({ items }: { items: API.DocumentItem[] }) {
+  const t = useTranslations('document');
   const [active, setActive] = useState<API.DocumentItem | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
@@ -126,7 +128,7 @@ export function DocumentButton({ items }: { items: API.DocumentItem[] }) {
                 'rounded-full',
               )}
             >
-              阅读
+              {t('read')}
             </motion.button>
           </motion.div>
         ))}

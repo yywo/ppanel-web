@@ -1,8 +1,6 @@
 {
-  "back": "Back",
-  "category": "Category",
+  "all": "All",
+  "document": "Document",
   "read": "Read",
-  "tags": "Tags",
-  "title": "Title",
-  "updatedAt": "Updated At"
+  "tutorial": "Tutorial"
 }
