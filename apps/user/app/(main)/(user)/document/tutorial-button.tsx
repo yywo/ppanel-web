@@ -2,8 +2,10 @@
 
 import { getTutorial } from '@/utils/tutorial';
 import { Markdown } from '@repo/ui/markdown';
-import { Button } from '@shadcn/ui/button';
+import { Avatar, AvatarFallback } from '@shadcn/ui/avatar';
+import { buttonVariants } from '@shadcn/ui/button';
 import { useOutsideClick } from '@shadcn/ui/hooks/use-outside-click';
+import { cn } from '@shadcn/ui/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useId, useRef, useState } from 'react';
@@ -90,7 +92,12 @@ export function TutorialButton({ items }: { items: Item[] }) {
                   img: ({ node, className, ...props }) => {
                     return (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img {...props} width={800} height={600} className='my-4 h-auto' />
+                      <img
+                        {...props}
+                        width={800}
+                        height={384}
+                        className='my-4 inline-block size-auto max-h-96'
+                      />
                     );
                   },
                 }}
@@ -101,15 +108,43 @@ export function TutorialButton({ items }: { items: Item[] }) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className='flex w-full flex-wrap items-start gap-4'>
-        {items.map((item) => (
+      <ul className='flex w-full flex-col gap-4'>
+        {items.map((item, index) => (
           <motion.div
             layoutId={`card-${item.title}-${id}`}
-            key={item.title}
+            key={`card-${item.title}-${id}`}
             onClick={() => setActive(item)}
-            className='flex cursor-pointer flex-col rounded-xl'
+            className='bg-background hover:bg-accent flex cursor-pointer items-center justify-between rounded border p-4'
           >
-            <Button variant='secondary'>{item.title}</Button>
+            <div className='flex flex-row items-center gap-4'>
+              <motion.div layoutId={`image-${item.title}-${id}`}>
+                <Avatar className='size-12'>
+                  <AvatarFallback className='bg-primary'>{item.title.split('')[0]}</AvatarFallback>
+                </Avatar>
+              </motion.div>
+              <div className=''>
+                <motion.h3 layoutId={`title-${item.title}-${id}`} className='font-medium'>
+                  {item.title}
+                </motion.h3>
+                {/* <motion.p
+                  layoutId={`description-${item.title}-${id}`}
+                  className='text-center text-neutral-600 md:text-left dark:text-neutral-400'
+                >
+                  {formatDate(item.updated_at)}
+                </motion.p> */}
+              </div>
+            </div>
+            <motion.button
+              layoutId={`button-${item.title}-${id}`}
+              className={cn(
+                buttonVariants({
+                  variant: 'secondary',
+                }),
+                'rounded-full',
+              )}
+            >
+              阅读
+            </motion.button>
           </motion.div>
         ))}
       </ul>
