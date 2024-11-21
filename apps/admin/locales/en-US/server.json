@@ -24,6 +24,7 @@
     "updatedAt": "Updated At"
   },
   "node": {
+    "abnormal": "Abnormal",
     "actions": "Actions",
     "address": "Address",
     "all": "All",
@@ -94,6 +95,8 @@
     "name": "Name",
     "node": "Node",
     "nodeGroup": "Node Group",
+    "normal": "Normal",
+    "onlineCount": "Online users",
     "rate": "Rate",
     "relay": "Relay",
     "serverAddr": "Server IP",

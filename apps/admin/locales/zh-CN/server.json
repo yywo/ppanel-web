@@ -24,6 +24,7 @@
     "updatedAt": "更新时间"
   },
   "node": {
+    "abnormal": "异常",
     "actions": "操作",
     "address": "地址",
     "all": "全部",
@@ -94,6 +95,8 @@
     "name": "名称",
     "node": "节点",
     "nodeGroup": "节点组",
+    "normal": "正常",
+    "onlineCount": "在线人数",
     "rate": "速率",
     "relay": "中继",
     "serverAddr": "服务器IP",

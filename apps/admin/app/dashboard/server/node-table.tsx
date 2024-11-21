@@ -107,6 +107,25 @@ export default function NodeTable() {
             );
           },
         },
+
+        {
+          accessorKey: 'last',
+          header: t('status'),
+          cell: ({ row }) => {
+            const { last } = row.original;
+
+            return last ? (
+              <>
+                <Badge>{t('normal')}</Badge>
+                <span className='ml-2'>
+                  {t('onlineCount')}: {last.count}
+                </span>
+              </>
+            ) : (
+              <Badge variant='destructive'>{t('abnormal')}</Badge>
+            );
+          },
+        },
         {
           accessorKey: 'name',
           header: t('name'),

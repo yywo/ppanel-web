@@ -555,6 +555,11 @@ declare namespace API {
     enable: boolean;
   };
 
+  type Push = {
+    push_at: number;
+    count: number;
+  };
+
   type Response = {
     /** 状态码 */
     code?: number;
@@ -579,6 +584,7 @@ declare namespace API {
     shadowsocks?: Shadowsocks;
     created_at: number;
     updated_at: number;
+    last: Push;
   };
 
   type ServerGroup = {

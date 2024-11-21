@@ -21,3 +21,11 @@ export async function getGlobalConfig(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+
+/** Get Tos Content GET /v1/common/site/tos */
+export async function getTos(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetTosResponse }>('/v1/common/site/tos', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
