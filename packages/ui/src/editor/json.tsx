@@ -3,9 +3,11 @@
 import { useMemo } from 'react';
 import { MonacoEditor, MonacoEditorProps } from './monaco-editor';
 
-interface JSONEditorProps extends Omit<MonacoEditorProps, 'placeholder'> {
+interface JSONEditorProps extends Omit<MonacoEditorProps, 'placeholder' | 'value' | 'onChange'> {
   schema?: Record<string, unknown>;
   placeholder?: Record<string, unknown>;
+  value?: Record<string, unknown> | string;
+  onChange?: (value: Record<string, unknown> | string | undefined) => void;
 }
 
 export function JSONEditor(props: JSONEditorProps) {
@@ -18,7 +20,25 @@ export function JSONEditor(props: JSONEditorProps) {
       key={editorKey}
       title='Edit JSON'
       {...rest}
-      placeholder={JSON.stringify(placeholder, null, 2)}
+      value={
+        typeof props.value === 'string'
+          ? props.value
+          : props.value
+            ? JSON.stringify(props.value, null, 2)
+            : ''
+      }
+      onChange={(value) => {
+        if (props.onChange && typeof value === 'string') {
+          try {
+            props.onChange(
+              props.value && typeof props.value === 'string' ? value : JSON.parse(value),
+            );
+          } catch (e) {
+            console.error('Invalid JSON input:', e);
+          }
+        }
+      }}
+      placeholder={placeholder ? JSON.stringify(placeholder, null, 2) : ''}
       language='json'
       onMount={(editor, monaco) => {
         if (props.onMount) props.onMount(editor, monaco);
