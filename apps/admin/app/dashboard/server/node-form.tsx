@@ -64,7 +64,7 @@ const trojanSchema = z.object({
   port: z.number(),
   network: z.string(),
   sni: z.string().nullish(),
-  allow_insecure: z.boolean().nullable(),
+  allow_insecure: z.boolean().nullish(),
   transport: z.any().nullable(),
   enable_relay: z.boolean().nullish(),
   relay_host: z.string().nullish(),
@@ -1433,7 +1433,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             <JSONEditor
                               title={t('form.transport')}
                               placeholder={placeholders[trojanNetwork]}
-                              value={JSON.stringify(field.value, null, 2)}
+                              value={field.value}
                               onChange={(value) => {
                                 form.setValue(field.name, value);
                               }}
