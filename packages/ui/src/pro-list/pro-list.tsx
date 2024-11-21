@@ -3,6 +3,7 @@
 import { Alert, AlertDescription, AlertTitle } from '@shadcn/ui/alert';
 import { Button } from '@shadcn/ui/button';
 import { Checkbox } from '@shadcn/ui/checkbox';
+import { cn } from '@shadcn/ui/lib/utils';
 import {
   ColumnFiltersState,
   getCoreRowModel,
@@ -142,12 +143,16 @@ export function ProList<TData, TValue extends Record<string, unknown>>({
           )}
         </div>
         <div className='flex flex-1 items-center justify-end gap-2'>
-          <Button variant='outline' className='h-8 w-8 p-2' onClick={fetchData}>
-            <RefreshCcw className='h-4 w-4' />
-          </Button>
-          <Button variant='outline' className='h-8 w-8 p-2' onClick={reset}>
-            <ListRestart className='h-4 w-4' />
-          </Button>
+          {params && params?.length > 0 && (
+            <>
+              <Button variant='outline' className='h-8 w-8 p-2' onClick={fetchData}>
+                <RefreshCcw className='h-4 w-4' />
+              </Button>
+              <Button variant='outline' className='h-8 w-8 p-2' onClick={reset}>
+                <ListRestart className='h-4 w-4' />
+              </Button>
+            </>
+          )}
           {header?.toolbar}
         </div>
       </div>
@@ -161,7 +166,11 @@ export function ProList<TData, TValue extends Record<string, unknown>>({
         </Alert>
       )}
 
-      <div className='relative overflow-x-auto'>
+      <div
+        className={cn('relative overflow-x-auto', {
+          'rounded-xl border': data.length === 0,
+        })}
+      >
         <div className='grid grid-cols-1 gap-4'>
           {data.length ? (
             data.map((item, index) => {

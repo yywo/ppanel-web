@@ -23,6 +23,7 @@ export default getRequestConfig(async () => {
     wallet: (await import(`./${locale}/wallet.json`)).default,
     ticket: (await import(`./${locale}/ticket.json`)).default,
     document: (await import(`./${locale}/document.json`)).default,
+    affiliate: (await import(`./${locale}/affiliate.json`)).default,
   };
 
   return {

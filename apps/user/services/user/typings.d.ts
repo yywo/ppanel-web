@@ -212,6 +212,7 @@ declare namespace API {
   };
 
   type QueryUserAffiliateResponse = {
+    sum: number;
     list: UserAffiliate[];
     total: number;
   };
@@ -353,7 +354,6 @@ declare namespace API {
   type UserAffiliate = {
     email: string;
     avatar: string;
-    telegram: number;
     registered_at: number;
     enable: boolean;
   };

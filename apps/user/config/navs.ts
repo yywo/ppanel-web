@@ -37,6 +37,11 @@ export const navs = [
         icon: 'uil:wallet',
         title: 'wallet',
       },
+      {
+        url: '/affiliate',
+        icon: 'uil:users-alt',
+        title: 'affiliate',
+      },
     ],
   },
   {

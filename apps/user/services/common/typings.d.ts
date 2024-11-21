@@ -25,6 +25,10 @@ declare namespace API {
     subscribe: SubscribeConfig;
   };
 
+  type GetTosResponse = {
+    tos_content: string;
+  };
+
   type InviteConfig = {
     forced_invite: boolean;
   };
