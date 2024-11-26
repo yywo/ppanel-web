@@ -87,13 +87,19 @@ export default function Page() {
                       </span>
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>{t('reductionPrice')}</span>
+                      <span className='text-muted-foreground'>{t('discount')}</span>
                       <span>
-                        <Display type='currency' value={row.original.reduction} />
+                        <Display type='currency' value={row.original.discount} />
                       </span>
                     </li>
                     <li className='flex items-center justify-between'>
-                      <span className='text-muted-foreground'>{t('feAmount')}</span>
+                      <span className='text-muted-foreground'>{t('couponDiscount')}</span>
+                      <span>
+                        <Display type='currency' value={row.original.coupon_discount} />
+                      </span>
+                    </li>
+                    <li className='flex items-center justify-between'>
+                      <span className='text-muted-foreground'>{t('feeAmount')}</span>
                       <span>
                         <Display type='currency' value={row.original.fee_amount} />
                       </span>

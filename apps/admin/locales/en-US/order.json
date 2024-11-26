@@ -1,7 +1,9 @@
 {
   "amount": "Amount",
+  "couponDiscount": "Coupon Discount",
+  "discount": "Discount Amount",
   "failed": "Failed",
-  "feAmount": "Fee Amount",
+  "feeAmount": "Fee Amount",
   "method": "Payment Method",
   "methods": {
     "alipay_f2f": "Alipay (Face to Face)",
@@ -11,7 +13,6 @@
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
   "orderNumber": "Order Number",
-  "reductionPrice": "Discount Amount",
   "status": "Order Status",
   "subscribe": "Subscribe",
   "subscribePrice": "Subscription Price",

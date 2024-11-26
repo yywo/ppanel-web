@@ -1,7 +1,9 @@
 {
   "amount": "金额",
+  "couponDiscount": "优惠券折扣",
+  "discount": "折扣金额",
   "failed": "失败",
-  "feAmount": "手续费",
+  "feeAmount": "手续费",
   "method": "支付方式",
   "methods": {
     "alipay_f2f": "支付宝(面对面)",
@@ -11,7 +13,6 @@
     "stripe_wechat_pay": "Stripe(微信)"
   },
   "orderNumber": "订单编号",
-  "reductionPrice": "优惠金额",
   "status": {
     "0": "状态",
     "1": "待支付",
