@@ -93,17 +93,18 @@ declare namespace API {
     id: number;
     orderNo: string;
     type: number;
-    subscribe_id: number;
-    subscribe: SubscribeInfo;
     quantity: number;
     price: number;
     amount: number;
-    fee_amount: number;
+    discount: number;
     coupon: string;
-    reduction: number;
-    trade_no: string;
+    coupon_discount: number;
     method: string;
+    fee_amount: number;
+    trade_no: string;
     status: number;
+    subscribe_id: number;
+    subscribe: SubscribeInfo;
     created_at: number;
   };
 
@@ -122,9 +123,10 @@ declare namespace API {
   type PreOrderResponse = {
     price: number;
     amount: number;
+    discount: number;
+    coupon: string;
+    coupon_discount: number;
     fee_amount: number;
-    coupon: number;
-    reduction: number;
   };
 
   type PreRenewalOrderResponse = {

@@ -22,7 +22,7 @@ export default function Page() {
         <div className='flex bg-cover bg-center lg:w-1/2 lg:flex-auto'>
           <div className='lg:py-15 md:px-15 flex w-full flex-col items-center justify-center px-5 py-7'>
             <Link className='mb-0 flex flex-col items-center lg:mb-12' href='/'>
-              <Image src={site.site_logo} height={48} width={48} alt='logo' />
+              <Image src={site.site_logo} height={48} width={48} alt='logo' unoptimized />
               <span className='text-2xl font-semibold'>{site.site_name}</span>
             </Link>
             <LoginIcon className='mx-auto hidden w-[275px] md:w-1/2 lg:block xl:w-[500px]' />

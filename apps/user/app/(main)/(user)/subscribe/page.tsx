@@ -40,7 +40,7 @@ export default function Page() {
   return (
     <>
       <Tabs value={group} onValueChange={setGroup} className='space-y-4'>
-        {groups?.length && (
+        {groups && groups.length > 0 && (
           <>
             <h1 className='text-muted-foreground w-full'>{t('category')}</h1>
             <TabsList>

@@ -10,8 +10,8 @@ interface SubscribeBillingProps {
     subscribe_id?: number;
     quantity?: number;
     price?: number;
-    reduction?: number;
-    coupon?: number;
+    discount?: number;
+    coupon_discount?: number;
     fee_amount?: number;
     amount?: number;
     unit_price?: number;
@@ -42,13 +42,13 @@ export function SubscribeBilling({ order }: SubscribeBillingProps) {
         <li>
           <span className='text-muted-foreground'>{t('productDiscount')}</span>
           <span>
-            <Display type='currency' value={order?.reduction} />
+            <Display type='currency' value={order?.discount} />
           </span>
         </li>
         <li>
           <span className='text-muted-foreground'>{t('couponDiscount')}</span>
           <span>
-            <Display type='currency' value={order?.coupon} />
+            <Display type='currency' value={order?.coupon_discount} />
           </span>
         </li>
         <li>

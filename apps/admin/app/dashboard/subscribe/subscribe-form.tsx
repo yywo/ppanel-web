@@ -184,9 +184,9 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       <FormControl>
                         <JSONEditor
                           title={t('form.description')}
-                          value={field.value}
+                          value={field.value && JSON.parse(field.value)}
                           onChange={(value) => {
-                            form.setValue(field.name, value);
+                            form.setValue(field.name, JSON.stringify(value));
                           }}
                           placeholder={{
                             description: 'description',

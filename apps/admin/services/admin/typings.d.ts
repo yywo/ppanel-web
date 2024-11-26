@@ -118,11 +118,13 @@ declare namespace API {
   type CreateOrderRequest = {
     user_id: number;
     type: number;
+    quantity?: number;
     price: number;
     amount: number;
-    fee_amount: number;
+    discount?: number;
     coupon?: string;
-    reduction?: number;
+    coupon_discount?: number;
+    fee_amount: number;
     method?: string;
     trade_no?: string;
     status?: number;
@@ -529,12 +531,14 @@ declare namespace API {
     user_id: number;
     order_no: string;
     type: number;
+    quantity: number;
     price: number;
     amount: number;
-    fee_amount: number;
+    discount: number;
     coupon: string;
-    reduction: number;
+    coupon_discount: number;
     method: string;
+    fee_amount: number;
     trade_no: string;
     status: number;
     subscribe_id: number;
@@ -661,7 +665,7 @@ declare namespace API {
     transport: Record<string, any>;
     enable_relay: boolean;
     relay_host: string;
-    relay_rort: number;
+    relay_port: number;
   };
 
   type UpdateAnnouncementEnableRequest = {

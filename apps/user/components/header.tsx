@@ -14,7 +14,9 @@ export default function Header() {
   const { site } = common;
   const Logo = (
     <Link href='/' className='flex items-center gap-2 text-lg font-bold'>
-      {site.site_logo && <Image src={site.site_logo} width={48} height={48} alt='logo' />}
+      {site.site_logo && (
+        <Image src={site.site_logo} width={48} height={48} alt='logo' unoptimized />
+      )}
       <span>{site.site_name}</span>
     </Link>
   );

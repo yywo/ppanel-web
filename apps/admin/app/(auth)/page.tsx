@@ -21,7 +21,13 @@ export default function Page() {
         <div className='flex lg:w-1/2 lg:flex-auto'>
           <div className='flex w-full flex-col items-center justify-center px-5 py-4 md:px-14 lg:py-14'>
             <Link className='mb-0 flex flex-col items-center lg:mb-12' href='/'>
-              <Image src={site.site_logo || '/favicon.svg'} height={48} width={48} alt='logo' />
+              <Image
+                src={site.site_logo || '/favicon.svg'}
+                height={48}
+                width={48}
+                alt='logo'
+                unoptimized
+              />
               <span className='text-2xl font-semibold'>{site.site_name}</span>
             </Link>
             <LoginIcon className='mx-auto hidden w-[275px] md:w-1/2 lg:block xl:w-[500px]' />

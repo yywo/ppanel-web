@@ -92,7 +92,7 @@ export function Combobox<T, M extends boolean = false>({
         <Command>
           <CommandInput placeholder='Search...' className='h-9' />
           <CommandEmpty>
-            <BoxIcon />
+            <BoxIcon className='inline-block text-slate-500' />
           </CommandEmpty>
           <CommandGroup>
             <CommandList>

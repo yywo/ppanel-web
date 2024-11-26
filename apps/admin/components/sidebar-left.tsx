@@ -37,6 +37,7 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     width={48}
                     height={48}
                     className='size-full'
+                    unoptimized
                   />
                 </div>
                 <div className='grid flex-1 text-left text-sm leading-tight'>

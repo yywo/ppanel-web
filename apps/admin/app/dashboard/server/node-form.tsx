@@ -37,7 +37,7 @@ const shadowsocksSchema = z.object({
 const vmessSchema = z.object({
   host: z.string(),
   port: z.number(),
-  enable_tls: z.boolean().nullable(),
+  enable_tls: z.boolean().nullish(),
   tls_config: z.any().nullable(),
   network: z.string(),
   transport: z.any().nullable(),
