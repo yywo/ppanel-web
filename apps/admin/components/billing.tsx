@@ -10,15 +10,32 @@ const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets/billin
 interface BillingProps {
   type: 'dashboard' | 'payment';
 }
+
+interface ItemType {
+  logo: string;
+  title: string;
+  description: string;
+  poster: string;
+  expiryDate: string;
+  href: string;
+}
+
 export default async function Billing({ type }: BillingProps) {
   const locale = await getLocale();
-  const response = await fetch(BASE_URL, { cache: 'no-store' });
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  let list: ItemType[] = [];
+  try {
+    const response = await fetch(BASE_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const data = await response.json();
+    const now = new Date().getTime();
+    list = data[type].filter((item) => {
+      const expiryDate = Date.parse(item.expiryDate);
+      return !isNaN(expiryDate) && expiryDate > now;
+    });
+  } catch (error) {
+    return null;
   }
-  const data = await response.json();
-
-  if (data[type].length === 0) return null;
+  if (list && list.length === 0) return null;
   return (
     <TooltipProvider>
       <h1 className='text mt-2 font-bold'>
@@ -30,7 +47,7 @@ export default async function Billing({ type }: BillingProps) {
         </span>
       </h1>
       <div className='grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-5'>
-        {data[type].map((item, index) => (
+        {list.map((item, index) => (
           <Tooltip key={index}>
             <TooltipTrigger asChild>
               <Link href={item.href} target='_blank'>
