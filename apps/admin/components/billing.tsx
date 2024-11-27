@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@shadcn/ui/avatar';
 import { Card, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadcn/ui/tooltip';
-import { getLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ interface ItemType {
 }
 
 export default async function Billing({ type }: BillingProps) {
-  const locale = await getLocale();
+  const t = await getTranslations('common.billing');
   let list: ItemType[] = [];
   try {
     const response = await fetch(BASE_URL, { cache: 'no-store' });
@@ -39,14 +39,10 @@ export default async function Billing({ type }: BillingProps) {
   return (
     <TooltipProvider>
       <h1 className='text mt-2 font-bold'>
-        <span>{locale === 'en-US' ? 'Advertisement' : '广告合作'}</span>
-        <span className='text-muted-foreground ml-2 text-xs'>
-          {locale === 'en-US'
-            ? 'Ad revenue helps PPanel continue to release updates'
-            : '广告收入有助于 PPanel 继续发布更新'}
-        </span>
+        <span>{t('title')}</span>
+        <span className='text-muted-foreground ml-2 text-xs'>{t('description')}</span>
       </h1>
-      <div className='grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-5'>
+      <div className='grid gap-3 md:grid-cols-3 lg:grid-cols-6'>
         {list.map((item, index) => (
           <Tooltip key={index}>
             <TooltipTrigger asChild>

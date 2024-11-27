@@ -118,6 +118,7 @@ export default function Statistics() {
   const currentData = trafficData[dataType][timeFrame];
   return (
     <>
+      <h1 className='text-lg font-semibold'>统计</h1>
       <div className='grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-8'>
         {[
           {
