@@ -11,6 +11,7 @@ import { Separator } from '@shadcn/ui/separator';
 import { useQuery } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export function ProductShowcase() {
   const t = useTranslations('index');
@@ -118,9 +119,9 @@ export function ProductShowcase() {
                 <motion.div>
                   <Button
                     className='absolute bottom-0 left-0 w-full rounded-b-xl rounded-t-none'
-                    onClick={() => {}}
+                    asChild
                   >
-                    {t('subscribe')}
+                    <Link href='/subscribe'>{t('subscribe')}</Link>
                   </Button>
                 </motion.div>
               </CardFooter>
