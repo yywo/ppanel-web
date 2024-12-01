@@ -16,6 +16,7 @@
     "rowsPerPage": "Rows per page",
     "selectedItems": "{total} items selected"
   },
+  "login": "Log in / Sign up",
   "request": {
     "10001": "Database query failed, please try again later",
     "10002": "Data update failed, please try again later",
