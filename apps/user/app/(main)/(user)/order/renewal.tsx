@@ -26,8 +26,8 @@ export default function Renewal({
   subscribe,
 }: {
   mark: string;
-  subscribe: Omit<API.SubscribeDetails, 'discount'> & {
-    discount: string | API.UserSubscribeDiscount[];
+  subscribe: Omit<API.Subscribe, 'discount'> & {
+    discount: string | API.SubscribeDiscount[];
   };
 }) {
   const t = useTranslations('order');
@@ -77,7 +77,7 @@ export default function Renewal({
   function getDiscount() {
     try {
       if (typeof subscribe.discount === 'string') {
-        return JSON.parse(subscribe?.discount) as API.UserSubscribeDiscount[];
+        return JSON.parse(subscribe?.discount) as API.SubscribeDiscount[];
       }
       return subscribe?.discount;
     } catch (error) {

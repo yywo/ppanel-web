@@ -27,7 +27,7 @@ export default function Telegram() {
       await updateTelegramConfig({
         ...data,
         [key]: value,
-      } as API.GetTelegramConfigResponse);
+      } as API.TelegramConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

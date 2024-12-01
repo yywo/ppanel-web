@@ -53,10 +53,10 @@ export default function Page() {
     queryKey: ['queryApplicationConfig'],
     queryFn: async () => {
       const { data } = await queryApplicationConfig();
-      return data.data as API.QueryApplicationConfigResponse;
+      return data.data as API.ApplicationResponse;
     },
   });
-  const [platform, setPlatform] = useState<keyof API.QueryApplicationConfigResponse>('windows');
+  const [platform, setPlatform] = useState<keyof API.ApplicationResponse>('windows');
 
   const handleCopy = async (text: string) => {
     try {
@@ -79,9 +79,7 @@ export default function Page() {
           <div className='flex flex-wrap justify-between gap-4'>
             <Tabs
               value={platform}
-              onValueChange={(value) =>
-                setPlatform(value as keyof API.QueryApplicationConfigResponse)
-              }
+              onValueChange={(value) => setPlatform(value as keyof API.ApplicationResponse)}
               className='w-full max-w-full md:w-auto'
             >
               <TabsList className='flex *:flex-auto'>

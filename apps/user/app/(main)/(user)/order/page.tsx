@@ -15,7 +15,7 @@ export default function Page() {
 
   const ref = useRef<ProListActions>(null);
   return (
-    <ProList<API.OrderDetails, Record<string, unknown>>
+    <ProList<API.OrderDetail, Record<string, unknown>>
       action={ref}
       request={async (pagination, filter) => {
         const response = await queryOrderList({ ...pagination, ...filter });
@@ -30,14 +30,14 @@ export default function Page() {
             <CardHeader className='bg-muted/50 flex flex-row items-center justify-between gap-2 space-y-0 p-3'>
               <CardTitle>
                 {t('orderNo')}
-                <p className='text-sm'>{item.orderNo}</p>
+                <p className='text-sm'>{item.order_no}</p>
               </CardTitle>
               <CardDescription className='flex gap-2'>
                 {item.status === 1 ? (
                   <>
                     <Link
                       key='payment'
-                      href={`/payment?order_no=${item.orderNo}`}
+                      href={`/payment?order_no=${item.order_no}`}
                       className={buttonVariants({ size: 'sm' })}
                     >
                       {t('payment')}
@@ -47,7 +47,7 @@ export default function Page() {
                       size='sm'
                       variant='destructive'
                       onClick={async () => {
-                        await closeOrder({ orderNo: item.orderNo });
+                        await closeOrder({ orderNo: item.order_no });
                         ref.current?.refresh();
                       }}
                     >
@@ -57,7 +57,7 @@ export default function Page() {
                 ) : (
                   <Link
                     key='detail'
-                    href={`/payment?order_no=${item.orderNo}`}
+                    href={`/payment?order_no=${item.order_no}`}
                     className={buttonVariants({ size: 'sm' })}
                   >
                     {t('detail')}

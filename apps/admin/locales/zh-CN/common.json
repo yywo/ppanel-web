@@ -1,7 +1,7 @@
 {
   "billing": {
-    "title": "赞助商",
-    "description": "赞助有助于 PPanel 继续发布更新!"
+    "description": "赞助有助于 PPanel 继续发布更新!",
+    "title": "赞助商"
   },
   "empty": [
     "想象一下这里充满了精彩的内容！暂时只能靠想象了…",

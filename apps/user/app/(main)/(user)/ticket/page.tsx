@@ -51,7 +51,7 @@ export default function Page() {
     queryKey: ['getUserTicketDetails', ticketId],
     queryFn: async () => {
       const { data } = await getUserTicketDetails({ id: ticketId });
-      return data.data as API.UserTicket;
+      return data.data as API.Ticket;
     },
     enabled: !!ticketId,
     refetchInterval: 5000,
@@ -74,7 +74,7 @@ export default function Page() {
 
   return (
     <>
-      <ProList<API.UserTicket, { status: number }>
+      <ProList<API.Ticket, { status: number }>
         action={ref}
         header={{
           title: t('ticketList'),

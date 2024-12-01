@@ -17,7 +17,7 @@ import { SubscribeDetail } from './detail';
 
 export default function Page() {
   const t = useTranslations('subscribe');
-  const [subscribe, setSubscribe] = useState<API.SubscribeDetails>();
+  const [subscribe, setSubscribe] = useState<API.Subscribe>();
 
   const [group, setGroup] = useState<string>('');
 
@@ -81,7 +81,6 @@ export default function Page() {
                                 icon: string;
                                 label: string;
                                 type: 'default' | 'success' | 'destructive';
-                                support: boolean;
                               },
                               index: number,
                             ) => (

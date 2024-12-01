@@ -1,19 +1,28 @@
 declare namespace API {
-  type AnnouncementDetails = {
+  type Announcement = {
     id: number;
     title: string;
     content: string;
+    enable: boolean;
     created_at: number;
     updated_at: number;
   };
 
-  type ApplicationConfig = {
+  type Application = {
     id: number;
     name: string;
     platform: string;
     subscribe_type: string;
     icon: string;
     url: string;
+  };
+
+  type ApplicationResponse = {
+    windows: Application[];
+    mac: Application[];
+    linux: Application[];
+    android: Application[];
+    ios: Application[];
   };
 
   type CheckoutOrderRequest = {
@@ -30,6 +39,23 @@ declare namespace API {
     orderNo: string;
   };
 
+  type Coupon = {
+    id: number;
+    name: string;
+    code: string;
+    count: number;
+    type: number;
+    discount: number;
+    start_time: number;
+    expire_time: number;
+    user_limit: number;
+    subscribe: number[];
+    used_count: number;
+    enable: boolean;
+    created_at: number;
+    updated_at: number;
+  };
+
   type CreateUserTicketFollowRequest = {
     ticket_id: number;
     from: string;
@@ -42,24 +68,45 @@ declare namespace API {
     description: string;
   };
 
-  type DocumentDetail = {
+  type CurrencyConfig = {
+    currency_unit: string;
+    currency_symbol: string;
+    access_key: string;
+  };
+
+  type Document = {
     id: number;
     title: string;
     content: string;
     tags: string[];
+    show: boolean;
     created_at: number;
     updated_at: number;
   };
 
-  type DocumentItem = {
+  type EmailSmtpConfig = {
+    email_smtp_host: string;
+    email_smtp_port: number;
+    email_smtp_user: string;
+    email_smtp_pass: string;
+    email_smtp_from: string;
+    email_smtp_ssl: boolean;
+    verify_email_template: string;
+    maintenance_email_template: string;
+    expiration_email_template: string;
+  };
+
+  type Follow = {
     id: number;
-    title: string;
-    tags: string[];
-    updated_at: number;
+    ticket_id: number;
+    from: string;
+    type: number;
+    content: string;
+    created_at: number;
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymentItem[];
+    list: PaymentConfig[];
   };
 
   type GetUserTicketDetailRequest = {
@@ -86,12 +133,25 @@ declare namespace API {
 
   type GetUserTicketListResponse = {
     total: number;
-    list: UserTicket[];
+    list: Ticket[];
   };
 
-  type OrderDetails = {
+  type InviteConfig = {
+    forced_invite: boolean;
+    referral_percentage: number;
+    only_first_purchase: boolean;
+  };
+
+  type NodeConfig = {
+    node_secret: string;
+    node_pull_interval: number;
+    node_push_interval: number;
+  };
+
+  type Order = {
     id: number;
-    orderNo: string;
+    user_id: number;
+    order_no: string;
     type: number;
     quantity: number;
     price: number;
@@ -104,19 +164,41 @@ declare namespace API {
     trade_no: string;
     status: number;
     subscribe_id: number;
-    subscribe: SubscribeInfo;
     created_at: number;
+    updated_at: number;
   };
 
-  type PaymentItem = {
+  type OrderDetail = {
+    id: number;
+    user_id: number;
+    order_no: string;
+    type: number;
+    quantity: number;
+    price: number;
+    amount: number;
+    discount: number;
+    coupon: string;
+    coupon_discount: number;
+    method: string;
+    fee_amount: number;
+    trade_no: string;
+    status: number;
+    subscribe_id: number;
+    subscribe: Subscribe;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type PaymentConfig = {
     id: number;
     name: string;
     mark: string;
-    icon: string;
-    domain: string;
+    icon?: string;
+    domain?: string;
+    config: Record<string, any>;
     fee_mode: number;
-    fee_percent: number;
-    fee_amount: number;
+    fee_percent?: number;
+    fee_amount?: number;
     enable: boolean;
   };
 
@@ -144,6 +226,11 @@ declare namespace API {
     order_no: string;
   };
 
+  type Push = {
+    push_at: number;
+    count: number;
+  };
+
   type QueryAnnouncementParams = {
     page: number;
     size: number;
@@ -156,15 +243,7 @@ declare namespace API {
 
   type QueryAnnouncementResponse = {
     total: number;
-    announcements: AnnouncementDetails[];
-  };
-
-  type QueryApplicationConfigResponse = {
-    windows: ApplicationConfig[];
-    mac: ApplicationConfig[];
-    linux: ApplicationConfig[];
-    android: ApplicationConfig[];
-    ios: ApplicationConfig[];
+    announcements: Announcement[];
   };
 
   type QueryDocumentDetailParams = {
@@ -177,7 +256,7 @@ declare namespace API {
 
   type QueryDocumentListResponse = {
     total: number;
-    list: DocumentItem[];
+    list: Document[];
   };
 
   type QueryOrderDetailParams = {
@@ -200,16 +279,16 @@ declare namespace API {
 
   type QueryOrderListResponse = {
     total: number;
-    list: OrderDetails[];
+    list: OrderDetail[];
   };
 
   type QuerySubscribeGroupListResponse = {
-    list: UserSubscribeGroupDetails[];
+    list: SubscribeGroup[];
     total: number;
   };
 
   type QuerySubscribeListResponse = {
-    list: SubscribeDetails[];
+    list: Subscribe[];
     total: number;
   };
 
@@ -236,6 +315,17 @@ declare namespace API {
 
   type RechargeOrderResponse = {
     order_no: string;
+  };
+
+  type RegisterConfig = {
+    stop_register: boolean;
+    enable_trial: boolean;
+    enable_email_verify: boolean;
+    enable_email_domain_suffix: boolean;
+    email_domain_suffix_list: string;
+    enable_ip_register_limit: boolean;
+    ip_register_limit: number;
+    ip_register_limit_duration: number;
   };
 
   type RenewalOrderRequest = {
@@ -269,66 +359,129 @@ declare namespace API {
     data?: Record<string, any>;
   };
 
+  type Server = {
+    id: number;
+    name: string;
+    server_addr: string;
+    speed_limit: number;
+    traffic_ratio: number;
+    groupId: number;
+    protocol: string;
+    enable: boolean;
+    vmess?: Vmess;
+    vless?: Vless;
+    trojan?: Trojan;
+    shadowsocks?: Shadowsocks;
+    created_at: number;
+    updated_at: number;
+    last: Push;
+  };
+
+  type ServerGroup = {
+    id: number;
+    name: string;
+    description: string;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type Shadowsocks = {
+    method: string;
+    port: number;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
+  };
+
+  type SiteConfig = {
+    host: string;
+    site_name: string;
+    site_desc: string;
+    site_logo: string;
+  };
+
   type StripePayment = {
     method: string;
     client_secret: string;
     publishable_key: string;
   };
 
-  type SubscribeDetails = {
+  type Subscribe = {
     id: number;
     name: string;
     description: string;
     unit_price: number;
-    discount: UserSubscribeDiscount[];
+    discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
     traffic: number;
-    group_id: number;
     speed_limit: number;
     device_limit: number;
     quota: number;
+    group_id: number;
+    server_group: number[];
+    server: number[];
     show: boolean;
     sell: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
-  type SubscribeDiscountInfo = {
+  type SubscribeConfig = {
+    single_model: boolean;
+    subscribe_path: string;
+    subscribe_domain: string;
+    pan_domain: boolean;
+  };
+
+  type SubscribeDiscount = {
     months: number;
     discount: number;
   };
 
-  type SubscribeInfo = {
+  type SubscribeGroup = {
     id: number;
     name: string;
     description: string;
-    discount: string;
-    unit_price: number;
-    replacement: number;
-    inventory: number;
-    traffic: number;
-    group_id: number;
-    speed_limit: number;
-    device_limit: number;
-    quota: number;
-    show: boolean;
-    sell: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
-  type SubscribeItem = {
+  type SubscribeType = {
+    subscribe_types: string[];
+  };
+
+  type TelegramConfig = {
+    telegram_bot_token: string;
+    telegram_group_url: string;
+    telegram_notify: boolean;
+  };
+
+  type Ticket = {
     id: number;
-    name: string;
+    title: string;
     description: string;
-    discount: string;
-    unit_price: number;
-    replacement: number;
-    inventory: number;
-    traffic: number;
-    group_id: number;
-    speed_limit: number;
-    device_limit: number;
-    quota: number;
-    show: boolean;
-    sell: boolean;
+    user_id: number;
+    follow?: Follow[];
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type TosConfig = {
+    tos_content: string;
+  };
+
+  type Trojan = {
+    network: string;
+    port: number;
+    host: string;
+    sni: string;
+    allow_insecure: boolean;
+    transport: Record<string, any>;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
   };
 
   type UpdateUserNotifyRequest = {
@@ -353,6 +506,29 @@ declare namespace API {
     status: number;
   };
 
+  type User = {
+    id: number;
+    email: string;
+    avatar: string;
+    balance: number;
+    telegram: number;
+    refer_code: string;
+    referer_id: number;
+    enable: boolean;
+    is_admin?: boolean;
+    valid_email: boolean;
+    enable_email_notify: boolean;
+    enable_telegram_notify: boolean;
+    enable_balance_notify: boolean;
+    enable_login_notify: boolean;
+    enable_subscribe_notify: boolean;
+    enable_trade_notify: boolean;
+    created_at: number;
+    updated_at: number;
+    deleted_at?: number;
+    is_del?: boolean;
+  };
+
   type UserAffiliate = {
     email: string;
     avatar: string;
@@ -370,41 +546,12 @@ declare namespace API {
     created_at: number;
   };
 
-  type UserFollow = {
-    id: number;
-    ticket_id: number;
-    from: string;
-    type: number;
-    content: string;
-    created_at: number;
-  };
-
-  type UserInfo = {
-    id: number;
-    email: string;
-    avatar: string;
-    balance: number;
-    telegram: number;
-    refer_code: string;
-    referer_id: number;
-    enable: boolean;
-    valid_email: boolean;
-    enable_email_notify: boolean;
-    enable_telegram_notify: boolean;
-    enable_balance_notify: boolean;
-    enable_login_notify: boolean;
-    enable_subscribe_notify: boolean;
-    enable_trade_notify: boolean;
-    created_at: number;
-    updated_at: number;
-  };
-
   type UserSubscribe = {
     id: number;
     user_id: number;
     order_id: number;
     subscribe_id: number;
-    subscribe: SubscribeItem;
+    subscribe: Subscribe;
     start_time: number;
     expire_time: number;
     traffic: number;
@@ -416,25 +563,36 @@ declare namespace API {
     updated_at: number;
   };
 
-  type UserSubscribeDiscount = {
-    months: number;
-    discount: number;
+  type VerifyConfig = {
+    turnstile_site_key: string;
+    turnstile_secret: string;
+    enable_login_verify: boolean;
+    enable_register_verify: boolean;
+    enable_reset_password_verify: boolean;
   };
 
-  type UserSubscribeGroupDetails = {
-    id: number;
-    name: string;
-    description: string;
+  type Vless = {
+    host: string;
+    port: number;
+    network: string;
+    transport: Record<string, any>;
+    security: string;
+    security_config: Record<string, any>;
+    xtls: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
   };
 
-  type UserTicket = {
-    id: number;
-    title: string;
-    description: string;
-    user_id: number;
-    follow?: UserFollow[];
-    status: number;
-    created_at: number;
-    updated_at: number;
+  type Vmess = {
+    host: string;
+    port: number;
+    enable_tls: boolean;
+    tls_config: Record<string, any>;
+    network: string;
+    transport: Record<string, any>;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
   };
 }

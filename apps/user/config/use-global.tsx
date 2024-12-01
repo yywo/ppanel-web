@@ -5,15 +5,11 @@ import Base64 from 'crypto-js/enc-base64';
 import UTF8 from 'crypto-js/enc-utf8';
 import { create } from 'zustand';
 
-interface ICommon extends API.GetGlobalConfigResponse {
-  background: string;
-}
-
 export interface GlobalStore {
-  common: ICommon;
-  user?: API.UserInfo;
-  setCommon: (common: Partial<ICommon>) => void;
-  setUser: (user?: API.UserInfo) => void;
+  common: API.GetGlobalConfigResponse;
+  user?: API.User;
+  setCommon: (common: Partial<API.GetGlobalConfigResponse>) => void;
+  setUser: (user?: API.User) => void;
   getUserInfo: () => Promise<void>;
   getUserSubscribe: (uuid: string, type?: string) => string[];
   getAppSubLink: (type: string, url: string) => string;
@@ -39,13 +35,20 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       enable_email_verify: false,
       enable_email_domain_suffix: false,
       email_domain_suffix_list: '',
+      enable_trial: false,
+      enable_ip_register_limit: false,
+      ip_register_limit: 0,
+      ip_register_limit_duration: 0,
     },
     invite: {
       forced_invite: false,
+      referral_percentage: 0,
+      only_first_purchase: false,
     },
     currency: {
       currency_unit: 'USD',
       currency_symbol: '$',
+      access_key: '',
     },
     subscribe: {
       single_model: false,

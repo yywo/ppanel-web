@@ -26,7 +26,7 @@ export async function queryUserBalanceLog(options?: { [key: string]: any }) {
 
 /** Query User Info GET /v1/public/user/info */
 export async function queryUserInfo(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.UserInfo }>('/v1/public/user/info', {
+  return request<API.Response & { data?: API.User }>('/v1/public/user/info', {
     method: 'GET',
     ...(options || {}),
   });

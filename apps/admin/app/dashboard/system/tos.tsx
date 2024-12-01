@@ -25,7 +25,7 @@ export default function Tos() {
       await updateTosConfig({
         ...data,
         [key]: value,
-      } as API.GetTosConfigResponse);
+      } as API.TosConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

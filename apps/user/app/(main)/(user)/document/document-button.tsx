@@ -12,18 +12,18 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useEffect, useId, useRef, useState } from 'react';
 
-export function DocumentButton({ items }: { items: API.DocumentItem[] }) {
+export function DocumentButton({ items }: { items: API.Document[] }) {
   const t = useTranslations('document');
-  const [active, setActive] = useState<API.DocumentItem | boolean | null>(null);
+  const [active, setActive] = useState<API.Document | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
   const { data } = useQuery({
-    enabled: !!(active as API.DocumentItem)?.id,
-    queryKey: ['queryDocumentDetail', (active as API.DocumentItem)?.id],
+    enabled: !!(active as API.Document)?.id,
+    queryKey: ['queryDocumentDetail', (active as API.Document)?.id],
     queryFn: async () => {
       const { data } = await queryDocumentDetail({
-        id: (active as API.DocumentItem)?.id,
+        id: (active as API.Document)?.id,
       });
       return data.data?.content;
     },

@@ -18,7 +18,7 @@ export default function Announcement() {
         page: 1,
         size: 1,
       });
-      return (data.data?.announcements?.[0] as API.AnnouncementDetails) || {};
+      return (data.data?.announcements?.[0] as API.Announcement) || {};
     },
   });
 

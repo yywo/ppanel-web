@@ -25,8 +25,8 @@ export default function Purchase({
   subscribe,
   setSubscribe,
 }: {
-  subscribe?: API.SubscribeDetails;
-  setSubscribe: (subscribe?: API.SubscribeDetails) => void;
+  subscribe?: API.Subscribe;
+  setSubscribe: (subscribe?: API.Subscribe) => void;
 }) {
   const t = useTranslations('order');
 
