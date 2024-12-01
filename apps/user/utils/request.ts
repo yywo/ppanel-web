@@ -28,6 +28,7 @@ requset.interceptors.request.use(
   async (
     config: InternalAxiosRequestConfig & {
       Authorization?: string;
+      skipErrorHandler?: boolean;
     },
   ) => {
     const Authorization = getAuthorization(config.Authorization);
