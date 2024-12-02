@@ -452,7 +452,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     control={form.control}
                     name='vmess.host'
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className='col-span-2'>
                         <FormLabel>{t('form.Host Name')}</FormLabel>
                         <FormControl>
                           <EnhancedInput
@@ -488,68 +488,9 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   />
                   <FormField
                     control={form.control}
-                    name='vmess.tls_config.server_name'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('form.serverName')}</FormLabel>
-                        <FormControl>
-                          <EnhancedInput
-                            {...field}
-                            onValueChange={(value) => {
-                              form.setValue(field.name, value);
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name='vmess.enable_tls'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('form.enableTls')}</FormLabel>
-                        <FormControl>
-                          <div className='pt-2'>
-                            <Switch
-                              checked={!!field.value}
-                              onCheckedChange={(value) => {
-                                form.setValue(field.name, value);
-                              }}
-                            />
-                          </div>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name='vmess.tls_config.allow_insecure'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t('form.allowInsecure')}</FormLabel>
-                        <FormControl>
-                          <div className='pt-2'>
-                            <Switch
-                              checked={!!field.value}
-                              onCheckedChange={(value) => {
-                                form.setValue(field.name, value);
-                              }}
-                            />
-                          </div>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
                     name='vmess.network'
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className='col-span-2'>
                         <FormLabel>{t('form.networkType')}</FormLabel>
                         <FormControl>
                           <Select
@@ -574,6 +515,78 @@ export default function NodeForm<T extends { [x: string]: any }>({
                               <SelectItem value='splithttp'>SplitHTTP</SelectItem>
                             </SelectContent>
                           </Select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name='vmess.enable_tls'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          {t('form.enableTls')}
+                          <Sheet>
+                            <SheetTrigger asChild>
+                              <a className='text-primary ml-2 cursor-pointer'>{t('form.edit')}</a>
+                            </SheetTrigger>
+                            <SheetContent className='p-4'>
+                              <SheetHeader>
+                                <SheetTitle>{t('form.editSecurity')}</SheetTitle>
+                              </SheetHeader>
+                              <div className='grid grid-cols-1 gap-2 pt-4'>
+                                <FormField
+                                  control={form.control}
+                                  name='vmess.tls_config.server_name'
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel>{t('form.serverName')}</FormLabel>
+                                      <FormControl>
+                                        <EnhancedInput
+                                          {...field}
+                                          onValueChange={(value) => {
+                                            form.setValue(field.name, value);
+                                          }}
+                                        />
+                                      </FormControl>
+                                      <FormMessage />
+                                    </FormItem>
+                                  )}
+                                />
+                                <FormField
+                                  control={form.control}
+                                  name='vmess.tls_config.allow_insecure'
+                                  render={({ field }) => (
+                                    <FormItem>
+                                      <FormLabel>{t('form.allowInsecure')}</FormLabel>
+                                      <FormControl>
+                                        <div className='pt-2'>
+                                          <Switch
+                                            checked={!!field.value}
+                                            onCheckedChange={(value) => {
+                                              form.setValue(field.name, value);
+                                            }}
+                                          />
+                                        </div>
+                                      </FormControl>
+                                      <FormMessage />
+                                    </FormItem>
+                                  )}
+                                />
+                              </div>
+                            </SheetContent>
+                          </Sheet>
+                        </FormLabel>
+                        <FormControl>
+                          <div className='pt-2'>
+                            <Switch
+                              checked={!!field.value}
+                              onCheckedChange={(value) => {
+                                form.setValue(field.name, value);
+                              }}
+                            />
+                          </div>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -1116,7 +1129,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     control={form.control}
                     name='vless.network'
                     render={({ field }) => (
-                      <FormItem>
+                      <FormItem className='col-span-2'>
                         <FormLabel>{t('form.networkType')}</FormLabel>
                         <FormControl>
                           <Select
@@ -1151,7 +1164,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     control={form.control}
                     name='vless.xtls'
                     render={({ field }) => (
-                      <FormItem className='col-span-2'>
+                      <FormItem>
                         <FormLabel>{t('form.xtls')}</FormLabel>
                         <FormControl>
                           <Select
