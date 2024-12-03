@@ -1,6 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
+import { Empty } from '@/components/empty';
 import { ProList, ProListActions } from '@/components/pro-list';
 import { closeOrder, queryOrderList } from '@/services/user/order';
 import { formatDate } from '@repo/ui/utils';
@@ -91,6 +92,7 @@ export default function Page() {
           </Card>
         );
       }}
+      empty={<Empty />}
     />
   );
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { Empty } from '@/components/empty';
 import { ProList, ProListActions } from '@/components/pro-list';
 import {
   createUserTicket,
@@ -217,6 +218,7 @@ export default function Page() {
             </Card>
           );
         }}
+        empty={<Empty />}
       />
       <Drawer
         open={!!ticketId}

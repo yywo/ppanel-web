@@ -12,6 +12,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+import { Empty } from '@/components/empty';
 import Purchase from '../order/purchase';
 import { SubscribeDetail } from './detail';
 
@@ -133,6 +134,7 @@ export default function Page() {
               </Card>
             ))}
         </div>
+        {data?.length === 0 && <Empty />}
       </Tabs>
       <Purchase subscribe={subscribe} setSubscribe={setSubscribe} />
     </>

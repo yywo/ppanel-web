@@ -1,8 +1,8 @@
 'use client';
 
+import { Empty } from '@/components/empty';
 import { queryAnnouncement } from '@/services/user/announcement';
 import { Icon } from '@iconify/react';
-import Empty from '@repo/ui/empty';
 import { Markdown } from '@repo/ui/markdown';
 import { Card } from '@shadcn/ui/card';
 import { useQuery } from '@tanstack/react-query';

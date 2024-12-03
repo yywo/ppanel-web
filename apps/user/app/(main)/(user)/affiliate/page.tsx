@@ -1,5 +1,6 @@
 'use client';
 import { Display } from '@/components/display';
+import { Empty } from '@/components/empty';
 import { ProList } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
 import { queryUserAffiliate } from '@/services/user/user';
@@ -70,6 +71,7 @@ export default function Page() {
             </Card>
           );
         }}
+        empty={<Empty />}
       />
     </div>
   );

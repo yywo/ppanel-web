@@ -52,6 +52,7 @@ export interface ProTableProps<TData, TValue> {
     textPageOf: (current: number, total: number) => string;
     selectedRowsText: (total: number) => string;
   }>;
+  empty?: React.ReactNode;
 }
 export interface ProTableActions {
   refresh: () => void;
@@ -66,6 +67,7 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
   actions,
   action,
   texts,
+  empty,
 }: ProTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -240,7 +242,7 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length + 2} className='py-24'>
-                  <Empty />
+                  {empty || <Empty />}
                 </TableCell>
               </TableRow>
             )}
