@@ -127,7 +127,6 @@ export default function NodeForm<T extends { [x: string]: any }>({
         newData = {
           tls_config: {},
           transport: {},
-          enable_tls: false,
           enable_relay: false,
         };
         break;
@@ -135,7 +134,6 @@ export default function NodeForm<T extends { [x: string]: any }>({
         newData = {
           security_config: {},
           transport: {},
-          enable_tls: false,
           enable_relay: false,
         };
         break;
@@ -143,7 +141,6 @@ export default function NodeForm<T extends { [x: string]: any }>({
         newData = {
           transport: {},
           allow_insecure: false,
-          enable_tls: false,
           enable_relay: false,
         };
         break;
