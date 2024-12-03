@@ -5,11 +5,9 @@ import { MarkdownEditor } from '@repo/ui/editor';
 import { toast } from '@shadcn/ui/lib/sonner';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 
 export default function Tos() {
   const t = useTranslations('system.tos');
-  const { resolvedTheme } = useTheme();
   const { data, refetch, isFetched } = useQuery({
     queryKey: ['getTosConfig'],
     queryFn: async () => {
