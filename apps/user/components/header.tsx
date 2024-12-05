@@ -2,11 +2,10 @@
 
 import useGlobalStore from '@/config/use-global';
 import { buttonVariants } from '@shadcn/ui/button';
+import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import LanguageSwitch from './language-switch';
-// import { MobileSidebar } from './mobile-sidebar';
-import { useTranslations } from 'next-intl';
 import ThemeSwitch from './theme-switch';
 import { UserNav } from './user-nav';
 

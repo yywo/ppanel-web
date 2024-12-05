@@ -78,7 +78,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
     const { pan_domain, subscribe_domain, subscribe_path } = get().common.subscribe || {};
     const domains = subscribe_domain
       ? subscribe_domain.split('\n')
-      : [extractDomain(NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL || '')];
+      : [extractDomain(NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL || '', pan_domain)];
 
     return domains.map((domain) => {
       const enc_type = type ? Base64.stringify(UTF8.parse(type)) : '';
