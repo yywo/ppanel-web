@@ -21,15 +21,7 @@ import { useEffect, useState, useTransition } from 'react';
 import { SubscribeBilling } from '../subscribe/billing';
 import { SubscribeDetail } from '../subscribe/detail';
 
-export default function Renewal({
-  mark,
-  subscribe,
-}: {
-  mark: string;
-  subscribe: Omit<API.Subscribe, 'discount'> & {
-    discount: string | API.SubscribeDiscount[];
-  };
-}) {
+export default function Renewal({ mark, subscribe }: { mark: string; subscribe: API.Subscribe }) {
   const t = useTranslations('order');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
@@ -74,16 +66,6 @@ export default function Renewal({
     }
   }, [subscribe.id, mark]);
 
-  function getDiscount() {
-    try {
-      if (typeof subscribe.discount === 'string') {
-        return JSON.parse(subscribe?.discount) as API.SubscribeDiscount[];
-      }
-      return subscribe?.discount;
-    } catch (error) {
-      return [];
-    }
-  }
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
@@ -134,7 +116,7 @@ export default function Renewal({
                     1 {t('month')}
                   </Label>
                 </div>
-                {getDiscount().map((item) => (
+                {subscribe?.discount?.map((item) => (
                   <div key={item.months}>
                     <RadioGroupItem
                       value={String(item.months)}

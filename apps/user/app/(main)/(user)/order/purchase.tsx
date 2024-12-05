@@ -121,7 +121,7 @@ export default function Purchase({
                     1 {t('month')}
                   </Label>
                 </div>
-                {subscribe?.discount.map((item) => (
+                {subscribe?.discount?.map((item) => (
                   <div key={item.months}>
                     <RadioGroupItem
                       value={String(item.months)}
