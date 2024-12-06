@@ -40,6 +40,7 @@
   "devDependencies": {
     "@repo/commitlint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@umijs/openapi": "^1.13.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.10",
