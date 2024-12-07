@@ -11,6 +11,7 @@ import { toast } from '@shadcn/ui/lib/sonner';
 import { Copy } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function Page() {
   const t = useTranslations('affiliate');
@@ -44,18 +45,19 @@ export default function Page() {
             <code className='bg-muted rounded px-2 py-1 text-2xl font-bold'>
               {user?.refer_code}
             </code>
-            <Button
-              variant='secondary'
-              size='sm'
-              className='gap-2'
-              onClick={() => {
-                navigator.clipboard.writeText(`${location.origin}/auth?invite=${user?.refer_code}`);
-                toast.success(t('copySuccess'));
+            <CopyToClipboard
+              text={`${location.origin}/auth?invite=${user?.refer_code}`}
+              onCopy={(text, result) => {
+                if (result) {
+                  toast.success(t('copySuccess'));
+                }
               }}
             >
-              <Copy className='h-4 w-4' />
-              {t('copyInviteLink')}
-            </Button>
+              <Button variant='secondary' size='sm' className='gap-2'>
+                <Copy className='h-4 w-4' />
+                {t('copyInviteLink')}
+              </Button>
+            </CopyToClipboard>
           </div>
         </CardContent>
       </Card>

@@ -64,7 +64,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   try {
     config = await getGlobalConfig({ skipErrorHandler: true }).then((res) => res.data.data);
-    console.log(config);
   } catch (error) {
     /* empty */
   }

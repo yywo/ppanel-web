@@ -32,6 +32,7 @@ import { useState } from 'react';
 
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import Renewal from '../order/renewal';
 import ResetTraffic from '../order/reset-traffic';
 import Subscribe from '../subscribe/page';
@@ -198,16 +199,24 @@ export default function Page() {
                           <CardTitle className='text-sm font-medium'>
                             {t('subscriptionUrl')} {index + 1}
                           </CardTitle>
-                          <span
-                            className='text-primary hover:bg-accent mr-4 flex cursor-pointer rounded p-2 text-sm'
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              handleCopy(url);
+                          <CopyToClipboard
+                            text={url}
+                            onCopy={(text, result) => {
+                              if (result) {
+                                toast.success(t('copySuccess'));
+                              }
                             }}
                           >
-                            <Icon icon='uil:copy' className='mr-2 size-5' />
-                            {t('copy')}
-                          </span>
+                            <span
+                              className='text-primary hover:bg-accent mr-4 flex cursor-pointer rounded p-2 text-sm'
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                            >
+                              <Icon icon='uil:copy' className='mr-2 size-5' />
+                              {t('copy')}
+                            </span>
+                          </CopyToClipboard>
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
