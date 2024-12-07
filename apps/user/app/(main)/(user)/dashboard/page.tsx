@@ -31,6 +31,7 @@ import { QRCodeCanvas } from 'qrcode.react';
 import { useState } from 'react';
 
 import useGlobalStore from '@/config/use-global';
+import { getStat } from '@/services/common/common';
 import Renewal from '../order/renewal';
 import ResetTraffic from '../order/reset-traffic';
 import Subscribe from '../subscribe/page';
@@ -67,6 +68,17 @@ export default function Page() {
     }
   };
 
+  const { data } = useQuery({
+    queryKey: ['getStat'],
+    queryFn: async () => {
+      const { data } = await getStat({
+        skipErrorHandler: true,
+      });
+      return data.data;
+    },
+    refetchOnWindowFocus: false,
+  });
+
   return (
     <div className='flex min-h-[calc(100vh-64px-58px-32px-114px)] w-full flex-col gap-4 overflow-hidden'>
       <Announcement />
@@ -91,23 +103,25 @@ export default function Page() {
                   ))}
               </TabsList>
             </Tabs>
-            <Tabs
-              value={protocol}
-              onValueChange={setProtocol}
-              className='w-full max-w-full md:w-auto'
-            >
-              <TabsList className='flex *:flex-auto'>
-                {['all', 'ss', 'vmess', 'vless', 'trojan'].map((item) => (
-                  <TabsTrigger
-                    value={item === 'all' ? '' : item}
-                    key={item}
-                    className='px-1 uppercase lg:px-3'
-                  >
-                    {item}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
+            {data?.protocol && data?.protocol.length > 1 && (
+              <Tabs
+                value={protocol}
+                onValueChange={setProtocol}
+                className='w-full max-w-full md:w-auto'
+              >
+                <TabsList className='flex *:flex-auto'>
+                  {['all', ...(data?.protocol || [])].map((item) => (
+                    <TabsTrigger
+                      value={item === 'all' ? '' : item}
+                      key={item}
+                      className='px-1 uppercase lg:px-3'
+                    >
+                      {item}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </Tabs>
+            )}
           </div>
           {userSubscribe.map((item) => (
             <Card key={item.id}>

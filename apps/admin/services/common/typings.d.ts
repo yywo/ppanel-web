@@ -104,6 +104,7 @@ declare namespace API {
     user: number;
     node: number;
     country: number;
+    protocol: string[];
   };
 
   type GetSubscriptionResponse = {
@@ -214,6 +215,17 @@ declare namespace API {
     msg?: string;
     /** 数据 */
     data?: Record<string, any>;
+  };
+
+  type SecurityConfig = {
+    server_address?: string;
+    server_name?: string;
+    server_port?: number;
+    fingerprint?: string;
+    private_key?: string;
+    public_key?: string;
+    short_id?: string;
+    allow_insecure?: boolean;
   };
 
   type SendCodeRequest = {
@@ -328,6 +340,11 @@ declare namespace API {
     updated_at: number;
   };
 
+  type TLSConfig = {
+    server_name?: string;
+    allow_insecure?: boolean;
+  };
+
   type TosConfig = {
     tos_content: string;
   };
@@ -436,7 +453,7 @@ declare namespace API {
     network: string;
     transport: Record<string, any>;
     security: string;
-    security_config: Record<string, any>;
+    security_config: SecurityConfig;
     xtls: string;
     enable_relay: boolean;
     relay_host: string;
@@ -447,7 +464,7 @@ declare namespace API {
     host: string;
     port: number;
     enable_tls: boolean;
-    tls_config: Record<string, any>;
+    tls_config: TLSConfig;
     network: string;
     transport: Record<string, any>;
     enable_relay: boolean;

@@ -359,6 +359,17 @@ declare namespace API {
     data?: Record<string, any>;
   };
 
+  type SecurityConfig = {
+    server_address?: string;
+    server_name?: string;
+    server_port?: number;
+    fingerprint?: string;
+    private_key?: string;
+    public_key?: string;
+    short_id?: string;
+    allow_insecure?: boolean;
+  };
+
   type Server = {
     id: number;
     name: string;
@@ -466,6 +477,11 @@ declare namespace API {
     status: number;
     created_at: number;
     updated_at: number;
+  };
+
+  type TLSConfig = {
+    server_name?: string;
+    allow_insecure?: boolean;
   };
 
   type TosConfig = {
@@ -577,7 +593,7 @@ declare namespace API {
     network: string;
     transport: Record<string, any>;
     security: string;
-    security_config: Record<string, any>;
+    security_config: SecurityConfig;
     xtls: string;
     enable_relay: boolean;
     relay_host: string;
@@ -588,7 +604,7 @@ declare namespace API {
     host: string;
     port: number;
     enable_tls: boolean;
-    tls_config: Record<string, any>;
+    tls_config: TLSConfig;
     network: string;
     transport: Record<string, any>;
     enable_relay: boolean;
