@@ -2,14 +2,7 @@
 
 import { Icon } from '@iconify/react';
 import { formatBytes, unitConversion } from '@repo/ui/utils';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@shadcn/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@shadcn/ui/card';
 import {
   ChartConfig,
   ChartContainer,
@@ -119,12 +112,12 @@ export default function Statistics() {
   return (
     <>
       <h1 className='text-lg font-semibold'>统计</h1>
-      <div className='grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-8'>
+      <div className='grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8'>
         {[
           {
             title: '在线IP数',
             value: '666',
-            icon: 'uil:network-wired',
+            icon: 'uil:users-alt',
             onClick: () => console.log('在线IP数 clicked'),
           },
           {
@@ -171,13 +164,11 @@ export default function Statistics() {
           },
         ].map((item, index) => (
           <Card key={index} onClick={item.onClick} className='cursor-pointer'>
-            <CardHeader className='flex flex-row items-center justify-between'>
+            <CardHeader className='p-4'>
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>
-                <Icon icon={item.icon} className='text-2xl' />
-              </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className='flex justify-between p-4 text-xl'>
+              <Icon icon={item.icon} className='text-muted-foreground' />
               <div className='text-xl font-bold tabular-nums leading-none'>{item.value}</div>
             </CardContent>
           </Card>

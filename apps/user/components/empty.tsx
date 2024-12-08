@@ -12,7 +12,7 @@ export function Empty() {
   useEffect(() => {
     const random = Math.floor(Math.random() * 10);
     setDescription(t(`empty.${random}`));
-  }, []);
+  }, [t]);
 
   return <_Empty description={description} />;
 }
