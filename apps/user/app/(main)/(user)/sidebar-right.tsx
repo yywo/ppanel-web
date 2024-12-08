@@ -1,7 +1,9 @@
 'use client';
+
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react';
+import { isBrowser } from '@repo/ui/utils';
 import { Button } from '@shadcn/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { toast } from '@shadcn/ui/lib/sonner';
@@ -14,6 +16,7 @@ import Recharge from './order/recharge';
 export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useGlobalStore();
   const t = useTranslations('layout');
+
   return (
     <Sidebar collapsible='none' side='right' {...props}>
       <SidebarContent>
@@ -33,7 +36,7 @@ export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>)
               <Tooltip>
                 <TooltipTrigger asChild>
                   <CopyToClipboard
-                    text={`${location.origin}/auth?invite=${user?.refer_code}`}
+                    text={`${isBrowser() && location?.origin}/auth?invite=${user?.refer_code}`}
                     onCopy={(text, result) => {
                       if (result) {
                         toast.success(t('copySuccess'));

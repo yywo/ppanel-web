@@ -8,13 +8,15 @@ import { Metadata, Viewport } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
+import { unstable_noStore as noStore } from 'next/cache';
 import { cookies } from 'next/headers';
 import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
 
 export async function generateMetadata(): Promise<Metadata> {
-  let site: API.SiteConfig | undefined;
+  noStore();
 
+  let site: API.SiteConfig | undefined;
   await getGlobalConfig({ skipErrorHandler: true })
     .then((res) => {
       const config = res.data.data;
