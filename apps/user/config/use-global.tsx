@@ -95,12 +95,12 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
   getAppSubLink: (type: string, url: string) => {
     const name = get().common.site.site_name || '';
     switch (type) {
-      // case 'Clash':
-      //   return `clash://install-config?url=${url}&name=${name}`;
+      case 'Clash':
+        return `clash://install-config?url=${url}&name=${name}`;
       case 'Hiddify':
         return `hiddify://import/${url}#${name}`;
       case 'Loon':
-        return `loon://import?sub=${encodeURI(url)}${name}`;
+        return `loon://import?sub=${encodeURI(url)}`;
       case 'NekoBox':
         return `sn://subscription?url=${url}&name=${name}`;
       case 'NekoRay':
@@ -108,7 +108,11 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       // case 'Netch':
       //   return ``;
       case 'Quantumult X':
-        return `quantumult-x://add-resource?remote-resource=${url}`;
+        return `quantumult-x://add-resource?remote-resource=${encodeURIComponent(
+          JSON.stringify({
+            server_remote: [`${url}, tag=${name}`],
+          }),
+        )}`;
       case 'Shadowrocket':
         return `shadowrocket://add/sub://${window.btoa(url)}?remark=${encodeURI(name)}`;
       case 'Singbox':
@@ -124,7 +128,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       case 'V2rayNg':
         return `v2rayng://install-sub?url=${encodeURI(url)}&name=${name}`;
       default:
-        return `clash://install-config?url=${encodeURI(url)}&name=${name}`;
+        return '';
     }
   },
 }));

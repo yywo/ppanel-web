@@ -32,6 +32,7 @@ import { useState } from 'react';
 
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';
+import { getPlatform } from '@/utils/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import Renewal from '../order/renewal';
 import ResetTraffic from '../order/reset-traffic';
@@ -58,16 +59,7 @@ export default function Page() {
       return data.data as API.ApplicationResponse;
     },
   });
-  const [platform, setPlatform] = useState<keyof API.ApplicationResponse>('windows');
-
-  const handleCopy = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      toast.success(t('copySuccess'));
-    } catch {
-      toast.error(t('copyFailure'));
-    }
-  };
+  const [platform, setPlatform] = useState<keyof API.ApplicationResponse>(getPlatform());
 
   const { data } = useQuery({
     queryKey: ['getStat'],
@@ -235,21 +227,26 @@ export default function Page() {
                                   <Button size='sm' variant='secondary' className='px-1.5' asChild>
                                     <Link href={app.url!}>{t('download')}</Link>
                                   </Button>
-                                  <Button
-                                    size='sm'
-                                    onClick={() => {
-                                      handleCopy(url);
+                                  <CopyToClipboard
+                                    text={url}
+                                    onCopy={(text, result) => {
                                       const href = getAppSubLink(app.subscribe_type, url);
                                       if (isBrowser() && href) {
                                         window.location.href = href;
-                                      } else {
-                                        toast.info(t('manualImportMessage'));
+                                      } else if (result) {
+                                        toast.success(
+                                          <>
+                                            <p>{t('copySuccess')}</p>
+                                            <p>{t('manualImportMessage')}</p>
+                                          </>,
+                                        );
                                       }
                                     }}
-                                    className='p-2'
                                   >
-                                    {t('import')}
-                                  </Button>
+                                    <Button size='sm' className='p-2'>
+                                      {t('import')}
+                                    </Button>
+                                  </CopyToClipboard>
                                 </div>
                               </div>
                             ))}
