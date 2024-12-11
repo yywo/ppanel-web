@@ -524,7 +524,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 <AccordionContent>
                                   <ul className='list-disc [&>li]:mt-2'>
                                     {server
-                                      ?.filter((server: API.Server) => server.groupId === group.id)
+                                      ?.filter((server: API.Server) => server.group_id === group.id)
                                       ?.map((node: API.Server) => {
                                         return (
                                           <li
@@ -557,7 +557,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       <FormControl>
                         <div className='flex flex-col gap-2'>
                           {server
-                            ?.filter((item: API.Server) => !item.groupId)
+                            ?.filter((item: API.Server) => !item.group_id)
                             ?.map((item: API.Server) => {
                               const value = field.value || [];
 
