@@ -112,15 +112,15 @@ declare namespace API {
   type CreateNodeRequest = {
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
   };
 
   type CreateOrderRequest = {
@@ -467,6 +467,14 @@ declare namespace API {
     list: User[];
   };
 
+  type Hysteria2 = {
+    port: number;
+    hop_ports: string;
+    hop_interval: number;
+    obfs_password: string;
+    security_config: SecurityConfig;
+  };
+
   type InviteConfig = {
     forced_invite: boolean;
     referral_percentage: number;
@@ -559,29 +567,27 @@ declare namespace API {
   };
 
   type SecurityConfig = {
-    server_address?: string;
-    server_name?: string;
-    server_port?: number;
-    fingerprint?: string;
-    private_key?: string;
-    public_key?: string;
-    short_id?: string;
-    allow_insecure?: boolean;
+    sni: string;
+    allow_insecure: boolean;
+    fingerprint: string;
+    reality_private_key: string;
+    reality_public_key: string;
+    reality_short_id: string;
   };
 
   type Server = {
     id: number;
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
     created_at: number;
     updated_at: number;
     last: Push;
@@ -598,9 +604,7 @@ declare namespace API {
   type Shadowsocks = {
     method: string;
     port: number;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    server_key: string;
   };
 
   type SiteConfig = {
@@ -676,25 +680,27 @@ declare namespace API {
     updated_at: number;
   };
 
-  type TLSConfig = {
-    server_name?: string;
-    allow_insecure?: boolean;
-  };
-
   type TosConfig = {
     tos_content: string;
   };
 
-  type Trojan = {
-    network: string;
-    port: number;
+  type TransportConfig = {
+    path: string;
     host: string;
-    sni: string;
-    allow_insecure: boolean;
-    transport: Record<string, any>;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    server_name: string;
+  };
+
+  type Trojan = {
+    port: number;
+    transport: string;
+    transport_config: TransportConfig;
+    security: string;
+    security_config: SecurityConfig;
+  };
+
+  type Tuic = {
+    port: number;
+    security_config: SecurityConfig;
   };
 
   type UpdateAnnouncementEnableRequest = {
@@ -750,15 +756,15 @@ declare namespace API {
     id: number;
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
   };
 
   type UpdateOrderStatusRequest = {
@@ -884,27 +890,19 @@ declare namespace API {
   };
 
   type Vless = {
-    host: string;
     port: number;
-    network: string;
-    transport: Record<string, any>;
+    flow: string;
+    transport: string;
+    transport_config: TransportConfig;
     security: string;
     security_config: SecurityConfig;
-    xtls: string;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
   };
 
   type Vmess = {
-    host: string;
     port: number;
-    enable_tls: boolean;
-    tls_config: TLSConfig;
-    network: string;
-    transport: Record<string, any>;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    transport: string;
+    transport_config: TransportConfig;
+    security: string;
+    security_config: SecurityConfig;
   };
 }
