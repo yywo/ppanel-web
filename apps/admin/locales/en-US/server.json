@@ -70,7 +70,6 @@
         "fingerprint": "Fingerprint",
         "privateKey": "Private Key",
         "privateKeyPlaceholder": "Leave blank for auto-generation",
-        "proxyProtocol": "Proxy Protocol",
         "publicKey": "Public Key",
         "publicKeyPlaceholder": "Leave blank for auto-generation",
         "serverAddress": "Server Address",

@@ -637,7 +637,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           <>
                             <FormField
                               control={form.control}
-                              name='config.security_config.server_address'
+                              name='config.security_config.reality_server_addr'
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>{t('form.security_config.serverAddress')}</FormLabel>
@@ -658,7 +658,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             />
                             <FormField
                               control={form.control}
-                              name='config.security_config.server_port'
+                              name='config.security_config.reality_server_port'
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>{t('form.security_config.serverPort')}</FormLabel>
@@ -678,34 +678,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             />
                             <FormField
                               control={form.control}
-                              name='config.security_config.proxy_protocol'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.proxyProtocol')}</FormLabel>
-                                  <Select
-                                    value={field.value}
-                                    onValueChange={(value) => {
-                                      form.setValue(field.name, value);
-                                    }}
-                                  >
-                                    <FormControl>
-                                      <SelectTrigger>
-                                        <SelectValue placeholder={t('form.security')} />
-                                      </SelectTrigger>
-                                    </FormControl>
-                                    <SelectContent>
-                                      <SelectItem value='0'>0</SelectItem>
-                                      <SelectItem value='1'>1</SelectItem>
-                                      <SelectItem value='2'>2</SelectItem>
-                                    </SelectContent>
-                                  </Select>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.private_key'
+                              name='config.security_config.reality_private_key'
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>{t('form.security_config.privateKey')}</FormLabel>
@@ -724,7 +697,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             />
                             <FormField
                               control={form.control}
-                              name='config.security_config.public_key'
+                              name='config.security_config.reality_public_key'
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>{t('form.security_config.publicKey')}</FormLabel>
@@ -743,7 +716,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             />
                             <FormField
                               control={form.control}
-                              name='config.security_config.short_id'
+                              name='config.security_config.reality_short_id'
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>{t('form.security_config.shortId')}</FormLabel>

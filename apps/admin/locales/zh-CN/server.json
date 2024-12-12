@@ -70,7 +70,6 @@
         "fingerprint": "FingerPrint",
         "privateKey": "Private Key",
         "privateKeyPlaceholder": "留空自动生成",
-        "proxyProtocol": "Proxy Protocol",
         "publicKey": "Public Key",
         "publicKeyPlaceholder": "留空自动生成",
         "serverAddress": "Server Address",
