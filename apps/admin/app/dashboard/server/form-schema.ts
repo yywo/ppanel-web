@@ -21,7 +21,7 @@ const transportConfigSchema = z
   .object({
     path: nullableString,
     host: nullableString,
-    server_name: nullableString,
+    service_name: nullableString,
   })
   .nullish();
 

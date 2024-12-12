@@ -558,10 +558,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           {['grpc'].includes(transport) && (
                             <FormField
                               control={form.control}
-                              name='config.transport_config.server_name'
+                              name='config.transport_config.service_name'
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel>Server Name</FormLabel>
+                                  <FormLabel>Service Name</FormLabel>
                                   <FormControl>
                                     <EnhancedInput
                                       {...field}
