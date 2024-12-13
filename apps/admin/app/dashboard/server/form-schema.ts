@@ -13,7 +13,7 @@ const securityConfigSchema = z
     reality_public_key: nullableString,
     reality_short_id: nullableString,
     reality_server_addr: nullableString,
-    reality_server_port: portSchema,
+    reality_server_port: portSchema.nullish(),
   })
   .nullish();
 

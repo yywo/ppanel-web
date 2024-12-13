@@ -278,7 +278,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                       >
                         <TabsList className='h-full w-full flex-wrap md:flex-nowrap'>
                           {protocols.map((proto) => (
-                            <TabsTrigger value={proto}>
+                            <TabsTrigger value={proto} key={proto}>
                               {proto.charAt(0).toUpperCase() + proto.slice(1)}
                             </TabsTrigger>
                           ))}

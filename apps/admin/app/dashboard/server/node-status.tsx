@@ -31,7 +31,7 @@ export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
   const isOnline = last_at > 0;
   const badgeVariant = isOnline ? 'default' : 'destructive';
   const badgeText = isOnline ? t('normal') : t('abnormal');
-  const onlineCount = Array.isArray(online_users) ? online_users.length : 0;
+  const onlineCount = Array.isArray(online_users) ? online_users?.length : 0;
 
   return (
     <TooltipProvider>
@@ -73,7 +73,7 @@ export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
               <div className='text-xs'>
                 {t('lastUpdated')}: {formatDate(serverStatus?.updated_at ?? 0)}
               </div>
-              {isOnline && online_users.length > 0 && (
+              {isOnline && onlineCount > 0 && (
                 <div className='space-y-2'>
                   <h4 className='text-sm font-semibold'>{t('onlineUsers')}</h4>
                   <ScrollArea className='h-[400px] rounded-md border p-2'>
