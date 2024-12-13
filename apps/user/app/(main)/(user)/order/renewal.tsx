@@ -44,7 +44,7 @@ export default function Renewal({ token, subscribe }: { token: string; subscribe
       });
       return data.data;
     },
-    enabled: !!subscribe.id,
+    enabled: !!subscribe.id && open,
   });
 
   const { data: paymentMethods } = useQuery({
