@@ -139,6 +139,17 @@ declare namespace API {
     node_push_interval: number;
   };
 
+  type NodeStatus = {
+    online_users: OnlineUser[];
+    status: ServerStatus;
+    last_at: number;
+  };
+
+  type OnlineUser = {
+    uid: number;
+    ip: string;
+  };
+
   type Order = {
     id: number;
     user_id: number;
@@ -191,11 +202,6 @@ declare namespace API {
     fee_percent?: number;
     fee_amount?: number;
     enable: boolean;
-  };
-
-  type Push = {
-    push_at: number;
-    count: number;
   };
 
   type RegisterConfig = {
@@ -258,7 +264,7 @@ declare namespace API {
     enable: boolean;
     created_at: number;
     updated_at: number;
-    last: Push;
+    status: NodeStatus;
   };
 
   type ServerGroup = {
@@ -266,6 +272,13 @@ declare namespace API {
     name: string;
     description: string;
     created_at: number;
+    updated_at: number;
+  };
+
+  type ServerStatus = {
+    cpu: number;
+    mem: number;
+    disk: number;
     updated_at: number;
   };
 
@@ -351,7 +364,7 @@ declare namespace API {
   type TransportConfig = {
     path: string;
     host: string;
-    server_name: string;
+    service_name: string;
   };
 
   type Trojan = {

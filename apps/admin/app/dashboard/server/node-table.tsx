@@ -21,6 +21,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import NodeForm from './node-form';
+import { NodeStatusCell } from './node-status';
 
 export default function NodeTable() {
   const t = useTranslations('server.node');
@@ -109,23 +110,11 @@ export default function NodeTable() {
             );
           },
         },
-
         {
-          accessorKey: 'last',
+          accessorKey: 'status',
           header: t('status'),
           cell: ({ row }) => {
-            const { last } = row.original;
-
-            return last ? (
-              <>
-                <Badge>{t('normal')}</Badge>
-                <span className='ml-2'>
-                  {t('onlineCount')}: {last.count}
-                </span>
-              </>
-            ) : (
-              <Badge variant='destructive'>{t('abnormal')}</Badge>
-            );
+            return <NodeStatusCell status={row.original?.status} />;
           },
         },
         {

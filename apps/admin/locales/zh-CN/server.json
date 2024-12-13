@@ -40,6 +40,10 @@
     "edit": "编辑",
     "editNode": "编辑节点",
     "enable": "启用",
+    "memory": "内存",
+    "disk": "磁盘",
+    "lastUpdated": "最后更新",
+    "onlineUsers": "在线用户",
     "form": {
       "allowInsecure": "允许不安全",
       "cancel": "取消",
