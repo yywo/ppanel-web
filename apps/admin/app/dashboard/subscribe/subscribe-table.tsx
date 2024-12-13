@@ -33,7 +33,7 @@ export default function SubscribeTable() {
       return data.data?.list as API.SubscribeGroup[];
     },
   });
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
   return (
     <ProTable<API.Subscribe, { group_id: number; query: string }>
       action={ref}

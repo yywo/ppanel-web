@@ -36,7 +36,7 @@ export default function NodeTable() {
     },
   });
 
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.Server, { groupId: number; search: string }>

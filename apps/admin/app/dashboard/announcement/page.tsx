@@ -21,7 +21,7 @@ import NoticeForm from './notice-form';
 export default function Page() {
   const t = useTranslations('announcement');
   const [loading, setLoading] = useState(false);
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.Announcement, { enable: boolean; search: string }>

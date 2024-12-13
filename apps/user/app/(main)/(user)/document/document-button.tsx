@@ -10,7 +10,7 @@ import { cn } from '@shadcn/ui/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { useEffect, useId, useRef, useState } from 'react';
+import { RefObject, useEffect, useId, useRef, useState } from 'react';
 
 export function DocumentButton({ items }: { items: API.Document[] }) {
   const t = useTranslations('document');
@@ -46,7 +46,7 @@ export function DocumentButton({ items }: { items: API.Document[] }) {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [active]);
 
-  useOutsideClick(ref, () => setActive(null));
+  useOutsideClick(ref as RefObject<HTMLDivElement>, () => setActive(null));
 
   return (
     <>

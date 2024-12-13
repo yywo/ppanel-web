@@ -70,7 +70,7 @@ export default function Page() {
     }, 66);
   }, [ticket?.follow?.length]);
 
-  const ref = useRef<ProListActions>();
+  const ref = useRef<ProListActions>(null);
   const [create, setCreate] = useState<Partial<API.CreateUserTicketRequest & { open: boolean }>>();
 
   return (
