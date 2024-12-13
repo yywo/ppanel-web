@@ -8,7 +8,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadc
 import { useTranslations } from 'next-intl';
 
 export function formatPercentage(value: number): string {
-  return `${(value * 100).toFixed(1)}%`;
+  return `${value.toFixed(1)}%`;
 }
 
 export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
