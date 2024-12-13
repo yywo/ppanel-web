@@ -1,8 +1,6 @@
 import { NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL } from '@/config/constants';
 import { queryUserInfo } from '@/services/user/user';
 import { extractDomain } from '@repo/ui/utils';
-import Base64 from 'crypto-js/enc-base64';
-import UTF8 from 'crypto-js/enc-utf8';
 import { create } from 'zustand';
 
 export interface GlobalStore {
@@ -81,14 +79,12 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       : [extractDomain(NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL || '', pan_domain)];
 
     return domains.map((domain) => {
-      const enc_type = type ? Base64.stringify(UTF8.parse(type)) : '';
-      const enc_uuid = Base64.stringify(UTF8.parse(uuid));
       if (pan_domain) {
-        if (enc_type) return `https://${enc_type}.${enc_uuid}.${domain}`;
-        return `https://${enc_uuid}.${domain}`;
+        if (type) return `https://${uuid}.${type}.${domain}`;
+        return `https://${uuid}.${domain}`;
       } else {
-        if (enc_type) return `https://${domain}${subscribe_path}?mark=${enc_uuid}&type=${enc_type}`;
-        return `https://${domain}${subscribe_path}?mark=${enc_uuid}`;
+        if (type) return `https://${domain}${subscribe_path}?mark=${uuid}&type=${type}`;
+        return `https://${domain}${subscribe_path}?mark=${uuid}`;
       }
     });
   },
