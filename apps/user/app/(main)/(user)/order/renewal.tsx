@@ -21,7 +21,7 @@ import { useEffect, useState, useTransition } from 'react';
 import { SubscribeBilling } from '../subscribe/billing';
 import { SubscribeDetail } from '../subscribe/detail';
 
-export default function Renewal({ mark, subscribe }: { mark: string; subscribe: API.Subscribe }) {
+export default function Renewal({ token, subscribe }: { token: string; subscribe: API.Subscribe }) {
   const t = useTranslations('order');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
@@ -31,7 +31,7 @@ export default function Renewal({ mark, subscribe }: { mark: string; subscribe: 
     subscribe_id: subscribe.id,
     payment: 'balance',
     coupon: '',
-    subscribe_mark: mark,
+    subscribe_token: token,
   });
   const [loading, startTransition] = useTransition();
 
@@ -56,15 +56,15 @@ export default function Renewal({ mark, subscribe }: { mark: string; subscribe: 
   });
 
   useEffect(() => {
-    if (subscribe.id && mark) {
+    if (subscribe.id && token) {
       setParams((prev) => ({
         ...prev,
         quantity: 1,
         subscribe_id: subscribe.id,
-        subscribe_mark: mark,
+        subscribe_token: token,
       }));
     }
-  }, [subscribe.id, mark]);
+  }, [subscribe.id, token]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

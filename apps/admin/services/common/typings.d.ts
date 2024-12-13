@@ -445,7 +445,7 @@ declare namespace API {
     traffic: number;
     download: number;
     upload: number;
-    mark: string;
+    token: string;
     status: number;
     created_at: number;
     updated_at: number;

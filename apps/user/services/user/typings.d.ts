@@ -347,7 +347,7 @@ declare namespace API {
     quantity: number;
     payment: string;
     coupon?: string;
-    subscribe_mark: string;
+    subscribe_token: string;
   };
 
   type RenewalOrderResponse = {
@@ -356,7 +356,7 @@ declare namespace API {
 
   type ResetTrafficOrderRequest = {
     subscribe_id: number;
-    subscribe_mark: string;
+    subscribe_token: string;
     payment: string;
   };
 
@@ -592,7 +592,7 @@ declare namespace API {
     traffic: number;
     download: number;
     upload: number;
-    mark: string;
+    token: string;
     status: number;
     created_at: number;
     updated_at: number;

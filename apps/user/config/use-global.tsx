@@ -83,8 +83,8 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
         if (type) return `https://${uuid}.${type}.${domain}`;
         return `https://${uuid}.${domain}`;
       } else {
-        if (type) return `https://${domain}${subscribe_path}?mark=${uuid}&type=${type}`;
-        return `https://${domain}${subscribe_path}?mark=${uuid}`;
+        if (type) return `https://${domain}${subscribe_path}?token=${uuid}&type=${type}`;
+        return `https://${domain}${subscribe_path}?token=${uuid}`;
       }
     });
   },

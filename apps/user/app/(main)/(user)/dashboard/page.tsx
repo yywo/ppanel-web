@@ -144,10 +144,10 @@ export default function Page() {
                   </AlertDialog>
                   <ResetTraffic
                     id={item.subscribe_id}
-                    mark={item.mark}
+                    token={item.token}
                     replacement={item.subscribe.replacement}
                   />
-                  <Renewal mark={item.mark} subscribe={item.subscribe} />
+                  <Renewal token={item.token} subscribe={item.subscribe} />
                 </div>
               </CardHeader>
               <CardContent>
@@ -184,7 +184,7 @@ export default function Page() {
                 </ul>
                 <Separator className='mt-4' />
                 <Accordion type='single' collapsible defaultValue='0' className='w-full'>
-                  {getUserSubscribe(item.mark, protocol)?.map((url, index) => (
+                  {getUserSubscribe(item.token, protocol)?.map((url, index) => (
                     <AccordionItem key={url} value={String(index)}>
                       <AccordionTrigger className='hover:no-underline'>
                         <div className='flex w-full flex-row items-center justify-between'>
