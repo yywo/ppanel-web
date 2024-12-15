@@ -207,10 +207,8 @@ export default function AlipayF2F() {
               defaultValue={data?.config.private_key}
               onBlur={(e) => {
                 updateConfig('config', {
-                  config: {
-                    ...data?.config,
-                    private_key: e.target.value,
-                  },
+                  ...data?.config,
+                  private_key: e.target.value,
                 });
               }}
             />
@@ -227,10 +225,8 @@ export default function AlipayF2F() {
               value={data?.config.public_key}
               onBlur={(e) => {
                 updateConfig('config', {
-                  config: {
-                    ...data?.config,
-                    public_key: e.target.value,
-                  },
+                  ...data?.config,
+                  public_key: e.target.value,
                 });
               }}
             />
