@@ -57,7 +57,6 @@ declare namespace API {
   type CurrencyConfig = {
     currency_unit: string;
     currency_symbol: string;
-    access_key: string;
   };
 
   type Document = {
@@ -235,6 +234,8 @@ declare namespace API {
     sni: string;
     allow_insecure: boolean;
     fingerprint: string;
+    reality_server_addr: string;
+    reality_server_port: number;
     reality_private_key: string;
     reality_public_key: string;
     reality_short_id: string;

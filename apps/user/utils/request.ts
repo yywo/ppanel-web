@@ -7,9 +7,9 @@ import { getAuthorization, Logout } from './common';
 
 async function handleError(response: any) {
   const code = response.data?.code;
+  if ([40002, 40003, 40004].includes(code)) return Logout();
   if (response?.config?.skipErrorHandler) return;
   if (!isBrowser()) return;
-  if ([40002, 40003, 40004].includes(code)) return Logout();
 
   const t = await getTranslations('common');
   const message =

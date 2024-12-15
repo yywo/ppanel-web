@@ -1,4 +1,12 @@
 declare namespace API {
+  type AlipayF2FConfig = {
+    app_id: string;
+    private_key: string;
+    public_key: string;
+    invoice_name: string;
+    sandbox: boolean;
+  };
+
   type Announcement = {
     id: number;
     title: string;
@@ -183,7 +191,6 @@ declare namespace API {
   type CurrencyConfig = {
     currency_unit: string;
     currency_symbol: string;
-    access_key: string;
   };
 
   type DeleteAnnouncementRequest = {
@@ -242,6 +249,12 @@ declare namespace API {
     verify_email_template: string;
     maintenance_email_template: string;
     expiration_email_template: string;
+  };
+
+  type EpayConfig = {
+    pid: string;
+    url: string;
+    key: string;
   };
 
   type Follow = {
@@ -576,6 +589,8 @@ declare namespace API {
     sni: string;
     allow_insecure: boolean;
     fingerprint: string;
+    reality_server_addr: string;
+    reality_server_port: number;
     reality_private_key: string;
     reality_public_key: string;
     reality_short_id: string;
@@ -625,6 +640,13 @@ declare namespace API {
     site_name: string;
     site_desc: string;
     site_logo: string;
+  };
+
+  type StripeConfig = {
+    public_key: string;
+    secret_key: string;
+    webhook_secret: string;
+    payment: string;
   };
 
   type Subscribe = {
@@ -716,6 +738,19 @@ declare namespace API {
     security_config: SecurityConfig;
   };
 
+  type UpdateAlipayF2fRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: AlipayF2FConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
+  };
+
   type UpdateAnnouncementEnableRequest = {
     id: number;
     enable: boolean;
@@ -759,6 +794,19 @@ declare namespace API {
     show: boolean;
   };
 
+  type UpdateEpayRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: EpayConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
+  };
+
   type UpdateNodeGroupRequest = {
     id: number;
     name: string;
@@ -785,6 +833,19 @@ declare namespace API {
     status: number;
     method?: string;
     trade_no?: string;
+  };
+
+  type UpdateStripeRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: StripeConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
   };
 
   type UpdateSubscribeGroupRequest = {
