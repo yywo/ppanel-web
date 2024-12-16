@@ -494,6 +494,10 @@ declare namespace API {
     only_first_purchase: boolean;
   };
 
+  type LogResponse = {
+    list: Record<string, any>;
+  };
+
   type NodeConfig = {
     node_secret: string;
     node_pull_interval: number;

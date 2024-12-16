@@ -44,6 +44,7 @@
     "60002": "Unable to use the subscription at the moment, please try again later.",
     "70001": "Incorrect verification code, please re-enter.",
     "80001": "Task was not successfully queued, please try again later.",
+    "90001": "Please disable DEBUG mode and try again.",
     "undefined": "An error occurred in the system, please try again later."
   },
   "table": {
