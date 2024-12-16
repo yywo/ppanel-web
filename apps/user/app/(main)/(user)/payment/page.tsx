@@ -42,7 +42,7 @@ export default function Page() {
   });
 
   const { data: payment } = useQuery({
-    enabled: !!order_no,
+    enabled: !!order_no && !!data?.status && data?.status !== 3,
     queryKey: ['checkoutOrder', order_no],
     queryFn: async () => {
       const { data } = await checkoutOrder({ orderNo: order_no! });
