@@ -202,8 +202,8 @@ export default function Page() {
                 size={208}
                 imageSettings={{
                   src: `/payment/alipay_f2f.svg`,
-                  width: 48,
-                  height: 48,
+                  width: 24,
+                  height: 24,
                   excavate: true,
                 }}
               />
