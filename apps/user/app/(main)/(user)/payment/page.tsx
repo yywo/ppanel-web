@@ -94,7 +94,7 @@ export default function Page() {
           <dl className='grid gap-3'>
             <div className='flex items-center justify-between'>
               <dt className='text-muted-foreground'>
-                <Badge>{t(`methods.${data?.method}`)}</Badge>
+                {data?.method && <Badge>{t(`methods.${data?.method}`)}</Badge>}
               </dt>
             </div>
           </dl>
