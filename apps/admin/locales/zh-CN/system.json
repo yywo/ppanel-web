@@ -106,7 +106,7 @@
     "subscriptionDomainDescription": "用于订阅,留空则使用站点域名",
     "subscriptionDomainPlaceholder": "请输入订阅域名，多个域名请每行一个",
     "subscriptionPath": "订阅路径",
-    "subscriptionPathDescription": "用于订阅",
+    "subscriptionPathDescription": "用于订阅, 修改后系统会自动重启，请等待5s",
     "subscriptionPathPlaceholder": "请输入",
     "subscriptionProtocol": "订阅协议",
     "wildcardResolution": "通配符解析",
