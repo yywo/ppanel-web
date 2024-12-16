@@ -222,7 +222,7 @@ export default function AlipayF2F() {
           <TableCell className='text-right'>
             <Textarea
               placeholder={t('inputPlaceholder')}
-              value={data?.config.public_key}
+              defaultValue={data?.config.public_key}
               onBlur={(e) => {
                 updateConfig('config', {
                   ...data?.config,
