@@ -3,7 +3,7 @@ import { z } from '@shadcn/ui/lib/zod';
 export const protocols = ['shadowsocks', 'vmess', 'vless', 'trojan', 'hysteria2', 'tuic'];
 
 const nullableString = z.string().nullish();
-const portSchema = z.number().min(1).max(65535);
+const portSchema = z.number().max(65535).nullish();
 const securityConfigSchema = z
   .object({
     sni: nullableString,
@@ -13,7 +13,7 @@ const securityConfigSchema = z
     reality_public_key: nullableString,
     reality_short_id: nullableString,
     reality_server_addr: nullableString,
-    reality_server_port: portSchema.nullish(),
+    reality_server_port: portSchema,
   })
   .nullish();
 
@@ -94,7 +94,7 @@ const baseFormSchema = z.object({
   group_id: z.number().nullish(),
   enable_relay: z.boolean().nullish().default(false),
   relay_host: nullableString,
-  relay_port: z.number().nullish(),
+  relay_port: portSchema,
 });
 
 export const formSchema = z.intersection(baseFormSchema, protocolConfigSchema);

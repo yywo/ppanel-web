@@ -249,6 +249,8 @@ export default function NodeForm<T extends { [x: string]: any }>({
                         <EnhancedInput
                           {...field}
                           type='number'
+                          min={1}
+                          max={65535}
                           onValueChange={(value) => {
                             form.setValue(field.name, value);
                           }}
@@ -343,6 +345,8 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           <EnhancedInput
                             {...field}
                             type='number'
+                            min={1}
+                            max={65535}
                             onValueChange={(value) => {
                               form.setValue(field.name, value);
                             }}
@@ -666,6 +670,8 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                     <EnhancedInput
                                       {...field}
                                       type='number'
+                                      min={1}
+                                      max={65535}
                                       placeholder={t('form.security_config.serverPortPlaceholder')}
                                       onValueChange={(value) => {
                                         form.setValue(field.name, value);
