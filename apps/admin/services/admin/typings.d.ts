@@ -556,6 +556,14 @@ declare namespace API {
     updated_at: number;
   };
 
+  type OrdersStatistics = {
+    date?: string;
+    amount_total: number;
+    new_order_amount: number;
+    renewal_order_amount: number;
+    list?: OrdersStatistics[];
+  };
+
   type PaymentConfig = {
     id: number;
     name: string;
@@ -587,6 +595,12 @@ declare namespace API {
     msg?: string;
     /** 数据 */
     data?: Record<string, any>;
+  };
+
+  type RevenueStatisticsResponse = {
+    today: OrdersStatistics;
+    monthly: OrdersStatistics;
+    all: OrdersStatistics;
   };
 
   type SecurityConfig = {
@@ -631,6 +645,28 @@ declare namespace API {
     mem: number;
     disk: number;
     updated_at: number;
+  };
+
+  type ServerTotalDataResponse = {
+    online_user_ips: number;
+    online_servers: number;
+    offline_servers: number;
+    today_upload: number;
+    today_download: number;
+    monthly_upload: number;
+    monthly_download: number;
+    updated_at: number;
+    server_traffic_ranking_today: ServerTrafficData[];
+    server_traffic_ranking_yesterday: ServerTrafficData[];
+    user_traffic_ranking_today: UserTrafficData[];
+    user_traffic_ranking_yesterday: UserTrafficData[];
+  };
+
+  type ServerTrafficData = {
+    server_id: number;
+    name: string;
+    upload: number;
+    download: number;
   };
 
   type Shadowsocks = {
@@ -717,6 +753,10 @@ declare namespace API {
     status: number;
     created_at: number;
     updated_at: number;
+  };
+
+  type TicketWaitRelpyResponse = {
+    count: number;
   };
 
   type TosConfig = {
@@ -942,6 +982,20 @@ declare namespace API {
     created_at: number;
   };
 
+  type UserStatistics = {
+    date?: string;
+    register: number;
+    new_order_users: number;
+    renewal_order_users: number;
+    list?: UserStatistics[];
+  };
+
+  type UserStatisticsResponse = {
+    today: UserStatistics;
+    monthly: UserStatistics;
+    all: UserStatistics;
+  };
+
   type UserSubscribe = {
     id: number;
     user_id: number;
@@ -957,6 +1011,13 @@ declare namespace API {
     status: number;
     created_at: number;
     updated_at: number;
+  };
+
+  type UserTrafficData = {
+    user_id: number;
+    email: string;
+    upload: number;
+    download: number;
   };
 
   type VerifyConfig = {
