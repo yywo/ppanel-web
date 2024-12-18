@@ -1,0 +1,31 @@
+{
+  "all": "Alle",
+  "billing": {
+    "billingTitle": "Varefaktura",
+    "couponDiscount": "Rabattkode rabatt",
+    "duration": "Pakketid",
+    "fee": "Gebyr",
+    "months": "Måneder",
+    "price": "Pris",
+    "productDiscount": "Produkt rabatt",
+    "total": "Totalpris"
+  },
+  "buy": "Kjøp",
+  "category": "Kategori",
+  "detail": {
+    "availableTraffic": "Tilgjengelig trafikk",
+    "connectedDevices": "Samtidig tilkoblede IP-er",
+    "connectionSpeed": "Tilkoblingshastighet",
+    "productDetail": "Produktdetaljer"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (ansikt til ansikt)",
+    "balance": "Balanse",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "perMonth": "måned",
+  "productDescription": "Produktbeskrivelse",
+  "products": "Produkter"
+}

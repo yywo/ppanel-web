@@ -1,0 +1,31 @@
+{
+  "all": "Vše",
+  "billing": {
+    "billingTitle": "Faktura za zboží",
+    "couponDiscount": "Sleva z kupónu",
+    "duration": "Doba trvání balíčku",
+    "fee": "Poplatek",
+    "months": "měsíce",
+    "price": "Cena",
+    "productDiscount": "Sleva na zboží",
+    "total": "Celková cena"
+  },
+  "buy": "Koupit",
+  "category": "Kategorie",
+  "detail": {
+    "availableTraffic": "Dostupný provoz",
+    "connectedDevices": "Počet současně připojených IP",
+    "connectionSpeed": "Rychlost připojení",
+    "productDetail": "Detaily produktu"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (tváří v tvář)",
+    "balance": "Zůstatek",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "perMonth": "měsíc",
+  "productDescription": "Popis produktu",
+  "products": "Produkty"
+}

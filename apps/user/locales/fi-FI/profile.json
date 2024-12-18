@@ -1,0 +1,28 @@
+{
+  "accountSettings": {
+    "accountSettings": "Tiliasetukset",
+    "loginPassword": "Kirjautumissalasana",
+    "newPassword": "Uusi salasana",
+    "passwordMismatch": "Salasanat eivät täsmää",
+    "repeatNewPassword": "Toista uusi salasana",
+    "updatePassword": "Päivitä salasana",
+    "updateSuccess": "Päivitys onnistui"
+  },
+  "notify": {
+    "bind": "Yhdistä",
+    "emailNotification": "Sähköposti-ilmoitus",
+    "notificationSettings": "Ilmoitusasetukset",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Syötä Telegram ID",
+    "telegramNotification": "Telegram-ilmoitus",
+    "updateSuccess": "Päivitys onnistui"
+  },
+  "notifyEvent": {
+    "balanceChange": "Saldon muutos",
+    "finance": "Talous",
+    "login": "Kirjautuminen",
+    "notificationEvents": "Ilmoitustapahtumat",
+    "subscribe": "Tilaa",
+    "updateSuccess": "Päivitys onnistui"
+  }
+}

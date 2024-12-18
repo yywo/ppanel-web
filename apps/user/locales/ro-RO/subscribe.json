@@ -1,0 +1,31 @@
+{
+  "all": "Toate",
+  "billing": {
+    "billingTitle": "Factură produs",
+    "couponDiscount": "Reducere cupon",
+    "duration": "Durata pachetului",
+    "fee": "Taxă de procesare",
+    "months": "luni",
+    "price": "Preț",
+    "productDiscount": "Reducere produs",
+    "total": "Total"
+  },
+  "buy": "Cumpără",
+  "category": "categorie",
+  "detail": {
+    "availableTraffic": "Trafic disponibil",
+    "connectedDevices": "Număr de IP-uri conectate simultan",
+    "connectionSpeed": "Viteza de conectare",
+    "productDetail": "Detalii produs"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (față în față)",
+    "balance": "Sold",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "perMonth": "lună",
+  "productDescription": "Descrierea produsului",
+  "products": "produse"
+}

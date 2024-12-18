@@ -1,0 +1,31 @@
+{
+  "all": "все",
+  "billing": {
+    "billingTitle": "Счет за товар",
+    "couponDiscount": "Скидка по промокоду",
+    "duration": "Продолжительность пакета",
+    "fee": "Комиссия",
+    "months": "месяцев",
+    "price": "Цена",
+    "productDiscount": "Скидка на товар",
+    "total": "Итоговая цена"
+  },
+  "buy": "Купить",
+  "category": "категория",
+  "detail": {
+    "availableTraffic": "Доступный трафик",
+    "connectedDevices": "Количество одновременно подключенных IP",
+    "connectionSpeed": "Скорость соединения",
+    "productDetail": "Детали продукта"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay(лицом к лицу)",
+    "balance": "Баланс",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe(Alipay)",
+    "stripe_wechat_pay": "Stripe(WeChat)"
+  },
+  "perMonth": "месяц",
+  "productDescription": "Описание товара",
+  "products": "товары"
+}

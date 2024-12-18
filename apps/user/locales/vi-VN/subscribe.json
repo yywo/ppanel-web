@@ -1,0 +1,31 @@
+{
+  "all": "Tất cả",
+  "billing": {
+    "billingTitle": "Hóa đơn sản phẩm",
+    "couponDiscount": "Ưu đãi mã giảm giá",
+    "duration": "Thời gian gói",
+    "fee": "Phí dịch vụ",
+    "months": "tháng",
+    "price": "Giá",
+    "productDiscount": "Giảm giá sản phẩm",
+    "total": "Tổng giá"
+  },
+  "buy": "Mua",
+  "category": "thể loại",
+  "detail": {
+    "availableTraffic": "Lưu lượng khả dụng",
+    "connectedDevices": "Số IP kết nối đồng thời",
+    "connectionSpeed": "Tốc độ kết nối",
+    "productDetail": "Chi tiết sản phẩm"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (mặt đối mặt)",
+    "balance": "Số dư",
+    "epay": "Thanh toán dễ dàng",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "perMonth": "tháng",
+  "productDescription": "Mô tả sản phẩm",
+  "products": "Sản phẩm"
+}
