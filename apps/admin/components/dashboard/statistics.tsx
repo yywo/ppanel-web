@@ -2,7 +2,7 @@
 
 import { queryServerTotalData, queryTicketWaitReply } from '@/services/admin/console';
 import { Icon } from '@iconify/react';
-import { formatBytes, unitConversion } from '@repo/ui/utils';
+import { formatBytes } from '@repo/ui/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@shadcn/ui/chart';
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from '@shadcn/ui/lib/recharts';
@@ -163,7 +163,7 @@ export default function Statistics() {
               <ChartContainer
                 config={{
                   traffic: {
-                    label: t('todayUploadTraffic'),
+                    label: t('traffic'),
                     color: 'hsl(var(--primary))',
                   },
                   type: {
@@ -186,7 +186,7 @@ export default function Statistics() {
                     type='number'
                     tickLine={false}
                     axisLine={false}
-                    tickFormatter={(value) => formatBytes(unitConversion('gbToBytes', value) || 0)}
+                    tickFormatter={(value) => formatBytes(value || 0)}
                   />
                   <YAxis
                     type='category'
@@ -201,12 +201,15 @@ export default function Statistics() {
                   <ChartTooltip
                     content={
                       <ChartTooltipContent
-                        label={false}
+                        label={true}
                         labelFormatter={(label) =>
                           dataType === 'nodes'
                             ? `${t('nodes')}: ${label}`
                             : `${t('users')}: ${label}`
                         }
+                        formatter={(value) => {
+                          return formatBytes(Number(value) || 0);
+                        }}
                       />
                     }
                   />
