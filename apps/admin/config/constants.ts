@@ -22,7 +22,7 @@ export const locales = [
   'uk-UA',
   'vi-VN',
   'zh-CN',
-  'zh-TW',
+  'zh-HK',
 ];
 
 export const NEXT_PUBLIC_DEFAULT_LANGUAGE = env('NEXT_PUBLIC_DEFAULT_LANGUAGE') || locales[0];
