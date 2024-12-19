@@ -1,5 +1,20 @@
 'use client';
 
+import {
+  closestCenter,
+  DndContext,
+  DragEndEvent,
+  KeyboardSensor,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  arrayMove,
+  SortableContext,
+  sortableKeyboardCoordinates,
+  verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
 import { Alert, AlertDescription, AlertTitle } from '@shadcn/ui/alert';
 import { Button } from '@shadcn/ui/button';
 import { Checkbox } from '@shadcn/ui/checkbox';
@@ -17,13 +32,15 @@ import {
   VisibilityState,
 } from '@tanstack/react-table';
 import { useSize } from 'ahooks';
-import { ListRestart, Loader, RefreshCcw } from 'lucide-react';
+import { GripVertical, ListRestart, Loader, RefreshCcw } from 'lucide-react';
 import React, { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import Empty from '../empty';
 import { ColumnFilter, IParams } from './column-filter';
 import { ColumnHeader } from './column-header';
 import { ColumnToggle } from './column-toggle';
 import { Pagination } from './pagination';
+import { SortableRow } from './sortable-row';
+
 export interface ProTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   request: (
@@ -53,13 +70,18 @@ export interface ProTableProps<TData, TValue> {
     selectedRowsText: (total: number) => string;
   }>;
   empty?: React.ReactNode;
+  onSort?: (newOrder: TData[]) => void;
 }
+
 export interface ProTableActions {
   refresh: () => void;
   reset: () => void;
 }
 
-export function ProTable<TData, TValue extends Record<string, unknown>>({
+export function ProTable<
+  TData extends Record<string, unknown> & { id?: string },
+  TValue extends Record<string, unknown>,
+>({
   columns,
   request,
   params,
@@ -68,6 +90,7 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
   action,
   texts,
   empty,
+  onSort,
 }: ProTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
@@ -84,6 +107,18 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
   const table = useReactTable({
     data,
     columns: [
+      ...(onSort
+        ? [
+            {
+              id: 'sortable',
+              header: (
+                <GripVertical className='h-4 w-4 cursor-move text-gray-500 hover:text-gray-700' />
+              ),
+              enableSorting: false,
+              enableHiding: false,
+            },
+          ]
+        : []),
       ...(actions?.batchRender ? [createSelectColumn<TData, TValue>()] : []),
       ...columns,
       ...(actions?.render
@@ -103,9 +138,10 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
             },
           ] as ColumnDef<TData, TValue>[])
         : []),
-    ],
+    ] as ColumnDef<TData, TValue>[],
     onPaginationChange: setPagination,
     onSortingChange: setSorting,
+
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -123,6 +159,7 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
     manualPagination: true,
     manualFiltering: true,
     rowCount: rowCount,
+    manualSorting: true,
   });
 
   const fetchData = async () => {
@@ -162,6 +199,32 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
   useEffect(() => {
     fetchData();
   }, [pagination.pageIndex, pagination.pageSize, columnFilters]);
+
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    }),
+  );
+
+  const handleDragEnd = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    if (active?.id !== over?.id) {
+      setData((items) => {
+        const oldIndex = items.findIndex((item) => {
+          return String(item.id) === active?.id;
+        });
+        const newIndex = items.findIndex((item) => {
+          return String(item.id) === over?.id;
+        });
+
+        const newOrder = arrayMove(items, oldIndex, newIndex);
+        if (onSort) onSort(newOrder);
+        return newOrder;
+      });
+    }
+  };
 
   const selectedRows = table.getSelectedRowModel().flatRows.map((row) => row.original);
   const selectedCount = selectedRows.length;
@@ -230,15 +293,50 @@ export function ProTable<TData, TValue extends Record<string, unknown>>({
           </TableHeader>
           <TableBody>
             {table.getRowModel()?.rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+              onSort ? (
+                <DndContext
+                  sensors={sensors}
+                  collisionDetection={closestCenter}
+                  onDragEnd={handleDragEnd}
+                >
+                  <SortableContext
+                    items={table.getRowModel()?.rows.map((row) => {
+                      return String(row.original.id);
+                    })}
+                    strategy={verticalListSortingStrategy}
+                  >
+                    {table.getRowModel().rows.map((row) => (
+                      <SortableRow
+                        key={row.original.id ? String(row.original.id) : String(row.index)}
+                        id={row.original.id ? String(row.original.id) : String(row.index)}
+                        data-state={row.getIsSelected() && 'selected'}
+                        isSortable
+                      >
+                        {row
+                          .getVisibleCells()
+                          .filter((cell) => {
+                            return cell.column.id !== 'sortable';
+                          })
+                          .map((cell) => (
+                            <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
+                              {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                            </TableCell>
+                          ))}
+                      </SortableRow>
+                    ))}
+                  </SortableContext>
+                </DndContext>
+              ) : (
+                table.getRowModel().rows.map((row) => (
+                  <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              )
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length + 2} className='py-24'>
