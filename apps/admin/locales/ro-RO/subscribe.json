@@ -13,6 +13,11 @@
   "edit": "editează",
   "editSubscribe": "Editează abonamentul",
   "form": {
+    "Day": "Zi",
+    "Hour": "Oră",
+    "Minute": "Minut",
+    "Month": "Lună",
+    "Year": "An",
     "cancel": "Anulează",
     "confirm": "Confirmă",
     "description": "Descriere",
@@ -29,12 +34,14 @@
     "quota": "Limită de achiziție",
     "replacement": "Preț de înlocuire (per dată)",
     "selectSubscribeGroup": "Vă rugăm să selectați grupul de abonament",
+    "selectUnitTime": "Vă rugăm să selectați unitatea de timp",
     "server": "Server",
     "serverGroup": "Grup server",
     "speedLimit": "Limită de viteză (Mbps)",
     "subscribeGroup": "Grup de abonament",
     "traffic": "Trafic",
-    "unit_price": "Preț lunar unitar"
+    "unitPrice": "Preț unitar",
+    "unitTime": "Unitate de timp"
   },
   "group": {
     "actions": "Acțiuni",

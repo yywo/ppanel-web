@@ -13,6 +13,11 @@
   "edit": "szerkesztés",
   "editSubscribe": "Előfizetés szerkesztése",
   "form": {
+    "Day": "Nap",
+    "Hour": "Óra",
+    "Minute": "Perc",
+    "Month": "Hónap",
+    "Year": "Év",
     "cancel": "Mégse",
     "confirm": "Megerősít",
     "description": "Leírás",
@@ -29,12 +34,14 @@
     "quota": "Vásárlási korlát",
     "replacement": "Csere ára (alkalmanként)",
     "selectSubscribeGroup": "Kérjük, válassza ki az előfizetési csoportot",
+    "selectUnitTime": "Kérjük, válassza ki az időegységet",
     "server": "Szolgáltatás",
     "serverGroup": "Szolgáltatáscsoport",
     "speedLimit": "Sebességkorlát (Mbps)",
     "subscribeGroup": "Előfizetési csoport",
     "traffic": "Forgalom",
-    "unit_price": "Havi ár"
+    "unitPrice": "Egységár",
+    "unitTime": "Időegység"
   },
   "group": {
     "actions": "Műveletek",

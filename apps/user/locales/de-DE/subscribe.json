@@ -1,11 +1,15 @@
 {
+  "Day": "Tag",
+  "Hour": "Stunde",
+  "Minute": "Minute",
+  "Month": "Monat",
+  "Year": "Jahr",
   "all": "Alle",
   "billing": {
     "billingTitle": "Produktrechnung",
     "couponDiscount": "Rabattcode-Rabatt",
     "duration": "Paketdauer",
     "fee": "Bearbeitungsgebühr",
-    "months": "Monate",
     "price": "Preis",
     "productDiscount": "Produktrabatt",
     "total": "Gesamtpreis"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "Monat",
   "productDescription": "Produktbeschreibung",
   "products": "Produkte"
 }

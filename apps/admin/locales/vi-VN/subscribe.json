@@ -13,6 +13,11 @@
   "edit": "Chỉnh sửa",
   "editSubscribe": "Chỉnh sửa đăng ký",
   "form": {
+    "Day": "Ngày",
+    "Hour": "Giờ",
+    "Minute": "Phút",
+    "Month": "Tháng",
+    "Year": "Năm",
     "cancel": "Hủy",
     "confirm": "Xác nhận",
     "description": "Mô tả",
@@ -29,12 +34,14 @@
     "quota": "Số lượng mua giới hạn",
     "replacement": "Giá thay thế (mỗi lần)",
     "selectSubscribeGroup": "Vui lòng chọn nhóm đăng ký",
+    "selectUnitTime": "Vui lòng chọn đơn vị thời gian",
     "server": "Dịch vụ",
     "serverGroup": "Nhóm dịch vụ",
     "speedLimit": "Giới hạn tốc độ (Mbps)",
     "subscribeGroup": "Nhóm đăng ký",
     "traffic": "Lưu lượng",
-    "unit_price": "Giá mỗi tháng"
+    "unitPrice": "Đơn giá",
+    "unitTime": "Đơn vị thời gian"
   },
   "group": {
     "actions": "Hành động",

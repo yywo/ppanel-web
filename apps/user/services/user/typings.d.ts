@@ -4,6 +4,7 @@ declare namespace API {
     title: string;
     content: string;
     enable: boolean;
+    type: number;
     created_at: number;
     updated_at: number;
   };
@@ -399,6 +400,7 @@ declare namespace API {
     created_at: number;
     updated_at: number;
     status: NodeStatus;
+    sort: number;
   };
 
   type ServerGroup = {
@@ -429,6 +431,11 @@ declare namespace API {
     site_logo: string;
   };
 
+  type SortItem = {
+    id: number;
+    sort: number;
+  };
+
   type StripePayment = {
     method: string;
     client_secret: string;
@@ -440,6 +447,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -464,7 +472,7 @@ declare namespace API {
   };
 
   type SubscribeDiscount = {
-    months: number;
+    quantity: number;
     discount: number;
   };
 

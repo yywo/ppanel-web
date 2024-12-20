@@ -1,4 +1,9 @@
 {
+  "Day": "Zi",
+  "Hour": "Oră",
+  "Minute": "Minută",
+  "Month": "Lună",
+  "Year": "An",
   "balanceRecharge": "Reîncărcare sold",
   "buyNow": "Cumpără acum",
   "buySubscription": "Cumpără abonament",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "lună",
-  "months": "luni",
   "name": "Nume",
   "orderClosed": "Comanda a fost închisă",
   "orderList": "Listă de comenzi",

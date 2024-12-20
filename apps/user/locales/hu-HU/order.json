@@ -1,4 +1,9 @@
 {
+  "Day": "Nap",
+  "Hour": "Óra",
+  "Minute": "Perc",
+  "Month": "Hónap",
+  "Year": "Év",
   "balanceRecharge": "Egyenleg feltöltése",
   "buyNow": "Vásároljon most",
   "buySubscription": "Előfizetés vásárlása",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "hónap",
-  "months": "hónapok",
   "name": "Név",
   "orderClosed": "A rendelés lezárva",
   "orderList": "Rendelési lista",

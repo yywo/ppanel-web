@@ -13,6 +13,11 @@
   "edit": "Edit",
   "editSubscribe": "Edit Subscription",
   "form": {
+    "Day": "Day",
+    "Hour": "Hour",
+    "Minute": "Minute",
+    "Month": "Month",
+    "Year": "Year",
     "cancel": "Cancel",
     "confirm": "Confirm",
     "description": "Description",
@@ -29,12 +34,14 @@
     "quota": "Purchase Limit",
     "replacement": "Reset Price (per time)",
     "selectSubscribeGroup": "Select Subscription Group",
+    "selectUnitTime": "Please select a unit of time",
     "server": "Server",
     "serverGroup": "Server Group",
     "speedLimit": "Speed Limit (Mbps)",
     "subscribeGroup": "Subscription Group",
     "traffic": "Traffic",
-    "unit_price": "Monthly Price"
+    "unitPrice": "Unit Price",
+    "unitTime": "Unit Time"
   },
   "group": {
     "actions": "Actions",

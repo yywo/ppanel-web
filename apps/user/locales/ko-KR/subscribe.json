@@ -1,11 +1,15 @@
 {
+  "Day": "일",
+  "Hour": "시",
+  "Minute": "분",
+  "Month": "월",
+  "Year": "년",
   "all": "전체",
   "billing": {
     "billingTitle": "상품 청구서",
     "couponDiscount": "할인 코드 혜택",
     "duration": "패키지 기간",
     "fee": "수수료",
-    "months": "개월",
     "price": "가격",
     "productDiscount": "상품 할인",
     "total": "총액"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe(알리페이)",
     "stripe_wechat_pay": "Stripe(위챗)"
   },
-  "perMonth": "월",
   "productDescription": "제품 설명",
   "products": "상품"
 }

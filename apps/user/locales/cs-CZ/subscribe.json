@@ -1,11 +1,15 @@
 {
+  "Day": "Den",
+  "Hour": "Hodina",
+  "Minute": "Minuta",
+  "Month": "Měsíc",
+  "Year": "Rok",
   "all": "Vše",
   "billing": {
     "billingTitle": "Faktura za zboží",
     "couponDiscount": "Sleva z kupónu",
     "duration": "Doba trvání balíčku",
     "fee": "Poplatek",
-    "months": "měsíce",
     "price": "Cena",
     "productDiscount": "Sleva na zboží",
     "total": "Celková cena"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "měsíc",
   "productDescription": "Popis produktu",
   "products": "Produkty"
 }

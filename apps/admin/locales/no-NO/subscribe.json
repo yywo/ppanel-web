@@ -13,6 +13,11 @@
   "edit": "rediger",
   "editSubscribe": "Rediger abonnement",
   "form": {
+    "Day": "Dag",
+    "Hour": "Time",
+    "Minute": "Minutt",
+    "Month": "Måned",
+    "Year": "År",
     "cancel": "Avbryt",
     "confirm": "Bekreft",
     "description": "Beskrivelse",
@@ -29,12 +34,14 @@
     "quota": "Kjøpskvote",
     "replacement": "Erstatningspris (per gang)",
     "selectSubscribeGroup": "Vennligst velg abonnementsgruppe",
+    "selectUnitTime": "Vennligst velg enhetstid",
     "server": "Tjeneste",
     "serverGroup": "Tjenestegruppe",
     "speedLimit": "Hastighetsbegrensning (Mbps)",
     "subscribeGroup": "Abonnementsgruppe",
     "traffic": "Trafikk",
-    "unit_price": "Pris per måned"
+    "unitPrice": "Enhetspris",
+    "unitTime": "Enhetstid"
   },
   "group": {
     "actions": "Handlinger",

@@ -1,11 +1,15 @@
 {
+  "Day": "Päivä",
+  "Hour": "Tunti",
+  "Minute": "Minuutti",
+  "Month": "Kuukausi",
+  "Year": "Vuosi",
   "all": "kaikki",
   "billing": {
     "billingTitle": "Tuotelasku",
     "couponDiscount": "Alennuskoodin alennus",
     "duration": "Paketin kesto",
     "fee": "Käsittelymaksu",
-    "months": "kuukautta",
     "price": "Hinta",
     "productDiscount": "Tuotealennus",
     "total": "Kokonaishinta"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "kuukausi",
   "productDescription": "Tuotteen kuvaus",
   "products": "tuotteet"
 }

@@ -1,4 +1,9 @@
 {
+  "Day": "Den",
+  "Hour": "Hodina",
+  "Minute": "Minuta",
+  "Month": "Měsíc",
+  "Year": "Rok",
   "balanceRecharge": "Doplnění zůstatku",
   "buyNow": "Koupit nyní",
   "buySubscription": "Koupit předplatné",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "měsíc",
-  "months": "měsíce",
   "name": "Název",
   "orderClosed": "Objednávka byla uzavřena",
   "orderList": "Seznam objednávek",

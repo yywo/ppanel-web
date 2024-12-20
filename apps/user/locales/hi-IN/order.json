@@ -1,4 +1,9 @@
 {
+  "Day": "दिन",
+  "Hour": "घंटा",
+  "Minute": "मिनट",
+  "Month": "महीना",
+  "Year": "वर्ष",
   "balanceRecharge": "शेष राशि रिचार्ज",
   "buyNow": "अभी खरीदें",
   "buySubscription": "सदस्यता खरीदें",
@@ -16,8 +21,6 @@
     "stripe_alipay": "स्ट्राइप (अलीपे)",
     "stripe_wechat_pay": "स्ट्राइप (वीचैट)"
   },
-  "month": "महीना",
-  "months": "महीने",
   "name": "नाम",
   "orderClosed": "आदेश बंद कर दिया गया है",
   "orderList": "आदेश सूची",

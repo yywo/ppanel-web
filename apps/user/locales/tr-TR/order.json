@@ -1,4 +1,9 @@
 {
+  "Day": "Gün",
+  "Hour": "Saat",
+  "Minute": "Dakika",
+  "Month": "Ay",
+  "Year": "Yıl",
   "balanceRecharge": "Bakiye Yükleme",
   "buyNow": "Şimdi Satın Al",
   "buySubscription": "Abonelik Satın Al",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe(Alipay)",
     "stripe_wechat_pay": "Stripe(WeChat)"
   },
-  "month": "ay",
-  "months": "aylar",
   "name": "Adı",
   "orderClosed": "Sipariş kapatıldı",
   "orderList": "Sipariş Listesi",

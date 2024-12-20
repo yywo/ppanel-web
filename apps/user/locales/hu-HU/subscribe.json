@@ -1,11 +1,15 @@
 {
+  "Day": "Nap",
+  "Hour": "Óra",
+  "Minute": "Perc",
+  "Month": "Hónap",
+  "Year": "Év",
   "all": "Összes",
   "billing": {
     "billingTitle": "Termékszámla",
     "couponDiscount": "Kuponkedvezmény",
     "duration": "Csomag időtartama",
     "fee": "Kezelési díj",
-    "months": "hónapok",
     "price": "Ár",
     "productDiscount": "Termékkedvezmény",
     "total": "Teljes ár"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "hónap",
   "productDescription": "Termékleírás",
   "products": "termékek"
 }

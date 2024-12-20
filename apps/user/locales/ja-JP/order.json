@@ -1,4 +1,9 @@
 {
+  "Day": "日",
+  "Hour": "時",
+  "Minute": "分",
+  "Month": "月",
+  "Year": "年",
   "balanceRecharge": "残高チャージ",
   "buyNow": "今すぐ購入",
   "buySubscription": "サブスクリプションを購入",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe(支付宝)",
     "stripe_wechat_pay": "Stripe(微信)"
   },
-  "month": "ヶ月",
-  "months": "ヶ月",
   "name": "名前",
   "orderClosed": "注文は締め切られました",
   "orderList": "注文リスト",

@@ -13,6 +13,11 @@
   "edit": "Bearbeiten",
   "editSubscribe": "Abonnement bearbeiten",
   "form": {
+    "Day": "Tag",
+    "Hour": "Stunde",
+    "Minute": "Minute",
+    "Month": "Monat",
+    "Year": "Jahr",
     "cancel": "Abbrechen",
     "confirm": "Bestätigen",
     "description": "Beschreibung",
@@ -29,12 +34,14 @@
     "quota": "Kaufbeschränkung",
     "replacement": "Ersatzpreis (pro Mal)",
     "selectSubscribeGroup": "Bitte Abonnementgruppe auswählen",
+    "selectUnitTime": "Bitte wählen Sie eine Zeiteinheit",
     "server": "Dienst",
     "serverGroup": "Dienstgruppe",
     "speedLimit": "Geschwindigkeitsbegrenzung (Mbps)",
     "subscribeGroup": "Abonnementgruppe",
     "traffic": "Datenvolumen",
-    "unit_price": "Monatspreis"
+    "unitPrice": "Einheitspreis",
+    "unitTime": "Zeiteinheit"
   },
   "group": {
     "actions": "Aktionen",

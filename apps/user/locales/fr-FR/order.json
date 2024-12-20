@@ -1,4 +1,9 @@
 {
+  "Day": "Jour",
+  "Hour": "Heure",
+  "Minute": "Minute",
+  "Month": "Mois",
+  "Year": "Année",
   "balanceRecharge": "Recharge de solde",
   "buyNow": "Acheter maintenant",
   "buySubscription": "Acheter un abonnement",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "mois",
-  "months": "mois",
   "name": "Nom",
   "orderClosed": "Commande fermée",
   "orderList": "Liste des commandes",

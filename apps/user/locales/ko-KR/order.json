@@ -1,4 +1,9 @@
 {
+  "Day": "일",
+  "Hour": "시",
+  "Minute": "분",
+  "Month": "월",
+  "Year": "년",
   "balanceRecharge": "잔액 충전",
   "buyNow": "지금 구매",
   "buySubscription": "구독 구매",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe(알리페이)",
     "stripe_wechat_pay": "Stripe(위챗)"
   },
-  "month": "개월",
-  "months": "개월",
   "name": "이름",
   "orderClosed": "주문이 종료되었습니다",
   "orderList": "주문 목록",

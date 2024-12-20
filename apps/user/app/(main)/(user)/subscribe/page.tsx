@@ -120,7 +120,7 @@ export default function Page() {
                 <CardFooter className='relative mt-2 flex flex-col gap-2'>
                   <h2 className='pb-5 text-2xl font-semibold sm:text-3xl'>
                     <Display type='currency' value={item.unit_price} />
-                    <span className='text-base font-medium'>/{t('perMonth')}</span>
+                    <span className='text-base font-medium'>/{t(item.unit_time || 'Month')}</span>
                   </h2>
                   <Button
                     className='absolute bottom-0 w-full rounded-b-xl rounded-t-none'

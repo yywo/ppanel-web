@@ -13,6 +13,11 @@
   "edit": "แก้ไข",
   "editSubscribe": "แก้ไขการสมัครสมาชิก",
   "form": {
+    "Day": "วัน",
+    "Hour": "ชั่วโมง",
+    "Minute": "นาที",
+    "Month": "เดือน",
+    "Year": "ปี",
     "cancel": "ยกเลิก",
     "confirm": "ยืนยัน",
     "description": "คำอธิบาย",
@@ -29,12 +34,14 @@
     "quota": "จำนวนจำกัดการซื้อ",
     "replacement": "ราคารีเซ็ต (ต่อครั้ง)",
     "selectSubscribeGroup": "กรุณาเลือกกลุ่มการสมัครสมาชิก",
+    "selectUnitTime": "กรุณาเลือกหน่วยเวลา",
     "server": "เซิร์ฟเวอร์",
     "serverGroup": "กลุ่มเซิร์ฟเวอร์",
     "speedLimit": "จำกัดความเร็ว (Mbps)",
     "subscribeGroup": "กลุ่มการสมัครสมาชิก",
     "traffic": "ปริมาณข้อมูล",
-    "unit_price": "ราคาต่อเดือน"
+    "unitPrice": "ราคาต่อหน่วย",
+    "unitTime": "หน่วยเวลา"
   },
   "group": {
     "actions": "การดำเนินการ",

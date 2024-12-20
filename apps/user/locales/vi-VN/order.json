@@ -1,4 +1,9 @@
 {
+  "Day": "Ngày",
+  "Hour": "Giờ",
+  "Minute": "Phút",
+  "Month": "Tháng",
+  "Year": "Năm",
   "balanceRecharge": "Nạp tiền số dư",
   "buyNow": "Mua ngay",
   "buySubscription": "Mua đăng ký",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "tháng",
-  "months": "tháng",
   "name": "Tên",
   "orderClosed": "Đơn hàng đã đóng",
   "orderList": "Danh sách đơn hàng",

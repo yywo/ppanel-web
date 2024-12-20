@@ -13,6 +13,11 @@
   "edit": "編集",
   "editSubscribe": "サブスクリプションを編集",
   "form": {
+    "Day": "日",
+    "Hour": "時",
+    "Minute": "分",
+    "Month": "月",
+    "Year": "年",
     "cancel": "キャンセル",
     "confirm": "確認",
     "description": "説明",
@@ -29,12 +34,14 @@
     "quota": "購入制限数",
     "replacement": "リセット価格（毎回）",
     "selectSubscribeGroup": "サブスクリプショングループを選択してください",
+    "selectUnitTime": "単位時間を選択してください",
     "server": "サーバー",
     "serverGroup": "サーバーグループ",
     "speedLimit": "速度制限（Mbps）",
     "subscribeGroup": "サブスクリプショングループ",
     "traffic": "トラフィック",
-    "unit_price": "月額価格"
+    "unitPrice": "単価",
+    "unitTime": "単位時間"
   },
   "group": {
     "actions": "操作",

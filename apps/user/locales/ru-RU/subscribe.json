@@ -1,11 +1,15 @@
 {
+  "Day": "День",
+  "Hour": "Час",
+  "Minute": "минута",
+  "Month": "Месяц",
+  "Year": "Год",
   "all": "все",
   "billing": {
     "billingTitle": "Счет за товар",
     "couponDiscount": "Скидка по промокоду",
     "duration": "Продолжительность пакета",
     "fee": "Комиссия",
-    "months": "месяцев",
     "price": "Цена",
     "productDiscount": "Скидка на товар",
     "total": "Итоговая цена"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe(Alipay)",
     "stripe_wechat_pay": "Stripe(WeChat)"
   },
-  "perMonth": "месяц",
   "productDescription": "Описание товара",
   "products": "товары"
 }

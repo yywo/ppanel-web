@@ -1,11 +1,15 @@
 {
+  "Day": "День",
+  "Hour": "Година",
+  "Minute": "хвилина",
+  "Month": "Місяць",
+  "Year": "Рік",
   "all": "всі",
   "billing": {
     "billingTitle": "Рахунок за товар",
     "couponDiscount": "Знижка за промокодом",
     "duration": "Тривалість пакету",
     "fee": "Комісія",
-    "months": "місяців",
     "price": "Ціна",
     "productDiscount": "Знижка на товар",
     "total": "Загальна сума"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "місяць",
   "productDescription": "Опис товару",
   "products": "товари"
 }

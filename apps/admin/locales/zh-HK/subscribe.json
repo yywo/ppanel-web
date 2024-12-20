@@ -13,6 +13,11 @@
   "edit": "編輯",
   "editSubscribe": "編輯訂閱",
   "form": {
+    "Day": "日",
+    "Hour": "小時",
+    "Minute": "分鐘",
+    "Month": "月",
+    "Year": "年",
     "cancel": "取消",
     "confirm": "確認",
     "description": "描述",
@@ -29,12 +34,14 @@
     "quota": "限購數量",
     "replacement": "重置價格（每次）",
     "selectSubscribeGroup": "請選擇訂閱組",
+    "selectUnitTime": "請選擇單位時間",
     "server": "服務",
     "serverGroup": "服務組",
     "speedLimit": "速度限制（Mbps）",
     "subscribeGroup": "訂閱組",
     "traffic": "流量",
-    "unit_price": "單月價格"
+    "unitPrice": "單價",
+    "unitTime": "單位時間"
   },
   "group": {
     "actions": "操作",

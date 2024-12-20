@@ -1,4 +1,9 @@
 {
+  "Day": "Dag",
+  "Hour": "Time",
+  "Minute": "Minutt",
+  "Month": "Måned",
+  "Year": "År",
   "balanceRecharge": "Saldoopplading",
   "buyNow": "Kjøp nå",
   "buySubscription": "Kjøp abonnement",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "month": "måned",
-  "months": "måneder",
   "name": "Navn",
   "orderClosed": "Bestillingen er stengt",
   "orderList": "Bestillingsliste",

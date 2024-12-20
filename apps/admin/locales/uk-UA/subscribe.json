@@ -13,6 +13,11 @@
   "edit": "редагувати",
   "editSubscribe": "Редагувати підписку",
   "form": {
+    "Day": "День",
+    "Hour": "Година",
+    "Minute": "Хвилина",
+    "Month": "Місяць",
+    "Year": "Рік",
     "cancel": "Скасувати",
     "confirm": "Підтвердити",
     "description": "Опис",
@@ -29,12 +34,14 @@
     "quota": "Ліміт покупки",
     "replacement": "Ціна заміни (за раз)",
     "selectSubscribeGroup": "Будь ласка, виберіть групу підписки",
+    "selectUnitTime": "Будь ласка, виберіть одиницю часу",
     "server": "Сервер",
     "serverGroup": "Група серверів",
     "speedLimit": "Обмеження швидкості (Мбіт/с)",
     "subscribeGroup": "Група підписки",
     "traffic": "Трафік",
-    "unit_price": "Ціна за місяць"
+    "unitPrice": "Ціна за одиницю",
+    "unitTime": "Одиниця часу"
   },
   "group": {
     "actions": "Дії",

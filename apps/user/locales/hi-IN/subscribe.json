@@ -1,11 +1,15 @@
 {
+  "Day": "दिन",
+  "Hour": "घंटा",
+  "Minute": "मिनट",
+  "Month": "महीना",
+  "Year": "वर्ष",
   "all": "सभी",
   "billing": {
     "billingTitle": "उत्पाद बिल",
     "couponDiscount": "कूपन छूट",
     "duration": "पैकेज अवधि",
     "fee": "शुल्क",
-    "months": "महीने",
     "price": "मूल्य",
     "productDiscount": "उत्पाद छूट",
     "total": "कुल मूल्य"
@@ -25,7 +29,6 @@
     "stripe_alipay": "स्ट्राइप (अलीपे)",
     "stripe_wechat_pay": "स्ट्राइप (वीचैट)"
   },
-  "perMonth": "महीना",
   "productDescription": "उत्पाद विवरण",
   "products": "उत्पाद"
 }

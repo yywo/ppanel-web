@@ -12,6 +12,7 @@ declare namespace API {
     title: string;
     content: string;
     enable: boolean;
+    type: number;
     created_at: number;
     updated_at: number;
   };
@@ -81,6 +82,7 @@ declare namespace API {
   type CreateAnnouncementRequest = {
     title: string;
     content: string;
+    type: number;
   };
 
   type CreateApplicationRequest = {
@@ -156,6 +158,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -504,6 +507,10 @@ declare namespace API {
     node_push_interval: number;
   };
 
+  type NodeSortRequest = {
+    sort: SortItem[];
+  };
+
   type NodeStatus = {
     online_users: OnlineUser[];
     status: ServerStatus;
@@ -630,6 +637,7 @@ declare namespace API {
     created_at: number;
     updated_at: number;
     status: NodeStatus;
+    sort: number;
   };
 
   type ServerGroup = {
@@ -682,6 +690,11 @@ declare namespace API {
     site_logo: string;
   };
 
+  type SortItem = {
+    id: number;
+    sort: number;
+  };
+
   type StripeConfig = {
     public_key: string;
     secret_key: string;
@@ -694,6 +707,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -718,7 +732,7 @@ declare namespace API {
   };
 
   type SubscribeDiscount = {
-    months: number;
+    quantity: number;
     discount: number;
   };
 
@@ -728,6 +742,10 @@ declare namespace API {
     description: string;
     created_at: number;
     updated_at: number;
+  };
+
+  type SubscribeSortRequest = {
+    sort: SortItem[];
   };
 
   type SubscribeType = {
@@ -805,6 +823,7 @@ declare namespace API {
     title: string;
     content: string;
     enable: boolean;
+    type: number;
   };
 
   type UpdateApplicationRequest = {
@@ -903,6 +922,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -915,6 +935,7 @@ declare namespace API {
     server: number[];
     show: boolean;
     sell: boolean;
+    sort: number;
   };
 
   type UpdateTicketStatusRequest = {

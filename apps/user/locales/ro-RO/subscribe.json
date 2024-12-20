@@ -1,11 +1,15 @@
 {
+  "Day": "Zi",
+  "Hour": "Oră",
+  "Minute": "Minut",
+  "Month": "Lună",
+  "Year": "An",
   "all": "Toate",
   "billing": {
     "billingTitle": "Factură produs",
     "couponDiscount": "Reducere cupon",
     "duration": "Durata pachetului",
     "fee": "Taxă de procesare",
-    "months": "luni",
     "price": "Preț",
     "productDiscount": "Reducere produs",
     "total": "Total"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "lună",
   "productDescription": "Descrierea produsului",
   "products": "produse"
 }

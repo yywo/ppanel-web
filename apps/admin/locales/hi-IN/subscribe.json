@@ -13,6 +13,11 @@
   "edit": "संपादित करें",
   "editSubscribe": "संपादन सदस्यता",
   "form": {
+    "Day": "दिन",
+    "Hour": "घंटा",
+    "Minute": "मिनट",
+    "Month": "महीना",
+    "Year": "वर्ष",
     "cancel": "रद्द करें",
     "confirm": "पुष्टि करें",
     "description": "विवरण",
@@ -29,12 +34,14 @@
     "quota": "खरीद सीमा",
     "replacement": "पुनःस्थापना मूल्य (प्रति बार)",
     "selectSubscribeGroup": "कृपया सदस्यता समूह चुनें",
+    "selectUnitTime": "कृपया इकाई समय चुनें",
     "server": "सर्वर",
     "serverGroup": "सर्वर समूह",
     "speedLimit": "गति सीमा (Mbps)",
     "subscribeGroup": "सदस्यता समूह",
     "traffic": "ट्रैफिक",
-    "unit_price": "प्रति माह मूल्य"
+    "unitPrice": "इकाई मूल्य",
+    "unitTime": "इकाई समय"
   },
   "group": {
     "actions": "क्रियाएँ",

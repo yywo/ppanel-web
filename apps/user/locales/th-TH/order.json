@@ -1,4 +1,9 @@
 {
+  "Day": "วัน",
+  "Hour": "ชั่วโมง",
+  "Minute": "นาที",
+  "Month": "เดือน",
+  "Year": "ปี",
   "balanceRecharge": "เติมเงินยอดคงเหลือ",
   "buyNow": "ซื้อทันที",
   "buySubscription": "ซื้อการสมัครสมาชิก",
@@ -16,8 +21,6 @@
     "stripe_alipay": "Stripe (อาลีเพย์)",
     "stripe_wechat_pay": "Stripe (วีแชท)"
   },
-  "month": "เดือน",
-  "months": "เดือน",
   "name": "ชื่อ",
   "orderClosed": "คำสั่งซื้อถูกปิดแล้ว",
   "orderList": "รายการสั่งซื้อ",

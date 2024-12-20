@@ -1,11 +1,15 @@
 {
+  "Day": "Gün",
+  "Hour": "Saat",
+  "Minute": "Dakika",
+  "Month": "Ay",
+  "Year": "Yıl",
   "all": "Tümü",
   "billing": {
     "billingTitle": "Ürün Faturası",
     "couponDiscount": "Kupon İndirimi",
     "duration": "Paket Süresi",
     "fee": "İşlem Ücreti",
-    "months": "Ay",
     "price": "Fiyat",
     "productDiscount": "Ürün İndirimi",
     "total": "Toplam Fiyat"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe(Alipay)",
     "stripe_wechat_pay": "Stripe(WeChat)"
   },
-  "perMonth": "ay",
   "productDescription": "Ürün Açıklaması",
   "products": "ürünler"
 }

@@ -1,11 +1,15 @@
 {
+  "Day": "日",
+  "Hour": "時",
+  "Minute": "分",
+  "Month": "月",
+  "Year": "年",
   "all": "すべて",
   "billing": {
     "billingTitle": "商品請求書",
     "couponDiscount": "クーポン割引",
     "duration": "プラン期間",
     "fee": "手数料",
-    "months": "ヶ月",
     "price": "価格",
     "productDiscount": "商品割引",
     "total": "合計"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe(支付宝)",
     "stripe_wechat_pay": "Stripe(微信)"
   },
-  "perMonth": "月",
   "productDescription": "商品説明",
   "products": "商品"
 }
