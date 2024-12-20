@@ -99,22 +99,22 @@ export default function Statistics() {
           },
           {
             title: t('todayUploadTraffic'),
-            value: formatBytes(ServerTotal?.upload_traffic_today || 0),
+            value: formatBytes(ServerTotal?.today_upload || 0),
             icon: 'uil:arrow-up',
           },
           {
             title: t('todayDownloadTraffic'),
-            value: formatBytes(ServerTotal?.download_traffic_today || 0),
+            value: formatBytes(ServerTotal?.today_download || 0),
             icon: 'uil:arrow-down',
           },
           {
             title: t('monthUploadTraffic'),
-            value: formatBytes(ServerTotal?.upload_traffic_month || 0),
+            value: formatBytes(ServerTotal?.monthly_upload || 0),
             icon: 'uil:cloud-upload',
           },
           {
             title: t('monthDownloadTraffic'),
-            value: formatBytes(ServerTotal?.download_traffic_month || 0),
+            value: formatBytes(ServerTotal?.monthly_download || 0),
             icon: 'uil:cloud-download',
           },
         ].map((item, index) => (

@@ -720,6 +720,7 @@ declare namespace API {
     server: number[];
     show: boolean;
     sell: boolean;
+    sort: number;
     created_at: number;
     updated_at: number;
   };
