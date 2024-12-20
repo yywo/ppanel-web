@@ -11,8 +11,9 @@ declare namespace API {
     id: number;
     title: string;
     content: string;
-    enable: boolean;
-    type: number;
+    show: boolean;
+    pinned: boolean;
+    popup: boolean;
     created_at: number;
     updated_at: number;
   };
@@ -82,7 +83,6 @@ declare namespace API {
   type CreateAnnouncementRequest = {
     title: string;
     content: string;
-    type: number;
   };
 
   type CreateApplicationRequest = {
@@ -823,8 +823,9 @@ declare namespace API {
     id: number;
     title: string;
     content: string;
-    enable: boolean;
-    type: number;
+    show: boolean;
+    pinned: boolean;
+    popup: boolean;
   };
 
   type UpdateApplicationRequest = {

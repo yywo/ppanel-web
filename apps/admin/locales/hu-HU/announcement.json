@@ -23,6 +23,8 @@
     "titlePlaceholder": "Kérjük, adja meg"
   },
   "hide": "elrejt",
+  "pinned": "Kiemelt",
+  "popup": "Felugró ablak",
   "show": "Megjelenítés",
   "title": "Cím",
   "updateSuccess": "Sikeres frissítés",

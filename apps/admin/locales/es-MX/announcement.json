@@ -23,6 +23,8 @@
     "titlePlaceholder": "Por favor, ingresa"
   },
   "hide": "Ocultar",
+  "pinned": "Fijado",
+  "popup": "ventana emergente",
   "show": "Mostrar",
   "title": "Título",
   "updateSuccess": "Actualización exitosa",

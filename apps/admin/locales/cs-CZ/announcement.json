@@ -23,6 +23,8 @@
     "titlePlaceholder": "Zadejte"
   },
   "hide": "skrýt",
+  "pinned": "Připnuto",
+  "popup": "vyskakovací okno",
   "show": "Zobrazit",
   "title": "Titul",
   "updateSuccess": "Aktualizace byla úspěšná",

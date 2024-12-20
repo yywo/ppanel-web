@@ -23,6 +23,8 @@
     "titlePlaceholder": "請輸入"
   },
   "hide": "隱藏",
+  "pinned": "置頂",
+  "popup": "彈窗",
   "show": "顯示",
   "title": "標題",
   "updateSuccess": "更新成功",

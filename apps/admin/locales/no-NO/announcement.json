@@ -23,6 +23,8 @@
     "titlePlaceholder": "Vennligst skriv inn"
   },
   "hide": "skjul",
+  "pinned": "Festet",
+  "popup": "Popup",
   "show": "Vis",
   "title": "Tittel",
   "updateSuccess": "Oppdatering vellykket",

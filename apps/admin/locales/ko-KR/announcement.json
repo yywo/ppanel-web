@@ -23,6 +23,8 @@
     "titlePlaceholder": "입력하세요"
   },
   "hide": "숨기기",
+  "pinned": "고정",
+  "popup": "팝업",
   "show": "표시",
   "title": "제목",
   "updateSuccess": "업데이트 성공",

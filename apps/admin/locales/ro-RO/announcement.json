@@ -23,6 +23,8 @@
     "titlePlaceholder": "Introduceți"
   },
   "hide": "ascunde",
+  "pinned": "Fixat",
+  "popup": "fereastră pop-up",
   "show": "afișare",
   "title": "Titlu",
   "updateSuccess": "Actualizare reușită",

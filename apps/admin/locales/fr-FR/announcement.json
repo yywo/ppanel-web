@@ -23,6 +23,8 @@
     "titlePlaceholder": "Veuillez entrer"
   },
   "hide": "Masquer",
+  "pinned": "Épinglé",
+  "popup": "Fenêtre contextuelle",
   "show": "afficher",
   "title": "Titre",
   "updateSuccess": "Mise à jour réussie",

@@ -3,8 +3,9 @@ declare namespace API {
     id: number;
     title: string;
     content: string;
-    enable: boolean;
-    type: number;
+    show: boolean;
+    pinned: boolean;
+    popup: boolean;
     created_at: number;
     updated_at: number;
   };
@@ -321,6 +322,7 @@ declare namespace API {
     server: number[];
     show: boolean;
     sell: boolean;
+    sort: number;
     created_at: number;
     updated_at: number;
   };

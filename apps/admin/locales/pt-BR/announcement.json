@@ -23,6 +23,8 @@
     "titlePlaceholder": "Por favor, insira"
   },
   "hide": "ocultar",
+  "pinned": "Fixado",
+  "popup": "Janela pop-up",
   "show": "mostrar",
   "title": "Título",
   "updateSuccess": "Atualização bem-sucedida",

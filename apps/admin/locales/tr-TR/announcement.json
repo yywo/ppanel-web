@@ -23,6 +23,8 @@
     "titlePlaceholder": "Lütfen giriniz"
   },
   "hide": "gizle",
+  "pinned": "Sabitlenmiş",
+  "popup": "açılır pencere",
   "show": "göster",
   "title": "Başlık",
   "updateSuccess": "Güncelleme başarılı",

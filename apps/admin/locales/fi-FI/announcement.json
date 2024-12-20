@@ -23,6 +23,8 @@
     "titlePlaceholder": "Syötä"
   },
   "hide": "piilota",
+  "pinned": "Kiinnitetty",
+  "popup": "ponnahdusikkuna",
   "show": "Näytä",
   "title": "Otsikko",
   "updateSuccess": "Päivitys onnistui",

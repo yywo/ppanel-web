@@ -23,6 +23,8 @@
     "titlePlaceholder": "Bitte eingeben"
   },
   "hide": "Verbergen",
+  "pinned": "Angeheftet",
+  "popup": "Popup",
   "show": "Anzeigen",
   "title": "Titel",
   "updateSuccess": "Aktualisierung erfolgreich",

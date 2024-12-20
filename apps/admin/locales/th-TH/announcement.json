@@ -23,6 +23,8 @@
     "titlePlaceholder": "กรุณาใส่"
   },
   "hide": "ซ่อน",
+  "pinned": "ปักหมุด",
+  "popup": "ป๊อปอัพ",
   "show": "แสดง",
   "title": "หัวข้อ",
   "updateSuccess": "อัปเดตสำเร็จ",
