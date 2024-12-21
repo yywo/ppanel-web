@@ -31,6 +31,8 @@
     "cancel": "Annuler",
     "confirm": "Confirmer",
     "confirmDelete": "Êtes-vous sûr de vouloir supprimer ?",
+    "copy": "Copier",
+    "copySuccess": "Copié avec succès",
     "create": "Créer",
     "createNode": "Créer un nœud",
     "createSuccess": "Création réussie",

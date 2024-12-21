@@ -31,6 +31,8 @@
     "cancel": "Mégse",
     "confirm": "Megerősít",
     "confirmDelete": "Biztosan törölni szeretné?",
+    "copy": "Másolás",
+    "copySuccess": "Sikeresen másolva",
     "create": "Létrehozás",
     "createNode": "Csomópont létrehozása",
     "createSuccess": "Sikeres létrehozás",

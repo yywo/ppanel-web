@@ -31,6 +31,8 @@
     "cancel": "取消",
     "confirm": "確認",
     "confirmDelete": "確定要刪除嗎？",
+    "copy": "複製",
+    "copySuccess": "複製成功",
     "create": "創建",
     "createNode": "創建節點",
     "createSuccess": "創建成功",

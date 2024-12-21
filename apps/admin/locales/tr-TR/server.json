@@ -31,6 +31,8 @@
     "cancel": "İptal",
     "confirm": "Onayla",
     "confirmDelete": "Silmek istediğinizden emin misiniz?",
+    "copy": "Kopyala",
+    "copySuccess": "Başarıyla kopyalandı",
     "create": "Oluştur",
     "createNode": "Düğüm Oluştur",
     "createSuccess": "Başarıyla oluşturuldu",

@@ -195,6 +195,29 @@ export default function NodeTable() {
               }
             }}
           />,
+          <Button
+            key='copy'
+            variant='secondary'
+            onClick={async () => {
+              setLoading(true);
+              try {
+                const { id, sort, enable, updated_at, created_at, status, ...params } = row;
+                await createNode({
+                  ...params,
+                  enable: false,
+                });
+                toast.success(t('copySuccess'));
+                ref.current?.refresh();
+                setLoading(false);
+                return true;
+              } catch (error) {
+                setLoading(false);
+                return false;
+              }
+            }}
+          >
+            {t('copy')}
+          </Button>,
           <ConfirmButton
             key='delete'
             trigger={<Button variant='destructive'>{t('delete')}</Button>}

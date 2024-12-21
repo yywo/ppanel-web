@@ -3,6 +3,8 @@
   "cancel": "キャンセル",
   "confirm": "確認",
   "confirmDelete": "削除してもよろしいですか？",
+  "copy": "コピー",
+  "copySuccess": "コピーしました",
   "create": "作成",
   "createSubscribe": "新規購読",
   "createSuccess": "作成に成功しました",

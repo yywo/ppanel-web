@@ -3,6 +3,8 @@
   "cancel": "ยกเลิก",
   "confirm": "ยืนยัน",
   "confirmDelete": "คุณแน่ใจหรือว่าต้องการลบ?",
+  "copy": "คัดลอก",
+  "copySuccess": "คัดลอกสำเร็จ",
   "create": "สร้าง",
   "createSubscribe": "สร้างการสมัครสมาชิกใหม่",
   "createSuccess": "สร้างสำเร็จ",

@@ -3,6 +3,8 @@
   "cancel": "Cancel",
   "confirm": "Confirm",
   "confirmDelete": "Are you sure you want to delete?",
+  "copy": "Copy",
+  "copySuccess": "Copied successfully",
   "create": "Create",
   "createSubscribe": "Create Subscription",
   "createSuccess": "Create Successful",

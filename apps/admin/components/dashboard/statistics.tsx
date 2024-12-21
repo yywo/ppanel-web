@@ -70,8 +70,7 @@ export default function Statistics() {
 
   return (
     <>
-      <h1 className='text-lg font-semibold'>{t('statisticsTitle')}</h1>
-      <div className='grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8'>
+      <div className='grid grid-cols-2 gap-2 md:grid-cols-4'>
         {[
           {
             title: t('onlineIPCount'),

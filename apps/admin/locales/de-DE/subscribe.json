@@ -3,6 +3,8 @@
   "cancel": "Abbrechen",
   "confirm": "Bestätigen",
   "confirmDelete": "Möchten Sie wirklich löschen?",
+  "copy": "Kopieren",
+  "copySuccess": "Erfolgreich kopiert",
   "create": "Erstellen",
   "createSubscribe": "Neues Abonnement erstellen",
   "createSuccess": "Erstellung erfolgreich",

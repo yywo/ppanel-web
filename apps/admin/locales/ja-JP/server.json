@@ -31,6 +31,8 @@
     "cancel": "キャンセル",
     "confirm": "確認",
     "confirmDelete": "削除してもよろしいですか？",
+    "copy": "コピー",
+    "copySuccess": "コピーしました",
     "create": "作成",
     "createNode": "ノードを作成",
     "createSuccess": "作成成功",

@@ -31,6 +31,8 @@
     "cancel": "ยกเลิก",
     "confirm": "ยืนยัน",
     "confirmDelete": "คุณแน่ใจหรือไม่ว่าต้องการลบ?",
+    "copy": "คัดลอก",
+    "copySuccess": "คัดลอกสำเร็จ",
     "create": "สร้าง",
     "createNode": "สร้างโหนด",
     "createSuccess": "สร้างสำเร็จ",

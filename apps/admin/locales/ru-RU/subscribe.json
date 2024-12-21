@@ -3,6 +3,8 @@
   "cancel": "Отмена",
   "confirm": "Подтвердить",
   "confirmDelete": "Вы уверены, что хотите удалить?",
+  "copy": "Копировать",
+  "copySuccess": "Успешно скопировано",
   "create": "Создать",
   "createSubscribe": "Создать подписку",
   "createSuccess": "Создание успешно",

@@ -3,6 +3,8 @@
   "cancel": "취소",
   "confirm": "확인",
   "confirmDelete": "삭제하시겠습니까?",
+  "copy": "복사",
+  "copySuccess": "성공적으로 복사되었습니다",
   "create": "생성",
   "createSubscribe": "새 구독 생성",
   "createSuccess": "생성 성공",

@@ -203,6 +203,30 @@ export default function SubscribeTable() {
               }
             }}
           />,
+          <Button
+            key='copy'
+            variant='secondary'
+            onClick={async () => {
+              setLoading(true);
+              try {
+                const { id, sort, sell, updated_at, created_at, ...params } = row;
+                await createSubscribe({
+                  ...params,
+                  show: false,
+                  sell: false,
+                });
+                toast.success(t('copySuccess'));
+                ref.current?.refresh();
+                setLoading(false);
+                return true;
+              } catch (error) {
+                setLoading(false);
+                return false;
+              }
+            }}
+          >
+            {t('copy')}
+          </Button>,
           <ConfirmButton
             key='delete'
             trigger={<Button variant='destructive'>{t('delete')}</Button>}
