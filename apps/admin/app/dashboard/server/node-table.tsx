@@ -8,6 +8,7 @@ import {
   deleteNode,
   getNodeGroupList,
   getNodeList,
+  nodeSort,
   updateNode,
 } from '@/services/admin/server';
 import { ConfirmButton } from '@repo/ui/confirm-button';
@@ -229,6 +230,32 @@ export default function NodeTable() {
             />,
           ];
         },
+      }}
+      onSort={async (source, target, items) => {
+        const sourceIndex = items.findIndex((item) => String(item.id) === source);
+        const targetIndex = items.findIndex((item) => String(item.id) === target);
+
+        const originalSorts = items.map((item) => ({ id: item.id, sort: item.sort || item.id }));
+
+        const [movedItem] = items.splice(sourceIndex, 1);
+        items.splice(targetIndex, 0, movedItem!);
+
+        const updatedItems = items.map((item) => {
+          const originalSort = originalSorts.find((sortItem) => sortItem.id === item.id)?.sort;
+          return {
+            ...item,
+            sort: originalSort !== undefined ? originalSort : item.sort,
+          };
+        });
+        nodeSort({
+          sort: updatedItems.map((item) => {
+            return {
+              id: item.id,
+              sort: item.sort,
+            };
+          }),
+        });
+        return updatedItems;
       }}
     />
   );

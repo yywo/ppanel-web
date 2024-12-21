@@ -1,20 +1,7 @@
 'use client';
 
-import {
-  closestCenter,
-  DndContext,
-  DragEndEvent,
-  KeyboardSensor,
-  PointerSensor,
-  useSensor,
-  useSensors,
-} from '@dnd-kit/core';
-import {
-  arrayMove,
-  SortableContext,
-  sortableKeyboardCoordinates,
-  verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
+import { DragEndEvent, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core';
+import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { Alert, AlertDescription, AlertTitle } from '@shadcn/ui/alert';
 import { Button } from '@shadcn/ui/button';
 import { Checkbox } from '@shadcn/ui/checkbox';
@@ -40,6 +27,7 @@ import { ColumnHeader } from './column-header';
 import { ColumnToggle } from './column-toggle';
 import { Pagination } from './pagination';
 import { SortableRow } from './sortable-row';
+import { ProTableWrapper } from './wrapper';
 
 export interface ProTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -70,7 +58,11 @@ export interface ProTableProps<TData, TValue> {
     selectedRowsText: (total: number) => string;
   }>;
   empty?: React.ReactNode;
-  onSort?: (newOrder: TData[]) => void;
+  onSort?: (
+    sourceId: string | number,
+    targetId: string | number | null,
+    items: TData[],
+  ) => Promise<TData[]>;
 }
 
 export interface ProTableActions {
@@ -120,7 +112,13 @@ export function ProTable<
           ]
         : []),
       ...(actions?.batchRender ? [createSelectColumn<TData, TValue>()] : []),
-      ...columns,
+      ...columns.map(
+        (column) =>
+          ({
+            enableSorting: false,
+            ...column,
+          }) as ColumnDef<TData, TValue>,
+      ),
       ...(actions?.render
         ? ([
             {
@@ -141,7 +139,6 @@ export function ProTable<
     ] as ColumnDef<TData, TValue>[],
     onPaginationChange: setPagination,
     onSortingChange: setSorting,
-
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -207,22 +204,11 @@ export function ProTable<
     }),
   );
 
-  const handleDragEnd = (event: DragEndEvent) => {
+  const handleDragEnd = async (event: DragEndEvent) => {
     const { active, over } = event;
-
-    if (active?.id !== over?.id) {
-      setData((items) => {
-        const oldIndex = items.findIndex((item) => {
-          return String(item.id) === active?.id;
-        });
-        const newIndex = items.findIndex((item) => {
-          return String(item.id) === over?.id;
-        });
-
-        const newOrder = arrayMove(items, oldIndex, newIndex);
-        if (onSort) onSort(newOrder);
-        return newOrder;
-      });
+    if (onSort) {
+      const items = await onSort(active.id, over?.id || null, data);
+      setData(items);
     }
   };
 
@@ -272,80 +258,70 @@ export function ProTable<
           width: size?.width,
         }}
       >
-        <Table className='w-full'>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className={getTableHeaderClass(header.column.id)}>
-                    <ColumnHeader
-                      header={header}
-                      text={{
-                        asc: texts?.asc,
-                        desc: texts?.desc,
-                        hide: texts?.hide,
-                      }}
-                    />
-                  </TableHead>
-                ))}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel()?.rows?.length ? (
-              onSort ? (
-                <DndContext
-                  sensors={sensors}
-                  collisionDetection={closestCenter}
-                  onDragEnd={handleDragEnd}
-                >
-                  <SortableContext
-                    items={table.getRowModel()?.rows.map((row) => {
-                      return String(row.original.id);
-                    })}
-                    strategy={verticalListSortingStrategy}
-                  >
-                    {table.getRowModel().rows.map((row) => (
-                      <SortableRow
-                        key={row.original.id ? String(row.original.id) : String(row.index)}
-                        id={row.original.id ? String(row.original.id) : String(row.index)}
-                        data-state={row.getIsSelected() && 'selected'}
-                        isSortable
-                      >
-                        {row
-                          .getVisibleCells()
-                          .filter((cell) => {
-                            return cell.column.id !== 'sortable';
-                          })
-                          .map((cell) => (
-                            <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
-                              {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                            </TableCell>
-                          ))}
-                      </SortableRow>
-                    ))}
-                  </SortableContext>
-                </DndContext>
+        <ProTableWrapper data={data} setData={setData} onSort={onSort}>
+          <Table className='w-full'>
+            <TableHeader>
+              {table.getHeaderGroups().map((headerGroup) => (
+                <TableRow key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => (
+                    <TableHead key={header.id} className={getTableHeaderClass(header.column.id)}>
+                      <ColumnHeader
+                        header={header}
+                        text={{
+                          asc: texts?.asc,
+                          desc: texts?.desc,
+                          hide: texts?.hide,
+                        }}
+                      />
+                    </TableHead>
+                  ))}
+                </TableRow>
+              ))}
+            </TableHeader>
+            <TableBody>
+              {table.getRowModel()?.rows?.length ? (
+                onSort ? (
+                  table.getRowModel().rows.map((row) => (
+                    <SortableRow
+                      key={row.original.id ? String(row.original.id) : String(row.index)}
+                      id={row.original.id ? String(row.original.id) : String(row.index)}
+                      data-state={row.getIsSelected() && 'selected'}
+                      isSortable
+                    >
+                      {row
+                        .getVisibleCells()
+                        .filter((cell) => {
+                          return cell.column.id !== 'sortable';
+                        })
+                        .map((cell) => (
+                          <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
+                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                          </TableCell>
+                        ))}
+                    </SortableRow>
+                  ))
+                ) : (
+                  table.getRowModel().rows.map((row) => (
+                    <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                )
               ) : (
-                table.getRowModel().rows.map((row) => (
-                  <TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
-                    {row.getVisibleCells().map((cell) => (
-                      <TableCell key={cell.id} className={getTableCellClass(cell.column.id)}>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))
-              )
-            ) : (
-              <TableRow>
-                <TableCell colSpan={columns.length + 2} className='py-24'>
-                  {empty || <Empty />}
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+                <TableRow>
+                  <TableCell colSpan={columns.length + 2} className='py-24'>
+                    {empty || <Empty />}
+                  </TableCell>
+                </TableRow>
+              )}
+            </TableBody>
+          </Table>
+        </ProTableWrapper>
+
         {loading && (
           <div className='bg-muted/80 absolute top-0 z-20 flex h-full w-full items-center justify-center'>
             <Loader className='h-4 w-4 animate-spin' />
@@ -390,7 +366,7 @@ function createSelectColumn<TData, TValue>(): ColumnDef<TData, TValue> {
 }
 
 function getTableHeaderClass(columnId: string) {
-  if (columnId === 'selected') {
+  if (['sortable', 'selected'].includes(columnId)) {
     return 'sticky left-0 z-10 bg-background shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)] [&:has([role=checkbox])]:pr-2';
   } else if (columnId === 'actions') {
     return 'sticky right-0 z-10 text-right bg-background shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]';
@@ -399,7 +375,7 @@ function getTableHeaderClass(columnId: string) {
 }
 
 function getTableCellClass(columnId: string) {
-  if (columnId === 'selected') {
+  if (['sortable', 'selected'].includes(columnId)) {
     return 'sticky left-0 bg-background shadow-[2px_0_5px_-2px_rgba(0,0,0,0.1)]';
   } else if (columnId === 'actions') {
     return 'sticky right-0 bg-background shadow-[-2px_0_5px_-2px_rgba(0,0,0,0.1)]';
