@@ -1,29 +1,7 @@
 import { env } from 'next-runtime-env';
+import i18nConfig from '../.i18nrc.json';
 
-export const locales = [
-  'en-US',
-  'cs-CZ',
-  'de-DE',
-  'es-ES',
-  'es-MX',
-  'fi-FI',
-  'fr-FR',
-  'hi-IN',
-  'hu-HU',
-  'ja-JP',
-  'ko-KR',
-  'no-NO',
-  'pl-PL',
-  'pt-BR',
-  'ro-RO',
-  'ru-RU',
-  'th-TH',
-  'tr-TR',
-  'uk-UA',
-  'vi-VN',
-  'zh-CN',
-  'zh-HK',
-];
+export const locales = i18nConfig.outputLocales;
 
 export const NEXT_PUBLIC_DEFAULT_LANGUAGE = env('NEXT_PUBLIC_DEFAULT_LANGUAGE') || locales[0];
 
