@@ -18,7 +18,9 @@ export default async function Announcement({
     data = await queryAnnouncement(
       {
         page: 1,
-        size: 50,
+        size: 10,
+        pinned: type === 'pinned',
+        popup: type === 'popup',
       },
       {
         skipErrorHandler: true,

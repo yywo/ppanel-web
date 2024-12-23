@@ -131,6 +131,7 @@ declare namespace API {
     protocol: string;
     config: Record<string, any>;
     enable: boolean;
+    sort: number;
   };
 
   type CreateOrderRequest = {
@@ -276,14 +277,18 @@ declare namespace API {
   type GetAnnouncementListParams = {
     page: number;
     size: number;
-    enable?: boolean;
+    show?: boolean;
+    pinned?: boolean;
+    popup?: boolean;
     search?: string;
   };
 
   type GetAnnouncementListRequest = {
     page: number;
     size: number;
-    enable?: boolean;
+    show?: boolean;
+    pinned?: boolean;
+    popup?: boolean;
     search?: string;
   };
 
@@ -891,6 +896,7 @@ declare namespace API {
     protocol: string;
     config: Record<string, any>;
     enable: boolean;
+    sort: number;
   };
 
   type UpdateOrderStatusRequest = {

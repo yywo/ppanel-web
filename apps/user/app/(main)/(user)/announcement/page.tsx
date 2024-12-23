@@ -12,7 +12,9 @@ export default function Page() {
     queryFn: async () => {
       const { data } = await queryAnnouncement({
         page: 1,
-        size: 20,
+        size: 99,
+        pinned: false,
+        popup: false,
       });
       return data.data?.announcements || [];
     },
