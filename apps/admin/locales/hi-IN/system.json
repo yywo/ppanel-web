@@ -133,10 +133,10 @@
     "groupURLDescription": "भरने पर, यह उपयोगकर्ता पक्ष पर प्रदर्शित होगा या आवश्यक स्थानों पर उपयोग किया जाएगा",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "सफलतापूर्वक सहेजा गया",
     "webhookDomain": "वेबहुक डोमेन",
-    "webhookDomainDescription": "वेबहुक सर्वर के डोमेन नाम को दर्ज करें",
-    "webhookDomainPlaceholder": "वेबहुक सर्वर के डोमेन नाम को दर्ज करें"
+    "webhookDomainDescription": "वेबहुक सर्वर के डोमेन नाम को दर्ज करें"
   },
   "tos": {
     "saveSuccess": "सहेजा गया",

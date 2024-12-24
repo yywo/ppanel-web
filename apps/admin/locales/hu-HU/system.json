@@ -133,10 +133,10 @@
     "groupURLDescription": "Kitöltés után megjelenik a felhasználói oldalon vagy ahol szükséges",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Sikeres mentés",
     "webhookDomain": "Webhook Domain",
-    "webhookDomainDescription": "Adja meg a webhook szerver domain nevét",
-    "webhookDomainPlaceholder": "Adja meg a webhook szerver domain nevét"
+    "webhookDomainDescription": "Adja meg a webhook szerver domain nevét"
   },
   "tos": {
     "saveSuccess": "Sikeres mentés",

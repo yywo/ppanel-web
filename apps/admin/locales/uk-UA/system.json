@@ -133,10 +133,10 @@
     "groupURLDescription": "Після заповнення буде відображатися на стороні користувача або використовуватися там, де це потрібно",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Успішно збережено",
     "webhookDomain": "Домен вебхука",
-    "webhookDomainDescription": "Введіть ім'я домену сервера вебхука",
-    "webhookDomainPlaceholder": "Введіть ім'я домену сервера вебхука"
+    "webhookDomainDescription": "Введіть ім'я домену сервера вебхука"
   },
   "tos": {
     "saveSuccess": "Збережено успішно",

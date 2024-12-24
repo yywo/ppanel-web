@@ -133,10 +133,10 @@
     "groupURLDescription": "Sau khi điền, sẽ hiển thị ở phía người dùng hoặc sử dụng ở vị trí cần thiết",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Lưu thành công",
     "webhookDomain": "Tên miền Webhook",
-    "webhookDomainDescription": "Nhập tên miền của máy chủ webhook",
-    "webhookDomainPlaceholder": "Nhập tên miền của máy chủ webhook"
+    "webhookDomainDescription": "Nhập tên miền của máy chủ webhook"
   },
   "tos": {
     "saveSuccess": "Lưu thành công",

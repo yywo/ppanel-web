@@ -133,10 +133,10 @@
     "groupURLDescription": "در صورت پر شدن، به کاربران نمایش داده می‌شود یا در مکان‌های مورد نیاز استفاده می‌شود",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "ذخیره با موفقیت انجام شد",
     "webhookDomain": "دامنه وب‌هوک",
-    "webhookDomainDescription": "نام دامنه سرور وب‌هوک را وارد کنید",
-    "webhookDomainPlaceholder": "نام دامنه سرور وب‌هوک را وارد کنید"
+    "webhookDomainDescription": "نام دامنه سرور وب‌هوک را وارد کنید"
   },
   "tos": {
     "saveSuccess": "ذخیره با موفقیت انجام شد",

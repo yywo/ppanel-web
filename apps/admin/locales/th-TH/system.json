@@ -133,10 +133,10 @@
     "groupURLDescription": "เมื่อกรอกแล้ว จะแสดงในฝั่งผู้ใช้หรือใช้ในตำแหน่งที่ต้องการ",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "บันทึกสำเร็จ",
     "webhookDomain": "โดเมนของ Webhook",
-    "webhookDomainDescription": "กรอกชื่อโดเมนของเซิร์ฟเวอร์ webhook",
-    "webhookDomainPlaceholder": "กรอกชื่อโดเมนของเซิร์ฟเวอร์ webhook"
+    "webhookDomainDescription": "กรอกชื่อโดเมนของเซิร์ฟเวอร์ webhook"
   },
   "tos": {
     "saveSuccess": "บันทึกสำเร็จ",

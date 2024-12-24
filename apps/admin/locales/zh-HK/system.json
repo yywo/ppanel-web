@@ -133,10 +133,10 @@
     "groupURLDescription": "填寫後，將在用戶端顯示或用於需要的位置",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "儲存成功",
     "webhookDomain": "Webhook 網域",
-    "webhookDomainDescription": "輸入 Webhook 伺服器的網域名稱",
-    "webhookDomainPlaceholder": "輸入 Webhook 伺服器的網域名稱"
+    "webhookDomainDescription": "輸入 Webhook 伺服器的網域名稱"
   },
   "tos": {
     "saveSuccess": "儲存成功",

@@ -133,10 +133,10 @@
     "groupURLDescription": "Une fois rempli, il sera affiché ou utilisé là où nécessaire sur le côté utilisateur",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://exemple.com",
     "saveSuccess": "Enregistrement réussi",
     "webhookDomain": "Domaine du Webhook",
-    "webhookDomainDescription": "Entrez le nom de domaine du serveur de webhook",
-    "webhookDomainPlaceholder": "Entrez le nom de domaine du serveur de webhook"
+    "webhookDomainDescription": "Entrez le nom de domaine du serveur de webhook"
   },
   "tos": {
     "saveSuccess": "Enregistrement réussi",

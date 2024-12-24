@@ -133,10 +133,10 @@
     "groupURLDescription": "Når fylt ut, vil den vises på brukersiden eller brukes der det er nødvendig",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Lagret vellykket",
     "webhookDomain": "Webhook-domene",
-    "webhookDomainDescription": "Skriv inn domenenavnet til webhook-serveren",
-    "webhookDomainPlaceholder": "Skriv inn domenenavnet til webhook-serveren"
+    "webhookDomainDescription": "Skriv inn domenenavnet til webhook-serveren"
   },
   "tos": {
     "saveSuccess": "Lagring vellykket",

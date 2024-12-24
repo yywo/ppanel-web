@@ -133,10 +133,10 @@
     "groupURLDescription": "입력하면 사용자 인터페이스에 표시되거나 필요한 위치에 사용됩니다",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "저장 성공",
     "webhookDomain": "웹훅 도메인",
-    "webhookDomainDescription": "웹훅 서버의 도메인 이름을 입력하세요",
-    "webhookDomainPlaceholder": "웹훅 서버의 도메인 이름을 입력하세요"
+    "webhookDomainDescription": "웹훅 서버의 도메인 이름을 입력하세요"
   },
   "tos": {
     "saveSuccess": "저장 성공",

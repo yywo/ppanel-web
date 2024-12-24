@@ -133,10 +133,10 @@
     "groupURLDescription": "Doldurulduğunda, kullanıcı arayüzünde gösterilecek veya gerektiği yerlerde kullanılacaktır",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Başarıyla kaydedildi",
     "webhookDomain": "Webhook Alan Adı",
-    "webhookDomainDescription": "Webhook sunucusunun alan adını girin",
-    "webhookDomainPlaceholder": "Webhook sunucusunun alan adını girin"
+    "webhookDomainDescription": "Webhook sunucusunun alan adını girin"
   },
   "tos": {
     "saveSuccess": "Kaydetme Başarılı",

@@ -133,10 +133,10 @@
     "groupURLDescription": "Po vyplnění se zobrazí na uživatelské straně nebo tam, kde je potřeba",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
+    "inputPlaceholderWebhookDomain": "https://example.com",
     "saveSuccess": "Úspěšně uloženo",
     "webhookDomain": "Doména webhooku",
-    "webhookDomainDescription": "Zadejte název domény serveru webhooku",
-    "webhookDomainPlaceholder": "Zadejte název domény serveru webhooku"
+    "webhookDomainDescription": "Zadejte název domény serveru webhooku"
   },
   "tos": {
     "saveSuccess": "Uložení bylo úspěšné",
