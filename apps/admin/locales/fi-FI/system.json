@@ -133,7 +133,10 @@
     "groupURLDescription": "Kun tämä on täytetty, se näytetään käyttäjäpuolella tai käytetään tarvittaessa",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "saveSuccess": "Tallennus onnistui"
+    "saveSuccess": "Tallennus onnistui",
+    "webhookDomain": "Webhook-verkkotunnus",
+    "webhookDomainDescription": "Anna webhook-palvelimen verkkotunnuksen nimi",
+    "webhookDomainPlaceholder": "Anna webhook-palvelimen verkkotunnuksen nimi"
   },
   "tos": {
     "saveSuccess": "Tallennus onnistui",

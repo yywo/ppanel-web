@@ -167,6 +167,14 @@ export async function updateRegisterConfig(
   });
 }
 
+/** setting telegram bot POST /v1/admin/system/setting_telegram_bot */
+export async function settingTelegramBot(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/setting_telegram_bot', {
+    method: 'POST',
+    ...(options || {}),
+  });
+}
+
 /** Get site config GET /v1/admin/system/site_config */
 export async function getSiteConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.SiteConfig }>('/v1/admin/system/site_config', {

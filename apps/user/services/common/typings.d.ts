@@ -355,6 +355,7 @@ declare namespace API {
     telegram_bot_token: string;
     telegram_group_url: string;
     telegram_notify: boolean;
+    telegram_web_hook_domain: string;
   };
 
   type Ticket = {

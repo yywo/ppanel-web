@@ -133,7 +133,10 @@
     "groupURLDescription": "填写后，将在用户端显示或用于需要的位置",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "saveSuccess": "保存成功"
+    "saveSuccess": "保存成功",
+    "webhookDomain": "Webhook 域名",
+    "webhookDomainDescription": "输入 webhook 服务器的域名",
+    "webhookDomainPlaceholder": "输入 webhook 服务器的域名"
   },
   "tos": {
     "saveSuccess": "保存成功",

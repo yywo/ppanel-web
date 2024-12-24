@@ -133,7 +133,10 @@
     "groupURLDescription": "入力すると、ユーザー側に表示されるか必要な場所で使用されます",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "saveSuccess": "保存に成功しました"
+    "saveSuccess": "保存に成功しました",
+    "webhookDomain": "Webhook ドメイン",
+    "webhookDomainDescription": "Webhook サーバーのドメイン名を入力してください",
+    "webhookDomainPlaceholder": "Webhook サーバーのドメイン名を入力してください"
   },
   "tos": {
     "saveSuccess": "保存成功",
