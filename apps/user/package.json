@@ -4,27 +4,24 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack -p 3001",
-    "lint": "next lint --max-warnings 0 && tsc --noEmit",
+    "lint": "next lint && tsc --noEmit",
     "locale": "lobe-i18n --with-md",
     "openapi": "openapi2ts",
     "start": "next start"
   },
   "dependencies": {
     "@iconify/react": "^5.1.0",
-    "@repo/ui": "workspace:*",
-    "@shadcn/ui": "workspace:*",
-    "@stripe/react-stripe-js": "^3.1.0",
-    "@stripe/stripe-js": "^5.3.0",
-    "@tanstack/react-query": "^5.62.7",
-    "@tanstack/react-query-next-experimental": "^5.62.7",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.4.0",
+    "@tanstack/react-query": "^5.62.10",
+    "@tanstack/react-query-next-experimental": "^5.62.10",
+    "@workspace/ui": "workspace:*",
     "ahooks": "^3.8.4",
     "axios": "^1.7.9",
-    "crypto-js": "^4.2.0",
-    "framer-motion": "^11.14.4",
-    "lucide-react": "^0.468.0",
-    "mathjs": "^14.0.1",
-    "next": "^15.1.0",
-    "next-intl": "^3.26.1",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.469.0",
+    "next": "^15.1.2",
+    "next-intl": "^3.26.3",
     "next-runtime-env": "^3.2.2",
     "next-themes": "^0.4.4",
     "nextjs-toploader": "^3.7.15",
@@ -39,13 +36,55 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.2",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "^19.0.2",
     "@types/rtl-detect": "^1.0.3",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
     "typescript": "^5.7.2"
+  },
+  "i18n": {
+    "entry": "./locales/en-US",
+    "entryLocale": "en-US",
+    "output": "./locales",
+    "outputLocales": [
+      "cs-CZ",
+      "de-DE",
+      "en-US",
+      "es-ES",
+      "es-MX",
+      "fa-IR",
+      "fi-FI",
+      "fr-FR",
+      "hi-IN",
+      "hu-HU",
+      "ja-JP",
+      "ko-KR",
+      "no-NO",
+      "pl-PL",
+      "pt-BR",
+      "ro-RO",
+      "ru-RU",
+      "th-TH",
+      "tr-TR",
+      "uk-UA",
+      "vi-VN",
+      "zh-CN",
+      "zh-HK"
+    ],
+    "modelName": "gpt-4o",
+    "experimental": {
+      "jsonMode": true
+    },
+    "markdown": {
+      "entry": [
+        "./README.md"
+      ],
+      "outputLocales": [
+        "zh-CN"
+      ]
+    }
   }
 }

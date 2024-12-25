@@ -2,13 +2,13 @@
 
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import { createUser, deleteUser, getUserList, updateUser } from '@/services/admin/user';
-import { ConfirmButton } from '@repo/ui/confirm-button';
-import { formatDate, unitConversion } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Switch } from '@shadcn/ui/switch';
+import { Button } from '@workspace/ui/components/button';
+import { Switch } from '@workspace/ui/components/switch';
+import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { formatDate, unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 import { UserDetail } from './user-detail';
 import UserForm from './user-form';
 
@@ -18,7 +18,7 @@ export default function Page() {
   const ref = useRef<ProTableActions>(null);
 
   return (
-    <ProTable<API.User, any>
+    <ProTable<API.User, Record<string, unknown>>
       action={ref}
       header={{
         title: t('userList'),

@@ -1,5 +1,5 @@
 import { getTos } from '@/services/common/common';
-import { Markdown } from '@repo/ui/markdown';
+import { Markdown } from '@workspace/ui/custom-components/markdown';
 
 export default async function Page() {
   const { data } = await getTos();

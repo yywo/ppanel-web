@@ -1,18 +1,28 @@
 import Providers from '@/components/providers';
-import { geistMono, geistSans } from '@/config/fonts';
 import { getGlobalConfig } from '@/services/common/common';
 import { queryUserInfo } from '@/services/user/user';
-import '@shadcn/ui/globals.css';
-import { Toaster } from '@shadcn/ui/sonner';
+import { Toaster } from '@workspace/ui/components/sonner';
+import '@workspace/ui/globals.css';
+import { getLangDir } from '@workspace/ui/hooks/use-lang-dir';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
 import { unstable_noStore as noStore } from 'next/cache';
+import { Geist, Geist_Mono } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { Metadata, Viewport } from 'next/types';
 import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
-import rtlDetect from 'rtl-detect';
+
+const fontSans = Geist({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+const fontMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   noStore();
@@ -68,7 +78,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   try {
     config = await getGlobalConfig({ skipErrorHandler: true }).then((res) => res.data.data);
   } catch (error) {
-    /* empty */
+    console.log('Error fetching global config:', error);
   }
 
   try {
@@ -77,17 +87,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       Authorization: (await cookies()).get('Authorization')?.value,
     }).then((res) => res.data.data);
   } catch (error) {
-    /* empty */
+    console.log('Error fetching user info:', error);
   }
 
   return (
-    <html suppressHydrationWarning lang={locale} dir={rtlDetect.getLangDir(locale)}>
+    <html suppressHydrationWarning lang={locale} dir={getLangDir(locale)}>
       <head>
         <PublicEnvScript />
       </head>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} size-full min-h-[calc(100dvh-env(safe-area-inset-top))] antialiased`}
+        className={`${fontSans.variable} ${fontMono.variable} size-full min-h-[calc(100dvh-env(safe-area-inset-top))] font-sans antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
           <NextTopLoader showSpinner={false} />

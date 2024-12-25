@@ -1,7 +1,7 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { buttonVariants } from '@shadcn/ui/button';
+import { buttonVariants } from '@workspace/ui/components/button';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';

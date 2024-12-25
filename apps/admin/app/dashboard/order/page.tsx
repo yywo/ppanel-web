@@ -8,13 +8,13 @@ import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import { getOrderList, updateOrderStatus } from '@/services/admin/order';
 import { getSubscribeList } from '@/services/admin/subscribe';
-import { Combobox } from '@repo/ui/combobox';
-import { formatDate } from '@repo/ui/utils';
-import { Badge } from '@shadcn/ui/badge';
-import { Button } from '@shadcn/ui/button';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@shadcn/ui/hover-card';
-import { cn } from '@shadcn/ui/lib/utils';
-import { Separator } from '@shadcn/ui/separator';
+import { Badge } from '@workspace/ui/components/badge';
+import { Button } from '@workspace/ui/components/button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
+import { Separator } from '@workspace/ui/components/separator';
+import { Combobox } from '@workspace/ui/custom-components/combobox';
+import { cn } from '@workspace/ui/lib/utils';
+import { formatDate } from '@workspace/ui/utils';
 import { UserDetail } from '../user/user-detail';
 
 export default function Page() {

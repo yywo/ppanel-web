@@ -1,4 +1,4 @@
-import { intlFormat } from '@shadcn/ui/lib/date-fns';
+import { intlFormat } from 'date-fns';
 
 export function formatBytes(bytes: number) {
   if (bytes === 0) return '0 B';

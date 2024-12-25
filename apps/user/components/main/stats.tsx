@@ -1,8 +1,11 @@
 'use client';
 
 import { getStat } from '@/services/common/common';
-import { LocationsIcon, ServersIcon, UsersIcon } from '@repo/ui/lotties';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useQuery } from '@tanstack/react-query';
+import LocationsLittie from '@workspace/ui/lotties/locations.json';
+import ServersLottie from '@workspace/ui/lotties/servers.json';
+import UsersLottie from '@workspace/ui/lotties/users.json';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
@@ -25,17 +28,17 @@ export function Stats() {
     {
       name: t('users'),
       number: data?.user || 999,
-      icon: <UsersIcon className='size-24' />,
+      icon: <DotLottieReact className='size-24' data={UsersLottie} autoplay loop />,
     },
     {
       name: t('servers'),
       number: data?.server || 30,
-      icon: <ServersIcon className='size-24' />,
+      icon: <DotLottieReact className='size-24' data={ServersLottie} autoplay loop />,
     },
     {
       name: t('locations'),
       number: data?.country || 10,
-      icon: <LocationsIcon className='size-24' />,
+      icon: <DotLottieReact className='size-24' data={LocationsLittie} autoplay loop />,
     },
   ];
   return (
@@ -77,12 +80,12 @@ function CountUp({ end, duration = 2000 }: { end: number; duration?: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTime;
-    let animationFrame;
+    let startTime: number;
+    let animationFrame: number;
 
-    const easeOutQuad = (t) => t * (2 - t);
+    const easeOutQuad = (t: number) => t * (2 - t);
 
-    const updateCount = (timestamp) => {
+    const updateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
       const easedProgress = easeOutQuad(Math.min(progress / duration, 1));

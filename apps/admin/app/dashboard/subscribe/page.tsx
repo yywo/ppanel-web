@@ -1,6 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 
 import GroupTable from './group-table';
 import SubscribeTable from './subscribe-table';

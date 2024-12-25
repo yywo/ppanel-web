@@ -1,6 +1,6 @@
 'use client';
 
-import { default as _Empty } from '@repo/ui/empty';
+import { default as _Empty } from '@workspace/ui/custom-components/empty';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 

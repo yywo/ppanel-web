@@ -1,5 +1,5 @@
 import Announcement from '@/components/announcement';
-import { SidebarInset, SidebarProvider } from '@shadcn/ui/sidebar';
+import { SidebarInset, SidebarProvider } from '@workspace/ui/components/sidebar';
 import { cookies } from 'next/headers';
 import { SidebarLeft } from './sidebar-left';
 import { SidebarRight } from './sidebar-right';

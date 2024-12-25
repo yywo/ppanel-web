@@ -2,8 +2,10 @@ name: Build and Release
 
 on:
   push:
-    branches:
-      - main
+    branches: [main, next, beta]
+
+permissions:
+  contents: write
 
 jobs:
   release:
@@ -12,34 +14,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          bun-version: 'latest'
 
-      - name: Cache pnpm store
+      - name: Cache Bun dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          path: |
+            ~/.bun
+            node_modules
+          key: ${{ runner.os }}-bun-cache-${{ hashFiles('**/bun.lockb') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-bun-cache-
 
       - name: Install deps
-        run: pnpm install
-
-      - name: Lint
-        run: pnpm lint
+        run: bun install
 
       - name: Build
-        run: pnpm build
+        run: bun run build
 
       - name: Release
         id: release
-        run: pnpm release
+        run: bun run release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

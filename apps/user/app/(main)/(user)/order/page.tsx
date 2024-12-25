@@ -4,9 +4,15 @@ import { Display } from '@/components/display';
 import { Empty } from '@/components/empty';
 import { ProList, ProListActions } from '@/components/pro-list';
 import { closeOrder, queryOrderList } from '@/services/user/order';
-import { formatDate } from '@repo/ui/utils';
-import { Button, buttonVariants } from '@shadcn/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { Button, buttonVariants } from '@workspace/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRef } from 'react';

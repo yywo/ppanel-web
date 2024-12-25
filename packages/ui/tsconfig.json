@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "baseUrl": "."
+    //"outDir": "dist"
+    "baseUrl": ".",
+    "paths": {
+      "@workspace/ui/*": ["./src/*"]
+    }
   },
   "exclude": ["node_modules", "dist"],
-  "extends": "@repo/typescript-config/react-library.json",
-  "include": ["src"]
+  "extends": "@workspace/typescript-config/react-library.json",
+  "include": ["."]
 }

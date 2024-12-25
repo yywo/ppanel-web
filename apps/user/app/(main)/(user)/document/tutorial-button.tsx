@@ -1,12 +1,12 @@
 'use client';
 
 import { getTutorial } from '@/utils/tutorial';
-import { Markdown } from '@repo/ui/markdown';
-import { Avatar, AvatarFallback } from '@shadcn/ui/avatar';
-import { buttonVariants } from '@shadcn/ui/button';
-import { useOutsideClick } from '@shadcn/ui/hooks/use-outside-click';
-import { cn } from '@shadcn/ui/lib/utils';
 import { useQuery } from '@tanstack/react-query';
+import { Avatar, AvatarFallback } from '@workspace/ui/components/avatar';
+import { buttonVariants } from '@workspace/ui/components/button';
+import { Markdown } from '@workspace/ui/custom-components/markdown';
+import { useOutsideClick } from '@workspace/ui/hooks/use-outside-click';
+import { cn } from '@workspace/ui/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { RefObject, useEffect, useId, useRef, useState } from 'react';

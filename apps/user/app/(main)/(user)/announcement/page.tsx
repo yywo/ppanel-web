@@ -2,9 +2,9 @@
 
 import { Empty } from '@/components/empty';
 import { queryAnnouncement } from '@/services/user/announcement';
-import { Markdown } from '@repo/ui/markdown';
-import { Timeline } from '@shadcn/ui/timeline';
 import { useQuery } from '@tanstack/react-query';
+import { Timeline } from '@workspace/ui/components/timeline';
+import { Markdown } from '@workspace/ui/custom-components/markdown';
 
 export default function Page() {
   const { data } = useQuery({

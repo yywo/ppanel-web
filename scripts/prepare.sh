@@ -6,38 +6,62 @@ if [ "$CI" = "true" ]; then
   exit 0
 fi
 
-# Run Husky installation if not already installed
-echo "Setting up Husky..."
+# Exit if not a Git repository
+if [ ! -d ".git" ]; then
+  echo "Not a Git repository. Exiting."
+  exit 1
+fi
+
+# Function to set up a Husky hook
+setup_husky_hook() {
+  local hook_name=$1
+  local hook_content=$2
+
+  if [ ! -f ".husky/$hook_name" ]; then
+    echo "Setting up $hook_name hook..."
+    echo "$hook_content" > ".husky/$hook_name" || echo "Failed to set up $hook_name hook. Skipping."
+    chmod +x ".husky/$hook_name" || echo "Failed to make $hook_name hook executable. Skipping."
+  else
+    echo "$hook_name hook is already set up."
+  fi
+}
+
+# Ensure Husky is installed and initialized
 if [ ! -d ".husky" ]; then
-  husky
+  echo "Setting up Husky..."
+  npx husky || echo "Failed to set up Husky. Skipping."
 else
   echo "Husky is already set up."
 fi
 
-# Set up pre-commit hook if it doesn't exist
-if [ ! -f ".husky/pre-commit" ]; then
-  echo "Setting up pre-commit hook..."
-  cat > .husky/pre-commit << EOL
-#!/bin/sh
-. "\$(dirname "\$0")/_/husky.sh"
+# Set up pre-commit hook
+setup_husky_hook "pre-commit" "#!/bin/sh
+. \"\$(dirname \"\$0\")/_/husky.sh\"
 
-npx --no-install lint-staged
-EOL
-  chmod +x .husky/pre-commit
-else
-  echo "pre-commit hook is already set up."
-fi
+npx --no-install lint-staged"
 
-# Set up commit-msg hook if it doesn't exist
-if [ ! -f ".husky/commit-msg" ]; then
-  echo "Setting up commit-msg hook..."
-  cat > .husky/commit-msg << EOL
-#!/bin/sh
-. "\$(dirname "\$0")/_/husky.sh"
+# Set up commit-msg hook
+setup_husky_hook "commit-msg" "#!/bin/sh
+. \"\$(dirname \"\$0\")/_/husky.sh\"
 
-npx --no -- commitlint --edit "\$1"
-EOL
-  chmod +x .husky/commit-msg
-else
-  echo "commit-msg hook is already set up."
-fi
+npx --no-install commitlint --edit \"\$1\""
+
+# Function to globally install an npm package if not installed
+install_global_package() {
+  local package_name=$1
+
+  if ! npm list -g --depth=0 "$package_name" > /dev/null 2>&1; then
+    echo "Installing $package_name globally..."
+    npm install -g "$package_name" || echo "Failed to install $package_name globally. Skipping."
+  else
+    echo "$package_name is already installed."
+  fi
+}
+
+# Check and install required global npm packages
+install_global_package "@lobehub/i18n-cli"
+install_global_package "@lobehub/commit-cli"
+
+# Run lobe-commit interactively
+echo "Running lobe-commit -i..."
+lobe-commit -i || echo "lobe-commit failed. Skipping."

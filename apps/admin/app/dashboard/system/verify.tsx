@@ -1,13 +1,13 @@
 'use client';
 
 import { getVerifyConfig, updateVerifyConfig } from '@/services/admin/system';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { Label } from '@shadcn/ui/label';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Switch } from '@shadcn/ui/switch';
-import { Table, TableBody, TableCell, TableRow } from '@shadcn/ui/table';
 import { useQuery } from '@tanstack/react-query';
+import { Label } from '@workspace/ui/components/label';
+import { Switch } from '@workspace/ui/components/switch';
+import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 export default function Verify() {
   const t = useTranslations('system.verify');

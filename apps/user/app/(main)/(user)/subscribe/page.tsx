@@ -3,12 +3,12 @@
 import { Display } from '@/components/display';
 import { querySubscribeGroupList, querySubscribeList } from '@/services/user/subscribe';
 import { Icon } from '@iconify/react';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from '@shadcn/ui/card';
-import { cn } from '@shadcn/ui/lib/utils';
-import { Separator } from '@shadcn/ui/separator';
-import { Tabs, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
 import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@workspace/ui/components/card';
+import { Separator } from '@workspace/ui/components/separator';
+import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 

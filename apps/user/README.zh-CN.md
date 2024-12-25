@@ -65,11 +65,11 @@ git clone https://github.com/perfect-panel/ppanel-web.git
 cd ppanel-web
 
 # 安装依赖
-pnpm install
+bun install
 
 # 运行开发服务器
 cd apps/user
-pnpm dev
+bun dev
 ```
 
 在浏览器中打开 <http://localhost:3000> 查看结果。

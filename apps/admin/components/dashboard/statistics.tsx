@@ -2,16 +2,22 @@
 
 import { queryServerTotalData, queryTicketWaitReply } from '@/services/admin/console';
 import { Icon } from '@iconify/react';
-import { formatBytes } from '@repo/ui/utils';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@shadcn/ui/chart';
-import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from '@shadcn/ui/lib/recharts';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@shadcn/ui/select';
-import { Tabs, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
 import { useQuery } from '@tanstack/react-query';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@workspace/ui/components/chart';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@workspace/ui/components/select';
+import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts';
 import { Empty } from '../empty';
 import { RevenueStatisticsCard } from './revenue-statistics-card';
 import { UserStatisticsCard } from './user-statistics-card';
@@ -65,8 +71,8 @@ export default function Statistics() {
         })) || [],
     },
   };
-
-  const currentData = trafficData[dataType][timeFrame];
+  const currentData =
+    trafficData[dataType as 'nodes' | 'users'][timeFrame as 'today' | 'yesterday'];
 
   return (
     <>

@@ -65,11 +65,11 @@ git clone https://github.com/perfect-panel/ppanel-web.git
 cd ppanel-web
 
 # Install dependencies
-pnpm install
+bun install
 
 # Run the development server
 cd apps/admin
-pnpm dev
+bun dev
 ```
 
 Open <http://localhost:3000> with your browser to see the result.

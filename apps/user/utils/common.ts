@@ -1,5 +1,5 @@
 import { locales, NEXT_PUBLIC_DEFAULT_LANGUAGE } from '@/config/constants';
-import { isBrowser } from '@repo/ui/utils';
+import { isBrowser } from '@workspace/ui/utils';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies(null, {

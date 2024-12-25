@@ -1,9 +1,10 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { NetworkSecurityIcon } from '@repo/ui/lotties';
-import { HoverBorderGradient } from '@shadcn/ui/hover-border-gradient';
-import { TextGenerateEffect } from '@shadcn/ui/text-generate-effect';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { HoverBorderGradient } from '@workspace/ui/components/hover-border-gradient';
+import { TextGenerateEffect } from '@workspace/ui/components/text-generate-effect';
+import NetworkSecurityLottie from '@workspace/ui/lotties/network-security.json';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -54,7 +55,7 @@ export function Hero() {
         viewport={{ once: true, amount: 0.3 }}
         className='flex w-full'
       >
-        <NetworkSecurityIcon />
+        <DotLottieReact data={NetworkSecurityLottie} autoplay loop />
       </motion.div>
     </motion.div>
   );

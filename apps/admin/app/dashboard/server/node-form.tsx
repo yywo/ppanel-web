@@ -1,18 +1,27 @@
 'use client';
 
 import { getNodeGroupList } from '@/services/admin/server';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
-import { Combobox } from '@repo/ui/combobox';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { unitConversion } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@shadcn/ui/form';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { cn } from '@shadcn/ui/lib/utils';
-import { zodResolver } from '@shadcn/ui/lib/zod';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@shadcn/ui/select';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/form';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@workspace/ui/components/select';
 import {
   Sheet,
   SheetContent,
@@ -20,12 +29,16 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@shadcn/ui/sheet';
-import { Switch } from '@shadcn/ui/switch';
-import { Tabs, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/sheet';
+import { Switch } from '@workspace/ui/components/switch';
+import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Combobox } from '@workspace/ui/custom-components/combobox';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { cn } from '@workspace/ui/lib/utils';
+import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { formSchema, protocols } from './form-schema';
 
 interface NodeFormProps<T> {

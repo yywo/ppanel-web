@@ -3,8 +3,14 @@
 import { locales } from '@/config/constants';
 import { setLocale } from '@/utils/common';
 import { Icon } from '@iconify/react';
-import { getCountry } from '@repo/ui/utils';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@shadcn/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@workspace/ui/components/select';
+import { getCountry } from '@workspace/ui/utils';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +27,7 @@ export default function LanguageSwitch() {
 
   return (
     <Select defaultValue={locale} onValueChange={handleLanguageChange}>
-      <SelectTrigger className='hover:bg-accent hover:text-accent-foreground w-auto border-none bg-transparent p-2 focus:ring-0 [&>svg]:hidden'>
+      <SelectTrigger className='hover:bg-accent hover:text-accent-foreground w-auto border-none bg-transparent p-2 shadow-none focus:ring-0 [&>svg]:hidden'>
         <SelectValue>
           <div className='flex items-center'>
             <Icon icon={`flagpack:${country?.alpha2.toLowerCase()}`} className='!size-5' />

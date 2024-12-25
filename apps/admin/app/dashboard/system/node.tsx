@@ -2,13 +2,13 @@
 
 import { getNodeConfig, updateNodeConfig } from '@/services/admin/system';
 import { Icon } from '@iconify/react';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { Label } from '@shadcn/ui/label';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Table, TableBody, TableCell, TableRow } from '@shadcn/ui/table';
 import { useQuery } from '@tanstack/react-query';
+import { Label } from '@workspace/ui/components/label';
+import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { nanoid } from 'nanoid';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 export default function Node() {
   const t = useTranslations('system.node');

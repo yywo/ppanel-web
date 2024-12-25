@@ -1,6 +1,6 @@
 import { Header } from '@/components/header';
 import { SidebarLeft } from '@/components/sidebar-left';
-import { SidebarInset, SidebarProvider } from '@shadcn/ui/sidebar';
+import { SidebarInset, SidebarProvider } from '@workspace/ui/components/sidebar';
 import { cookies } from 'next/headers';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {

@@ -1,8 +1,8 @@
 import { NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL } from '@/config/constants';
 import { getTranslations } from '@/locales/utils';
-import { isBrowser } from '@repo/ui/utils';
-import { toast } from '@shadcn/ui/lib/sonner';
+import { isBrowser } from '@workspace/ui/utils';
 import requset, { InternalAxiosRequestConfig } from 'axios';
+import { toast } from 'sonner';
 import { getAuthorization, Logout } from './common';
 
 async function handleError(response: any) {

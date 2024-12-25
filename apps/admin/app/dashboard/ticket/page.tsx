@@ -8,9 +8,8 @@ import {
   updateTicketStatus,
 } from '@/services/admin/ticket';
 import { Icon } from '@iconify/react';
-import { ConfirmButton } from '@repo/ui/confirm-button';
-import { formatDate } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
 import {
   Drawer,
   DrawerContent,
@@ -18,16 +17,17 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-} from '@shadcn/ui/drawer';
-import { Input } from '@shadcn/ui/input';
-import { Label } from '@shadcn/ui/label';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { cn } from '@shadcn/ui/lib/utils';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/drawer';
+import { Input } from '@workspace/ui/components/input';
+import { Label } from '@workspace/ui/components/label';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
+import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { cn } from '@workspace/ui/lib/utils';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import NextImage from 'next/legacy/image';
 import { useEffect, useRef, useState } from 'react';
+import { toast } from 'sonner';
 import { UserDetail } from '../user/user-detail';
 
 export default function Page() {

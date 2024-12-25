@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@shadcn/ui/avatar';
-import { Card, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@workspace/ui/components/avatar';
+import { Card, CardDescription, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
@@ -25,11 +25,12 @@ export default async function Billing({ type }: BillingProps) {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const data = await response.json();
     const now = new Date().getTime();
-    list = data[type].filter((item) => {
+    list = data[type].filter((item: { expiryDate: string }) => {
       const expiryDate = Date.parse(item.expiryDate);
       return !isNaN(expiryDate) && expiryDate > now;
     });
   } catch (error) {
+    console.log('Error fetching billing data:', error);
     return null;
   }
   if (list && list.length === 0) return null;

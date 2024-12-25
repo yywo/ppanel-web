@@ -6,8 +6,8 @@
     "moduleResolution": "Bundler",
     "allowJs": true,
     "jsx": "preserve",
-    "noEmit": true,
-    "noImplicitAny": false
+    "noEmit": true
   },
+  "display": "Next.js",
   "extends": "./base.json"
 }

@@ -1,9 +1,9 @@
 'use client';
 
-import { toast } from '@shadcn/ui/lib/sonner';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 import {
   createApplication,
@@ -14,14 +14,20 @@ import {
   updateApplication,
   updateSubscribeConfig,
 } from '@/services/admin/system';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { Button } from '@shadcn/ui/button';
-import { Label } from '@shadcn/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@shadcn/ui/select';
-import { Switch } from '@shadcn/ui/switch';
-import { Table, TableBody, TableCell, TableRow } from '@shadcn/ui/table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
-import { Textarea } from '@shadcn/ui/textarea';
+import { Button } from '@workspace/ui/components/button';
+import { Label } from '@workspace/ui/components/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@workspace/ui/components/select';
+import { Switch } from '@workspace/ui/components/switch';
+import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Textarea } from '@workspace/ui/components/textarea';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 
 function compareData(
   originalData: API.ApplicationResponse,
@@ -124,7 +130,7 @@ export default function Subscription() {
     },
   });
   const [app, setApp] = useState<API.ApplicationResponse>();
-  const appTypes = Object.keys(apps || {});
+  const appTypes = Object.keys(apps || {}) as (keyof API.ApplicationResponse)[];
 
   useEffect(() => {
     if (!app) setApp(apps);
@@ -246,7 +252,7 @@ export default function Subscription() {
           })}
         </TabsList>
         {appTypes.map((type) => {
-          const list = (app?.[type] as API.Application[]) || [];
+          const list = (app?.[type] || []) as API.Application[];
           const updatedList = (key: string, value: string, index: number) => {
             const newList = list.map((item, i) => (i === index ? { ...item, [key]: value } : item));
 

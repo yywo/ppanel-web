@@ -1,11 +1,10 @@
 'use client';
 
+import useGlobalStore from '@/config/use-global';
 import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 import Turnstile, { useTurnstile } from 'react-turnstile';
-
-import useGlobalStore from '@/config/use-global';
 
 export default function CloudFlareTurnstile({
   id,

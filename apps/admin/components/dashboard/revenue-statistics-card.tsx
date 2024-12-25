@@ -1,15 +1,25 @@
 'use client';
 
 import { queryRevenueStatistics } from '@/services/admin/console';
-import { unitConversion } from '@repo/ui/utils';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { useQuery } from '@tanstack/react-query';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
 import {
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from '@shadcn/ui/chart';
+} from '@workspace/ui/components/chart';
+import { Separator } from '@workspace/ui/components/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { unitConversion } from '@workspace/ui/utils';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   Area,
   AreaChart,
@@ -20,11 +30,7 @@ import {
   Pie,
   PieChart,
   XAxis,
-} from '@shadcn/ui/lib/recharts';
-import { Separator } from '@shadcn/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
-import { useQuery } from '@tanstack/react-query';
-import { useLocale, useTranslations } from 'next-intl';
+} from 'recharts';
 import { Display } from '../display';
 import { Empty } from '../empty';
 

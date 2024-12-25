@@ -1,10 +1,11 @@
 {
-  "name": "@repo/commitlint-config",
+  "name": "@workspace/commitlint-config",
+  "version": "0.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "base.js",
   "devDependencies": {
-    "@commitlint/cli": "^19.6.0",
-    "commitlint": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
+    "commitlint": "^19.6.1",
     "commitlint-config-gitmoji": "^2.3.1"
   }
 }

@@ -4,12 +4,12 @@ import { Display } from '@/components/display';
 import { ProList, ProListActions } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
 import { queryUserBalanceLog } from '@/services/user/user';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import { Empty } from '@/components/empty';
-import { formatDate } from '@repo/ui/utils';
+import { formatDate } from '@workspace/ui/utils';
 import Recharge from '../order/recharge';
 
 export default function Page() {

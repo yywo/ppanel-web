@@ -2,15 +2,23 @@
 
 import useGlobalStore from '@/config/use-global';
 import { bindTelegram, unbindTelegram, updateUserNotifySetting } from '@/services/user/user';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@shadcn/ui/form';
-import { Input } from '@shadcn/ui/input';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
-import { Switch } from '@shadcn/ui/switch';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/form';
+import { Input } from '@workspace/ui/components/input';
+import { Switch } from '@workspace/ui/components/switch';
 import { useTranslations } from 'next-intl';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { z } from 'zod';
 
 const FormSchema = z.object({
   telegram: z.number().nullish(),
@@ -70,7 +78,9 @@ export default function NotifySettings() {
                             await getUserInfo();
                           } else {
                             const { data } = await bindTelegram();
-                            data.data?.url && window.open(data.data.url, '_blank');
+                            if (data.data?.url) {
+                              window.open(data.data.url, '_blank');
+                            }
                           }
                         }}
                       >

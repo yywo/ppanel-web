@@ -1,14 +1,24 @@
 'use client';
 
 import { queryUserStatistics } from '@/services/admin/console';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { useQuery } from '@tanstack/react-query';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
 import {
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-} from '@shadcn/ui/chart';
+} from '@workspace/ui/components/chart';
+import { Separator } from '@workspace/ui/components/separator';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   Area,
   AreaChart,
@@ -19,27 +29,8 @@ import {
   Pie,
   PieChart,
   XAxis,
-} from '@shadcn/ui/lib/recharts';
-import { Separator } from '@shadcn/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
-import { useQuery } from '@tanstack/react-query';
-import { useLocale, useTranslations } from 'next-intl';
+} from 'recharts';
 import { Empty } from '../empty';
-
-const UserStatisticsConfig = {
-  register: {
-    label: '注册',
-    color: 'hsl(var(--chart-1))',
-  },
-  new_purchase: {
-    label: '新购',
-    color: 'hsl(var(--chart-2))',
-  },
-  repurchase: {
-    label: '复购',
-    color: 'hsl(var(--chart-3))',
-  },
-};
 
 export function UserStatisticsCard() {
   const t = useTranslations('index');

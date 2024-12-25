@@ -1,7 +1,7 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { formatBytes, unitConversion } from '@repo/ui/utils';
+import { formatBytes, unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 
 type DisplayType = 'currency' | 'traffic' | 'number';

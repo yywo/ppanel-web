@@ -1,14 +1,15 @@
 import useGlobalStore from '@/config/use-global';
 import { sendEmailCode } from '@/services/common/common';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
-import { Button } from '@shadcn/ui/button';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@shadcn/ui/form';
-import { Input } from '@shadcn/ui/input';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
+import { Button } from '@workspace/ui/components/button';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
+import { Input } from '@workspace/ui/components/input';
 import { useCountDown } from 'ahooks';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import CloudFlareTurnstile from './turnstile';
 
 export default function UserResetForm({

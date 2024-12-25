@@ -7,9 +7,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@shadcn/ui/breadcrumb';
-import { Separator } from '@shadcn/ui/separator';
-import { SidebarTrigger } from '@shadcn/ui/sidebar';
+} from '@workspace/ui/components/breadcrumb';
+import { Separator } from '@workspace/ui/components/separator';
+import { SidebarTrigger } from '@workspace/ui/components/sidebar';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { Fragment, useMemo } from 'react';

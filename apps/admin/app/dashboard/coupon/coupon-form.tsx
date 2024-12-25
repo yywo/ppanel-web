@@ -1,17 +1,20 @@
 'use client';
 
 import { getSubscribeList } from '@/services/admin/subscribe';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
-import { Combobox } from '@repo/ui/combobox';
-import { DatePicker } from '@repo/ui/date-picker';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { unitConversion } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@shadcn/ui/form';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
-import { RadioGroup, RadioGroupItem } from '@shadcn/ui/radio-group';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/form';
+import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
   Sheet,
   SheetContent,
@@ -19,10 +22,15 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@shadcn/ui/sheet';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/sheet';
+import { Combobox } from '@workspace/ui/custom-components/combobox';
+import { DatePicker } from '@workspace/ui/custom-components/date-picker';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const formSchema = z.object({
   name: z.string(),

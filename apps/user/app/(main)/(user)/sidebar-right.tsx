@@ -3,14 +3,19 @@
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react';
-import { isBrowser } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Sidebar, SidebarContent } from '@shadcn/ui/sidebar';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadcn/ui/tooltip';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import { Sidebar, SidebarContent } from '@workspace/ui/components/sidebar';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@workspace/ui/components/tooltip';
+import { isBrowser } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { toast } from 'sonner';
 import Recharge from './order/recharge';
 
 export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>) {

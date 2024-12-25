@@ -1,10 +1,10 @@
 'use client';
 
 import { getTosConfig, updateTosConfig } from '@/services/admin/system';
-import { MarkdownEditor } from '@repo/ui/editor';
-import { toast } from '@shadcn/ui/lib/sonner';
 import { useQuery } from '@tanstack/react-query';
+import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
 import { useTranslations } from 'next-intl';
+import { toast } from 'sonner';
 
 export default function Tos() {
   const t = useTranslations('system.tos');

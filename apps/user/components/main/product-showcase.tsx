@@ -4,14 +4,15 @@ import { SubscribeDetail } from '@/app/(main)/(user)/subscribe/detail';
 import { Display } from '@/components/display';
 import { getSubscription } from '@/services/common/common';
 import { Icon } from '@iconify/react';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardFooter, CardHeader } from '@shadcn/ui/card';
-import { cn } from '@shadcn/ui/lib/utils';
-import { Separator } from '@shadcn/ui/separator';
 import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardFooter, CardHeader } from '@workspace/ui/components/card';
+import { Separator } from '@workspace/ui/components/separator';
+import { cn } from '@workspace/ui/lib/utils';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { Key, ReactNode } from 'react';
 
 export function ProductShowcase() {
   const t = useTranslations('index');
@@ -75,25 +76,35 @@ export function ProductShowcase() {
                     return (
                       <>
                         {description && <li className='text-muted-foreground'>{description}</li>}
-                        {features.map((feature, index) => (
-                          <li
-                            className={cn('flex items-center gap-2', {
-                              'text-muted-foreground line-through': feature.type === 'destructive',
-                            })}
-                            key={index}
-                          >
-                            {feature.icon && (
-                              <Icon
-                                icon={feature.icon}
-                                className={cn('text-primary size-5', {
-                                  'text-green-500': feature.type === 'success',
-                                  'text-destructive': feature.type === 'destructive',
-                                })}
-                              />
-                            )}
-                            {feature.label}
-                          </li>
-                        ))}
+                        {features.map(
+                          (
+                            feature: {
+                              type: string;
+                              icon: string;
+                              label: ReactNode;
+                            },
+                            index: Key,
+                          ) => (
+                            <li
+                              className={cn('flex items-center gap-2', {
+                                'text-muted-foreground line-through':
+                                  feature.type === 'destructive',
+                              })}
+                              key={index}
+                            >
+                              {feature.icon && (
+                                <Icon
+                                  icon={feature.icon}
+                                  className={cn('text-primary size-5', {
+                                    'text-green-500': feature.type === 'success',
+                                    'text-destructive': feature.type === 'destructive',
+                                  })}
+                                />
+                              )}
+                              {feature.label}
+                            </li>
+                          ),
+                        )}
                       </>
                     );
                   })()}

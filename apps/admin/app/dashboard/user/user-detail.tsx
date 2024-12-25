@@ -1,10 +1,10 @@
 'use client';
 
 import { getUserDetail } from '@/services/admin/user';
-import { formatDate, unitConversion } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@shadcn/ui/hover-card';
 import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
+import { formatDate, unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 

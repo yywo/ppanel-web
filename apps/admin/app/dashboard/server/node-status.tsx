@@ -1,10 +1,15 @@
 'use client';
 
-import { formatDate } from '@repo/ui/utils';
-import { Badge } from '@shadcn/ui/badge';
-import { Progress } from '@shadcn/ui/progress';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadcn/ui/tooltip';
+import { Badge } from '@workspace/ui/components/badge';
+import { Progress } from '@workspace/ui/components/progress';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@workspace/ui/components/tooltip';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 
 export function formatPercentage(value: number): string {

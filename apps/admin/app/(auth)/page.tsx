@@ -1,13 +1,13 @@
 'use client';
 
 import LanguageSwitch from '@/components/language-switch';
+import ThemeSwitch from '@/components/theme-switch';
 import useGlobalStore from '@/config/use-global';
-import { LoginIcon } from '@repo/ui/lotties';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import LoginLottie from '@workspace/ui/lotties/login.json';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-
-import ThemeSwitch from '@/components/theme-switch';
 import UserAuthForm from './user-auth-form';
 
 export default function Page() {
@@ -30,7 +30,12 @@ export default function Page() {
               />
               <span className='text-2xl font-semibold'>{site.site_name}</span>
             </Link>
-            <LoginIcon className='mx-auto hidden w-[275px] md:w-1/2 lg:block xl:w-[500px]' />
+            <DotLottieReact
+              className='mx-auto hidden w-full lg:block'
+              data={LoginLottie}
+              autoplay
+              loop
+            />
             <p className='hidden w-[275px] text-center md:w-1/2 lg:block xl:w-[500px]'>
               {site.site_desc}
             </p>

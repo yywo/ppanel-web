@@ -3,9 +3,8 @@
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, recharge } from '@/services/user/order';
 import { getAvailablePaymentMethods } from '@/services/user/payment';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { unitConversion } from '@repo/ui/utils';
-import { Button, ButtonProps } from '@shadcn/ui/button';
+import { useQuery } from '@tanstack/react-query';
+import { Button, ButtonProps } from '@workspace/ui/components/button';
 import {
   Dialog,
   DialogContent,
@@ -13,10 +12,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@shadcn/ui/dialog';
-import { Label } from '@shadcn/ui/label';
-import { RadioGroup, RadioGroupItem } from '@shadcn/ui/radio-group';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/dialog';
+import { Label } from '@workspace/ui/components/label';
+import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { unitConversion } from '@workspace/ui/utils';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';

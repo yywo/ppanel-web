@@ -4,14 +4,20 @@ import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, queryOrderDetail } from '@/services/user/order';
 import { Icon } from '@iconify/react';
-import { formatDate } from '@repo/ui/utils';
-import { Badge } from '@shadcn/ui/badge';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { addMinutes, format } from '@shadcn/ui/lib/date-fns';
-import { Separator } from '@shadcn/ui/separator';
 import { useQuery } from '@tanstack/react-query';
+import { Badge } from '@workspace/ui/components/badge';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
+import { Separator } from '@workspace/ui/components/separator';
+import { formatDate } from '@workspace/ui/utils';
 import { useCountDown } from 'ahooks';
+import { addMinutes, format } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';

@@ -58,7 +58,7 @@ git clone https://github.com/perfect-panel/ppanel-web.git
 cd ppanel-web
 
 # Install dependencies
-pnpm install
+bun install
 ```
 
 ## 🤝 Contributing

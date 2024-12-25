@@ -1,14 +1,16 @@
 import { getNodeGroupList, getNodeList } from '@/services/admin/server';
 import { getSubscribeGroupList } from '@/services/admin/subscribe';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
-import { Combobox } from '@repo/ui/combobox';
-import { ArrayInput } from '@repo/ui/dynamic-Inputs';
-import { JSONEditor } from '@repo/ui/editor';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { evaluateWithPrecision, unitConversion } from '@repo/ui/utils';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@shadcn/ui/accordion';
-import { Button } from '@shadcn/ui/button';
-import { Checkbox } from '@shadcn/ui/checkbox';
+import { useQuery } from '@tanstack/react-query';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@workspace/ui/components/accordion';
+import { Button } from '@workspace/ui/components/button';
+import { Checkbox } from '@workspace/ui/components/checkbox';
 import {
   Form,
   FormControl,
@@ -17,11 +19,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@shadcn/ui/form';
-import { Label } from '@shadcn/ui/label';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
+} from '@workspace/ui/components/form';
+import { Label } from '@workspace/ui/components/label';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
   Sheet,
   SheetContent,
@@ -29,11 +29,17 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@shadcn/ui/sheet';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/sheet';
+import { Combobox } from '@workspace/ui/custom-components/combobox';
+import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
+import { JSONEditor } from '@workspace/ui/custom-components/editor';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { evaluateWithPrecision, unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { assign, shake } from 'radash';
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 interface SubscribeFormProps<T> {
   onSubmit: (data: T) => Promise<boolean> | boolean;

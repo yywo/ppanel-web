@@ -1,11 +1,16 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
-import { MarkdownEditor } from '@repo/ui/editor';
-import { Button } from '@shadcn/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@shadcn/ui/form';
-import { Input } from '@shadcn/ui/input';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@workspace/ui/components/form';
+import { Input } from '@workspace/ui/components/input';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
   Sheet,
   SheetContent,
@@ -13,9 +18,12 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@shadcn/ui/sheet';
+} from '@workspace/ui/components/sheet';
+import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const formSchema = z.object({
   title: z.string(),

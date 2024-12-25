@@ -3,15 +3,21 @@
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, preCreateOrder, renewal } from '@/services/user/order';
 import { getAvailablePaymentMethods } from '@/services/user/payment';
-import { Badge } from '@shadcn/ui/badge';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent } from '@shadcn/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@shadcn/ui/dialog';
-import { Input } from '@shadcn/ui/input';
-import { Label } from '@shadcn/ui/label';
-import { RadioGroup, RadioGroupItem } from '@shadcn/ui/radio-group';
-import { Separator } from '@shadcn/ui/separator';
 import { useQuery } from '@tanstack/react-query';
+import { Badge } from '@workspace/ui/components/badge';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent } from '@workspace/ui/components/card';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@workspace/ui/components/dialog';
+import { Input } from '@workspace/ui/components/input';
+import { Label } from '@workspace/ui/components/label';
+import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
+import { Separator } from '@workspace/ui/components/separator';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';

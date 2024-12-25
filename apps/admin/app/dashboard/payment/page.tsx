@@ -1,5 +1,5 @@
 import Billing from '@/components/billing';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import AlipayF2F from './alipayf2f';
 import Epay from './epay';
 import StripeAlipay from './stripe-alipay';

@@ -1,7 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
-import { Separator } from '@shadcn/ui/separator';
+import { Separator } from '@workspace/ui/components/separator';
 import { useTranslations } from 'next-intl';
 
 interface SubscribeBillingProps {

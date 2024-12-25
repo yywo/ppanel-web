@@ -2,8 +2,8 @@
 
 import useGlobalStore from '@/config/use-global';
 import { Logout } from '@/utils/common';
-import { Avatar, AvatarFallback, AvatarImage } from '@shadcn/ui/avatar';
-import { Button } from '@shadcn/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@workspace/ui/components/avatar';
+import { Button } from '@workspace/ui/components/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@shadcn/ui/dropdown-menu';
+} from '@workspace/ui/components/dropdown-menu';
 import { useTranslations } from 'next-intl';
 
 export function UserNav() {

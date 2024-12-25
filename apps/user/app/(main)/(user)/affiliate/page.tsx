@@ -4,14 +4,20 @@ import { Empty } from '@/components/empty';
 import { ProList } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
 import { queryUserAffiliate } from '@/services/user/user';
-import { formatDate } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { toast } from '@shadcn/ui/lib/sonner';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
+import { formatDate } from '@workspace/ui/utils';
 import { Copy } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { toast } from 'sonner';
 
 export default function Page() {
   const t = useTranslations('affiliate');

@@ -1,16 +1,16 @@
 'use client';
 
 import { getEmailSmtpConfig, testEmailSmtp, updateEmailSmtpConfig } from '@/services/admin/system';
-import { HTMLEditor } from '@repo/ui/editor';
-import { EnhancedInput } from '@repo/ui/enhanced-input';
-import { Button } from '@shadcn/ui/button';
-import { Label } from '@shadcn/ui/label';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Switch } from '@shadcn/ui/switch';
-import { Table, TableBody, TableCell, TableRow } from '@shadcn/ui/table';
 import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
+import { Label } from '@workspace/ui/components/label';
+import { Switch } from '@workspace/ui/components/switch';
+import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { HTMLEditor } from '@workspace/ui/custom-components/editor';
+import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 export default function Email() {
   const t = useTranslations('system.email');

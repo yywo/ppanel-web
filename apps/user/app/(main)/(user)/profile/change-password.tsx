@@ -1,14 +1,15 @@
 'use client';
 
 import { updateUserPassword } from '@/services/user/user';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@shadcn/ui/form';
-import { Input } from '@shadcn/ui/input';
-import { useForm } from '@shadcn/ui/lib/react-hook-form';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { z, zodResolver } from '@shadcn/ui/lib/zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
+import { Input } from '@workspace/ui/components/input';
 import { useTranslations } from 'next-intl';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { z } from 'zod';
 
 export default function ChangePassword() {
   const t = useTranslations('profile.accountSettings');

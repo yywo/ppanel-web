@@ -8,12 +8,12 @@ import {
   getSubscribeGroupList,
   updateSubscribeGroup,
 } from '@/services/admin/subscribe';
-import { ConfirmButton } from '@repo/ui/confirm-button';
-import { formatDate } from '@repo/ui/utils';
-import { Button } from '@shadcn/ui/button';
-import { toast } from '@shadcn/ui/lib/sonner';
+import { Button } from '@workspace/ui/components/button';
+import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 import GroupForm from './group-form';
 
 const GroupTable = () => {

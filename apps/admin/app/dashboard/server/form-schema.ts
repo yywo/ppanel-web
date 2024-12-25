@@ -1,4 +1,4 @@
-import { z } from '@shadcn/ui/lib/zod';
+import { z } from 'zod';
 
 export const protocols = ['shadowsocks', 'vmess', 'vless', 'trojan', 'hysteria2', 'tuic'];
 

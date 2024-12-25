@@ -11,7 +11,7 @@ import {
 } from '@/config/constants';
 import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react/dist/iconify.js';
-import { Separator } from '@shadcn/ui/separator';
+import { Separator } from '@workspace/ui/components/separator';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Fragment } from 'react';

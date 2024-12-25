@@ -1,8 +1,8 @@
 'use client';
 
-import { ProTable as _ProTable, ProTableProps } from '@repo/ui/pro-table';
+import { ProTable as _ProTable, ProTableProps } from '@workspace/ui/custom-components/pro-table';
 import { useTranslations } from 'next-intl';
-export { type ProTableActions } from '@repo/ui/pro-table';
+export { type ProTableActions } from '@workspace/ui/custom-components/pro-table';
 
 export function ProTable<
   TData extends Record<string, unknown>,

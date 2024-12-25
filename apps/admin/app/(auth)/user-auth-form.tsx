@@ -7,10 +7,10 @@ import {
 import useGlobalStore from '@/config/use-global';
 import { checkUser, resetPassword, userLogin, userRegister } from '@/services/common/auth';
 import { getRedirectUrl, setAuthorization } from '@/utils/common';
-import { toast } from '@shadcn/ui/lib/sonner';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useState, useTransition } from 'react';
+import { toast } from 'sonner';
 import UserCheckForm from './user-check-form';
 import UserLoginForm from './user-login-form';
 import UserRegisterForm from './user-register-form';

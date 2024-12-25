@@ -1,6 +1,6 @@
 import { NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL } from '@/config/constants';
 import { queryUserInfo } from '@/services/user/user';
-import { extractDomain } from '@repo/ui/utils';
+import { extractDomain } from '@workspace/ui/utils';
 import { create } from 'zustand';
 
 export interface GlobalStore {

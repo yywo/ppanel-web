@@ -2,7 +2,13 @@
 
 import { getSystemLog, restartSystem } from '@/services/admin/tool';
 import { Icon } from '@iconify/react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@shadcn/ui/accordion';
+import { useQuery } from '@tanstack/react-query';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@workspace/ui/components/accordion';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,12 +19,17 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@shadcn/ui/alert-dialog';
-import { Badge } from '@shadcn/ui/badge';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { ScrollArea } from '@shadcn/ui/scroll-area';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/alert-dialog';
+import { Badge } from '@workspace/ui/components/badge';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@workspace/ui/components/card';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -31,7 +42,7 @@ const getLogLevelColor = (level: string) => {
   return colorMap[level] || 'bg-gray-100 text-gray-800 hover:bg-gray-200';
 };
 
-export default function page() {
+export default function Page() {
   const t = useTranslations('tool');
   const {
     data: logs,
@@ -131,7 +142,7 @@ export default function page() {
                   </div>
                 ) : (
                   <Accordion type='single' collapsible className='w-full'>
-                    {logs?.map((log, index) => (
+                    {logs?.map((log: any, index: number) => (
                       <AccordionItem key={index} value={`item-${index}`} className='px-4'>
                         <AccordionTrigger className='hover:no-underline'>
                           <div className='flex w-full flex-col items-start space-y-2 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0'>

@@ -4,7 +4,8 @@ import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, resetTraffic } from '@/services/user/order';
 import { getAvailablePaymentMethods } from '@/services/user/payment';
-import { Button } from '@shadcn/ui/button';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
 import {
   Dialog,
   DialogContent,
@@ -12,10 +13,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@shadcn/ui/dialog';
-import { Label } from '@shadcn/ui/label';
-import { RadioGroup, RadioGroupItem } from '@shadcn/ui/radio-group';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/dialog';
+import { Label } from '@workspace/ui/components/label';
+import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';

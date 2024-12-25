@@ -11,16 +11,21 @@ import {
   nodeSort,
   updateNode,
 } from '@/services/admin/server';
-import { ConfirmButton } from '@repo/ui/confirm-button';
-import { Badge } from '@shadcn/ui/badge';
-import { Button } from '@shadcn/ui/button';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { cn } from '@shadcn/ui/lib/utils';
-import { Switch } from '@shadcn/ui/switch';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadcn/ui/tooltip';
 import { useQuery } from '@tanstack/react-query';
+import { Badge } from '@workspace/ui/components/badge';
+import { Button } from '@workspace/ui/components/button';
+import { Switch } from '@workspace/ui/components/switch';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@workspace/ui/components/tooltip';
+import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 import NodeForm from './node-form';
 import { NodeStatusCell } from './node-status';
 

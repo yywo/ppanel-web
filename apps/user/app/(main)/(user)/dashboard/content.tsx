@@ -4,8 +4,13 @@ import { Display } from '@/components/display';
 import { queryApplicationConfig } from '@/services/user/subscribe';
 import { queryUserSubscribe } from '@/services/user/user';
 import { Icon } from '@iconify/react';
-import { getNextResetDate, isBrowser } from '@repo/ui/utils';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@shadcn/ui/accordion';
+import { useQuery } from '@tanstack/react-query';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@workspace/ui/components/accordion';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,19 +21,19 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@shadcn/ui/alert-dialog';
-import { Button } from '@shadcn/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
-import { differenceInDays } from '@shadcn/ui/lib/date-fns';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Separator } from '@shadcn/ui/separator';
-import { Tabs, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
-import { useQuery } from '@tanstack/react-query';
+} from '@workspace/ui/components/alert-dialog';
+import { Button } from '@workspace/ui/components/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import { Separator } from '@workspace/ui/components/separator';
+import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { getNextResetDate, isBrowser } from '@workspace/ui/utils';
+import { differenceInDays } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';

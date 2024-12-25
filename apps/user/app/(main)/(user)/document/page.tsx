@@ -2,8 +2,8 @@
 
 import { queryDocumentList } from '@/services/user/document';
 import { getTutorialList } from '@/utils/tutorial';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
 import { useQuery } from '@tanstack/react-query';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { useLocale, useTranslations } from 'next-intl';
 import { DocumentButton } from './document-button';
 import { TutorialButton } from './tutorial-button';

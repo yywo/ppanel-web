@@ -1,6 +1,7 @@
 'use client';
 
-import { GlobalMapIcon } from '@repo/ui/lotties';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import GlobalMapLottie from '@workspace/ui/lotties/global-map.json';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
@@ -40,7 +41,7 @@ export function GlobalMap() {
           delay: 0.4,
         }}
       >
-        <GlobalMapIcon className='-mt-[25%] w-full' />
+        <DotLottieReact className='w-full scale-150' data={GlobalMapLottie} autoplay loop />
       </motion.div>
     </motion.section>
   );

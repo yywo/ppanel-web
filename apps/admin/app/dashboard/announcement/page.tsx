@@ -1,20 +1,19 @@
 'use client';
 
+import { ProTable, ProTableActions } from '@/components/pro-table';
 import {
   createAnnouncement,
   deleteAnnouncement,
   getAnnouncementList,
   updateAnnouncement,
 } from '@/services/admin/announcement';
-import { ConfirmButton } from '@repo/ui/confirm-button';
-import { format } from '@shadcn/ui/lib/date-fns';
-import { toast } from '@shadcn/ui/lib/sonner';
-import { Switch } from '@shadcn/ui/switch';
+import { Button } from '@workspace/ui/components/button';
+import { Switch } from '@workspace/ui/components/switch';
+import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { format } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
-
-import { ProTable, ProTableActions } from '@/components/pro-table';
-import { Button } from '@shadcn/ui/button';
+import { toast } from 'sonner';
 import NoticeForm from './notice-form';
 
 export default function Page() {

@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { getTranslations } from 'next-intl/server';
 
 import GroupTable from './group-table';
