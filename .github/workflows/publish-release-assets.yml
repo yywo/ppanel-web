@@ -66,7 +66,7 @@ jobs:
         id: version
         run: echo "PPANEL_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
 
-      - name: Build and push Docker image for ppanel-user-web
+      - name: Build and push Docker image for ppanel-admin-web
         uses: docker/build-push-action@v6
         with:
           context: .
