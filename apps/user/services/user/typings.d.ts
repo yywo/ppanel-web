@@ -27,6 +27,11 @@ declare namespace API {
     ios: Application[];
   };
 
+  type BindTelegramResponse = {
+    url: string;
+    expired_at: number;
+  };
+
   type CheckoutOrderRequest = {
     orderNo: string;
   };

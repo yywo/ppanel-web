@@ -9,12 +9,13 @@
     "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
   },
   "notify": {
-    "bind": "बाइंड",
+    "bind": "बाइंडिंग पर जाएं",
     "emailNotification": "ईमेल सूचना",
     "notificationSettings": "सूचना सेटिंग्स",
     "telegramId": "टेलीग्राम आईडी",
     "telegramIdPlaceholder": "टेलीग्राम आईडी दर्ज करें",
     "telegramNotification": "टेलीग्राम सूचना",
+    "unbind": "अनबाइंड करें",
     "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
   },
   "notifyEvent": {

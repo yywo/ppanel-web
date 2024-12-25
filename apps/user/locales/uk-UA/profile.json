@@ -9,12 +9,13 @@
     "updateSuccess": "Оновлення успішне"
   },
   "notify": {
-    "bind": "Прив'язати",
+    "bind": "Перейти до прив'язки",
     "emailNotification": "Сповіщення електронною поштою",
     "notificationSettings": "Налаштування сповіщень",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "Введіть Telegram ID",
     "telegramNotification": "Сповіщення Telegram",
+    "unbind": "Відв'язати",
     "updateSuccess": "Оновлення успішне"
   },
   "notifyEvent": {

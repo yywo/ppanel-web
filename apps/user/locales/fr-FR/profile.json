@@ -9,12 +9,13 @@
     "updateSuccess": "Mise à jour réussie"
   },
   "notify": {
-    "bind": "Lier",
+    "bind": "Aller à la liaison",
     "emailNotification": "Notification par e-mail",
     "notificationSettings": "Paramètres de notification",
     "telegramId": "ID Telegram",
     "telegramIdPlaceholder": "Entrez l'ID Telegram",
     "telegramNotification": "Notification Telegram",
+    "unbind": "Délier",
     "updateSuccess": "Mise à jour réussie"
   },
   "notifyEvent": {

@@ -9,12 +9,13 @@
     "updateSuccess": "更新成功"
   },
   "notify": {
-    "bind": "バインド",
+    "bind": "バインディングに移動",
     "emailNotification": "メール通知",
     "notificationSettings": "通知設定",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "Telegram IDを入力",
     "telegramNotification": "Telegram通知",
+    "unbind": "バインド解除",
     "updateSuccess": "更新成功"
   },
   "notifyEvent": {

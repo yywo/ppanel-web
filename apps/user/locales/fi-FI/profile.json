@@ -9,12 +9,13 @@
     "updateSuccess": "Päivitys onnistui"
   },
   "notify": {
-    "bind": "Yhdistä",
+    "bind": "Siirry sitomiseen",
     "emailNotification": "Sähköposti-ilmoitus",
     "notificationSettings": "Ilmoitusasetukset",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "Syötä Telegram ID",
     "telegramNotification": "Telegram-ilmoitus",
+    "unbind": "Poista sitominen",
     "updateSuccess": "Päivitys onnistui"
   },
   "notifyEvent": {

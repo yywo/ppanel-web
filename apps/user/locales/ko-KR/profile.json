@@ -9,12 +9,13 @@
     "updateSuccess": "업데이트 성공"
   },
   "notify": {
-    "bind": "연결",
+    "bind": "바인딩으로 이동",
     "emailNotification": "이메일 알림",
     "notificationSettings": "알림 설정",
     "telegramId": "텔레그램 ID",
     "telegramIdPlaceholder": "텔레그램 ID 입력",
     "telegramNotification": "텔레그램 알림",
+    "unbind": "바인딩 해제",
     "updateSuccess": "업데이트 성공"
   },
   "notifyEvent": {

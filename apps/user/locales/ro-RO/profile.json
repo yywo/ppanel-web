@@ -9,12 +9,13 @@
     "updateSuccess": "Actualizare reușită"
   },
   "notify": {
-    "bind": "Conectare",
+    "bind": "Mergi la Legare",
     "emailNotification": "Notificare prin email",
     "notificationSettings": "Setări notificări",
     "telegramId": "ID Telegram",
     "telegramIdPlaceholder": "Introduceți ID-ul Telegram",
     "telegramNotification": "Notificare Telegram",
+    "unbind": "Dezleagă",
     "updateSuccess": "Actualizare reușită"
   },
   "notifyEvent": {

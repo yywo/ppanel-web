@@ -9,12 +9,13 @@
     "updateSuccess": "به‌روزرسانی موفقیت‌آمیز"
   },
   "notify": {
-    "bind": "اتصال",
+    "bind": "رفتن به اتصال",
     "emailNotification": "اعلان ایمیل",
     "notificationSettings": "تنظیمات اعلان",
     "telegramId": "شناسه تلگرام",
     "telegramIdPlaceholder": "شناسه تلگرام را وارد کنید",
     "telegramNotification": "اعلان تلگرام",
+    "unbind": "لغو اتصال",
     "updateSuccess": "به‌روزرسانی موفقیت‌آمیز"
   },
   "notifyEvent": {

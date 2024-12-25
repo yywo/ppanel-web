@@ -9,12 +9,13 @@
     "updateSuccess": "Sikeres frissítés"
   },
   "notify": {
-    "bind": "Összekapcsolás",
+    "bind": "Menj a kötéshez",
     "emailNotification": "E-mail értesítés",
     "notificationSettings": "Értesítési beállítások",
     "telegramId": "Telegram azonosító",
     "telegramIdPlaceholder": "Adja meg a Telegram azonosítót",
     "telegramNotification": "Telegram értesítés",
+    "unbind": "Kötés feloldása",
     "updateSuccess": "Sikeres frissítés"
   },
   "notifyEvent": {

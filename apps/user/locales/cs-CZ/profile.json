@@ -9,12 +9,13 @@
     "updateSuccess": "Aktualizace úspěšná"
   },
   "notify": {
-    "bind": "Připojit",
+    "bind": "Přejít na vazbu",
     "emailNotification": "E-mailové oznámení",
     "notificationSettings": "Nastavení oznámení",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "Zadejte Telegram ID",
     "telegramNotification": "Telegram oznámení",
+    "unbind": "Zrušit vazbu",
     "updateSuccess": "Aktualizace byla úspěšná"
   },
   "notifyEvent": {

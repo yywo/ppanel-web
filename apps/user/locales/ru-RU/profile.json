@@ -9,12 +9,13 @@
     "updateSuccess": "Успешно обновлено"
   },
   "notify": {
-    "bind": "Привязать",
+    "bind": "Перейти к привязке",
     "emailNotification": "Уведомление по электронной почте",
     "notificationSettings": "Настройки уведомлений",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "Введите Telegram ID",
     "telegramNotification": "Уведомление в Telegram",
+    "unbind": "Отвязать",
     "updateSuccess": "Успешно обновлено"
   },
   "notifyEvent": {

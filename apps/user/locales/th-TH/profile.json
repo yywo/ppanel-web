@@ -9,12 +9,13 @@
     "updateSuccess": "อัปเดตสำเร็จ"
   },
   "notify": {
-    "bind": "ผูก",
+    "bind": "ไปที่การผูก",
     "emailNotification": "การแจ้งเตือนทางอีเมล",
     "notificationSettings": "การตั้งค่าการแจ้งเตือน",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "กรอก Telegram ID",
     "telegramNotification": "การแจ้งเตือนทาง Telegram",
+    "unbind": "ยกเลิกการผูก",
     "updateSuccess": "อัปเดตสำเร็จ"
   },
   "notifyEvent": {

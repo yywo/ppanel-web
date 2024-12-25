@@ -9,12 +9,13 @@
     "updateSuccess": "Güncelleme Başarılı"
   },
   "notify": {
-    "bind": "Bağla",
+    "bind": "Bağlamaya Git",
     "emailNotification": "E-posta Bildirimi",
     "notificationSettings": "Bildirim Ayarları",
     "telegramId": "Telegram Kimliği",
     "telegramIdPlaceholder": "Telegram Kimliği girin",
     "telegramNotification": "Telegram Bildirimi",
+    "unbind": "Bağlamayı Kaldır",
     "updateSuccess": "Güncelleme Başarılı"
   },
   "notifyEvent": {
