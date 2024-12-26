@@ -57,12 +57,9 @@ for ITEM in "${PROJECTS[@]}"; do
 
   # Copy build output and static resources to the build directory
   PROJECT_BUILD_DIR=$OUT_DIR/$PROJECT
-  mkdir -p $PROJECT_BUILD_DIR
   cp -r $PROJECT_PATH/.next/standalone/. $PROJECT_BUILD_DIR/
-  mkdir -p $PROJECT_BUILD_DIR/$PROJECT_PATH/.next/static
-  cp -r $PROJECT_PATH/.next/static/ $PROJECT_BUILD_DIR/$PROJECT_PATH/.next/static
-  mkdir -p $PROJECT_BUILD_DIR/$PROJECT_PATH/public
-  cp -r $PROJECT_PATH/public/ $PROJECT_BUILD_DIR/$PROJECT_PATH/public
+  cp -r $PROJECT_PATH/.next/static $PROJECT_BUILD_DIR/$PROJECT_PATH/.next/
+  cp -r $PROJECT_PATH/public $PROJECT_BUILD_DIR/$PROJECT_PATH/
 
   # Generate ecosystem.config.js for the project
   ECOSYSTEM_CONFIG="$PROJECT_BUILD_DIR/ecosystem.config.js"
@@ -72,6 +69,10 @@ module.exports = {
     {
       name: "$PROJECT",
       script: "$PROJECT_PATH/server.js",
+      interpreter: "bun",
+      watch: ["$PROJECT_PATH"],
+      instances: "max",
+      exec_mode: "cluster",
       env: {
 $ENV_VARS
       }
