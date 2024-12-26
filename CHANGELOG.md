@@ -1,6 +1,18 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.2](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2024-12-26)
+
+
+### 👷 Build System
+
+* **config**:  Update pm2 config ([d95b425](https://github.com/perfect-panel/ppanel-web/commit/d95b425))
+
+
+### 🔧 Continuous Integration
+
+* **step**: Update step name ([9eca618](https://github.com/perfect-panel/ppanel-web/commit/9eca618))
+
 # 1.0.0-beta.1 (2024-12-25)
 
 
