@@ -1,4 +1,14 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.3](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2024-12-26)
+
+
+### ♻ Code Refactoring
+
+* **config**: Simplify environment variable handling and improve build script ([cf54d0f](https://github.com/perfect-panel/ppanel-web/commit/cf54d0f))
+
+<a name="readme-top"></a>
 
 # Changelog
 
