@@ -323,6 +323,10 @@ declare namespace API {
     show: boolean;
     sell: boolean;
     sort: number;
+    deduction_ratio: number;
+    purchase_with_discount: boolean;
+    reset_cycle: number;
+    renewal_reset: boolean;
     created_at: number;
     updated_at: number;
   };

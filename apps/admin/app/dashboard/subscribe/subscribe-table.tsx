@@ -133,7 +133,14 @@ export default function SubscribeTable() {
         {
           accessorKey: 'unit_price',
           header: t('unitPrice'),
-          cell: ({ row }) => <Display type='currency' value={row.getValue('unit_price')} />,
+          cell: ({ row }) => {
+            return (
+              <>
+                <Display type='currency' value={row.getValue('unit_price')} />/
+                {t(row.original.unit_time ? `form.${row.original.unit_time}` : 'form.Month')}
+              </>
+            );
+          },
         },
         {
           accessorKey: 'replacement',
