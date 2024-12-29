@@ -45,14 +45,23 @@
     "saveSuccess": "Успішно збережено"
   },
   "node": {
+    "addTimeSlot": "Додати часовий проміжок",
     "communicationKey": "Ключ зв'язку",
     "communicationKeyDescription": "Ключ для зв'язку вузла, щоб забезпечити захист даних від перехоплення",
+    "delete": "Видалити",
+    "dynamicMultiplier": "Динамічний Множник",
+    "dynamicMultiplierDescription": "Динамічний множник відноситься до обробки переданих даних з різними множниками для різних вузлів протягом різних періодів часу.",
+    "endTime": "Час Закінчення",
     "inputPlaceholder": "Будь ласка, введіть",
+    "multiplier": "Множник",
     "nodePullInterval": "Інтервал отримання вузла",
     "nodePullIntervalDescription": "Частота отримання даних вузлом з панелі (в секундах)",
     "nodePushInterval": "Інтервал відправки вузла",
     "nodePushIntervalDescription": "Частота відправки даних вузлом на панель",
-    "saveSuccess": "Збережено успішно"
+    "reset": "Скинути",
+    "save": "Зберегти",
+    "saveSuccess": "Збережено успішно",
+    "startTime": "Час Початку"
   },
   "register": {
     "emailSuffixWhitelist": "Білий список суфіксів електронної пошти",

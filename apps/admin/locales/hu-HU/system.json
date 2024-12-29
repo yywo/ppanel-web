@@ -45,14 +45,23 @@
     "saveSuccess": "Sikeres mentés"
   },
   "node": {
+    "addTimeSlot": "Időrés hozzáadása",
     "communicationKey": "Kommunikációs kulcs",
     "communicationKeyDescription": "A csomópontok közötti kommunikáció kulcsa, amely biztosítja, hogy az adatokat ne lehessen elfogni mások által",
+    "delete": "Törlés",
+    "dynamicMultiplier": "Dinamikus Szorzó",
+    "dynamicMultiplierDescription": "A Dinamikus Szorzó arra utal, hogy a különböző csomópontoknál különböző szorzókkal dolgozzák fel a továbbított adatokat különböző időszakokban.",
+    "endTime": "Befejezési Idő",
     "inputPlaceholder": "Kérjük, írja be",
+    "multiplier": "Szorzó",
     "nodePullInterval": "Csomópont lehívási intervallum",
     "nodePullIntervalDescription": "A csomópont milyen gyakran kér le adatokat a panelről (másodpercben)",
     "nodePushInterval": "Csomópont küldési intervallum",
     "nodePushIntervalDescription": "A csomópont milyen gyakran küld adatokat a panelre",
-    "saveSuccess": "Sikeres mentés"
+    "reset": "Visszaállítás",
+    "save": "Mentés",
+    "saveSuccess": "Sikeres mentés",
+    "startTime": "Kezdési Idő"
   },
   "register": {
     "emailSuffixWhitelist": "E-mail végződés fehérlista",

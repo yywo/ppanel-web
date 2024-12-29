@@ -45,14 +45,23 @@
     "saveSuccess": "सफलतापूर्वक सहेजा गया"
   },
   "node": {
+    "addTimeSlot": "समय स्लॉट जोड़ें",
     "communicationKey": "संचार कुंजी",
     "communicationKeyDescription": "डेटा को अन्य लोगों द्वारा अवरोधित होने से बचाने के लिए नोड संचार की कुंजी",
+    "delete": "हटाएं",
+    "dynamicMultiplier": "डायनामिक मल्टीप्लायर",
+    "dynamicMultiplierDescription": "डायनामिक मल्टीप्लायर का मतलब है विभिन्न समय अवधियों के दौरान विभिन्न नोड्स के लिए अलग-अलग मल्टीप्लायर के साथ प्रोसेस किए गए डेटा को प्रोसेस करना।",
+    "endTime": "समाप्ति समय",
     "inputPlaceholder": "कृपया दर्ज करें",
+    "multiplier": "मल्टीप्लायर",
     "nodePullInterval": "नोड पुल अंतराल",
     "nodePullIntervalDescription": "पैनल से डेटा प्राप्त करने के लिए नोड की आवृत्ति (सेकंड में)",
     "nodePushInterval": "नोड पुश अंतराल",
     "nodePushIntervalDescription": "नोड द्वारा डेटा को पैनल पर भेजने की आवृत्ति",
-    "saveSuccess": "सफलतापूर्वक सहेजा गया"
+    "reset": "रीसेट",
+    "save": "सहेजें",
+    "saveSuccess": "सफलतापूर्वक सहेजा गया",
+    "startTime": "प्रारंभ समय"
   },
   "register": {
     "emailSuffixWhitelist": "ईमेल प्रत्यय श्वेतसूची",

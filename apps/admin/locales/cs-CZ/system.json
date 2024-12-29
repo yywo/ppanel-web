@@ -45,14 +45,23 @@
     "saveSuccess": "Úspěšně uloženo"
   },
   "node": {
+    "addTimeSlot": "Přidat časový úsek",
     "communicationKey": "Komunikační klíč",
     "communicationKeyDescription": "Klíč pro komunikaci uzlu, aby se zajistilo, že data nebudou zachycena jinými osobami",
+    "delete": "Smazat",
+    "dynamicMultiplier": "Dynamický násobitel",
+    "dynamicMultiplierDescription": "Dynamický násobitel označuje zpracování posunutých dat s různými násobiteli pro různé uzly během různých časových období.",
+    "endTime": "Čas konce",
     "inputPlaceholder": "Prosím zadejte",
+    "multiplier": "Násobitel",
     "nodePullInterval": "Interval stahování uzlu",
     "nodePullIntervalDescription": "Frekvence, s jakou uzel získává data z panelu (v sekundách)",
     "nodePushInterval": "Interval odesílání uzlu",
     "nodePushIntervalDescription": "Frekvence, s jakou uzel odesílá data do panelu",
-    "saveSuccess": "Úspěšně uloženo"
+    "reset": "Resetovat",
+    "save": "Uložit",
+    "saveSuccess": "Úspěšně uloženo",
+    "startTime": "Čas začátku"
   },
   "register": {
     "emailSuffixWhitelist": "Seznam povolených přípon e-mailů",

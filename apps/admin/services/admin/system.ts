@@ -104,6 +104,17 @@ export async function updateEmailSmtpConfig(
   });
 }
 
+/** Get Node Multiplier GET /v1/admin/system/get_node_multiplier */
+export async function getNodeMultiplier(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetNodeMultiplierResponse }>(
+    '/v1/admin/system/get_node_multiplier',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** Get invite config GET /v1/admin/system/invite_config */
 export async function getInviteConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.InviteConfig }>('/v1/admin/system/invite_config', {
@@ -159,6 +170,21 @@ export async function updateRegisterConfig(
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/register_config', {
     method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Set Node Multiplier POST /v1/admin/system/set_node_multiplier */
+export async function setNodeMultiplier(
+  body: API.SetNodeMultiplierRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/set_node_multiplier', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },

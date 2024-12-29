@@ -45,14 +45,23 @@
     "saveSuccess": "Успешно сохранено"
   },
   "node": {
+    "addTimeSlot": "Добавить временной интервал",
     "communicationKey": "Ключ связи",
     "communicationKeyDescription": "Ключ для связи узла, чтобы гарантировать, что данные не будут перехвачены другими",
+    "delete": "Удалить",
+    "dynamicMultiplier": "Динамический множитель",
+    "dynamicMultiplierDescription": "Динамический множитель относится к обработке переданных данных с различными множителями для разных узлов в разные периоды времени.",
+    "endTime": "Время окончания",
     "inputPlaceholder": "Пожалуйста, введите",
+    "multiplier": "Множитель",
     "nodePullInterval": "Интервал извлечения узла",
     "nodePullIntervalDescription": "Частота, с которой узел получает данные с панели (в секундах)",
     "nodePushInterval": "Интервал отправки узла",
     "nodePushIntervalDescription": "Частота, с которой узел отправляет данные на панель",
-    "saveSuccess": "Успешно сохранено"
+    "reset": "Сбросить",
+    "save": "Сохранить",
+    "saveSuccess": "Успешно сохранено",
+    "startTime": "Время начала"
   },
   "register": {
     "emailSuffixWhitelist": "Белый список суффиксов электронной почты",

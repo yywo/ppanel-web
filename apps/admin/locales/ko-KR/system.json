@@ -45,14 +45,23 @@
     "saveSuccess": "저장 성공"
   },
   "node": {
+    "addTimeSlot": "시간 슬롯 추가",
     "communicationKey": "통신 키",
     "communicationKeyDescription": "데이터가 다른 사람에게 가로채이지 않도록 보장하는 노드 통신 키",
+    "delete": "삭제",
+    "dynamicMultiplier": "동적 배수",
+    "dynamicMultiplierDescription": "동적 배수는 서로 다른 시간대에 서로 다른 노드에 대해 다른 배수를 사용하여 처리된 데이터를 의미합니다.",
+    "endTime": "종료 시간",
     "inputPlaceholder": "입력하세요",
+    "multiplier": "배수",
     "nodePullInterval": "노드 가져오기 간격",
     "nodePullIntervalDescription": "노드가 패널에서 데이터를 가져오는 빈도(초)",
     "nodePushInterval": "노드 푸시 간격",
     "nodePushIntervalDescription": "노드가 데이터를 패널로 푸시하는 빈도",
-    "saveSuccess": "저장 성공"
+    "reset": "재설정",
+    "save": "저장",
+    "saveSuccess": "저장 성공",
+    "startTime": "시작 시간"
   },
   "register": {
     "emailSuffixWhitelist": "이메일 접미사 화이트리스트",

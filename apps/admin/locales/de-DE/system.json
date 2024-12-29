@@ -45,14 +45,23 @@
     "saveSuccess": "Erfolgreich gespeichert"
   },
   "node": {
+    "addTimeSlot": "Zeitfenster hinzufügen",
     "communicationKey": "Kommunikationsschlüssel",
     "communicationKeyDescription": "Schlüssel für die Kommunikation des Knotens, um sicherzustellen, dass Daten nicht von anderen abgefangen werden",
+    "delete": "Löschen",
+    "dynamicMultiplier": "Dynamischer Multiplikator",
+    "dynamicMultiplierDescription": "Dynamischer Multiplikator bezieht sich auf die Verarbeitung von übermittelten Daten mit unterschiedlichen Multiplikatoren für verschiedene Knoten während unterschiedlicher Zeiträume.",
+    "endTime": "Endzeit",
     "inputPlaceholder": "Bitte eingeben",
+    "multiplier": "Multiplikator",
     "nodePullInterval": "Knotenabfrageintervall",
     "nodePullIntervalDescription": "Häufigkeit, mit der der Knoten Daten vom Panel abruft (Sekunden)",
     "nodePushInterval": "Knotenübertragungsintervall",
     "nodePushIntervalDescription": "Häufigkeit, mit der der Knoten Daten an das Panel überträgt",
-    "saveSuccess": "Erfolgreich gespeichert"
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "saveSuccess": "Erfolgreich gespeichert",
+    "startTime": "Startzeit"
   },
   "register": {
     "emailSuffixWhitelist": "E-Mail-Suffix-Whitelist",

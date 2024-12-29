@@ -373,6 +373,12 @@ declare namespace API {
     updated_at: number;
   };
 
+  type TimePeriod = {
+    start_time: string;
+    end_time: string;
+    multiplier: number;
+  };
+
   type TosConfig = {
     tos_content: string;
   };

@@ -45,14 +45,23 @@
     "saveSuccess": "Zapisano pomyślnie"
   },
   "node": {
+    "addTimeSlot": "Dodaj przedział czasowy",
     "communicationKey": "Klucz komunikacyjny",
     "communicationKeyDescription": "Klucz do komunikacji węzła, aby zapewnić, że dane nie zostaną przechwycone przez inne osoby",
+    "delete": "Usuń",
+    "dynamicMultiplier": "Mnożnik dynamiczny",
+    "dynamicMultiplierDescription": "Mnożnik dynamiczny odnosi się do przetwarzania przesyłanych danych z różnymi mnożnikami dla różnych węzłów w różnych okresach czasu.",
+    "endTime": "Czas zakończenia",
     "inputPlaceholder": "Proszę wprowadzić",
+    "multiplier": "Mnożnik",
     "nodePullInterval": "Interwał pobierania węzła",
     "nodePullIntervalDescription": "Częstotliwość, z jaką węzeł pobiera dane z panelu (w sekundach)",
     "nodePushInterval": "Interwał wysyłania węzła",
     "nodePushIntervalDescription": "Częstotliwość, z jaką węzeł wysyła dane do panelu",
-    "saveSuccess": "Zapisano pomyślnie"
+    "reset": "Resetuj",
+    "save": "Zapisz",
+    "saveSuccess": "Zapisano pomyślnie",
+    "startTime": "Czas rozpoczęcia"
   },
   "register": {
     "emailSuffixWhitelist": "Biała lista sufiksów e-mail",

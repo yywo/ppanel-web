@@ -375,6 +375,10 @@ declare namespace API {
     search?: string;
   };
 
+  type GetNodeMultiplierResponse = {
+    periods: TimePeriod[];
+  };
+
   type GetNodeServerListRequest = {
     page: number;
     size: number;
@@ -686,6 +690,10 @@ declare namespace API {
     download: number;
   };
 
+  type SetNodeMultiplierRequest = {
+    periods: TimePeriod[];
+  };
+
   type Shadowsocks = {
     method: string;
     port: number;
@@ -790,6 +798,12 @@ declare namespace API {
 
   type TicketWaitRelpyResponse = {
     count: number;
+  };
+
+  type TimePeriod = {
+    start_time: string;
+    end_time: string;
+    multiplier: number;
   };
 
   type TosConfig = {

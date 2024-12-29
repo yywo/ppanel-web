@@ -45,14 +45,23 @@
     "saveSuccess": "ذخیره‌سازی موفقیت‌آمیز"
   },
   "node": {
+    "addTimeSlot": "افزودن بازه زمانی",
     "communicationKey": "کلید ارتباطی",
     "communicationKeyDescription": "کلید برای ارتباط گره به منظور اطمینان از امنیت داده‌ها",
+    "delete": "حذف",
+    "dynamicMultiplier": "ضریب پویا",
+    "dynamicMultiplierDescription": "ضریب پویا به پردازش داده‌های ارسال شده با ضرایب مختلف برای گره‌های مختلف در دوره‌های زمانی مختلف اشاره دارد.",
+    "endTime": "زمان پایان",
     "inputPlaceholder": "وارد کنید",
+    "multiplier": "ضریب",
     "nodePullInterval": "فاصله زمانی کشیدن گره",
     "nodePullIntervalDescription": "فرکانس (به ثانیه) برای گره‌ها جهت دریافت داده از پنل",
     "nodePushInterval": "فاصله زمانی فشار گره",
     "nodePushIntervalDescription": "فرکانس برای گره‌ها جهت ارسال داده به پنل",
-    "saveSuccess": "ذخیره با موفقیت انجام شد"
+    "reset": "بازنشانی",
+    "save": "ذخیره",
+    "saveSuccess": "ذخیره با موفقیت انجام شد",
+    "startTime": "زمان شروع"
   },
   "register": {
     "emailSuffixWhitelist": "لیست سفید پسوند ایمیل",

@@ -45,14 +45,23 @@
     "saveSuccess": "Başarıyla kaydedildi"
   },
   "node": {
+    "addTimeSlot": "Zaman Dilimi Ekle",
     "communicationKey": "İletişim Anahtarı",
     "communicationKeyDescription": "Verilerin başkaları tarafından ele geçirilmemesini sağlamak için düğüm iletişim anahtarı",
+    "delete": "Sil",
+    "dynamicMultiplier": "Dinamik Çarpan",
+    "dynamicMultiplierDescription": "Dinamik Çarpan, farklı zaman dilimlerinde farklı düğümler için farklı çarpanlarla işlenen veriyi ifade eder.",
+    "endTime": "Bitiş Zamanı",
     "inputPlaceholder": "Lütfen giriniz",
+    "multiplier": "Çarpan",
     "nodePullInterval": "Düğüm Çekme Aralığı",
     "nodePullIntervalDescription": "Düğümün panelden veri alma sıklığı (saniye)",
     "nodePushInterval": "Düğüm Gönderme Aralığı",
     "nodePushIntervalDescription": "Düğümün verileri panele gönderme sıklığı",
-    "saveSuccess": "Başarıyla kaydedildi"
+    "reset": "Sıfırla",
+    "save": "Kaydet",
+    "saveSuccess": "Başarıyla kaydedildi",
+    "startTime": "Başlangıç Zamanı"
   },
   "register": {
     "emailSuffixWhitelist": "E-posta Soneki Beyaz Listesi",

@@ -45,14 +45,23 @@
     "saveSuccess": "Tallennus onnistui"
   },
   "node": {
+    "addTimeSlot": "Lisää aikaväli",
     "communicationKey": "Viestintäavain",
     "communicationKeyDescription": "Solmun viestinnän avain, joka varmistaa, että tiedot eivät joudu muiden sieppaamiksi",
+    "delete": "Poista",
+    "dynamicMultiplier": "Dynaaminen Kerroin",
+    "dynamicMultiplierDescription": "Dynaaminen Kerroin viittaa siihen, että käsitellään siirrettyä dataa eri kertoimilla eri solmuille eri ajanjaksoina.",
+    "endTime": "Lopetusaika",
     "inputPlaceholder": "Ole hyvä ja syötä",
+    "multiplier": "Kerroin",
     "nodePullInterval": "Solmun noutoväli",
     "nodePullIntervalDescription": "Kuinka usein solmu hakee tietoja paneelista (sekunteina)",
     "nodePushInterval": "Solmun lähetysväli",
     "nodePushIntervalDescription": "Kuinka usein solmu lähettää tietoja paneeliin",
-    "saveSuccess": "Tallennus onnistui"
+    "reset": "Nollaa",
+    "save": "Tallenna",
+    "saveSuccess": "Tallennus onnistui",
+    "startTime": "Aloitusaika"
   },
   "register": {
     "emailSuffixWhitelist": "Sähköpostin jälkiliitteen sallittu luettelo",

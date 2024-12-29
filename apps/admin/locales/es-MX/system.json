@@ -45,14 +45,23 @@
     "saveSuccess": "Guardado exitosamente"
   },
   "node": {
+    "addTimeSlot": "Agregar Franja Horaria",
     "communicationKey": "Clave de comunicación",
     "communicationKeyDescription": "Clave para la comunicación del nodo, para asegurar que los datos no sean interceptados por otros",
+    "delete": "Eliminar",
+    "dynamicMultiplier": "Multiplicador Dinámico",
+    "dynamicMultiplierDescription": "El Multiplicador Dinámico se refiere al procesamiento de datos enviados con diferentes multiplicadores para diferentes nodos durante distintos períodos de tiempo.",
+    "endTime": "Hora de Fin",
     "inputPlaceholder": "Por favor ingrese",
+    "multiplier": "Multiplicador",
     "nodePullInterval": "Intervalo de extracción del nodo",
     "nodePullIntervalDescription": "Frecuencia con la que el nodo obtiene datos del panel (segundos)",
     "nodePushInterval": "Intervalo de envío del nodo",
     "nodePushIntervalDescription": "Frecuencia con la que el nodo envía datos al panel",
-    "saveSuccess": "Guardado exitosamente"
+    "reset": "Restablecer",
+    "save": "Guardar",
+    "saveSuccess": "Guardado exitosamente",
+    "startTime": "Hora de Inicio"
   },
   "register": {
     "emailSuffixWhitelist": "Lista blanca de sufijos de correo electrónico",
