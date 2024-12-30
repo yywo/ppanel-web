@@ -61,7 +61,8 @@
     "reset": "รีเซ็ต",
     "save": "บันทึก",
     "saveSuccess": "บันทึกสำเร็จ",
-    "startTime": "เวลาเริ่มต้น"
+    "startTime": "เวลาเริ่มต้น",
+    "timeSlot": "ช่วงเวลา"
   },
   "register": {
     "emailSuffixWhitelist": "รายการอนุญาตโดเมนอีเมล",

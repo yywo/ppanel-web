@@ -61,7 +61,8 @@
     "reset": "Restablecer",
     "save": "Guardar",
     "saveSuccess": "Guardado exitosamente",
-    "startTime": "Hora de Inicio"
+    "startTime": "Hora de Inicio",
+    "timeSlot": "Franja Horaria"
   },
   "register": {
     "emailSuffixWhitelist": "Lista blanca de sufijos de correo electrónico",

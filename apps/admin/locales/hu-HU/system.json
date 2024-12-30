@@ -61,7 +61,8 @@
     "reset": "Visszaállítás",
     "save": "Mentés",
     "saveSuccess": "Sikeres mentés",
-    "startTime": "Kezdési Idő"
+    "startTime": "Kezdési Idő",
+    "timeSlot": "Időpont"
   },
   "register": {
     "emailSuffixWhitelist": "E-mail végződés fehérlista",

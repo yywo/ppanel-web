@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
-  type: 'text' | 'number' | 'select';
+  type: 'text' | 'number' | 'select' | 'time';
   options?: { label: string; value: string }[];
   internal?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -53,7 +53,7 @@ export function ObjectInput<T extends Record<string, any>>({
   };
 
   return (
-    <div className='flex flex-1 gap-4'>
+    <div className='flex flex-1 flex-wrap gap-4'>
       {fields.map(({ name, type, options, ...fieldProps }) => (
         <div key={name} className='flex-1'>
           {type === 'select' && options ? (
@@ -126,6 +126,12 @@ export function ArrayInput<T extends Record<string, any>>({
     const modifiedItems = newDisplayItems.filter(isItemModified);
     onChange(modifiedItems);
   };
+
+  useEffect(() => {
+    if (value.length > 0) {
+      setDisplayItems(value);
+    }
+  }, [value]);
 
   return (
     <div className='flex flex-col gap-4'>

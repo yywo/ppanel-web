@@ -8,14 +8,25 @@ import {
 } from '@/services/admin/system';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
+import { ChartContainer, ChartTooltip } from '@workspace/ui/components/chart';
 import { Label } from '@workspace/ui/components/label';
 import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { DicesIcon } from 'lucide-react';
 import { nanoid } from 'nanoid';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { toast } from 'sonner';
+
+const COLORS = [
+  'hsl(var(--chart-1))',
+  'hsl(var(--chart-2))',
+  'hsl(var(--chart-3))',
+  'hsl(var(--chart-4))',
+  'hsl(var(--chart-5))',
+];
 
 export default function Node() {
   const t = useTranslations('system.node');
@@ -56,23 +67,25 @@ export default function Node() {
     },
   });
 
-  const addTimeSlot = () => {
-    setTimeSlots([...timeSlots, { start_time: '', end_time: '', multiplier: 1 }]);
-  };
+  const chartTimeSlots = useMemo(() => {
+    return timeSlots.map((slot) => ({
+      name: `${slot.start_time} - ${slot.end_time}`,
+      value: slot.multiplier,
+    }));
+  }, [timeSlots]);
 
-  const removeTimeSlot = (index: number) => {
-    setTimeSlots(timeSlots.filter((_, i) => i !== index));
-  };
-
-  const updateTimeSlot = (index: number, field: keyof API.TimePeriod, value: string | number) => {
-    const updatedSlots = timeSlots.map((slot, i) => {
-      if (i === index) {
-        return { ...slot, [field]: value };
-      }
-      return slot;
-    });
-    setTimeSlots(updatedSlots);
-  };
+  const chartConfig = useMemo(() => {
+    return chartTimeSlots.reduce(
+      (acc, item, index) => {
+        acc[item.name] = {
+          label: item.name,
+          color: COLORS[index % COLORS.length] || 'hsl(var(--default-chart-color))',
+        };
+        return acc;
+      },
+      {} as Record<string, { label: string; color: string }>,
+    );
+  }, [data]);
 
   return (
     <>
@@ -162,55 +175,73 @@ export default function Node() {
           </TableRow>
         </TableBody>
       </Table>
-      <div className='px-2'>
-        <div className='mt-4 grid gap-4'>
-          {timeSlots.map((slot, index) => (
-            <div key={index} className='flex flex-col items-end gap-2 lg:flex-row'>
-              <div>
-                <Label>{t('startTime')}</Label>
-                <EnhancedInput
-                  key={`${index}-start-time`}
-                  type='time'
-                  value={slot.start_time}
-                  onValueChange={(value) => updateTimeSlot(index, 'start_time', value as string)}
-                />
-              </div>
-
-              <div>
-                <Label>{t('endTime')}</Label>
-                <EnhancedInput
-                  key={`${index}-end-time`}
-                  type='time'
-                  value={slot.end_time}
-                  onValueChange={(value) => updateTimeSlot(index, 'end_time', value as string)}
-                />
-              </div>
-
-              <div>
-                <Label>{t('multiplier')}</Label>
-                <EnhancedInput
-                  key={`${index}-multiplier`}
-                  type='number'
-                  value={slot.multiplier}
-                  onValueChange={(value) => updateTimeSlot(index, 'multiplier', value as number)}
-                  min={1}
-                  step='0.1'
-                />
-              </div>
-              <Button
-                variant='destructive'
-                onClick={() => {
-                  removeTimeSlot(index);
-                }}
+      <div className='flex flex-col-reverse gap-8 px-4 pt-6 md:flex-row md:items-start'>
+        <div className='w-full md:w-1/2'>
+          <ChartContainer config={chartConfig} className='mx-auto aspect-square max-w-[400px]'>
+            <PieChart>
+              <Pie
+                data={chartTimeSlots}
+                cx='50%'
+                cy='50%'
+                labelLine={false}
+                outerRadius='80%'
+                fill='#8884d8'
+                dataKey='value'
+                label={({ name, percent, value }) =>
+                  `${value?.toFixed(2)}x (${(percent * 100).toFixed(0)}%)`
+                }
               >
-                {t('delete')}
-              </Button>
-            </div>
-          ))}
+                {chartTimeSlots.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+              <ChartTooltip
+                content={({ payload }) => {
+                  if (payload && payload.length) {
+                    const data = payload[0]?.payload;
+                    return (
+                      <div className='bg-background rounded-lg border p-2 shadow-sm'>
+                        <div className='grid grid-cols-2 gap-2'>
+                          <div className='flex flex-col'>
+                            <span className='text-muted-foreground text-[0.70rem] uppercase'>
+                              {t('timeSlot')}
+                            </span>
+                            <span className='text-muted-foreground font-bold'>
+                              {data.name || '其他'}
+                            </span>
+                          </div>
+                          <div className='flex flex-col'>
+                            <span className='text-muted-foreground text-[0.70rem] uppercase'>
+                              {t('multiplier')}
+                            </span>
+                            <span className='font-bold'>{data.value.toFixed(2)}x</span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                }}
+              />
+              <Legend />
+            </PieChart>
+          </ChartContainer>
         </div>
-        <Button onClick={addTimeSlot} variant='outline' className='mt-4 w-full'>
-          {t('addTimeSlot')}
-        </Button>
+        <div className='w-full md:w-1/2'>
+          <ArrayInput<API.TimePeriod>
+            fields={[
+              {
+                name: 'start_time',
+                prefix: t('startTime'),
+                type: 'time',
+              },
+              { name: 'end_time', prefix: t('endTime'), type: 'time' },
+              { name: 'multiplier', prefix: t('multiplier'), type: 'number' },
+            ]}
+            value={timeSlots}
+            onChange={setTimeSlots}
+          />
+        </div>
       </div>
     </>
   );

@@ -61,7 +61,8 @@
     "reset": "Reset",
     "save": "Save",
     "saveSuccess": "Save Successful",
-    "startTime": "Start Time"
+    "startTime": "Start Time",
+    "timeSlot": "Time Slot"
   },
   "register": {
     "emailSuffixWhitelist": "Email Suffix Whitelist",

@@ -76,7 +76,9 @@ export function EnhancedInput({
       className={cn('border-input flex w-full items-center rounded-md border', className)}
       suppressHydrationWarning
     >
-      {prefix && <div className='bg-muted mr-px flex h-9 items-center px-3'>{prefix}</div>}
+      {prefix && (
+        <div className='bg-muted mr-px flex h-9 items-center text-nowrap px-3'>{prefix}</div>
+      )}
       <Input
         {...props}
         value={value}
@@ -84,7 +86,9 @@ export function EnhancedInput({
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      {suffix && <div className='bg-muted ml-px flex h-9 items-center px-3'>{suffix}</div>}
+      {suffix && (
+        <div className='bg-muted ml-px flex h-9 items-center text-nowrap px-3'>{suffix}</div>
+      )}
     </div>
   );
 }

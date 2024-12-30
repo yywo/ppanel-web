@@ -61,7 +61,8 @@
     "reset": "Tilbakestill",
     "save": "Lagre",
     "saveSuccess": "Lagring vellykket",
-    "startTime": "Starttid"
+    "startTime": "Starttid",
+    "timeSlot": "Tidsluke"
   },
   "register": {
     "emailSuffixWhitelist": "E-post suffiks hviteliste",

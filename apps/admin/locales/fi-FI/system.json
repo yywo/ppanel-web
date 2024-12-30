@@ -61,7 +61,8 @@
     "reset": "Nollaa",
     "save": "Tallenna",
     "saveSuccess": "Tallennus onnistui",
-    "startTime": "Aloitusaika"
+    "startTime": "Aloitusaika",
+    "timeSlot": "Aikaväli"
   },
   "register": {
     "emailSuffixWhitelist": "Sähköpostin jälkiliitteen sallittu luettelo",

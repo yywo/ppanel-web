@@ -61,7 +61,8 @@
     "reset": "リセット",
     "save": "保存",
     "saveSuccess": "保存成功",
-    "startTime": "開始時間"
+    "startTime": "開始時間",
+    "timeSlot": "時間枠"
   },
   "register": {
     "emailSuffixWhitelist": "メールサフィックスホワイトリスト",

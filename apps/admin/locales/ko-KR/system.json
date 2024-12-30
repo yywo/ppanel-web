@@ -61,7 +61,8 @@
     "reset": "재설정",
     "save": "저장",
     "saveSuccess": "저장 성공",
-    "startTime": "시작 시간"
+    "startTime": "시작 시간",
+    "timeSlot": "시간대"
   },
   "register": {
     "emailSuffixWhitelist": "이메일 접미사 화이트리스트",

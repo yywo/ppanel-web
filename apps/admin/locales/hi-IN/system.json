@@ -61,7 +61,8 @@
     "reset": "रीसेट",
     "save": "सहेजें",
     "saveSuccess": "सफलतापूर्वक सहेजा गया",
-    "startTime": "प्रारंभ समय"
+    "startTime": "प्रारंभ समय",
+    "timeSlot": "समय स्लॉट"
   },
   "register": {
     "emailSuffixWhitelist": "ईमेल प्रत्यय श्वेतसूची",

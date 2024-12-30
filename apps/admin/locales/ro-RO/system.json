@@ -61,7 +61,8 @@
     "reset": "Resetare",
     "save": "Salvare",
     "saveSuccess": "Salvare reușită",
-    "startTime": "Ora de Începere"
+    "startTime": "Ora de Începere",
+    "timeSlot": "Interval de timp"
   },
   "register": {
     "emailSuffixWhitelist": "Lista albă a sufixelor de e-mail",

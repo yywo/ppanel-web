@@ -61,7 +61,8 @@
     "reset": "Réinitialiser",
     "save": "Enregistrer",
     "saveSuccess": "Enregistrement réussi",
-    "startTime": "Heure de Début"
+    "startTime": "Heure de Début",
+    "timeSlot": "Créneau horaire"
   },
   "register": {
     "emailSuffixWhitelist": "Liste blanche des suffixes d'email",

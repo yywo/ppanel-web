@@ -61,7 +61,8 @@
     "reset": "Resetovat",
     "save": "Uložit",
     "saveSuccess": "Úspěšně uloženo",
-    "startTime": "Čas začátku"
+    "startTime": "Čas začátku",
+    "timeSlot": "Časový úsek"
   },
   "register": {
     "emailSuffixWhitelist": "Seznam povolených přípon e-mailů",

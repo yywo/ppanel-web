@@ -61,7 +61,8 @@
     "reset": "Сбросить",
     "save": "Сохранить",
     "saveSuccess": "Успешно сохранено",
-    "startTime": "Время начала"
+    "startTime": "Время начала",
+    "timeSlot": "Временной интервал"
   },
   "register": {
     "emailSuffixWhitelist": "Белый список суффиксов электронной почты",

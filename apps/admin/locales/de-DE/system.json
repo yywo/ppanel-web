@@ -61,7 +61,8 @@
     "reset": "Zurücksetzen",
     "save": "Speichern",
     "saveSuccess": "Erfolgreich gespeichert",
-    "startTime": "Startzeit"
+    "startTime": "Startzeit",
+    "timeSlot": "Zeitfenster"
   },
   "register": {
     "emailSuffixWhitelist": "E-Mail-Suffix-Whitelist",

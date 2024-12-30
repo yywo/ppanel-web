@@ -61,7 +61,8 @@
     "reset": "Resetuj",
     "save": "Zapisz",
     "saveSuccess": "Zapisano pomyślnie",
-    "startTime": "Czas rozpoczęcia"
+    "startTime": "Czas rozpoczęcia",
+    "timeSlot": "Przedział czasowy"
   },
   "register": {
     "emailSuffixWhitelist": "Biała lista sufiksów e-mail",

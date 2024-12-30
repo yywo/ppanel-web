@@ -61,7 +61,8 @@
     "reset": "Sıfırla",
     "save": "Kaydet",
     "saveSuccess": "Başarıyla kaydedildi",
-    "startTime": "Başlangıç Zamanı"
+    "startTime": "Başlangıç Zamanı",
+    "timeSlot": "Zaman Dilimi"
   },
   "register": {
     "emailSuffixWhitelist": "E-posta Soneki Beyaz Listesi",

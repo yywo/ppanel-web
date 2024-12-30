@@ -61,7 +61,8 @@
     "reset": "Đặt lại",
     "save": "Lưu",
     "saveSuccess": "Lưu thành công",
-    "startTime": "Thời gian bắt đầu"
+    "startTime": "Thời gian bắt đầu",
+    "timeSlot": "Khung giờ"
   },
   "register": {
     "emailSuffixWhitelist": "Danh sách trắng hậu tố email",

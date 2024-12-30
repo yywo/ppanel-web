@@ -61,7 +61,8 @@
     "reset": "重置",
     "save": "保存",
     "saveSuccess": "保存成功",
-    "startTime": "开始时间"
+    "startTime": "开始时间",
+    "timeSlot": "时间段"
   },
   "register": {
     "emailSuffixWhitelist": "电子邮件后缀白名单",

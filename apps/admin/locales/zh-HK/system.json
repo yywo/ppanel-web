@@ -61,7 +61,8 @@
     "reset": "重設",
     "save": "儲存",
     "saveSuccess": "保存成功",
-    "startTime": "開始時間"
+    "startTime": "開始時間",
+    "timeSlot": "時間段"
   },
   "register": {
     "emailSuffixWhitelist": "電子郵件後綴白名單",

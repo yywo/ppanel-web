@@ -61,7 +61,8 @@
     "reset": "بازنشانی",
     "save": "ذخیره",
     "saveSuccess": "ذخیره با موفقیت انجام شد",
-    "startTime": "زمان شروع"
+    "startTime": "زمان شروع",
+    "timeSlot": "بازه زمانی"
   },
   "register": {
     "emailSuffixWhitelist": "لیست سفید پسوند ایمیل",

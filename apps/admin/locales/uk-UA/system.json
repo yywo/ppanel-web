@@ -61,7 +61,8 @@
     "reset": "Скинути",
     "save": "Зберегти",
     "saveSuccess": "Збережено успішно",
-    "startTime": "Час Початку"
+    "startTime": "Час Початку",
+    "timeSlot": "Часовий проміжок"
   },
   "register": {
     "emailSuffixWhitelist": "Білий список суфіксів електронної пошти",
