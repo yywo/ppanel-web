@@ -51,11 +51,13 @@ const hysteria2Schema = z.object({
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
+  security: z.string(),
   security_config: securityConfigSchema,
 });
 
 const tuicSchema = z.object({
   port: portSchema,
+  security: z.string(),
   security_config: securityConfigSchema,
 });
 
