@@ -177,7 +177,7 @@ export default function Node() {
       </Table>
       <div className='flex flex-col-reverse gap-8 px-4 pt-6 md:flex-row md:items-start'>
         <div className='w-full md:w-1/2'>
-          <ChartContainer config={chartConfig} className='mx-auto aspect-square max-w-[400px]'>
+          <ChartContainer config={chartConfig} className='mx-auto aspect-[4/3] max-w-[400px]'>
             <PieChart>
               <Pie
                 data={chartTimeSlots}

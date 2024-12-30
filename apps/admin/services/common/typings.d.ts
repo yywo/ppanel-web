@@ -140,6 +140,12 @@ declare namespace API {
     node_push_interval: number;
   };
 
+  type NodeRelay = {
+    host: string;
+    port: number;
+    prefix: string;
+  };
+
   type NodeStatus = {
     online_users: OnlineUser[];
     status: ServerStatus;
@@ -216,6 +222,11 @@ declare namespace API {
     ip_register_limit_duration: number;
   };
 
+  type RelayConfig = {
+    dispatch_mode: string;
+    relay_nodes: NodeRelay[];
+  };
+
   type ResetPasswordRequest = {
     email: string;
     password: string;
@@ -256,9 +267,8 @@ declare namespace API {
     id: number;
     name: string;
     server_addr: string;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    relay_mode: string;
+    relay_node: NodeRelay[];
     speed_limit: number;
     traffic_ratio: number;
     group_id: number;

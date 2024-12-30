@@ -77,7 +77,9 @@ export function EnhancedInput({
       suppressHydrationWarning
     >
       {prefix && (
-        <div className='bg-muted mr-px flex h-9 items-center text-nowrap px-3'>{prefix}</div>
+        <div className='bg-muted relative mr-px flex h-9 items-center text-nowrap px-3'>
+          {prefix}
+        </div>
       )}
       <Input
         {...props}
@@ -87,7 +89,9 @@ export function EnhancedInput({
         onBlur={handleBlur}
       />
       {suffix && (
-        <div className='bg-muted ml-px flex h-9 items-center text-nowrap px-3'>{suffix}</div>
+        <div className='bg-muted relative ml-px flex h-9 items-center text-nowrap px-3'>
+          {suffix}
+        </div>
       )}
     </div>
   );

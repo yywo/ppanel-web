@@ -1,6 +1,7 @@
 import { Button } from '@workspace/ui/components/button';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput, EnhancedInputProps } from '@workspace/ui/custom-components/enhanced-input';
+import { cn } from '@workspace/ui/lib/utils';
 import { CircleMinusIcon, CirclePlusIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -54,8 +55,8 @@ export function ObjectInput<T extends Record<string, any>>({
 
   return (
     <div className='flex flex-1 flex-wrap gap-4'>
-      {fields.map(({ name, type, options, ...fieldProps }) => (
-        <div key={name} className='flex-1'>
+      {fields.map(({ name, type, options, className, ...fieldProps }) => (
+        <div key={name} className={cn('flex-1', className)}>
           {type === 'select' && options ? (
             <Combobox<string, false>
               placeholder={fieldProps.placeholder}
