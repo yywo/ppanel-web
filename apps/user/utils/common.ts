@@ -41,7 +41,7 @@ export function getRedirectUrl() {
 }
 
 export function Logout() {
-  const cookies = new Cookies(null, { path: '/' });
+  if (!isBrowser()) return;
   cookies.remove('Authorization');
   const pathname = location.pathname;
   if (!['', '/', '/auth', '/tos'].includes(pathname)) {
