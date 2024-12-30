@@ -69,7 +69,13 @@ export const viewport: Viewport = {
   ],
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const Authorization = (await cookies()).get('Authorization')?.value;
+
   const locale = await getLocale();
   const messages = await getMessages();
 
@@ -81,13 +87,15 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     console.log('Error fetching global config:', error);
   }
 
-  try {
-    user = await queryUserInfo({
-      skipErrorHandler: true,
-      Authorization: (await cookies()).get('Authorization')?.value,
-    }).then((res) => res.data.data);
-  } catch (error) {
-    console.log('Error fetching user info:', error);
+  if (Authorization) {
+    try {
+      user = await queryUserInfo({
+        skipErrorHandler: true,
+        Authorization,
+      }).then((res) => res.data.data);
+    } catch (error) {
+      console.log('Error fetching user info:', error);
+    }
   }
 
   return (

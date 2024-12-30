@@ -358,11 +358,6 @@ declare namespace API {
     ip_register_limit_duration: number;
   };
 
-  type RelayConfig = {
-    dispatch_mode: string;
-    relay_nodes: NodeRelay[];
-  };
-
   type RenewalOrderRequest = {
     subscribe_id: number;
     quantity: number;

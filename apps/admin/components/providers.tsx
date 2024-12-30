@@ -22,6 +22,7 @@ export default function Providers({
         defaultOptions: {
           queries: {
             staleTime: 5 * 1000,
+            retry: false,
           },
         },
       }),

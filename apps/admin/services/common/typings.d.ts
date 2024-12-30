@@ -222,11 +222,6 @@ declare namespace API {
     ip_register_limit_duration: number;
   };
 
-  type RelayConfig = {
-    dispatch_mode: string;
-    relay_nodes: NodeRelay[];
-  };
-
   type ResetPasswordRequest = {
     email: string;
     password: string;

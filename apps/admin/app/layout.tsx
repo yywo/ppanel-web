@@ -75,6 +75,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const Authorization = (await cookies()).get('Authorization')?.value;
+
   const locale = await getLocale();
   const messages = await getMessages();
 
@@ -86,13 +88,15 @@ export default async function RootLayout({
     console.log('Error fetching global config:', error);
   }
 
-  try {
-    user = await currentUser({
-      skipErrorHandler: true,
-      Authorization: (await cookies()).get('Authorization')?.value,
-    }).then((res) => res.data.data);
-  } catch (error) {
-    console.log('Error fetching current user:', error);
+  if (Authorization) {
+    try {
+      user = await currentUser({
+        skipErrorHandler: true,
+        Authorization,
+      }).then((res) => res.data.data);
+    } catch (error) {
+      console.log('Error fetching current user:', error);
+    }
   }
 
   return (

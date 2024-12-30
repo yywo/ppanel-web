@@ -613,11 +613,6 @@ declare namespace API {
     ip_register_limit_duration: number;
   };
 
-  type RelayConfig = {
-    dispatch_mode: string;
-    relay_nodes: NodeRelay[];
-  };
-
   type Response = {
     /** 状态码 */
     code?: number;
