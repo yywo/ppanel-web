@@ -61,16 +61,15 @@
       "obfsPasswordPlaceholder": "Leave blank for no obfuscation",
       "path": "Path",
       "pleaseSelect": "Please Select",
-      "selectRelayMode": "Select Relay Mode",
-      "relayModeOptions": {
-        "none": "None",
-        "all": "All",
-        "random": "Random"
-      },
       "port": "Server Port",
       "protocol": "Protocol",
-      "relayMode": "Relay Mode",
       "relayHost": "Relay Host",
+      "relayMode": "Relay Mode",
+      "relayModeOptions": {
+        "all": "All",
+        "none": "None",
+        "random": "Random"
+      },
       "relayPort": "Relay Port",
       "relayPrefix": "Relay Prefix",
       "remarks": "Remarks",
@@ -95,6 +94,7 @@
       "selectEncryptionMethod": "Select Encryption Method",
       "selectNodeGroup": "Select Node Group",
       "selectProtocol": "Select Protocol",
+      "selectRelayMode": "Select Relay Mode",
       "serverAddr": "Server Address",
       "serverName": "Service Name",
       "speedLimit": "Speed Limit",
