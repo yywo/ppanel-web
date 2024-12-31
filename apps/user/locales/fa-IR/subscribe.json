@@ -3,8 +3,10 @@
   "Hour": "ساعت",
   "Minute": "دقیقه",
   "Month": "ماه",
+  "NoLimit": "بدون محدودیت",
   "Year": "سال",
   "all": "همه",
+  "balanceRecharge": "شارژ موجودی",
   "billing": {
     "billingTitle": "صورتحساب محصول",
     "couponDiscount": "تخفیف کوپن",
@@ -15,13 +17,18 @@
     "total": "جمع کل"
   },
   "buy": "خرید",
+  "buyNow": "خرید کنید",
+  "buySubscription": "خرید اشتراک",
   "category": "دسته‌بندی",
+  "coupon": "کوپن",
   "detail": {
     "availableTraffic": "ترافیک موجود",
     "connectedDevices": "دستگاه‌های متصل",
     "connectionSpeed": "سرعت اتصال",
     "productDetail": "جزئیات محصول"
   },
+  "enterAmount": "مبلغ شارژ را وارد کنید",
+  "enterCoupon": "کد تخفیف را وارد کنید",
   "methods": {
     "alipay_f2f": "علی‌پی (رو در رو)",
     "balance": "موجودی",
@@ -29,6 +36,20 @@
     "stripe_alipay": "استرایپ (علی‌پی)",
     "stripe_wechat_pay": "استرایپ (وی‌چت)"
   },
+  "paymentMethod": "روش پرداخت",
   "productDescription": "توضیحات محصول",
-  "products": "محصولات"
+  "products": "محصولات",
+  "purchaseDuration": "مدت خرید",
+  "recharge": "شارژ مجدد",
+  "rechargeAmount": "مبلغ شارژ",
+  "rechargeDescription": "شارژ با یک کلیک، آسان و راحت",
+  "rechargeNow": "اکنون شارژ کنید",
+  "renew": "تجدید",
+  "renewSubscription": "تمدید اشتراک",
+  "resetPrice": "بازنشانی قیمت",
+  "resetTraffic": "بازنشانی ترافیک",
+  "resetTrafficDescription": "بازنشانی ترافیک فقط برای ماه جاری",
+  "resetTrafficTitle": "بازنشانی ترافیک",
+  "selectSubscription": "انتخاب اشتراک",
+  "subscriptionDiscount": "تخفیف اشتراک"
 }

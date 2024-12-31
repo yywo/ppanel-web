@@ -3,8 +3,10 @@
   "Hour": "Time",
   "Minute": "Minutt",
   "Month": "Måned",
+  "NoLimit": "Ingen grense",
   "Year": "År",
   "all": "Alle",
+  "balanceRecharge": "Saldoopplading",
   "billing": {
     "billingTitle": "Varefaktura",
     "couponDiscount": "Rabattkode rabatt",
@@ -15,13 +17,18 @@
     "total": "Totalpris"
   },
   "buy": "Kjøp",
+  "buyNow": "Kjøp Nå",
+  "buySubscription": "Kjøp abonnement",
   "category": "Kategori",
+  "coupon": "Kupong",
   "detail": {
     "availableTraffic": "Tilgjengelig trafikk",
     "connectedDevices": "Samtidig tilkoblede IP-er",
     "connectionSpeed": "Tilkoblingshastighet",
     "productDetail": "Produktdetaljer"
   },
+  "enterAmount": "Skriv inn påfyllingsbeløp",
+  "enterCoupon": "Skriv inn kupongkode",
   "methods": {
     "alipay_f2f": "Alipay (ansikt til ansikt)",
     "balance": "Balanse",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Betalingsmetode",
   "productDescription": "Produktbeskrivelse",
-  "products": "Produkter"
+  "products": "Produkter",
+  "purchaseDuration": "Kjøpsvarighet",
+  "recharge": "Lad opp",
+  "rechargeAmount": "Påfyllingsbeløp",
+  "rechargeDescription": "Ett-klikks opplading, enkelt å håndtere",
+  "rechargeNow": "Lad opp nå",
+  "renew": "Forny",
+  "renewSubscription": "Forny abonnement",
+  "resetPrice": "Tilbakestill pris",
+  "resetTraffic": "Tilbakestill trafikk",
+  "resetTrafficDescription": "Tilbakestill trafikk kun for inneværende måned",
+  "resetTrafficTitle": "Nullstill trafikk",
+  "selectSubscription": "Velg abonnement",
+  "subscriptionDiscount": "Abonnementsrabatt"
 }

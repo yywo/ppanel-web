@@ -1,6 +1,8 @@
 'use client';
 
 import { Display } from '@/components/display';
+import { SubscribeBilling } from '@/components/subscribe/billing';
+import { SubscribeDetail } from '@/components/subscribe/detail';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, queryOrderDetail } from '@/services/user/order';
 import { Icon } from '@iconify/react';
@@ -22,9 +24,6 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useEffect, useState } from 'react';
-
-import { SubscribeBilling } from '../subscribe/billing';
-import { SubscribeDetail } from '../subscribe/detail';
 import StripePayment from './stripe';
 
 export default function Page() {

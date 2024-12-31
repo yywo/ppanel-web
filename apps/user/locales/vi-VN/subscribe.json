@@ -3,8 +3,10 @@
   "Hour": "Giờ",
   "Minute": "Phút",
   "Month": "Tháng",
+  "NoLimit": "Không Giới Hạn",
   "Year": "Năm",
   "all": "Tất cả",
+  "balanceRecharge": "Nạp Tiền Số Dư",
   "billing": {
     "billingTitle": "Hóa đơn sản phẩm",
     "couponDiscount": "Ưu đãi mã giảm giá",
@@ -15,13 +17,18 @@
     "total": "Tổng giá"
   },
   "buy": "Mua",
+  "buyNow": "Mua Ngay",
+  "buySubscription": "Mua Gói Đăng Ký",
   "category": "thể loại",
+  "coupon": "Phiếu giảm giá",
   "detail": {
     "availableTraffic": "Lưu lượng khả dụng",
     "connectedDevices": "Số IP kết nối đồng thời",
     "connectionSpeed": "Tốc độ kết nối",
     "productDetail": "Chi tiết sản phẩm"
   },
+  "enterAmount": "Nhập số tiền nạp",
+  "enterCoupon": "Nhập Mã Phiếu Giảm Giá",
   "methods": {
     "alipay_f2f": "Alipay (mặt đối mặt)",
     "balance": "Số dư",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Phương thức thanh toán",
   "productDescription": "Mô tả sản phẩm",
-  "products": "Sản phẩm"
+  "products": "Sản phẩm",
+  "purchaseDuration": "Thời Gian Mua Hàng",
+  "recharge": "Nạp tiền",
+  "rechargeAmount": "Số Tiền Nạp",
+  "rechargeDescription": "Nạp tiền chỉ với một cú nhấp, dễ dàng xử lý",
+  "rechargeNow": "Nạp Ngay",
+  "renew": "Gia hạn",
+  "renewSubscription": "Gia hạn đăng ký",
+  "resetPrice": "Đặt lại giá",
+  "resetTraffic": "Đặt lại Lưu lượng",
+  "resetTrafficDescription": "Đặt lại lưu lượng truy cập chỉ cho tháng hiện tại",
+  "resetTrafficTitle": "Đặt lại Lưu lượng",
+  "selectSubscription": "Chọn Gói Đăng Ký",
+  "subscriptionDiscount": "Giảm giá Đăng ký"
 }

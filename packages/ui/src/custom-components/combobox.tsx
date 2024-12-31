@@ -17,6 +17,7 @@ import * as React from 'react';
 export type Option<T = string> = {
   value: T;
   label: string;
+  children?: React.ReactNode;
 };
 
 // Conditional types to determine the value type for onChange
@@ -98,11 +99,11 @@ export function Combobox<T, M extends boolean = false>({
             <CommandList>
               {options.map((option) => (
                 <CommandItem
-                  key={String(option.label)}
+                  key={String(option.label + option.value)}
                   value={option.label}
                   onSelect={() => handleSelect(option.value)}
                 >
-                  {option.label}
+                  {option.children || option.label}
                   <CheckIcon
                     className={cn(
                       'ml-auto h-4 w-4',

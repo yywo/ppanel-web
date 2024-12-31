@@ -12,6 +12,7 @@
   "manualImportMessage": "Cette application ne prend pas encore en charge l'activation, veuillez importer manuellement, l'adresse d'abonnement a été copiée automatiquement",
   "mySubscriptions": "Mes abonnements",
   "nextResetDays": "Prochain réinitialisation/jours",
+  "noLimit": "Pas de limite",
   "prompt": "invite",
   "purchaseSubscription": "Acheter un abonnement",
   "qrCode": "Code QR",

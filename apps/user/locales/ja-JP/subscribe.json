@@ -3,8 +3,10 @@
   "Hour": "時",
   "Minute": "分",
   "Month": "月",
+  "NoLimit": "無制限",
   "Year": "年",
   "all": "すべて",
+  "balanceRecharge": "残高チャージ",
   "billing": {
     "billingTitle": "商品請求書",
     "couponDiscount": "クーポン割引",
@@ -15,13 +17,18 @@
     "total": "合計"
   },
   "buy": "購入",
+  "buyNow": "今すぐ購入",
+  "buySubscription": "サブスクリプションを購入",
   "category": "カテゴリー",
+  "coupon": "クーポン",
   "detail": {
     "availableTraffic": "利用可能なトラフィック",
     "connectedDevices": "同時接続 IP 数",
     "connectionSpeed": "接続速度",
     "productDetail": "商品詳細"
   },
+  "enterAmount": "リチャージ金額を入力してください",
+  "enterCoupon": "クーポンコードを入力",
   "methods": {
     "alipay_f2f": "支付宝(対面)",
     "balance": "残高",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe(支付宝)",
     "stripe_wechat_pay": "Stripe(微信)"
   },
+  "paymentMethod": "支払い方法",
   "productDescription": "商品説明",
-  "products": "商品"
+  "products": "商品",
+  "purchaseDuration": "購入期間",
+  "recharge": "リチャージ",
+  "rechargeAmount": "リチャージ金額",
+  "rechargeDescription": "ワンクリックでリチャージ、簡単に操作",
+  "rechargeNow": "今すぐリチャージ",
+  "renew": "更新",
+  "renewSubscription": "サブスクリプションを更新する",
+  "resetPrice": "価格をリセット",
+  "resetTraffic": "トラフィックをリセット",
+  "resetTrafficDescription": "今月のみのトラフィックをリセットする",
+  "resetTrafficTitle": "トラフィックをリセット",
+  "selectSubscription": "サブスクリプションを選択",
+  "subscriptionDiscount": "サブスクリプション割引"
 }

@@ -3,8 +3,10 @@
   "Hour": "Tunti",
   "Minute": "Minuutti",
   "Month": "Kuukausi",
+  "NoLimit": "Ei rajoitusta",
   "Year": "Vuosi",
   "all": "kaikki",
+  "balanceRecharge": "Saldon Lataus",
   "billing": {
     "billingTitle": "Tuotelasku",
     "couponDiscount": "Alennuskoodin alennus",
@@ -15,13 +17,18 @@
     "total": "Kokonaishinta"
   },
   "buy": "Osta",
+  "buyNow": "Osta nyt",
+  "buySubscription": "Osta tilaus",
   "category": "Kategoria",
+  "coupon": "Kuponki",
   "detail": {
     "availableTraffic": "Käytettävissä oleva liikenne",
     "connectedDevices": "Samanaikaisesti yhdistetyt IP-osoitteet",
     "connectionSpeed": "Yhteysnopeus",
     "productDetail": "Tuotteen tiedot"
   },
+  "enterAmount": "Syötä latausmäärä",
+  "enterCoupon": "Syötä alennuskoodi",
   "methods": {
     "alipay_f2f": "Alipay (kasvokkain)",
     "balance": "Saldo",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Maksutapa",
   "productDescription": "Tuotteen kuvaus",
-  "products": "tuotteet"
+  "products": "tuotteet",
+  "purchaseDuration": "Ostoajan kesto",
+  "recharge": "Lataa saldoa",
+  "rechargeAmount": "Latausmäärä",
+  "rechargeDescription": "Yhden klikkauksen lataus, helppo käsitellä",
+  "rechargeNow": "Lataa nyt",
+  "renew": "Uudista",
+  "renewSubscription": "Uudista tilaus",
+  "resetPrice": "Nollaa hinta",
+  "resetTraffic": "Nollaa liikenne",
+  "resetTrafficDescription": "Nollaa liikenne vain kuluvan kuukauden osalta",
+  "resetTrafficTitle": "Nollaa liikenne",
+  "selectSubscription": "Valitse tilaus",
+  "subscriptionDiscount": "Tilauksen alennus"
 }

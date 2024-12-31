@@ -3,8 +3,10 @@
   "Hour": "時",
   "Minute": "分鐘",
   "Month": "月",
+  "NoLimit": "無限制",
   "Year": "年",
   "all": "全部",
+  "balanceRecharge": "餘額充值",
   "billing": {
     "billingTitle": "商品帳單",
     "couponDiscount": "折扣碼優惠",
@@ -15,13 +17,18 @@
     "total": "總價"
   },
   "buy": "購買",
+  "buyNow": "立即購買",
+  "buySubscription": "購買訂閱",
   "category": "類別",
+  "coupon": "優惠券",
   "detail": {
     "availableTraffic": "可用流量",
     "connectedDevices": "同時連接 IP 數",
     "connectionSpeed": "連接速度",
     "productDetail": "商品詳情"
   },
+  "enterAmount": "輸入充值金額",
+  "enterCoupon": "輸入優惠券代碼",
   "methods": {
     "alipay_f2f": "支付寶(面對面)",
     "balance": "餘額",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe(支付寶)",
     "stripe_wechat_pay": "Stripe(微信)"
   },
+  "paymentMethod": "付款方式",
   "productDescription": "商品描述",
-  "products": "產品"
+  "products": "產品",
+  "purchaseDuration": "購買期限",
+  "recharge": "充值",
+  "rechargeAmount": "充值金額",
+  "rechargeDescription": "一鍵充值，輕鬆處理",
+  "rechargeNow": "立即充值",
+  "renew": "續期",
+  "renewSubscription": "續訂",
+  "resetPrice": "重設價格",
+  "resetTraffic": "重設流量",
+  "resetTrafficDescription": "僅重設本月的流量",
+  "resetTrafficTitle": "重設流量",
+  "selectSubscription": "選擇訂閱",
+  "subscriptionDiscount": "訂閱折扣"
 }

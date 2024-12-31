@@ -12,6 +12,7 @@
   "manualImportMessage": "该应用暂不支持唤起，请手动导入，已自动复制订阅地址",
   "mySubscriptions": "我的订阅",
   "nextResetDays": "下次重置/天",
+  "noLimit": "无限制",
   "prompt": "提示",
   "purchaseSubscription": "购买订阅",
   "qrCode": "二维码",

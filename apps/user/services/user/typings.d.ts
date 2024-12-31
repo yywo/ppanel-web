@@ -195,6 +195,8 @@ declare namespace API {
     trade_no: string;
     status: number;
     subscribe_id: number;
+    subscription_discount_id: number;
+    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
@@ -216,6 +218,8 @@ declare namespace API {
     status: number;
     subscribe_id: number;
     subscribe: Subscribe;
+    subscription_discount_id: number;
+    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
@@ -240,6 +244,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     fee_amount: number;
+    discount_list: SubscribeDiscountInfo[];
   };
 
   type PreRenewalOrderResponse = {
@@ -251,6 +256,7 @@ declare namespace API {
     quantity: number;
     payment: string;
     coupon?: string;
+    discount_subscribe_id: number;
   };
 
   type PurchaseOrderResponse = {
@@ -364,6 +370,7 @@ declare namespace API {
     payment: string;
     coupon?: string;
     subscribe_token: string;
+    discount_subscribe_id: number;
   };
 
   type RenewalOrderResponse = {
@@ -494,6 +501,13 @@ declare namespace API {
   type SubscribeDiscount = {
     quantity: number;
     discount: number;
+  };
+
+  type SubscribeDiscountInfo = {
+    id: number;
+    name: string;
+    price: number;
+    expire_time: string;
   };
 
   type SubscribeGroup = {

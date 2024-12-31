@@ -3,8 +3,10 @@
   "Hour": "Heure",
   "Minute": "Minute",
   "Month": "Mois",
+  "NoLimit": "Pas de limite",
   "Year": "Année",
   "all": "Tout",
+  "balanceRecharge": "Recharge de Solde",
   "billing": {
     "billingTitle": "Facture des produits",
     "couponDiscount": "Réduction du code promo",
@@ -15,13 +17,18 @@
     "total": "Prix total"
   },
   "buy": "Acheter",
+  "buyNow": "Acheter maintenant",
+  "buySubscription": "Acheter un abonnement",
   "category": "Catégorie",
+  "coupon": "Coupon",
   "detail": {
     "availableTraffic": "Trafic disponible",
     "connectedDevices": "Nombre d'IP connectées simultanément",
     "connectionSpeed": "Vitesse de connexion",
     "productDetail": "Détails du produit"
   },
+  "enterAmount": "Entrez le montant de la recharge",
+  "enterCoupon": "Entrez le code promo",
   "methods": {
     "alipay_f2f": "Alipay (face à face)",
     "balance": "Solde",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Méthode de paiement",
   "productDescription": "Description du produit",
-  "products": "produits"
+  "products": "produits",
+  "purchaseDuration": "Durée d'achat",
+  "recharge": "Recharger",
+  "rechargeAmount": "Montant de la Recharge",
+  "rechargeDescription": "Recharge en un clic, facile à gérer",
+  "rechargeNow": "Rechargez maintenant",
+  "renew": "Renouveler",
+  "renewSubscription": "Renouveler l'abonnement",
+  "resetPrice": "Réinitialiser le prix",
+  "resetTraffic": "Réinitialiser le trafic",
+  "resetTrafficDescription": "Réinitialiser le trafic pour le mois en cours uniquement",
+  "resetTrafficTitle": "Réinitialiser le trafic",
+  "selectSubscription": "Sélectionner l'abonnement",
+  "subscriptionDiscount": "Remise sur l'abonnement"
 }

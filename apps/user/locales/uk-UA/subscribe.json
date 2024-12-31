@@ -3,8 +3,10 @@
   "Hour": "Година",
   "Minute": "хвилина",
   "Month": "Місяць",
+  "NoLimit": "Без обмежень",
   "Year": "Рік",
   "all": "всі",
+  "balanceRecharge": "Поповнення балансу",
   "billing": {
     "billingTitle": "Рахунок за товар",
     "couponDiscount": "Знижка за промокодом",
@@ -15,13 +17,18 @@
     "total": "Загальна сума"
   },
   "buy": "Купити",
+  "buyNow": "Купити зараз",
+  "buySubscription": "Купити підписку",
   "category": "категорія",
+  "coupon": "Купон",
   "detail": {
     "availableTraffic": "Доступний трафік",
     "connectedDevices": "Кількість одночасно підключених IP",
     "connectionSpeed": "Швидкість з'єднання",
     "productDetail": "Деталі товару"
   },
+  "enterAmount": "Введіть суму поповнення",
+  "enterCoupon": "Введіть код купона",
   "methods": {
     "alipay_f2f": "Alipay (обличчям до обличчя)",
     "balance": "Баланс",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Спосіб оплати",
   "productDescription": "Опис товару",
-  "products": "товари"
+  "products": "товари",
+  "purchaseDuration": "Тривалість покупки",
+  "recharge": "Поповнення",
+  "rechargeAmount": "Сума поповнення",
+  "rechargeDescription": "Одним натисканням поповнити рахунок, легко впоратися",
+  "rechargeNow": "Поповнити зараз",
+  "renew": "Оновити",
+  "renewSubscription": "Поновити підписку",
+  "resetPrice": "Скинути ціну",
+  "resetTraffic": "Скинути трафік",
+  "resetTrafficDescription": "Скинути трафік лише для поточного місяця",
+  "resetTrafficTitle": "Скинути трафік",
+  "selectSubscription": "Виберіть підписку",
+  "subscriptionDiscount": "Знижка на підписку"
 }

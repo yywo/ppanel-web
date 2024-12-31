@@ -9,8 +9,8 @@ import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
 import { Empty } from '@/components/empty';
+import Recharge from '@/components/subscribe/recharge';
 import { formatDate } from '@workspace/ui/utils';
-import Recharge from '../order/recharge';
 
 export default function Page() {
   const t = useTranslations('wallet');

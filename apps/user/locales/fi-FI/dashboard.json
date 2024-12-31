@@ -12,6 +12,7 @@
   "manualImportMessage": "Tämä sovellus ei tue herätystä tällä hetkellä, tuo manuaalisesti, tilausosoite on kopioitu automaattisesti",
   "mySubscriptions": "Omat tilaukset",
   "nextResetDays": "Seuraava nollaus/päivää",
+  "noLimit": "Ei rajoitusta",
   "prompt": "kehotus",
   "purchaseSubscription": "Osta tilaus",
   "qrCode": "QR-koodi",

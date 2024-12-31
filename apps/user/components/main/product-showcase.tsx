@@ -1,7 +1,7 @@
 'use client';
 
-import { SubscribeDetail } from '@/app/(main)/(user)/subscribe/detail';
 import { Display } from '@/components/display';
+import { SubscribeDetail } from '@/components/subscribe/detail';
 import { getSubscription } from '@/services/common/common';
 import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
@@ -112,7 +112,7 @@ export function ProductShowcase() {
                 <SubscribeDetail
                   subscribe={{
                     ...item,
-                    name: null,
+                    name: undefined,
                   }}
                 />
               </CardContent>

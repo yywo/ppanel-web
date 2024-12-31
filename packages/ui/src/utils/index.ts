@@ -1,31 +1,8 @@
-import { startOfMonth } from 'date-fns';
-
 export * from '@workspace/ui/utils/countries';
 export * from '@workspace/ui/utils/formatting';
 export * from '@workspace/ui/utils/unit-conversions';
 
 export const isBrowser = () => typeof window !== 'undefined';
-
-export function getNextResetDate(startDate: Date | number) {
-  const time = new Date(startDate);
-  const resetDay = time.getDate();
-  const currentDate = new Date();
-  if (isNaN(time.getTime())) {
-    throw new Error('Invalid start date');
-  }
-  if (currentDate.getDate() >= resetDay) {
-    const startOfMonthNextReset = startOfMonth(currentDate);
-    startOfMonthNextReset.setMonth(startOfMonthNextReset.getMonth() + 1);
-    startOfMonthNextReset.setDate(resetDay);
-    startOfMonthNextReset.setHours(time.getHours());
-    startOfMonthNextReset.setMinutes(time.getMinutes());
-    startOfMonthNextReset.setSeconds(time.getSeconds());
-    return startOfMonthNextReset;
-  } else {
-    time.setMonth(currentDate.getMonth());
-    return time;
-  }
-}
 
 /**
  * Extracts the full domain or root domain from a URL.

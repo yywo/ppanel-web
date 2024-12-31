@@ -31,7 +31,7 @@ export default function ResetTraffic({
   token: string;
   replacement?: number;
 }) {
-  const t = useTranslations('order');
+  const t = useTranslations('subscribe');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();

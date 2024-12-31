@@ -3,8 +3,10 @@
   "Hour": "Stunde",
   "Minute": "Minute",
   "Month": "Monat",
+  "NoLimit": "Kein Limit",
   "Year": "Jahr",
   "all": "Alle",
+  "balanceRecharge": "Guthaben aufladen",
   "billing": {
     "billingTitle": "Produktrechnung",
     "couponDiscount": "Rabattcode-Rabatt",
@@ -15,13 +17,18 @@
     "total": "Gesamtpreis"
   },
   "buy": "Kaufen",
+  "buyNow": "Jetzt kaufen",
+  "buySubscription": "Abonnement kaufen",
   "category": "Kategorie",
+  "coupon": "Gutschein",
   "detail": {
     "availableTraffic": "Verfügbares Datenvolumen",
     "connectedDevices": "Gleichzeitig verbundene IP-Anzahl",
     "connectionSpeed": "Verbindungsgeschwindigkeit",
     "productDetail": "Produktdetails"
   },
+  "enterAmount": "Geben Sie den Aufladebetrag ein",
+  "enterCoupon": "Gutscheincode eingeben",
   "methods": {
     "alipay_f2f": "Alipay (Face-to-Face)",
     "balance": "Guthaben",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Zahlungsmethode",
   "productDescription": "Produktbeschreibung",
-  "products": "Produkte"
+  "products": "Produkte",
+  "purchaseDuration": "Kaufdauer",
+  "recharge": "Aufladen",
+  "rechargeAmount": "Aufladebetrag",
+  "rechargeDescription": "Ein-Klick-Aufladung, einfach zu handhaben",
+  "rechargeNow": "Jetzt aufladen",
+  "renew": "Erneuern",
+  "renewSubscription": "Abonnement erneuern",
+  "resetPrice": "Preis zurücksetzen",
+  "resetTraffic": "Datenverkehr zurücksetzen",
+  "resetTrafficDescription": "Verkehr nur für den aktuellen Monat zurücksetzen",
+  "resetTrafficTitle": "Datenverkehr zurücksetzen",
+  "selectSubscription": "Abonnement auswählen",
+  "subscriptionDiscount": "Abonnementrabatt"
 }

@@ -3,8 +3,10 @@
   "Hour": "घंटा",
   "Minute": "मिनट",
   "Month": "महीना",
+  "NoLimit": "कोई सीमा नहीं",
   "Year": "वर्ष",
   "all": "सभी",
+  "balanceRecharge": "बैलेंस रिचार्ज",
   "billing": {
     "billingTitle": "उत्पाद बिल",
     "couponDiscount": "कूपन छूट",
@@ -15,13 +17,18 @@
     "total": "कुल मूल्य"
   },
   "buy": "खरीदें",
+  "buyNow": "अभी खरीदें",
+  "buySubscription": "सदस्यता खरीदें",
   "category": "श्रेणी",
+  "coupon": "कूपन",
   "detail": {
     "availableTraffic": "उपलब्ध ट्रैफ़िक",
     "connectedDevices": "समानांतर कनेक्टेड IP संख्या",
     "connectionSpeed": "कनेक्शन गति",
     "productDetail": "उत्पाद विवरण"
   },
+  "enterAmount": "रिचार्ज राशि दर्ज करें",
+  "enterCoupon": "कूपन कोड दर्ज करें",
   "methods": {
     "alipay_f2f": "अलीपे (सामना-सामना)",
     "balance": "शेष राशि",
@@ -29,6 +36,20 @@
     "stripe_alipay": "स्ट्राइप (अलीपे)",
     "stripe_wechat_pay": "स्ट्राइप (वीचैट)"
   },
+  "paymentMethod": "भुगतान विधि",
   "productDescription": "उत्पाद विवरण",
-  "products": "उत्पाद"
+  "products": "उत्पाद",
+  "purchaseDuration": "खरीद अवधि",
+  "recharge": "रिचार्ज",
+  "rechargeAmount": "रिचार्ज राशि",
+  "rechargeDescription": "एक-क्लिक रिचार्ज, आसान प्रबंधन",
+  "rechargeNow": "अभी रिचार्ज करें",
+  "renew": "नवीनीकरण करें",
+  "renewSubscription": "सदस्यता नवीनीकरण करें",
+  "resetPrice": "मूल्य रीसेट करें",
+  "resetTraffic": "ट्रैफ़िक रीसेट करें",
+  "resetTrafficDescription": "केवल वर्तमान माह के लिए ट्रैफिक रीसेट करें",
+  "resetTrafficTitle": "ट्रैफ़िक रीसेट करें",
+  "selectSubscription": "सदस्यता चुनें",
+  "subscriptionDiscount": "सदस्यता छूट"
 }

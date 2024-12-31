@@ -26,7 +26,7 @@ import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { Separator } from '@workspace/ui/components/separator';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
-import { getNextResetDate, isBrowser } from '@workspace/ui/utils';
+import { isBrowser } from '@workspace/ui/utils';
 import { differenceInDays } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -35,12 +35,12 @@ import { QRCodeCanvas } from 'qrcode.react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
+import Renewal from '@/components/subscribe/renewal';
+import ResetTraffic from '@/components/subscribe/reset-traffic';
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';
 import { getPlatform } from '@/utils/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import Renewal from '../order/renewal';
-import ResetTraffic from '../order/reset-traffic';
 import Subscribe from '../subscribe/page';
 
 export default function Content() {
@@ -173,15 +173,14 @@ export default function Content() {
                   </li>
                   <li>
                     <span className='text-muted-foreground'>{t('nextResetDays')}</span>
-                    <span className='text-2xl font-semibold'>
-                      {differenceInDays(getNextResetDate(item.start_time), new Date()) ||
-                        t('unknown')}
-                    </span>
+                    <span className='text-2xl font-semibold'>{t('unknown')}</span>
                   </li>
                   <li>
                     <span className='text-muted-foreground'>{t('expirationDays')}</span>
                     <span className='text-2xl font-semibold'>
-                      {differenceInDays(new Date(item.expire_time), new Date()) || t('unknown')}
+                      {item.expire_time
+                        ? differenceInDays(new Date(item.expire_time), new Date()) || t('unknown')
+                        : t('noLimit')}
                     </span>
                   </li>
                 </ul>

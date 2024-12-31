@@ -13,8 +13,8 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { Empty } from '@/components/empty';
-import Purchase from '../order/purchase';
-import { SubscribeDetail } from './detail';
+import { SubscribeDetail } from '@/components/subscribe/detail';
+import Purchase from '@/components/subscribe/purchase';
 
 export default function Page() {
   const t = useTranslations('subscribe');
@@ -112,7 +112,7 @@ export default function Page() {
                   <SubscribeDetail
                     subscribe={{
                       ...item,
-                      name: null,
+                      name: undefined,
                     }}
                   />
                 </CardContent>

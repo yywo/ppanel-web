@@ -3,8 +3,10 @@
   "Hour": "Oră",
   "Minute": "Minut",
   "Month": "Lună",
+  "NoLimit": "Fără limită",
   "Year": "An",
   "all": "Toate",
+  "balanceRecharge": "Reîncărcare Sold",
   "billing": {
     "billingTitle": "Factură produs",
     "couponDiscount": "Reducere cupon",
@@ -15,13 +17,18 @@
     "total": "Total"
   },
   "buy": "Cumpără",
+  "buyNow": "Cumpără acum",
+  "buySubscription": "Cumpără Abonament",
   "category": "categorie",
+  "coupon": "Cupon",
   "detail": {
     "availableTraffic": "Trafic disponibil",
     "connectedDevices": "Număr de IP-uri conectate simultan",
     "connectionSpeed": "Viteza de conectare",
     "productDetail": "Detalii produs"
   },
+  "enterAmount": "Introduceți suma de reîncărcare",
+  "enterCoupon": "Introduceți codul cuponului",
   "methods": {
     "alipay_f2f": "Alipay (față în față)",
     "balance": "Sold",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Metodă de plată",
   "productDescription": "Descrierea produsului",
-  "products": "produse"
+  "products": "produse",
+  "purchaseDuration": "Durata Achiziției",
+  "recharge": "Reîncărcare",
+  "rechargeAmount": "Sumă Reîncărcare",
+  "rechargeDescription": "Reîncărcare cu un singur clic, ușor de gestionat",
+  "rechargeNow": "Reîncarcă acum",
+  "renew": "Reînnoiește",
+  "renewSubscription": "Reînnoiește Abonamentul",
+  "resetPrice": "Resetează Prețul",
+  "resetTraffic": "Resetează Traficul",
+  "resetTrafficDescription": "Resetează traficul doar pentru luna curentă",
+  "resetTrafficTitle": "Resetează Traficul",
+  "selectSubscription": "Selectați Abonamentul",
+  "subscriptionDiscount": "Reducere la abonament"
 }

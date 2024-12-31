@@ -24,7 +24,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState, useTransition } from 'react';
 
 export default function Recharge(props: ButtonProps) {
-  const t = useTranslations('order');
+  const t = useTranslations('subscribe');
   const { common } = useGlobalStore();
   const { currency } = common;
 
@@ -62,7 +62,7 @@ export default function Recharge(props: ButtonProps) {
       <DialogContent className='flex h-full flex-col overflow-hidden md:h-auto'>
         <DialogHeader>
           <DialogTitle>{t('balanceRecharge')}</DialogTitle>
-          <DialogDescription>{t('description')}</DialogDescription>
+          <DialogDescription>{t('rechargeDescription')}</DialogDescription>
         </DialogHeader>
         <div className='flex flex-col justify-between text-sm'>
           <div className='grid gap-3'>

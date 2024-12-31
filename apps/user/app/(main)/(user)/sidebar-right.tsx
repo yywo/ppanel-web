@@ -1,6 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
+import Recharge from '@/components/subscribe/recharge';
 import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
@@ -16,7 +17,6 @@ import { isBrowser } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
-import Recharge from './order/recharge';
 
 export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useGlobalStore();

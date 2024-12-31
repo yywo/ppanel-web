@@ -3,8 +3,10 @@
   "Hour": "Hodina",
   "Minute": "Minuta",
   "Month": "Měsíc",
+  "NoLimit": "Bez omezení",
   "Year": "Rok",
   "all": "Vše",
+  "balanceRecharge": "Dobití zůstatku",
   "billing": {
     "billingTitle": "Faktura za zboží",
     "couponDiscount": "Sleva z kupónu",
@@ -15,13 +17,18 @@
     "total": "Celková cena"
   },
   "buy": "Koupit",
+  "buyNow": "Koupit nyní",
+  "buySubscription": "Koupit předplatné",
   "category": "Kategorie",
+  "coupon": "Kupón",
   "detail": {
     "availableTraffic": "Dostupný provoz",
     "connectedDevices": "Počet současně připojených IP",
     "connectionSpeed": "Rychlost připojení",
     "productDetail": "Detaily produktu"
   },
+  "enterAmount": "Zadejte částku dobití",
+  "enterCoupon": "Zadejte kód kupónu",
   "methods": {
     "alipay_f2f": "Alipay (tváří v tvář)",
     "balance": "Zůstatek",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Platební metoda",
   "productDescription": "Popis produktu",
-  "products": "Produkty"
+  "products": "Produkty",
+  "purchaseDuration": "Doba nákupu",
+  "recharge": "Dobít",
+  "rechargeAmount": "Částka dobití",
+  "rechargeDescription": "Jedním kliknutím dobijete, snadné ovládání",
+  "rechargeNow": "Dobít nyní",
+  "renew": "Obnovit",
+  "renewSubscription": "Obnovit předplatné",
+  "resetPrice": "Obnovit cenu",
+  "resetTraffic": "Obnovit provoz",
+  "resetTrafficDescription": "Obnovit provoz pouze pro aktuální měsíc",
+  "resetTrafficTitle": "Obnovit provoz",
+  "selectSubscription": "Vyberte předplatné",
+  "subscriptionDiscount": "Sleva na předplatné"
 }

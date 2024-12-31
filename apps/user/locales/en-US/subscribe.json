@@ -3,8 +3,10 @@
   "Hour": "Hour",
   "Minute": "Minute",
   "Month": "Month",
+  "NoLimit": "No Limit",
   "Year": "Year",
   "all": "All",
+  "balanceRecharge": "Balance Recharge",
   "billing": {
     "billingTitle": "Product Billing",
     "couponDiscount": "Coupon Discount",
@@ -15,13 +17,18 @@
     "total": "Total"
   },
   "buy": "Buy",
+  "buyNow": "Buy Now",
+  "buySubscription": "Buy Subscription",
   "category": "Category",
+  "coupon": "Coupon",
   "detail": {
     "availableTraffic": "Available Traffic",
     "connectedDevices": "Connected Devices",
     "connectionSpeed": "Connection Speed",
     "productDetail": "Product Details"
   },
+  "enterAmount": "Enter recharge amount",
+  "enterCoupon": "Enter Coupon Code",
   "methods": {
     "alipay_f2f": "Alipay (Face to Face)",
     "balance": "Balance",
@@ -29,6 +36,20 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
+  "paymentMethod": "Payment Method",
   "productDescription": "Product Description",
-  "products": "Products"
+  "products": "Products",
+  "purchaseDuration": "Purchase Duration",
+  "recharge": "Recharge",
+  "rechargeAmount": "Recharge Amount",
+  "rechargeDescription": "One-click recharge, easy to handle",
+  "rechargeNow": "Recharge Now",
+  "renew": "Renew",
+  "renewSubscription": "Renew Subscription",
+  "resetPrice": "Reset Price",
+  "resetTraffic": "Reset Traffic",
+  "resetTrafficDescription": "Reset traffic for the current month only",
+  "resetTrafficTitle": "Reset Traffic",
+  "selectSubscription": "Select Subscription",
+  "subscriptionDiscount": "Subscription Discount"
 }

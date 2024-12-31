@@ -173,6 +173,8 @@ declare namespace API {
     trade_no: string;
     status: number;
     subscribe_id: number;
+    subscription_discount_id: number;
+    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
@@ -194,6 +196,8 @@ declare namespace API {
     status: number;
     subscribe_id: number;
     subscribe: Subscribe;
+    subscription_discount_id: number;
+    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
