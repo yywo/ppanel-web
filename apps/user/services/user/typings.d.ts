@@ -244,6 +244,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     fee_amount: number;
+    subscribe_discount: number;
     discount_list: SubscribeDiscountInfo[];
   };
 

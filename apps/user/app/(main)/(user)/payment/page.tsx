@@ -146,10 +146,7 @@ export default function Page() {
           <SubscribeBilling
             order={{
               ...data,
-              coupon_discount: data?.coupon_discount,
-              quantity: data?.quantity,
               unit_price: data?.subscribe?.unit_price,
-              type: data?.type,
             }}
           />
         </CardContent>
