@@ -42,57 +42,57 @@ export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className='flex items-center space-x-2 rounded-md'>
-            <Badge variant={badgeVariant}>{badgeText}</Badge>
-            <span className='text-sm font-medium'>
-              {t('onlineCount')}: {onlineCount}
-            </span>
-          </div>
-        </TooltipTrigger>
-        <TooltipContent className='bg-muted text-foreground w-80'>
-          <div className='space-y-4'>
-            <>
-              <div className='space-y-2'>
-                <div className='space-y-1'>
-                  <div className='flex justify-between text-xs'>
-                    <span className='font-medium'>CPU</span>
-                    <span>{formatPercentage(serverStatus?.cpu ?? 0)}</span>
-                  </div>
-                  <Progress value={(serverStatus?.cpu ?? 0) * 100} className='h-2' />
-                </div>
-                <div className='space-y-1'>
-                  <div className='flex justify-between text-xs'>
-                    <span className='font-medium'>{t('memory')}</span>
-                    <span>{formatPercentage(serverStatus?.mem ?? 0)}</span>
-                  </div>
-                  <Progress value={(serverStatus?.mem ?? 0) * 100} className='h-2' />
-                </div>
-                <div className='space-y-1'>
-                  <div className='flex justify-between text-xs'>
-                    <span className='font-medium'>{t('disk')}</span>
-                    <span>{formatPercentage(serverStatus?.disk ?? 0)}</span>
-                  </div>
-                  <Progress value={(serverStatus?.disk ?? 0) * 100} className='h-2' />
-                </div>
+          <div className='flex items-center gap-2 text-xs *:flex-1'>
+            <div className='flex items-center space-x-1'>
+              <Badge variant={badgeVariant}>{badgeText}</Badge>
+              <span className='font-medium'>
+                {t('onlineCount')}: {onlineCount}
+              </span>
+            </div>
+            <div className='flex flex-col space-y-1'>
+              <div className='flex justify-between'>
+                <span>CPU</span>
+                <span>{formatPercentage(serverStatus?.cpu ?? 0)}</span>
               </div>
-              <div className='text-xs'>
+              <Progress value={(serverStatus?.cpu ?? 0) * 100} className='h-2' max={100} />
+            </div>
+            <div className='flex flex-col space-y-1'>
+              <div className='flex justify-between'>
+                <span>{t('memory')}</span>
+                <span>{formatPercentage(serverStatus?.mem ?? 0)}</span>
+              </div>
+              <Progress value={(serverStatus?.mem ?? 0) * 100} className='h-2' max={100} />
+            </div>
+            <div className='flex flex-col space-y-1'>
+              <div className='flex justify-between'>
+                <span>{t('disk')}</span>
+                <span>{formatPercentage(serverStatus?.disk ?? 0)}</span>
+              </div>
+              <Progress value={(serverStatus?.disk ?? 0) * 100} className='h-2' max={100} />
+            </div>
+            {isOnline && (
+              <div>
                 {t('lastUpdated')}: {formatDate(serverStatus?.updated_at ?? 0)}
               </div>
-              {isOnline && onlineCount > 0 && (
-                <div className='space-y-2'>
-                  <h4 className='text-sm font-semibold'>{t('onlineUsers')}</h4>
-                  <ScrollArea className='h-[400px] rounded-md border p-2'>
-                    {online_users.map((user, index) => (
-                      <div key={user.uid} className='py-1 text-xs'>
-                        {user.ip} (UID: {user.uid})
-                      </div>
-                    ))}
-                  </ScrollArea>
-                </div>
-              )}
-            </>
+            )}
           </div>
-        </TooltipContent>
+        </TooltipTrigger>
+        {isOnline && onlineCount > 0 && (
+          <TooltipContent className='bg-muted text-foreground w-80'>
+            <div className='space-y-4'>
+              <div className='space-y-2'>
+                <h4 className='text-sm font-semibold'>{t('onlineUsers')}</h4>
+                <ScrollArea className='h-[400px] rounded-md border p-2'>
+                  {online_users.map((user, index) => (
+                    <div key={user.uid} className='py-1 text-xs'>
+                      {user.ip} (UID: {user.uid})
+                    </div>
+                  ))}
+                </ScrollArea>
+              </div>
+            </div>
+          </TooltipContent>
+        )}
       </Tooltip>
     </TooltipProvider>
   );
