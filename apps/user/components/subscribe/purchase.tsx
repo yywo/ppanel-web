@@ -3,7 +3,6 @@
 import CouponInput from '@/components/subscribe/coupon-input';
 import DurationSelector from '@/components/subscribe/duration-selector';
 import PaymentMethods from '@/components/subscribe/payment-methods';
-import SubscribeSelector from '@/components/subscribe/subscribe-selector';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, preCreateOrder, purchase } from '@/services/user/order';
 import { useQuery } from '@tanstack/react-query';
@@ -18,13 +17,12 @@ import { useCallback, useEffect, useState, useTransition } from 'react';
 import { SubscribeBilling } from './billing';
 import { SubscribeDetail } from './detail';
 
-export default function Purchase({
-  subscribe,
-  setSubscribe,
-}: {
+interface PurchaseProps {
   subscribe?: API.Subscribe;
   setSubscribe: (subscribe?: API.Subscribe) => void;
-}) {
+}
+
+export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseProps>) {
   const t = useTranslations('subscribe');
   const { getUserInfo } = useGlobalStore();
   const router = useRouter();
@@ -139,13 +137,6 @@ export default function Purchase({
               <CouponInput
                 coupon={params.coupon}
                 onChange={(value) => handleChange('coupon', value)}
-              />
-              <SubscribeSelector
-                value={params.discount_subscribe_id}
-                data={order?.discount_list || []}
-                onChange={(value) => {
-                  handleChange('discount_subscribe_id', value);
-                }}
               />
               <PaymentMethods
                 value={params.payment!}

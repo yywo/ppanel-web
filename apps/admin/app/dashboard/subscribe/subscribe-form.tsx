@@ -44,6 +44,7 @@ import { useTranslations } from 'next-intl';
 import { assign, shake } from 'radash';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 
 interface SubscribeFormProps<T> {
@@ -77,7 +78,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
   loading,
   trigger,
   title,
-}: SubscribeFormProps<T>) {
+}: Readonly<SubscribeFormProps<T>>) {
   const t = useTranslations('subscribe');
   const [open, setOpen] = useState(false);
 
@@ -783,7 +784,17 @@ export default function SubscribeForm<T extends Record<string, any>>({
           >
             {t('form.cancel')}
           </Button>
-          <Button disabled={loading} onClick={form.handleSubmit(handleSubmit)}>
+          <Button
+            disabled={loading}
+            onClick={form.handleSubmit(handleSubmit, (errors) => {
+              const keys = Object.keys(errors);
+              for (const key of keys) {
+                const formattedKey = key.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+                toast.error(`${t(`form.${formattedKey}`)} is ${errors[key]?.message}`);
+                return false;
+              }
+            })}
+          >
             {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}
             {t('form.confirm')}
           </Button>

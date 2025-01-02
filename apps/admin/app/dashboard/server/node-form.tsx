@@ -40,8 +40,8 @@ import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { formSchema, protocols } from './form-schema';
-
 interface NodeFormProps<T> {
   onSubmit: (data: T) => Promise<boolean> | boolean;
   initialValues?: T;
@@ -56,7 +56,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
   loading,
   trigger,
   title,
-}: NodeFormProps<T>) {
+}: Readonly<NodeFormProps<T>>) {
   const t = useTranslations('server.node');
 
   const [open, setOpen] = useState(false);
@@ -853,8 +853,12 @@ export default function NodeForm<T extends { [x: string]: any }>({
           <Button
             disabled={loading}
             onClick={form.handleSubmit(handleSubmit, (errors) => {
-              console.log(errors);
-              return errors;
+              const keys = Object.keys(errors);
+              for (const key of keys) {
+                const formattedKey = key.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+                toast.error(`${t(`form.${formattedKey}`)} is ${errors[key]?.message}`);
+                return false;
+              }
             })}
           >
             {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}{' '}

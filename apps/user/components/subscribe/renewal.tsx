@@ -3,7 +3,6 @@
 import CouponInput from '@/components/subscribe/coupon-input';
 import DurationSelector from '@/components/subscribe/duration-selector';
 import PaymentMethods from '@/components/subscribe/payment-methods';
-import SubscribeSelector from '@/components/subscribe/subscribe-selector';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, preCreateOrder, renewal } from '@/services/user/order';
 import { useQuery } from '@tanstack/react-query';
@@ -24,7 +23,12 @@ import { useCallback, useEffect, useState, useTransition } from 'react';
 import { SubscribeBilling } from './billing';
 import { SubscribeDetail } from './detail';
 
-export default function Renewal({ token, subscribe }: { token: string; subscribe: API.Subscribe }) {
+interface RenewalProps {
+  token: string;
+  subscribe: API.Subscribe;
+}
+
+export default function Renewal({ token, subscribe }: Readonly<RenewalProps>) {
   const t = useTranslations('subscribe');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
@@ -140,13 +144,6 @@ export default function Renewal({ token, subscribe }: { token: string; subscribe
               <CouponInput
                 coupon={params.coupon}
                 onChange={(value) => handleChange('coupon', value)}
-              />
-              <SubscribeSelector
-                value={params.discount_subscribe_id}
-                data={order?.discount_list || []}
-                onChange={(value) => {
-                  handleChange('discount_subscribe_id', value);
-                }}
               />
               <PaymentMethods
                 value={params.payment!}

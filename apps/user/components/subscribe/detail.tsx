@@ -3,16 +3,16 @@
 import { Display } from '@/components/display';
 import { useTranslations } from 'next-intl';
 
-export function SubscribeDetail({
-  subscribe,
-}: {
+interface SubscribeDetailProps {
   subscribe?: Partial<
     API.Subscribe & {
       name: string;
       quantity: number;
     }
   >;
-}) {
+}
+
+export function SubscribeDetail({ subscribe }: Readonly<SubscribeDetailProps>) {
   const t = useTranslations('subscribe.detail');
 
   return (
