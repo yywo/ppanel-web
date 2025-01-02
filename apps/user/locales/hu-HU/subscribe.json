@@ -49,7 +49,5 @@
   "resetPrice": "Ár visszaállítása",
   "resetTraffic": "Forgalom visszaállítása",
   "resetTrafficDescription": "Forgalmi adatok visszaállítása csak az aktuális hónapra",
-  "resetTrafficTitle": "Forgalom visszaállítása",
-  "selectSubscription": "Előfizetés kiválasztása",
-  "subscriptionDiscount": "Előfizetési kedvezmény"
+  "resetTrafficTitle": "Forgalom visszaállítása"
 }

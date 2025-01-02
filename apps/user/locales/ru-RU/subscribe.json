@@ -49,7 +49,5 @@
   "resetPrice": "Сбросить цену",
   "resetTraffic": "Сбросить трафик",
   "resetTrafficDescription": "Сбросить трафик только за текущий месяц",
-  "resetTrafficTitle": "Сбросить трафик",
-  "selectSubscription": "Выберите подписку",
-  "subscriptionDiscount": "Скидка на подписку"
+  "resetTrafficTitle": "Сбросить трафик"
 }

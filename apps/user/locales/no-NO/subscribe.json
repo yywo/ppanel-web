@@ -49,7 +49,5 @@
   "resetPrice": "Tilbakestill pris",
   "resetTraffic": "Tilbakestill trafikk",
   "resetTrafficDescription": "Tilbakestill trafikk kun for inneværende måned",
-  "resetTrafficTitle": "Nullstill trafikk",
-  "selectSubscription": "Velg abonnement",
-  "subscriptionDiscount": "Abonnementsrabatt"
+  "resetTrafficTitle": "Nullstill trafikk"
 }

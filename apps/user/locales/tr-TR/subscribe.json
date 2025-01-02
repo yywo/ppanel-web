@@ -49,7 +49,5 @@
   "resetPrice": "Fiyatı Sıfırla",
   "resetTraffic": "Trafiği Sıfırla",
   "resetTrafficDescription": "Yalnızca mevcut ay için trafiği sıfırla",
-  "resetTrafficTitle": "Trafiği Sıfırla",
-  "selectSubscription": "Abonelik Seç",
-  "subscriptionDiscount": "Abonelik İndirimi"
+  "resetTrafficTitle": "Trafiği Sıfırla"
 }

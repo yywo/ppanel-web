@@ -49,7 +49,5 @@
   "resetPrice": "Réinitialiser le prix",
   "resetTraffic": "Réinitialiser le trafic",
   "resetTrafficDescription": "Réinitialiser le trafic pour le mois en cours uniquement",
-  "resetTrafficTitle": "Réinitialiser le trafic",
-  "selectSubscription": "Sélectionner l'abonnement",
-  "subscriptionDiscount": "Remise sur l'abonnement"
+  "resetTrafficTitle": "Réinitialiser le trafic"
 }

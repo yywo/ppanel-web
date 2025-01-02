@@ -49,7 +49,5 @@
   "resetPrice": "価格をリセット",
   "resetTraffic": "トラフィックをリセット",
   "resetTrafficDescription": "今月のみのトラフィックをリセットする",
-  "resetTrafficTitle": "トラフィックをリセット",
-  "selectSubscription": "サブスクリプションを選択",
-  "subscriptionDiscount": "サブスクリプション割引"
+  "resetTrafficTitle": "トラフィックをリセット"
 }

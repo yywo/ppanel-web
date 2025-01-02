@@ -49,7 +49,5 @@
   "resetPrice": "รีเซ็ตราคา",
   "resetTraffic": "รีเซ็ตการจราจร",
   "resetTrafficDescription": "รีเซ็ตการใช้งานข้อมูลสำหรับเดือนปัจจุบันเท่านั้น",
-  "resetTrafficTitle": "รีเซ็ตการจราจร",
-  "selectSubscription": "เลือกการสมัครสมาชิก",
-  "subscriptionDiscount": "ส่วนลดการสมัครสมาชิก"
+  "resetTrafficTitle": "รีเซ็ตการจราจร"
 }

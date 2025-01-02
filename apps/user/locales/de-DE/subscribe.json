@@ -49,7 +49,5 @@
   "resetPrice": "Preis zurücksetzen",
   "resetTraffic": "Datenverkehr zurücksetzen",
   "resetTrafficDescription": "Verkehr nur für den aktuellen Monat zurücksetzen",
-  "resetTrafficTitle": "Datenverkehr zurücksetzen",
-  "selectSubscription": "Abonnement auswählen",
-  "subscriptionDiscount": "Abonnementrabatt"
+  "resetTrafficTitle": "Datenverkehr zurücksetzen"
 }

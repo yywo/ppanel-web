@@ -49,7 +49,5 @@
   "resetPrice": "가격 재설정",
   "resetTraffic": "트래픽 재설정",
   "resetTrafficDescription": "현재 월에 대한 트래픽만 재설정",
-  "resetTrafficTitle": "트래픽 재설정",
-  "selectSubscription": "구독 선택",
-  "subscriptionDiscount": "구독 할인"
+  "resetTrafficTitle": "트래픽 재설정"
 }

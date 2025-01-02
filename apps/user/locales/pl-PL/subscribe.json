@@ -49,7 +49,5 @@
   "resetPrice": "Zresetuj cenę",
   "resetTraffic": "Zresetuj ruch",
   "resetTrafficDescription": "Zresetuj ruch tylko na bieżący miesiąc",
-  "resetTrafficTitle": "Zresetuj Ruch",
-  "selectSubscription": "Wybierz subskrypcję",
-  "subscriptionDiscount": "Zniżka na subskrypcję"
+  "resetTrafficTitle": "Zresetuj Ruch"
 }

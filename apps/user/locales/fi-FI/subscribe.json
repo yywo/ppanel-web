@@ -49,7 +49,5 @@
   "resetPrice": "Nollaa hinta",
   "resetTraffic": "Nollaa liikenne",
   "resetTrafficDescription": "Nollaa liikenne vain kuluvan kuukauden osalta",
-  "resetTrafficTitle": "Nollaa liikenne",
-  "selectSubscription": "Valitse tilaus",
-  "subscriptionDiscount": "Tilauksen alennus"
+  "resetTrafficTitle": "Nollaa liikenne"
 }

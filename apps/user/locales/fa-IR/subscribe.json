@@ -49,7 +49,5 @@
   "resetPrice": "بازنشانی قیمت",
   "resetTraffic": "بازنشانی ترافیک",
   "resetTrafficDescription": "بازنشانی ترافیک فقط برای ماه جاری",
-  "resetTrafficTitle": "بازنشانی ترافیک",
-  "selectSubscription": "انتخاب اشتراک",
-  "subscriptionDiscount": "تخفیف اشتراک"
+  "resetTrafficTitle": "بازنشانی ترافیک"
 }

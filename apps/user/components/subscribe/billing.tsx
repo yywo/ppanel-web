@@ -4,9 +4,7 @@ import { Display } from '@/components/display';
 import { Separator } from '@workspace/ui/components/separator';
 import { useTranslations } from 'next-intl';
 
-export function SubscribeBilling({
-  order,
-}: {
+interface SubscribeBillingProps {
   order?: Partial<
     API.OrderDetail & {
       unit_price: number;
@@ -14,7 +12,9 @@ export function SubscribeBilling({
       subscribe_discount: number;
     }
   >;
-}) {
+}
+
+export function SubscribeBilling({ order }: Readonly<SubscribeBillingProps>) {
   const t = useTranslations('subscribe');
 
   return (
@@ -47,14 +47,6 @@ export function SubscribeBilling({
             <Display type='currency' value={order?.coupon_discount} />
           </span>
         </li>
-        {order?.subscribe_discount && (
-          <li>
-            <span className='text-muted-foreground'>{t('subscriptionDiscount')}</span>
-            <span>
-              <Display type='currency' value={order?.subscribe_discount} />
-            </span>
-          </li>
-        )}
         <li>
           <span className='text-muted-foreground'>{t('billing.fee')}</span>
           <span>

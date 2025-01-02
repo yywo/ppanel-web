@@ -49,7 +49,5 @@
   "resetPrice": "Obnovit cenu",
   "resetTraffic": "Obnovit provoz",
   "resetTrafficDescription": "Obnovit provoz pouze pro aktuální měsíc",
-  "resetTrafficTitle": "Obnovit provoz",
-  "selectSubscription": "Vyberte předplatné",
-  "subscriptionDiscount": "Sleva na předplatné"
+  "resetTrafficTitle": "Obnovit provoz"
 }

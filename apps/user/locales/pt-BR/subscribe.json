@@ -49,7 +49,5 @@
   "resetPrice": "Redefinir Preço",
   "resetTraffic": "Redefinir Tráfego",
   "resetTrafficDescription": "Redefinir o tráfego apenas para o mês atual",
-  "resetTrafficTitle": "Redefinir Tráfego",
-  "selectSubscription": "Selecionar Assinatura",
-  "subscriptionDiscount": "Desconto na Assinatura"
+  "resetTrafficTitle": "Redefinir Tráfego"
 }

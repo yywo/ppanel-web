@@ -49,7 +49,5 @@
   "resetPrice": "重置价格",
   "resetTraffic": "重置流量",
   "resetTrafficDescription": "仅重置本月的流量",
-  "resetTrafficTitle": "重置流量",
-  "selectSubscription": "选择订阅",
-  "subscriptionDiscount": "订阅折扣"
+  "resetTrafficTitle": "重置流量"
 }

@@ -49,7 +49,5 @@
   "resetPrice": "Скинути ціну",
   "resetTraffic": "Скинути трафік",
   "resetTrafficDescription": "Скинути трафік лише для поточного місяця",
-  "resetTrafficTitle": "Скинути трафік",
-  "selectSubscription": "Виберіть підписку",
-  "subscriptionDiscount": "Знижка на підписку"
+  "resetTrafficTitle": "Скинути трафік"
 }

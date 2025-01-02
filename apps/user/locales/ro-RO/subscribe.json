@@ -49,7 +49,5 @@
   "resetPrice": "Resetează Prețul",
   "resetTraffic": "Resetează Traficul",
   "resetTrafficDescription": "Resetează traficul doar pentru luna curentă",
-  "resetTrafficTitle": "Resetează Traficul",
-  "selectSubscription": "Selectați Abonamentul",
-  "subscriptionDiscount": "Reducere la abonament"
+  "resetTrafficTitle": "Resetează Traficul"
 }

@@ -49,7 +49,5 @@
   "resetPrice": "Reset Price",
   "resetTraffic": "Reset Traffic",
   "resetTrafficDescription": "Reset traffic for the current month only",
-  "resetTrafficTitle": "Reset Traffic",
-  "selectSubscription": "Select Subscription",
-  "subscriptionDiscount": "Subscription Discount"
+  "resetTrafficTitle": "Reset Traffic"
 }
