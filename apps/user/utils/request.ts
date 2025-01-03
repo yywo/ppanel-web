@@ -1,7 +1,7 @@
 import { NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL } from '@/config/constants';
 import { getTranslations } from '@/locales/utils';
 import { isBrowser } from '@workspace/ui/utils';
-import requset, { InternalAxiosRequestConfig } from 'axios';
+import axios, { InternalAxiosRequestConfig } from 'axios';
 import { toast } from 'sonner';
 import { getAuthorization, Logout } from './common';
 
@@ -20,9 +20,11 @@ async function handleError(response: any) {
   toast.error(message);
 }
 
-requset.defaults.baseURL = NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL;
-// axios.defaults.withCredentials = true;
-// axios.defaults.timeout = 10000;
+const requset = axios.create({
+  baseURL: NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL,
+  // timeout: 10000,
+  // withCredentials: true,
+});
 
 requset.interceptors.request.use(
   async (
@@ -35,7 +37,7 @@ requset.interceptors.request.use(
     if (Authorization) config.headers.Authorization = Authorization;
     return config;
   },
-  (error) => Promise.reject(error),
+  (error) => Promise.reject(new Error(error)),
 );
 
 requset.interceptors.response.use(
@@ -49,7 +51,7 @@ requset.interceptors.response.use(
   },
   async (error) => {
     await handleError(error);
-    return Promise.reject(error);
+    return Promise.reject(new Error(error));
   },
 );
 
