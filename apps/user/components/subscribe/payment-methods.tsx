@@ -26,7 +26,7 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({ value, onChange }) => {
   return (
     <>
       <div className='font-semibold'>{t('paymentMethod')}</div>
-      <RadioGroup className='mb-6 grid grid-cols-5 gap-2' value={value} onValueChange={onChange}>
+      <RadioGroup className='grid grid-cols-5 gap-2' value={value} onValueChange={onChange}>
         {data?.map((item) => (
           <div key={item.mark}>
             <RadioGroupItem value={item.mark} id={item.mark} className='peer sr-only' />

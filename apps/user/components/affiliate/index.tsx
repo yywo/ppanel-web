@@ -14,7 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@workspace/ui/components/card';
-import { formatDate } from '@workspace/ui/utils';
+import { formatDate, isBrowser } from '@workspace/ui/utils';
 import { Copy } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
@@ -60,19 +60,21 @@ export default function Affiliate() {
             <code className='bg-muted rounded px-2 py-1 text-2xl font-bold'>
               {user?.refer_code}
             </code>
-            <CopyToClipboard
-              text={`${location?.origin}/auth?invite=${user?.refer_code}`}
-              onCopy={(text, result) => {
-                if (result) {
-                  toast.success(t('copySuccess'));
-                }
-              }}
-            >
-              <Button variant='secondary' size='sm' className='gap-2'>
-                <Copy className='h-4 w-4' />
-                {t('copyInviteLink')}
-              </Button>
-            </CopyToClipboard>
+            {isBrowser() && (
+              <CopyToClipboard
+                text={`${location?.origin}/auth?invite=${user?.refer_code}`}
+                onCopy={(text, result) => {
+                  if (result) {
+                    toast.success(t('copySuccess'));
+                  }
+                }}
+              >
+                <Button variant='secondary' size='sm' className='gap-2'>
+                  <Copy className='h-4 w-4' />
+                  {t('copyInviteLink')}
+                </Button>
+              </CopyToClipboard>
+            )}
           </div>
         </CardContent>
       </Card>

@@ -48,6 +48,17 @@
   "renewSubscription": "Uudista tilaus",
   "resetPrice": "Nollaa hinta",
   "resetTraffic": "Nollaa liikenne",
-  "resetTrafficDescription": "Nollaa liikenne vain kuluvan kuukauden osalta",
-  "resetTrafficTitle": "Nollaa liikenne"
+  "resetTrafficDescription": "Nollaa liikenne ja aloita uusi laskutusjakso",
+  "resetTrafficTitle": "Nollaa liikenne",
+  "unsubscribe": {
+    "availableDeductionAmount": "Käytettävissä oleva vähennysmäärä:",
+    "cancel": "Peruuta",
+    "confirm": "Vahvista",
+    "confirmUnsubscribe": "Vahvista tilauksen peruutus",
+    "confirmUnsubscribeDescription": "Oletko varma, että haluat peruuttaa tilauksen?",
+    "deductionNote": "Huomioithan: Jos peruutat tilauksesi nyt, jäljellä oleva tilauksesi arvo hyvitetään vähennettävänä saldona tilillesi, jota voit käyttää seuraavan tilauksen ostoon tai uusimiseen.",
+    "failed": "Tilauksen peruutus epäonnistui. Yritä uudelleen.",
+    "success": "Olet peruuttanut tilauksen onnistuneesti.",
+    "unsubscribe": "Peruuta tilaus"
+  }
 }

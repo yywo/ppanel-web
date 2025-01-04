@@ -37,6 +37,7 @@ import { toast } from 'sonner';
 
 import Renewal from '@/components/subscribe/renewal';
 import ResetTraffic from '@/components/subscribe/reset-traffic';
+import Unsubscribe from '@/components/subscribe/unsubscribe';
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';
 import { getPlatform } from '@/utils/common';
@@ -145,12 +146,9 @@ export default function Content() {
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-                  <ResetTraffic
-                    id={item.subscribe_id}
-                    token={item.token}
-                    replacement={item.subscribe.replacement}
-                  />
-                  <Renewal token={item.token} subscribe={item.subscribe} />
+                  <ResetTraffic id={item.id} replacement={item.subscribe.replacement} />
+                  <Renewal id={item.id} subscribe={item.subscribe} />
+                  <Unsubscribe id={item.id} allowDeduction={item.subscribe.allow_deduction} />
                 </div>
               </CardHeader>
               <CardContent>

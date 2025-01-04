@@ -48,6 +48,17 @@
   "renewSubscription": "Aboneliği Yenile",
   "resetPrice": "Fiyatı Sıfırla",
   "resetTraffic": "Trafiği Sıfırla",
-  "resetTrafficDescription": "Yalnızca mevcut ay için trafiği sıfırla",
-  "resetTrafficTitle": "Trafiği Sıfırla"
+  "resetTrafficDescription": "Trafiği sıfırlayın ve yeni bir faturalama döngüsü başlatın",
+  "resetTrafficTitle": "Trafiği Sıfırla",
+  "unsubscribe": {
+    "availableDeductionAmount": "Kullanılabilir indirim tutarı:",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "confirmUnsubscribe": "Abonelikten Çıkmayı Onayla",
+    "confirmUnsubscribeDescription": "Abonelikten çıkmak istediğinizden emin misiniz?",
+    "deductionNote": "Lütfen dikkat: Şimdi abonelikten çıkarsanız, aboneliğinizin kalan değeri hesabınıza indirilebilir bir bakiye olarak iade edilecektir. Bu bakiye, bir sonraki abonelik satın alımınızda veya yenilemenizde kullanılabilir.",
+    "failed": "Abonelikten çıkılamadı. Lütfen tekrar deneyin.",
+    "success": "Başarıyla abonelikten çıktınız.",
+    "unsubscribe": "Abonelikten Çık"
+  }
 }

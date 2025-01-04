@@ -48,6 +48,17 @@
   "renewSubscription": "サブスクリプションを更新する",
   "resetPrice": "価格をリセット",
   "resetTraffic": "トラフィックをリセット",
-  "resetTrafficDescription": "今月のみのトラフィックをリセットする",
-  "resetTrafficTitle": "トラフィックをリセット"
+  "resetTrafficDescription": "トラフィックをゼロにリセットし、新しい請求サイクルを開始します",
+  "resetTrafficTitle": "トラフィックをリセット",
+  "unsubscribe": {
+    "availableDeductionAmount": "利用可能な控除額：",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "confirmUnsubscribe": "購読解除を確認",
+    "confirmUnsubscribeDescription": "本当に購読を解除しますか？",
+    "deductionNote": "ご注意ください: 今すぐに退会される場合、残りのサブスクリプションの価値は控除可能な残高としてアカウントに返金され、次回のサブスクリプション購入または更新に使用できます。",
+    "failed": "購読解除に失敗しました。もう一度お試しください。",
+    "success": "購読解除が成功しました。",
+    "unsubscribe": "購読解除"
+  }
 }

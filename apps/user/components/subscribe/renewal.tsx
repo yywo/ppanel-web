@@ -24,21 +24,20 @@ import { SubscribeBilling } from './billing';
 import { SubscribeDetail } from './detail';
 
 interface RenewalProps {
-  token: string;
+  id: number;
   subscribe: API.Subscribe;
 }
 
-export default function Renewal({ token, subscribe }: Readonly<RenewalProps>) {
+export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
   const t = useTranslations('subscribe');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const [params, setParams] = useState<Partial<API.RenewalOrderRequest>>({
     quantity: 1,
-    subscribe_id: subscribe.id,
     payment: 'balance',
     coupon: '',
-    subscribe_token: token,
+    user_subscribe_id: id,
   });
   const [loading, startTransition] = useTransition();
 
@@ -55,15 +54,15 @@ export default function Renewal({ token, subscribe }: Readonly<RenewalProps>) {
   });
 
   useEffect(() => {
-    if (subscribe.id && token) {
+    if (subscribe.id && id) {
       setParams((prev) => ({
         ...prev,
         quantity: 1,
         subscribe_id: subscribe.id,
-        subscribe_token: token,
+        user_subscribe_id: id,
       }));
     }
-  }, [subscribe.id, token]);
+  }, [subscribe.id, id]);
 
   const handleChange = useCallback((field: keyof typeof params, value: string | number) => {
     setParams((prev) => ({

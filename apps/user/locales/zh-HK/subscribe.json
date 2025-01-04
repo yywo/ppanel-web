@@ -48,6 +48,17 @@
   "renewSubscription": "續訂",
   "resetPrice": "重設價格",
   "resetTraffic": "重設流量",
-  "resetTrafficDescription": "僅重設本月的流量",
-  "resetTrafficTitle": "重設流量"
+  "resetTrafficDescription": "重設流量至零，並開始新的計費週期",
+  "resetTrafficTitle": "重設流量",
+  "unsubscribe": {
+    "availableDeductionAmount": "可扣除金額：",
+    "cancel": "取消",
+    "confirm": "確認",
+    "confirmUnsubscribe": "確認取消訂閱",
+    "confirmUnsubscribeDescription": "您確定要取消訂閱嗎？",
+    "deductionNote": "請注意：如果您現在取消訂閱，訂閱的剩餘價值將以可扣減餘額的形式退還到您的帳戶，您可以用於下次訂閱購買或續訂。",
+    "failed": "取消訂閱失敗。請再試一次。",
+    "success": "您已成功取消訂閱。",
+    "unsubscribe": "取消訂閱"
+  }
 }

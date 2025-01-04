@@ -48,6 +48,17 @@
   "renewSubscription": "Odnów subskrypcję",
   "resetPrice": "Zresetuj cenę",
   "resetTraffic": "Zresetuj ruch",
-  "resetTrafficDescription": "Zresetuj ruch tylko na bieżący miesiąc",
-  "resetTrafficTitle": "Zresetuj Ruch"
+  "resetTrafficDescription": "Zresetuj ruch do zera i rozpocznij nowy cykl rozliczeniowy",
+  "resetTrafficTitle": "Zresetuj Ruch",
+  "unsubscribe": {
+    "availableDeductionAmount": "Dostępna kwota odliczenia:",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "confirmUnsubscribe": "Potwierdź anulowanie subskrypcji",
+    "confirmUnsubscribeDescription": "Czy na pewno chcesz anulować subskrypcję?",
+    "deductionNote": "Proszę zauważyć: Jeśli teraz zrezygnujesz z subskrypcji, pozostała wartość Twojej subskrypcji zostanie zwrócona jako saldo do odliczenia na Twoim koncie, które można wykorzystać przy następnym zakupie lub odnowieniu subskrypcji.",
+    "failed": "Nie udało się anulować subskrypcji. Spróbuj ponownie.",
+    "success": "Subskrypcja została pomyślnie anulowana.",
+    "unsubscribe": "Anuluj subskrypcję"
+  }
 }

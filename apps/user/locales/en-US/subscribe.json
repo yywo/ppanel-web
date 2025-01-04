@@ -48,6 +48,17 @@
   "renewSubscription": "Renew Subscription",
   "resetPrice": "Reset Price",
   "resetTraffic": "Reset Traffic",
-  "resetTrafficDescription": "Reset traffic for the current month only",
-  "resetTrafficTitle": "Reset Traffic"
+  "resetTrafficDescription": "Reset traffic to zero, and start a new billing cycle",
+  "resetTrafficTitle": "Reset Traffic",
+  "unsubscribe": {
+    "availableDeductionAmount": "Available deduction amount:",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmUnsubscribe": "Confirm Unsubscribe",
+    "confirmUnsubscribeDescription": "Are you sure you want to unsubscribe?",
+    "deductionNote": "Please note: If you unsubscribe now, the remaining value of your subscription will be refunded as a deductible balance to your account, which can be used for your next subscription purchase or renewal.",
+    "failed": "Failed to unsubscribe. Please try again.",
+    "success": "You have been unsubscribed successfully.",
+    "unsubscribe": "Unsubscribe"
+  }
 }

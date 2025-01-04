@@ -48,6 +48,17 @@
   "renewSubscription": "Gia hạn đăng ký",
   "resetPrice": "Đặt lại giá",
   "resetTraffic": "Đặt lại Lưu lượng",
-  "resetTrafficDescription": "Đặt lại lưu lượng truy cập chỉ cho tháng hiện tại",
-  "resetTrafficTitle": "Đặt lại Lưu lượng"
+  "resetTrafficDescription": "Đặt lại lưu lượng về không và bắt đầu chu kỳ thanh toán mới",
+  "resetTrafficTitle": "Đặt lại Lưu lượng",
+  "unsubscribe": {
+    "availableDeductionAmount": "Số tiền khấu trừ có sẵn:",
+    "cancel": "Hủy bỏ",
+    "confirm": "Xác nhận",
+    "confirmUnsubscribe": "Xác nhận hủy đăng ký",
+    "confirmUnsubscribeDescription": "Bạn có chắc chắn muốn hủy đăng ký không?",
+    "deductionNote": "Xin lưu ý: Nếu bạn hủy đăng ký ngay bây giờ, giá trị còn lại của đăng ký sẽ được hoàn trả dưới dạng số dư có thể khấu trừ vào tài khoản của bạn, số dư này có thể được sử dụng cho lần mua hoặc gia hạn đăng ký tiếp theo.",
+    "failed": "Hủy đăng ký không thành công. Vui lòng thử lại.",
+    "success": "Bạn đã hủy đăng ký thành công.",
+    "unsubscribe": "Hủy đăng ký"
+  }
 }

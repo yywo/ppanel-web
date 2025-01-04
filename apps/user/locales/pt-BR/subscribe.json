@@ -48,6 +48,17 @@
   "renewSubscription": "Renovar Assinatura",
   "resetPrice": "Redefinir Preço",
   "resetTraffic": "Redefinir Tráfego",
-  "resetTrafficDescription": "Redefinir o tráfego apenas para o mês atual",
-  "resetTrafficTitle": "Redefinir Tráfego"
+  "resetTrafficDescription": "Redefinir o tráfego para zero e iniciar um novo ciclo de faturamento",
+  "resetTrafficTitle": "Redefinir Tráfego",
+  "unsubscribe": {
+    "availableDeductionAmount": "Valor disponível para dedução:",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "confirmUnsubscribe": "Confirmar cancelamento",
+    "confirmUnsubscribeDescription": "Tem certeza de que deseja cancelar a inscrição?",
+    "deductionNote": "Por favor, note: Se você cancelar a assinatura agora, o valor restante da sua assinatura será reembolsado como um saldo dedutível na sua conta, que pode ser usado para sua próxima compra ou renovação de assinatura.",
+    "failed": "Falha ao cancelar a inscrição. Por favor, tente novamente.",
+    "success": "Você cancelou a inscrição com sucesso.",
+    "unsubscribe": "Cancelar inscrição"
+  }
 }

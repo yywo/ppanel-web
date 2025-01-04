@@ -48,6 +48,17 @@
   "renewSubscription": "Reînnoiește Abonamentul",
   "resetPrice": "Resetează Prețul",
   "resetTraffic": "Resetează Traficul",
-  "resetTrafficDescription": "Resetează traficul doar pentru luna curentă",
-  "resetTrafficTitle": "Resetează Traficul"
+  "resetTrafficDescription": "Resetați traficul la zero și începeți un nou ciclu de facturare",
+  "resetTrafficTitle": "Resetează Traficul",
+  "unsubscribe": {
+    "availableDeductionAmount": "Suma disponibilă pentru deducere:",
+    "cancel": "Anulează",
+    "confirm": "Confirmă",
+    "confirmUnsubscribe": "Confirmă Dezabonarea",
+    "confirmUnsubscribeDescription": "Ești sigur că vrei să te dezabonezi?",
+    "deductionNote": "Vă rugăm să rețineți: Dacă vă dezabonați acum, valoarea rămasă a abonamentului dumneavoastră va fi rambursată ca un sold deductibil în contul dumneavoastră, care poate fi utilizat pentru următoarea achiziție sau reînnoire a abonamentului.",
+    "failed": "Dezabonarea a eșuat. Te rugăm să încerci din nou.",
+    "success": "Te-ai dezabonat cu succes.",
+    "unsubscribe": "Dezabonare"
+  }
 }

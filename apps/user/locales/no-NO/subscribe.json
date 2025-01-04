@@ -48,6 +48,17 @@
   "renewSubscription": "Forny abonnement",
   "resetPrice": "Tilbakestill pris",
   "resetTraffic": "Tilbakestill trafikk",
-  "resetTrafficDescription": "Tilbakestill trafikk kun for inneværende måned",
-  "resetTrafficTitle": "Nullstill trafikk"
+  "resetTrafficDescription": "Nullstill trafikk til null, og start en ny faktureringssyklus",
+  "resetTrafficTitle": "Nullstill trafikk",
+  "unsubscribe": {
+    "availableDeductionAmount": "Tilgjengelig fradragsbeløp:",
+    "cancel": "Avbryt",
+    "confirm": "Bekreft",
+    "confirmUnsubscribe": "Bekreft avslutning av abonnement",
+    "confirmUnsubscribeDescription": "Er du sikker på at du vil avslutte abonnementet?",
+    "deductionNote": "Vennligst merk: Hvis du avslutter abonnementet nå, vil den gjenværende verdien av abonnementet ditt bli refundert som en fradragsberettiget saldo til kontoen din, som kan brukes til ditt neste abonnementskjøp eller fornyelse.",
+    "failed": "Kunne ikke avslutte abonnementet. Vennligst prøv igjen.",
+    "success": "Du har blitt avmeldt abonnementet vellykket.",
+    "unsubscribe": "Avslutt abonnement"
+  }
 }

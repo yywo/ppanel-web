@@ -3,8 +3,6 @@
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { checkoutOrder, resetTraffic } from '@/services/user/order';
-import { getAvailablePaymentMethods } from '@/services/user/payment';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Dialog,
@@ -14,59 +12,43 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@workspace/ui/components/dialog';
-import { Label } from '@workspace/ui/components/label';
-import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/legacy/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useTransition } from 'react';
+import PaymentMethods from './payment-methods';
 
-export default function ResetTraffic({
-  id,
-  token,
-  replacement,
-}: {
+interface ResetTrafficProps {
   id: number;
-  token: string;
   replacement?: number;
-}) {
+}
+export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficProps>) {
   const t = useTranslations('subscribe');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const [params, setParams] = useState<API.ResetTrafficOrderRequest>({
-    subscribe_id: id,
     payment: 'balance',
-    subscribe_token: token,
+    user_subscribe_id: id,
   });
   const [loading, startTransition] = useTransition();
 
-  const { data: paymentMethods } = useQuery({
-    queryKey: ['getAvailablePaymentMethods'],
-    queryFn: async () => {
-      const { data } = await getAvailablePaymentMethods();
-      return data.data?.list || [];
-    },
-  });
-
   useEffect(() => {
-    if (id && token) {
+    if (id) {
       setParams((prev) => ({
         ...prev,
         quantity: 1,
-        subscribe_id: id,
-        subscribe_token: token,
+        user_subscribe_id: id,
       }));
     }
-  }, [id, token]);
+  }, [id]);
 
   if (!replacement) return;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant='outline' size='sm'>
+        <Button variant='secondary' size='sm'>
           {t('resetTraffic')}
         </Button>
       </DialogTrigger>
@@ -83,41 +65,15 @@ export default function ResetTraffic({
                 <Display type='currency' value={replacement} />
               </span>
             </div>
-            <div className='font-semibold'>{t('paymentMethod')}</div>
-            <RadioGroup
-              className='grid grid-cols-5 gap-2'
+            <PaymentMethods
               value={params.payment}
-              onValueChange={(value) => {
+              onChange={(value) => {
                 setParams({
                   ...params,
                   payment: value,
                 });
               }}
-            >
-              {paymentMethods?.map((item) => {
-                return (
-                  <div key={item.mark}>
-                    <RadioGroupItem value={item.mark} id={item.mark} className='peer sr-only' />
-                    <Label
-                      htmlFor={item.mark}
-                      className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 py-2'
-                    >
-                      <div className='mb-3 size-12'>
-                        <Image
-                          src={item.icon || `/payment/${item.mark}.svg`}
-                          width={48}
-                          height={48}
-                          alt={item.name!}
-                        />
-                      </div>
-                      <span className='w-full overflow-hidden text-ellipsis whitespace-nowrap text-center'>
-                        {item.name || t(`methods.${item.mark}`)}
-                      </span>
-                    </Label>
-                  </div>
-                );
-              })}
-            </RadioGroup>
+            />
           </div>
           <Button
             className='fixed bottom-0 left-0 w-full rounded-none md:relative md:mt-6'
