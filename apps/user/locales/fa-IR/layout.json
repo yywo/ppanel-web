@@ -1,7 +1,9 @@
 {
   "accountBalance": "موجودی حساب",
+  "commission": "کمیسیون",
   "copyInviteLink": "کپی کردن لینک دعوت",
   "copySuccess": "لینک دعوت با موفقیت کپی شد",
+  "deductBalance": "کسر موجودی",
   "inviteCode": "کد دعوت",
   "recharge": "شارژ مجدد"
 }

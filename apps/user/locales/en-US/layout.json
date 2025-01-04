@@ -1,7 +1,9 @@
 {
   "accountBalance": "Account Balance",
+  "commission": "Commission",
   "copyInviteLink": "Copy Invite Link",
   "copySuccess": "Invite Link Copied Successfully",
+  "deductBalance": "Deduct Balance",
   "inviteCode": "Invite Code",
   "recharge": "Recharge"
 }

@@ -4,7 +4,8 @@ import { Display } from '@/components/display';
 import { Empty } from '@/components/empty';
 import { ProList } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
-import { queryUserAffiliate } from '@/services/user/user';
+import { queryUserAffiliate, queryUserAffiliateList } from '@/services/user/user';
+import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Card,
@@ -24,6 +25,13 @@ export default function Affiliate() {
   const t = useTranslations('affiliate');
   const { user, common } = useGlobalStore();
   const [sum, setSum] = useState<number>();
+  const { data } = useQuery({
+    queryKey: ['queryUserAffiliate'],
+    queryFn: async () => {
+      const response = await queryUserAffiliate();
+      return response.data.data;
+    },
+  });
 
   return (
     <div className='flex flex-col gap-4'>
@@ -35,7 +43,7 @@ export default function Affiliate() {
         <CardContent>
           <div className='flex items-baseline gap-2'>
             <span className='text-3xl font-bold'>
-              <Display type='currency' value={sum} />
+              <Display type='currency' value={data?.total_commission} />
             </span>
             <span className='text-muted-foreground text-sm'>
               ({t('commissionRate')}: {common?.invite?.referral_percentage}%)
@@ -53,7 +61,7 @@ export default function Affiliate() {
               {user?.refer_code}
             </code>
             <CopyToClipboard
-              text={`${location.origin}/auth?invite=${user?.refer_code}`}
+              text={`${location?.origin}/auth?invite=${user?.refer_code}`}
               onCopy={(text, result) => {
                 if (result) {
                   toast.success(t('copySuccess'));
@@ -70,7 +78,7 @@ export default function Affiliate() {
       </Card>
       <ProList<API.UserAffiliate, Record<string, unknown>>
         request={async (pagination, filter) => {
-          const response = await queryUserAffiliate({ ...pagination, ...filter });
+          const response = await queryUserAffiliateList({ ...pagination, ...filter });
           setSum(response.data.data?.sum);
           return {
             list: response.data.data?.list || [],

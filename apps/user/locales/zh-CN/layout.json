@@ -1,7 +1,9 @@
 {
   "accountBalance": "账户余额",
+  "commission": "佣金",
   "copyInviteLink": "复制邀请链接",
   "copySuccess": "邀请链接复制成功",
+  "deductBalance": "抵扣余额",
   "inviteCode": "邀请码",
   "recharge": "充值"
 }

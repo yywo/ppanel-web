@@ -1,8 +1,10 @@
 {
   "amount": "金額",
   "balance": "餘額",
+  "commission": "佣金",
   "createdAt": "時間",
-  "title": "帳戶餘額",
+  "deductBalance": "抵扣餘額",
+  "totalAssets": "資產概覽",
   "type": {
     "0": "類型",
     "1": "充值",

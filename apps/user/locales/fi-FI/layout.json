@@ -1,7 +1,9 @@
 {
   "accountBalance": "Tilin saldo",
+  "commission": "Komissio",
   "copyInviteLink": "Kopioi kutsulinkki",
   "copySuccess": "Kutsulinkki kopioitu onnistuneesti",
+  "deductBalance": "Vähennä saldoa",
   "inviteCode": "kutsukoodi",
   "recharge": "lataa saldoa"
 }

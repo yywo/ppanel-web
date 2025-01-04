@@ -1,7 +1,9 @@
 {
   "accountBalance": "Hesap Bakiyesi",
+  "commission": "Komisyon",
   "copyInviteLink": "Davet Bağlantısını Kopyala",
   "copySuccess": "Davet bağlantısı başarıyla kopyalandı",
+  "deductBalance": "Bakiyeden Düş",
   "inviteCode": "davetKodu",
   "recharge": "şarj et"
 }

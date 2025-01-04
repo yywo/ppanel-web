@@ -1,8 +1,10 @@
 {
   "amount": "金額",
   "balance": "残高",
+  "commission": "手数料",
   "createdAt": "時間",
-  "title": "アカウント残高",
+  "deductBalance": "残高を差し引く",
+  "totalAssets": "資産概要",
   "type": {
     "0": "タイプ",
     "1": "チャージ",

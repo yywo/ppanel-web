@@ -1,7 +1,9 @@
 {
   "accountBalance": "Баланс счета",
+  "commission": "Комиссия",
   "copyInviteLink": "Скопировать ссылку приглашения",
   "copySuccess": "Ссылка для приглашения успешно скопирована",
+  "deductBalance": "Списать с баланса",
   "inviteCode": "Код приглашения",
   "recharge": "Пополнение"
 }

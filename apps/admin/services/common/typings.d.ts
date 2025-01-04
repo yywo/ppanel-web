@@ -165,6 +165,7 @@ declare namespace API {
     quantity: number;
     price: number;
     amount: number;
+    deduction: number;
     discount: number;
     coupon: string;
     coupon_discount: number;
@@ -173,8 +174,6 @@ declare namespace API {
     trade_no: string;
     status: number;
     subscribe_id: number;
-    subscription_discount_id: number;
-    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
@@ -187,6 +186,7 @@ declare namespace API {
     quantity: number;
     price: number;
     amount: number;
+    deduction: number;
     discount: number;
     coupon: string;
     coupon_discount: number;
@@ -196,8 +196,6 @@ declare namespace API {
     status: number;
     subscribe_id: number;
     subscribe: Subscribe;
-    subscription_discount_id: number;
-    subscription_discount_price: number;
     created_at: number;
     updated_at: number;
   };
@@ -333,7 +331,7 @@ declare namespace API {
     sell: boolean;
     sort: number;
     deduction_ratio: number;
-    purchase_with_discount: boolean;
+    allow_deduction: boolean;
     reset_cycle: number;
     renewal_reset: boolean;
     created_at: number;
@@ -416,6 +414,8 @@ declare namespace API {
     email: string;
     avatar: string;
     balance: number;
+    commission: number;
+    deduction: number;
     telegram: number;
     refer_code: string;
     referer_id: number;

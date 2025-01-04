@@ -1,7 +1,9 @@
 {
   "accountBalance": "Számlaegyenleg",
+  "commission": "Jutalék",
   "copyInviteLink": "Meghívó link másolása",
   "copySuccess": "A meghívó link másolása sikerült",
+  "deductBalance": "Egyenleg levonása",
   "inviteCode": "meghívókód",
   "recharge": "feltöltés"
 }

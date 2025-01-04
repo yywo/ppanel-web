@@ -1,7 +1,9 @@
 {
   "accountBalance": "Kontostand",
+  "commission": "Provision",
   "copyInviteLink": "Einladungslink kopieren",
   "copySuccess": "Einladungslink erfolgreich kopiert",
+  "deductBalance": "Guthaben abziehen",
   "inviteCode": "Einladungscode",
   "recharge": "Aufladen"
 }

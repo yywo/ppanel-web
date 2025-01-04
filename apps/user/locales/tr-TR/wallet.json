@@ -1,8 +1,10 @@
 {
   "amount": "Tutar",
   "balance": "Bakiye",
+  "commission": "Komisyon",
   "createdAt": "zaman",
-  "title": "Hesap Bakiyesi",
+  "deductBalance": "Bakiyeden Düş",
+  "totalAssets": "Varlık genel bakışı",
   "type": {
     "0": "Tür",
     "1": "Yükleme",

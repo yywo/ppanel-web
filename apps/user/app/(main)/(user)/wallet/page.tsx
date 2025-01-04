@@ -4,7 +4,7 @@ import { Display } from '@/components/display';
 import { ProList, ProListActions } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
 import { queryUserBalanceLog } from '@/services/user/user';
-import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
+import { Card, CardContent } from '@workspace/ui/components/card';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
@@ -16,19 +16,48 @@ export default function Page() {
   const t = useTranslations('wallet');
   const { user } = useGlobalStore();
   const ref = useRef<ProListActions>(null);
-
+  const totalAssets = (user?.balance || 0) + (user?.commission || 0) + (user?.deduction || 0);
   return (
     <>
       <Card className='mb-4'>
-        <CardHeader>
-          <CardTitle className='font-medium'>{t('title')}</CardTitle>
-        </CardHeader>
-        <CardContent className='flex items-center justify-between'>
-          <div className='text-2xl font-bold'>
-            <Display type='currency' value={user?.balance} />
+        <CardContent className='p-6'>
+          <h2 className='text-foreground mb-4 text-2xl font-bold'>{t('totalAssets')}</h2>
+          <div className='mb-4'>
+            <div className='flex items-center justify-between'>
+              <div>
+                <p className='text-sm font-medium'>总资产</p>
+                <p className='text-3xl font-bold'>
+                  <Display type='currency' value={totalAssets} />
+                </p>
+              </div>
+              <Recharge />
+            </div>
           </div>
-          <div className='flex gap-2'>
-            <Recharge />
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+            <div className='bg-secondary rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md'>
+              <p className='text-secondary-foreground text-sm font-medium opacity-80'>
+                {t('balance')}
+              </p>
+              <p className='text-secondary-foreground text-2xl font-bold'>
+                <Display type='currency' value={user?.balance} />
+              </p>
+            </div>
+            <div className='bg-secondary rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md'>
+              <p className='text-secondary-foreground text-sm font-medium opacity-80'>
+                {t('deductBalance')}
+              </p>
+              <p className='text-secondary-foreground text-2xl font-bold'>
+                <Display type='currency' value={user?.deduction} />
+              </p>
+            </div>
+            <div className='bg-secondary rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md'>
+              <p className='text-secondary-foreground text-sm font-medium opacity-80'>
+                {t('commission')}
+              </p>
+              <p className='text-secondary-foreground text-2xl font-bold'>
+                <Display type='currency' value={user?.commission} />
+              </p>
+            </div>
           </div>
         </CardContent>
       </Card>

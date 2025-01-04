@@ -1,7 +1,9 @@
 {
   "accountBalance": "Saldo konta",
+  "commission": "Prowizja",
   "copyInviteLink": "Skopiuj link zaproszenia",
   "copySuccess": "Pomyślnie skopiowano link zaproszenia",
+  "deductBalance": "Potrąć saldo",
   "inviteCode": "kod zaproszenia",
   "recharge": "doładowanie"
 }

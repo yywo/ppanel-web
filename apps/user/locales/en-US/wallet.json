@@ -1,8 +1,10 @@
 {
   "amount": "Amount",
   "balance": "Balance",
+  "commission": "Commission",
   "createdAt": "Time",
-  "title": "Account Balance",
+  "deductBalance": "Deduct Balance",
+  "totalAssets": "Asset overview",
   "type": {
     "0": "Type",
     "1": "Recharge",

@@ -1,7 +1,9 @@
 {
   "accountBalance": "Số dư tài khoản",
+  "commission": "Hoa hồng",
   "copyInviteLink": "Sao chép liên kết mời",
   "copySuccess": "Sao chép liên kết mời thành công",
+  "deductBalance": "Trừ Số Dư",
   "inviteCode": "Mã mời",
   "recharge": "Nạp tiền"
 }

@@ -1,8 +1,10 @@
 {
   "amount": "राशि",
   "balance": "शेष",
+  "commission": "आयोग",
   "createdAt": "समय",
-  "title": "खाते का शेष",
+  "deductBalance": "शेष राशि घटाएं",
+  "totalAssets": "संपत्ति अवलोकन",
   "type": {
     "0": "प्रकार",
     "1": "रिचार्ज",

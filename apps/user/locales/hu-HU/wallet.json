@@ -1,8 +1,10 @@
 {
   "amount": "Összeg",
   "balance": "Egyenleg",
+  "commission": "Jutalék",
   "createdAt": "idő",
-  "title": "Számlaegyenleg",
+  "deductBalance": "Egyenleg levonása",
+  "totalAssets": "Eszközök áttekintése",
   "type": {
     "0": "Típus",
     "1": "Feltöltés",

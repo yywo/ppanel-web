@@ -1,8 +1,10 @@
 {
   "amount": "Số tiền",
   "balance": "Số dư",
+  "commission": "Hoa hồng",
   "createdAt": "Thời gian",
-  "title": "Số dư tài khoản",
+  "deductBalance": "Trừ Số Dư",
+  "totalAssets": "Tổng quan tài sản",
   "type": {
     "0": "Loại",
     "1": "Nạp tiền",

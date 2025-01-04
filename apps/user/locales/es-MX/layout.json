@@ -1,7 +1,9 @@
 {
   "accountBalance": "Saldo de la cuenta",
+  "commission": "Comisión",
   "copyInviteLink": "Copiar enlace de invitación",
   "copySuccess": "Enlace de invitación copiado con éxito",
+  "deductBalance": "Descontar Saldo",
   "inviteCode": "Código de invitación",
   "recharge": "recargar"
 }

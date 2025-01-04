@@ -1,8 +1,10 @@
 {
   "amount": "Beløp",
   "balance": "Balanse",
+  "commission": "Kommisjon",
   "createdAt": "Tid",
-  "title": "Kontosaldo",
+  "deductBalance": "Trekk fra saldo",
+  "totalAssets": "Eiendelsoversikt",
   "type": {
     "0": "Type",
     "1": "Innskudd",

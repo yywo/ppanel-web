@@ -1,7 +1,9 @@
 {
   "accountBalance": "口座残高",
+  "commission": "手数料",
   "copyInviteLink": "招待リンクをコピー",
   "copySuccess": "招待リンクのコピーに成功しました",
+  "deductBalance": "残高を差し引く",
   "inviteCode": "招待コード",
   "recharge": "チャージ"
 }

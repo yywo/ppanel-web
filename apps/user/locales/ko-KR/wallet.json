@@ -1,8 +1,10 @@
 {
   "amount": "금액",
   "balance": "잔액",
+  "commission": "위원회",
   "createdAt": "시간",
-  "title": "계정 잔액",
+  "deductBalance": "잔액 차감",
+  "totalAssets": "자산 개요",
   "type": {
     "0": "유형",
     "1": "충전",

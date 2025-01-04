@@ -1,8 +1,10 @@
 {
   "amount": "Částka",
   "balance": "zůstatek",
+  "commission": "Provize",
   "createdAt": "čas",
-  "title": "Zůstatek na účtu",
+  "deductBalance": "Odečíst zůstatek",
+  "totalAssets": "Přehled aktiv",
   "type": {
     "0": "Typ",
     "1": "Dobití",

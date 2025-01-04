@@ -1,8 +1,10 @@
 {
   "amount": "Montant",
   "balance": "Solde",
+  "commission": "Commission",
   "createdAt": "temps",
-  "title": "Solde du compte",
+  "deductBalance": "Déduire le solde",
+  "totalAssets": "Aperçu des actifs",
   "type": {
     "0": "Type",
     "1": "Recharge",

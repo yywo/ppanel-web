@@ -2,12 +2,30 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
-/** Query User Affiliate GET /v1/public/user/affiliate */
+/** Query User Affiliate Count GET /v1/public/user/affiliate/count */
 export async function queryUserAffiliate(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.QueryUserAffiliateResponse }>(
-    '/v1/public/user/affiliate',
+  return request<API.Response & { data?: API.QueryUserAffiliateCountResponse }>(
+    '/v1/public/user/affiliate/count',
     {
       method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
+/** Query User Affiliate List GET /v1/public/user/affiliate/list */
+export async function queryUserAffiliateList(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.QueryUserAffiliateListParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.QueryUserAffiliateListResponse }>(
+    '/v1/public/user/affiliate/list',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
       ...(options || {}),
     },
   );
@@ -105,4 +123,34 @@ export async function unbindTelegram(options?: { [key: string]: any }) {
     method: 'POST',
     ...(options || {}),
   });
+}
+
+/** 此处后端没有提供注释 POST /v1/public/user/unsubscribe */
+export async function unsubscribe(body: API.UnsubscribeRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/public/user/unsubscribe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Pre Unsubscribe POST /v1/public/user/unsubscribe/pre */
+export async function preUnsubscribe(
+  body: API.PreUnsubscribeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.PreUnsubscribeResponse }>(
+    '/v1/public/user/unsubscribe/pre',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: body,
+      ...(options || {}),
+    },
+  );
 }

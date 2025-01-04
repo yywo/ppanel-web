@@ -1,8 +1,10 @@
 {
   "amount": "Määrä",
   "balance": "Saldo",
+  "commission": "Komissio",
   "createdAt": "Aika",
-  "title": "Tilin saldo",
+  "deductBalance": "Vähennä saldoa",
+  "totalAssets": "Varojen yleiskatsaus",
   "type": {
     "0": "Tyyppi",
     "1": "Lataus",

@@ -1,8 +1,10 @@
 {
   "amount": "Monto",
   "balance": "saldo",
+  "commission": "Comisión",
   "createdAt": "Hora",
-  "title": "Saldo de la cuenta",
+  "deductBalance": "Descontar Saldo",
+  "totalAssets": "Resumen de activos",
   "type": {
     "0": "Tipo",
     "1": "Recarga",

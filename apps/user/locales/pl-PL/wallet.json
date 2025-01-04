@@ -1,8 +1,10 @@
 {
   "amount": "kwota",
   "balance": "saldo",
+  "commission": "Prowizja",
   "createdAt": "czas",
-  "title": "Saldo konta",
+  "deductBalance": "Potrąć saldo",
+  "totalAssets": "Przegląd aktywów",
   "type": {
     "0": "Typ",
     "1": "Doładowanie",

@@ -1,8 +1,10 @@
 {
   "amount": "Betrag",
   "balance": "Kontostand",
+  "commission": "Provision",
   "createdAt": "Zeit",
-  "title": "Kontostand",
+  "deductBalance": "Guthaben abziehen",
+  "totalAssets": "Vermögensübersicht",
   "type": {
     "0": "Typ",
     "1": "Aufladen",

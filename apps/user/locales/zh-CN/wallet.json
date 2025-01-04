@@ -1,8 +1,10 @@
 {
   "amount": "金额",
   "balance": "余额",
+  "commission": "佣金",
   "createdAt": "时间",
-  "title": "账户余额",
+  "deductBalance": "抵扣余额",
+  "totalAssets": "资产概览",
   "type": {
     "0": "类型",
     "1": "充值",

@@ -1,7 +1,9 @@
 {
   "accountBalance": "Kontosaldo",
+  "commission": "Kommisjon",
   "copyInviteLink": "Kopier invitasjonslenke",
   "copySuccess": "Invitasjonslenke kopiert",
+  "deductBalance": "Trekk fra saldo",
   "inviteCode": "invitasjonskode",
   "recharge": "Lad opp"
 }

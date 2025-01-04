@@ -1,8 +1,10 @@
 {
   "amount": "Сума",
   "balance": "Баланс",
+  "commission": "Комісія",
   "createdAt": "Час",
-  "title": "Баланс рахунку",
+  "deductBalance": "Відняти баланс",
+  "totalAssets": "Огляд активів",
   "type": {
     "0": "Тип",
     "1": "Поповнення",

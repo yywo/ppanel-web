@@ -1,8 +1,10 @@
 {
   "amount": "مقدار",
   "balance": "تعادل",
+  "commission": "کمیسیون",
   "createdAt": "زمان",
-  "title": "موجودی حساب",
+  "deductBalance": "کسر موجودی",
+  "totalAssets": "بررسی کلی دارایی‌ها",
   "type": {
     "0": "نوع",
     "1": "شارژ",

@@ -1,8 +1,10 @@
 {
   "amount": "Sumă",
   "balance": "Sold",
+  "commission": "Comision",
   "createdAt": "Timp",
-  "title": "Soldul contului",
+  "deductBalance": "Scade Soldul",
+  "totalAssets": "Prezentare generală a activelor",
   "type": {
     "0": "Tip",
     "1": "Reîncărcare",
