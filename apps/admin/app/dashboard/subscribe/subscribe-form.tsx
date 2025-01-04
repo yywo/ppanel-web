@@ -516,7 +516,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 placeholder={t('form.selectResetCycle')}
                                 {...field}
                                 onChange={(value) => {
-                                  if (value >= 0) {
+                                  if (typeof value === 'number') {
                                     form.setValue(field.name, value);
                                   }
                                 }}
