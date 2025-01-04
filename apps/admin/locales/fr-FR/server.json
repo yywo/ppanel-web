@@ -96,6 +96,7 @@
       "selectProtocol": "Sélectionner le protocole",
       "selectRelayMode": "Sélectionner le mode relais",
       "serverAddr": "Adresse du serveur",
+      "serverKey": "Clé du serveur",
       "serverName": "Nom du service",
       "speedLimit": "Limite de vitesse",
       "speedLimitPlaceholder": "Illimité",

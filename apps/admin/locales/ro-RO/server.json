@@ -96,6 +96,7 @@
       "selectProtocol": "Selectați protocolul",
       "selectRelayMode": "Selectați Modul de Releu",
       "serverAddr": "Adresă server",
+      "serverKey": "Cheie Server",
       "serverName": "Nume serviciu",
       "speedLimit": "Limită de viteză",
       "speedLimitPlaceholder": "Nelimitat",

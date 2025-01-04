@@ -96,6 +96,7 @@
       "selectProtocol": "Velg protokoll",
       "selectRelayMode": "Velg relémodus",
       "serverAddr": "Serveradresse",
+      "serverKey": "Servernøkkel",
       "serverName": "Tjenestenavn",
       "speedLimit": "Hastighetsbegrensning",
       "speedLimitPlaceholder": "Ingen begrensning",

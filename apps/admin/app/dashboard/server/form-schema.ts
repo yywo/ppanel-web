@@ -36,6 +36,7 @@ const baseProtocolSchema = z.object({
 const shadowsocksSchema = z.object({
   method: z.string(),
   port: portSchema,
+  server_key: nullableString,
 });
 
 const vmessSchema = baseProtocolSchema;

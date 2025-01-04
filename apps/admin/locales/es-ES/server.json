@@ -96,6 +96,7 @@
       "selectProtocol": "Seleccionar protocolo",
       "selectRelayMode": "Seleccionar modo de retransmisión",
       "serverAddr": "Dirección del servidor",
+      "serverKey": "Clave del Servidor",
       "serverName": "Nombre del servicio",
       "speedLimit": "Límite de velocidad",
       "speedLimitPlaceholder": "Sin límite",

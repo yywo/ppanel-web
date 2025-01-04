@@ -96,6 +96,7 @@
       "selectProtocol": "Valitse protokolla",
       "selectRelayMode": "Valitse välitystila",
       "serverAddr": "Palvelimen osoite",
+      "serverKey": "Palvelimen avain",
       "serverName": "Palvelimen nimi",
       "speedLimit": "Nopeusrajoitus",
       "speedLimitPlaceholder": "Ei rajoitusta",

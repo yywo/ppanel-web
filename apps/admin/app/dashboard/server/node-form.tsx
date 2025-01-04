@@ -77,6 +77,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
   const transport = form.watch('config.transport');
   const security = form.watch('config.security');
   const relayMode = form.watch('relay_mode');
+  const method = form.watch('config.method');
 
   useEffect(() => {
     form?.reset(initialValues);
@@ -313,6 +314,30 @@ export default function NodeForm<T extends { [x: string]: any }>({
                       </FormItem>
                     )}
                   />
+                  {[
+                    '2022-blake3-aes-128-gcm',
+                    '2022-blake3-aes-256-gcm',
+                    '2022-blake3-chacha20-poly1305',
+                  ].includes(method) && (
+                    <FormField
+                      control={form.control}
+                      name='config.server_key'
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>{t('form.serverKey')}</FormLabel>
+                          <FormControl>
+                            <EnhancedInput
+                              {...field}
+                              onValueChange={(value) => {
+                                form.setValue(field.name, value);
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  )}
                 </div>
               )}
 

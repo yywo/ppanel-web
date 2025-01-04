@@ -96,6 +96,7 @@
       "selectProtocol": "Chọn giao thức",
       "selectRelayMode": "Chọn Chế Độ Tiếp Sức",
       "serverAddr": "Địa chỉ máy chủ",
+      "serverKey": "Khóa Máy Chủ",
       "serverName": "Tên dịch vụ",
       "speedLimit": "Giới hạn tốc độ",
       "speedLimitPlaceholder": "Không giới hạn",

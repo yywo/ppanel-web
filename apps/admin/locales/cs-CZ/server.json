@@ -96,6 +96,7 @@
       "selectProtocol": "Vyberte protokol",
       "selectRelayMode": "Vyberte režim relé",
       "serverAddr": "Adresa serveru",
+      "serverKey": "Klíč serveru",
       "serverName": "Název služby",
       "speedLimit": "Omezení rychlosti",
       "speedLimitPlaceholder": "Bez omezení",

@@ -96,6 +96,7 @@
       "selectProtocol": "프로토콜 선택",
       "selectRelayMode": "릴레이 모드 선택",
       "serverAddr": "서버 주소",
+      "serverKey": "서버 키",
       "serverName": "서비스 이름",
       "speedLimit": "속도 제한",
       "speedLimitPlaceholder": "제한 없음",

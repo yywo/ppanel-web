@@ -96,6 +96,7 @@
       "selectProtocol": "انتخاب پروتکل",
       "selectRelayMode": "انتخاب حالت رله",
       "serverAddr": "آدرس سرور",
+      "serverKey": "کلید سرور",
       "serverName": "نام سرویس",
       "speedLimit": "محدودیت سرعت",
       "speedLimitPlaceholder": "نامحدود",

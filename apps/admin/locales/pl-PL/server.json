@@ -96,6 +96,7 @@
       "selectProtocol": "Wybierz protokół",
       "selectRelayMode": "Wybierz tryb przekaźnika",
       "serverAddr": "Adres serwera",
+      "serverKey": "Klucz serwera",
       "serverName": "Nazwa usługi",
       "speedLimit": "Ograniczenie prędkości",
       "speedLimitPlaceholder": "Bez ograniczeń",

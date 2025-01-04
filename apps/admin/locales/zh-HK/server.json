@@ -96,6 +96,7 @@
       "selectProtocol": "選擇協議",
       "selectRelayMode": "選擇中繼模式",
       "serverAddr": "伺服器地址",
+      "serverKey": "伺服器金鑰",
       "serverName": "服務名稱",
       "speedLimit": "速度限制",
       "speedLimitPlaceholder": "無限制",

@@ -96,6 +96,7 @@
       "selectProtocol": "プロトコルを選択",
       "selectRelayMode": "リレーモードを選択",
       "serverAddr": "サーバーアドレス",
+      "serverKey": "サーバーキー",
       "serverName": "サービス名",
       "speedLimit": "速度制限",
       "speedLimitPlaceholder": "無制限",

@@ -96,6 +96,7 @@
       "selectProtocol": "选择协议",
       "selectRelayMode": "选择中继模式",
       "serverAddr": "服务器地址",
+      "serverKey": "服务器密钥",
       "serverName": "服务名称",
       "speedLimit": "速度限制",
       "speedLimitPlaceholder": "无限制",

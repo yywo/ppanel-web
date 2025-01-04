@@ -96,6 +96,7 @@
       "selectProtocol": "Protokoll auswählen",
       "selectRelayMode": "Relaismodus auswählen",
       "serverAddr": "Serveradresse",
+      "serverKey": "Server-Schlüssel",
       "serverName": "Dienstname",
       "speedLimit": "Geschwindigkeitsbegrenzung",
       "speedLimitPlaceholder": "Keine Begrenzung",

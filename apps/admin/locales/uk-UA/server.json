@@ -96,6 +96,7 @@
       "selectProtocol": "Виберіть протокол",
       "selectRelayMode": "Виберіть режим ретрансляції",
       "serverAddr": "Адреса сервера",
+      "serverKey": "Ключ сервера",
       "serverName": "Назва сервісу",
       "speedLimit": "Обмеження швидкості",
       "speedLimitPlaceholder": "Без обмежень",

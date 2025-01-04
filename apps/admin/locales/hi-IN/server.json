@@ -96,6 +96,7 @@
       "selectProtocol": "प्रोटोकॉल चुनें",
       "selectRelayMode": "रिले मोड चुनें",
       "serverAddr": "सर्वर पता",
+      "serverKey": "सर्वर कुंजी",
       "serverName": "सेवा नाम",
       "speedLimit": "गति सीमा",
       "speedLimitPlaceholder": "कोई सीमा नहीं",

@@ -96,6 +96,7 @@
       "selectProtocol": "Protokol Seç",
       "selectRelayMode": "Röle Modunu Seçin",
       "serverAddr": "Sunucu Adresi",
+      "serverKey": "Sunucu Anahtarı",
       "serverName": "Sunucu Adı",
       "speedLimit": "Hız Sınırı",
       "speedLimitPlaceholder": "Sınırsız",

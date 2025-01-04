@@ -96,6 +96,7 @@
       "selectProtocol": "เลือกโปรโตคอล",
       "selectRelayMode": "เลือกโหมดรีเลย์",
       "serverAddr": "ที่อยู่เซิร์ฟเวอร์",
+      "serverKey": "คีย์เซิร์ฟเวอร์",
       "serverName": "ชื่อบริการ",
       "speedLimit": "จำกัดความเร็ว",
       "speedLimitPlaceholder": "ไม่จำกัด",

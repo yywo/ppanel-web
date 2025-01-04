@@ -96,6 +96,7 @@
       "selectProtocol": "Válasszon protokollt",
       "selectRelayMode": "Válassza ki a relé módot",
       "serverAddr": "Szerver cím",
+      "serverKey": "Szerver kulcs",
       "serverName": "Szolgáltatás neve",
       "speedLimit": "Sebességkorlátozás",
       "speedLimitPlaceholder": "Korlátlan",
