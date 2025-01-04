@@ -42,6 +42,8 @@
     "50002": "Acest cupon a fost deja utilizat, nu poate fi folosit din nou.",
     "60001": "Abonamentul a expirat, vă rugăm să reînnoiți pentru a continua utilizarea.",
     "60002": "Nu se poate utiliza momentan acest abonament, vă rugăm să încercați din nou mai târziu.",
+    "60003": "A fost detectat un abonament existent. Vă rugăm să-l anulați înainte de a continua.",
+    "60004": "Nu se poate șterge în acest moment, deoarece abonamentul are utilizatori activi.",
     "70001": "Codul de verificare este incorect, vă rugăm să îl introduceți din nou.",
     "80001": "Sarcina nu a fost adăugată cu succes în coadă, vă rugăm să încercați din nou mai târziu.",
     "90001": "Vă rugăm să dezactivați modul DEBUG și să încercați din nou.",

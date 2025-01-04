@@ -42,6 +42,8 @@
     "50002": "The coupon has been used, cannot be used again.",
     "60001": "Subscription has expired, please renew before using.",
     "60002": "Unable to use the subscription at the moment, please try again later.",
+    "60003": "An existing subscription is detected. Please cancel it before proceeding.",
+    "60004": "Unable to delete at the moment as the subscription has active users.",
     "70001": "Incorrect verification code, please re-enter.",
     "80001": "Task was not successfully queued, please try again later.",
     "90001": "Please disable DEBUG mode and try again.",

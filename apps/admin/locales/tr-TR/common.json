@@ -42,6 +42,8 @@
     "50002": "Bu kupon zaten kullanıldı, tekrar kullanılamaz.",
     "60001": "Abonelik süresi doldu, lütfen yenileyip tekrar kullanın.",
     "60002": "Bu abonelik şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin.",
+    "60003": "Mevcut bir abonelik tespit edildi. Lütfen devam etmeden önce iptal edin.",
+    "60004": "Aboneliğin aktif kullanıcıları olduğu için şu anda silinemiyor.",
     "70001": "Doğrulama kodu hatalı, lütfen tekrar girin.",
     "80001": "Görev kuyruğa başarıyla eklenemedi, lütfen daha sonra tekrar deneyin.",
     "90001": "Lütfen DEBUG modunu kapatıp tekrar deneyin.",

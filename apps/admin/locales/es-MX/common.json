@@ -42,6 +42,8 @@
     "50002": "El cupón ya ha sido utilizado, no se puede usar de nuevo.",
     "60001": "La suscripción ha expirado, por favor renueva para continuar usando.",
     "60002": "No se puede usar la suscripción por el momento, por favor intenta más tarde.",
+    "60003": "Se ha detectado una suscripción existente. Por favor, cancélala antes de continuar.",
+    "60004": "No se puede eliminar en este momento ya que la suscripción tiene usuarios activos.",
     "70001": "El código de verificación es incorrecto, por favor ingrésalo de nuevo.",
     "80001": "La tarea no se agregó exitosamente a la cola, por favor intenta de nuevo más tarde.",
     "90001": "Por favor desactiva el modo DEBUG e intenta de nuevo.",

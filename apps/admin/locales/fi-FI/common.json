@@ -42,6 +42,8 @@
     "50002": "Kuponki on jo käytetty, sitä ei voi käyttää uudelleen.",
     "60001": "Tilauksesi on vanhentunut, uusi tilaus ja käytä uudelleen.",
     "60002": "Tilausta ei voi käyttää tällä hetkellä, yritä myöhemmin uudelleen.",
+    "60003": "Olemassa oleva tilaus havaittu. Peruuta se ennen jatkamista.",
+    "60004": "Ei voi poistaa tällä hetkellä, koska tilauksella on aktiivisia käyttäjiä.",
     "70001": "Vahvistuskoodi on virheellinen, syötä se uudelleen.",
     "80001": "Tehtävää ei lisätty jonoon, yritä myöhemmin uudelleen.",
     "90001": "Sulje DEBUG-tila ja yritä uudelleen.",

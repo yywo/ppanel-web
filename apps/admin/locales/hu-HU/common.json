@@ -42,6 +42,8 @@
     "50002": "A kupon már felhasználásra került, nem használható újra.",
     "60001": "Az előfizetés lejárt, kérjük, újítsa meg, majd használja.",
     "60002": "Az előfizetés jelenleg nem használható, kérjük, próbálja meg később újra.",
+    "60003": "Létező előfizetés észlelve. Kérjük, törölje azt a folytatás előtt.",
+    "60004": "Jelenleg nem törölhető, mivel az előfizetésnek aktív felhasználói vannak.",
     "70001": "A megerősítő kód hibás, kérjük, írja be újra.",
     "80001": "A feladat nem került sikeresen a sorba, kérjük, próbálja meg később újra.",
     "90001": "Kérjük, kapcsolja ki a DEBUG módot, majd próbálja újra.",

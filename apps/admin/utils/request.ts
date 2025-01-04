@@ -37,7 +37,7 @@ requset.interceptors.request.use(
     if (Authorization) config.headers.Authorization = Authorization;
     return config;
   },
-  (error) => Promise.reject(new Error(error)),
+  (error: Error) => Promise.reject(error),
 );
 
 requset.interceptors.response.use(
@@ -49,9 +49,9 @@ requset.interceptors.response.use(
     }
     return response;
   },
-  async (error) => {
+  async (error: Error) => {
     await handleError(error);
-    return Promise.reject(new Error(error));
+    return Promise.reject(error);
   },
 );
 
