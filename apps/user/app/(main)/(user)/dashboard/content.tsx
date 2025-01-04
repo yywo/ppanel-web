@@ -171,7 +171,11 @@ export default function Content() {
                   </li>
                   <li>
                     <span className='text-muted-foreground'>{t('nextResetDays')}</span>
-                    <span className='text-2xl font-semibold'>{t('unknown')}</span>
+                    <span className='text-2xl font-semibold'>
+                      {item.reset_time
+                        ? differenceInDays(new Date(item.reset_time), new Date())
+                        : t('unknown')}
+                    </span>
                   </li>
                   <li>
                     <span className='text-muted-foreground'>{t('expirationDays')}</span>

@@ -1,5 +1,6 @@
 'use client';
 
+import useGlobalStore from '@/config/use-global';
 import { preUnsubscribe, unsubscribe } from '@/services/user/user';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
@@ -24,9 +25,12 @@ interface UnsubscribeProps {
 }
 
 export default function Unsubscribe({ id, allowDeduction }: Readonly<UnsubscribeProps>) {
-  const [open, setOpen] = useState(false);
-  const router = useRouter();
   const t = useTranslations('subscribe.unsubscribe');
+  const router = useRouter();
+  const { common } = useGlobalStore();
+  const single_model = common.subscribe.single_model;
+
+  const [open, setOpen] = useState(false);
 
   const { data } = useQuery({
     enabled: Boolean(open && id && allowDeduction),
@@ -53,7 +57,7 @@ export default function Unsubscribe({ id, allowDeduction }: Readonly<Unsubscribe
     }
   };
 
-  if (!allowDeduction) return null;
+  if (!single_model && !allowDeduction) return null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
