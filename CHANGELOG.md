@@ -1,4 +1,54 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.4](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2025-01-07)
+
+
+### ♻ Code Refactoring
+
+* **auth**: Refactor user authorization handling and improve error logging ([68bc18f](https://github.com/perfect-panel/ppanel-web/commit/68bc18f))
+
+
+### ✨ Features
+
+* **affiliate**: Add Affiliate component with commission display and invite link functionality ([4aea4e8](https://github.com/perfect-panel/ppanel-web/commit/4aea4e8))
+* **affiliate**: Update affiliate component to display total commission and improve data fetching ([cc834ca](https://github.com/perfect-panel/ppanel-web/commit/cc834ca))
+* **api**: Add new subscription properties and locale support for deduction ratios and reset cycles ([fec80f5](https://github.com/perfect-panel/ppanel-web/commit/fec80f5))
+* **api**: Add Time Period Configuration ([837157c](https://github.com/perfect-panel/ppanel-web/commit/837157c))
+* **favicon**: Update SVG favicon design for admin and user interfaces ([1d91738](https://github.com/perfect-panel/ppanel-web/commit/1d91738))
+* **node**: Add serverKey ([25ce37e](https://github.com/perfect-panel/ppanel-web/commit/25ce37e))
+* **relay**: Add relay mode configuration and update related schemas ([3cc9477](https://github.com/perfect-panel/ppanel-web/commit/3cc9477))
+* **schema**: Add security field to hysteria2 and tuic schemas ([cd59d44](https://github.com/perfect-panel/ppanel-web/commit/cd59d44))
+* **subscribe**: Add reset_time to API typings and update unsubscribe logic ([eeea165](https://github.com/perfect-panel/ppanel-web/commit/eeea165))
+* **subscribe**: Add subscribe_discount type ([f99c604](https://github.com/perfect-panel/ppanel-web/commit/f99c604))
+* **subscribe**: Add subscription credits ([5bc7905](https://github.com/perfect-panel/ppanel-web/commit/5bc7905))
+* **subscribe**: Add unsubscribe functionality with confirmation messages and localized strings ([b2a2f42](https://github.com/perfect-panel/ppanel-web/commit/b2a2f42))
+* **subscribe**: Improve error handling in subscription forms and update component props ([d28a10b](https://github.com/perfect-panel/ppanel-web/commit/d28a10b))
+* **subscribe**: Improve layout and styling in subscription components ([5766376](https://github.com/perfect-panel/ppanel-web/commit/5766376))
+* **subscription**: Add localized messages for existing subscriptions and deletion restrictions ([e8a72d5](https://github.com/perfect-panel/ppanel-web/commit/e8a72d5))
+
+
+### 🎫 Chores
+
+* Update changelog, enhance prepare script, and add openapi command ([a93db4e](https://github.com/perfect-panel/ppanel-web/commit/a93db4e))
+
+
+### 🐛 Bug Fixes
+
+* **dashboard**: Correct progress value calculations and update groupId accessor ([36c7667](https://github.com/perfect-panel/ppanel-web/commit/36c7667))
+* **layout**: Remove unnecessary cookie initialization in Logout function ([3065c3a](https://github.com/perfect-panel/ppanel-web/commit/3065c3a))
+* **locales**: Update Hong Kong ([6d0d069](https://github.com/perfect-panel/ppanel-web/commit/6d0d069))
+* **subscribe**: Update value validation to check for number type in subscribe form ([6de29d5](https://github.com/perfect-panel/ppanel-web/commit/6de29d5))
+
+
+### 💄 Styles
+
+* **locales**: Remove unused subscription labels from multiple locale files ([fb0c510](https://github.com/perfect-panel/ppanel-web/commit/fb0c510))
+* **locales**: Update server.json to reorganize relay mode options and improve labels ([701cdee](https://github.com/perfect-panel/ppanel-web/commit/701cdee))
+* **node**: Improve layout and spacing in NodeStatusCell component ([136287d](https://github.com/perfect-panel/ppanel-web/commit/136287d))
+* **time-slot**: Add chart display ([c44ad47](https://github.com/perfect-panel/ppanel-web/commit/c44ad47))
+
+<a name="readme-top"></a>
 
 # Changelog
 
