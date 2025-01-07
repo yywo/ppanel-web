@@ -54,21 +54,21 @@ export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
                 <span>CPU</span>
                 <span>{formatPercentage(serverStatus?.cpu ?? 0)}</span>
               </div>
-              <Progress value={(serverStatus?.cpu ?? 0) * 100} className='h-2' max={100} />
+              <Progress value={serverStatus?.cpu ?? 0} className='h-2' max={100} />
             </div>
             <div className='flex flex-col space-y-1'>
               <div className='flex justify-between'>
                 <span>{t('memory')}</span>
                 <span>{formatPercentage(serverStatus?.mem ?? 0)}</span>
               </div>
-              <Progress value={(serverStatus?.mem ?? 0) * 100} className='h-2' max={100} />
+              <Progress value={serverStatus?.mem ?? 0} className='h-2' max={100} />
             </div>
             <div className='flex flex-col space-y-1'>
               <div className='flex justify-between'>
                 <span>{t('disk')}</span>
                 <span>{formatPercentage(serverStatus?.disk ?? 0)}</span>
               </div>
-              <Progress value={(serverStatus?.disk ?? 0) * 100} className='h-2' max={100} />
+              <Progress value={serverStatus?.disk ?? 0} className='h-2' max={100} />
             </div>
             {isOnline && (
               <div>

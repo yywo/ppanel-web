@@ -115,7 +115,10 @@ export function RevenueStatisticsCard() {
                                 y={viewBox.cy}
                                 className='fill-foreground text-2xl font-bold'
                               >
-                                {RevenueStatistics?.today.amount_total}
+                                {unitConversion(
+                                  'centsToDollars',
+                                  RevenueStatistics?.today.amount_total,
+                                )}
                               </tspan>
                             </text>
                           );
