@@ -50,7 +50,7 @@ export function ProductShowcase() {
       >
         {t('product_showcase_description')}
       </motion.p>
-      <div className='mx-auto flex flex-wrap justify-center gap-8 overflow-x-auto overflow-y-hidden'>
+      <div className='mx-auto flex flex-wrap justify-center gap-8 overflow-x-auto overflow-y-hidden *:max-w-80 *:flex-auto'>
         {data?.map((item, index) => (
           <motion.div
             key={item.id}

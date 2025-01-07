@@ -131,7 +131,7 @@ export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
             </CardContent>
           </Card>
           <div className='flex flex-col justify-between text-sm'>
-            <div className='grid gap-3'>
+            <div className='mb-6 grid gap-3'>
               <DurationSelector
                 quantity={params.quantity!}
                 unitTime={subscribe?.unit_time}
