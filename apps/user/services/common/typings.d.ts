@@ -416,6 +416,7 @@ declare namespace API {
     balance: number;
     commission: number;
     deduction: number;
+    gift_amount: number;
     telegram: number;
     refer_code: string;
     referer_id: number;
