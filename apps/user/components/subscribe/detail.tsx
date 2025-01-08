@@ -1,6 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
+import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 
 interface SubscribeDetailProps {
@@ -36,7 +37,11 @@ export function SubscribeDetail({ subscribe }: Readonly<SubscribeDetailProps>) {
         <li>
           <span className='text-muted-foreground'>{t('connectionSpeed')}</span>
           <span>
-            <Display type='traffic' value={subscribe?.speed_limit} unlimited />
+            {subscribe?.speed_limit ? (
+              `${unitConversion('bitsToMb', subscribe?.speed_limit)} Mbps`
+            ) : (
+              <Display type='traffic' value={subscribe?.speed_limit} unlimited />
+            )}
           </span>
         </li>
         <li>

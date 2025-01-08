@@ -277,7 +277,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 {...field}
                                 formatInput={(value) => unitConversion('bitsToMb', value)}
                                 formatOutput={(value) => unitConversion('mbToBits', value)}
-                                suffix='MB'
+                                suffix='Mbps'
                                 onValueChange={(value) => {
                                   form.setValue(field.name, value);
                                 }}

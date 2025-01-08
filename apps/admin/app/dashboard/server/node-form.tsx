@@ -190,7 +190,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           onValueChange={(value) => {
                             form.setValue(field.name, value);
                           }}
-                          suffix='MB'
+                          suffix='Mbps'
                         />
                       </FormControl>
                       <FormMessage />
