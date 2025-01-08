@@ -27,7 +27,7 @@ interface UnsubscribeProps {
 export default function Unsubscribe({ id, allowDeduction }: Readonly<UnsubscribeProps>) {
   const t = useTranslations('subscribe.unsubscribe');
   const router = useRouter();
-  const { common } = useGlobalStore();
+  const { common, getUserInfo } = useGlobalStore();
   const single_model = common.subscribe.single_model;
 
   const [open, setOpen] = useState(false);
@@ -51,6 +51,7 @@ export default function Unsubscribe({ id, allowDeduction }: Readonly<Unsubscribe
       );
       toast.success(t('success'));
       router.refresh();
+      await getUserInfo();
       setOpen(false);
     } catch (error) {
       toast.error(t('failed'));

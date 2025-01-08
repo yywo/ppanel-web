@@ -29,14 +29,14 @@ import StripePayment from './stripe';
 export default function Page() {
   const t = useTranslations('order');
   const { getUserInfo } = useGlobalStore();
-  const [order_no, setOrderNo] = useState<string>();
+  const [orderNo, setOrderNo] = useState<string>();
   const [enabled, setEnabled] = useState<boolean>(false);
 
   const { data } = useQuery({
     enabled: enabled,
-    queryKey: ['queryOrderDetail', order_no],
+    queryKey: ['queryOrderDetail', orderNo],
     queryFn: async () => {
-      const { data } = await queryOrderDetail({ order_no: order_no! });
+      const { data } = await queryOrderDetail({ order_no: orderNo! });
       if (data?.data?.status !== 1) {
         getUserInfo();
         setEnabled(false);
@@ -47,10 +47,10 @@ export default function Page() {
   });
 
   const { data: payment } = useQuery({
-    enabled: !!order_no && data?.status === 1,
-    queryKey: ['checkoutOrder', order_no],
+    enabled: !!orderNo && data?.status === 1,
+    queryKey: ['checkoutOrder', orderNo],
     queryFn: async () => {
-      const { data } = await checkoutOrder({ orderNo: order_no! });
+      const { data } = await checkoutOrder({ orderNo: orderNo! });
       return data?.data;
     },
   });

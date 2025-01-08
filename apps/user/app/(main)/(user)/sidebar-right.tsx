@@ -39,7 +39,7 @@ export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>)
             <CardTitle className='text-sm font-medium'>{t('giftAmount')}</CardTitle>
           </CardHeader>
           <CardContent className='p-3 text-2xl font-bold'>
-            <Display type='currency' value={user?.deduction} />
+            <Display type='currency' value={user?.gift_amount} />
           </CardContent>
         </Card>
         <Card>

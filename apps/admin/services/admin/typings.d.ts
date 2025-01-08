@@ -192,6 +192,8 @@ declare namespace API {
     referer_user: string;
     refer_code: string;
     balance: number;
+    commission: number;
+    gift_amount: number;
     is_admin: boolean;
   };
 
@@ -989,6 +991,8 @@ declare namespace API {
     password: string;
     avatar: string;
     balance: number;
+    commission: number;
+    gift_amount: number;
     telegram: number;
     refer_code: string;
     referer_id: number;

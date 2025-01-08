@@ -16,7 +16,7 @@ export default function Page() {
   const t = useTranslations('wallet');
   const { user } = useGlobalStore();
   const ref = useRef<ProListActions>(null);
-  const totalAssets = (user?.balance || 0) + (user?.commission || 0) + (user?.deduction || 0);
+  const totalAssets = (user?.balance || 0) + (user?.commission || 0) + (user?.gift_amount || 0);
   return (
     <>
       <Card className='mb-4'>
@@ -47,7 +47,7 @@ export default function Page() {
                 {t('giftAmount')}
               </p>
               <p className='text-secondary-foreground text-2xl font-bold'>
-                <Display type='currency' value={user?.deduction} />
+                <Display type='currency' value={user?.gift_amount} />
               </p>
             </div>
             <div className='bg-secondary rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md'>
