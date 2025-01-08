@@ -3,7 +3,7 @@
   "balance": "餘額",
   "commission": "佣金",
   "createdAt": "時間",
-  "deductBalance": "抵扣餘額",
+  "giftAmount": "禮物金額",
   "totalAssets": "資產概覽",
   "type": {
     "0": "類型",

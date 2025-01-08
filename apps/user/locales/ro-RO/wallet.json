@@ -3,7 +3,7 @@
   "balance": "Sold",
   "commission": "Comision",
   "createdAt": "Timp",
-  "deductBalance": "Scade Soldul",
+  "giftAmount": "Sumă cadou",
   "totalAssets": "Prezentare generală a activelor",
   "type": {
     "0": "Tip",

@@ -36,7 +36,7 @@ export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>)
         </Card>
         <Card>
           <CardHeader className='space-y-0 p-3 pb-2'>
-            <CardTitle className='text-sm font-medium'>{t('deductBalance')}</CardTitle>
+            <CardTitle className='text-sm font-medium'>{t('giftAmount')}</CardTitle>
           </CardHeader>
           <CardContent className='p-3 text-2xl font-bold'>
             <Display type='currency' value={user?.deduction} />

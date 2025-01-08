@@ -44,7 +44,7 @@ export default function Page() {
             </div>
             <div className='bg-secondary rounded-lg p-4 shadow-sm transition-all duration-300 hover:shadow-md'>
               <p className='text-secondary-foreground text-sm font-medium opacity-80'>
-                {t('deductBalance')}
+                {t('giftAmount')}
               </p>
               <p className='text-secondary-foreground text-2xl font-bold'>
                 <Display type='currency' value={user?.deduction} />

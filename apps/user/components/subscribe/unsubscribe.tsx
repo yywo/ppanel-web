@@ -71,11 +71,11 @@ export default function Unsubscribe({ id, allowDeduction }: Readonly<Unsubscribe
           <DialogTitle>{t('confirmUnsubscribe')}</DialogTitle>
           <DialogDescription>{t('confirmUnsubscribeDescription')}</DialogDescription>
         </DialogHeader>
-        <p>{t('availableDeductionAmount')}</p>
+        <p>{t('residualValue')}</p>
         <p className='text-primary text-2xl font-semibold'>
           <Display type='currency' value={data} />
         </p>
-        <p className='text-muted-foreground text-sm'>{t('deductionNote')}</p>
+        <p className='text-muted-foreground text-sm'>{t('unsubscribeDescription')}</p>
         <DialogFooter>
           <Button variant='outline' onClick={() => setOpen(false)}>
             {t('cancel')}

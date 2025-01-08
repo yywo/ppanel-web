@@ -3,7 +3,7 @@
   "balance": "Баланс",
   "commission": "Комісія",
   "createdAt": "Час",
-  "deductBalance": "Відняти баланс",
+  "giftAmount": "Сума подарунка",
   "totalAssets": "Огляд активів",
   "type": {
     "0": "Тип",

@@ -3,7 +3,7 @@
   "balance": "Balanse",
   "commission": "Kommisjon",
   "createdAt": "Tid",
-  "deductBalance": "Trekk fra saldo",
+  "giftAmount": "Gavebeløp",
   "totalAssets": "Eiendelsoversikt",
   "type": {
     "0": "Type",

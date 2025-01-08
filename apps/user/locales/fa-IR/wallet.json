@@ -3,7 +3,7 @@
   "balance": "تعادل",
   "commission": "کمیسیون",
   "createdAt": "زمان",
-  "deductBalance": "کسر موجودی",
+  "giftAmount": "مقدار هدیه",
   "totalAssets": "بررسی کلی دارایی‌ها",
   "type": {
     "0": "نوع",

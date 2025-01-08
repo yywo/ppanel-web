@@ -3,7 +3,7 @@
   "balance": "zůstatek",
   "commission": "Provize",
   "createdAt": "čas",
-  "deductBalance": "Odečíst zůstatek",
+  "giftAmount": "Částka dárku",
   "totalAssets": "Přehled aktiv",
   "type": {
     "0": "Typ",

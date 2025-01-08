@@ -3,7 +3,7 @@
   "balance": "saldo",
   "commission": "Comisión",
   "createdAt": "hora",
-  "deductBalance": "Descontar Saldo",
+  "giftAmount": "Monto del Regalo",
   "totalAssets": "Resumen de activos",
   "type": {
     "0": "tipo",

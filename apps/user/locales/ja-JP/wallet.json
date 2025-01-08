@@ -3,7 +3,7 @@
   "balance": "残高",
   "commission": "手数料",
   "createdAt": "時間",
-  "deductBalance": "残高を差し引く",
+  "giftAmount": "ギフト金額",
   "totalAssets": "資産概要",
   "type": {
     "0": "タイプ",

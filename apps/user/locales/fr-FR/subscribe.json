@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Réinitialiser le trafic à zéro et commencer un nouveau cycle de facturation",
   "resetTrafficTitle": "Réinitialiser le trafic",
   "unsubscribe": {
-    "availableDeductionAmount": "Montant de la déduction disponible :",
     "cancel": "Annuler",
     "confirm": "Confirmer",
     "confirmUnsubscribe": "Confirmer le désabonnement",
     "confirmUnsubscribeDescription": "Êtes-vous sûr de vouloir vous désabonner ?",
-    "deductionNote": "Veuillez noter : Si vous vous désabonnez maintenant, la valeur restante de votre abonnement sera remboursée sous forme de solde déductible sur votre compte, qui pourra être utilisé pour votre prochain achat ou renouvellement d'abonnement.",
     "failed": "Échec du désabonnement. Veuillez réessayer.",
+    "residualValue": "Valeur résiduelle :",
     "success": "Vous vous êtes désabonné avec succès.",
-    "unsubscribe": "Se désabonner"
+    "unsubscribe": "Se désabonner",
+    "unsubscribeDescription": "Veuillez noter : Si vous vous désabonnez maintenant, la valeur restante de l'abonnement sera remboursée sur le solde de votre compte, qui pourra être utilisé pour votre prochain achat ou renouvellement d'abonnement."
   }
 }

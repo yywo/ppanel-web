@@ -3,7 +3,7 @@
   "balance": "Balance",
   "commission": "Commission",
   "createdAt": "Time",
-  "deductBalance": "Deduct Balance",
+  "giftAmount": "Girt Amount",
   "totalAssets": "Asset overview",
   "type": {
     "0": "Type",

@@ -3,7 +3,7 @@
   "balance": "余额",
   "commission": "佣金",
   "createdAt": "时间",
-  "deductBalance": "抵扣余额",
+  "giftAmount": "赠送金额",
   "totalAssets": "资产概览",
   "type": {
     "0": "类型",

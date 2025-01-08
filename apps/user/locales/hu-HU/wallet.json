@@ -3,7 +3,7 @@
   "balance": "Egyenleg",
   "commission": "Jutalék",
   "createdAt": "idő",
-  "deductBalance": "Egyenleg levonása",
+  "giftAmount": "Ajándék Összeg",
   "totalAssets": "Eszközök áttekintése",
   "type": {
     "0": "Típus",

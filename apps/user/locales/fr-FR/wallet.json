@@ -3,7 +3,7 @@
   "balance": "Solde",
   "commission": "Commission",
   "createdAt": "temps",
-  "deductBalance": "Déduire le solde",
+  "giftAmount": "Montant du cadeau",
   "totalAssets": "Aperçu des actifs",
   "type": {
     "0": "Type",

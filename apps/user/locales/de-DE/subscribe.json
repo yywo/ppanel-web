@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Setzen Sie den Datenverkehr auf null zurück und starten Sie einen neuen Abrechnungszyklus",
   "resetTrafficTitle": "Datenverkehr zurücksetzen",
   "unsubscribe": {
-    "availableDeductionAmount": "Verfügbarer Abzugsbetrag:",
     "cancel": "Abbrechen",
     "confirm": "Bestätigen",
     "confirmUnsubscribe": "Abbestellung bestätigen",
     "confirmUnsubscribeDescription": "Sind Sie sicher, dass Sie abbestellen möchten?",
-    "deductionNote": "Bitte beachten Sie: Wenn Sie jetzt kündigen, wird der verbleibende Wert Ihres Abonnements als abzugsfähiges Guthaben auf Ihr Konto zurückerstattet, das für Ihren nächsten Abonnementkauf oder die Verlängerung verwendet werden kann.",
     "failed": "Abbestellung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "residualValue": "Restwert:",
     "success": "Sie wurden erfolgreich abbestellt.",
-    "unsubscribe": "Abbestellen"
+    "unsubscribe": "Abbestellen",
+    "unsubscribeDescription": "Bitte beachten: Wenn Sie jetzt kündigen, wird der verbleibende Wert des Abonnements Ihrem Kontostand gutgeschrieben, der für Ihren nächsten Abonnementkauf oder die Verlängerung verwendet werden kann."
   }
 }

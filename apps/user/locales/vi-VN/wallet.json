@@ -3,7 +3,7 @@
   "balance": "Số dư",
   "commission": "Hoa hồng",
   "createdAt": "Thời gian",
-  "deductBalance": "Trừ Số Dư",
+  "giftAmount": "Số tiền quà tặng",
   "totalAssets": "Tổng quan tài sản",
   "type": {
     "0": "Loại",

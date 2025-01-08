@@ -51,14 +51,14 @@
   "resetTrafficDescription": "트래픽을 0으로 재설정하고 새로운 청구 주기를 시작합니다",
   "resetTrafficTitle": "트래픽 재설정",
   "unsubscribe": {
-    "availableDeductionAmount": "사용 가능한 공제 금액:",
     "cancel": "취소",
     "confirm": "확인",
     "confirmUnsubscribe": "구독 취소 확인",
     "confirmUnsubscribeDescription": "정말로 구독을 취소하시겠습니까?",
-    "deductionNote": "참고: 지금 구독을 취소하시면, 구독의 남은 금액이 계정에 공제 가능한 잔액으로 환불되며, 이는 다음 구독 구매나 갱신 시 사용할 수 있습니다.",
     "failed": "구독 취소에 실패했습니다. 다시 시도해 주세요.",
+    "residualValue": "잔여 가치:",
     "success": "성공적으로 구독이 취소되었습니다.",
-    "unsubscribe": "구독 취소"
+    "unsubscribe": "구독 취소",
+    "unsubscribeDescription": "참고: 지금 구독을 취소하시면, 구독의 남은 가치는 계정 잔액으로 환불되며, 이는 다음 구독 구매나 갱신에 사용할 수 있습니다."
   }
 }

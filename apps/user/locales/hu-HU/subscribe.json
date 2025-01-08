@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Forgalmi adatok nullázása és új számlázási ciklus indítása",
   "resetTrafficTitle": "Forgalom visszaállítása",
   "unsubscribe": {
-    "availableDeductionAmount": "Elérhető levonási összeg:",
     "cancel": "Mégse",
     "confirm": "Megerősít",
     "confirmUnsubscribe": "Leiratkozás megerősítése",
     "confirmUnsubscribeDescription": "Biztosan le szeretne iratkozni?",
-    "deductionNote": "Kérjük, vegye figyelembe: Ha most leiratkozik, az előfizetése fennmaradó értéke levonható egyenlegként kerül visszatérítésre a fiókjába, amelyet a következő előfizetés vásárlására vagy megújítására használhat fel.",
     "failed": "A leiratkozás nem sikerült. Kérjük, próbálja újra.",
+    "residualValue": "Maradványérték:",
     "success": "Sikeresen leiratkozott.",
-    "unsubscribe": "Leiratkozás"
+    "unsubscribe": "Leiratkozás",
+    "unsubscribeDescription": "Kérjük, vegye figyelembe: Ha most leiratkozik, az előfizetés fennmaradó értéke visszatérítésre kerül a számlaegyenlegére, amely felhasználható a következő előfizetés vásárlására vagy megújítására."
   }
 }

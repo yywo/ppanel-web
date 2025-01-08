@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Restablecer el tráfico a cero y comenzar un nuevo ciclo de facturación",
   "resetTrafficTitle": "Restablecer Tráfico",
   "unsubscribe": {
-    "availableDeductionAmount": "Monto de deducción disponible:",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
     "confirmUnsubscribe": "Confirmar baja",
     "confirmUnsubscribeDescription": "¿Estás seguro de que deseas darte de baja?",
-    "deductionNote": "Por favor, tenga en cuenta: Si se da de baja ahora, el valor restante de su suscripción se reembolsará como un saldo deducible en su cuenta, que podrá utilizar para su próxima compra o renovación de suscripción.",
     "failed": "Error al darse de baja. Por favor, inténtalo de nuevo.",
+    "residualValue": "Valor residual:",
     "success": "Te has dado de baja exitosamente.",
-    "unsubscribe": "Darse de baja"
+    "unsubscribe": "Darse de baja",
+    "unsubscribeDescription": "Por favor, tenga en cuenta: Si se da de baja ahora, el valor restante de la suscripción se reembolsará a su saldo de cuenta, el cual podrá utilizar para su próxima compra o renovación de suscripción."
   }
 }

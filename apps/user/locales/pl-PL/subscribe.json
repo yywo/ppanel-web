@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Zresetuj ruch do zera i rozpocznij nowy cykl rozliczeniowy",
   "resetTrafficTitle": "Zresetuj Ruch",
   "unsubscribe": {
-    "availableDeductionAmount": "Dostępna kwota odliczenia:",
     "cancel": "Anuluj",
     "confirm": "Potwierdź",
     "confirmUnsubscribe": "Potwierdź anulowanie subskrypcji",
     "confirmUnsubscribeDescription": "Czy na pewno chcesz anulować subskrypcję?",
-    "deductionNote": "Proszę zauważyć: Jeśli teraz zrezygnujesz z subskrypcji, pozostała wartość Twojej subskrypcji zostanie zwrócona jako saldo do odliczenia na Twoim koncie, które można wykorzystać przy następnym zakupie lub odnowieniu subskrypcji.",
     "failed": "Nie udało się anulować subskrypcji. Spróbuj ponownie.",
+    "residualValue": "Wartość resztkowa:",
     "success": "Subskrypcja została pomyślnie anulowana.",
-    "unsubscribe": "Anuluj subskrypcję"
+    "unsubscribe": "Anuluj subskrypcję",
+    "unsubscribeDescription": "Proszę zauważyć: Jeśli zrezygnujesz teraz, pozostała wartość subskrypcji zostanie zwrócona na saldo Twojego konta, które można wykorzystać przy następnym zakupie lub odnowieniu subskrypcji."
   }
 }

@@ -3,7 +3,7 @@
   "balance": "ยอดคงเหลือ",
   "commission": "คอมมิชชั่น",
   "createdAt": "เวลา",
-  "deductBalance": "หักยอดเงิน",
+  "giftAmount": "จำนวนของขวัญ",
   "totalAssets": "ภาพรวมสินทรัพย์",
   "type": {
     "0": "ประเภท",

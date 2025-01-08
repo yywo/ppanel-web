@@ -51,14 +51,14 @@
   "resetTrafficDescription": "Obnovit provoz na nulu a zahájit nový fakturační cyklus",
   "resetTrafficTitle": "Obnovit provoz",
   "unsubscribe": {
-    "availableDeductionAmount": "Dostupná částka k odečtení:",
     "cancel": "Zrušit",
     "confirm": "Potvrdit",
     "confirmUnsubscribe": "Potvrdit odhlášení",
     "confirmUnsubscribeDescription": "Opravdu se chcete odhlásit z odběru?",
-    "deductionNote": "Upozornění: Pokud se nyní odhlásíte, zbývající hodnota vašeho předplatného bude vrácena jako odpočitatelný zůstatek na váš účet, který můžete použít při dalším nákupu nebo obnovení předplatného.",
     "failed": "Nepodařilo se odhlásit z odběru. Zkuste to prosím znovu.",
+    "residualValue": "Zůstatková hodnota:",
     "success": "Úspěšně jste se odhlásili z odběru.",
-    "unsubscribe": "Odhlásit odběr"
+    "unsubscribe": "Odhlásit odběr",
+    "unsubscribeDescription": "Upozornění: Pokud se nyní odhlásíte, zbývající hodnota předplatného bude vrácena na váš účet, kde ji můžete použít na další nákup nebo obnovení předplatného."
   }
 }

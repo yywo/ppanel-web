@@ -46,7 +46,7 @@ export function Logout() {
   const pathname = location.pathname;
   if (!['', '/', '/auth', '/tos'].includes(pathname)) {
     setRedirectUrl(location.pathname);
-    location.href = `/`;
+    location.href = `/auth`;
   }
 }
 

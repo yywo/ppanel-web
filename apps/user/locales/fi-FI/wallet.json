@@ -3,7 +3,7 @@
   "balance": "Saldo",
   "commission": "Komissio",
   "createdAt": "Aika",
-  "deductBalance": "Vähennä saldoa",
+  "giftAmount": "Lahjan määrä",
   "totalAssets": "Varojen yleiskatsaus",
   "type": {
     "0": "Tyyppi",

@@ -3,7 +3,7 @@
   "balance": "शेष",
   "commission": "आयोग",
   "createdAt": "समय",
-  "deductBalance": "शेष राशि घटाएं",
+  "giftAmount": "उपहार राशि",
   "totalAssets": "संपत्ति अवलोकन",
   "type": {
     "0": "प्रकार",

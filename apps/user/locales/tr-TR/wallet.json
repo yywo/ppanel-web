@@ -3,7 +3,7 @@
   "balance": "Bakiye",
   "commission": "Komisyon",
   "createdAt": "zaman",
-  "deductBalance": "Bakiyeden Düş",
+  "giftAmount": "Hediye Miktarı",
   "totalAssets": "Varlık genel bakışı",
   "type": {
     "0": "Tür",

@@ -3,7 +3,7 @@
   "balance": "잔액",
   "commission": "위원회",
   "createdAt": "시간",
-  "deductBalance": "잔액 차감",
+  "giftAmount": "선물 금액",
   "totalAssets": "자산 개요",
   "type": {
     "0": "유형",

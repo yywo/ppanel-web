@@ -51,14 +51,14 @@
   "resetTrafficDescription": "将流量重置为零，并开始新的计费周期",
   "resetTrafficTitle": "重置流量",
   "unsubscribe": {
-    "availableDeductionAmount": "可用扣减金额：",
     "cancel": "取消",
     "confirm": "确认",
     "confirmUnsubscribe": "确认取消订阅",
     "confirmUnsubscribeDescription": "您确定要取消订阅吗？",
-    "deductionNote": "请注意：如果您现在取消订阅，订阅剩余价值将作为可扣减余额退还到您的账户中，可用于下次订阅购买或续订。",
     "failed": "取消订阅失败。请重试。",
+    "residualValue": "剩余价值：",
     "success": "您已成功取消订阅。",
-    "unsubscribe": "取消订阅"
+    "unsubscribe": "取消订阅",
+    "unsubscribeDescription": "请注意：如果您现在取消订阅，订阅的剩余价值将退还到您的账户余额中，可用于您下次的订阅购买或续订。"
   }
 }

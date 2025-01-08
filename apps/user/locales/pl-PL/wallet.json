@@ -3,7 +3,7 @@
   "balance": "saldo",
   "commission": "Prowizja",
   "createdAt": "czas",
-  "deductBalance": "Potrąć saldo",
+  "giftAmount": "Kwota Prezentu",
   "totalAssets": "Przegląd aktywów",
   "type": {
     "0": "Typ",

@@ -3,7 +3,7 @@
   "balance": "Kontostand",
   "commission": "Provision",
   "createdAt": "Zeit",
-  "deductBalance": "Guthaben abziehen",
+  "giftAmount": "Geschenkbetrag",
   "totalAssets": "Vermögensübersicht",
   "type": {
     "0": "Typ",
