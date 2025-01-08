@@ -1,8 +1,11 @@
 'use client';
 
-import { getStat } from '@/services/common/common';
+import {
+  NEXT_PUBLIC_HOME_LOCATION_COUNT,
+  NEXT_PUBLIC_HOME_SERVER_COUNT,
+  NEXT_PUBLIC_HOME_USER_COUNT,
+} from '@/config/constants';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { useQuery } from '@tanstack/react-query';
 import LocationsLittie from '@workspace/ui/lotties/locations.json';
 import ServersLottie from '@workspace/ui/lotties/servers.json';
 import UsersLottie from '@workspace/ui/lotties/users.json';
@@ -13,31 +16,20 @@ import { useEffect, useState } from 'react';
 export function Stats() {
   const t = useTranslations('index');
 
-  const { data } = useQuery({
-    queryKey: ['getStat'],
-    queryFn: async () => {
-      const { data } = await getStat({
-        skipErrorHandler: true,
-      });
-      return data.data;
-    },
-    refetchOnWindowFocus: false,
-  });
-
   const list = [
     {
       name: t('users'),
-      number: data?.user || 999,
+      number: NEXT_PUBLIC_HOME_USER_COUNT,
       icon: <DotLottieReact className='size-24' data={UsersLottie} autoplay loop />,
     },
     {
       name: t('servers'),
-      number: data?.server || 30,
+      number: NEXT_PUBLIC_HOME_SERVER_COUNT,
       icon: <DotLottieReact className='size-24' data={ServersLottie} autoplay loop />,
     },
     {
       name: t('locations'),
-      number: data?.country || 10,
+      number: NEXT_PUBLIC_HOME_LOCATION_COUNT,
       icon: <DotLottieReact className='size-24' data={LocationsLittie} autoplay loop />,
     },
   ];
