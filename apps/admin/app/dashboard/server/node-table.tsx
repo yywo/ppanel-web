@@ -135,7 +135,7 @@ export default function NodeTable() {
           accessorKey: 'speed_limit',
           header: t('speedLimit'),
           cell: ({ row }) => (
-            <Display type='traffic' value={row.getValue('speed_limit')} unlimited />
+            <Display type='trafficSpeed' value={row.getValue('speed_limit')} unlimited />
           ),
         },
         {

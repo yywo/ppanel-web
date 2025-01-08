@@ -1,8 +1,14 @@
 'use client';
 
 import { Display } from '@/components/display';
+import Renewal from '@/components/subscribe/renewal';
+import ResetTraffic from '@/components/subscribe/reset-traffic';
+import Unsubscribe from '@/components/subscribe/unsubscribe';
+import useGlobalStore from '@/config/use-global';
+import { getStat } from '@/services/common/common';
 import { queryApplicationConfig } from '@/services/user/subscribe';
 import { queryUserSubscribe } from '@/services/user/user';
+import { getPlatform } from '@/utils/common';
 import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -33,15 +39,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useState } from 'react';
-import { toast } from 'sonner';
-
-import Renewal from '@/components/subscribe/renewal';
-import ResetTraffic from '@/components/subscribe/reset-traffic';
-import Unsubscribe from '@/components/subscribe/unsubscribe';
-import useGlobalStore from '@/config/use-global';
-import { getStat } from '@/services/common/common';
-import { getPlatform } from '@/utils/common';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { toast } from 'sonner';
 import Subscribe from '../subscribe/page';
 
 export default function Content() {
@@ -195,6 +194,7 @@ export default function Content() {
                           <CardTitle className='text-sm font-medium'>
                             {t('subscriptionUrl')} {index + 1}
                           </CardTitle>
+
                           <CopyToClipboard
                             text={url}
                             onCopy={(text, result) => {
@@ -205,9 +205,7 @@ export default function Content() {
                           >
                             <span
                               className='text-primary hover:bg-accent mr-4 flex cursor-pointer rounded p-2 text-sm'
-                              onClick={(e) => {
-                                e.stopPropagation();
-                              }}
+                              onClick={(e) => e.stopPropagation()}
                             >
                               <Icon icon='uil:copy' className='mr-2 size-5' />
                               {t('copy')}
@@ -217,43 +215,48 @@ export default function Content() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className='grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-7'>
-                          {application &&
-                            application[platform]?.map((app) => (
-                              <div
-                                key={app.name}
-                                className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
-                              >
-                                <span>{app.name}</span>
-                                {app.icon && (
-                                  <Image src={app.icon} alt={app.name} width={50} height={50} />
-                                )}
-                                <div className='flex'>
-                                  <Button size='sm' variant='secondary' className='px-1.5' asChild>
-                                    <Link href={app.url!}>{t('download')}</Link>
+                          {application?.[platform]?.map((app) => (
+                            <div
+                              key={app.name}
+                              className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
+                            >
+                              <span>{app.name}</span>
+                              {app.icon && (
+                                <Image src={app.icon} alt={app.name} width={50} height={50} />
+                              )}
+                              <div className='flex'>
+                                <Button
+                                  size='sm'
+                                  variant='secondary'
+                                  className='rounded-r-none px-1.5'
+                                  asChild
+                                >
+                                  <Link href={app.url}>{t('download')}</Link>
+                                </Button>
+
+                                <CopyToClipboard
+                                  text={url}
+                                  onCopy={(text, result) => {
+                                    const href = getAppSubLink(app.subscribe_type, url);
+                                    if (isBrowser() && href) {
+                                      window.location.href = href;
+                                    } else if (result) {
+                                      toast.success(
+                                        <>
+                                          <p>{t('copySuccess')}</p>
+                                          <p>{t('manualImportMessage')}</p>
+                                        </>,
+                                      );
+                                    }
+                                  }}
+                                >
+                                  <Button size='sm' className='rounded-l-none p-2'>
+                                    {t('import')}
                                   </Button>
-                                  <CopyToClipboard
-                                    text={url}
-                                    onCopy={(text, result) => {
-                                      const href = getAppSubLink(app.subscribe_type, url);
-                                      if (isBrowser() && href) {
-                                        window.location.href = href;
-                                      } else if (result) {
-                                        toast.success(
-                                          <>
-                                            <p>{t('copySuccess')}</p>
-                                            <p>{t('manualImportMessage')}</p>
-                                          </>,
-                                        );
-                                      }
-                                    }}
-                                  >
-                                    <Button size='sm' className='p-2'>
-                                      {t('import')}
-                                    </Button>
-                                  </CopyToClipboard>
-                                </div>
+                                </CopyToClipboard>
                               </div>
-                            ))}
+                            </div>
+                          ))}
                           <div className='text-muted-foreground hidden size-full flex-col items-center justify-between gap-2 text-sm lg:flex'>
                             <span>{t('qrCode')}</span>
                             <QRCodeCanvas

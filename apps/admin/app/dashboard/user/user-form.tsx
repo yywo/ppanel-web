@@ -1,5 +1,6 @@
 'use client';
 
+import useGlobalStore from '@/config/use-global';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
@@ -43,8 +44,10 @@ export default function UserForm<T extends Record<string, any>>({
   loading,
   trigger,
   title,
-}: UserFormProps<T>) {
+}: Readonly<UserFormProps<T>>) {
   const t = useTranslations('user');
+  const { common } = useGlobalStore();
+  const { currency } = common;
 
   const [open, setOpen] = useState(false);
   const formSchema = z.object({
@@ -54,6 +57,8 @@ export default function UserForm<T extends Record<string, any>>({
     refer_code: z.string().optional(),
     is_admin: z.boolean().optional(),
     balance: z.number().optional(),
+    gift_amount: z.number().optional(),
+    commission: z.number().optional(),
   });
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -176,8 +181,56 @@ export default function UserForm<T extends Record<string, any>>({
                     <FormLabel>{t('form.balance')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
-                        prefix='¥'
+                        prefix={currency?.currency_symbol ?? '$'}
                         placeholder={t('form.balancePlaceholder')}
+                        type='number'
+                        {...field}
+                        formatInput={(value) => unitConversion('centsToDollars', value)}
+                        formatOutput={(value) => unitConversion('dollarsToCents', value)}
+                        onValueChange={(value) => {
+                          form.setValue(field.name, value);
+                        }}
+                        min={0}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='gift_amount'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('form.giftAmount')}</FormLabel>
+                    <FormControl>
+                      <EnhancedInput
+                        prefix={currency?.currency_symbol ?? '$'}
+                        placeholder={t('form.giftAmountPlaceholder')}
+                        type='number'
+                        {...field}
+                        formatInput={(value) => unitConversion('centsToDollars', value)}
+                        formatOutput={(value) => unitConversion('dollarsToCents', value)}
+                        onValueChange={(value) => {
+                          form.setValue(field.name, value);
+                        }}
+                        min={0}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='commission'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('form.commission')}</FormLabel>
+                    <FormControl>
+                      <EnhancedInput
+                        prefix={currency?.currency_symbol ?? '$'}
+                        placeholder={t('form.commissionPlaceholder')}
                         type='number'
                         {...field}
                         formatInput={(value) => unitConversion('centsToDollars', value)}

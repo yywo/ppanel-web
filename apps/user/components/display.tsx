@@ -4,7 +4,7 @@ import useGlobalStore from '@/config/use-global';
 import { formatBytes, unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 
-type DisplayType = 'currency' | 'traffic' | 'number';
+type DisplayType = 'currency' | 'traffic' | 'number' | 'trafficSpeed';
 
 interface DisplayProps<T> {
   value?: T;
@@ -26,12 +26,16 @@ export function Display<T extends number | undefined | null>({
     return formattedValue;
   }
 
-  if (['traffic', 'number'].includes(type) && unlimited && !value) {
+  if (['traffic', 'trafficSpeed', 'number'].includes(type) && unlimited && !value) {
     return t('unlimited');
   }
 
   if (type === 'traffic') {
-    return value ? formatBytes(value as number) : '0';
+    return value ? formatBytes(value) : '0';
+  }
+
+  if (type === 'trafficSpeed') {
+    return value ? formatBytes(value).replace('B', 'b') + 'ps' : '0';
   }
 
   if (type === 'number') {

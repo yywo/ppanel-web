@@ -1,11 +1,12 @@
 'use client';
 
+import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import { createUser, deleteUser, getUserList, updateUser } from '@/services/admin/user';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
-import { formatDate, unitConversion } from '@workspace/ui/utils';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
@@ -77,7 +78,22 @@ export default function Page() {
         {
           accessorKey: 'balance',
           header: t('balance'),
-          cell: ({ row }) => unitConversion('centsToDollars', row.getValue('balance')),
+          cell: ({ row }) => <Display type='currency' value={row.getValue('balance')} />,
+        },
+        {
+          accessorKey: 'gift_amount',
+          header: t('giftAmount'),
+          cell: ({ row }) => <Display type='currency' value={row.getValue('gift_amount')} />,
+        },
+        {
+          accessorKey: 'commission',
+          header: t('commission'),
+          cell: ({ row }) => <Display type='currency' value={row.getValue('commission')} />,
+        },
+        {
+          accessorKey: 'refer_code',
+          header: t('inviteCode'),
+          cell: ({ row }) => row.getValue('refer_code') || '--',
         },
         {
           accessorKey: 'referer_id',

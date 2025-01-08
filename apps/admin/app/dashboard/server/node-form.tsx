@@ -139,7 +139,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='group_id'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.nodeGroupId')}</FormLabel>
+                      <FormLabel>{t('form.groupId')}</FormLabel>
                       <FormControl>
                         <Combobox<number, false>
                           placeholder={t('form.selectNodeGroup')}
@@ -148,6 +148,9 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             value: item.id,
                             label: item.name,
                           }))}
+                          onChange={(value) => {
+                            form.setValue(field.name, value || 0);
+                          }}
                         />
                       </FormControl>
                       <FormMessage />

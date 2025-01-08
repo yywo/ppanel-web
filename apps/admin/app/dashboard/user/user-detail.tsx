@@ -1,10 +1,11 @@
 'use client';
 
+import { Display } from '@/components/display';
 import { getUserDetail } from '@/services/admin/user';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
-import { formatDate, unitConversion } from '@workspace/ui/utils';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -43,7 +44,21 @@ export function UserDetail({ id }: { id: number }) {
             </li>
             <li className='flex items-center justify-between font-semibold'>
               <span className='text-muted-foreground'>{t('balance')}</span>
-              <span>{unitConversion('centsToDollars', data?.balance)}</span>
+              <span>
+                <Display type='currency' value={data?.balance} />
+              </span>
+            </li>
+            <li className='flex items-center justify-between'>
+              <span className='text-muted-foreground'>{t('giftAmount')}</span>
+              <span>
+                <Display type='currency' value={data?.gift_amount} />
+              </span>
+            </li>
+            <li className='flex items-center justify-between'>
+              <span className='text-muted-foreground'>{t('commission')}</span>
+              <span>
+                <Display type='currency' value={data?.commission} />
+              </span>
             </li>
             <li className='flex items-center justify-between'>
               <span className='text-muted-foreground'>{t('createdAt')}</span>
