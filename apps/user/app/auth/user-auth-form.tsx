@@ -1,7 +1,6 @@
 'use client';
 
-import useGlobalStore from '@/config/use-global';
-import { checkUser, resetPassword, userLogin, userRegister } from '@/services/common/auth';
+import { resetPassword, userLogin, userRegister } from '@/services/common/auth';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useState, useTransition } from 'react';
@@ -19,8 +18,6 @@ import UserResetForm from './user-reset-form';
 
 export default function UserAuthForm() {
   const t = useTranslations('auth');
-  const { common } = useGlobalStore();
-  const { register } = common;
   const router = useRouter();
   const [type, setType] = useState<'login' | 'register' | 'reset'>();
   const [loading, startTransition] = useTransition();
@@ -42,33 +39,31 @@ export default function UserAuthForm() {
     startTransition(async () => {
       try {
         switch (type) {
-          case 'login':
-            // eslint-disable-next-line no-case-declarations
+          case 'login': {
             const login = await userLogin(params);
             toast.success(t('login.success'));
             onLogin(login.data.data?.token);
             break;
-          case 'register':
-            // eslint-disable-next-line no-case-declarations
+          }
+          case 'register': {
             const create = await userRegister(params);
             toast.success(t('register.success'));
             onLogin(create.data.data?.token);
             break;
+          }
           case 'reset':
             await resetPassword(params);
             toast.success(t('reset.success'));
             setType('login');
             break;
-          default:
+          default: {
             if (type === 'reset') break;
-            // eslint-disable-next-line no-case-declarations
-            const response = await checkUser(params);
             setInitialValues({
               ...initialValues,
               ...params,
             });
-            setType(response.data.data?.exist ? 'login' : 'register');
             break;
+          }
         }
       } catch (error) {
         /* empty */
@@ -116,6 +111,8 @@ export default function UserAuthForm() {
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
+          type={type}
+          setType={setType}
         />
       );
       break;

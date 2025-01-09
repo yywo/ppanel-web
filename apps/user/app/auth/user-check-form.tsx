@@ -1,4 +1,5 @@
 import useGlobalStore from '@/config/use-global';
+import { checkUser } from '@/services/common/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
@@ -9,32 +10,62 @@ import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+interface UserCheckFormProps {
+  loading?: boolean;
+  onSubmit: (data: any) => void;
+  initialValues: any;
+  type?: 'login' | 'register' | 'reset';
+  setType: (type: 'login' | 'register' | 'reset') => void;
+}
+
 export default function UserCheckForm({
   loading,
   onSubmit,
   initialValues,
-}: {
-  loading?: boolean;
-  onSubmit: (data: any) => void;
-  initialValues: any;
-}) {
+  type,
+  setType,
+}: Readonly<UserCheckFormProps>) {
   const t = useTranslations('auth.check');
   const { common } = useGlobalStore();
   const { register } = common;
+
+  const handleCheckUser = async (email: string) => {
+    try {
+      const response = await checkUser({ email });
+      const exist = response.data.data?.exist;
+
+      if (exist) {
+        setType('login');
+        return true;
+      }
+
+      if (!register.enable_email_domain_suffix) {
+        setType('register');
+        return true;
+      }
+
+      const domain = email.split('@')[1];
+      const isValid = register.email_domain_suffix_list.split('\n').includes(domain || '');
+
+      if (isValid) {
+        setType('register');
+        return true;
+      }
+
+      return false;
+    } catch (error) {
+      console.log('Error checking user:', error);
+      return false;
+    }
+  };
+
   const formSchema = z.object({
     email: z
       .string()
       .email(t('email'))
-      .refine(
-        (email) => {
-          if (!register.enable_email_domain_suffix) return true;
-          const domain = email.split('@')[1];
-          return register.email_domain_suffix_list.split('\n').includes(domain || '');
-        },
-        {
-          message: t('whitelist'),
-        },
-      ),
+      .refine(handleCheckUser, {
+        message: t('whitelist'),
+      }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -45,7 +76,7 @@ export default function UserCheckForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const typingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleEmailChange = (value: string) => {
+  const handleEmailChange = async (value: string) => {
     form.setValue('email', value);
 
     if (typingTimeoutRef.current) {
@@ -60,11 +91,11 @@ export default function UserCheckForm({
       } else {
         setIsSubmitting(false);
       }
-    }, 500);
+    }, 1000);
   };
 
   useEffect(() => {
-    if (initialValues && initialValues.email) {
+    if (initialValues?.email) {
       handleEmailChange(initialValues.email);
     }
     return () => {

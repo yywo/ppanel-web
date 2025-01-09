@@ -4,7 +4,6 @@ import {
   NEXT_PUBLIC_DEFAULT_USER_EMAIL,
   NEXT_PUBLIC_DEFAULT_USER_PASSWORD,
 } from '@/config/constants';
-import useGlobalStore from '@/config/use-global';
 import { checkUser, resetPassword, userLogin, userRegister } from '@/services/common/auth';
 import { getRedirectUrl, setAuthorization } from '@/utils/common';
 import { useTranslations } from 'next-intl';
@@ -18,8 +17,6 @@ import UserResetForm from './user-reset-form';
 
 export default function UserAuthForm() {
   const t = useTranslations('auth');
-  const { common } = useGlobalStore();
-  const { register } = common;
   const router = useRouter();
   const [type, setType] = useState<'login' | 'register' | 'reset'>();
   const [loading, startTransition] = useTransition();

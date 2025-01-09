@@ -8,30 +8,21 @@ import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+interface UserCheckFormProps {
+  loading?: boolean;
+  onSubmit: (data: any) => void;
+  initialValues: any;
+}
+
 export default function UserCheckForm({
   loading,
   onSubmit,
   initialValues,
-}: {
-  loading?: boolean;
-  onSubmit: (data: any) => void;
-  initialValues: any;
-}) {
+}: Readonly<UserCheckFormProps>) {
   const t = useTranslations('auth.check');
-  // const { common } = useGlobalStore();
-  // const { register } = common;
+
   const formSchema = z.object({
     email: z.string().email(t('email')),
-    // .refine(
-    //   (email) => {
-    //     if (!register.enable_email_domain_suffix) return true;
-    //     const domain = email.split('@')[1] as string;
-    //     return register.email_domain_suffix_list.split('\n').includes(domain);
-    //   },
-    //   {
-    //     message: t('whitelist'),
-    //   },
-    // ),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -61,7 +52,7 @@ export default function UserCheckForm({
   };
 
   useEffect(() => {
-    if (initialValues && initialValues.email) {
+    if (initialValues?.email) {
       handleEmailChange(initialValues.email);
     }
     return () => {
