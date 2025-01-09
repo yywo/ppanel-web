@@ -187,10 +187,11 @@ declare namespace API {
     quantity: number;
     price: number;
     amount: number;
-    deduction: number;
+    gift_amount: number;
     discount: number;
     coupon: string;
     coupon_discount: number;
+    commission: number;
     method: string;
     fee_amount: number;
     trade_no: string;
@@ -208,10 +209,11 @@ declare namespace API {
     quantity: number;
     price: number;
     amount: number;
-    deduction: number;
+    gift_amount: number;
     discount: number;
     coupon: string;
     coupon_discount: number;
+    commission: number;
     method: string;
     fee_amount: number;
     trade_no: string;
@@ -239,7 +241,7 @@ declare namespace API {
     price: number;
     amount: number;
     discount: number;
-    deduction: number;
+    gift_amount: number;
     coupon: string;
     coupon_discount: number;
     fee_amount: number;
@@ -611,7 +613,6 @@ declare namespace API {
     balance: number;
     commission: number;
     deduction: number;
-    gift_amount: number;
     telegram: number;
     refer_code: string;
     referer_id: number;
