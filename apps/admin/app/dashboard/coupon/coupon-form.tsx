@@ -235,7 +235,7 @@ export default function CouponForm<T extends Record<string, any>>({
               )}
               <FormField
                 control={form.control}
-                name='server'
+                name='subscribe'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('form.specifiedServer')}</FormLabel>

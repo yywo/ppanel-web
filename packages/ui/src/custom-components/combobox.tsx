@@ -100,7 +100,7 @@ export function Combobox<T, M extends boolean = false>({
               {options.map((option) => (
                 <CommandItem
                   key={String(option.label + option.value)}
-                  value={option.label}
+                  value={option.label + option.value}
                   onSelect={() => handleSelect(option.value)}
                 >
                   {option.children || option.label}

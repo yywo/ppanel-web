@@ -96,9 +96,9 @@ export default function Page() {
                 defaultChecked={row.getValue('enable')}
                 onCheckedChange={async (checked) => {
                   await updateCoupon({
-                    ...row,
+                    ...row.original,
                     enable: checked,
-                  } as any);
+                  } as API.UpdateCouponRequest);
                   ref.current?.refresh();
                 }}
               />
