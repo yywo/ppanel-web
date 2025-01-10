@@ -111,7 +111,7 @@ export default function UserAuthForm() {
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
-          type={type}
+          setInitialValues={setInitialValues}
           setType={setType}
         />
       );
