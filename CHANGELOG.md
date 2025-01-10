@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.6](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2025-01-10)
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Update UserCheckForm to use setInitialValues and modify onSubmit type ([c984c0d](https://github.com/perfect-panel/ppanel-web/commit/c984c0d))
+
 # [1.0.0-beta.5](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2025-01-09)
 
 
