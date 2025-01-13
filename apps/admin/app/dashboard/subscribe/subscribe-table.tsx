@@ -36,7 +36,7 @@ export default function SubscribeTable() {
   });
   const ref = useRef<ProTableActions>(null);
   return (
-    <ProTable<API.Subscribe, { group_id: number; query: string }>
+    <ProTable<API.SubscribeItem, { group_id: number; query: string }>
       action={ref}
       header={{
         toolbar: (
@@ -186,7 +186,7 @@ export default function SubscribeTable() {
       ]}
       actions={{
         render: (row) => [
-          <SubscribeForm<API.Subscribe>
+          <SubscribeForm<API.SubscribeItem>
             key='edit'
             trigger={t('edit')}
             title={t('editSubscribe')}
@@ -221,7 +221,7 @@ export default function SubscribeTable() {
                   ...params,
                   show: false,
                   sell: false,
-                });
+                } as API.CreateSubscribeRequest);
                 toast.success(t('copySuccess'));
                 ref.current?.refresh();
                 setLoading(false);
@@ -241,7 +241,7 @@ export default function SubscribeTable() {
             description={t('deleteWarning')}
             onConfirm={async () => {
               await deleteSubscribe({
-                id: row.id,
+                id: row.id!,
               });
               toast.success(t('deleteSuccess'));
               ref.current?.refresh();
@@ -258,7 +258,7 @@ export default function SubscribeTable() {
             description={t('deleteWarning')}
             onConfirm={async () => {
               await batchDeleteSubscribe({
-                ids: rows.map((item) => item.id),
+                ids: rows.map((item) => item.id) as number[],
               });
 
               toast.success(t('deleteSuccess'));
@@ -290,7 +290,7 @@ export default function SubscribeTable() {
 
         if (changedItems.length > 0) {
           subscribeSort({
-            sort: changedItems.map((item) => ({ id: item.id, sort: item.sort })),
+            sort: changedItems.map((item) => ({ id: item.id, sort: item.sort })) as API.SortItem[],
           });
         }
 
