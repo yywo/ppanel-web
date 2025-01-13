@@ -7,9 +7,10 @@ interface TagInputProps {
   value?: string[];
   onChange?: (tags: string[]) => void;
   placeholder?: string;
+  separator?: string;
 }
 
-export function TagInput({ value = [], onChange, placeholder }: TagInputProps) {
+export function TagInput({ value = [], onChange, placeholder, separator = ',' }: TagInputProps) {
   const [inputValue, setInputValue] = useState('');
   const [tags, setTags] = useState<string[]>(value);
 
@@ -17,17 +18,27 @@ export function TagInput({ value = [], onChange, placeholder }: TagInputProps) {
     setTags(value.map((tag) => tag.trim()).filter((tag) => tag));
   }, [value]);
 
+  function normalizeInput(input: string) {
+    // 将中文逗号替换为英文逗号
+    return input.replace(/，/g, ',');
+  }
+
   function addTag() {
-    const newTag = inputValue.trim();
-    if (newTag && !tags.includes(newTag)) {
-      const newTags = [...tags, newTag];
-      updateTags(newTags);
+    const normalizedInput = normalizeInput(inputValue);
+    const newTags = normalizedInput
+      .split(separator)
+      .map((tag) => tag.trim())
+      .filter((tag) => tag && !tags.includes(tag));
+
+    if (newTags.length > 0) {
+      const updatedTags = [...tags, ...newTags];
+      updateTags(updatedTags);
     }
     setInputValue('');
   }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === separator || event.key === '，') {
       event.preventDefault();
       addTag();
     } else if (event.key === 'Backspace' && inputValue === '') {

@@ -117,19 +117,19 @@ export default function NodeTable() {
           },
         },
         {
-          accessorKey: 'status',
-          header: t('status'),
-          cell: ({ row }) => {
-            return <NodeStatusCell status={row.original?.status} />;
-          },
-        },
-        {
           accessorKey: 'name',
           header: t('name'),
         },
         {
           accessorKey: 'server_addr',
           header: t('serverAddr'),
+        },
+        {
+          accessorKey: 'status',
+          header: t('status'),
+          cell: ({ row }) => {
+            return <NodeStatusCell status={row.original?.status} />;
+          },
         },
         {
           accessorKey: 'speed_limit',
@@ -150,6 +150,24 @@ export default function NodeTable() {
           cell: ({ row }) => {
             const name = groups?.find((group) => group.id === row.getValue('group_id'))?.name;
             return name ? <Badge variant='outline'>{name}</Badge> : '--';
+          },
+        },
+        {
+          accessorKey: 'tags',
+          header: t('tags'),
+          cell: ({ row }) => {
+            const tags = (row.getValue('tags') as string[]) || [];
+            return tags.length > 0 ? (
+              <div className='flex gap-1'>
+                {tags.map((tag) => (
+                  <Badge key={tag} variant='outline'>
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            ) : (
+              '--'
+            );
           },
         },
       ]}

@@ -91,6 +91,7 @@ const protocolConfigSchema = z.discriminatedUnion('protocol', [
 
 const baseFormSchema = z.object({
   name: z.string(),
+  tags: z.array(z.string()).nullish().default([]),
   server_addr: z.string(),
   speed_limit: z.number().nullish(),
   traffic_ratio: z.number().default(1),

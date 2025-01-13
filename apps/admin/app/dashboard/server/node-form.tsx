@@ -35,6 +35,7 @@ import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import TagInput from '@workspace/ui/custom-components/tag-input';
 import { cn } from '@workspace/ui/lib/utils';
 import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
@@ -63,6 +64,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      tags: [],
       traffic_ratio: 1,
       protocol: 'shadowsocks',
       ...initialValues,
@@ -158,6 +160,23 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   )}
                 />
               </div>
+              <FormField
+                control={form.control}
+                name='tags'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('form.tags')}</FormLabel>
+                    <FormControl>
+                      <TagInput
+                        placeholder={t('form.tagsPlaceholder')}
+                        value={field.value || []}
+                        onChange={(value) => form.setValue(field.name, value)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <div className='grid grid-cols-3 gap-2'>
                 <FormField
                   control={form.control}
