@@ -99,8 +99,8 @@ export default function Page() {
                 <EnhancedInput
                   type='number'
                   min={0}
-                  value={data?.sms_expire ?? 60}
-                  onValueBlur={(value) => updateConfig('sms_expire', value)}
+                  value={data?.sms_expire_time ?? 300}
+                  onValueBlur={(value) => updateConfig('sms_expire_time', value)}
                   suffix='S'
                   disabled={isFetching}
                   placeholder={t('placeholders.expireTime')}
