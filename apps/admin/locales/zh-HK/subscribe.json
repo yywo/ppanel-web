@@ -36,7 +36,7 @@
     "discount_price": "折扣價格",
     "duration": "時長（月）",
     "groupId": "訂閱組別",
-    "inventory": "庫存",
+    "inventory": "訂閱限制",
     "monthlyReset": "每月重置",
     "name": "名稱",
     "noLimit": "無限制",
@@ -86,12 +86,13 @@
     "updateSuccess": "更新成功",
     "updatedAt": "更新時間"
   },
-  "inventory": "庫存",
+  "inventory": "訂閱限制",
   "name": "名稱",
   "quota": "限購/次",
   "replacement": "重置價格/次",
   "sell": "銷售",
   "show": "首頁顯示",
+  "sold": "訂閱數量",
   "subscribe": "訂閱",
   "subscribeGroup": "訂閱組",
   "tabs": {

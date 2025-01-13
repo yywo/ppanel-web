@@ -36,7 +36,7 @@
     "discount_price": "قیمت تخفیف",
     "duration": "مدت زمان (ماه‌ها)",
     "groupId": "گروه اشتراک",
-    "inventory": "موجودی",
+    "inventory": "محدودیت اشتراک",
     "monthlyReset": "بازنشانی ماهانه",
     "name": "نام",
     "noLimit": "بدون محدودیت",
@@ -86,12 +86,13 @@
     "updateSuccess": "به‌روزرسانی با موفقیت انجام شد",
     "updatedAt": "به‌روزرسانی در"
   },
-  "inventory": "موجودی",
+  "inventory": "محدودیت اشتراک",
   "name": "نام",
   "quota": "محدودیت خرید/زمان",
   "replacement": "تنظیم مجدد قیمت/زمان",
   "sell": "فروش",
   "show": "نمایش خانه",
+  "sold": "تعداد اشتراک",
   "subscribe": "اشتراک",
   "subscribeGroup": "گروه اشتراک",
   "tabs": {

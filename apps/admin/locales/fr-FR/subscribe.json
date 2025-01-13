@@ -36,7 +36,7 @@
     "discount_price": "Prix remisé",
     "duration": "Durée (mois)",
     "groupId": "Groupe d'abonnement",
-    "inventory": "Stock",
+    "inventory": "Limite d'abonnement",
     "monthlyReset": "Réinitialisation Mensuelle",
     "name": "Nom",
     "noLimit": "Illimité",
@@ -86,12 +86,13 @@
     "updateSuccess": "Mise à jour réussie",
     "updatedAt": "Date de mise à jour"
   },
-  "inventory": "inventaire",
+  "inventory": "Limite d'abonnement",
   "name": "Nom",
   "quota": "Limite d'achat/par fois",
   "replacement": "Réinitialiser le prix/par fois",
   "sell": "Vente",
   "show": "Afficher sur la page d'accueil",
+  "sold": "Nombre d'abonnements",
   "subscribe": "S'abonner",
   "subscribeGroup": "S'abonner au groupe",
   "tabs": {

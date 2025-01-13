@@ -183,6 +183,11 @@ export default function SubscribeTable() {
             return name ? <Badge variant='outline'>{name}</Badge> : '--';
           },
         },
+        {
+          accessorKey: 'sold',
+          header: t('sold'),
+          cell: ({ row }) => <Badge variant='default'>{row.getValue('sold')}</Badge>,
+        },
       ]}
       actions={{
         render: (row) => [

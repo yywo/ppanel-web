@@ -36,7 +36,7 @@
     "discount_price": "Cena po slevě",
     "duration": "Doba trvání (měsíce)",
     "groupId": "Skupina předplatného",
-    "inventory": "Sklad",
+    "inventory": "Limit předplatného",
     "monthlyReset": "Měsíční Reset",
     "name": "Název",
     "noLimit": "Bez omezení",
@@ -86,12 +86,13 @@
     "updateSuccess": "Úspěšně aktualizováno",
     "updatedAt": "Čas aktualizace"
   },
-  "inventory": "inventář",
+  "inventory": "Limit předplatného",
   "name": "název",
   "quota": "Limit na nákup/čas",
   "replacement": "Obnovení ceny/krát",
   "sell": "Prodej",
   "show": "Zobrazit na hlavní stránce",
+  "sold": "Počet předplatných",
   "subscribe": "Předplatit",
   "subscribeGroup": "Přihlásit se ke skupině",
   "tabs": {

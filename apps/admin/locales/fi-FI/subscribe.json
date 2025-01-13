@@ -36,7 +36,7 @@
     "discount_price": "Alennettu hinta",
     "duration": "Kesto (kuukautta)",
     "groupId": "Tilausryhmä",
-    "inventory": "Varasto",
+    "inventory": "Tilausraja",
     "monthlyReset": "Kuukausittainen Nollaus",
     "name": "Nimi",
     "noLimit": "Ei rajoitusta",
@@ -86,12 +86,13 @@
     "updateSuccess": "Päivitys onnistui",
     "updatedAt": "Päivitetty"
   },
-  "inventory": "varasto",
+  "inventory": "Tilausraja",
   "name": "Nimi",
   "quota": "Ostorajoitus/kerta",
   "replacement": "Nollaa hinta/kerta",
   "sell": "myydä",
   "show": "Etusivun näyttö",
+  "sold": "Tilausmäärä",
   "subscribe": "Tilaa",
   "subscribeGroup": "Tilaa ryhmä",
   "tabs": {

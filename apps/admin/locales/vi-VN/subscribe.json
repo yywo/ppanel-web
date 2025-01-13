@@ -36,7 +36,7 @@
     "discount_price": "Giá sau giảm",
     "duration": "Thời gian (tháng)",
     "groupId": "Nhóm Đăng Ký",
-    "inventory": "Tồn kho",
+    "inventory": "Giới Hạn Đăng Ký",
     "monthlyReset": "Đặt Lại Hàng Tháng",
     "name": "Tên",
     "noLimit": "Không giới hạn",
@@ -86,12 +86,13 @@
     "updateSuccess": "Cập nhật thành công",
     "updatedAt": "Thời gian cập nhật"
   },
-  "inventory": "Hàng tồn kho",
+  "inventory": "Giới Hạn Đăng Ký",
   "name": "Tên",
   "quota": "Giới hạn mua/lần",
   "replacement": "Đặt lại giá/lần",
   "sell": "Bán hàng",
   "show": "Hiển thị trang chủ",
+  "sold": "Số lượng đăng ký",
   "subscribe": "Đăng ký",
   "subscribeGroup": "Nhóm đăng ký",
   "tabs": {

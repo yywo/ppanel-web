@@ -56,7 +56,7 @@ interface SubscribeFormProps<T> {
 }
 
 const defaultValues = {
-  inventory: -1,
+  inventory: 0,
   speed_limit: 0,
   device_limit: 0,
   traffic: 0,
@@ -319,10 +319,10 @@ export default function SubscribeForm<T extends Record<string, any>>({
                             <FormLabel>{t('form.inventory')}</FormLabel>
                             <FormControl>
                               <EnhancedInput
-                                placeholder={`-1 ${t('form.noLimit')}`}
+                                placeholder={t('form.noLimit')}
                                 type='number'
-                                {...field}
-                                min={-1}
+                                value={field.value === -1 ? 0 : field.value}
+                                min={0}
                                 onValueChange={(value) => {
                                   form.setValue(field.name, value);
                                 }}

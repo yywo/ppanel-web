@@ -36,7 +36,7 @@
     "discount_price": "Preço com desconto",
     "duration": "Duração (meses)",
     "groupId": "Grupo de Assinatura",
-    "inventory": "Estoque",
+    "inventory": "Limite de Assinatura",
     "monthlyReset": "Reinicialização Mensal",
     "name": "Nome",
     "noLimit": "Sem limite",
@@ -86,12 +86,13 @@
     "updateSuccess": "Atualizado com sucesso",
     "updatedAt": "Atualizado em"
   },
-  "inventory": "estoque",
+  "inventory": "Limite de Assinatura",
   "name": "nome",
   "quota": "Limite de compra/vez",
   "replacement": "Redefinir preço/vez",
   "sell": "venda",
   "show": "Exibição na página inicial",
+  "sold": "Contagem de Assinaturas",
   "subscribe": "Inscrever-se",
   "subscribeGroup": "Inscrever-se no grupo",
   "tabs": {

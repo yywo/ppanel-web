@@ -36,7 +36,7 @@
     "discount_price": "折扣价格",
     "duration": "时长（月）",
     "groupId": "订阅组",
-    "inventory": "库存",
+    "inventory": "订阅限制",
     "monthlyReset": "按月重置",
     "name": "名称",
     "noLimit": "无限制",
@@ -86,12 +86,13 @@
     "updateSuccess": "更新成功",
     "updatedAt": "更新时间"
   },
-  "inventory": "库存",
+  "inventory": "订阅限制",
   "name": "名称",
   "quota": "限购/次",
   "replacement": "重置价格/次",
   "sell": "销售",
   "show": "首页显示",
+  "sold": "订阅数量",
   "subscribe": "订阅",
   "subscribeGroup": "订阅组",
   "tabs": {

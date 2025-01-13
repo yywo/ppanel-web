@@ -36,7 +36,7 @@
     "discount_price": "İndirimli Fiyat",
     "duration": "Süre (ay)",
     "groupId": "Abonelik Grubu",
-    "inventory": "Stok",
+    "inventory": "Abonelik Limiti",
     "monthlyReset": "Aylık Sıfırlama",
     "name": "Ad",
     "noLimit": "Sınırsız",
@@ -86,12 +86,13 @@
     "updateSuccess": "Başarıyla güncellendi",
     "updatedAt": "Güncellenme Zamanı"
   },
-  "inventory": "envanter",
+  "inventory": "Abonelik Limiti",
   "name": "isim",
   "quota": "Kota/satın alma",
   "replacement": "Fiyatı sıfırla/kez",
   "sell": "satış",
   "show": "Ana sayfada göster",
+  "sold": "Abonelik Sayısı",
   "subscribe": "Abone Ol",
   "subscribeGroup": "Gruba Abone Ol",
   "tabs": {

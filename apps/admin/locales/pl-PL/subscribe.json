@@ -36,7 +36,7 @@
     "discount_price": "Cena po zniżce",
     "duration": "Czas trwania (miesiące)",
     "groupId": "Grupa subskrypcyjna",
-    "inventory": "Zapas",
+    "inventory": "Limit subskrypcji",
     "monthlyReset": "Miesięczny Reset",
     "name": "Nazwa",
     "noLimit": "Bez ograniczeń",
@@ -86,12 +86,13 @@
     "updateSuccess": "Zaktualizowano pomyślnie",
     "updatedAt": "Czas aktualizacji"
   },
-  "inventory": "inwentarz",
+  "inventory": "Limit subskrypcji",
   "name": "Nazwa",
   "quota": "Limit zakupu/raz",
   "replacement": "Zresetuj cenę/raz",
   "sell": "Sprzedaż",
   "show": "Pokaż na stronie głównej",
+  "sold": "Liczba subskrypcji",
   "subscribe": "Subskrybuj",
   "subscribeGroup": "Subskrybuj grupę",
   "tabs": {

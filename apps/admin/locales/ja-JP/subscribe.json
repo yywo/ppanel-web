@@ -36,7 +36,7 @@
     "discount_price": "割引価格",
     "duration": "期間（月）",
     "groupId": "サブスクリプショングループ",
-    "inventory": "在庫",
+    "inventory": "サブスクリプション制限",
     "monthlyReset": "毎月リセット",
     "name": "名称",
     "noLimit": "無制限",
@@ -86,12 +86,13 @@
     "updateSuccess": "更新成功",
     "updatedAt": "更新日時"
   },
-  "inventory": "在庫",
+  "inventory": "サブスクリプションの制限",
   "name": "名前",
   "quota": "購入制限/回",
   "replacement": "リセット価格/回",
   "sell": "販売",
   "show": "ホームページ表示",
+  "sold": "サブスクリプション数",
   "subscribe": "購読",
   "subscribeGroup": "グループを購読する",
   "tabs": {

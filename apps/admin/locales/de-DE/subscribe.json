@@ -36,7 +36,7 @@
     "discount_price": "Rabattpreis",
     "duration": "Dauer (Monate)",
     "groupId": "Abonnementgruppe",
-    "inventory": "Bestand",
+    "inventory": "Abonnementslimit",
     "monthlyReset": "Monatliches Zurücksetzen",
     "name": "Name",
     "noLimit": "Keine Begrenzung",
@@ -86,12 +86,13 @@
     "updateSuccess": "Erfolgreich aktualisiert",
     "updatedAt": "Aktualisierungszeit"
   },
-  "inventory": "Inventar",
+  "inventory": "Abonnementslimit",
   "name": "Name",
   "quota": "Kaufbeschränkung/pro Einkauf",
   "replacement": "Preis pro Zurücksetzung",
   "sell": "Verkauf",
   "show": "Startseite anzeigen",
+  "sold": "Abonnentenzahl",
   "subscribe": "Abonnieren",
   "subscribeGroup": "Gruppe abonnieren",
   "tabs": {

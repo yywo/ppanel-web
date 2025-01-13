@@ -36,7 +36,7 @@
     "discount_price": "할인가",
     "duration": "기간 (개월)",
     "groupId": "구독 그룹",
-    "inventory": "재고",
+    "inventory": "구독 한도",
     "monthlyReset": "월별 초기화",
     "name": "이름",
     "noLimit": "무제한",
@@ -86,12 +86,13 @@
     "updateSuccess": "업데이트 성공",
     "updatedAt": "업데이트 시간"
   },
-  "inventory": "재고",
+  "inventory": "구독 한도",
   "name": "이름",
   "quota": "구매 제한/회",
   "replacement": "가격 재설정/회",
   "sell": "판매",
   "show": "홈 화면 표시",
+  "sold": "구독 수",
   "subscribe": "구독",
   "subscribeGroup": "구독 그룹",
   "tabs": {

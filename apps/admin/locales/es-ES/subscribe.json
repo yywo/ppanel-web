@@ -36,7 +36,7 @@
     "discount_price": "Precio con descuento",
     "duration": "Duración (meses)",
     "groupId": "Grupo de Suscripción",
-    "inventory": "Inventario",
+    "inventory": "Límite de suscripción",
     "monthlyReset": "Reinicio Mensual",
     "name": "Nombre",
     "noLimit": "Sin límite",
@@ -86,12 +86,13 @@
     "updateSuccess": "Actualización exitosa",
     "updatedAt": "Fecha de actualización"
   },
-  "inventory": "inventario",
+  "inventory": "Límite de suscripción",
   "name": "Nombre",
   "quota": "Límite de compra/vez",
   "replacement": "Restablecer precio/vez",
   "sell": "Venta",
   "show": "Mostrar en la página de inicio",
+  "sold": "Conteo de Suscripciones",
   "subscribe": "Suscribirse",
   "subscribeGroup": "Suscribirse al grupo",
   "tabs": {

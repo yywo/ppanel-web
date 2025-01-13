@@ -36,7 +36,7 @@
     "discount_price": "Discount Price",
     "duration": "Duration (months)",
     "groupId": "Subscription Group",
-    "inventory": "Inventory",
+    "inventory": "Subscription Limit",
     "monthlyReset": "Monthly Reset",
     "name": "Name",
     "noLimit": "No Limit",
@@ -86,12 +86,13 @@
     "updateSuccess": "Update Successful",
     "updatedAt": "Updated At"
   },
-  "inventory": "Inventory",
+  "inventory": "Subscription Limit",
   "name": "Name",
   "quota": "Purchase Limit/Time",
   "replacement": "Reset Price/Time",
   "sell": "Sell",
   "show": "Home display",
+  "sold": "Subscription Count",
   "subscribe": "Subscribe",
   "subscribeGroup": "Subscription Group",
   "tabs": {

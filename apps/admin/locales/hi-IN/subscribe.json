@@ -36,7 +36,7 @@
     "discount_price": "छूट मूल्य",
     "duration": "अवधि (महीने)",
     "groupId": "सदस्यता समूह",
-    "inventory": "भंडार",
+    "inventory": "सदस्यता सीमा",
     "monthlyReset": "मासिक रीसेट",
     "name": "नाम",
     "noLimit": "कोई सीमा नहीं",
@@ -86,12 +86,13 @@
     "updateSuccess": "सफलतापूर्वक अपडेट किया गया",
     "updatedAt": "अपडेट का समय"
   },
-  "inventory": "इन्वेंटरी",
+  "inventory": "सदस्यता सीमा",
   "name": "नाम",
   "quota": "प्रति खरीद सीमा",
   "replacement": "मूल्य/प्रति बार रीसेट करें",
   "sell": "बिक्री",
   "show": "मुखपृष्ठ पर दिखाएं",
+  "sold": "सदस्यता गणना",
   "subscribe": "सदस्यता लें",
   "subscribeGroup": "सदस्यता समूह",
   "tabs": {

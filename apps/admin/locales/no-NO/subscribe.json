@@ -36,7 +36,7 @@
     "discount_price": "Rabattert pris",
     "duration": "Varighet (måneder)",
     "groupId": "Abonnementsgruppe",
-    "inventory": "Lager",
+    "inventory": "Abonnementsgrense",
     "monthlyReset": "Månedlig Tilbakestilling",
     "name": "Navn",
     "noLimit": "Ubegrenset",
@@ -86,12 +86,13 @@
     "updateSuccess": "Oppdatering vellykket",
     "updatedAt": "Oppdatert"
   },
-  "inventory": "lager",
+  "inventory": "Abonnementsgrense",
   "name": "Navn",
   "quota": "Kjøpsgrense/gang",
   "replacement": "Tilbakestill pris/gang",
   "sell": "Salg",
   "show": "Vis på forsiden",
+  "sold": "Abonnementsantall",
   "subscribe": "Abonner",
   "subscribeGroup": "Abonner på gruppe",
   "tabs": {

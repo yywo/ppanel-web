@@ -36,7 +36,7 @@
     "discount_price": "Kedvezményes ár",
     "duration": "Időtartam (hónap)",
     "groupId": "Előfizetési csoport",
-    "inventory": "Készlet",
+    "inventory": "Előfizetési korlát",
     "monthlyReset": "Havi Visszaállítás",
     "name": "Név",
     "noLimit": "Korlátlan",
@@ -86,12 +86,13 @@
     "updateSuccess": "Sikeres frissítés",
     "updatedAt": "Frissítés ideje"
   },
-  "inventory": "készlet",
+  "inventory": "Előfizetési korlát",
   "name": "Név",
   "quota": "Vásárlási korlát/alkalom",
   "replacement": "Ár visszaállítása/alkalom",
   "sell": "eladás",
   "show": "Kezdőlap megjelenítése",
+  "sold": "Előfizetések száma",
   "subscribe": "Feliratkozás",
   "subscribeGroup": "Feliratkozási csoport",
   "tabs": {

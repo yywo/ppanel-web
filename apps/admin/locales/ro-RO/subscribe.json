@@ -36,7 +36,7 @@
     "discount_price": "Preț redus",
     "duration": "Durată (luni)",
     "groupId": "Grup de Abonament",
-    "inventory": "Stoc",
+    "inventory": "Limit de Abonament",
     "monthlyReset": "Resetare Lunară",
     "name": "Nume",
     "noLimit": "Fără limită",
@@ -86,12 +86,13 @@
     "updateSuccess": "Actualizat cu succes",
     "updatedAt": "Data actualizării"
   },
-  "inventory": "inventar",
+  "inventory": "Limită de abonament",
   "name": "Nume",
   "quota": "Limită de achiziție/pe tranzacție",
   "replacement": "Resetare preț/pe utilizare",
   "sell": "Vânzare",
   "show": "Afișare pe pagina principală",
+  "sold": "Număr de abonamente",
   "subscribe": "Abonare",
   "subscribeGroup": "Abonare grup",
   "tabs": {
