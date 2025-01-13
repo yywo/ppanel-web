@@ -121,6 +121,7 @@ declare namespace API {
 
   type CreateNodeRequest = {
     name: string;
+    tags: string[];
     server_addr: string;
     relay_mode: string;
     relay_node: NodeRelay[];
@@ -373,6 +374,7 @@ declare namespace API {
   type GetNodeListParams = {
     page: number;
     size: number;
+    tag?: string;
     group_id?: number;
     search?: string;
   };
@@ -384,6 +386,7 @@ declare namespace API {
   type GetNodeServerListRequest = {
     page: number;
     size: number;
+    tag?: string;
     group_id?: number;
     search?: string;
   };
@@ -416,6 +419,23 @@ declare namespace API {
     list: Order[];
   };
 
+  type GetSmsListParams = {
+    page: number;
+    size: number;
+    telephone?: string;
+  };
+
+  type GetSmsListRequest = {
+    page: number;
+    size: number;
+    telephone?: string;
+  };
+
+  type GetSmsListResponse = {
+    total: number;
+    list: Sms[];
+  };
+
   type GetSubscribeDetailsParams = {
     id: number;
   };
@@ -444,7 +464,7 @@ declare namespace API {
   };
 
   type GetSubscribeListResponse = {
-    list: Subscribe[];
+    list: SubscribeItem[];
     total: number;
   };
 
@@ -646,8 +666,15 @@ declare namespace API {
     reality_short_id: string;
   };
 
+  type SendSmsRequest = {
+    content: string;
+    area_code: string;
+    telephone: string;
+  };
+
   type Server = {
     id: number;
+    tags: string[];
     name: string;
     server_addr: string;
     relay_mode: string;
@@ -718,6 +745,36 @@ declare namespace API {
     site_logo: string;
   };
 
+  type Sms = {
+    id: string;
+    content: string;
+    platform: string;
+    areaCode: string;
+    telephone: string;
+    status: number;
+    created_at: number;
+  };
+
+  type SmsConfig = {
+    sms_enabled: boolean;
+    sms_api_url: string;
+    sms_api_foreign_url: string;
+    sms_key: string;
+    sms_secret: string;
+    sms_region: string;
+    sms_template: string;
+    sms_template_code: string;
+    sms_template_param: string;
+    sms_platform: string;
+    sms_limit: number;
+    sms_interval: number;
+    sms_expire_time: number;
+  };
+
+  type SmsPlatformResponse = {
+    list: string[];
+  };
+
   type SortItem = {
     id: number;
     sort: number;
@@ -775,6 +832,34 @@ declare namespace API {
     description: string;
     created_at: number;
     updated_at: number;
+  };
+
+  type SubscribeItem = {
+    id?: number;
+    name?: string;
+    description?: string;
+    unit_price?: number;
+    unit_time?: string;
+    discount?: SubscribeDiscount[];
+    replacement?: number;
+    inventory?: number;
+    traffic?: number;
+    speed_limit?: number;
+    device_limit?: number;
+    quota?: number;
+    group_id?: number;
+    server_group?: number[];
+    server?: number[];
+    show?: boolean;
+    sell?: boolean;
+    sort?: number;
+    deduction_ratio?: number;
+    allow_deduction?: boolean;
+    reset_cycle?: number;
+    renewal_reset?: boolean;
+    created_at?: number;
+    updated_at?: number;
+    sold: number;
   };
 
   type SubscribeSortRequest = {
@@ -919,6 +1004,7 @@ declare namespace API {
 
   type UpdateNodeRequest = {
     id: number;
+    tags: string[];
     name: string;
     server_addr: string;
     relay_mode: string;

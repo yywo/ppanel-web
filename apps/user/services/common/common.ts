@@ -14,6 +14,18 @@ export async function sendEmailCode(body: API.SendCodeRequest, options?: { [key:
   });
 }
 
+/** Get sms verification code POST /v1/common/send_sms_code */
+export async function sendSmsCode(body: API.SendSmsCodeRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.SendCodeResponse }>('/v1/common/send_sms_code', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get global config GET /v1/common/site/config */
 export async function getGlobalConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.GetGlobalConfigResponse }>('/v1/common/site/config', {

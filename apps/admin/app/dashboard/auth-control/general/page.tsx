@@ -10,8 +10,8 @@ import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
-export default function Register() {
-  const t = useTranslations('system.register');
+export default function Page() {
+  const t = useTranslations('auth-control');
 
   const { data, refetch } = useQuery({
     queryKey: ['getRegisterConfig'],

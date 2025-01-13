@@ -17,9 +17,57 @@ export async function checkUser(
   });
 }
 
+/** Check user telephone is exist GET /v1/auth/check/telephone */
+export async function checkUserTelephone(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.CheckUserTelephoneParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.TelephoneCheckUserResponse }>(
+    '/v1/auth/check/telephone',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
 /** User login POST /v1/auth/login */
 export async function userLogin(body: API.UserLoginRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** User Telephone login POST /v1/auth/login/telephone */
+export async function telephoneLogin(
+  body: API.TelephoneLoginRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/login/telephone', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** User Telephone login POST /v1/auth/login/telephone/code */
+export async function telephoneCodeLogin(
+  body: API.TelephoneCodeLoginRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/login/telephone/code', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -44,12 +92,42 @@ export async function userRegister(
   });
 }
 
+/** User Telephone register POST /v1/auth/register/telephone */
+export async function telephoneUserRegister(
+  body: API.TelephoneRegisterRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/register/telephone', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Reset password POST /v1/auth/reset */
 export async function resetPassword(
   body: API.ResetPasswordRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/reset', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Reset password POST /v1/auth/reset/telephone */
+export async function telephoneResetPassword(
+  body: API.TelephoneResetPasswordRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/reset/telephone', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

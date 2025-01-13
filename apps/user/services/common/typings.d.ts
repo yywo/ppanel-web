@@ -39,6 +39,10 @@ declare namespace API {
     exist: boolean;
   };
 
+  type CheckUserTelephoneParams = {
+    telephone: string;
+  };
+
   type Coupon = {
     id: number;
     name: string;
@@ -262,8 +266,14 @@ declare namespace API {
     status: boolean;
   };
 
+  type SendSmsCodeRequest = {
+    telephone: string;
+    telephone_area_code: string;
+  };
+
   type Server = {
     id: number;
+    tags: string[];
     name: string;
     server_addr: string;
     relay_mode: string;
@@ -306,6 +316,22 @@ declare namespace API {
     site_name: string;
     site_desc: string;
     site_logo: string;
+  };
+
+  type SmsConfig = {
+    sms_enabled: boolean;
+    sms_api_url: string;
+    sms_api_foreign_url: string;
+    sms_key: string;
+    sms_secret: string;
+    sms_region: string;
+    sms_template: string;
+    sms_template_code: string;
+    sms_template_param: string;
+    sms_platform: string;
+    sms_limit: number;
+    sms_interval: number;
+    sms_expire_time: number;
   };
 
   type SortItem = {
@@ -369,6 +395,44 @@ declare namespace API {
     telegram_group_url: string;
     telegram_notify: boolean;
     telegram_web_hook_domain: string;
+  };
+
+  type TelephoneCheckUserRequest = {
+    telephone_area_code: string;
+  };
+
+  type TelephoneCheckUserResponse = {
+    exist: boolean;
+  };
+
+  type TelephoneCodeLoginRequest = {
+    telephone: string;
+    telephone_area_code: string;
+    telephone_code: string;
+    cf_token?: string;
+  };
+
+  type TelephoneLoginRequest = {
+    telephone: string;
+    telephone_area_code: string;
+    password: string;
+    cf_token?: string;
+  };
+
+  type TelephoneRegisterRequest = {
+    telephone: string;
+    telephone_area_code: string;
+    password: string;
+    invite?: string;
+    code?: string;
+    cf_token?: string;
+  };
+
+  type TelephoneResetPasswordRequest = {
+    telephone: string;
+    password: string;
+    code?: string;
+    cf_token?: string;
   };
 
   type Ticket = {

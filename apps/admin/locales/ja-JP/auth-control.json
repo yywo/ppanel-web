@@ -1,0 +1,20 @@
+{
+  "emailSuffixWhitelist": "メールサフィックスホワイトリスト",
+  "emailSuffixWhitelistDescription": "有効にすると、リストにあるサフィックスを持つメールのみが登録できます",
+  "emailVerification": "メール確認",
+  "emailVerificationDescription": "有効にすると、ユーザーはメールを確認する必要があります",
+  "ipRegistrationLimit": "IP登録制限",
+  "ipRegistrationLimitDescription": "有効にすると、ルール要件を満たすIPは登録が制限されます。ただし、CDNやフロントエンドプロキシの影響でIPの判定に問題が生じる可能性があることに注意してください。",
+  "penaltyTime": "ペナルティ時間（分）",
+  "penaltyTimeDescription": "ユーザーは再登録する前にペナルティ時間が終了するのを待たなければなりません",
+  "registrationLimitCount": "登録制限数",
+  "registrationLimitCountDescription": "登録制限に達した後にペナルティを有効にする",
+  "saveSuccess": "保存に成功しました",
+  "stopNewUserRegistration": "新規ユーザー登録を停止",
+  "stopNewUserRegistrationDescription": "有効にすると、誰も登録できなくなります",
+  "trialRegistration": "試験登録",
+  "trialRegistrationDescription": "トライアル登録を有効にします。まずトライアルパッケージと期間を変更してください",
+  "whitelistSuffixes": "ホワイトリストのサフィックス",
+  "whitelistSuffixesDescription": "登録時のメール確認に使用します。1行につき1つのサフィックスを入力してください。",
+  "whitelistSuffixesPlaceholder": "メールのサフィックスを入力してください。1行につき1つ"
+}

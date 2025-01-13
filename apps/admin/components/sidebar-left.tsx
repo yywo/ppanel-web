@@ -61,7 +61,11 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                       <SidebarMenuButton
                         asChild
                         tooltip={t(item.title)}
-                        isActive={item.url === pathname}
+                        isActive={
+                          item.url === '/dashboard'
+                            ? pathname === item.url
+                            : pathname.startsWith(item.url)
+                        }
                       >
                         <Link href={item.url}>
                           {item.icon && <Icon icon={item.icon} />}

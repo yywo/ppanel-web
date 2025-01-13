@@ -53,6 +53,24 @@ export async function bindTelegram(options?: { [key: string]: any }) {
   );
 }
 
+/** Query User Commission Log GET /v1/public/user/commission_log */
+export async function queryUserCommissionLog(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.QueryUserCommissionLogParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.QueryUserCommissionLogListResponse }>(
+    '/v1/public/user/commission_log',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
 /** Query User Info GET /v1/public/user/info */
 export async function queryUserInfo(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.User }>('/v1/public/user/info', {

@@ -2,10 +2,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/componen
 import { getTranslations } from 'next-intl/server';
 
 import Currency from './currency';
-import Email from './email';
 import Invite from './invite';
 import Node from './node';
-import Register from './register';
 import Site from './site';
 import Subscription from './subscription';
 import Telegram from './telegram';
@@ -21,9 +19,7 @@ export default async function Page() {
         <TabsTrigger value='site'>{t('tabs.site')}</TabsTrigger>
         <TabsTrigger value='currency'>{t('tabs.currency')}</TabsTrigger>
         <TabsTrigger value='subscription'>{t('tabs.subscription')}</TabsTrigger>
-        <TabsTrigger value='register'>{t('tabs.register')}</TabsTrigger>
         <TabsTrigger value='verify'>{t('tabs.verify')}</TabsTrigger>
-        <TabsTrigger value='email'>{t('tabs.email')}</TabsTrigger>
         <TabsTrigger value='node'>{t('tabs.node')}</TabsTrigger>
         <TabsTrigger value='invite'>{t('tabs.invite')}</TabsTrigger>
         <TabsTrigger value='telegram'>{t('tabs.telegram')}</TabsTrigger>
@@ -38,14 +34,8 @@ export default async function Page() {
       <TabsContent value='subscription'>
         <Subscription />
       </TabsContent>
-      <TabsContent value='register'>
-        <Register />
-      </TabsContent>
       <TabsContent value='verify'>
         <Verify />
-      </TabsContent>
-      <TabsContent value='email'>
-        <Email />
       </TabsContent>
       <TabsContent value='node'>
         <Node />

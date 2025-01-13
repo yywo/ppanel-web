@@ -1,3 +1,42 @@
+export const AuthControl = [
+  {
+    title: 'General',
+    url: '/dashboard/auth-control/general',
+  },
+  {
+    title: 'Email',
+    url: '/dashboard/auth-control/email',
+  },
+  {
+    title: 'Phone Number',
+    url: '/dashboard/auth-control/phone',
+  },
+  {
+    title: 'Apple',
+    url: '/dashboard/auth-control/apple',
+  },
+  {
+    title: 'Telegram',
+    url: '/dashboard/auth-control/telegram',
+  },
+  {
+    title: 'Google',
+    url: '/dashboard/auth-control/google',
+  },
+  {
+    title: 'Facebook',
+    url: '/dashboard/auth-control/facebook',
+  },
+  {
+    title: 'Twitter',
+    url: '/dashboard/auth-control/twitter',
+  },
+  {
+    title: 'GitHub',
+    url: '/dashboard/auth-control/github',
+  },
+];
+
 export const navs = [
   {
     title: 'Dashboard',
@@ -11,6 +50,12 @@ export const navs = [
         title: 'System Config',
         url: '/dashboard/system',
         icon: 'flat-color-icons:services',
+      },
+      {
+        title: 'Auth Control',
+        url: '/dashboard/auth-control',
+        icon: 'flat-color-icons:lock-portrait',
+        items: AuthControl,
       },
       {
         title: 'Payment Config',
@@ -82,16 +127,20 @@ export const navs = [
 ];
 
 export function findNavByUrl(url: string) {
-  for (const nav of navs) {
-    if (nav.url && nav.url === url) {
-      return [nav];
-    }
-    if (nav.items) {
-      const current = nav.items.find((item) => item.url === url);
-      if (current) {
-        return [nav, current];
+  function findNav(items: any[], url: string, path: any[] = []): any[] {
+    for (const item of items) {
+      if (item.url === url) {
+        return [...path, item];
+      }
+      if (item.items) {
+        const result = findNav(item.items, url, [...path, item]);
+        if (result.length) {
+          return result;
+        }
       }
     }
+    return [];
   }
-  return [];
+
+  return findNav(navs, url);
 }

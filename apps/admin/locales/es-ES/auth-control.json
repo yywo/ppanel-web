@@ -1,0 +1,20 @@
+{
+  "emailSuffixWhitelist": "Lista Blanca de Sufijos de Correo Electrónico",
+  "emailSuffixWhitelistDescription": "Cuando está habilitado, solo los correos electrónicos con sufijos en la lista pueden registrarse",
+  "emailVerification": "Verificación de correo electrónico",
+  "emailVerificationDescription": "Cuando esté habilitado, los usuarios deberán verificar su correo electrónico",
+  "ipRegistrationLimit": "Límite de Registro de IP",
+  "ipRegistrationLimitDescription": "Cuando está habilitado, las IPs que cumplan con los requisitos de la regla serán restringidas de registrarse; tenga en cuenta que la determinación de IP puede causar problemas debido a CDNs o proxies frontend",
+  "penaltyTime": "Tiempo de Penalización (minutos)",
+  "penaltyTimeDescription": "Los usuarios deben esperar a que expire el tiempo de penalización antes de registrarse nuevamente",
+  "registrationLimitCount": "Límite de Registro",
+  "registrationLimitCountDescription": "Habilitar penalización después de alcanzar el límite de registro",
+  "saveSuccess": "Guardado Exitoso",
+  "stopNewUserRegistration": "Detener el registro de nuevos usuarios",
+  "stopNewUserRegistrationDescription": "Cuando está habilitado, nadie puede registrarse",
+  "trialRegistration": "Registro de Prueba",
+  "trialRegistrationDescription": "Habilitar el registro de prueba; modifique primero el paquete y la duración de la prueba",
+  "whitelistSuffixes": "Sufijos de la lista blanca",
+  "whitelistSuffixesDescription": "Utilizado para la verificación de correo electrónico durante el registro; uno por línea",
+  "whitelistSuffixesPlaceholder": "Introduce los sufijos de correo electrónico, uno por línea"
+}

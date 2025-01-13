@@ -1,0 +1,20 @@
+{
+  "emailSuffixWhitelist": "لیست سفید پسوند ایمیل",
+  "emailSuffixWhitelistDescription": "هنگامی که فعال شود، تنها ایمیل‌هایی با پسوندهای موجود در فهرست می‌توانند ثبت‌نام کنند",
+  "emailVerification": "تأیید ایمیل",
+  "emailVerificationDescription": "هنگامی که فعال شود، کاربران باید ایمیل خود را تأیید کنند",
+  "ipRegistrationLimit": "محدودیت ثبت‌نام IP",
+  "ipRegistrationLimitDescription": "هنگامی که فعال شود، آی‌پی‌هایی که شرایط قوانین را برآورده می‌کنند از ثبت‌نام محدود خواهند شد؛ توجه داشته باشید که تعیین آی‌پی ممکن است به دلیل شبکه‌های تحویل محتوا (CDN) یا پروکسی‌های فرانت‌اند مشکلاتی ایجاد کند",
+  "penaltyTime": "زمان جریمه (دقیقه)",
+  "penaltyTimeDescription": "کاربران باید منتظر بمانند تا زمان جریمه به پایان برسد و سپس دوباره ثبت‌نام کنند",
+  "registrationLimitCount": "تعداد محدودیت ثبت‌نام",
+  "registrationLimitCountDescription": "فعال‌سازی جریمه پس از رسیدن به حد ثبت‌نام",
+  "saveSuccess": "ذخیره با موفقیت انجام شد",
+  "stopNewUserRegistration": "توقف ثبت‌نام کاربر جدید",
+  "stopNewUserRegistrationDescription": "وقتی فعال باشد، هیچ‌کس نمی‌تواند ثبت‌نام کند",
+  "trialRegistration": "ثبت‌نام آزمایشی",
+  "trialRegistrationDescription": "فعال‌سازی ثبت‌نام آزمایشی؛ ابتدا بسته و مدت زمان آزمایشی را تغییر دهید",
+  "whitelistSuffixes": "پسوندهای لیست سفید",
+  "whitelistSuffixesDescription": "برای تأیید ایمیل در هنگام ثبت‌نام استفاده می‌شود؛ هر خط یک مورد",
+  "whitelistSuffixesPlaceholder": "پسوندهای ایمیل را وارد کنید، هر کدام در یک خط"
+}

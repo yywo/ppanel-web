@@ -1,0 +1,20 @@
+{
+  "emailSuffixWhitelist": "Lista de Sufixos de Email Permitidos",
+  "emailSuffixWhitelistDescription": "Quando ativado, apenas e-mails com sufixos na lista podem se registrar",
+  "emailVerification": "Verificação de Email",
+  "emailVerificationDescription": "Quando ativado, os usuários precisarão verificar seu e-mail",
+  "ipRegistrationLimit": "Limite de Registro de IP",
+  "ipRegistrationLimitDescription": "Quando ativado, IPs que atendem aos requisitos da regra serão restritos de se registrarem; observe que a determinação de IP pode causar problemas devido a CDNs ou proxies de frontend",
+  "penaltyTime": "Tempo de Penalidade (minutos)",
+  "penaltyTimeDescription": "Os usuários devem aguardar o tempo de penalidade expirar antes de se registrarem novamente",
+  "registrationLimitCount": "Contagem de Limite de Inscrição",
+  "registrationLimitCountDescription": "Ativar penalidade após atingir o limite de inscrições",
+  "saveSuccess": "Salvo com sucesso",
+  "stopNewUserRegistration": "Parar Registro de Novo Usuário",
+  "stopNewUserRegistrationDescription": "Quando ativado, ninguém pode se registrar",
+  "trialRegistration": "Registro de Teste",
+  "trialRegistrationDescription": "Habilitar registro de teste; modifique o pacote de teste e a duração primeiro",
+  "whitelistSuffixes": "Sufixos de Lista Branca",
+  "whitelistSuffixesDescription": "Usado para verificação de e-mail durante o registro; um por linha",
+  "whitelistSuffixesPlaceholder": "Digite os sufixos de e-mail, um por linha"
+}

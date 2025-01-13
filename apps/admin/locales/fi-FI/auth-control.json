@@ -1,0 +1,20 @@
+{
+  "emailSuffixWhitelist": "Sähköpostin loppuliitteen sallittu lista",
+  "emailSuffixWhitelistDescription": "Kun tämä on käytössä, vain listassa olevilla päätteillä varustetut sähköpostit voivat rekisteröityä",
+  "emailVerification": "Sähköpostin vahvistus",
+  "emailVerificationDescription": "Kun tämä on käytössä, käyttäjien on vahvistettava sähköpostinsa",
+  "ipRegistrationLimit": "IP-rekisteröintirajoitus",
+  "ipRegistrationLimitDescription": "Kun tämä on käytössä, säännön vaatimukset täyttävät IP-osoitteet estetään rekisteröitymästä; huomaa, että IP-määritys voi aiheuttaa ongelmia CDN:ien tai etupään välityspalvelimien vuoksi",
+  "penaltyTime": "Rangaistusaika (minuuttia)",
+  "penaltyTimeDescription": "Käyttäjien on odotettava rangaistusajan päättymistä ennen kuin he voivat rekisteröityä uudelleen",
+  "registrationLimitCount": "Rekisteröitymisrajoituksen määrä",
+  "registrationLimitCountDescription": "Ota käyttöön rangaistus rekisteröintirajan saavuttamisen jälkeen",
+  "saveSuccess": "Tallennus onnistui",
+  "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
+  "stopNewUserRegistrationDescription": "Kun tämä on käytössä, kukaan ei voi rekisteröityä",
+  "trialRegistration": "Kokeilurekisteröinti",
+  "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa",
+  "whitelistSuffixes": "Sallittujen luetteloiden päätteet",
+  "whitelistSuffixesDescription": "Käytetään sähköpostin vahvistamiseen rekisteröinnin aikana; yksi per rivi",
+  "whitelistSuffixesPlaceholder": "Syötä sähköpostin päätteet, yksi per rivi"
+}

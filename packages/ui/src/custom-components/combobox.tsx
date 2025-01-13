@@ -70,7 +70,7 @@ export function Combobox<T, M extends boolean = false>({
     } else if (!multiple) {
       const selectedOption = options.find((option) => option.value === value);
 
-      return selectedOption ? selectedOption.label : placeholder;
+      return selectedOption ? selectedOption.children || selectedOption.label : placeholder;
     }
 
     return placeholder;

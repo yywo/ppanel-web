@@ -1,39 +1,36 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.6](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2025-01-10)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Update UserCheckForm to use setInitialValues and modify onSubmit type ([c984c0d](https://github.com/perfect-panel/ppanel-web/commit/c984c0d))
+- **auth**: Update UserCheckForm to use setInitialValues and modify onSubmit type ([c984c0d](https://github.com/perfect-panel/ppanel-web/commit/c984c0d))
 
 # [1.0.0-beta.5](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2025-01-09)
 
-
 ### ✨ Features
 
-* **locales**: Replace 'nodeGroupId' with 'groupId' in multiple language files for consistency ([a4e9d5d](https://github.com/perfect-panel/ppanel-web/commit/a4e9d5d))
-* **locales**: Update 'deductBalance' to 'giftAmount' across multiple languages and fix newline in announcement.json ([70497af](https://github.com/perfect-panel/ppanel-web/commit/70497af))
-* **stats**: Replace dynamic stat fetching with environment constants for user, server, and location counts ([46ae166](https://github.com/perfect-panel/ppanel-web/commit/46ae166))
-* **subscribe**: Update suffix from 'MB' to 'Mbps' and enhance speed limit display logic ([3547bb1](https://github.com/perfect-panel/ppanel-web/commit/3547bb1))
-* **user**: Add 'gift_amount' field and update related references in user services and components ([b13c77e](https://github.com/perfect-panel/ppanel-web/commit/b13c77e))
-
+- **locales**: Replace 'nodeGroupId' with 'groupId' in multiple language files for consistency ([a4e9d5d](https://github.com/perfect-panel/ppanel-web/commit/a4e9d5d))
+- **locales**: Update 'deductBalance' to 'giftAmount' across multiple languages and fix newline in announcement.json ([70497af](https://github.com/perfect-panel/ppanel-web/commit/70497af))
+- **stats**: Replace dynamic stat fetching with environment constants for user, server, and location counts ([46ae166](https://github.com/perfect-panel/ppanel-web/commit/46ae166))
+- **subscribe**: Update suffix from 'MB' to 'Mbps' and enhance speed limit display logic ([3547bb1](https://github.com/perfect-panel/ppanel-web/commit/3547bb1))
+- **user**: Add 'gift_amount' field and update related references in user services and components ([b13c77e](https://github.com/perfect-panel/ppanel-web/commit/b13c77e))
 
 ### 🎫 Chores
 
-* **deps**: Update package dependencies across multiple projects for improved stability and performance ([b01a5bc](https://github.com/perfect-panel/ppanel-web/commit/b01a5bc))
-* **ui**: Update package dependencies for improved stability and performance ([25da429](https://github.com/perfect-panel/ppanel-web/commit/25da429))
-
+- **deps**: Update package dependencies across multiple projects for improved stability and performance ([b01a5bc](https://github.com/perfect-panel/ppanel-web/commit/b01a5bc))
+- **ui**: Update package dependencies for improved stability and performance ([25da429](https://github.com/perfect-panel/ppanel-web/commit/25da429))
 
 ### 🐛 Bug Fixes
 
-* **api**: Replace 'deduction' with 'gift_amount' and add 'commission' field in type definitions ([77edf1d](https://github.com/perfect-panel/ppanel-web/commit/77edf1d))
-* **api**: Update API type definitions to replace 'deduction' with 'gift_amount' and make 'commission' field optional ([c2af060](https://github.com/perfect-panel/ppanel-web/commit/c2af060))
-* **auth**: Refactor user authentication forms to remove global store dependency and improve type handling ([12026b0](https://github.com/perfect-panel/ppanel-web/commit/12026b0))
-* **coupon**: Rename 'server' field to 'subscribe' in coupon form and update coupon update request type ([f8b6d82](https://github.com/perfect-panel/ppanel-web/commit/f8b6d82))
-* **types**: Add 'gift_amount' field to API type definitions ([8f8a12a](https://github.com/perfect-panel/ppanel-web/commit/8f8a12a))
-* **user**: Add the 'gift_amount' field to the user service's type definition ([6301409](https://github.com/perfect-panel/ppanel-web/commit/6301409))
+- **api**: Replace 'deduction' with 'gift_amount' and add 'commission' field in type definitions ([77edf1d](https://github.com/perfect-panel/ppanel-web/commit/77edf1d))
+- **api**: Update API type definitions to replace 'deduction' with 'gift_amount' and make 'commission' field optional ([c2af060](https://github.com/perfect-panel/ppanel-web/commit/c2af060))
+- **auth**: Refactor user authentication forms to remove global store dependency and improve type handling ([12026b0](https://github.com/perfect-panel/ppanel-web/commit/12026b0))
+- **coupon**: Rename 'server' field to 'subscribe' in coupon form and update coupon update request type ([f8b6d82](https://github.com/perfect-panel/ppanel-web/commit/f8b6d82))
+- **types**: Add 'gift_amount' field to API type definitions ([8f8a12a](https://github.com/perfect-panel/ppanel-web/commit/8f8a12a))
+- **user**: Add the 'gift_amount' field to the user service's type definition ([6301409](https://github.com/perfect-panel/ppanel-web/commit/6301409))
 
 <a name="readme-top"></a>
 

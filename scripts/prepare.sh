@@ -78,11 +78,11 @@ install_global_package() {
 install_global_package "@lobehub/i18n-cli"
 install_global_package "@lobehub/commit-cli"
 
-# Check if .husky/_/prepare-commit-msg exists
-if [ -f ".husky/_/prepare-commit-msg" ]; then
-  echo "prepare-commit-msg hook already exists. Skipping lobe-commit -i."
+# Check if .husky/_/prepare-commit-msg contains lobe-commit --hook
+if grep -q "lobe-commit --hook" ".husky/_/prepare-commit-msg"; then
+  echo "prepare-commit-msg hook already contains lobe-commit --hook. Skipping lobe-commit -i."
 else
-  # If the hook does not exist, set it up and run lobe-commit -i
+  # If the hook does not contain lobe-commit --hook, set it up and run lobe-commit -i
   echo "Setting up prepare-commit-msg hook..."
   if npx husky add .husky/prepare-commit-msg "exec < /dev/tty && npx lobe-commit -i"; then
     echo "prepare-commit-msg hook has been successfully set up."

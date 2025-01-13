@@ -221,6 +221,37 @@ export async function updateSiteConfig(body: API.SiteConfig, options?: { [key: s
   });
 }
 
+/** Get sms config GET /v1/admin/system/sms_config */
+export async function getSmsConfig(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.SmsConfig }>('/v1/admin/system/sms_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** Get sms config PUT /v1/admin/system/sms_config */
+export async function updateSmsConfig(body: API.SmsConfig, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/sms_config', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Get sms config GET /v1/admin/system/sms_platform */
+export async function getSmsPlatform(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.SmsPlatformResponse }>(
+    '/v1/admin/system/sms_platform',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** Get subscribe config GET /v1/admin/system/subscribe_config */
 export async function getSubscribeConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.SubscribeConfig }>(
@@ -284,6 +315,18 @@ export async function testEmailSmtp(
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/test_email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Test sms send POST /v1/admin/system/test_sms */
+export async function testSmsSend(body: API.SendSmsRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/test_sms', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
