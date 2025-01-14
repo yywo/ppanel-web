@@ -15,7 +15,6 @@ export interface GlobalStore {
 
 export const useGlobalStore = create<GlobalStore>((set, get) => ({
   common: {
-    background: '',
     site: {
       host: '',
       site_name: '',
@@ -37,6 +36,12 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       enable_ip_register_limit: false,
       ip_register_limit: 0,
       ip_register_limit_duration: 0,
+      sms: {
+        sms_enabled: false,
+        sms_limit: 0,
+        sms_interval: 0,
+        sms_expire_time: 0,
+      },
     },
     invite: {
       forced_invite: false,
