@@ -66,11 +66,12 @@ export default function UserRegisterForm({
         });
       }
     });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       ...initialValues,
-      invite: sessionStorage.getItem('invite'),
+      invite: localStorage.getItem('invite') || '',
     },
   });
 
@@ -159,7 +160,7 @@ export default function UserRegisterForm({
                 <FormItem>
                   <FormControl>
                     <Input
-                      disabled={loading}
+                      disabled={loading || !!localStorage.getItem('invite')}
                       placeholder={t('invite')}
                       {...field}
                       value={field.value || ''}

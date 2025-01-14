@@ -42,6 +42,14 @@ export default function Providers({
     setCommon(common);
   }, [setCommon, common]);
 
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const invite = searchParams.get('invite');
+    if (invite) {
+      localStorage.setItem('invite', invite);
+    }
+  }, []);
+
   return (
     <NextThemesProvider attribute='class' defaultTheme='system' enableSystem>
       <QueryClientProvider client={queryClient}>
