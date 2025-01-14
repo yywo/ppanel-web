@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Standardmäßiger globaler Provisionsverteilungssatz. Sie können in der Benutzerverwaltung einen individuellen Satz konfigurieren.",
     "saveSuccess": "Erfolgreich gespeichert"
   },
-  "node": {
-    "addTimeSlot": "Zeitfenster hinzufügen",
-    "communicationKey": "Kommunikationsschlüssel",
-    "communicationKeyDescription": "Schlüssel für die Kommunikation des Knotens, um sicherzustellen, dass Daten nicht von anderen abgefangen werden",
-    "delete": "Löschen",
-    "dynamicMultiplier": "Dynamischer Multiplikator",
-    "dynamicMultiplierDescription": "Dynamischer Multiplikator bezieht sich auf die Verarbeitung von übermittelten Daten mit unterschiedlichen Multiplikatoren für verschiedene Knoten während unterschiedlicher Zeiträume.",
-    "endTime": "Endzeit",
-    "inputPlaceholder": "Bitte eingeben",
-    "multiplier": "Multiplikator",
-    "nodePullInterval": "Knotenabfrageintervall",
-    "nodePullIntervalDescription": "Häufigkeit, mit der der Knoten Daten vom Panel abruft (Sekunden)",
-    "nodePushInterval": "Knotenübertragungsintervall",
-    "nodePushIntervalDescription": "Häufigkeit, mit der der Knoten Daten an das Panel überträgt",
-    "reset": "Zurücksetzen",
-    "save": "Speichern",
-    "saveSuccess": "Erfolgreich gespeichert",
-    "startTime": "Startzeit",
-    "timeSlot": "Zeitfenster"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Position zur Anzeige des LOGOs",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Währung",
     "invite": "Einladen",
-    "node": "Knoten",
     "site": "Seite",
     "telegram": "Telegram",
     "tos": "Nutzungsbedingungen",

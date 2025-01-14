@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Proporção padrão de comissão global. Você pode configurar individualmente no gerenciamento de usuários.",
     "saveSuccess": "Salvo com sucesso"
   },
-  "node": {
-    "addTimeSlot": "Adicionar Faixa de Horário",
-    "communicationKey": "Chave de Comunicação",
-    "communicationKeyDescription": "Chave para comunicação do nó, garantindo que os dados não sejam interceptados por terceiros",
-    "delete": "Excluir",
-    "dynamicMultiplier": "Multiplicador Dinâmico",
-    "dynamicMultiplierDescription": "Multiplicador Dinâmico refere-se ao processamento de dados enviados com diferentes multiplicadores para diferentes nós durante diferentes períodos de tempo.",
-    "endTime": "Hora de Término",
-    "inputPlaceholder": "Por favor, insira",
-    "multiplier": "Multiplicador",
-    "nodePullInterval": "Intervalo de Extração do Nó",
-    "nodePullIntervalDescription": "Frequência com que o nó obtém dados do painel (segundos)",
-    "nodePushInterval": "Intervalo de Envio do Nó",
-    "nodePushIntervalDescription": "Frequência com que o nó envia dados para o painel",
-    "reset": "Redefinir",
-    "save": "Salvar",
-    "saveSuccess": "Salvo com sucesso",
-    "startTime": "Hora de Início",
-    "timeSlot": "Horário"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Usado para exibir a posição onde o LOGO precisa ser mostrado",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Moeda",
     "invite": "Convite",
-    "node": "Nó",
     "site": "Site",
     "telegram": "Telegram",
     "tos": "Termos de Serviço",

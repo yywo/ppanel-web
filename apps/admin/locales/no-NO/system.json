@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Standard global kommisjonsfordelingsprosent, du kan konfigurere individuelle prosenter i brukerstyring",
     "saveSuccess": "Lagret vellykket"
   },
-  "node": {
-    "addTimeSlot": "Legg til tidsluke",
-    "communicationKey": "Kommunikasjonsnøkkel",
-    "communicationKeyDescription": "Nøkkelen for kommunikasjon mellom noder, for å sikre at data ikke blir avlyttet av andre",
-    "delete": "Slett",
-    "dynamicMultiplier": "Dynamisk Multiplikator",
-    "dynamicMultiplierDescription": "Dynamisk Multiplikator refererer til behandling av dyttet data med forskjellige multiplikatorer for forskjellige noder i ulike tidsperioder.",
-    "endTime": "Sluttid",
-    "inputPlaceholder": "Vennligst skriv inn",
-    "multiplier": "Multiplikator",
-    "nodePullInterval": "Node hentingsintervall",
-    "nodePullIntervalDescription": "Frekvensen (i sekunder) som noden henter data fra panelet",
-    "nodePushInterval": "Node push-intervall",
-    "nodePushIntervalDescription": "Frekvensen som noden sender data til panelet",
-    "reset": "Tilbakestill",
-    "save": "Lagre",
-    "saveSuccess": "Lagring vellykket",
-    "startTime": "Starttid",
-    "timeSlot": "Tidsluke"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Brukes til å vise hvor LOGO skal vises",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Valuta",
     "invite": "Invitasjon",
-    "node": "Node",
     "site": "Nettsted",
     "telegram": "Telegram",
     "tos": "Vilkår for bruk",

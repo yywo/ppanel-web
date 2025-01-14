@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Zeitfenster hinzufügen",
+    "communicationKey": "Kommunikationsschlüssel",
+    "communicationKeyDescription": "Schlüssel für die Knotenkommunikation zur Gewährleistung der Datensicherheit",
+    "delete": "Löschen",
+    "dynamicMultiplier": "Dynamischer Multiplikator",
+    "dynamicMultiplierDescription": "Dynamischer Multiplikator bezieht sich auf die Verarbeitung von übertragenen Daten mit unterschiedlichen Multiplikatoren für verschiedene Knoten während unterschiedlicher Zeiträume.",
+    "endTime": "Endzeit",
+    "inputPlaceholder": "Eingeben",
+    "multiplier": "Multiplikator",
+    "nodePullInterval": "Knotenabfrageintervall",
+    "nodePullIntervalDescription": "Häufigkeit (in Sekunden), mit der Knoten Daten vom Panel abrufen",
+    "nodePushInterval": "Knotenübertragungsintervall",
+    "nodePushIntervalDescription": "Häufigkeit, mit der Knoten Daten an das Panel übertragen",
+    "reset": "Zurücksetzen",
+    "save": "Speichern",
+    "saveSuccess": "Erfolgreich gespeichert",
+    "startTime": "Startzeit",
+    "timeSlot": "Zeitfenster"
+  },
   "group": {
     "actions": "Aktionen",
     "cancel": "Abbrechen",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Knoten",
+    "nodeConfig": "Knoten-Konfiguration",
     "nodeGroup": "Knotengruppe"
   }
 }

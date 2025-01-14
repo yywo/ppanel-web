@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Idősáv hozzáadása",
+    "communicationKey": "Kommunikációs kulcs",
+    "communicationKeyDescription": "Kulcs a csomópontok közötti kommunikációhoz az adatok biztonságának biztosítása érdekében",
+    "delete": "Törlés",
+    "dynamicMultiplier": "Dinamikus szorzó",
+    "dynamicMultiplierDescription": "A dinamikus szorzó azt jelenti, hogy a különböző csomópontok különböző időszakokban különböző szorzókkal dolgozzák fel a továbbított adatokat.",
+    "endTime": "Befejezési idő",
+    "inputPlaceholder": "Adja meg",
+    "multiplier": "Szorzó",
+    "nodePullInterval": "Csomópont lehívási intervallum",
+    "nodePullIntervalDescription": "Gyakoriság (másodpercben), amellyel a csomópontok adatokat kérnek le a panelről",
+    "nodePushInterval": "Csomópont feltöltési intervallum",
+    "nodePushIntervalDescription": "Gyakoriság, amellyel a csomópontok adatokat küldenek a panelre",
+    "reset": "Visszaállítás",
+    "save": "Mentés",
+    "saveSuccess": "Sikeres mentés",
+    "startTime": "Kezdési idő",
+    "timeSlot": "Idősáv"
+  },
   "group": {
     "actions": "Műveletek",
     "cancel": "Mégse",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "csomópont",
+    "nodeConfig": "Csomópont konfiguráció",
     "nodeGroup": "csomópontcsoport"
   }
 }

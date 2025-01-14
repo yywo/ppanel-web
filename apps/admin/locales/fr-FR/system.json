@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Pourcentage de commission global par défaut, vous pouvez configurer un pourcentage individuel dans la gestion des utilisateurs.",
     "saveSuccess": "Enregistrement réussi"
   },
-  "node": {
-    "addTimeSlot": "Ajouter un créneau horaire",
-    "communicationKey": "Clé de communication",
-    "communicationKeyDescription": "Clé pour la communication du nœud, afin de garantir que les données ne soient pas interceptées par d'autres",
-    "delete": "Supprimer",
-    "dynamicMultiplier": "Multiplicateur Dynamique",
-    "dynamicMultiplierDescription": "Le Multiplicateur Dynamique fait référence au traitement des données poussées avec différents multiplicateurs pour différents nœuds pendant différentes périodes.",
-    "endTime": "Heure de Fin",
-    "inputPlaceholder": "Veuillez entrer",
-    "multiplier": "Multiplicateur",
-    "nodePullInterval": "Intervalle de récupération du nœud",
-    "nodePullIntervalDescription": "Fréquence à laquelle le nœud récupère les données du panneau (en secondes)",
-    "nodePushInterval": "Intervalle de poussée du nœud",
-    "nodePushIntervalDescription": "Fréquence à laquelle le nœud pousse les données vers le panneau",
-    "reset": "Réinitialiser",
-    "save": "Enregistrer",
-    "saveSuccess": "Enregistrement réussi",
-    "startTime": "Heure de Début",
-    "timeSlot": "Créneau horaire"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Utilisé pour afficher l'emplacement où le LOGO doit être montré",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Devise",
     "invite": "Inviter",
-    "node": "Nœud",
     "site": "Site",
     "telegram": "Telegram",
     "tos": "Conditions de service",

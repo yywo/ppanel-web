@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "डिफ़ॉल्ट वैश्विक कमीशन वितरण अनुपात, आप उपयोगकर्ता प्रबंधन में व्यक्तिगत अनुपात को कॉन्फ़िगर कर सकते हैं।",
     "saveSuccess": "सफलतापूर्वक सहेजा गया"
   },
-  "node": {
-    "addTimeSlot": "समय स्लॉट जोड़ें",
-    "communicationKey": "संचार कुंजी",
-    "communicationKeyDescription": "डेटा को अन्य लोगों द्वारा अवरोधित होने से बचाने के लिए नोड संचार की कुंजी",
-    "delete": "हटाएं",
-    "dynamicMultiplier": "डायनामिक मल्टीप्लायर",
-    "dynamicMultiplierDescription": "डायनामिक मल्टीप्लायर का मतलब है विभिन्न समय अवधियों के दौरान विभिन्न नोड्स के लिए अलग-अलग मल्टीप्लायर के साथ प्रोसेस किए गए डेटा को प्रोसेस करना।",
-    "endTime": "समाप्ति समय",
-    "inputPlaceholder": "कृपया दर्ज करें",
-    "multiplier": "मल्टीप्लायर",
-    "nodePullInterval": "नोड पुल अंतराल",
-    "nodePullIntervalDescription": "पैनल से डेटा प्राप्त करने के लिए नोड की आवृत्ति (सेकंड में)",
-    "nodePushInterval": "नोड पुश अंतराल",
-    "nodePushIntervalDescription": "नोड द्वारा डेटा को पैनल पर भेजने की आवृत्ति",
-    "reset": "रीसेट",
-    "save": "सहेजें",
-    "saveSuccess": "सफलतापूर्वक सहेजा गया",
-    "startTime": "प्रारंभ समय",
-    "timeSlot": "समय स्लॉट"
-  },
   "site": {
     "logo": "लोगो",
     "logoDescription": "लोगो प्रदर्शित करने के लिए आवश्यक स्थान",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "मुद्रा",
     "invite": "आमंत्रण",
-    "node": "नोड",
     "site": "साइट",
     "telegram": "टेलीग्राम",
     "tos": "सेवा की शर्तें",

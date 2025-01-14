@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Adicionar Faixa de Horário",
+    "communicationKey": "Chave de Comunicação",
+    "communicationKeyDescription": "Chave para comunicação entre nós para garantir a segurança dos dados",
+    "delete": "Excluir",
+    "dynamicMultiplier": "Multiplicador Dinâmico",
+    "dynamicMultiplierDescription": "Multiplicador Dinâmico refere-se ao processamento de dados enviados com diferentes multiplicadores para diferentes nós durante diferentes períodos de tempo.",
+    "endTime": "Hora de Término",
+    "inputPlaceholder": "Digite",
+    "multiplier": "Multiplicador",
+    "nodePullInterval": "Intervalo de Busca do Nó",
+    "nodePullIntervalDescription": "Frequência (em segundos) para os nós buscarem dados do painel",
+    "nodePushInterval": "Intervalo de Envio do Nó",
+    "nodePushIntervalDescription": "Frequência para os nós enviarem dados ao painel",
+    "reset": "Redefinir",
+    "save": "Salvar",
+    "saveSuccess": "Salvo com Sucesso",
+    "startTime": "Hora de Início",
+    "timeSlot": "Faixa de Horário"
+  },
   "group": {
     "actions": "Ações",
     "cancel": "Cancelar",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Nó",
+    "nodeConfig": "Configuração do Nó",
     "nodeGroup": "Grupo de Nós"
   }
 }

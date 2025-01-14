@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "เพิ่มช่วงเวลา",
+    "communicationKey": "คีย์การสื่อสาร",
+    "communicationKeyDescription": "คีย์สำหรับการสื่อสารของโหนดเพื่อความปลอดภัยของข้อมูล",
+    "delete": "ลบ",
+    "dynamicMultiplier": "ตัวคูณแบบไดนามิก",
+    "dynamicMultiplierDescription": "ตัวคูณแบบไดนามิกหมายถึงการประมวลผลข้อมูลที่ถูกส่งด้วยตัวคูณที่แตกต่างกันสำหรับโหนดต่างๆ ในช่วงเวลาที่แตกต่างกัน",
+    "endTime": "เวลาสิ้นสุด",
+    "inputPlaceholder": "กรอก",
+    "multiplier": "ตัวคูณ",
+    "nodePullInterval": "ช่วงเวลาการดึงของโหนด",
+    "nodePullIntervalDescription": "ความถี่ (เป็นวินาที) ที่โหนดจะดึงข้อมูลจากแผงควบคุม",
+    "nodePushInterval": "ช่วงเวลาการส่งของโหนด",
+    "nodePushIntervalDescription": "ความถี่ที่โหนดจะส่งข้อมูลไปยังแผงควบคุม",
+    "reset": "รีเซ็ต",
+    "save": "บันทึก",
+    "saveSuccess": "บันทึกสำเร็จ",
+    "startTime": "เวลาเริ่มต้น",
+    "timeSlot": "ช่วงเวลา"
+  },
   "group": {
     "actions": "การดำเนินการ",
     "cancel": "ยกเลิก",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "โหนด",
+    "nodeConfig": "การกำหนดค่าโหนด",
     "nodeGroup": "กลุ่มโหนด"
   }
 }

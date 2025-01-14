@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Přidat časový úsek",
+    "communicationKey": "Komunikační klíč",
+    "communicationKeyDescription": "Klíč pro komunikaci uzlů k zajištění bezpečnosti dat",
+    "delete": "Smazat",
+    "dynamicMultiplier": "Dynamický multiplikátor",
+    "dynamicMultiplierDescription": "Dynamický multiplikátor označuje zpracování posílaných dat s různými multiplikátory pro různé uzly během různých časových období.",
+    "endTime": "Konec",
+    "inputPlaceholder": "Zadejte",
+    "multiplier": "Multiplikátor",
+    "nodePullInterval": "Interval stahování uzlu",
+    "nodePullIntervalDescription": "Frekvence (v sekundách) pro stahování dat uzly z panelu",
+    "nodePushInterval": "Interval odesílání uzlu",
+    "nodePushIntervalDescription": "Frekvence odesílání dat uzly do panelu",
+    "reset": "Resetovat",
+    "save": "Uložit",
+    "saveSuccess": "Úspěšně uloženo",
+    "startTime": "Začátek",
+    "timeSlot": "Časový úsek"
+  },
   "group": {
     "actions": "Akce",
     "cancel": "Zrušit",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Uzlu",
+    "nodeConfig": "Konfigurace uzlu",
     "nodeGroup": "Skupina uzlů"
   }
 }

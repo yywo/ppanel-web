@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "افزودن بازه زمانی",
+    "communicationKey": "کلید ارتباطی",
+    "communicationKeyDescription": "کلید برای ارتباط گره‌ها به منظور اطمینان از امنیت داده‌ها",
+    "delete": "حذف",
+    "dynamicMultiplier": "ضریب پویا",
+    "dynamicMultiplierDescription": "ضریب پویا به پردازش داده‌های ارسال شده با ضرایب مختلف برای گره‌های مختلف در دوره‌های زمانی مختلف اشاره دارد.",
+    "endTime": "زمان پایان",
+    "inputPlaceholder": "وارد کنید",
+    "multiplier": "ضریب",
+    "nodePullInterval": "فاصله زمانی کشیدن گره",
+    "nodePullIntervalDescription": "فرکانس (بر حسب ثانیه) برای گره‌ها جهت دریافت داده از پنل",
+    "nodePushInterval": "فاصله زمانی ارسال گره",
+    "nodePushIntervalDescription": "فرکانس برای گره‌ها جهت ارسال داده به پنل",
+    "reset": "بازنشانی",
+    "save": "ذخیره",
+    "saveSuccess": "ذخیره با موفقیت انجام شد",
+    "startTime": "زمان شروع",
+    "timeSlot": "بازه زمانی"
+  },
   "group": {
     "actions": "اقدامات",
     "cancel": "لغو",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "نود",
+    "nodeConfig": "پیکربندی نود",
     "nodeGroup": "گروه نود"
   }
 }

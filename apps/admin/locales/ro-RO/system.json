@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Procentul implicit de distribuire a comisionului la nivel global. Puteți configura un procent individual în gestionarea utilizatorilor.",
     "saveSuccess": "Salvare reușită"
   },
-  "node": {
-    "addTimeSlot": "Adaugă Interval Orar",
-    "communicationKey": "Cheie de comunicare",
-    "communicationKeyDescription": "Cheia de comunicare a nodului, pentru a asigura că datele nu sunt interceptate de alții",
-    "delete": "Ștergere",
-    "dynamicMultiplier": "Multiplicator Dinamic",
-    "dynamicMultiplierDescription": "Multiplicatorul Dinamic se referă la procesarea datelor transmise cu multiplicatori diferiți pentru noduri diferite în perioade de timp diferite.",
-    "endTime": "Ora de Sfârșit",
-    "inputPlaceholder": "Vă rugăm să introduceți",
-    "multiplier": "Multiplicator",
-    "nodePullInterval": "Interval de extragere a nodului",
-    "nodePullIntervalDescription": "Frecvența cu care nodul obține date de la panou (secunde)",
-    "nodePushInterval": "Interval de împingere a nodului",
-    "nodePushIntervalDescription": "Frecvența cu care nodul trimite date către panou",
-    "reset": "Resetare",
-    "save": "Salvare",
-    "saveSuccess": "Salvare reușită",
-    "startTime": "Ora de Începere",
-    "timeSlot": "Interval de timp"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Utilizat pentru a afișa locația unde trebuie să fie prezentat LOGO-ul",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Monedă",
     "invite": "Invitație",
-    "node": "Nod",
     "site": "Site",
     "telegram": "Telegram",
     "tos": "Termeni de serviciu",

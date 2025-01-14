@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Default global commission distribution ratio; you can configure individual ratios in user management",
     "saveSuccess": "Save Successful"
   },
-  "node": {
-    "addTimeSlot": "Add Time Slot",
-    "communicationKey": "Communication Key",
-    "communicationKeyDescription": "Key for node communication to ensure data security",
-    "delete": "Delete",
-    "dynamicMultiplier": "Dynamic Multiplier",
-    "dynamicMultiplierDescription": "Dynamic Multiplier refers to processing pushed data with different multipliers for different nodes during different time periods.",
-    "endTime": "End Time",
-    "inputPlaceholder": "Enter",
-    "multiplier": "Multiplier",
-    "nodePullInterval": "Node Pull Interval",
-    "nodePullIntervalDescription": "Frequency (in seconds) for nodes to fetch data from the panel",
-    "nodePushInterval": "Node Push Interval",
-    "nodePushIntervalDescription": "Frequency for nodes to push data to the panel",
-    "reset": "Reset",
-    "save": "Save",
-    "saveSuccess": "Save Successful",
-    "startTime": "Start Time",
-    "timeSlot": "Time Slot"
-  },
   "site": {
     "logo": "Logo",
     "logoDescription": "Used for displaying the logo in designated locations",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Currency",
     "invite": "Invite",
-    "node": "Node",
     "site": "Site",
     "telegram": "Telegram",
     "tos": "Terms of Service",

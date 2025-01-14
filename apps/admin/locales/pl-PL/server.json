@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Dodaj przedział czasowy",
+    "communicationKey": "Klucz komunikacyjny",
+    "communicationKeyDescription": "Klucz do komunikacji węzłów w celu zapewnienia bezpieczeństwa danych",
+    "delete": "Usuń",
+    "dynamicMultiplier": "Mnożnik dynamiczny",
+    "dynamicMultiplierDescription": "Mnożnik dynamiczny odnosi się do przetwarzania przesyłanych danych z różnymi mnożnikami dla różnych węzłów w różnych okresach czasu.",
+    "endTime": "Czas zakończenia",
+    "inputPlaceholder": "Wprowadź",
+    "multiplier": "Mnożnik",
+    "nodePullInterval": "Interwał pobierania węzła",
+    "nodePullIntervalDescription": "Częstotliwość (w sekundach) pobierania danych przez węzły z panelu",
+    "nodePushInterval": "Interwał przesyłania węzła",
+    "nodePushIntervalDescription": "Częstotliwość przesyłania danych przez węzły do panelu",
+    "reset": "Resetuj",
+    "save": "Zapisz",
+    "saveSuccess": "Zapisano pomyślnie",
+    "startTime": "Czas rozpoczęcia",
+    "timeSlot": "Przedział czasowy"
+  },
   "group": {
     "actions": "Operacje",
     "cancel": "Anuluj",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Węzeł",
+    "nodeConfig": "Konfiguracja Węzła",
     "nodeGroup": "Grupa węzłów"
   }
 }

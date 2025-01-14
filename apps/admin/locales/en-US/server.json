@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Add Time Slot",
+    "communicationKey": "Communication Key",
+    "communicationKeyDescription": "Key for node communication to ensure data security",
+    "delete": "Delete",
+    "dynamicMultiplier": "Dynamic Multiplier",
+    "dynamicMultiplierDescription": "Dynamic Multiplier refers to processing pushed data with different multipliers for different nodes during different time periods.",
+    "endTime": "End Time",
+    "inputPlaceholder": "Enter",
+    "multiplier": "Multiplier",
+    "nodePullInterval": "Node Pull Interval",
+    "nodePullIntervalDescription": "Frequency (in seconds) for nodes to fetch data from the panel",
+    "nodePushInterval": "Node Push Interval",
+    "nodePushIntervalDescription": "Frequency for nodes to push data to the panel",
+    "reset": "Reset",
+    "save": "Save",
+    "saveSuccess": "Save Successful",
+    "startTime": "Start Time",
+    "timeSlot": "Time Slot"
+  },
   "group": {
     "actions": "Actions",
     "cancel": "Cancel",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Node",
+    "nodeConfig": "Node Configuration",
     "nodeGroup": "Node Group"
   }
 }

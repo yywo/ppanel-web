@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Ajouter un créneau horaire",
+    "communicationKey": "Clé de communication",
+    "communicationKeyDescription": "Clé pour la communication des nœuds afin d'assurer la sécurité des données",
+    "delete": "Supprimer",
+    "dynamicMultiplier": "Multiplicateur dynamique",
+    "dynamicMultiplierDescription": "Le multiplicateur dynamique fait référence au traitement des données poussées avec différents multiplicateurs pour différents nœuds pendant différentes périodes.",
+    "endTime": "Heure de fin",
+    "inputPlaceholder": "Entrer",
+    "multiplier": "Multiplicateur",
+    "nodePullInterval": "Intervalle de récupération des nœuds",
+    "nodePullIntervalDescription": "Fréquence (en secondes) à laquelle les nœuds récupèrent les données du panneau",
+    "nodePushInterval": "Intervalle de poussée des nœuds",
+    "nodePushIntervalDescription": "Fréquence à laquelle les nœuds poussent les données vers le panneau",
+    "reset": "Réinitialiser",
+    "save": "Enregistrer",
+    "saveSuccess": "Enregistrement réussi",
+    "startTime": "Heure de début",
+    "timeSlot": "Créneau horaire"
+  },
   "group": {
     "actions": "Actions",
     "cancel": "Annuler",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Nœud",
+    "nodeConfig": "Configuration du nœud",
     "nodeGroup": "Groupe de nœuds"
   }
 }

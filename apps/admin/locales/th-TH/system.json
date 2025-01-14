@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "อัตราการแบ่งปันค่าคอมมิชชั่นทั่วโลกเริ่มต้น คุณสามารถกำหนดค่าอัตราเฉพาะในระบบจัดการผู้ใช้",
     "saveSuccess": "บันทึกสำเร็จ"
   },
-  "node": {
-    "addTimeSlot": "เพิ่มช่วงเวลา",
-    "communicationKey": "คีย์การสื่อสาร",
-    "communicationKeyDescription": "คีย์สำหรับการสื่อสารของโหนด เพื่อให้มั่นใจว่าข้อมูลจะไม่ถูกดักจับโดยผู้อื่น",
-    "delete": "ลบ",
-    "dynamicMultiplier": "ตัวคูณแบบไดนามิก",
-    "dynamicMultiplierDescription": "ตัวคูณแบบไดนามิกหมายถึงการประมวลผลข้อมูลที่ถูกส่งด้วยตัวคูณที่แตกต่างกันสำหรับโหนดต่างๆ ในช่วงเวลาที่แตกต่างกัน",
-    "endTime": "เวลาสิ้นสุด",
-    "inputPlaceholder": "กรุณาใส่ข้อมูล",
-    "multiplier": "ตัวคูณ",
-    "nodePullInterval": "ช่วงเวลาการดึงข้อมูลของโหนด",
-    "nodePullIntervalDescription": "ความถี่ที่โหนดดึงข้อมูลจากแผงควบคุม (วินาที)",
-    "nodePushInterval": "ช่วงเวลาการส่งข้อมูลของโหนด",
-    "nodePushIntervalDescription": "ความถี่ที่โหนดส่งข้อมูลไปยังแผงควบคุม",
-    "reset": "รีเซ็ต",
-    "save": "บันทึก",
-    "saveSuccess": "บันทึกสำเร็จ",
-    "startTime": "เวลาเริ่มต้น",
-    "timeSlot": "ช่วงเวลา"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "ใช้สำหรับแสดงตำแหน่งที่ต้องการแสดง LOGO",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "สกุลเงิน",
     "invite": "เชิญ",
-    "node": "โหนด",
     "site": "เว็บไซต์",
     "telegram": "Telegram",
     "tos": "ข้อกำหนดการให้บริการ",

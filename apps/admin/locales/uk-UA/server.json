@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Додати часовий інтервал",
+    "communicationKey": "Ключ зв'язку",
+    "communicationKeyDescription": "Ключ для зв'язку вузлів для забезпечення безпеки даних",
+    "delete": "Видалити",
+    "dynamicMultiplier": "Динамічний множник",
+    "dynamicMultiplierDescription": "Динамічний множник означає обробку переданих даних з різними множниками для різних вузлів у різні періоди часу.",
+    "endTime": "Час завершення",
+    "inputPlaceholder": "Введіть",
+    "multiplier": "Множник",
+    "nodePullInterval": "Інтервал запиту вузла",
+    "nodePullIntervalDescription": "Частота (в секундах) запиту даних вузлами з панелі",
+    "nodePushInterval": "Інтервал передачі вузла",
+    "nodePushIntervalDescription": "Частота передачі даних вузлами на панель",
+    "reset": "Скинути",
+    "save": "Зберегти",
+    "saveSuccess": "Успішно збережено",
+    "startTime": "Час початку",
+    "timeSlot": "Часовий інтервал"
+  },
   "group": {
     "actions": "Дії",
     "cancel": "Скасувати",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Вузол",
+    "nodeConfig": "Конфігурація вузла",
     "nodeGroup": "Група вузлів"
   }
 }

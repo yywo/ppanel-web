@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Varsayılan küresel komisyon dağıtım oranı, kullanıcı yönetiminde tek bir oran yapılandırabilirsiniz.",
     "saveSuccess": "Başarıyla kaydedildi"
   },
-  "node": {
-    "addTimeSlot": "Zaman Dilimi Ekle",
-    "communicationKey": "İletişim Anahtarı",
-    "communicationKeyDescription": "Verilerin başkaları tarafından ele geçirilmemesini sağlamak için düğüm iletişim anahtarı",
-    "delete": "Sil",
-    "dynamicMultiplier": "Dinamik Çarpan",
-    "dynamicMultiplierDescription": "Dinamik Çarpan, farklı zaman dilimlerinde farklı düğümler için farklı çarpanlarla işlenen veriyi ifade eder.",
-    "endTime": "Bitiş Zamanı",
-    "inputPlaceholder": "Lütfen giriniz",
-    "multiplier": "Çarpan",
-    "nodePullInterval": "Düğüm Çekme Aralığı",
-    "nodePullIntervalDescription": "Düğümün panelden veri alma sıklığı (saniye)",
-    "nodePushInterval": "Düğüm Gönderme Aralığı",
-    "nodePushIntervalDescription": "Düğümün verileri panele gönderme sıklığı",
-    "reset": "Sıfırla",
-    "save": "Kaydet",
-    "saveSuccess": "Başarıyla kaydedildi",
-    "startTime": "Başlangıç Zamanı",
-    "timeSlot": "Zaman Dilimi"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "LOGO'nun gösterilmesi gereken yeri belirtir",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Para Birimi",
     "invite": "Davet Et",
-    "node": "Düğüm",
     "site": "Site",
     "telegram": "Telegram",
     "tos": "Hizmet Şartları",

@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "默認全局佣金分配比例，您可以在用戶管理中配置單個比例",
     "saveSuccess": "保存成功"
   },
-  "node": {
-    "addTimeSlot": "新增時間段",
-    "communicationKey": "通訊密鑰",
-    "communicationKeyDescription": "節點通訊的密鑰，以確保數據不被他人攔截",
-    "delete": "刪除",
-    "dynamicMultiplier": "動態乘數",
-    "dynamicMultiplierDescription": "動態乘數指的是在不同時間段內，對不同節點的推送數據使用不同的乘數進行處理。",
-    "endTime": "結束時間",
-    "inputPlaceholder": "請輸入",
-    "multiplier": "乘數",
-    "nodePullInterval": "節點拉取間隔",
-    "nodePullIntervalDescription": "節點從面板獲取數據的頻率（秒）",
-    "nodePushInterval": "節點推送間隔",
-    "nodePushIntervalDescription": "節點將數據推送到面板的頻率",
-    "reset": "重設",
-    "save": "儲存",
-    "saveSuccess": "保存成功",
-    "startTime": "開始時間",
-    "timeSlot": "時間段"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "用於顯示需要展示 LOGO 的位置",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "貨幣",
     "invite": "邀請",
-    "node": "節點",
     "site": "網站",
     "telegram": "Telegram",
     "tos": "服務條款",

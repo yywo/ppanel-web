@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Agregar Franja Horaria",
+    "communicationKey": "Clave de Comunicación",
+    "communicationKeyDescription": "Clave para la comunicación de nodos para garantizar la seguridad de los datos",
+    "delete": "Eliminar",
+    "dynamicMultiplier": "Multiplicador Dinámico",
+    "dynamicMultiplierDescription": "El Multiplicador Dinámico se refiere al procesamiento de datos enviados con diferentes multiplicadores para diferentes nodos durante distintos períodos de tiempo.",
+    "endTime": "Hora de Fin",
+    "inputPlaceholder": "Ingresar",
+    "multiplier": "Multiplicador",
+    "nodePullInterval": "Intervalo de Extracción de Nodo",
+    "nodePullIntervalDescription": "Frecuencia (en segundos) para que los nodos obtengan datos del panel",
+    "nodePushInterval": "Intervalo de Envío de Nodo",
+    "nodePushIntervalDescription": "Frecuencia para que los nodos envíen datos al panel",
+    "reset": "Restablecer",
+    "save": "Guardar",
+    "saveSuccess": "Guardado Exitoso",
+    "startTime": "Hora de Inicio",
+    "timeSlot": "Franja Horaria"
+  },
   "group": {
     "actions": "Acciones",
     "cancel": "Cancelar",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Nodo",
+    "nodeConfig": "Configuración del Nodo",
     "nodeGroup": "Grupo de nodos"
   }
 }

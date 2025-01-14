@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "デフォルトのグローバルコミッション配分率です。ユーザー管理で個別の割合を設定できます。",
     "saveSuccess": "保存に成功しました"
   },
-  "node": {
-    "addTimeSlot": "時間枠を追加",
-    "communicationKey": "通信キー",
-    "communicationKeyDescription": "ノード通信のためのキーで、データが他人に傍受されないようにします",
-    "delete": "削除",
-    "dynamicMultiplier": "動的乗数",
-    "dynamicMultiplierDescription": "動的乗数は、異なる時間帯に異なるノードに対して異なる乗数でプッシュされたデータを処理することを指します。",
-    "endTime": "終了時間",
-    "inputPlaceholder": "入力してください",
-    "multiplier": "乗数",
-    "nodePullInterval": "ノード取得間隔",
-    "nodePullIntervalDescription": "ノードがパネルからデータを取得する頻度（秒）",
-    "nodePushInterval": "ノード送信間隔",
-    "nodePushIntervalDescription": "ノードがデータをパネルに送信する頻度",
-    "reset": "リセット",
-    "save": "保存",
-    "saveSuccess": "保存成功",
-    "startTime": "開始時間",
-    "timeSlot": "時間枠"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "LOGOを表示する必要がある場所に使用されます",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "通貨",
     "invite": "招待",
-    "node": "ノード",
     "site": "サイト",
     "telegram": "Telegram",
     "tos": "利用規約",

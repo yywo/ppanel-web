@@ -18,26 +18,6 @@
     "inviteCommissionPercentageDescription": "Oletusarvoinen globaali provisiojakosuhde, voit määrittää yksittäisen suhteen käyttäjähallinnassa.",
     "saveSuccess": "Tallennus onnistui"
   },
-  "node": {
-    "addTimeSlot": "Lisää aikaväli",
-    "communicationKey": "Viestintäavain",
-    "communicationKeyDescription": "Solmun viestinnän avain, joka varmistaa, että tiedot eivät joudu muiden sieppaamiksi",
-    "delete": "Poista",
-    "dynamicMultiplier": "Dynaaminen Kerroin",
-    "dynamicMultiplierDescription": "Dynaaminen Kerroin viittaa siihen, että käsitellään siirrettyä dataa eri kertoimilla eri solmuille eri ajanjaksoina.",
-    "endTime": "Lopetusaika",
-    "inputPlaceholder": "Ole hyvä ja syötä",
-    "multiplier": "Kerroin",
-    "nodePullInterval": "Solmun noutoväli",
-    "nodePullIntervalDescription": "Kuinka usein solmu hakee tietoja paneelista (sekunteina)",
-    "nodePushInterval": "Solmun lähetysväli",
-    "nodePushIntervalDescription": "Kuinka usein solmu lähettää tietoja paneeliin",
-    "reset": "Nollaa",
-    "save": "Tallenna",
-    "saveSuccess": "Tallennus onnistui",
-    "startTime": "Aloitusaika",
-    "timeSlot": "Aikaväli"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Näyttääksesi paikan, jossa LOGO tulee näkyä",
@@ -56,7 +36,6 @@
   "tabs": {
     "currency": "Valuutta",
     "invite": "Kutsu",
-    "node": "Solmu",
     "site": "Sivusto",
     "telegram": "Telegram",
     "tos": "Käyttöehdot",

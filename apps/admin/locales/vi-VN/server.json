@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "Thêm Khung Giờ",
+    "communicationKey": "Khóa Giao Tiếp",
+    "communicationKeyDescription": "Khóa cho giao tiếp giữa các nút để đảm bảo an toàn dữ liệu",
+    "delete": "Xóa",
+    "dynamicMultiplier": "Hệ Số Động",
+    "dynamicMultiplierDescription": "Hệ Số Động đề cập đến việc xử lý dữ liệu đẩy với các hệ số khác nhau cho các nút khác nhau trong các khoảng thời gian khác nhau.",
+    "endTime": "Thời Gian Kết Thúc",
+    "inputPlaceholder": "Nhập",
+    "multiplier": "Hệ Số",
+    "nodePullInterval": "Khoảng Thời Gian Kéo Nút",
+    "nodePullIntervalDescription": "Tần suất (tính bằng giây) để các nút lấy dữ liệu từ bảng điều khiển",
+    "nodePushInterval": "Khoảng Thời Gian Đẩy Nút",
+    "nodePushIntervalDescription": "Tần suất để các nút đẩy dữ liệu lên bảng điều khiển",
+    "reset": "Đặt Lại",
+    "save": "Lưu",
+    "saveSuccess": "Lưu Thành Công",
+    "startTime": "Thời Gian Bắt Đầu",
+    "timeSlot": "Khung Giờ"
+  },
   "group": {
     "actions": "Hành động",
     "cancel": "Hủy bỏ",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "Nút",
+    "nodeConfig": "Cấu Hình Nút",
     "nodeGroup": "Nhóm nút"
   }
 }

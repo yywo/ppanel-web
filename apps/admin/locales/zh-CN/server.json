@@ -1,4 +1,24 @@
 {
+  "config": {
+    "addTimeSlot": "添加时间段",
+    "communicationKey": "通信密钥",
+    "communicationKeyDescription": "节点通信的密钥，以确保数据安全",
+    "delete": "删除",
+    "dynamicMultiplier": "动态倍数",
+    "dynamicMultiplierDescription": "动态倍数指在不同时间段内，对不同节点推送的数据进行不同倍数的处理。",
+    "endTime": "结束时间",
+    "inputPlaceholder": "输入",
+    "multiplier": "倍数",
+    "nodePullInterval": "节点拉取间隔",
+    "nodePullIntervalDescription": "节点从面板获取数据的频率（以秒为单位）",
+    "nodePushInterval": "节点推送间隔",
+    "nodePushIntervalDescription": "节点向面板推送数据的频率",
+    "reset": "重置",
+    "save": "保存",
+    "saveSuccess": "保存成功",
+    "startTime": "开始时间",
+    "timeSlot": "时间段"
+  },
   "group": {
     "actions": "操作",
     "cancel": "取消",
@@ -130,6 +150,7 @@
   },
   "tabs": {
     "node": "节点",
+    "nodeConfig": "节点配置",
     "nodeGroup": "节点组"
   }
 }
