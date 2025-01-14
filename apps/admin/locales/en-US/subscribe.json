@@ -1,6 +1,38 @@
 {
   "actions": "Actions",
+  "app": {
+    "add": "Add",
+    "appDownloadURL": "App Download URL",
+    "appIcon": "App Icon",
+    "appName": "App Name",
+    "batchDelete": "Batch Delete",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "confirmDelete": "Confirm Delete",
+    "createApp": "Create App",
+    "createSuccess": "Created successfully",
+    "delete": "Delete",
+    "deleteSuccess": "Deleted successfully",
+    "deleteWarning": "This action cannot be undone",
+    "edit": "Edit",
+    "editApp": "Edit App",
+    "platform": "Platform",
+    "subscriptionProtocol": "Subscription Protocol",
+    "updateSuccess": "Updated successfully"
+  },
   "cancel": "Cancel",
+  "config": {
+    "singleSubscriptionMode": "Single Subscription Mode",
+    "singleSubscriptionModeDescription": "When enabled, all user subscriptions will be converted to balance",
+    "subscriptionDomain": "Subscription Domain",
+    "subscriptionDomainDescription": "Used for subscription; leave blank to use site domain",
+    "subscriptionDomainPlaceholder": "Enter subscription domain, one per line",
+    "subscriptionPath": "Subscription Path",
+    "subscriptionPathDescription": "Used for subscription; be sure to restart the system after modification for optimal performance",
+    "subscriptionPathPlaceholder": "Enter",
+    "wildcardResolution": "Wildcard Resolution",
+    "wildcardResolutionDescription": "Used for subscription"
+  },
   "confirm": "Confirm",
   "confirmDelete": "Are you sure you want to delete?",
   "copy": "Copy",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Subscription Group",
   "tabs": {
     "subscribe": "Subscribe",
+    "subscribeApp": "App Configuration",
+    "subscribeConfig": "Subscription Configuration",
     "subscribeGroup": "Subscription Group"
   },
   "traffic": "Traffic",

@@ -1,6 +1,38 @@
 {
   "actions": "действия",
+  "app": {
+    "add": "Добавить",
+    "appDownloadURL": "URL загрузки приложения",
+    "appIcon": "Иконка приложения",
+    "appName": "Название приложения",
+    "batchDelete": "Удалить пакетно",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "confirmDelete": "Подтвердить удаление",
+    "createApp": "Создать приложение",
+    "createSuccess": "Успешно создано",
+    "delete": "Удалить",
+    "deleteSuccess": "Успешно удалено",
+    "deleteWarning": "Это действие необратимо",
+    "edit": "Редактировать",
+    "editApp": "Редактировать приложение",
+    "platform": "Платформа",
+    "subscriptionProtocol": "Протокол подписки",
+    "updateSuccess": "Успешно обновлено"
+  },
   "cancel": "Отмена",
+  "config": {
+    "singleSubscriptionMode": "Режим единой подписки",
+    "singleSubscriptionModeDescription": "Когда включено, все пользовательские подписки будут преобразованы в баланс",
+    "subscriptionDomain": "Домен подписки",
+    "subscriptionDomainDescription": "Используется для подписки; оставьте пустым, чтобы использовать домен сайта",
+    "subscriptionDomainPlaceholder": "Введите домен подписки, по одному на строку",
+    "subscriptionPath": "Путь подписки",
+    "subscriptionPathDescription": "Используется для подписки; обязательно перезапустите систему после изменения для оптимальной производительности",
+    "subscriptionPathPlaceholder": "Введите",
+    "wildcardResolution": "Разрешение подстановочных знаков",
+    "wildcardResolutionDescription": "Используется для подписки"
+  },
   "confirm": "Подтвердить",
   "confirmDelete": "Вы уверены, что хотите удалить?",
   "copy": "Копировать",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Подписаться на группу",
   "tabs": {
     "subscribe": "Подписаться",
+    "subscribeApp": "Конфигурация приложения",
+    "subscribeConfig": "Конфигурация подписки",
     "subscribeGroup": "Группа подписок"
   },
   "traffic": "трафик",

@@ -1,6 +1,38 @@
 {
   "actions": "actions",
+  "app": {
+    "add": "Ajouter",
+    "appDownloadURL": "URL de téléchargement de l'application",
+    "appIcon": "Icône de l'application",
+    "appName": "Nom de l'application",
+    "batchDelete": "Suppression par lot",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "confirmDelete": "Confirmer la suppression",
+    "createApp": "Créer une application",
+    "createSuccess": "Créé avec succès",
+    "delete": "Supprimer",
+    "deleteSuccess": "Supprimé avec succès",
+    "deleteWarning": "Cette action est irréversible",
+    "edit": "Modifier",
+    "editApp": "Modifier l'application",
+    "platform": "Plateforme",
+    "subscriptionProtocol": "Protocole d'abonnement",
+    "updateSuccess": "Mis à jour avec succès"
+  },
   "cancel": "Annuler",
+  "config": {
+    "singleSubscriptionMode": "Mode d'abonnement unique",
+    "singleSubscriptionModeDescription": "Lorsqu'il est activé, tous les abonnements des utilisateurs seront convertis en solde",
+    "subscriptionDomain": "Domaine d'abonnement",
+    "subscriptionDomainDescription": "Utilisé pour l'abonnement ; laissez vide pour utiliser le domaine du site",
+    "subscriptionDomainPlaceholder": "Entrez le domaine d'abonnement, un par ligne",
+    "subscriptionPath": "Chemin d'abonnement",
+    "subscriptionPathDescription": "Utilisé pour l'abonnement ; assurez-vous de redémarrer le système après modification pour des performances optimales",
+    "subscriptionPathPlaceholder": "Entrez",
+    "wildcardResolution": "Résolution générique",
+    "wildcardResolutionDescription": "Utilisé pour l'abonnement"
+  },
   "confirm": "Confirmer",
   "confirmDelete": "Êtes-vous sûr de vouloir supprimer ?",
   "copy": "Copier",
@@ -97,6 +129,8 @@
   "subscribeGroup": "S'abonner au groupe",
   "tabs": {
     "subscribe": "S'abonner",
+    "subscribeApp": "Configuration de l'application",
+    "subscribeConfig": "Configuration de l'abonnement",
     "subscribeGroup": "Groupe d'abonnement"
   },
   "traffic": "trafic",

@@ -1,6 +1,38 @@
 {
   "actions": "작업",
+  "app": {
+    "add": "추가",
+    "appDownloadURL": "앱 다운로드 URL",
+    "appIcon": "앱 아이콘",
+    "appName": "앱 이름",
+    "batchDelete": "일괄 삭제",
+    "cancel": "취소",
+    "confirm": "확인",
+    "confirmDelete": "삭제 확인",
+    "createApp": "앱 생성",
+    "createSuccess": "성공적으로 생성되었습니다",
+    "delete": "삭제",
+    "deleteSuccess": "성공적으로 삭제되었습니다",
+    "deleteWarning": "이 작업은 되돌릴 수 없습니다",
+    "edit": "편집",
+    "editApp": "앱 편집",
+    "platform": "플랫폼",
+    "subscriptionProtocol": "구독 프로토콜",
+    "updateSuccess": "성공적으로 업데이트되었습니다"
+  },
   "cancel": "취소",
+  "config": {
+    "singleSubscriptionMode": "단일 구독 모드",
+    "singleSubscriptionModeDescription": "활성화되면 모든 사용자 구독이 잔액으로 전환됩니다",
+    "subscriptionDomain": "구독 도메인",
+    "subscriptionDomainDescription": "구독에 사용됩니다; 사이트 도메인을 사용하려면 비워 두세요",
+    "subscriptionDomainPlaceholder": "구독 도메인을 입력하세요, 한 줄에 하나씩",
+    "subscriptionPath": "구독 경로",
+    "subscriptionPathDescription": "구독에 사용됩니다; 최적의 성능을 위해 수정 후 시스템을 재시작하세요",
+    "subscriptionPathPlaceholder": "입력하세요",
+    "wildcardResolution": "와일드카드 해상도",
+    "wildcardResolutionDescription": "구독에 사용됩니다"
+  },
   "confirm": "확인",
   "confirmDelete": "삭제하시겠습니까?",
   "copy": "복사",
@@ -97,6 +129,8 @@
   "subscribeGroup": "구독 그룹",
   "tabs": {
     "subscribe": "구독",
+    "subscribeApp": "앱 구성",
+    "subscribeConfig": "구독 구성",
     "subscribeGroup": "구독 그룹"
   },
   "traffic": "트래픽",

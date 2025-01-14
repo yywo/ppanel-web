@@ -1,6 +1,38 @@
 {
   "actions": "acțiuni",
+  "app": {
+    "add": "Adaugă",
+    "appDownloadURL": "URL Descărcare Aplicație",
+    "appIcon": "Iconiță Aplicație",
+    "appName": "Nume Aplicație",
+    "batchDelete": "Ștergere în Lot",
+    "cancel": "Anulează",
+    "confirm": "Confirmă",
+    "confirmDelete": "Confirmă Ștergerea",
+    "createApp": "Creează Aplicație",
+    "createSuccess": "Creat cu succes",
+    "delete": "Șterge",
+    "deleteSuccess": "Șters cu succes",
+    "deleteWarning": "Această acțiune nu poate fi anulată",
+    "edit": "Editează",
+    "editApp": "Editează Aplicație",
+    "platform": "Platformă",
+    "subscriptionProtocol": "Protocol de Abonament",
+    "updateSuccess": "Actualizat cu succes"
+  },
   "cancel": "Anulează",
+  "config": {
+    "singleSubscriptionMode": "Modul Abonament Unic",
+    "singleSubscriptionModeDescription": "Când este activat, toate abonamentele utilizatorilor vor fi convertite în sold",
+    "subscriptionDomain": "Domeniu Abonament",
+    "subscriptionDomainDescription": "Folosit pentru abonament; lăsați necompletat pentru a folosi domeniul site-ului",
+    "subscriptionDomainPlaceholder": "Introduceți domeniul abonamentului, unul pe linie",
+    "subscriptionPath": "Calea Abonamentului",
+    "subscriptionPathDescription": "Folosit pentru abonament; asigurați-vă că reporniți sistemul după modificare pentru performanțe optime",
+    "subscriptionPathPlaceholder": "Introduceți",
+    "wildcardResolution": "Rezoluție Wildcard",
+    "wildcardResolutionDescription": "Folosit pentru abonament"
+  },
   "confirm": "Confirmare",
   "confirmDelete": "Sigur doriți să ștergeți?",
   "copy": "Copiază",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Abonare grup",
   "tabs": {
     "subscribe": "Abonare",
+    "subscribeApp": "Configurare Aplicație",
+    "subscribeConfig": "Configurare Abonament",
     "subscribeGroup": "Grup de abonare"
   },
   "traffic": "trafic",

@@ -1,6 +1,38 @@
 {
   "actions": "ações",
+  "app": {
+    "add": "Adicionar",
+    "appDownloadURL": "URL de Download do App",
+    "appIcon": "Ícone do App",
+    "appName": "Nome do App",
+    "batchDelete": "Excluir em Lote",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "confirmDelete": "Confirmar Exclusão",
+    "createApp": "Criar App",
+    "createSuccess": "Criado com sucesso",
+    "delete": "Excluir",
+    "deleteSuccess": "Excluído com sucesso",
+    "deleteWarning": "Esta ação não pode ser desfeita",
+    "edit": "Editar",
+    "editApp": "Editar App",
+    "platform": "Plataforma",
+    "subscriptionProtocol": "Protocolo de Assinatura",
+    "updateSuccess": "Atualizado com sucesso"
+  },
   "cancel": "Cancelar",
+  "config": {
+    "singleSubscriptionMode": "Modo de Assinatura Única",
+    "singleSubscriptionModeDescription": "Quando ativado, todas as assinaturas de usuários serão convertidas para saldo",
+    "subscriptionDomain": "Domínio de Assinatura",
+    "subscriptionDomainDescription": "Usado para assinatura; deixe em branco para usar o domínio do site",
+    "subscriptionDomainPlaceholder": "Insira o domínio de assinatura, um por linha",
+    "subscriptionPath": "Caminho de Assinatura",
+    "subscriptionPathDescription": "Usado para assinatura; certifique-se de reiniciar o sistema após a modificação para um desempenho ideal",
+    "subscriptionPathPlaceholder": "Insira",
+    "wildcardResolution": "Resolução de Curinga",
+    "wildcardResolutionDescription": "Usado para assinatura"
+  },
   "confirm": "confirmar",
   "confirmDelete": "Tem certeza de que deseja excluir?",
   "copy": "Copiar",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Inscrever-se no grupo",
   "tabs": {
     "subscribe": "Inscrever-se",
+    "subscribeApp": "Configuração do Aplicativo",
+    "subscribeConfig": "Configuração de Assinatura",
     "subscribeGroup": "Grupo de Inscrição"
   },
   "traffic": "tráfego",

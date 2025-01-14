@@ -1,6 +1,38 @@
 {
   "actions": "handlinger",
+  "app": {
+    "add": "Legg til",
+    "appDownloadURL": "App Nedlastings-URL",
+    "appIcon": "App-ikon",
+    "appName": "App-navn",
+    "batchDelete": "Slett i gruppe",
+    "cancel": "Avbryt",
+    "confirm": "Bekreft",
+    "confirmDelete": "Bekreft sletting",
+    "createApp": "Opprett app",
+    "createSuccess": "Opprettet vellykket",
+    "delete": "Slett",
+    "deleteSuccess": "Slettet vellykket",
+    "deleteWarning": "Denne handlingen kan ikke angres",
+    "edit": "Rediger",
+    "editApp": "Rediger app",
+    "platform": "Plattform",
+    "subscriptionProtocol": "Abonnementsprotokoll",
+    "updateSuccess": "Oppdatert vellykket"
+  },
   "cancel": "Avbryt",
+  "config": {
+    "singleSubscriptionMode": "Enkelt Abonnementsmodus",
+    "singleSubscriptionModeDescription": "Når aktivert, vil alle brukerabonnementer bli konvertert til saldo",
+    "subscriptionDomain": "Abonnementsdomene",
+    "subscriptionDomainDescription": "Brukes for abonnement; la stå tomt for å bruke nettstedets domene",
+    "subscriptionDomainPlaceholder": "Skriv inn abonnementsdomene, ett per linje",
+    "subscriptionPath": "Abonnementssti",
+    "subscriptionPathDescription": "Brukes for abonnement; sørg for å starte systemet på nytt etter endring for optimal ytelse",
+    "subscriptionPathPlaceholder": "Skriv inn",
+    "wildcardResolution": "Jokertegnoppløsning",
+    "wildcardResolutionDescription": "Brukes for abonnement"
+  },
   "confirm": "Bekreft",
   "confirmDelete": "Er du sikker på at du vil slette?",
   "copy": "Kopier",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Abonner på gruppe",
   "tabs": {
     "subscribe": "Abonner",
+    "subscribeApp": "App-konfigurasjon",
+    "subscribeConfig": "Abonnementskonfigurasjon",
     "subscribeGroup": "Abonner gruppe"
   },
   "traffic": "trafikk",

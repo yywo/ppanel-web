@@ -1,6 +1,38 @@
 {
   "actions": "działania",
+  "app": {
+    "add": "Dodaj",
+    "appDownloadURL": "URL pobierania aplikacji",
+    "appIcon": "Ikona aplikacji",
+    "appName": "Nazwa aplikacji",
+    "batchDelete": "Usuń zbiorczo",
+    "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "confirmDelete": "Potwierdź usunięcie",
+    "createApp": "Utwórz aplikację",
+    "createSuccess": "Utworzono pomyślnie",
+    "delete": "Usuń",
+    "deleteSuccess": "Usunięto pomyślnie",
+    "deleteWarning": "Tej operacji nie można cofnąć",
+    "edit": "Edytuj",
+    "editApp": "Edytuj aplikację",
+    "platform": "Platforma",
+    "subscriptionProtocol": "Protokół subskrypcji",
+    "updateSuccess": "Zaktualizowano pomyślnie"
+  },
   "cancel": "Anuluj",
+  "config": {
+    "singleSubscriptionMode": "Tryb pojedynczej subskrypcji",
+    "singleSubscriptionModeDescription": "Po włączeniu wszystkie subskrypcje użytkowników zostaną przekształcone na saldo",
+    "subscriptionDomain": "Domena subskrypcji",
+    "subscriptionDomainDescription": "Używane do subskrypcji; pozostaw puste, aby użyć domeny witryny",
+    "subscriptionDomainPlaceholder": "Wprowadź domenę subskrypcji, jedna na linię",
+    "subscriptionPath": "Ścieżka subskrypcji",
+    "subscriptionPathDescription": "Używane do subskrypcji; upewnij się, że zrestartujesz system po modyfikacji dla optymalnej wydajności",
+    "subscriptionPathPlaceholder": "Wprowadź",
+    "wildcardResolution": "Rozwiązanie wieloznaczne",
+    "wildcardResolutionDescription": "Używane do subskrypcji"
+  },
   "confirm": "Potwierdź",
   "confirmDelete": "Czy na pewno chcesz usunąć?",
   "copy": "Kopiuj",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Subskrybuj grupę",
   "tabs": {
     "subscribe": "Subskrybuj",
+    "subscribeApp": "Konfiguracja aplikacji",
+    "subscribeConfig": "Konfiguracja subskrypcji",
     "subscribeGroup": "Grupa subskrypcji"
   },
   "traffic": "ruch",

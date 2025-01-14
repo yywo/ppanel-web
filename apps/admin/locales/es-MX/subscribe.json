@@ -1,6 +1,38 @@
 {
   "actions": "acciones",
+  "app": {
+    "add": "Agregar",
+    "appDownloadURL": "URL de Descarga de la App",
+    "appIcon": "Ícono de la App",
+    "appName": "Nombre de la App",
+    "batchDelete": "Eliminar en Lote",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "confirmDelete": "Confirmar Eliminación",
+    "createApp": "Crear App",
+    "createSuccess": "Creado exitosamente",
+    "delete": "Eliminar",
+    "deleteSuccess": "Eliminado exitosamente",
+    "deleteWarning": "Esta acción no se puede deshacer",
+    "edit": "Editar",
+    "editApp": "Editar App",
+    "platform": "Plataforma",
+    "subscriptionProtocol": "Protocolo de Suscripción",
+    "updateSuccess": "Actualizado exitosamente"
+  },
   "cancel": "Cancelar",
+  "config": {
+    "singleSubscriptionMode": "Modo de Suscripción Única",
+    "singleSubscriptionModeDescription": "Cuando está habilitado, todas las suscripciones de usuarios se convertirán en saldo",
+    "subscriptionDomain": "Dominio de Suscripción",
+    "subscriptionDomainDescription": "Usado para suscripción; deje en blanco para usar el dominio del sitio",
+    "subscriptionDomainPlaceholder": "Ingrese el dominio de suscripción, uno por línea",
+    "subscriptionPath": "Ruta de Suscripción",
+    "subscriptionPathDescription": "Usado para suscripción; asegúrese de reiniciar el sistema después de la modificación para un rendimiento óptimo",
+    "subscriptionPathPlaceholder": "Ingrese",
+    "wildcardResolution": "Resolución de Comodín",
+    "wildcardResolutionDescription": "Usado para suscripción"
+  },
   "confirm": "Confirmar",
   "confirmDelete": "¿Estás seguro de que deseas eliminar?",
   "copy": "Copiar",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Suscribirse al grupo",
   "tabs": {
     "subscribe": "Suscribirse",
+    "subscribeApp": "Configuración de la App",
+    "subscribeConfig": "Configuración de Suscripción",
     "subscribeGroup": "Grupo de suscripción"
   },
   "traffic": "tráfico",

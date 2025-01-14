@@ -1,6 +1,38 @@
 {
   "actions": "eylemler",
+  "app": {
+    "add": "Ekle",
+    "appDownloadURL": "Uygulama İndirme URL'si",
+    "appIcon": "Uygulama Simgesi",
+    "appName": "Uygulama Adı",
+    "batchDelete": "Toplu Sil",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "confirmDelete": "Silme İşlemini Onayla",
+    "createApp": "Uygulama Oluştur",
+    "createSuccess": "Başarıyla oluşturuldu",
+    "delete": "Sil",
+    "deleteSuccess": "Başarıyla silindi",
+    "deleteWarning": "Bu işlem geri alınamaz",
+    "edit": "Düzenle",
+    "editApp": "Uygulamayı Düzenle",
+    "platform": "Platform",
+    "subscriptionProtocol": "Abonelik Protokolü",
+    "updateSuccess": "Başarıyla güncellendi"
+  },
   "cancel": "İptal",
+  "config": {
+    "singleSubscriptionMode": "Tek Abonelik Modu",
+    "singleSubscriptionModeDescription": "Etkinleştirildiğinde, tüm kullanıcı abonelikleri bakiyeye dönüştürülecektir",
+    "subscriptionDomain": "Abonelik Alanı",
+    "subscriptionDomainDescription": "Abonelik için kullanılır; site alan adını kullanmak için boş bırakın",
+    "subscriptionDomainPlaceholder": "Abonelik alan adını girin, her satıra bir tane",
+    "subscriptionPath": "Abonelik Yolu",
+    "subscriptionPathDescription": "Abonelik için kullanılır; en iyi performans için değişiklikten sonra sistemi yeniden başlattığınızdan emin olun",
+    "subscriptionPathPlaceholder": "Giriniz",
+    "wildcardResolution": "Genel Çözümleme",
+    "wildcardResolutionDescription": "Abonelik için kullanılır"
+  },
   "confirm": "Onayla",
   "confirmDelete": "Silmek istediğinizden emin misiniz?",
   "copy": "Kopyala",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Gruba Abone Ol",
   "tabs": {
     "subscribe": "Abone Ol",
+    "subscribeApp": "Uygulama Yapılandırması",
+    "subscribeConfig": "Abonelik Yapılandırması",
     "subscribeGroup": "Abone Grubu"
   },
   "traffic": "trafik",

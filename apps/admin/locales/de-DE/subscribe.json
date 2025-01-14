@@ -1,6 +1,38 @@
 {
   "actions": "Aktionen",
+  "app": {
+    "add": "Hinzufügen",
+    "appDownloadURL": "App-Download-URL",
+    "appIcon": "App-Symbol",
+    "appName": "App-Name",
+    "batchDelete": "Stapel löschen",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "confirmDelete": "Löschen bestätigen",
+    "createApp": "App erstellen",
+    "createSuccess": "Erfolgreich erstellt",
+    "delete": "Löschen",
+    "deleteSuccess": "Erfolgreich gelöscht",
+    "deleteWarning": "Diese Aktion kann nicht rückgängig gemacht werden",
+    "edit": "Bearbeiten",
+    "editApp": "App bearbeiten",
+    "platform": "Plattform",
+    "subscriptionProtocol": "Abonnementprotokoll",
+    "updateSuccess": "Erfolgreich aktualisiert"
+  },
   "cancel": "Abbrechen",
+  "config": {
+    "singleSubscriptionMode": "Einzelabonnement-Modus",
+    "singleSubscriptionModeDescription": "Wenn aktiviert, werden alle Benutzerabonnements in Guthaben umgewandelt",
+    "subscriptionDomain": "Abonnement-Domain",
+    "subscriptionDomainDescription": "Wird für Abonnements verwendet; leer lassen, um die Site-Domain zu verwenden",
+    "subscriptionDomainPlaceholder": "Abonnement-Domain eingeben, eine pro Zeile",
+    "subscriptionPath": "Abonnement-Pfad",
+    "subscriptionPathDescription": "Wird für Abonnements verwendet; starten Sie das System nach der Änderung neu, um die optimale Leistung zu gewährleisten",
+    "subscriptionPathPlaceholder": "Eingeben",
+    "wildcardResolution": "Wildcard-Auflösung",
+    "wildcardResolutionDescription": "Wird für Abonnements verwendet"
+  },
   "confirm": "Bestätigen",
   "confirmDelete": "Möchten Sie wirklich löschen?",
   "copy": "Kopieren",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Gruppe abonnieren",
   "tabs": {
     "subscribe": "Abonnieren",
+    "subscribeApp": "App-Konfiguration",
+    "subscribeConfig": "Abonnement-Konfiguration",
     "subscribeGroup": "Abonnieren Gruppe"
   },
   "traffic": "Verkehr",

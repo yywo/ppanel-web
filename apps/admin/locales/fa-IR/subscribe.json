@@ -1,6 +1,38 @@
 {
   "actions": "اقدامات",
+  "app": {
+    "add": "افزودن",
+    "appDownloadURL": "آدرس دانلود اپلیکیشن",
+    "appIcon": "آیکون اپلیکیشن",
+    "appName": "نام اپلیکیشن",
+    "batchDelete": "حذف گروهی",
+    "cancel": "لغو",
+    "confirm": "تأیید",
+    "confirmDelete": "تأیید حذف",
+    "createApp": "ایجاد اپلیکیشن",
+    "createSuccess": "با موفقیت ایجاد شد",
+    "delete": "حذف",
+    "deleteSuccess": "با موفقیت حذف شد",
+    "deleteWarning": "این عمل قابل بازگشت نیست",
+    "edit": "ویرایش",
+    "editApp": "ویرایش اپلیکیشن",
+    "platform": "پلتفرم",
+    "subscriptionProtocol": "پروتکل اشتراک",
+    "updateSuccess": "با موفقیت به‌روزرسانی شد"
+  },
   "cancel": "لغو",
+  "config": {
+    "singleSubscriptionMode": "حالت اشتراک تکی",
+    "singleSubscriptionModeDescription": "هنگامی که فعال شود، تمام اشتراک‌های کاربر به موجودی تبدیل می‌شوند",
+    "subscriptionDomain": "دامنه اشتراک",
+    "subscriptionDomainDescription": "برای اشتراک استفاده می‌شود؛ برای استفاده از دامنه سایت، خالی بگذارید",
+    "subscriptionDomainPlaceholder": "دامنه اشتراک را وارد کنید، هر خط یک دامنه",
+    "subscriptionPath": "مسیر اشتراک",
+    "subscriptionPathDescription": "برای اشتراک استفاده می‌شود؛ حتماً پس از تغییر، سیستم را برای عملکرد بهینه راه‌اندازی مجدد کنید",
+    "subscriptionPathPlaceholder": "وارد کنید",
+    "wildcardResolution": "حل و فصل کاراکترهای جایگزین",
+    "wildcardResolutionDescription": "برای اشتراک استفاده می‌شود"
+  },
   "confirm": "تأیید",
   "confirmDelete": "آیا مطمئن هستید که می‌خواهید حذف کنید؟",
   "copy": "کپی",
@@ -97,6 +129,8 @@
   "subscribeGroup": "گروه اشتراک",
   "tabs": {
     "subscribe": "اشتراک",
+    "subscribeApp": "پیکربندی اپلیکیشن",
+    "subscribeConfig": "پیکربندی اشتراک",
     "subscribeGroup": "گروه اشتراک"
   },
   "traffic": "ترافیک",

@@ -1,6 +1,38 @@
 {
   "actions": "műveletek",
+  "app": {
+    "add": "Hozzáadás",
+    "appDownloadURL": "Alkalmazás letöltési URL",
+    "appIcon": "Alkalmazás ikon",
+    "appName": "Alkalmazás neve",
+    "batchDelete": "Csoportos törlés",
+    "cancel": "Mégse",
+    "confirm": "Megerősítés",
+    "confirmDelete": "Törlés megerősítése",
+    "createApp": "Alkalmazás létrehozása",
+    "createSuccess": "Sikeresen létrehozva",
+    "delete": "Törlés",
+    "deleteSuccess": "Sikeresen törölve",
+    "deleteWarning": "Ez a művelet nem vonható vissza",
+    "edit": "Szerkesztés",
+    "editApp": "Alkalmazás szerkesztése",
+    "platform": "Platform",
+    "subscriptionProtocol": "Előfizetési protokoll",
+    "updateSuccess": "Sikeresen frissítve"
+  },
   "cancel": "Mégse",
+  "config": {
+    "singleSubscriptionMode": "Egyszeri Előfizetési Mód",
+    "singleSubscriptionModeDescription": "Ha engedélyezve van, az összes felhasználói előfizetés egyenlegre lesz átváltva",
+    "subscriptionDomain": "Előfizetési Tartomány",
+    "subscriptionDomainDescription": "Előfizetéshez használatos; hagyja üresen a webhely tartományának használatához",
+    "subscriptionDomainPlaceholder": "Adja meg az előfizetési tartományt, soronként egyet",
+    "subscriptionPath": "Előfizetési Útvonal",
+    "subscriptionPathDescription": "Előfizetéshez használatos; a módosítás után feltétlenül indítsa újra a rendszert az optimális teljesítmény érdekében",
+    "subscriptionPathPlaceholder": "Adja meg",
+    "wildcardResolution": "Joker Feloldás",
+    "wildcardResolutionDescription": "Előfizetéshez használatos"
+  },
   "confirm": "Megerősítés",
   "confirmDelete": "Biztosan törölni szeretné?",
   "copy": "Másolás",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Feliratkozási csoport",
   "tabs": {
     "subscribe": "Feliratkozás",
+    "subscribeApp": "Alkalmazás konfiguráció",
+    "subscribeConfig": "Előfizetés konfiguráció",
     "subscribeGroup": "Feliratkozási csoport"
   },
   "traffic": "forgalom",

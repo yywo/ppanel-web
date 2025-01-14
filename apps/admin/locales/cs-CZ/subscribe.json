@@ -1,6 +1,38 @@
 {
   "actions": "akce",
+  "app": {
+    "add": "Přidat",
+    "appDownloadURL": "URL pro stažení aplikace",
+    "appIcon": "Ikona aplikace",
+    "appName": "Název aplikace",
+    "batchDelete": "Hromadné smazání",
+    "cancel": "Zrušit",
+    "confirm": "Potvrdit",
+    "confirmDelete": "Potvrdit smazání",
+    "createApp": "Vytvořit aplikaci",
+    "createSuccess": "Úspěšně vytvořeno",
+    "delete": "Smazat",
+    "deleteSuccess": "Úspěšně smazáno",
+    "deleteWarning": "Tuto akci nelze vrátit zpět",
+    "edit": "Upravit",
+    "editApp": "Upravit aplikaci",
+    "platform": "Platforma",
+    "subscriptionProtocol": "Protokol předplatného",
+    "updateSuccess": "Úspěšně aktualizováno"
+  },
   "cancel": "Zrušit",
+  "config": {
+    "singleSubscriptionMode": "Režim jednorázového předplatného",
+    "singleSubscriptionModeDescription": "Když je povoleno, všechna uživatelská předplatná budou převedena na zůstatek",
+    "subscriptionDomain": "Doména předplatného",
+    "subscriptionDomainDescription": "Používá se pro předplatné; nechte prázdné pro použití domény webu",
+    "subscriptionDomainPlaceholder": "Zadejte doménu předplatného, jednu na řádek",
+    "subscriptionPath": "Cesta předplatného",
+    "subscriptionPathDescription": "Používá se pro předplatné; po úpravě nezapomeňte restartovat systém pro optimální výkon",
+    "subscriptionPathPlaceholder": "Zadejte",
+    "wildcardResolution": "Řešení zástupných znaků",
+    "wildcardResolutionDescription": "Používá se pro předplatné"
+  },
   "confirm": "Potvrdit",
   "confirmDelete": "Opravdu chcete smazat?",
   "copy": "Kopírovat",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Přihlásit se ke skupině",
   "tabs": {
     "subscribe": "Předplatit",
+    "subscribeApp": "Konfigurace aplikace",
+    "subscribeConfig": "Konfigurace předplatného",
     "subscribeGroup": "Skupina předplatných"
   },
   "traffic": "provoz",

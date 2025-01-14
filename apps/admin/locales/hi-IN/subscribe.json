@@ -1,6 +1,38 @@
 {
   "actions": "क्रियाएँ",
+  "app": {
+    "add": "जोड़ें",
+    "appDownloadURL": "ऐप डाउनलोड URL",
+    "appIcon": "ऐप आइकन",
+    "appName": "ऐप का नाम",
+    "batchDelete": "बैच हटाएं",
+    "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "confirmDelete": "हटाने की पुष्टि करें",
+    "createApp": "ऐप बनाएं",
+    "createSuccess": "सफलतापूर्वक बनाया गया",
+    "delete": "हटाएं",
+    "deleteSuccess": "सफलतापूर्वक हटाया गया",
+    "deleteWarning": "यह क्रिया पूर्ववत नहीं की जा सकती",
+    "edit": "संपादित करें",
+    "editApp": "ऐप संपादित करें",
+    "platform": "प्लेटफ़ॉर्म",
+    "subscriptionProtocol": "सदस्यता प्रोटोकॉल",
+    "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
+  },
   "cancel": "रद्द करें",
+  "config": {
+    "singleSubscriptionMode": "एकल सदस्यता मोड",
+    "singleSubscriptionModeDescription": "सक्रिय होने पर, सभी उपयोगकर्ता सदस्यताएँ शेष में परिवर्तित हो जाएँगी",
+    "subscriptionDomain": "सदस्यता डोमेन",
+    "subscriptionDomainDescription": "सदस्यता के लिए उपयोग किया जाता है; साइट डोमेन का उपयोग करने के लिए खाली छोड़ दें",
+    "subscriptionDomainPlaceholder": "सदस्यता डोमेन दर्ज करें, एक प्रति पंक्ति",
+    "subscriptionPath": "सदस्यता पथ",
+    "subscriptionPathDescription": "सदस्यता के लिए उपयोग किया जाता है; इष्टतम प्रदर्शन के लिए संशोधन के बाद सिस्टम को पुनः आरंभ करना सुनिश्चित करें",
+    "subscriptionPathPlaceholder": "दर्ज करें",
+    "wildcardResolution": "वाइल्डकार्ड समाधान",
+    "wildcardResolutionDescription": "सदस्यता के लिए उपयोग किया जाता है"
+  },
   "confirm": "पुष्टि करें",
   "confirmDelete": "क्या आप वाकई हटाना चाहते हैं?",
   "copy": "कॉपी",
@@ -97,6 +129,8 @@
   "subscribeGroup": "सदस्यता समूह",
   "tabs": {
     "subscribe": "सदस्यता लें",
+    "subscribeApp": "ऐप कॉन्फ़िगरेशन",
+    "subscribeConfig": "सदस्यता कॉन्फ़िगरेशन",
     "subscribeGroup": "समूह सदस्यता"
   },
   "traffic": "ट्रैफिक",

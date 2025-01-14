@@ -1,6 +1,38 @@
 {
   "actions": "การดำเนินการ",
+  "app": {
+    "add": "เพิ่ม",
+    "appDownloadURL": "URL ดาวน์โหลดแอป",
+    "appIcon": "ไอคอนแอป",
+    "appName": "ชื่อแอป",
+    "batchDelete": "ลบเป็นกลุ่ม",
+    "cancel": "ยกเลิก",
+    "confirm": "ยืนยัน",
+    "confirmDelete": "ยืนยันการลบ",
+    "createApp": "สร้างแอป",
+    "createSuccess": "สร้างสำเร็จ",
+    "delete": "ลบ",
+    "deleteSuccess": "ลบสำเร็จ",
+    "deleteWarning": "การกระทำนี้ไม่สามารถย้อนกลับได้",
+    "edit": "แก้ไข",
+    "editApp": "แก้ไขแอป",
+    "platform": "แพลตฟอร์ม",
+    "subscriptionProtocol": "โปรโตคอลการสมัครสมาชิก",
+    "updateSuccess": "อัปเดตสำเร็จ"
+  },
   "cancel": "ยกเลิก",
+  "config": {
+    "singleSubscriptionMode": "โหมดการสมัครสมาชิกเดี่ยว",
+    "singleSubscriptionModeDescription": "เมื่อเปิดใช้งาน การสมัครสมาชิกทั้งหมดของผู้ใช้จะถูกแปลงเป็นยอดคงเหลือ",
+    "subscriptionDomain": "โดเมนการสมัครสมาชิก",
+    "subscriptionDomainDescription": "ใช้สำหรับการสมัครสมาชิก; ปล่อยว่างไว้เพื่อใช้โดเมนของเว็บไซต์",
+    "subscriptionDomainPlaceholder": "กรอกโดเมนการสมัครสมาชิก หนึ่งบรรทัดต่อหนึ่งโดเมน",
+    "subscriptionPath": "เส้นทางการสมัครสมาชิก",
+    "subscriptionPathDescription": "ใช้สำหรับการสมัครสมาชิก; อย่าลืมรีสตาร์ทระบบหลังจากการแก้ไขเพื่อประสิทธิภาพที่ดีที่สุด",
+    "subscriptionPathPlaceholder": "กรอก",
+    "wildcardResolution": "การแก้ไขไวลด์การ์ด",
+    "wildcardResolutionDescription": "ใช้สำหรับการสมัครสมาชิก"
+  },
   "confirm": "ยืนยัน",
   "confirmDelete": "คุณแน่ใจหรือว่าต้องการลบ?",
   "copy": "คัดลอก",
@@ -97,6 +129,8 @@
   "subscribeGroup": "สมัครกลุ่ม",
   "tabs": {
     "subscribe": "สมัครสมาชิก",
+    "subscribeApp": "การกำหนดค่าแอป",
+    "subscribeConfig": "การกำหนดค่าการสมัครสมาชิก",
     "subscribeGroup": "กลุ่มสมัครสมาชิก"
   },
   "traffic": "การจราจร",

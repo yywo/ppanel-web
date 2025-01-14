@@ -1,6 +1,38 @@
 {
   "actions": "дії",
+  "app": {
+    "add": "Додати",
+    "appDownloadURL": "URL завантаження додатку",
+    "appIcon": "Іконка додатку",
+    "appName": "Назва додатку",
+    "batchDelete": "Пакетне видалення",
+    "cancel": "Скасувати",
+    "confirm": "Підтвердити",
+    "confirmDelete": "Підтвердити видалення",
+    "createApp": "Створити додаток",
+    "createSuccess": "Успішно створено",
+    "delete": "Видалити",
+    "deleteSuccess": "Успішно видалено",
+    "deleteWarning": "Цю дію не можна скасувати",
+    "edit": "Редагувати",
+    "editApp": "Редагувати додаток",
+    "platform": "Платформа",
+    "subscriptionProtocol": "Протокол підписки",
+    "updateSuccess": "Успішно оновлено"
+  },
   "cancel": "Скасувати",
+  "config": {
+    "singleSubscriptionMode": "Режим Однієї Підписки",
+    "singleSubscriptionModeDescription": "Коли увімкнено, всі підписки користувачів будуть перетворені на баланс",
+    "subscriptionDomain": "Домен Підписки",
+    "subscriptionDomainDescription": "Використовується для підписки; залиште порожнім, щоб використовувати домен сайту",
+    "subscriptionDomainPlaceholder": "Введіть домен підписки, один на рядок",
+    "subscriptionPath": "Шлях Підписки",
+    "subscriptionPathDescription": "Використовується для підписки; обов'язково перезапустіть систему після зміни для оптимальної продуктивності",
+    "subscriptionPathPlaceholder": "Введіть",
+    "wildcardResolution": "Розв'язання Маски",
+    "wildcardResolutionDescription": "Використовується для підписки"
+  },
   "confirm": "Підтвердити",
   "confirmDelete": "Ви впевнені, що хочете видалити?",
   "copy": "Копіювати",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Підписатися на групу",
   "tabs": {
     "subscribe": "Підписатися",
+    "subscribeApp": "Конфігурація додатку",
+    "subscribeConfig": "Конфігурація підписки",
     "subscribeGroup": "Група підписок"
   },
   "traffic": "Трафік",

@@ -1,6 +1,38 @@
 {
   "actions": "操作",
+  "app": {
+    "add": "添加",
+    "appDownloadURL": "应用下载链接",
+    "appIcon": "应用图标",
+    "appName": "应用名称",
+    "batchDelete": "批量删除",
+    "cancel": "取消",
+    "confirm": "确认",
+    "confirmDelete": "确认删除",
+    "createApp": "创建应用",
+    "createSuccess": "创建成功",
+    "delete": "删除",
+    "deleteSuccess": "删除成功",
+    "deleteWarning": "此操作无法撤销",
+    "edit": "编辑",
+    "editApp": "编辑应用",
+    "platform": "平台",
+    "subscriptionProtocol": "订阅协议",
+    "updateSuccess": "更新成功"
+  },
   "cancel": "取消",
+  "config": {
+    "singleSubscriptionMode": "单一订阅模式",
+    "singleSubscriptionModeDescription": "启用后，所有用户订阅将转换为余额",
+    "subscriptionDomain": "订阅域名",
+    "subscriptionDomainDescription": "用于订阅；留空则使用站点域名",
+    "subscriptionDomainPlaceholder": "输入订阅域名，每行一个",
+    "subscriptionPath": "订阅路径",
+    "subscriptionPathDescription": "用于订阅；修改后请务必重启系统以获得最佳性能",
+    "subscriptionPathPlaceholder": "输入",
+    "wildcardResolution": "通配符解析",
+    "wildcardResolutionDescription": "用于订阅"
+  },
   "confirm": "确认",
   "confirmDelete": "确定删除吗？",
   "copy": "复制",
@@ -97,6 +129,8 @@
   "subscribeGroup": "订阅组",
   "tabs": {
     "subscribe": "订阅",
+    "subscribeApp": "应用配置",
+    "subscribeConfig": "订阅配置",
     "subscribeGroup": "订阅组"
   },
   "traffic": "流量",

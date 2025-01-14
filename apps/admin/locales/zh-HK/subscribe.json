@@ -1,6 +1,38 @@
 {
   "actions": "操作",
+  "app": {
+    "add": "新增",
+    "appDownloadURL": "應用程式下載網址",
+    "appIcon": "應用程式圖示",
+    "appName": "應用程式名稱",
+    "batchDelete": "批量刪除",
+    "cancel": "取消",
+    "confirm": "確認",
+    "confirmDelete": "確認刪除",
+    "createApp": "創建應用程式",
+    "createSuccess": "創建成功",
+    "delete": "刪除",
+    "deleteSuccess": "刪除成功",
+    "deleteWarning": "此操作無法撤銷",
+    "edit": "編輯",
+    "editApp": "編輯應用程式",
+    "platform": "平台",
+    "subscriptionProtocol": "訂閱協議",
+    "updateSuccess": "更新成功"
+  },
   "cancel": "取消",
+  "config": {
+    "singleSubscriptionMode": "單一訂閱模式",
+    "singleSubscriptionModeDescription": "啟用後，所有用戶訂閱將轉換為餘額",
+    "subscriptionDomain": "訂閱域名",
+    "subscriptionDomainDescription": "用於訂閱；留空則使用網站域名",
+    "subscriptionDomainPlaceholder": "輸入訂閱域名，每行一個",
+    "subscriptionPath": "訂閱路徑",
+    "subscriptionPathDescription": "用於訂閱；修改後請務必重啟系統以獲得最佳性能",
+    "subscriptionPathPlaceholder": "輸入",
+    "wildcardResolution": "通配符解析",
+    "wildcardResolutionDescription": "用於訂閱"
+  },
   "confirm": "確認",
   "confirmDelete": "確定刪除嗎？",
   "copy": "複製",
@@ -97,6 +129,8 @@
   "subscribeGroup": "訂閱組",
   "tabs": {
     "subscribe": "訂閱",
+    "subscribeApp": "應用程式配置",
+    "subscribeConfig": "訂閱配置",
     "subscribeGroup": "訂閱組"
   },
   "traffic": "流量",

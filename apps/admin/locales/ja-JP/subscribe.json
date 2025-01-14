@@ -1,6 +1,38 @@
 {
   "actions": "アクション",
+  "app": {
+    "add": "追加",
+    "appDownloadURL": "アプリダウンロードURL",
+    "appIcon": "アプリアイコン",
+    "appName": "アプリ名",
+    "batchDelete": "一括削除",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "confirmDelete": "削除を確認",
+    "createApp": "アプリ作成",
+    "createSuccess": "作成に成功しました",
+    "delete": "削除",
+    "deleteSuccess": "削除に成功しました",
+    "deleteWarning": "この操作は元に戻せません",
+    "edit": "編集",
+    "editApp": "アプリ編集",
+    "platform": "プラットフォーム",
+    "subscriptionProtocol": "サブスクリプションプロトコル",
+    "updateSuccess": "更新に成功しました"
+  },
   "cancel": "キャンセル",
+  "config": {
+    "singleSubscriptionMode": "シングルサブスクリプションモード",
+    "singleSubscriptionModeDescription": "有効にすると、すべてのユーザーサブスクリプションがバランスに変換されます",
+    "subscriptionDomain": "サブスクリプションドメイン",
+    "subscriptionDomainDescription": "サブスクリプションに使用します。サイトドメインを使用する場合は空白のままにしてください",
+    "subscriptionDomainPlaceholder": "サブスクリプションドメインを入力してください。1行に1つずつ",
+    "subscriptionPath": "サブスクリプションパス",
+    "subscriptionPathDescription": "サブスクリプションに使用します。最適なパフォーマンスのために、変更後は必ずシステムを再起動してください",
+    "subscriptionPathPlaceholder": "入力してください",
+    "wildcardResolution": "ワイルドカード解決",
+    "wildcardResolutionDescription": "サブスクリプションに使用します"
+  },
   "confirm": "確認",
   "confirmDelete": "削除してもよろしいですか？",
   "copy": "コピー",
@@ -97,6 +129,8 @@
   "subscribeGroup": "グループを購読する",
   "tabs": {
     "subscribe": "購読",
+    "subscribeApp": "アプリ設定",
+    "subscribeConfig": "サブスクリプション設定",
     "subscribeGroup": "購読グループ"
   },
   "traffic": "トラフィック",

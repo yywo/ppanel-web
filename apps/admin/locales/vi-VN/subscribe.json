@@ -1,6 +1,38 @@
 {
   "actions": "Hành động",
+  "app": {
+    "add": "Thêm",
+    "appDownloadURL": "URL Tải Ứng Dụng",
+    "appIcon": "Biểu Tượng Ứng Dụng",
+    "appName": "Tên Ứng Dụng",
+    "batchDelete": "Xóa Hàng Loạt",
+    "cancel": "Hủy",
+    "confirm": "Xác Nhận",
+    "confirmDelete": "Xác Nhận Xóa",
+    "createApp": "Tạo Ứng Dụng",
+    "createSuccess": "Tạo thành công",
+    "delete": "Xóa",
+    "deleteSuccess": "Xóa thành công",
+    "deleteWarning": "Hành động này không thể hoàn tác",
+    "edit": "Chỉnh Sửa",
+    "editApp": "Chỉnh Sửa Ứng Dụng",
+    "platform": "Nền Tảng",
+    "subscriptionProtocol": "Giao Thức Đăng Ký",
+    "updateSuccess": "Cập nhật thành công"
+  },
   "cancel": "Hủy",
+  "config": {
+    "singleSubscriptionMode": "Chế Độ Đăng Ký Đơn",
+    "singleSubscriptionModeDescription": "Khi được kích hoạt, tất cả các đăng ký của người dùng sẽ được chuyển đổi thành số dư",
+    "subscriptionDomain": "Miền Đăng Ký",
+    "subscriptionDomainDescription": "Dùng cho đăng ký; để trống để sử dụng miền của trang",
+    "subscriptionDomainPlaceholder": "Nhập miền đăng ký, mỗi dòng một miền",
+    "subscriptionPath": "Đường Dẫn Đăng Ký",
+    "subscriptionPathDescription": "Dùng cho đăng ký; hãy chắc chắn khởi động lại hệ thống sau khi sửa đổi để có hiệu suất tối ưu",
+    "subscriptionPathPlaceholder": "Nhập",
+    "wildcardResolution": "Giải Quyết Ký Tự Đại Diện",
+    "wildcardResolutionDescription": "Dùng cho đăng ký"
+  },
   "confirm": "Xác nhận",
   "confirmDelete": "Bạn có chắc chắn muốn xóa không?",
   "copy": "Sao chép",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Nhóm đăng ký",
   "tabs": {
     "subscribe": "Đăng ký",
+    "subscribeApp": "Cấu Hình Ứng Dụng",
+    "subscribeConfig": "Cấu Hình Đăng Ký",
     "subscribeGroup": "Nhóm đăng ký"
   },
   "traffic": "lưu lượng",

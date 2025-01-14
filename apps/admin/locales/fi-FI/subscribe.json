@@ -1,6 +1,38 @@
 {
   "actions": "toiminnot",
+  "app": {
+    "add": "Lisää",
+    "appDownloadURL": "Sovelluksen lataus-URL",
+    "appIcon": "Sovelluksen kuvake",
+    "appName": "Sovelluksen nimi",
+    "batchDelete": "Poista erä",
+    "cancel": "Peruuta",
+    "confirm": "Vahvista",
+    "confirmDelete": "Vahvista poisto",
+    "createApp": "Luo sovellus",
+    "createSuccess": "Luotu onnistuneesti",
+    "delete": "Poista",
+    "deleteSuccess": "Poistettu onnistuneesti",
+    "deleteWarning": "Tätä toimintoa ei voi peruuttaa",
+    "edit": "Muokkaa",
+    "editApp": "Muokkaa sovellusta",
+    "platform": "Alusta",
+    "subscriptionProtocol": "Tilausprotokolla",
+    "updateSuccess": "Päivitetty onnistuneesti"
+  },
   "cancel": "Peruuta",
+  "config": {
+    "singleSubscriptionMode": "Yhden tilauksen tila",
+    "singleSubscriptionModeDescription": "Kun tämä on käytössä, kaikki käyttäjätilaukset muunnetaan saldoksi",
+    "subscriptionDomain": "Tilausalue",
+    "subscriptionDomainDescription": "Käytetään tilaukseen; jätä tyhjäksi käyttääksesi sivuston verkkotunnusta",
+    "subscriptionDomainPlaceholder": "Syötä tilausalue, yksi per rivi",
+    "subscriptionPath": "Tilauspolku",
+    "subscriptionPathDescription": "Käytetään tilaukseen; varmista, että käynnistät järjestelmän uudelleen muutoksen jälkeen parhaan suorituskyvyn saavuttamiseksi",
+    "subscriptionPathPlaceholder": "Syötä",
+    "wildcardResolution": "Yleismerkkien ratkaisu",
+    "wildcardResolutionDescription": "Käytetään tilaukseen"
+  },
   "confirm": "Vahvista",
   "confirmDelete": "Haluatko varmasti poistaa?",
   "copy": "Kopioi",
@@ -97,6 +129,8 @@
   "subscribeGroup": "Tilaa ryhmä",
   "tabs": {
     "subscribe": "Tilaa",
+    "subscribeApp": "Sovelluksen asetukset",
+    "subscribeConfig": "Tilausasetukset",
     "subscribeGroup": "Tilaa ryhmä"
   },
   "traffic": "liikenne",
