@@ -33,12 +33,17 @@
     "passwordPlaceholder": "Enter new password (optional)",
     "refererId": "Referer ID",
     "refererIdPlaceholder": "Enter referer ID",
+    "telephone": "Phone Number",
+    "telephonePlaceholder": "Enter phone number",
+    "areaCode": "Area Code",
+    "areaCodePlaceholder": "Area code",
     "userEmail": "User Email",
     "userEmailPlaceholder": "Enter user email"
   },
   "giftAmount": "Gift Amount",
   "inviteCode": "Invite Code",
   "referer": "Referer",
+  "telephone": "Phone Number",
   "updateSuccess": "Update successful",
   "userList": "User List",
   "userName": "User Email"

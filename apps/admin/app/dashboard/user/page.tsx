@@ -76,6 +76,14 @@ export default function Page() {
           header: t('userName'),
         },
         {
+          accessorKey: 'telephone',
+          header: t('telephone'),
+          cell: ({ row }) => {
+            if (!row.original.telephone) return '--';
+            return `+${row.original.telephone_area_code} ${row.original.telephone}`;
+          },
+        },
+        {
           accessorKey: 'balance',
           header: t('balance'),
           cell: ({ row }) => <Display type='currency' value={row.getValue('balance')} />,

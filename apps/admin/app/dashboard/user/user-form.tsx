@@ -22,6 +22,7 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { Switch } from '@workspace/ui/components/switch';
+import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
@@ -52,6 +53,8 @@ export default function UserForm<T extends Record<string, any>>({
   const [open, setOpen] = useState(false);
   const formSchema = z.object({
     email: z.string().email(t('form.invalidEmailFormat')),
+    telephone_area_code: z.string().optional(),
+    telephone: z.string().optional(),
     password: z.string().optional(),
     referer_id: z.number().optional(),
     refer_code: z.string().optional(),
@@ -105,6 +108,48 @@ export default function UserForm<T extends Record<string, any>>({
                     <FormControl>
                       <EnhancedInput
                         placeholder={t('form.userEmailPlaceholder')}
+                        {...field}
+                        onValueChange={(value) => {
+                          form.setValue(field.name, value);
+                        }}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='telephone'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('form.telephone')}</FormLabel>
+                    <FormControl>
+                      <EnhancedInput
+                        prefix={
+                          <FormField
+                            control={form.control}
+                            name='telephone_area_code'
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormControl>
+                                  <AreaCodeSelect
+                                    className='w-32 rounded-none border-y-0 border-l-0'
+                                    simple
+                                    placeholder={t('form.areaCodePlaceholder')}
+                                    value={field.value}
+                                    onChange={(value) => {
+                                      form.setValue(field.name, value.phone);
+                                    }}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        }
+                        placeholder={t('form.telephonePlaceholder')}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);

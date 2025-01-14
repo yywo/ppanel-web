@@ -4,8 +4,8 @@ import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 
 export interface EnhancedInputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
-  prefix?: ReactNode;
-  suffix?: ReactNode;
+  prefix?: string | ReactNode;
+  suffix?: string | ReactNode;
   formatInput?: (value: string | number) => string;
   formatOutput?: (value: string | number) => string | number;
   onValueChange?: (value: string | number) => void;
@@ -70,29 +70,38 @@ export function EnhancedInput({
       onValueBlur?.(outputValue);
     }
   };
+  const renderPrefix = () => {
+    return typeof prefix === 'string' ? (
+      <div className='bg-muted relative mr-px flex h-9 items-center text-nowrap px-3'>{prefix}</div>
+    ) : (
+      prefix
+    );
+  };
+  const renderSuffix = () => {
+    return typeof suffix === 'string' ? (
+      <div className='bg-muted relative ml-px flex h-9 items-center text-nowrap px-3'>{suffix}</div>
+    ) : (
+      suffix
+    );
+  };
 
   return (
     <div
-      className={cn('border-input flex w-full items-center rounded-md border', className)}
+      className={cn(
+        'border-input flex w-full items-center overflow-hidden rounded-md border',
+        className,
+      )}
       suppressHydrationWarning
     >
-      {prefix && (
-        <div className='bg-muted relative mr-px flex h-9 items-center text-nowrap px-3'>
-          {prefix}
-        </div>
-      )}
+      {renderPrefix()}
       <Input
         {...props}
         value={value}
-        className='border-none'
+        className='rounded-none border-none'
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      {suffix && (
-        <div className='bg-muted relative ml-px flex h-9 items-center text-nowrap px-3'>
-          {suffix}
-        </div>
-      )}
+      {renderSuffix()}
     </div>
   );
 }

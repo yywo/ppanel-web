@@ -208,48 +208,44 @@ export default function Page() {
                 />
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>{t('templateCode')}</Label>
-                {platformConfig?.sms_template_code && (
+            {platformConfig?.sms_template_code && (
+              <TableRow>
+                <TableCell>
+                  <Label>{t('templateCode')}</Label>
                   <p className='text-muted-foreground text-xs'>
                     {t('platformConfigTip', { key: platformConfig?.sms_template_code })}
                   </p>
-                )}
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_template_code ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_template_code', value)}
-                  disabled={isFetching}
-                  placeholder={
-                    platformConfig?.sms_template_code &&
-                    t('platformConfigTip', { key: platformConfig?.sms_template_code })
-                  }
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>{t('templateParam')}</Label>
-                {platformConfig?.sms_template_param && (
+                </TableCell>
+                <TableCell className='text-right'>
+                  <EnhancedInput
+                    value={data?.sms_template_code ?? ''}
+                    onValueBlur={(value) => updateConfig('sms_template_code', value)}
+                    disabled={isFetching}
+                    placeholder={t('platformConfigTip', { key: platformConfig?.sms_template_code })}
+                  />
+                </TableCell>
+              </TableRow>
+            )}
+            {platformConfig?.sms_template_param && (
+              <TableRow>
+                <TableCell>
+                  <Label>{t('templateParam')}</Label>
                   <p className='text-muted-foreground text-xs'>
                     {t('platformConfigTip', { key: platformConfig?.sms_template_param })}
                   </p>
-                )}
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_template_param ?? 'code'}
-                  onValueBlur={(value) => updateConfig('sms_template_param', value)}
-                  disabled={isFetching}
-                  placeholder={
-                    platformConfig?.sms_template_param &&
-                    t('platformConfigTip', { key: platformConfig?.sms_template_param })
-                  }
-                />
-              </TableCell>
-            </TableRow>
+                </TableCell>
+                <TableCell className='text-right'>
+                  <EnhancedInput
+                    value={data?.sms_template_param ?? 'code'}
+                    onValueBlur={(value) => updateConfig('sms_template_param', value)}
+                    disabled={isFetching}
+                    placeholder={t('platformConfigTip', {
+                      key: platformConfig?.sms_template_param,
+                    })}
+                  />
+                </TableCell>
+              </TableRow>
+            )}
             <TableRow>
               <TableCell>
                 <Label>{t('template')}</Label>

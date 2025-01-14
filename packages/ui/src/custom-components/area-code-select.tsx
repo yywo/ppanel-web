@@ -1,14 +1,27 @@
+'use client';
+
 import { Icon } from '@iconify/react';
-import { Combobox } from '@workspace/ui/custom-components/combobox';
+import { Button } from '@workspace/ui/components/button';
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from '@workspace/ui/components/command';
+import { Popover, PopoverContent, PopoverTrigger } from '@workspace/ui/components/popover';
 import { cn } from '@workspace/ui/lib/utils';
 import { countries, type ICountry } from '@workspace/ui/utils/countries';
+import { BoxIcon, Check, ChevronsUpDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 interface AreaCodeSelectProps {
-  value?: string; // phone number
+  value?: string;
   onChange?: (value: ICountry) => void;
   className?: string;
   placeholder?: string;
+  simple?: boolean;
 }
 
 const items = countries
@@ -30,34 +43,73 @@ export const AreaCodeSelect = ({
   onChange,
   className,
   placeholder = 'Select Area Code',
+  simple = false,
 }: AreaCodeSelectProps) => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
+  const [open, setOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<ICountry | undefined>();
 
   useEffect(() => {
-    const index = items.findIndex((item) => item.phone === value);
-    setSelectedIndex(index);
-  }, [value]);
+    if (value !== selectedItem?.phone) {
+      const found = items.find((item) => item.phone === value);
+      setSelectedItem(found);
+    }
+  }, [selectedItem?.phone, value]);
 
   return (
-    <Combobox
-      placeholder={placeholder}
-      className={cn('min-w-fit', className)}
-      options={items.map((item, index) => ({
-        label: `+${item.phone} (${item.name})`,
-        value: index,
-        children: (
-          <div className='flex items-center gap-2'>
-            <Icon icon={`flagpack:${item.alpha2.toLowerCase()}`} className='!size-5' />+{item.phone}{' '}
-            ({item.name})
-          </div>
-        ),
-      }))}
-      value={selectedIndex >= 0 ? selectedIndex : undefined}
-      onChange={(index) => {
-        if (typeof index !== 'number') return;
-        setSelectedIndex(index);
-        if (items[index]) onChange?.(items[index]);
-      }}
-    />
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant='outline'
+          role='combobox'
+          aria-expanded={open}
+          className={cn('justify-between', className)}
+        >
+          {selectedItem ? (
+            <div className='flex items-center gap-2'>
+              <Icon icon={`flagpack:${selectedItem.alpha2.toLowerCase()}`} className='!size-5' />+
+              {selectedItem.phone}
+              {!simple && `(${selectedItem.name})`}
+            </div>
+          ) : (
+            placeholder
+          )}
+          <ChevronsUpDown className='ml-2 h-4 w-4 opacity-50' />
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className='p-0' align='start'>
+        <Command>
+          <CommandInput placeholder='Search area code...' />
+          <CommandList>
+            <CommandEmpty>
+              <BoxIcon className='inline-block text-slate-500' />
+            </CommandEmpty>
+            <CommandGroup>
+              {items.map((item) => (
+                <CommandItem
+                  key={`${item.alpha2}-${item.phone}`}
+                  value={`${item.phone}-${item.name}`}
+                  onSelect={() => {
+                    setSelectedItem(item);
+                    onChange?.(item);
+                    setOpen(false);
+                  }}
+                >
+                  <div className='flex items-center gap-2'>
+                    <Icon icon={`flagpack:${item.alpha2.toLowerCase()}`} className='!size-5' />+
+                    {item.phone} ({item.name})
+                  </div>
+                  <Check
+                    className={cn(
+                      'ml-auto h-4 w-4',
+                      selectedItem?.phone === item.phone ? 'opacity-100' : 'opacity-0',
+                    )}
+                  />
+                </CommandItem>
+              ))}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
   );
 };
