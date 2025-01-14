@@ -17,6 +17,8 @@
   "email": "อีเมล",
   "enable": "เปิดใช้งาน",
   "form": {
+    "areaCode": "รหัสพื้นที่",
+    "areaCodePlaceholder": "รหัสพื้นที่",
     "balance": "ยอดคงเหลือ",
     "balancePlaceholder": "ยอดคงเหลือ",
     "cancel": "ยกเลิก",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "กรุณาใส่รหัสผ่านใหม่ (สามารถเว้นว่างได้)",
     "refererId": "รหัสผู้แนะนำ",
     "refererIdPlaceholder": "กรุณาใส่รหัสผู้แนะนำ",
+    "telephone": "หมายเลขโทรศัพท์",
+    "telephonePlaceholder": "กรอกหมายเลขโทรศัพท์",
     "userEmail": "อีเมลผู้ใช้",
     "userEmailPlaceholder": "กรุณาใส่อีเมลผู้ใช้"
   },
   "giftAmount": "จำนวนเงินของขวัญ",
   "inviteCode": "รหัสเชิญ",
   "referer": "ผู้แนะนำ",
+  "telephone": "หมายเลขโทรศัพท์",
   "updateSuccess": "อัปเดตสำเร็จ",
   "userList": "รายชื่อผู้ใช้",
   "userName": "อีเมลผู้ใช้"

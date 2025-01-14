@@ -17,6 +17,8 @@
   "email": "e-mail",
   "enable": "Activer",
   "form": {
+    "areaCode": "Indicatif régional",
+    "areaCodePlaceholder": "Indicatif régional",
     "balance": "Solde",
     "balancePlaceholder": "Solde",
     "cancel": "Annuler",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Veuillez entrer un nouveau mot de passe (peut être laissé vide)",
     "refererId": "ID du parrain",
     "refererIdPlaceholder": "Veuillez entrer l'ID du parrain",
+    "telephone": "Numéro de téléphone",
+    "telephonePlaceholder": "Entrez le numéro de téléphone",
     "userEmail": "E-mail de l'utilisateur",
     "userEmailPlaceholder": "Veuillez entrer l'e-mail de l'utilisateur"
   },
   "giftAmount": "Montant du cadeau",
   "inviteCode": "Code d'invitation",
   "referer": "Référent",
+  "telephone": "Numéro de téléphone",
   "updateSuccess": "Mise à jour réussie",
   "userList": "Liste des utilisateurs",
   "userName": "Adresse e-mail de l'utilisateur"

@@ -17,6 +17,8 @@
   "email": "Электронная почта",
   "enable": "Включить",
   "form": {
+    "areaCode": "Код региона",
+    "areaCodePlaceholder": "Код региона",
     "balance": "Баланс",
     "balancePlaceholder": "Баланс",
     "cancel": "Отмена",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Введите новый пароль (можно оставить пустым)",
     "refererId": "ID рекомендателя",
     "refererIdPlaceholder": "Введите ID рекомендателя",
+    "telephone": "Номер телефона",
+    "telephonePlaceholder": "Введите номер телефона",
     "userEmail": "Электронная почта пользователя",
     "userEmailPlaceholder": "Введите электронную почту пользователя"
   },
   "giftAmount": "Сумма подарка",
   "inviteCode": "Код приглашения",
   "referer": "Реферер",
+  "telephone": "Номер телефона",
   "updateSuccess": "Обновление успешно",
   "userList": "Список пользователей",
   "userName": "Электронная почта пользователя"

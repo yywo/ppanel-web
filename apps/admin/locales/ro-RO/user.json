@@ -17,6 +17,8 @@
   "email": "e-mail",
   "enable": "Activare",
   "form": {
+    "areaCode": "Prefix",
+    "areaCodePlaceholder": "Introduceți prefixul",
     "balance": "Sold",
     "balancePlaceholder": "Sold",
     "cancel": "Anulează",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Introduceți o parolă nouă (poate fi lăsată goală)",
     "refererId": "ID recomandant",
     "refererIdPlaceholder": "Introduceți ID-ul recomandantului",
+    "telephone": "Număr de telefon",
+    "telephonePlaceholder": "Introduceți numărul de telefon",
     "userEmail": "E-mail utilizator",
     "userEmailPlaceholder": "Introduceți e-mailul utilizatorului"
   },
   "giftAmount": "Sumă Cadou",
   "inviteCode": "Cod de invitație",
   "referer": "Referent",
+  "telephone": "Număr de telefon",
   "updateSuccess": "Actualizare reușită",
   "userList": "Lista utilizatorilor",
   "userName": "Email utilizator"

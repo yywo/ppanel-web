@@ -17,6 +17,8 @@
   "email": "邮箱",
   "enable": "启用",
   "form": {
+    "areaCode": "区号",
+    "areaCodePlaceholder": "输入区号",
     "balance": "余额",
     "balancePlaceholder": "余额",
     "cancel": "取消",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "请输入新密码（可留空）",
     "refererId": "推荐人 ID",
     "refererIdPlaceholder": "请输入推荐人 ID",
+    "telephone": "电话号码",
+    "telephonePlaceholder": "输入电话号码",
     "userEmail": "用户邮箱",
     "userEmailPlaceholder": "请输入用户邮箱"
   },
   "giftAmount": "礼物金额",
   "inviteCode": "邀请码",
   "referer": "推荐人",
+  "telephone": "电话号码",
   "updateSuccess": "更新成功",
   "userList": "用户列表",
   "userName": "用户邮箱"

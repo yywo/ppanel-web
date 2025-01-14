@@ -17,6 +17,8 @@
   "email": "이메일",
   "enable": "사용",
   "form": {
+    "areaCode": "지역 코드",
+    "areaCodePlaceholder": "지역 코드 입력",
     "balance": "잔액",
     "balancePlaceholder": "잔액",
     "cancel": "취소",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "새 비밀번호를 입력하세요 (비워둘 수 있음)",
     "refererId": "추천인 ID",
     "refererIdPlaceholder": "추천인 ID를 입력하세요",
+    "telephone": "전화번호",
+    "telephonePlaceholder": "전화번호 입력",
     "userEmail": "사용자 이메일",
     "userEmailPlaceholder": "사용자 이메일을 입력하세요"
   },
   "giftAmount": "선물 금액",
   "inviteCode": "초대 코드",
   "referer": "추천인",
+  "telephone": "전화번호",
   "updateSuccess": "업데이트 성공",
   "userList": "사용자 목록",
   "userName": "사용자 이메일"

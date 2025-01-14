@@ -17,6 +17,8 @@
   "email": "e-mail",
   "enable": "Engedélyezés",
   "form": {
+    "areaCode": "Körzetszám",
+    "areaCodePlaceholder": "Körzetszám",
     "balance": "Egyenleg",
     "balancePlaceholder": "Egyenleg",
     "cancel": "Mégse",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Kérjük, adjon meg egy új jelszót (hagyja üresen, ha nem kívánja megváltoztatni)",
     "refererId": "Ajánló ID",
     "refererIdPlaceholder": "Kérjük, adja meg az ajánló ID-t",
+    "telephone": "Telefonszám",
+    "telephonePlaceholder": "Adja meg a telefonszámot",
     "userEmail": "Felhasználói e-mail",
     "userEmailPlaceholder": "Kérjük, adja meg a felhasználói e-mail címet"
   },
   "giftAmount": "Ajándék Összeg",
   "inviteCode": "Meghívókód",
   "referer": "Ajánló",
+  "telephone": "Telefonszám",
   "updateSuccess": "Sikeres frissítés",
   "userList": "Felhasználói lista",
   "userName": "Felhasználó e-mail címe"

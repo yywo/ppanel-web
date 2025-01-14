@@ -17,6 +17,8 @@
   "email": "sähköposti",
   "enable": "Ota käyttöön",
   "form": {
+    "areaCode": "Aluekoodi",
+    "areaCodePlaceholder": "Aluekoodi",
     "balance": "Saldo",
     "balancePlaceholder": "Saldo",
     "cancel": "Peruuta",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Syötä uusi salasana (voi jättää tyhjäksi)",
     "refererId": "Suosittelijan ID",
     "refererIdPlaceholder": "Syötä suosittelijan ID",
+    "telephone": "Puhelinnumero",
+    "telephonePlaceholder": "Syötä puhelinnumero",
     "userEmail": "Käyttäjän sähköposti",
     "userEmailPlaceholder": "Syötä käyttäjän sähköposti"
   },
   "giftAmount": "Lahjan määrä",
   "inviteCode": "Kutsukoodi",
   "referer": "Suosittelija",
+  "telephone": "Puhelinnumero",
   "updateSuccess": "Päivitys onnistui",
   "userList": "Käyttäjälista",
   "userName": "Käyttäjän sähköposti"

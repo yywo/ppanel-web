@@ -17,6 +17,8 @@
   "email": "e-post",
   "enable": "Aktiver",
   "form": {
+    "areaCode": "Retningsnummer",
+    "areaCodePlaceholder": "Retningsnummer",
     "balance": "Balanse",
     "balancePlaceholder": "Balanse",
     "cancel": "Avbryt",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Vennligst skriv inn nytt passord (kan stå tomt)",
     "refererId": "Henvisnings-ID",
     "refererIdPlaceholder": "Vennligst skriv inn henvisnings-ID",
+    "telephone": "Telefonnummer",
+    "telephonePlaceholder": "Skriv inn telefonnummer",
     "userEmail": "Brukerens e-post",
     "userEmailPlaceholder": "Vennligst skriv inn brukerens e-post"
   },
   "giftAmount": "Gavebeløp",
   "inviteCode": "Invitasjonskode",
   "referer": "Henviser",
+  "telephone": "Telefonnummer",
   "updateSuccess": "Oppdatering vellykket",
   "userList": "Brukerliste",
   "userName": "Brukerens e-post"

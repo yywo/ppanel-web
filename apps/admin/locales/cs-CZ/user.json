@@ -17,6 +17,8 @@
   "email": "e-mail",
   "enable": "Povolit",
   "form": {
+    "areaCode": "Směrové číslo",
+    "areaCodePlaceholder": "Směrové číslo",
     "balance": "Zůstatek",
     "balancePlaceholder": "Zůstatek",
     "cancel": "Zrušit",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Zadejte nové heslo (může zůstat prázdné)",
     "refererId": "ID doporučitele",
     "refererIdPlaceholder": "Zadejte ID doporučitele",
+    "telephone": "Telefonní číslo",
+    "telephonePlaceholder": "Zadejte telefonní číslo",
     "userEmail": "E-mail uživatele",
     "userEmailPlaceholder": "Zadejte e-mail uživatele"
   },
   "giftAmount": "Částka dárku",
   "inviteCode": "Pozvánkový kód",
   "referer": "Doporučitel",
+  "telephone": "Telefonní číslo",
   "updateSuccess": "Aktualizace byla úspěšná",
   "userList": "Seznam uživatelů",
   "userName": "Uživatelský e-mail"

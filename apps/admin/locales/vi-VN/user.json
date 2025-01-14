@@ -17,6 +17,8 @@
   "email": "Email",
   "enable": "Kích hoạt",
   "form": {
+    "areaCode": "Mã vùng",
+    "areaCodePlaceholder": "Mã vùng",
     "balance": "Số dư",
     "balancePlaceholder": "Số dư",
     "cancel": "Hủy",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Vui lòng nhập mật khẩu mới (có thể để trống)",
     "refererId": "ID người giới thiệu",
     "refererIdPlaceholder": "Vui lòng nhập ID người giới thiệu",
+    "telephone": "Số điện thoại",
+    "telephonePlaceholder": "Nhập số điện thoại",
     "userEmail": "Email người dùng",
     "userEmailPlaceholder": "Vui lòng nhập email người dùng"
   },
   "giftAmount": "Số tiền quà tặng",
   "inviteCode": "Mã Mời",
   "referer": "Người giới thiệu",
+  "telephone": "Số điện thoại",
   "updateSuccess": "Cập nhật thành công",
   "userList": "Danh sách người dùng",
   "userName": "Email người dùng"

@@ -17,6 +17,8 @@
   "email": "Email",
   "enable": "Enable",
   "form": {
+    "areaCode": "Area Code",
+    "areaCodePlaceholder": "Area code",
     "balance": "Balance",
     "balancePlaceholder": "Balance",
     "cancel": "Cancel",
@@ -35,8 +37,6 @@
     "refererIdPlaceholder": "Enter referer ID",
     "telephone": "Phone Number",
     "telephonePlaceholder": "Enter phone number",
-    "areaCode": "Area Code",
-    "areaCodePlaceholder": "Area code",
     "userEmail": "User Email",
     "userEmailPlaceholder": "Enter user email"
   },

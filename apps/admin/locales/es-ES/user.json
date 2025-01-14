@@ -17,6 +17,8 @@
   "email": "correo electrónico",
   "enable": "Habilitar",
   "form": {
+    "areaCode": "Código de Área",
+    "areaCodePlaceholder": "Código de área",
     "balance": "Saldo",
     "balancePlaceholder": "Saldo",
     "cancel": "Cancelar",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Por favor, introduzca una nueva contraseña (puede dejarlo en blanco)",
     "refererId": "ID del referente",
     "refererIdPlaceholder": "Por favor, introduzca el ID del referente",
+    "telephone": "Número de Teléfono",
+    "telephonePlaceholder": "Ingrese número de teléfono",
     "userEmail": "Correo electrónico del usuario",
     "userEmailPlaceholder": "Por favor, introduzca el correo electrónico del usuario"
   },
   "giftAmount": "Monto del Regalo",
   "inviteCode": "Código de invitación",
   "referer": "Recomendador",
+  "telephone": "Número de Teléfono",
   "updateSuccess": "Actualización exitosa",
   "userList": "Lista de usuarios",
   "userName": "Correo electrónico del usuario"

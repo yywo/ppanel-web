@@ -17,6 +17,8 @@
   "email": "e-mail",
   "enable": "Włącz",
   "form": {
+    "areaCode": "Kod kierunkowy",
+    "areaCodePlaceholder": "Kod kierunkowy",
     "balance": "Saldo",
     "balancePlaceholder": "Saldo",
     "cancel": "Anuluj",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Wprowadź nowe hasło (można pozostawić puste)",
     "refererId": "ID polecającego",
     "refererIdPlaceholder": "Wprowadź ID polecającego",
+    "telephone": "Numer telefonu",
+    "telephonePlaceholder": "Wprowadź numer telefonu",
     "userEmail": "E-mail użytkownika",
     "userEmailPlaceholder": "Wprowadź e-mail użytkownika"
   },
   "giftAmount": "Kwota Prezentu",
   "inviteCode": "Kod zaproszenia",
   "referer": "Polecający",
+  "telephone": "Numer telefonu",
   "updateSuccess": "Aktualizacja zakończona pomyślnie",
   "userList": "Lista użytkowników",
   "userName": "Adres e-mail użytkownika"

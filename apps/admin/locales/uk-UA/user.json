@@ -17,6 +17,8 @@
   "email": "електронна пошта",
   "enable": "Увімкнути",
   "form": {
+    "areaCode": "Код області",
+    "areaCodePlaceholder": "Код області",
     "balance": "Баланс",
     "balancePlaceholder": "Баланс",
     "cancel": "Скасувати",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Введіть новий пароль (можна залишити порожнім)",
     "refererId": "ID реферера",
     "refererIdPlaceholder": "Введіть ID реферера",
+    "telephone": "Номер телефону",
+    "telephonePlaceholder": "Введіть номер телефону",
     "userEmail": "Електронна пошта користувача",
     "userEmailPlaceholder": "Введіть електронну пошту користувача"
   },
   "giftAmount": "Сума подарунка",
   "inviteCode": "Код запрошення",
   "referer": "Реферер",
+  "telephone": "Номер телефону",
   "updateSuccess": "Оновлення успішне",
   "userList": "Список користувачів",
   "userName": "Електронна пошта користувача"

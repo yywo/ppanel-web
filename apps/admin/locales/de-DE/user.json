@@ -17,6 +17,8 @@
   "email": "E-Mail",
   "enable": "Aktivieren",
   "form": {
+    "areaCode": "Vorwahl",
+    "areaCodePlaceholder": "Vorwahl eingeben",
     "balance": "Kontostand",
     "balancePlaceholder": "Kontostand",
     "cancel": "Abbrechen",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "Bitte neues Passwort eingeben (kann leer bleiben)",
     "refererId": "Empfehler-ID",
     "refererIdPlaceholder": "Bitte Empfehler-ID eingeben",
+    "telephone": "Telefonnummer",
+    "telephonePlaceholder": "Telefonnummer eingeben",
     "userEmail": "Benutzer-E-Mail",
     "userEmailPlaceholder": "Bitte Benutzer-E-Mail eingeben"
   },
   "giftAmount": "Geschenkbetrag",
   "inviteCode": "Einladungscode",
   "referer": "Empfehler",
+  "telephone": "Telefonnummer",
   "updateSuccess": "Aktualisierung erfolgreich",
   "userList": "Benutzerliste",
   "userName": "Benutzer-E-Mail"

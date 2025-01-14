@@ -17,6 +17,8 @@
   "email": "メールアドレス",
   "enable": "有効",
   "form": {
+    "areaCode": "市外局番",
+    "areaCodePlaceholder": "市外局番",
     "balance": "残高",
     "balancePlaceholder": "残高",
     "cancel": "キャンセル",
@@ -33,12 +35,15 @@
     "passwordPlaceholder": "新しいパスワードを入力してください（空白可）",
     "refererId": "紹介者ID",
     "refererIdPlaceholder": "紹介者IDを入力してください",
+    "telephone": "電話番号",
+    "telephonePlaceholder": "電話番号を入力",
     "userEmail": "ユーザーのメール",
     "userEmailPlaceholder": "ユーザーのメールを入力してください"
   },
   "giftAmount": "ギフト金額",
   "inviteCode": "招待コード",
   "referer": "推薦者",
+  "telephone": "電話番号",
   "updateSuccess": "更新が成功しました",
   "userList": "ユーザーリスト",
   "userName": "ユーザーのメールアドレス"
