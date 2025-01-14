@@ -188,6 +188,8 @@ declare namespace API {
 
   type CreateUserRequest = {
     email: string;
+    telephone: string;
+    telephone_area_code: string;
     password: string;
     product_id: number;
     duration: number;
@@ -638,6 +640,7 @@ declare namespace API {
     enable_ip_register_limit: boolean;
     ip_register_limit: number;
     ip_register_limit_duration: number;
+    sms: SmsAuthenticateConfig;
   };
 
   type Response = {
@@ -755,13 +758,17 @@ declare namespace API {
     created_at: number;
   };
 
+  type SmsAuthenticateConfig = {
+    sms_enabled: boolean;
+    sms_limit: number;
+    sms_interval: number;
+    sms_expire_time: number;
+  };
+
   type SmsConfig = {
     sms_enabled: boolean;
-    sms_api_url: string;
-    sms_api_foreign_url: string;
     sms_key: string;
     sms_secret: string;
-    sms_region: string;
     sms_template: string;
     sms_template_code: string;
     sms_template_param: string;
@@ -771,8 +778,14 @@ declare namespace API {
     sms_expire_time: number;
   };
 
+  type SmsPlatformInfo = {
+    platform: string;
+    platform_url: string;
+    platform_field_description: Record<string, any>;
+  };
+
   type SmsPlatformResponse = {
-    list: string[];
+    list: SmsPlatformInfo[];
   };
 
   type SortItem = {
@@ -1078,6 +1091,8 @@ declare namespace API {
     id: number;
     email: string;
     password: string;
+    telephone: string;
+    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;
@@ -1099,6 +1114,8 @@ declare namespace API {
   type User = {
     id: number;
     email: string;
+    telephone: string;
+    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;

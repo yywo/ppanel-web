@@ -27,6 +27,7 @@ import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 
@@ -40,13 +41,16 @@ export default function Page() {
     },
   });
 
-  const { data: platform } = useQuery({
+  const { data: platforms } = useQuery({
     queryKey: ['getSmsPlatform'],
     queryFn: async () => {
       const { data } = await getSmsPlatform();
       return data.data?.list;
     },
   });
+
+  const selectedPlatform = platforms?.find((platform) => platform.platform === data?.sms_platform);
+  const { platform_url, platform_field_description: platformConfig } = selectedPlatform ?? {};
 
   async function updateConfig(key: string, value: unknown) {
     if (data?.[key] === value) return;
@@ -145,7 +149,7 @@ export default function Page() {
                 <Label>{t('platform')}</Label>
                 <p className='text-muted-foreground text-xs'>{t('platformTip')}</p>
               </TableCell>
-              <TableCell className='text-right'>
+              <TableCell className='flex items-center gap-1 text-right'>
                 <Select
                   value={data?.sms_platform}
                   onValueChange={(value) => updateConfig('sms_platform', value)}
@@ -155,33 +159,44 @@ export default function Page() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {platform?.map((item) => (
-                      <SelectItem key={item} value={item}>
-                        {item}
+                    {platforms?.map((item) => (
+                      <SelectItem key={item.platform} value={item.platform}>
+                        {item.platform}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
+                {platform_url && (
+                  <Button size='sm' asChild>
+                    <Link href={platform_url} target='_blank'>
+                      {t('applyPlatform')}
+                    </Link>
+                  </Button>
+                )}
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <Label>{t('username')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('usernameTip')}</p>
+                <Label>Key</Label>
+                <p className='text-muted-foreground text-xs'>
+                  {t('platformConfigTip', { key: platformConfig?.sms_key })}
+                </p>
               </TableCell>
               <TableCell className='text-right'>
                 <EnhancedInput
                   value={data?.sms_key ?? ''}
                   onValueBlur={(value) => updateConfig('sms_key', value)}
                   disabled={isFetching}
-                  placeholder={t('placeholders.username')}
+                  placeholder={t('platformConfigTip', { key: platformConfig?.sms_key })}
                 />
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
-                <Label>{t('password')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('passwordTip')}</p>
+                <Label>Secret</Label>
+                <p className='text-muted-foreground text-xs'>
+                  {t('platformConfigTip', { key: platformConfig?.sms_secret })}
+                </p>
               </TableCell>
               <TableCell className='text-right'>
                 <EnhancedInput
@@ -189,77 +204,49 @@ export default function Page() {
                   onValueBlur={(value) => updateConfig('sms_secret', value)}
                   disabled={isFetching}
                   type='password'
-                  placeholder={t('placeholders.password')}
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>{t('apiUrl')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('apiUrlTip')}</p>
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_api_url ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_api_url', value)}
-                  disabled={isFetching}
-                  placeholder={t('placeholders.apiUrl')}
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>{t('foreignApiUrl')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('foreignApiUrlTip')}</p>
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_api_foreign_url ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_api_foreign_url', value)}
-                  disabled={isFetching}
-                  placeholder={t('placeholders.foreignApiUrl')}
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>{t('region')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('regionTip')}</p>
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_region ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_region', value)}
-                  disabled={isFetching}
-                  placeholder={t('placeholders.region')}
+                  placeholder={t('platformConfigTip', { key: platformConfig?.sms_secret })}
                 />
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
                 <Label>{t('templateCode')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('templateCodeTip')}</p>
+                {platformConfig?.sms_template_code && (
+                  <p className='text-muted-foreground text-xs'>
+                    {t('platformConfigTip', { key: platformConfig?.sms_template_code })}
+                  </p>
+                )}
               </TableCell>
               <TableCell className='text-right'>
                 <EnhancedInput
                   value={data?.sms_template_code ?? ''}
                   onValueBlur={(value) => updateConfig('sms_template_code', value)}
                   disabled={isFetching}
-                  placeholder={t('placeholders.templateCode')}
+                  placeholder={
+                    platformConfig?.sms_template_code &&
+                    t('platformConfigTip', { key: platformConfig?.sms_template_code })
+                  }
                 />
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>
                 <Label>{t('templateParam')}</Label>
-                <p className='text-muted-foreground text-xs'>{t('templateParamTip')}</p>
+                {platformConfig?.sms_template_param && (
+                  <p className='text-muted-foreground text-xs'>
+                    {t('platformConfigTip', { key: platformConfig?.sms_template_param })}
+                  </p>
+                )}
               </TableCell>
               <TableCell className='text-right'>
                 <EnhancedInput
                   value={data?.sms_template_param ?? 'code'}
                   onValueBlur={(value) => updateConfig('sms_template_param', value)}
                   disabled={isFetching}
-                  placeholder={t('placeholders.templateParam')}
+                  placeholder={
+                    platformConfig?.sms_template_param &&
+                    t('platformConfigTip', { key: platformConfig?.sms_template_param })
+                  }
                 />
               </TableCell>
             </TableRow>
@@ -267,9 +254,7 @@ export default function Page() {
               <TableCell>
                 <Label>{t('template')}</Label>
                 <p className='text-muted-foreground text-xs'>
-                  {t('templateTip', {
-                    code: '{{.Code}}',
-                  })}
+                  {t('templateTip', { code: platformConfig?.sms_template })}
                 </p>
               </TableCell>
               <TableCell className='text-right'>
@@ -277,7 +262,7 @@ export default function Page() {
                   defaultValue={data?.sms_template ?? ''}
                   onBlur={(e) => updateConfig('sms_template', e.target.value)}
                   disabled={isFetching}
-                  placeholder={t('placeholders.template', { code: '{{.Code}}' })}
+                  placeholder={t('placeholders.template', { code: platformConfig?.sms_template })}
                 />
               </TableCell>
             </TableRow>
