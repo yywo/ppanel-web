@@ -11,15 +11,14 @@ import {
   NEXT_PUBLIC_DEFAULT_USER_PASSWORD,
 } from '@/config/constants';
 import { getRedirectUrl, setAuthorization } from '@/utils/common';
-import UserCheckForm from './user-check-form';
-import UserLoginForm from './user-login-form';
-import UserRegisterForm from './user-register-form';
-import UserResetForm from './user-reset-form';
+import LoginForm from './login-form';
+import RegisterForm from './register-form';
+import ResetForm from './reset-form';
 
-export default function UserAuthForm() {
+export default function EmailAuthForm() {
   const t = useTranslations('auth');
   const router = useRouter();
-  const [type, setType] = useState<'login' | 'register' | 'reset'>();
+  const [type, setType] = useState<'login' | 'register' | 'reset'>('login');
   const [loading, startTransition] = useTransition();
   const [initialValues, setInitialValues] = useState<{
     email?: string;
@@ -56,25 +55,18 @@ export default function UserAuthForm() {
             toast.success(t('reset.success'));
             setType('login');
             break;
-          default: {
-            if (type === 'reset') break;
-            setInitialValues({
-              ...initialValues,
-              ...params,
-            });
-            break;
-          }
         }
       } catch (error) {
         /* empty */
       }
     });
   };
+
   let UserForm: ReactNode = null;
   switch (type) {
     case 'login':
       UserForm = (
-        <UserLoginForm
+        <LoginForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
@@ -85,7 +77,7 @@ export default function UserAuthForm() {
       break;
     case 'register':
       UserForm = (
-        <UserRegisterForm
+        <RegisterForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
@@ -96,7 +88,7 @@ export default function UserAuthForm() {
       break;
     case 'reset':
       UserForm = (
-        <UserResetForm
+        <ResetForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
@@ -105,55 +97,7 @@ export default function UserAuthForm() {
         />
       );
       break;
-    default:
-      UserForm = (
-        <UserCheckForm
-          loading={loading}
-          onSubmit={handleFormSubmit}
-          initialValues={initialValues}
-          setInitialValues={setInitialValues}
-          setType={setType}
-        />
-      );
-      break;
   }
 
-  return (
-    <>
-      <div className='mb-11 text-center'>
-        <h1 className='mb-3 text-2xl font-bold'>{t(`${type || 'check'}.title`)}</h1>
-        <div className='text-muted-foreground font-medium'>
-          {t(`${type || 'check'}.description`)}
-        </div>
-      </div>
-      {/* {!((type === 'register' && register.stop_register) || type === 'reset') && (
-        <>
-          <div className='mb-3 grid items-center justify-center gap-3 font-bold lg:grid-cols-3'>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:telegram' className='mr-2 size-5' />
-              Telegram
-            </Button>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:google' className='mr-2 size-5' />
-              Google
-            </Button>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:apple' className='mr-2 size-5' />
-              Apple
-            </Button>
-          </div>
-          <div
-            className={cn(
-              'my-14 flex h-0 items-center text-center',
-              'before:mr-4 before:block before:w-1/2 before:border-b-[1px]',
-              'after:ml-4 after:w-1/2 after:border-b-[1px]',
-            )}
-          >
-            <span className='text-muted-foreground w-[125px] text-sm'>{t('orWithEmail')}</span>
-          </div>
-        </>
-      )} */}
-      {UserForm}
-    </>
-  );
+  return UserForm;
 }

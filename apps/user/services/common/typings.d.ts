@@ -27,6 +27,12 @@ declare namespace API {
     ios: Application[];
   };
 
+  type AuthConfig = {
+    sms: SmsAuthenticateConfig;
+    email: EmailAuthticateConfig;
+    register: RegisterConfig;
+  };
+
   type CheckUserParams = {
     email: string;
   };
@@ -75,7 +81,15 @@ declare namespace API {
     updated_at: number;
   };
 
+  type EmailAuthticateConfig = {
+    email_enabled: boolean;
+    email_enable_verify: boolean;
+    email_enable_domain_suffix: boolean;
+    email_domain_suffix_list: string;
+  };
+
   type EmailSmtpConfig = {
+    email_enabled: boolean;
     email_smtp_host: string;
     email_smtp_port: number;
     email_smtp_user: string;
@@ -85,6 +99,9 @@ declare namespace API {
     verify_email_template: string;
     maintenance_email_template: string;
     expiration_email_template: string;
+    email_enable_verify: boolean;
+    email_enable_domain_suffix: boolean;
+    email_domain_suffix_list: string;
   };
 
   type Follow = {
@@ -99,7 +116,7 @@ declare namespace API {
   type GetGlobalConfigResponse = {
     site: SiteConfig;
     verify: VeifyConfig;
-    register: RegisterConfig;
+    auth: AuthConfig;
     invite: InviteConfig;
     currency: CurrencyConfig;
     subscribe: SubscribeConfig;
@@ -222,13 +239,9 @@ declare namespace API {
   type RegisterConfig = {
     stop_register: boolean;
     enable_trial: boolean;
-    enable_email_verify: boolean;
-    enable_email_domain_suffix: boolean;
-    email_domain_suffix_list: string;
     enable_ip_register_limit: boolean;
     ip_register_limit: number;
     ip_register_limit_duration: number;
-    sms: SmsAuthenticateConfig;
   };
 
   type ResetPasswordRequest = {
@@ -275,6 +288,8 @@ declare namespace API {
   type Server = {
     id: number;
     tags: string[];
+    country: string;
+    city: string;
     name: string;
     server_addr: string;
     relay_mode: string;

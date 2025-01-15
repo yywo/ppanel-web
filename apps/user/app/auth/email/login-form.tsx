@@ -8,9 +8,9 @@ import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import CloudFlareTurnstile from './turnstile';
+import CloudFlareTurnstile from '../turnstile';
 
-export default function UserLoginForm({
+export default function LoginForm({
   loading,
   onSubmit,
   initialValues,
@@ -21,14 +21,14 @@ export default function UserLoginForm({
   onSubmit: (data: any) => void;
   initialValues: any;
   setInitialValues: Dispatch<SetStateAction<any>>;
-  onSwitchForm: (type?: 'register' | 'reset') => void;
+  onSwitchForm: Dispatch<SetStateAction<'register' | 'reset' | 'login'>>;
 }) {
   const t = useTranslations('auth.login');
   const { common } = useGlobalStore();
   const { verify } = common;
 
   const formSchema = z.object({
-    email: z.string(),
+    email: z.string().email(t('email')),
     password: z.string(),
     cf_token:
       verify.enable_login_verify && verify.turnstile_site_key ? z.string() : z.string().optional(),
@@ -48,7 +48,7 @@ export default function UserLoginForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input disabled placeholder='Enter your email...' type='email' {...field} />
+                  <Input placeholder='Enter your email...' type='email' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -100,10 +100,10 @@ export default function UserLoginForm({
           className='p-0'
           onClick={() => {
             setInitialValues(undefined);
-            onSwitchForm(undefined);
+            onSwitchForm('register');
           }}
         >
-          {t('switchAccount')}
+          {t('registerAccount')}
         </Button>
       </div>
     </>

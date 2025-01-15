@@ -82,6 +82,7 @@ declare namespace API {
   };
 
   type EmailAuthticateConfig = {
+    email_enabled: boolean;
     email_enable_verify: boolean;
     email_enable_domain_suffix: boolean;
     email_domain_suffix_list: string;
