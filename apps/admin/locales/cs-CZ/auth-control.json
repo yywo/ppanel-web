@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "Seznam povolených přípon e-mailů",
-  "emailSuffixWhitelistDescription": "Když je povoleno, mohou se registrovat pouze e-maily s příponami v seznamu",
-  "emailVerification": "Ověření e-mailu",
-  "emailVerificationDescription": "Když je povoleno, uživatelé budou muset ověřit svůj e-mail",
   "ipRegistrationLimit": "Limit registrace IP",
   "ipRegistrationLimitDescription": "Když je povoleno, IP adresy, které splňují požadavky pravidla, budou omezeny v registraci; mějte na paměti, že určení IP může způsobit problémy kvůli CDN nebo frontendovým proxy serverům",
   "penaltyTime": "Čas trestu (minuty)",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "Zastavit registraci nových uživatelů",
   "stopNewUserRegistrationDescription": "Když je povoleno, nikdo se nemůže registrovat",
   "trialRegistration": "Registrace do zkušební verze",
-  "trialRegistrationDescription": "Povolit registraci na zkušební verzi; nejprve upravte zkušební balíček a dobu trvání",
-  "whitelistSuffixes": "Povolené přípony",
-  "whitelistSuffixesDescription": "Používá se pro ověření e-mailu během registrace; jeden na řádek",
-  "whitelistSuffixesPlaceholder": "Zadejte přípony e-mailů, každou na samostatný řádek"
+  "trialRegistrationDescription": "Povolit registraci na zkušební verzi; nejprve upravte zkušební balíček a dobu trvání"
 }

@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "Biała lista sufiksów e-mail",
-  "emailSuffixWhitelistDescription": "Po włączeniu, tylko e-maile z sufiksami z listy mogą się rejestrować",
-  "emailVerification": "Weryfikacja e-maila",
-  "emailVerificationDescription": "Po włączeniu użytkownicy będą musieli zweryfikować swój adres e-mail",
   "ipRegistrationLimit": "Limit rejestracji IP",
   "ipRegistrationLimitDescription": "Po włączeniu, adresy IP spełniające wymagania reguły będą miały ograniczoną możliwość rejestracji; należy pamiętać, że określanie adresów IP może powodować problemy z powodu użycia CDN-ów lub proxy frontendowych",
   "penaltyTime": "Czas kary (minuty)",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
   "stopNewUserRegistrationDescription": "Gdy włączone, nikt nie może się zarejestrować",
   "trialRegistration": "Rejestracja próbna",
-  "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania",
-  "whitelistSuffixes": "Dozwolone Sufiksy",
-  "whitelistSuffixesDescription": "Używane do weryfikacji adresu e-mail podczas rejestracji; jeden na linię",
-  "whitelistSuffixesPlaceholder": "Wprowadź przyrostki e-mail, jeden na linię"
+  "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania"
 }

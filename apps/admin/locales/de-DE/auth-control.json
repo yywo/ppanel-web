@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "E-Mail-Suffix-Whitelist",
-  "emailSuffixWhitelistDescription": "Wenn aktiviert, können sich nur E-Mails mit Suffixen aus der Liste registrieren",
-  "emailVerification": "E-Mail-Verifizierung",
-  "emailVerificationDescription": "Wenn aktiviert, müssen Benutzer ihre E-Mail-Adresse verifizieren",
   "ipRegistrationLimit": "IP-Registrierungsgrenze",
   "ipRegistrationLimitDescription": "Wenn aktiviert, werden IPs, die die Regelanforderungen erfüllen, von der Registrierung ausgeschlossen; beachten Sie, dass die Bestimmung der IPs aufgrund von CDNs oder Frontend-Proxys Probleme verursachen kann",
   "penaltyTime": "Strafzeit (Minuten)",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "Neue Benutzerregistrierung stoppen",
   "stopNewUserRegistrationDescription": "Wenn aktiviert, kann sich niemand registrieren",
   "trialRegistration": "Studienregistrierung",
-  "trialRegistrationDescription": "Testregistrierung aktivieren; zuerst Testpaket und -dauer anpassen",
-  "whitelistSuffixes": "Whitelist-Suffixe",
-  "whitelistSuffixesDescription": "Wird zur E-Mail-Verifizierung während der Registrierung verwendet; eine pro Zeile",
-  "whitelistSuffixesPlaceholder": "Geben Sie E-Mail-Suffixe ein, eines pro Zeile"
+  "trialRegistrationDescription": "Testregistrierung aktivieren; zuerst Testpaket und -dauer anpassen"
 }

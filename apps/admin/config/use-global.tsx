@@ -21,6 +21,26 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       enable_reset_password_verify: false,
       turnstile_site_key: '',
     },
+    auth: {
+      sms: {
+        sms_enabled: false,
+        sms_limit: 0,
+        sms_interval: 0,
+        sms_expire_time: 0,
+      },
+      email: {
+        email_enable_verify: false,
+        email_enable_domain_suffix: false,
+        email_domain_suffix_list: '',
+      },
+      register: {
+        stop_register: false,
+        enable_trial: false,
+        enable_ip_register_limit: false,
+        ip_register_limit: 0,
+        ip_register_limit_duration: 0,
+      },
+    },
     register: {
       stop_register: false,
       enable_email_verify: false,

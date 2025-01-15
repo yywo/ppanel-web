@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "电子邮件后缀白名单",
-  "emailSuffixWhitelistDescription": "启用后，只有在列表中的后缀的电子邮件才能注册",
-  "emailVerification": "邮箱验证",
-  "emailVerificationDescription": "启用后，用户需要验证他们的电子邮件",
   "ipRegistrationLimit": "IP注册限制",
   "ipRegistrationLimitDescription": "启用后，符合规则要求的IP将被限制注册；请注意，由于CDN或前端代理，IP判定可能会导致问题",
   "penaltyTime": "罚时（分钟）",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "停止新用户注册",
   "stopNewUserRegistrationDescription": "启用后，任何人都无法注册",
   "trialRegistration": "试验注册",
-  "trialRegistrationDescription": "启用试用注册；请先修改试用套餐和期限",
-  "whitelistSuffixes": "白名单后缀",
-  "whitelistSuffixesDescription": "用于注册时的电子邮件验证；每行一个",
-  "whitelistSuffixesPlaceholder": "输入电子邮件后缀，每行一个"
+  "trialRegistrationDescription": "启用试用注册；请先修改试用套餐和期限"
 }

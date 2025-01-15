@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "ईमेल प्रत्यय श्वेतसूची",
-  "emailSuffixWhitelistDescription": "जब सक्षम किया जाता है, तो केवल सूची में शामिल प्रत्ययों वाले ईमेल ही पंजीकरण कर सकते हैं",
-  "emailVerification": "ईमेल सत्यापन",
-  "emailVerificationDescription": "सक्षम होने पर, उपयोगकर्ताओं को अपने ईमेल की पुष्टि करनी होगी",
   "ipRegistrationLimit": "आईपी पंजीकरण सीमा",
   "ipRegistrationLimitDescription": "जब सक्षम किया जाता है, तो नियम आवश्यकताओं को पूरा करने वाले IPs को पंजीकरण से प्रतिबंधित कर दिया जाएगा; ध्यान दें कि IP निर्धारण CDNs या फ्रंटेंड प्रॉक्सी के कारण समस्याएं उत्पन्न कर सकता है",
   "penaltyTime": "दंड समय (मिनटों में)",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "नए उपयोगकर्ता पंजीकरण को रोकें",
   "stopNewUserRegistrationDescription": "सक्रिय होने पर, कोई भी पंजीकरण नहीं कर सकता",
   "trialRegistration": "परीक्षण पंजीकरण",
-  "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि संशोधित करें",
-  "whitelistSuffixes": "श्वेतसूची प्रत्यय",
-  "whitelistSuffixesDescription": "पंजीकरण के दौरान ईमेल सत्यापन के लिए उपयोग किया जाता है; प्रत्येक पंक्ति में एक",
-  "whitelistSuffixesPlaceholder": "ईमेल प्रत्यय दर्ज करें, प्रत्येक पंक्ति में एक"
+  "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि संशोधित करें"
 }

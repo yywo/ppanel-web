@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "รายการอนุญาตให้ใช้คำต่อท้ายอีเมล",
-  "emailSuffixWhitelistDescription": "เมื่อเปิดใช้งาน จะสามารถลงทะเบียนได้เฉพาะอีเมลที่มีคำต่อท้ายในรายการเท่านั้น",
-  "emailVerification": "การยืนยันอีเมล",
-  "emailVerificationDescription": "เมื่อเปิดใช้งาน ผู้ใช้จะต้องยืนยันอีเมลของตน",
   "ipRegistrationLimit": "จำกัดการลงทะเบียน IP",
   "ipRegistrationLimitDescription": "เมื่อเปิดใช้งาน IP ที่ตรงตามข้อกำหนดของกฎจะถูกจำกัดไม่ให้ลงทะเบียน; โปรดทราบว่าการกำหนด IP อาจทำให้เกิดปัญหาเนื่องจาก CDN หรือพร็อกซีส่วนหน้า",
   "penaltyTime": "เวลาลงโทษ (นาที)",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "หยุดการลงทะเบียนผู้ใช้ใหม่",
   "stopNewUserRegistrationDescription": "เมื่อเปิดใช้งาน จะไม่มีใครสามารถลงทะเบียนได้",
   "trialRegistration": "การลงทะเบียนทดลองใช้",
-  "trialRegistrationDescription": "เปิดใช้งานการลงทะเบียนทดลอง; ปรับเปลี่ยนแพ็คเกจทดลองและระยะเวลาก่อน",
-  "whitelistSuffixes": "อนุญาตให้ใช้คำต่อท้าย",
-  "whitelistSuffixesDescription": "ใช้สำหรับการยืนยันอีเมลระหว่างการลงทะเบียน; หนึ่งบรรทัดต่อหนึ่งรายการ",
-  "whitelistSuffixesPlaceholder": "กรอกคำต่อท้ายอีเมล หนึ่งบรรทัดต่อหนึ่งคำ"
+  "trialRegistrationDescription": "เปิดใช้งานการลงทะเบียนทดลอง; ปรับเปลี่ยนแพ็คเกจทดลองและระยะเวลาก่อน"
 }

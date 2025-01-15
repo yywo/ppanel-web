@@ -1,8 +1,4 @@
 {
-  "emailSuffixWhitelist": "電郵後綴白名單",
-  "emailSuffixWhitelistDescription": "啟用後，只有在列表中的後綴的電郵才能註冊",
-  "emailVerification": "電郵驗證",
-  "emailVerificationDescription": "啟用後，用戶需要驗證他們的電郵",
   "ipRegistrationLimit": "IP 註冊限制",
   "ipRegistrationLimitDescription": "啟用後，符合規則要求的IP將被限制註冊；請注意，由於CDN或前端代理的原因，IP判斷可能會引起問題",
   "penaltyTime": "罰時（分鐘）",
@@ -13,8 +9,5 @@
   "stopNewUserRegistration": "停止新用戶註冊",
   "stopNewUserRegistrationDescription": "啟用後，任何人都無法註冊",
   "trialRegistration": "試驗註冊",
-  "trialRegistrationDescription": "啟用試用註冊；首先修改試用套餐和期限",
-  "whitelistSuffixes": "白名單後綴",
-  "whitelistSuffixesDescription": "用於註冊時的電郵驗證；每行一個",
-  "whitelistSuffixesPlaceholder": "輸入電郵後綴，每行一個"
+  "trialRegistrationDescription": "啟用試用註冊；首先修改試用套餐和期限"
 }

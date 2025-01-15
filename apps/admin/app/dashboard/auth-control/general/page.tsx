@@ -5,7 +5,6 @@ import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
 import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
-import { Textarea } from '@workspace/ui/components/textarea';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
@@ -51,50 +50,6 @@ export default function Page() {
               checked={data?.stop_register}
               onCheckedChange={(checked) => {
                 updateConfig('stop_register', checked);
-              }}
-            />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>
-            <Label>{t('emailVerification')}</Label>
-            <p className='text-muted-foreground text-xs'>{t('emailVerificationDescription')}</p>
-          </TableCell>
-          <TableCell className='text-right'>
-            <Switch
-              checked={data?.enable_email_verify}
-              onCheckedChange={(checked) => {
-                updateConfig('enable_email_verify', checked);
-              }}
-            />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>
-            <Label>{t('emailSuffixWhitelist')}</Label>
-            <p className='text-muted-foreground text-xs'>{t('emailSuffixWhitelistDescription')}</p>
-          </TableCell>
-          <TableCell className='text-right'>
-            <Switch
-              checked={data?.enable_email_domain_suffix}
-              onCheckedChange={(checked) => {
-                updateConfig('enable_email_domain_suffix', checked);
-              }}
-            />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell className='align-top'>
-            <Label>{t('whitelistSuffixes')}</Label>
-            <p className='text-muted-foreground text-xs'>{t('whitelistSuffixesDescription')}</p>
-          </TableCell>
-          <TableCell className='text-right'>
-            <Textarea
-              className='h-52'
-              placeholder={t('whitelistSuffixesPlaceholder')}
-              defaultValue={data?.email_domain_suffix_list}
-              onBlur={(e) => {
-                updateConfig('email_domain_suffix_list', e.target.value);
               }}
             />
           </TableCell>
