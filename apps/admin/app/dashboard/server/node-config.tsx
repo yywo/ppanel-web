@@ -32,9 +32,10 @@ const MINUTES_IN_DAY = 1440; // 24 * 60
 
 function getTimeRangeData(slots: API.TimePeriod[]) {
   const timePoints = slots
+    .filter((slot) => slot.start_time && slot.end_time)
     .flatMap((slot) => {
       const [startH = 0, startM = 0] = slot.start_time.split(':').map(Number);
-      const [endH = 0, endM = 0] = slot.end_time.split(':').map(Number);
+      const [endH = 0, endM = 0] = slot?.end_time?.split(':').map(Number);
       const start = startH * 60 + startM;
       let end = endH * 60 + endM;
       if (end < start) end += MINUTES_IN_DAY;
@@ -232,7 +233,7 @@ export default function NodeConfig() {
                 fill='#8884d8'
                 dataKey='value'
                 label={({ name, percent, multiplier }) =>
-                  `${multiplier?.toFixed(2)}x (${(percent * 100).toFixed(0)}%)`
+                  `${(multiplier || 0)?.toFixed(2)}x (${(percent * 100).toFixed(0)}%)`
                 }
               >
                 {chartTimeSlots.map((entry, index) => (
