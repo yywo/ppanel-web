@@ -31,7 +31,7 @@ export function UserNav() {
             <Avatar className='size-8'>
               <AvatarImage alt={user?.avatar ?? ''} src={user?.avatar ?? ''} />
               <AvatarFallback className='rounded-none bg-transparent'>
-                {user?.email?.[0]?.toUpperCase()}
+                {user?.email?.[0]?.toUpperCase() || user?.telephone?.[0]?.toUpperCase()}
               </AvatarFallback>
             </Avatar>
           </Button>
@@ -40,7 +40,7 @@ export function UserNav() {
           <DropdownMenuLabel className='font-normal'>
             <div className='flex flex-col space-y-1'>
               <p className='text-muted-foreground text-xs leading-none'>ID: {user?.id}</p>
-              <p className='text-sm font-medium leading-none'>{user?.email}</p>
+              <p className='text-sm font-medium leading-none'>{user?.telephone || user?.email}</p>
             </div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
