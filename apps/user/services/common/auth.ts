@@ -62,21 +62,6 @@ export async function telephoneLogin(
   });
 }
 
-/** User Telephone login POST /v1/auth/login/telephone/code */
-export async function telephoneCodeLogin(
-  body: API.TelephoneCodeLoginRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/login/telephone/code', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
 /** User register POST /v1/auth/register */
 export async function userRegister(
   body: API.UserRegisterRequest,

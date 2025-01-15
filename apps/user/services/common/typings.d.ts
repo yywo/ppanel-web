@@ -277,6 +277,7 @@ declare namespace API {
   };
 
   type SendCodeResponse = {
+    code?: string;
     status: boolean;
   };
 
@@ -425,15 +426,9 @@ declare namespace API {
     exist: boolean;
   };
 
-  type TelephoneCodeLoginRequest = {
-    telephone: string;
-    telephone_area_code: string;
-    telephone_code: string;
-    cf_token?: string;
-  };
-
   type TelephoneLoginRequest = {
     telephone: string;
+    telephone_code: string;
     telephone_area_code: string;
     password: string;
     cf_token?: string;
@@ -450,6 +445,7 @@ declare namespace API {
 
   type TelephoneResetPasswordRequest = {
     telephone: string;
+    telephone_area_code: string;
     password: string;
     code?: string;
     cf_token?: string;
