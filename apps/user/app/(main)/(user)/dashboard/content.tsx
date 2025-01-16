@@ -123,7 +123,7 @@ export default function Content() {
             <Card key={item.id}>
               <CardHeader className='flex flex-row flex-wrap items-center justify-between gap-2 space-y-0'>
                 <CardTitle className='font-medium'>{item.subscribe.name}</CardTitle>
-                <div className='flex gap-2'>
+                <div className='flex flex-wrap gap-2'>
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
                       <Button size='sm' variant='destructive'>
@@ -214,7 +214,7 @@ export default function Content() {
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className='grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-6'>
+                        <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
                           {application?.[platform]?.map((app) => (
                             <div
                               key={app.name}

@@ -1,5 +1,6 @@
 import { locales, NEXT_PUBLIC_DEFAULT_LANGUAGE } from '@/config/constants';
 import { isBrowser } from '@workspace/ui/utils';
+import { UAParser } from 'ua-parser-js';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies(null, {
@@ -51,26 +52,24 @@ export function Logout() {
 }
 
 export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' {
-  if (typeof navigator === 'undefined') {
-    console.log('This function can only run in a browser environment.');
-    return 'windows';
-  }
+  const parser = new UAParser();
+  const os = parser.getOS();
+  const osName = os.name?.toLowerCase() || '';
 
-  const userAgent = navigator.userAgent;
-
-  const platformPatterns: Record<string, RegExp> = {
-    windows: /Windows NT/,
-    mac: /Mac OS X/,
-    linux: /Linux/,
-    android: /Android/,
-    ios: /iPhone OS|iPad; CPU OS/,
-  };
-
-  for (const [platform, regex] of Object.entries(platformPatterns)) {
-    if (regex.test(userAgent)) {
-      return platform as 'windows' | 'mac' | 'linux' | 'android' | 'ios';
-    }
-  }
+  if (osName.includes('windows')) return 'windows';
+  if (osName.includes('mac')) return 'mac';
+  if (
+    osName.includes('linux') ||
+    osName.includes('ubuntu') ||
+    osName.includes('debian') ||
+    osName.includes('fedora') ||
+    osName.includes('red hat') ||
+    osName.includes('centos') ||
+    osName.includes('arch')
+  )
+    return 'linux';
+  if (osName.includes('android')) return 'android';
+  if (osName.includes('ios')) return 'ios';
 
   return 'windows';
 }

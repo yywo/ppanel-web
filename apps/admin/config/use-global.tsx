@@ -29,6 +29,7 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
         sms_expire_time: 0,
       },
       email: {
+        email_enabled: false,
         email_enable_verify: false,
         email_enable_domain_suffix: false,
         email_domain_suffix_list: '',
