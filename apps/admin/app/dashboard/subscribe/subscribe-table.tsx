@@ -186,7 +186,7 @@ export default function SubscribeTable() {
         {
           accessorKey: 'sold',
           header: t('sold'),
-          cell: ({ row }) => <Badge variant='default'>{row.getValue('sold')}</Badge>,
+          cell: ({ row }) => <Badge variant='outline'>{row.getValue('sold')}</Badge>,
         },
       ]}
       actions={{
@@ -215,6 +215,21 @@ export default function SubscribeTable() {
               }
             }}
           />,
+          <ConfirmButton
+            key='delete'
+            trigger={<Button variant='destructive'>{t('delete')}</Button>}
+            title={t('confirmDelete')}
+            description={t('deleteWarning')}
+            onConfirm={async () => {
+              await deleteSubscribe({
+                id: row.id!,
+              });
+              toast.success(t('deleteSuccess'));
+              ref.current?.refresh();
+            }}
+            cancelText={t('cancel')}
+            confirmText={t('confirm')}
+          />,
           <Button
             key='copy'
             variant='secondary'
@@ -239,21 +254,6 @@ export default function SubscribeTable() {
           >
             {t('copy')}
           </Button>,
-          <ConfirmButton
-            key='delete'
-            trigger={<Button variant='destructive'>{t('delete')}</Button>}
-            title={t('confirmDelete')}
-            description={t('deleteWarning')}
-            onConfirm={async () => {
-              await deleteSubscribe({
-                id: row.id!,
-              });
-              toast.success(t('deleteSuccess'));
-              ref.current?.refresh();
-            }}
-            cancelText={t('cancel')}
-            confirmText={t('confirm')}
-          />,
         ],
         batchRender: (rows) => [
           <ConfirmButton

@@ -228,9 +228,24 @@ export default function NodeTable() {
               }
             }}
           />,
+          <ConfirmButton
+            key='delete'
+            trigger={<Button variant='destructive'>{t('delete')}</Button>}
+            title={t('confirmDelete')}
+            description={t('deleteWarning')}
+            onConfirm={async () => {
+              await deleteNode({
+                id: row.id,
+              });
+              toast.success(t('deleteSuccess'));
+              ref.current?.refresh();
+            }}
+            cancelText={t('cancel')}
+            confirmText={t('confirm')}
+          />,
           <Button
             key='copy'
-            variant='secondary'
+            variant='outline'
             onClick={async () => {
               setLoading(true);
               try {
@@ -251,21 +266,6 @@ export default function NodeTable() {
           >
             {t('copy')}
           </Button>,
-          <ConfirmButton
-            key='delete'
-            trigger={<Button variant='destructive'>{t('delete')}</Button>}
-            title={t('confirmDelete')}
-            description={t('deleteWarning')}
-            onConfirm={async () => {
-              await deleteNode({
-                id: row.id,
-              });
-              toast.success(t('deleteSuccess'));
-              ref.current?.refresh();
-            }}
-            cancelText={t('cancel')}
-            confirmText={t('confirm')}
-          />,
         ],
         batchRender(rows) {
           return [
