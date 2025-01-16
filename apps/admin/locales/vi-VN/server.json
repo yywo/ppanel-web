@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "Cho phép không an toàn",
       "cancel": "Hủy",
+      "city": "Thành phố",
       "confirm": "Xác nhận",
+      "country": "Quốc gia",
       "edit": "Chỉnh sửa",
       "editSecurity": "Chỉnh sửa cấu hình bảo mật",
       "enableTLS": "Kích hoạt TLS",

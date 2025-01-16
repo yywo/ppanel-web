@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "Povolit nezabezpečené",
       "cancel": "Zrušit",
+      "city": "Město",
       "confirm": "Potvrdit",
+      "country": "Země",
       "edit": "Upravit",
       "editSecurity": "Upravit nastavení zabezpečení",
       "enableTLS": "Povolit TLS",

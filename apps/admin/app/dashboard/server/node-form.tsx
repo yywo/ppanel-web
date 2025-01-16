@@ -160,23 +160,61 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   )}
                 />
               </div>
-              <FormField
-                control={form.control}
-                name='tags'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('form.tags')}</FormLabel>
-                    <FormControl>
-                      <TagInput
-                        placeholder={t('form.tagsPlaceholder')}
-                        value={field.value || []}
-                        onChange={(value) => form.setValue(field.name, value)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <div className='grid grid-cols-5 gap-2'>
+                <FormField
+                  control={form.control}
+                  name='tags'
+                  render={({ field }) => (
+                    <FormItem className='col-span-3'>
+                      <FormLabel>{t('form.tags')}</FormLabel>
+                      <FormControl>
+                        <TagInput
+                          placeholder={t('form.tagsPlaceholder')}
+                          value={field.value || []}
+                          onChange={(value) => form.setValue(field.name, value)}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='country'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('form.country')}</FormLabel>
+                      <FormControl>
+                        <EnhancedInput
+                          {...field}
+                          onValueChange={(value) => {
+                            form.setValue(field.name, value);
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name='city'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('form.city')}</FormLabel>
+                      <FormControl>
+                        <EnhancedInput
+                          {...field}
+                          onValueChange={(value) => {
+                            form.setValue(field.name, value);
+                          }}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
               <div className='grid grid-cols-3 gap-2'>
                 <FormField
                   control={form.control}

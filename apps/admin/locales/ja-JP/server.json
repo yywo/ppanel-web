@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "安全でないことを許可",
       "cancel": "キャンセル",
+      "city": "市",
       "confirm": "確認",
+      "country": "国",
       "edit": "編集",
       "editSecurity": "セキュリティ設定を編集",
       "enableTLS": "TLSを有効化",

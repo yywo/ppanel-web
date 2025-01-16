@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "اجازه به ناامن",
       "cancel": "لغو",
+      "city": "شهر",
       "confirm": "تأیید",
+      "country": "کشور",
       "edit": "ویرایش",
       "editSecurity": "ویرایش تنظیمات امنیتی",
       "enableTLS": "فعال‌سازی TLS",

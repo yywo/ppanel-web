@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "비보안 허용",
       "cancel": "취소",
+      "city": "도시",
       "confirm": "확인",
+      "country": "국가",
       "edit": "편집",
       "editSecurity": "보안 설정 편집",
       "enableTLS": "TLS 활성화",

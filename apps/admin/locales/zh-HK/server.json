@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "允許不安全",
       "cancel": "取消",
+      "city": "城市",
       "confirm": "確認",
+      "country": "國家",
       "edit": "編輯",
       "editSecurity": "編輯安全性配置",
       "enableTLS": "啟用TLS",

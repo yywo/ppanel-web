@@ -66,7 +66,9 @@
     "form": {
       "allowInsecure": "Güvensizliğe izin ver",
       "cancel": "İptal",
+      "city": "Şehir",
       "confirm": "Onayla",
+      "country": "Ülke",
       "edit": "Düzenle",
       "editSecurity": "Güvenlik Ayarlarını Düzenle",
       "enableTLS": "TLS'i Etkinleştir",

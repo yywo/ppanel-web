@@ -123,6 +123,16 @@ export default function NodeTable() {
         {
           accessorKey: 'server_addr',
           header: t('serverAddr'),
+          cell: ({ row }) => {
+            return (
+              <div className='flex gap-1'>
+                <Badge variant='outline'>
+                  {row.original.country} - {row.original.city}
+                </Badge>
+                <Badge variant='outline'>{row.getValue('server_addr')}</Badge>
+              </div>
+            );
+          },
         },
         {
           accessorKey: 'status',
