@@ -214,7 +214,7 @@ export default function Content() {
                         </div>
                       </AccordionTrigger>
                       <AccordionContent>
-                        <div className='grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-7'>
+                        <div className='grid grid-cols-3 gap-4 lg:grid-cols-4 xl:grid-cols-6'>
                           {application?.[platform]?.map((app) => (
                             <div
                               key={app.name}
@@ -222,7 +222,13 @@ export default function Content() {
                             >
                               <span>{app.name}</span>
                               {app.icon && (
-                                <Image src={app.icon} alt={app.name} width={50} height={50} />
+                                <Image
+                                  src={app.icon}
+                                  alt={app.name}
+                                  width={64}
+                                  height={64}
+                                  className='p-1'
+                                />
                               )}
                               <div className='flex'>
                                 <Button
