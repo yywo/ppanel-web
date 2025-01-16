@@ -8,7 +8,7 @@ import LoginLottie from '@workspace/ui/lotties/login.json';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
-import UserAuthForm from './user-auth-form';
+import EmailAuthForm from './email/auth-form';
 
 export default function Page() {
   const t = useTranslations('auth');
@@ -45,7 +45,7 @@ export default function Page() {
           <div className='lg:bg-background flex flex-col items-center rounded-2xl md:w-[600px] lg:flex-auto lg:p-10 lg:shadow'>
             <div className='flex flex-col items-stretch justify-center md:w-[400px] lg:h-full'>
               <div className='flex flex-col justify-center pb-14 lg:flex-auto lg:pb-20'>
-                <UserAuthForm />
+                <EmailAuthForm />
               </div>
               <div className='flex items-center justify-end'>
                 {/* <div className='text-primary flex gap-5 text-sm font-semibold'>

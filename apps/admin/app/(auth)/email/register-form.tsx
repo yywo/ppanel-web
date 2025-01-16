@@ -1,19 +1,18 @@
 import useGlobalStore from '@/config/use-global';
-import { sendEmailCode } from '@/services/common/common';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
 import { Input } from '@workspace/ui/components/input';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
-import { useCountDown } from 'ahooks';
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import CloudFlareTurnstile from './turnstile';
+import SendCode from '../send-code';
+import CloudFlareTurnstile from '../turnstile';
 
-export default function UserRegisterForm({
+export default function RegisterForm({
   loading,
   onSubmit,
   initialValues,
@@ -24,33 +23,36 @@ export default function UserRegisterForm({
   onSubmit: (data: any) => void;
   initialValues: any;
   setInitialValues: Dispatch<SetStateAction<any>>;
-  onSwitchForm: (type?: 'register' | 'reset') => void;
+  onSwitchForm: Dispatch<SetStateAction<'register' | 'reset' | 'login'>>;
 }) {
   const t = useTranslations('auth.register');
   const { common } = useGlobalStore();
-  const { verify, register, invite } = common;
+  const { verify, auth, invite } = common;
 
-  const [targetDate, setTargetDate] = useState<number>();
-  const [, { seconds }] = useCountDown({
-    targetDate,
-    onEnd: () => {
-      setTargetDate(undefined);
-    },
-  });
-  const handleSendCode = async () => {
-    await sendEmailCode({
-      email: initialValues.email,
-      type: 1,
-    });
-    setTargetDate(Date.now() + 60000);
+  const handleCheckUser = async (email: string) => {
+    try {
+      const domain = email.split('@')[1];
+      const isValid =
+        !auth.email.email_enable_verify ||
+        auth.email?.email_domain_suffix_list.split('\n').includes(domain || '');
+      return !isValid;
+    } catch (error) {
+      console.log('Error checking user:', error);
+      return false;
+    }
   };
 
   const formSchema = z
     .object({
-      email: z.string(),
+      email: z
+        .string()
+        .email(t('email'))
+        .refine(handleCheckUser, {
+          message: t('whitelist'),
+        }),
       password: z.string(),
       repeat_password: z.string(),
-      code: register.enable_email_verify ? z.string() : z.string().nullish(),
+      code: auth.email.email_enable_verify ? z.string() : z.string().nullish(),
       invite: invite.forced_invite ? z.string() : z.string().nullish(),
       cf_token:
         verify.enable_register_verify && verify.turnstile_site_key
@@ -66,17 +68,18 @@ export default function UserRegisterForm({
         });
       }
     });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       ...initialValues,
-      invite: sessionStorage.getItem('invite'),
+      invite: localStorage.getItem('invite') || '',
     },
   });
 
   return (
     <>
-      {register.stop_register ? (
+      {auth.register.stop_register ? (
         <Markdown>{t('message')}</Markdown>
       ) : (
         <Form {...form}>
@@ -87,7 +90,7 @@ export default function UserRegisterForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input disabled placeholder='Enter your email...' type='email' {...field} />
+                    <Input placeholder='Enter your email...' type='email' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -127,7 +130,7 @@ export default function UserRegisterForm({
                 </FormItem>
               )}
             />
-            {register.enable_email_verify && (
+            {auth.email.email_enable_verify && (
               <FormField
                 control={form.control}
                 name='code'
@@ -142,9 +145,13 @@ export default function UserRegisterForm({
                           {...field}
                           value={field.value as string}
                         />
-                        <Button type='button' onClick={handleSendCode} disabled={seconds > 0}>
-                          {seconds > 0 ? `${seconds}s` : t('get')}
-                        </Button>
+                        <SendCode
+                          type='email'
+                          params={{
+                            ...form.getValues(),
+                            type: 1,
+                          }}
+                        />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -159,7 +166,7 @@ export default function UserRegisterForm({
                 <FormItem>
                   <FormControl>
                     <Input
-                      disabled={loading}
+                      disabled={loading || !!localStorage.getItem('invite')}
                       placeholder={t('invite')}
                       {...field}
                       value={field.value || ''}
@@ -191,13 +198,13 @@ export default function UserRegisterForm({
         </Form>
       )}
       <div className='mt-4 text-right text-sm'>
-        {t('existingAccount')}
+        {t('existingAccount')}&nbsp;
         <Button
           variant='link'
           className='p-0'
           onClick={() => {
             setInitialValues(undefined);
-            onSwitchForm(undefined);
+            onSwitchForm('login');
           }}
         >
           {t('switchToLogin')}

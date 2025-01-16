@@ -1,18 +1,17 @@
 import useGlobalStore from '@/config/use-global';
-import { sendEmailCode } from '@/services/common/common';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
+import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
 import { Input } from '@workspace/ui/components/input';
-import { useCountDown } from 'ahooks';
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import CloudFlareTurnstile from './turnstile';
+import SendCode from '../send-code';
+import CloudFlareTurnstile from '../turnstile';
 
-export default function UserResetForm({
+export default function ResetForm({
   loading,
   onSubmit,
   initialValues,
@@ -23,32 +22,17 @@ export default function UserResetForm({
   onSubmit: (data: any) => void;
   initialValues: any;
   setInitialValues: Dispatch<SetStateAction<any>>;
-  onSwitchForm: (type?: 'register' | 'reset') => void;
+  onSwitchForm: Dispatch<SetStateAction<'register' | 'reset' | 'login'>>;
 }) {
   const t = useTranslations('auth.reset');
 
   const { common } = useGlobalStore();
-  const { verify, register } = common;
-
-  const [targetDate, setTargetDate] = useState<number>();
-  const [, { seconds }] = useCountDown({
-    targetDate,
-    onEnd: () => {
-      setTargetDate(undefined);
-    },
-  });
-  const handleSendCode = async () => {
-    await sendEmailCode({
-      email: initialValues.email,
-      type: 2,
-    });
-    setTargetDate(Date.now() + 60000); // 60秒倒计时
-  };
+  const { verify, auth } = common;
 
   const formSchema = z.object({
-    email: z.string(),
+    email: z.string().email(t('email')),
     password: z.string(),
-    code: register.enable_email_verify ? z.string() : z.string().nullish(),
+    code: auth?.email?.email_enable_verify ? z.string() : z.string().nullish(),
     cf_token:
       verify.enable_register_verify && verify.turnstile_site_key
         ? z.string()
@@ -69,7 +53,7 @@ export default function UserResetForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input disabled placeholder='Enter your email...' type='email' {...field} />
+                  <Input placeholder='Enter your email...' type='email' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -93,7 +77,7 @@ export default function UserResetForm({
             )}
           />
 
-          {register.enable_email_verify && (
+          {auth?.email?.email_enable_verify && (
             <FormField
               control={form.control}
               name='code'
@@ -108,9 +92,13 @@ export default function UserResetForm({
                         {...field}
                         value={field.value as string}
                       />
-                      <Button type='button' onClick={handleSendCode} disabled={seconds > 0}>
-                        {seconds > 0 ? `${seconds}s` : t('get')}
-                      </Button>
+                      <SendCode
+                        type='email'
+                        params={{
+                          ...form.getValues(),
+                          type: 2,
+                        }}
+                      />
                     </div>
                   </FormControl>
                   <FormMessage />
@@ -139,13 +127,13 @@ export default function UserResetForm({
         </form>
       </Form>
       <div className='mt-4 text-right text-sm'>
-        {t('existingAccount')}
+        {t('existingAccount')}&nbsp;
         <Button
           variant='link'
           className='p-0'
           onClick={() => {
             setInitialValues(undefined);
-            onSwitchForm(undefined);
+            onSwitchForm('login');
           }}
         >
           {t('switchToLogin')}

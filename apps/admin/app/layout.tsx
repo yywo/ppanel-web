@@ -93,7 +93,12 @@ export default async function RootLayout({
       user = await currentUser({
         skipErrorHandler: true,
         Authorization,
-      }).then((res) => res.data.data);
+      }).then((res) => {
+        if (res.data.data?.is_admin) {
+          return res.data.data;
+        }
+        return undefined;
+      });
     } catch (error) {
       console.log('Error fetching current user:', error);
     }

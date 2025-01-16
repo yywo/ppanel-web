@@ -1,24 +1,24 @@
 'use client';
 
-import {
-  NEXT_PUBLIC_DEFAULT_USER_EMAIL,
-  NEXT_PUBLIC_DEFAULT_USER_PASSWORD,
-} from '@/config/constants';
-import { checkUser, resetPassword, userLogin, userRegister } from '@/services/common/auth';
-import { getRedirectUrl, setAuthorization } from '@/utils/common';
+import { resetPassword, userLogin, userRegister } from '@/services/common/auth';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useState, useTransition } from 'react';
 import { toast } from 'sonner';
-import UserCheckForm from './user-check-form';
-import UserLoginForm from './user-login-form';
-import UserRegisterForm from './user-register-form';
-import UserResetForm from './user-reset-form';
 
-export default function UserAuthForm() {
+import {
+  NEXT_PUBLIC_DEFAULT_USER_EMAIL,
+  NEXT_PUBLIC_DEFAULT_USER_PASSWORD,
+} from '@/config/constants';
+import { getRedirectUrl, setAuthorization } from '@/utils/common';
+import LoginForm from './login-form';
+import RegisterForm from './register-form';
+import ResetForm from './reset-form';
+
+export default function EmailAuthForm() {
   const t = useTranslations('auth');
   const router = useRouter();
-  const [type, setType] = useState<'login' | 'register' | 'reset'>();
+  const [type, setType] = useState<'login' | 'register' | 'reset'>('login');
   const [loading, startTransition] = useTransition();
   const [initialValues, setInitialValues] = useState<{
     email?: string;
@@ -38,32 +38,22 @@ export default function UserAuthForm() {
     startTransition(async () => {
       try {
         switch (type) {
-          case 'login':
-            // eslint-disable-next-line no-case-declarations
+          case 'login': {
             const login = await userLogin(params);
             toast.success(t('login.success'));
             onLogin(login.data.data?.token);
             break;
-          case 'register':
-            // eslint-disable-next-line no-case-declarations
+          }
+          case 'register': {
             const create = await userRegister(params);
             toast.success(t('register.success'));
             onLogin(create.data.data?.token);
             break;
+          }
           case 'reset':
             await resetPassword(params);
             toast.success(t('reset.success'));
             setType('login');
-            break;
-          default:
-            if (type === 'reset') break;
-            // eslint-disable-next-line no-case-declarations
-            const response = await checkUser(params);
-            setInitialValues({
-              ...initialValues,
-              ...params,
-            });
-            setType(response.data.data?.exist ? 'login' : 'register');
             break;
         }
       } catch (error) {
@@ -71,11 +61,12 @@ export default function UserAuthForm() {
       }
     });
   };
+
   let UserForm: ReactNode = null;
   switch (type) {
     case 'login':
       UserForm = (
-        <UserLoginForm
+        <LoginForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
@@ -86,7 +77,7 @@ export default function UserAuthForm() {
       break;
     case 'register':
       UserForm = (
-        <UserRegisterForm
+        <RegisterForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
@@ -97,21 +88,12 @@ export default function UserAuthForm() {
       break;
     case 'reset':
       UserForm = (
-        <UserResetForm
+        <ResetForm
           loading={loading}
           onSubmit={handleFormSubmit}
           initialValues={initialValues}
           setInitialValues={setInitialValues}
           onSwitchForm={setType}
-        />
-      );
-      break;
-    default:
-      UserForm = (
-        <UserCheckForm
-          loading={loading}
-          onSubmit={handleFormSubmit}
-          initialValues={initialValues}
         />
       );
       break;
@@ -125,34 +107,6 @@ export default function UserAuthForm() {
           {t(`${type || 'check'}.description`)}
         </div>
       </div>
-      {/* {!((type === 'register' && register.stop_register) || type === 'reset') && (
-        <>
-          <div className='mb-3 flex flex-wrap items-center justify-center gap-3 font-bold'>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:telegram' className='mr-2 size-5' />
-              Telegram
-            </Button>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:google' className='mr-2 size-5' />
-              Google
-            </Button>
-            <Button type='button' variant='outline'>
-              <Icon icon='uil:apple' className='mr-2 size-5' />
-              Apple
-            </Button>
-          </div>
-          <div
-            className={cn(
-              'my-14 flex h-0 items-center text-center',
-              'before:mr-4 before:block before:w-1/2 before:border-b-[1px]',
-              'after:ml-4 after:w-1/2 after:border-b-[1px]',
-            )}
-          >
-            <span className='text-muted-foreground w-[125px] text-sm'>{t('orWithEmail')}</span>
-          </div>
-        </>
-      )} */}
-
       {UserForm}
     </>
   );
