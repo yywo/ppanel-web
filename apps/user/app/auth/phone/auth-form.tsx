@@ -23,6 +23,7 @@ export default function PhoneAuthForm() {
     telephone: '',
     telephone_area_code: '1',
     password: '',
+    telephone_code: '',
   });
 
   const handleFormSubmit = async (params: any) => {

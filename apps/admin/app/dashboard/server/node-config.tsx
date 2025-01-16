@@ -144,13 +144,16 @@ export default function NodeConfig() {
                 value={data?.node_secret}
                 onValueBlur={(value) => updateConfig('node_secret', value)}
                 suffix={
-                  <DicesIcon
-                    onClick={() => {
-                      const id = uid(32).toLowerCase();
-                      const formatted = `${id.slice(0, 8)}-${id.slice(8, 12)}-${id.slice(12, 16)}-${id.slice(16, 20)}-${id.slice(20)}`;
-                      updateConfig('node_secret', formatted);
-                    }}
-                  />
+                  <div className='bg-muted flex h-9 items-center text-nowrap px-3'>
+                    <DicesIcon
+                      onClick={() => {
+                        const id = uid(32).toLowerCase();
+                        const formatted = `${id.slice(0, 8)}-${id.slice(8, 12)}-${id.slice(12, 16)}-${id.slice(16, 20)}-${id.slice(20)}`;
+                        updateConfig('node_secret', formatted);
+                      }}
+                      className='cursor-pointer'
+                    />
+                  </div>
                 }
               />
             </TableCell>
