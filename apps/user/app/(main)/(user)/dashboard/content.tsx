@@ -105,15 +105,15 @@ export default function Content() {
                     <Icon
                       icon={`${
                         {
-                          windows: 'simple-icons:windows',
-                          mac: 'simple-icons:apple',
-                          linux: 'simple-icons:linux',
+                          windows: 'mdi:microsoft-windows',
+                          mac: 'uil:apple',
+                          linux: 'uil:linux',
                           ios: 'simple-icons:ios',
-                          android: 'simple-icons:android',
+                          android: 'uil:android',
                           harmony: 'simple-icons:harmonyos',
                         }[item]
                       }`}
-                      className='size-6'
+                      className='size-5'
                     />
                   </TabsTrigger>
                 ))}
