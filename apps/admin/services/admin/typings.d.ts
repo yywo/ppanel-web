@@ -18,20 +18,18 @@ declare namespace API {
     updated_at: number;
   };
 
-  type AppConfig = {
-    name: string;
-    domains: string[];
-    describe: string;
-    startup_picture: string;
-    startup_picture_skip_time: number;
-  };
-
   type Application = {
     id: number;
     icon: string;
     name: string;
     description: string;
     subscribe_type: string;
+  };
+
+  type ApplicationConfig = {
+    domains: string[];
+    startup_picture: string;
+    startup_picture_skip_time: number;
   };
 
   type ApplicationPlatform = {
@@ -62,15 +60,6 @@ declare namespace API {
     version: string;
     description: string;
     is_default: boolean;
-  };
-
-  type AppVersion = {
-    id: number;
-    os: string;
-    version: string;
-    download_url: string;
-    describe: string;
-    default_version: boolean;
   };
 
   type AuthConfig = {
@@ -143,13 +132,6 @@ declare namespace API {
     platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
     is_default: boolean;
     application_id: number;
-  };
-
-  type CreateAppVersionRequest = {
-    os: string;
-    version: string;
-    download_url: string;
-    describe: string;
   };
 
   type CreateCouponRequest = {
@@ -267,10 +249,6 @@ declare namespace API {
     currency_symbol: string;
   };
 
-  type DefaultAppVersionRequest = {
-    id: number;
-  };
-
   type DeleteAnnouncementRequest = {
     id: number;
   };
@@ -280,10 +258,6 @@ declare namespace API {
   };
 
   type DeleteApplicationVersionRequest = {
-    id: number;
-  };
-
-  type DeleteAppVersionRequest = {
     id: number;
   };
 
@@ -396,23 +370,6 @@ declare namespace API {
 
   type GetAnnouncementRequest = {
     id: number;
-  };
-
-  type GetAppVersionListParams = {
-    page: number;
-    size: number;
-    os?: string;
-  };
-
-  type GetAppVersionListRequest = {
-    page: number;
-    size: number;
-    os?: string;
-  };
-
-  type GetAppVersionListResponse = {
-    total: number;
-    list: AppVersion[];
   };
 
   type GetCouponListParams = {
@@ -1080,14 +1037,6 @@ declare namespace API {
     platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
     is_default: boolean;
     application_id: number;
-  };
-
-  type UpdateAppVersionRequest = {
-    id: number;
-    os: string;
-    version: string;
-    download_url: string;
-    describe: string;
   };
 
   type UpdateCouponRequest = {

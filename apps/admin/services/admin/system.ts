@@ -58,6 +58,32 @@ export async function deleteApplication(
   });
 }
 
+/** get application config GET /v1/admin/system/application_config */
+export async function getApplicationConfig(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.ApplicationConfig }>(
+    '/v1/admin/system/application_config',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
+/** update application config PUT /v1/admin/system/application_config */
+export async function updateApplicationConfig(
+  body: API.ApplicationConfig,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/application_config', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Update application version PUT /v1/admin/system/application_version */
 export async function updateApplicationVersion(
   body: API.UpdateApplicationVersionRequest,

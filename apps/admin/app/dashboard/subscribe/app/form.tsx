@@ -231,6 +231,16 @@ export default function SubscribeAppForm<
                                     name: 'is_default',
                                     type: 'boolean',
                                     placeholder: t('defaultVersion'),
+                                    calculateValue: (value) => {
+                                      const newField = field.value?.map((item) => {
+                                        if (item.is_default) {
+                                          item.is_default = false;
+                                        }
+                                        return item;
+                                      });
+                                      form.setValue(field.name, newField);
+                                      return value;
+                                    },
                                   },
                                   {
                                     name: 'url',

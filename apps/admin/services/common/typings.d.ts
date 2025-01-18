@@ -10,20 +10,18 @@ declare namespace API {
     updated_at: number;
   };
 
-  type AppConfig = {
-    name: string;
-    domains: string[];
-    describe: string;
-    startup_picture: string;
-    startup_picture_skip_time: number;
-  };
-
   type Application = {
     id: number;
     icon: string;
     name: string;
     description: string;
     subscribe_type: string;
+  };
+
+  type ApplicationConfig = {
+    domains: string[];
+    startup_picture: string;
+    startup_picture_skip_time: number;
   };
 
   type ApplicationPlatform = {
@@ -54,15 +52,6 @@ declare namespace API {
     version: string;
     description: string;
     is_default: boolean;
-  };
-
-  type AppVersion = {
-    id: number;
-    os: string;
-    version: string;
-    download_url: string;
-    describe: string;
-    default_version: boolean;
   };
 
   type AuthConfig = {
@@ -151,9 +140,9 @@ declare namespace API {
     created_at: number;
   };
 
-  type GetAppInfoResponse = {
-    config: AppConfig;
-    versions: AppVersion[];
+  type GetAppcationResponse = {
+    config: ApplicationConfig;
+    applications: ApplicationResponseInfo[];
   };
 
   type GetGlobalConfigResponse = {

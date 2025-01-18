@@ -1,6 +1,6 @@
 'use client';
 
-import { getAppConfig, updateAppConfig } from '@/services/admin/app';
+import { getApplicationConfig, updateApplicationConfig } from '@/services/admin/system';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
@@ -55,9 +55,9 @@ export default function ConfigForm() {
   });
 
   const { data, refetch } = useQuery({
-    queryKey: ['getAppConfig'],
+    queryKey: ['getApplicationConfig'],
     queryFn: async () => {
-      const { data } = await getAppConfig();
+      const { data } = await getApplicationConfig();
       return data.data;
     },
   });
@@ -74,7 +74,7 @@ export default function ConfigForm() {
   async function onSubmit(values: FormSchema) {
     setLoading(true);
     try {
-      await updateAppConfig(values as API.AppConfig);
+      await updateApplicationConfig(values as API.ApplicationConfig);
       toast.success(t('updateSuccess'));
       refetch();
       setOpen(false);
