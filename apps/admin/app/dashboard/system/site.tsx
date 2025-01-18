@@ -6,6 +6,7 @@ import { Label } from '@workspace/ui/components/label';
 import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
 import { Textarea } from '@workspace/ui/components/textarea';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { UploadImage } from '@workspace/ui/custom-components/upload-image';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
@@ -47,6 +48,14 @@ export default function Site() {
               placeholder={t('logoPlaceholder')}
               value={data?.site_logo}
               onValueBlur={(value) => updateConfig('site_logo', value)}
+              suffix={
+                <UploadImage
+                  className='bg-muted h-9 rounded-none border-none px-2'
+                  onChange={(value) => {
+                    updateConfig('site_logo', value);
+                  }}
+                />
+              }
             />
           </TableCell>
         </TableRow>
