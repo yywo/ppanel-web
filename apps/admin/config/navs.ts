@@ -11,30 +11,30 @@ export const AuthControl = [
     title: 'Phone Number',
     url: '/dashboard/auth-control/phone',
   },
-  {
-    title: 'Apple',
-    url: '/dashboard/auth-control/apple',
-  },
-  {
-    title: 'Telegram',
-    url: '/dashboard/auth-control/telegram',
-  },
-  {
-    title: 'Google',
-    url: '/dashboard/auth-control/google',
-  },
-  {
-    title: 'Facebook',
-    url: '/dashboard/auth-control/facebook',
-  },
-  {
-    title: 'Twitter',
-    url: '/dashboard/auth-control/twitter',
-  },
-  {
-    title: 'GitHub',
-    url: '/dashboard/auth-control/github',
-  },
+  // {
+  //   title: 'Apple',
+  //   url: '/dashboard/auth-control/apple',
+  // },
+  // {
+  //   title: 'Telegram',
+  //   url: '/dashboard/auth-control/telegram',
+  // },
+  // {
+  //   title: 'Google',
+  //   url: '/dashboard/auth-control/google',
+  // },
+  // {
+  //   title: 'Facebook',
+  //   url: '/dashboard/auth-control/facebook',
+  // },
+  // {
+  //   title: 'Twitter',
+  //   url: '/dashboard/auth-control/twitter',
+  // },
+  // {
+  //   title: 'GitHub',
+  //   url: '/dashboard/auth-control/github',
+  // },
 ];
 
 export const navs = [
