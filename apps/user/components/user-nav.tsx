@@ -3,7 +3,6 @@
 import { navs } from '@/config/navs';
 import useGlobalStore from '@/config/use-global';
 import { Logout } from '@/utils/common';
-import { Icon } from '@iconify/react';
 import { Avatar, AvatarFallback, AvatarImage } from '@workspace/ui/components/avatar';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -15,6 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@workspace/ui/components/dropdown-menu';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 

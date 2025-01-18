@@ -2,7 +2,6 @@
 
 import { getNodeGroupList } from '@/services/admin/server';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
@@ -35,6 +34,7 @@ import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import TagInput from '@workspace/ui/custom-components/tag-input';
 import { cn } from '@workspace/ui/lib/utils';
 import { unitConversion } from '@workspace/ui/utils';

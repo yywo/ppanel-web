@@ -10,8 +10,8 @@ import {
   NEXT_PUBLIC_TWITTER_LINK,
 } from '@/config/constants';
 import useGlobalStore from '@/config/use-global';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { Separator } from '@workspace/ui/components/separator';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Fragment } from 'react';

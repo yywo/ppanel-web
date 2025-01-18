@@ -1,4 +1,6 @@
 import { Button } from '@workspace/ui/components/button';
+import { Label } from '@workspace/ui/components/label.js';
+import { Switch } from '@workspace/ui/components/switch';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput, EnhancedInputProps } from '@workspace/ui/custom-components/enhanced-input';
 import { cn } from '@workspace/ui/lib/utils';
@@ -7,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
-  type: 'text' | 'number' | 'select' | 'time';
+  type: 'text' | 'number' | 'select' | 'time' | 'boolean';
   options?: { label: string; value: string }[];
   internal?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -18,6 +20,7 @@ interface ObjectInputProps<T> {
   value: T;
   onChange: (value: T) => void;
   fields: FieldConfig[];
+  className?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,6 +28,7 @@ export function ObjectInput<T extends Record<string, any>>({
   value,
   onChange,
   fields,
+  className,
 }: ObjectInputProps<T>) {
   const [internalState, setInternalState] = useState<T>(value);
 
@@ -32,7 +36,7 @@ export function ObjectInput<T extends Record<string, any>>({
     setInternalState(value);
   }, [value]);
 
-  const updateField = (key: keyof T, fieldValue: string | number) => {
+  const updateField = (key: keyof T, fieldValue: string | number | boolean) => {
     let updatedInternalState = { ...internalState, [key]: fieldValue };
     fields.forEach((field) => {
       if (field.calculateValue && field.name === key) {
@@ -52,28 +56,44 @@ export function ObjectInput<T extends Record<string, any>>({
 
     onChange(filteredValue);
   };
-
-  return (
-    <div className='flex flex-1 flex-wrap gap-4'>
-      {fields.map(({ name, type, options, className, ...fieldProps }) => (
-        <div key={name} className={cn('flex-1', className)}>
-          {type === 'select' && options ? (
+  const renderField = (field: FieldConfig) => {
+    switch (field.type) {
+      case 'select':
+        return (
+          field.options && (
             <Combobox<string, false>
-              placeholder={fieldProps.placeholder}
-              options={options}
-              value={internalState[name]}
-              onChange={(fieldValue) => {
-                updateField(name, fieldValue);
-              }}
+              placeholder={field.placeholder}
+              options={field.options}
+              value={internalState[field.name]}
+              onChange={(fieldValue) => updateField(field.name, fieldValue)}
             />
-          ) : (
-            <EnhancedInput
-              value={internalState[name]}
-              onValueChange={(fieldValue) => updateField(name, fieldValue)}
-              type={type}
-              {...fieldProps}
+          )
+        );
+      case 'boolean':
+        return (
+          <div className='flex h-full items-center space-x-2'>
+            <Switch
+              checked={internalState[field.name] as boolean}
+              onCheckedChange={(fieldValue) => updateField(field.name, fieldValue)}
             />
-          )}
+            {field.placeholder && <Label>{field.placeholder}</Label>}
+          </div>
+        );
+      default:
+        return (
+          <EnhancedInput
+            value={internalState[field.name]}
+            onValueChange={(fieldValue) => updateField(field.name, fieldValue)}
+            {...field}
+          />
+        );
+    }
+  };
+  return (
+    <div className={cn('flex flex-1 flex-wrap gap-4', className)}>
+      {fields.map((field) => (
+        <div key={field.name} className={cn('flex-1', field.className)}>
+          {renderField(field)}
         </div>
       ))}
     </div>
@@ -83,6 +103,8 @@ interface ArrayInputProps<T> {
   value?: T[];
   onChange: (value: T[]) => void;
   fields: FieldConfig[];
+  isReverse?: boolean;
+  className?: string;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -90,6 +112,8 @@ export function ArrayInput<T extends Record<string, any>>({
   value = [],
   onChange,
   fields,
+  isReverse = false,
+  className,
 }: ArrayInputProps<T>) {
   const initializeDefaultItem = (): T =>
     fields.reduce((acc, field) => {
@@ -117,7 +141,11 @@ export function ArrayInput<T extends Record<string, any>>({
   };
 
   const createField = () => {
-    setDisplayItems([...displayItems, initializeDefaultItem()]);
+    if (isReverse) {
+      setDisplayItems([initializeDefaultItem(), ...displayItems]);
+    } else {
+      setDisplayItems([...displayItems, initializeDefaultItem()]);
+    }
   };
 
   const deleteField = (index: number) => {
@@ -142,6 +170,7 @@ export function ArrayInput<T extends Record<string, any>>({
             value={item}
             onChange={(updatedItem) => handleItemChange(index, updatedItem)}
             fields={fields}
+            className={className}
           />
           <div className='flex min-w-20 items-center'>
             {displayItems.length > 1 && (
@@ -155,7 +184,7 @@ export function ArrayInput<T extends Record<string, any>>({
                 <CircleMinusIcon />
               </Button>
             )}
-            {index === displayItems.length - 1 && (
+            {(isReverse ? index === 0 : index === displayItems.length - 1) && (
               <Button
                 variant='ghost'
                 size='icon'

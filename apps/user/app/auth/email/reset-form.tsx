@@ -1,9 +1,9 @@
 import useGlobalStore from '@/config/use-global';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
 import { Input } from '@workspace/ui/components/input';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction } from 'react';
 import { useForm } from 'react-hook-form';
@@ -65,12 +65,7 @@ export default function ResetForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input
-                    disabled={loading}
-                    placeholder='Enter your password...'
-                    type='password'
-                    {...field}
-                  />
+                  <Input placeholder='Enter your password...' type='password' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

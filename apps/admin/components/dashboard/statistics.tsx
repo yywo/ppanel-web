@@ -1,7 +1,6 @@
 'use client';
 
 import { queryServerTotalData, queryTicketWaitReply } from '@/services/admin/console';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@workspace/ui/components/chart';
@@ -13,6 +12,7 @@ import {
   SelectValue,
 } from '@workspace/ui/components/select';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';

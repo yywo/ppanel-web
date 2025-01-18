@@ -3,7 +3,6 @@
 import { Display } from '@/components/display';
 import Recharge from '@/components/subscribe/recharge';
 import useGlobalStore from '@/config/use-global';
-import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { Sidebar, SidebarContent } from '@workspace/ui/components/sidebar';
@@ -13,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@workspace/ui/components/tooltip';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { isBrowser } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import CopyToClipboard from 'react-copy-to-clipboard';

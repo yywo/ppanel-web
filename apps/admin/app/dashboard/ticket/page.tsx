@@ -7,7 +7,6 @@ import {
   getTicketList,
   updateTicketStatus,
 } from '@/services/admin/ticket';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -22,6 +21,7 @@ import { Input } from '@workspace/ui/components/input';
 import { Label } from '@workspace/ui/components/label';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';

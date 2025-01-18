@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -20,6 +19,7 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { TagInput } from '@workspace/ui/custom-components/tag-input';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';

@@ -3,11 +3,11 @@
 import { Display } from '@/components/display';
 import { SubscribeDetail } from '@/components/subscribe/detail';
 import { getSubscription } from '@/services/common/common';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@workspace/ui/components/card';
 import { Separator } from '@workspace/ui/components/separator';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';

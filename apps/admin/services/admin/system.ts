@@ -58,6 +58,51 @@ export async function deleteApplication(
   });
 }
 
+/** Update application version PUT /v1/admin/system/application_version */
+export async function updateApplicationVersion(
+  body: API.UpdateApplicationVersionRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/application_version', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Create application version POST /v1/admin/system/application_version */
+export async function createApplicationVersion(
+  body: API.CreateApplicationVersionRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/application_version', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Delete application DELETE /v1/admin/system/application_version */
+export async function deleteApplicationVersion(
+  body: API.DeleteApplicationVersionRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/application_version', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get Currency Config GET /v1/admin/system/currency_config */
 export async function getCurrencyConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.CurrencyConfig }>('/v1/admin/system/currency_config', {

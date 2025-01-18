@@ -18,21 +18,59 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AppConfig = {
+    name: string;
+    domains: string[];
+    describe: string;
+    startup_picture: string;
+    startup_picture_skip_time: number;
+  };
+
   type Application = {
     id: number;
-    name: string;
-    platform: string;
-    subscribe_type: string;
     icon: string;
-    url: string;
+    name: string;
+    description: string;
+    subscribe_type: string;
+  };
+
+  type ApplicationPlatform = {
+    ios?: ApplicationVersion[];
+    mac?: ApplicationVersion[];
+    linux?: ApplicationVersion[];
+    android?: ApplicationVersion[];
+    windows?: ApplicationVersion[];
+    harmony?: ApplicationVersion[];
   };
 
   type ApplicationResponse = {
-    windows: Application[];
-    mac: Application[];
-    linux: Application[];
-    android: Application[];
-    ios: Application[];
+    applications: ApplicationResponseInfo[];
+  };
+
+  type ApplicationResponseInfo = {
+    id: number;
+    name: string;
+    icon: string;
+    description: string;
+    subscription_protocol: string;
+    platform: ApplicationPlatform;
+  };
+
+  type ApplicationVersion = {
+    id: number;
+    url: string;
+    version: string;
+    description: string;
+    is_default: boolean;
+  };
+
+  type AppVersion = {
+    id: number;
+    os: string;
+    version: string;
+    download_url: string;
+    describe: string;
+    default_version: boolean;
   };
 
   type AuthConfig = {
@@ -92,11 +130,26 @@ declare namespace API {
   };
 
   type CreateApplicationRequest = {
-    name: string;
-    platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios';
-    subscribe_type: string;
     icon: string;
+    name: string;
+    description: string;
+    subscribe_type: string;
+  };
+
+  type CreateApplicationVersionRequest = {
     url: string;
+    version: string;
+    description: string;
+    platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
+    is_default: boolean;
+    application_id: number;
+  };
+
+  type CreateAppVersionRequest = {
+    os: string;
+    version: string;
+    download_url: string;
+    describe: string;
   };
 
   type CreateCouponRequest = {
@@ -214,11 +267,23 @@ declare namespace API {
     currency_symbol: string;
   };
 
+  type DefaultAppVersionRequest = {
+    id: number;
+  };
+
   type DeleteAnnouncementRequest = {
     id: number;
   };
 
   type DeleteApplicationRequest = {
+    id: number;
+  };
+
+  type DeleteApplicationVersionRequest = {
+    id: number;
+  };
+
+  type DeleteAppVersionRequest = {
     id: number;
   };
 
@@ -331,6 +396,23 @@ declare namespace API {
 
   type GetAnnouncementRequest = {
     id: number;
+  };
+
+  type GetAppVersionListParams = {
+    page: number;
+    size: number;
+    os?: string;
+  };
+
+  type GetAppVersionListRequest = {
+    page: number;
+    size: number;
+    os?: string;
+  };
+
+  type GetAppVersionListResponse = {
+    total: number;
+    list: AppVersion[];
   };
 
   type GetCouponListParams = {
@@ -984,10 +1066,28 @@ declare namespace API {
 
   type UpdateApplicationRequest = {
     id: number;
-    name: string;
-    subscribe_type: string;
     icon: string;
+    name: string;
+    description: string;
+    subscribe_type: string;
+  };
+
+  type UpdateApplicationVersionRequest = {
+    id: number;
     url: string;
+    version: string;
+    description: string;
+    platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
+    is_default: boolean;
+    application_id: number;
+  };
+
+  type UpdateAppVersionRequest = {
+    id: number;
+    os: string;
+    version: string;
+    download_url: string;
+    describe: string;
   };
 
   type UpdateCouponRequest = {

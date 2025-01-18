@@ -1,10 +1,10 @@
 import useGlobalStore from '@/config/use-global';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
 import { Input } from '@workspace/ui/components/input';
 import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
+import { Icon } from '@workspace/ui/custom-components/icon';
 
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction, useState } from 'react';
@@ -99,7 +99,6 @@ export default function LoginForm({
                 <FormControl>
                   <div className='flex gap-2'>
                     <Input
-                      disabled={loading}
                       placeholder={mode === 'code' ? 'Enter code...' : 'Enter password...'}
                       type={mode === 'code' ? 'text' : 'password'}
                       {...field}

@@ -2,6 +2,14 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
+/** Get Tos Content GET /v1/common/app/info */
+export async function getAppInfo(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetAppInfoResponse }>('/v1/common/app/info', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** Get verification code POST /v1/common/send_code */
 export async function sendEmailCode(body: API.SendCodeRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.SendCodeResponse }>('/v1/common/send_code', {

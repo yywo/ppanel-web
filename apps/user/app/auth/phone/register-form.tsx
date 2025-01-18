@@ -1,10 +1,10 @@
 import useGlobalStore from '@/config/use-global';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react/dist/iconify.js';
 import { Button } from '@workspace/ui/components/button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/ui/components/form';
 import { Input } from '@workspace/ui/components/input';
 import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction } from 'react';
@@ -116,12 +116,7 @@ export default function RegisterForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input
-                      disabled={loading}
-                      placeholder='Enter your password...'
-                      type='password'
-                      {...field}
-                    />
+                    <Input placeholder='Enter your password...' type='password' {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

@@ -1,6 +1,5 @@
 'use client';
 
-import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
 import {
   Command,
@@ -11,6 +10,7 @@ import {
   CommandList,
 } from '@workspace/ui/components/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@workspace/ui/components/popover';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { countries, type ICountry } from '@workspace/ui/utils/countries';
 import { BoxIcon, Check, ChevronsUpDown } from 'lucide-react';

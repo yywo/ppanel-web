@@ -1,7 +1,6 @@
 'use client';
 
 import { getSystemLog, restartSystem } from '@/services/admin/tool';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import {
   Accordion,
@@ -30,6 +29,7 @@ import {
   CardTitle,
 } from '@workspace/ui/components/card';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 

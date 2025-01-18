@@ -1,6 +1,5 @@
 'use client';
 import { navs } from '@/config/navs';
-import { Icon } from '@iconify/react';
 import {
   Sidebar,
   SidebarContent,
@@ -11,6 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@workspace/ui/components/sidebar';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

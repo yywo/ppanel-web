@@ -2,7 +2,6 @@
 
 import { getSubscribeList } from '@/services/admin/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -26,6 +25,7 @@ import {
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { DatePicker } from '@workspace/ui/custom-components/date-picker';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';

@@ -2,7 +2,6 @@
 
 import useGlobalStore from '@/config/use-global';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Icon } from '@iconify/react';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -24,6 +23,7 @@ import {
 import { Switch } from '@workspace/ui/components/switch';
 import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { unitConversion } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';

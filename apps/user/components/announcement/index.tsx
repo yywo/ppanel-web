@@ -1,7 +1,7 @@
 import { queryAnnouncement } from '@/services/user/announcement';
-import { Icon } from '@iconify/react';
 import { Card } from '@workspace/ui/components/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@workspace/ui/components/dialog';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { getTranslations } from 'next-intl/server';
 import { Empty } from '../empty';

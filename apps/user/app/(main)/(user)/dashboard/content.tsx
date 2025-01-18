@@ -9,7 +9,6 @@ import { getStat } from '@/services/common/common';
 import { queryApplicationConfig } from '@/services/user/subscribe';
 import { queryUserSubscribe } from '@/services/user/user';
 import { getPlatform } from '@/utils/common';
-import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
 import {
   Accordion,
@@ -32,6 +31,7 @@ import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { Separator } from '@workspace/ui/components/separator';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { isBrowser } from '@workspace/ui/utils';
 import { differenceInDays } from 'date-fns';
 import { useTranslations } from 'next-intl';

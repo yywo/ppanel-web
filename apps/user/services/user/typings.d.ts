@@ -10,21 +10,59 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AppConfig = {
+    name: string;
+    domains: string[];
+    describe: string;
+    startup_picture: string;
+    startup_picture_skip_time: number;
+  };
+
   type Application = {
     id: number;
-    name: string;
-    platform: string;
-    subscribe_type: string;
     icon: string;
-    url: string;
+    name: string;
+    description: string;
+    subscribe_type: string;
+  };
+
+  type ApplicationPlatform = {
+    ios?: ApplicationVersion[];
+    mac?: ApplicationVersion[];
+    linux?: ApplicationVersion[];
+    android?: ApplicationVersion[];
+    windows?: ApplicationVersion[];
+    harmony?: ApplicationVersion[];
   };
 
   type ApplicationResponse = {
-    windows: Application[];
-    mac: Application[];
-    linux: Application[];
-    android: Application[];
-    ios: Application[];
+    applications: ApplicationResponseInfo[];
+  };
+
+  type ApplicationResponseInfo = {
+    id: number;
+    name: string;
+    icon: string;
+    description: string;
+    subscription_protocol: string;
+    platform: ApplicationPlatform;
+  };
+
+  type ApplicationVersion = {
+    id: number;
+    url: string;
+    version: string;
+    description: string;
+    is_default: boolean;
+  };
+
+  type AppVersion = {
+    id: number;
+    os: string;
+    version: string;
+    download_url: string;
+    describe: string;
+    default_version: boolean;
   };
 
   type AuthConfig = {

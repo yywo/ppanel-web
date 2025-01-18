@@ -1,7 +1,6 @@
 'use client';
 import { navs } from '@/config/navs';
 import useGlobalStore from '@/config/use-global';
-import { Icon } from '@iconify/react';
 import {
   Sidebar,
   SidebarContent,
@@ -13,6 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@workspace/ui/components/sidebar';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
