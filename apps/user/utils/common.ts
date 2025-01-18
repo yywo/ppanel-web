@@ -51,7 +51,7 @@ export function Logout() {
   }
 }
 
-export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' {
+export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony' {
   const parser = new UAParser();
   const os = parser.getOS();
   const osName = os.name?.toLowerCase() || '';
@@ -70,6 +70,7 @@ export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' {
     return 'linux';
   if (osName.includes('android')) return 'android';
   if (osName.includes('ios')) return 'ios';
+  if (osName.includes('harmony')) return 'harmony';
 
   return 'windows';
 }

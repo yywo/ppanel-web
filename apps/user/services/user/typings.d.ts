@@ -42,7 +42,7 @@ declare namespace API {
     name: string;
     icon: string;
     description: string;
-    subscription_protocol: string;
+    subscribe_type: string;
     platform: ApplicationPlatform;
   };
 

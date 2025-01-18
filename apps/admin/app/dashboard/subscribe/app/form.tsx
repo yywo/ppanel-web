@@ -42,7 +42,7 @@ import { z } from 'zod';
 const platforms = ['windows', 'macos', 'linux', 'android', 'ios', 'harmony'];
 
 const defaultValues = {
-  subscription_protocol: 'Clash',
+  subscribe_type: 'Clash',
   name: '',
   icon: '',
   url: '',
@@ -58,7 +58,7 @@ const versionSchema = z.object({
 const formSchema = z.object({
   icon: z.string(),
   name: z.string(),
-  subscription_protocol: z.string(),
+  subscribe_type: z.string(),
   platform: z.object({
     windows: z.array(versionSchema).optional(),
     macos: z.array(versionSchema).optional(),
@@ -172,7 +172,7 @@ export default function SubscribeAppForm<
                 />
                 <FormField
                   control={form.control}
-                  name='subscription_protocol'
+                  name='subscribe_type'
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>{t('subscriptionProtocol')}</FormLabel>

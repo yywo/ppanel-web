@@ -43,6 +43,15 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import Subscribe from '../subscribe/page';
 
+const platforms: (keyof API.ApplicationPlatform)[] = [
+  'windows',
+  'mac',
+  'linux',
+  'ios',
+  'android',
+  'harmony',
+];
+
 export default function Content() {
   const t = useTranslations('dashboard');
   const { getUserSubscribe, getAppSubLink } = useGlobalStore();
@@ -56,14 +65,14 @@ export default function Content() {
       return data.data?.list || [];
     },
   });
-  const { data: application } = useQuery({
+  const { data: applications } = useQuery({
     queryKey: ['queryApplicationConfig'],
     queryFn: async () => {
       const { data } = await queryApplicationConfig();
-      return data.data as API.ApplicationResponse;
+      return data.data?.applications || [];
     },
   });
-  const [platform, setPlatform] = useState<keyof API.ApplicationResponse>(getPlatform());
+  const [platform, setPlatform] = useState<keyof API.ApplicationPlatform>(getPlatform());
 
   const { data } = useQuery({
     queryKey: ['getStat'],
@@ -87,16 +96,27 @@ export default function Content() {
           <div className='flex flex-wrap justify-between gap-4'>
             <Tabs
               value={platform}
-              onValueChange={(value) => setPlatform(value as keyof API.ApplicationResponse)}
+              onValueChange={(value) => setPlatform(value as keyof API.ApplicationPlatform)}
               className='w-full max-w-full md:w-auto'
             >
               <TabsList className='flex *:flex-auto'>
-                {application &&
-                  Object.keys(application)?.map((item) => (
-                    <TabsTrigger value={item} key={item} className='px-1 uppercase lg:px-3'>
-                      {item}
-                    </TabsTrigger>
-                  ))}
+                {platforms.map((item) => (
+                  <TabsTrigger value={item} key={item} className='px-1 lg:px-3'>
+                    <Icon
+                      icon={`${
+                        {
+                          windows: 'simple-icons:windows',
+                          mac: 'simple-icons:apple',
+                          linux: 'simple-icons:linux',
+                          ios: 'simple-icons:ios',
+                          android: 'simple-icons:android',
+                          harmony: 'simple-icons:harmonyos',
+                        }[item]
+                      }`}
+                      className='size-6'
+                    />
+                  </TabsTrigger>
+                ))}
               </TabsList>
             </Tabs>
             {data?.protocol && data?.protocol.length > 1 && (
@@ -215,54 +235,69 @@ export default function Content() {
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
-                          {application?.[platform]?.map((app) => (
-                            <div
-                              key={app.name}
-                              className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
-                            >
-                              <span>{app.name}</span>
-                              {app.icon && (
-                                <Image
-                                  src={app.icon}
-                                  alt={app.name}
-                                  width={64}
-                                  height={64}
-                                  className='p-1'
-                                />
-                              )}
-                              <div className='flex'>
-                                <Button
-                                  size='sm'
-                                  variant='secondary'
-                                  className='rounded-r-none px-1.5'
-                                  asChild
-                                >
-                                  <Link href={app.url}>{t('download')}</Link>
-                                </Button>
+                          {applications
+                            ?.filter((application) => {
+                              const platformApps = application.platform?.[platform];
+                              return platformApps && platformApps.length > 0;
+                            })
+                            .map((application) => {
+                              const platformApps = application.platform?.[platform];
+                              const app =
+                                platformApps?.find((item) => item.is_default) || platformApps?.[0];
+                              if (!app) return null;
+                              const handleCopy = (text: string, result: boolean) => {
+                                const href = getAppSubLink(application.subscribe_type, url);
 
-                                <CopyToClipboard
-                                  text={url}
-                                  onCopy={(text, result) => {
-                                    const href = getAppSubLink(app.subscribe_type, url);
-                                    if (isBrowser() && href) {
-                                      window.location.href = href;
-                                    } else if (result) {
-                                      toast.success(
-                                        <>
-                                          <p>{t('copySuccess')}</p>
-                                          <p>{t('manualImportMessage')}</p>
-                                        </>,
-                                      );
-                                    }
-                                  }}
+                                if (isBrowser() && href) {
+                                  window.location.href = href;
+                                  return;
+                                }
+
+                                if (result) {
+                                  toast.success(
+                                    <>
+                                      <p>{t('copySuccess')}</p>
+                                      <p>{t('manualImportMessage')}</p>
+                                    </>,
+                                  );
+                                }
+                              };
+
+                              return (
+                                <div
+                                  key={application.name}
+                                  className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
                                 >
-                                  <Button size='sm' className='rounded-l-none p-2'>
-                                    {t('import')}
-                                  </Button>
-                                </CopyToClipboard>
-                              </div>
-                            </div>
-                          ))}
+                                  <span>{application.name}</span>
+
+                                  {application.icon && (
+                                    <Image
+                                      src={application.icon}
+                                      alt={application.name}
+                                      width={64}
+                                      height={64}
+                                      className='p-1'
+                                    />
+                                  )}
+                                  <div className='flex'>
+                                    <Button
+                                      size='sm'
+                                      variant='secondary'
+                                      className='rounded-r-none px-1.5'
+                                      asChild
+                                    >
+                                      <Link href={app.url}>{t('download')}</Link>
+                                    </Button>
+
+                                    <CopyToClipboard text={url} onCopy={handleCopy}>
+                                      <Button size='sm' className='rounded-l-none p-2'>
+                                        {t('import')}
+                                      </Button>
+                                    </CopyToClipboard>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           <div className='text-muted-foreground hidden size-full flex-col items-center justify-between gap-2 text-sm lg:flex'>
                             <span>{t('qrCode')}</span>
                             <QRCodeCanvas

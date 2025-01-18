@@ -76,9 +76,9 @@ export default function SubscribeApp() {
           header: t('appName'),
         },
         {
-          accessorKey: 'subscription_protocol',
+          accessorKey: 'subscribe_type',
           header: t('subscriptionProtocol'),
-          cell: ({ row }) => row.getValue('subscription_protocol'),
+          cell: ({ row }) => row.getValue('subscribe_type'),
         },
       ]}
       actions={{

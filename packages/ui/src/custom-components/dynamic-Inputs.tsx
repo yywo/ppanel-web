@@ -1,5 +1,5 @@
 import { Button } from '@workspace/ui/components/button';
-import { Label } from '@workspace/ui/components/label.js';
+import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput, EnhancedInputProps } from '@workspace/ui/custom-components/enhanced-input';
