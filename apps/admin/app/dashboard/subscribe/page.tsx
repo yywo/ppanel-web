@@ -2,8 +2,8 @@ import { getTranslations } from 'next-intl/server';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 
-import GroupTable from './group-table';
-import SubscribeApp from './subscribe-app';
+import SubscribeApp from './app/table';
+import GroupTable from './group/table';
 import SubscribeConfig from './subscribe-config';
 import SubscribeTable from './subscribe-table';
 

@@ -14,7 +14,7 @@ import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
-import GroupForm from './group-form';
+import GroupForm from './form';
 
 const GroupTable = () => {
   const t = useTranslations('subscribe');
