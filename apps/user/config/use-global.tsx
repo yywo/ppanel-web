@@ -106,7 +106,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       case 'Hiddify':
         return `hiddify://import/${url}#${name}`;
       case 'Loon':
-        return `loon://import?sub=${encodeURI(url)}`;
+        return `loon://import?sub=${encodeURIComponent(url)}`;
       case 'NekoBox':
         return `sn://subscription?url=${url}&name=${name}`;
       case 'NekoRay':
@@ -120,19 +120,21 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
           }),
         )}`;
       case 'Shadowrocket':
-        return `shadowrocket://add/sub://${window.btoa(url)}?remark=${encodeURI(name)}`;
+        return `shadowrocket://add/sub://${window.btoa(url)}?remark=${encodeURIComponent(name)}`;
       case 'Singbox':
-        return `sing-box://import-remote-profile?url=${encodeURI(url)}#${name}`;
+        return `sing-box://import-remote-profile?url=${encodeURIComponent(url)}#${name}`;
       case 'Surfboard':
-        return `surfboard:///install-config?url=${encodeURI(url)}`;
+        return `surfboard:///install-config?url=${encodeURIComponent(url)}`;
       case 'Surge':
-        return `surge:///install-config?url=${encodeURI(url)}`;
+        return `surge:///install-config?url=${encodeURIComponent(url)}`;
       case 'V2box':
-        return `v2box://install-sub?url=${encodeURI(url)}&name=${name}`;
-      case 'V2rayN':
-        return `v2rayn://install-sub?url=${encodeURI(url)}&name=${name}`;
+        return `v2box://install-sub?url=${encodeURIComponent(url)}&name=${name}`;
+      // case 'V2rayN':
+      //   return `v2rayn://install-sub?url=${encodeURIComponent(url)}&name=${name}`;
       case 'V2rayNg':
-        return `v2rayng://install-sub?url=${encodeURI(url)}&name=${name}`;
+        return `v2rayng://install-sub?url=${encodeURIComponent(url)}#${name}`;
+      case 'Stash':
+        return `stash://install-config?url=${encodeURIComponent(url)}&name=${name}`;
       default:
         return '';
     }

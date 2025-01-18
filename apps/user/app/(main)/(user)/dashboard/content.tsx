@@ -245,21 +245,31 @@ export default function Content() {
                               const app =
                                 platformApps?.find((item) => item.is_default) || platformApps?.[0];
                               if (!app) return null;
+
                               const handleCopy = (text: string, result: boolean) => {
-                                const href = getAppSubLink(application.subscribe_type, url);
-
-                                if (isBrowser() && href) {
-                                  window.location.href = href;
-                                  return;
-                                }
-
                                 if (result) {
-                                  toast.success(
-                                    <>
-                                      <p>{t('copySuccess')}</p>
-                                      <p>{t('manualImportMessage')}</p>
-                                    </>,
-                                  );
+                                  const href = getAppSubLink(application.subscribe_type, url);
+                                  const showSuccessMessage = () => {
+                                    toast.success(
+                                      <>
+                                        <p>{t('copySuccess')}</p>
+                                        <p>{t('manualImportMessage')}</p>
+                                      </>,
+                                    );
+                                  };
+
+                                  if (isBrowser() && href) {
+                                    window.location.href = href;
+                                    const checkRedirect = setTimeout(() => {
+                                      if (window.location.href !== href) {
+                                        showSuccessMessage();
+                                      }
+                                      clearTimeout(checkRedirect);
+                                    }, 1000);
+                                    return;
+                                  }
+
+                                  showSuccessMessage();
                                 }
                               };
 
