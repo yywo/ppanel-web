@@ -1,6 +1,6 @@
 'use client';
 
-import { getOAuthConfig, oAuthCreateConfig, updateOAuthConfig } from '@/services/admin/system';
+import { getOAuthByPlatform, updateOAuthConfig } from '@/services/admin/system';
 import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
@@ -13,28 +13,22 @@ export default function Page() {
   const t = useTranslations('telegram');
 
   const { data, refetch } = useQuery({
-    queryKey: ['getOAuthConfig', 'telegram'],
+    queryKey: ['getOAuthByPlatform', 'telegram'],
     queryFn: async () => {
-      const { data } = await getOAuthConfig();
-      return data.data?.list.find((item) => item.platform === 'telegram') as API.OAuthConfig;
+      const { data } = await getOAuthByPlatform({
+        platform: 'telegram',
+      });
+      return data.data;
     },
   });
 
-  async function updateConfig(key: keyof API.OAuthConfig, value: unknown) {
+  async function updateConfig(key: keyof API.UpdateOAuthConfig, value: unknown) {
     if (data?.[key] === value) return;
     try {
-      if (data?.id) {
-        await oAuthCreateConfig({
-          ...data,
-          platform: 'telegram',
-          [key]: value,
-        } as API.OAuthConfig);
-      } else {
-        await updateOAuthConfig({
-          ...data,
-          [key]: value,
-        } as API.OAuthConfig);
-      }
+      await updateOAuthConfig({
+        ...data,
+        [key]: value,
+      } as API.UpdateOAuthConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -65,8 +59,13 @@ export default function Page() {
           <TableCell className='text-right'>
             <EnhancedInput
               placeholder='6123456789'
-              value={data?.client_id}
-              onValueBlur={(value) => updateConfig('client_id', value)}
+              value={data?.config?.bot}
+              onValueBlur={(value) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  bot: value,
+                });
+              }}
             />
           </TableCell>
         </TableRow>
@@ -78,8 +77,13 @@ export default function Page() {
           <TableCell className='text-right'>
             <EnhancedInput
               placeholder='6123456789:AAHn_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-              value={data?.client_secret}
-              onValueBlur={(value) => updateConfig('client_secret', value)}
+              value={data?.config?.bot_token}
+              onValueBlur={(value) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  bot_token: value,
+                });
+              }}
             />
           </TableCell>
         </TableRow>

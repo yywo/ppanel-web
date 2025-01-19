@@ -27,6 +27,7 @@ declare namespace API {
   };
 
   type ApplicationConfig = {
+    encryption: boolean;
     domains: string[];
     startup_picture: string;
     startup_picture_skip_time: number;
@@ -457,6 +458,18 @@ declare namespace API {
     list: Server[];
   };
 
+  type GetOAuthByPlatformParams = {
+    platform: string;
+  };
+
+  type GetOAuthByPlatformRequest = {
+    platform: string;
+  };
+
+  type GetOAuthConfigResponse = {
+    list: OAuthMethod[];
+  };
+
   type GetOrderListParams = {
     page: number;
     size: number;
@@ -619,29 +632,14 @@ declare namespace API {
     last_at: number;
   };
 
-  type OAuthConfig = {
+  type OAuthMethod = {
     id: number;
-    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
-    team_id: string;
-    key_id: string;
-    client_id: string;
-    client_secret: string;
+    platform: string;
+    config: Record<string, any>;
     redirect: string;
     enabled: boolean;
-  };
-
-  type OAuthCreateRequest = {
-    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
-    team_id: string;
-    key_id: string;
-    client_id: string;
-    client_secret: string;
-    enabled: boolean;
-    redirect: string;
-  };
-
-  type OAuthQueryResponse = {
-    list: OAuthConfig[];
+    created_at: number;
+    updated_at: number;
   };
 
   type OnlineUser = {
@@ -1124,6 +1122,14 @@ declare namespace API {
     config: Record<string, any>;
     enable: boolean;
     sort: number;
+  };
+
+  type UpdateOAuthConfig = {
+    id: number;
+    platform: string;
+    config: Record<string, any>;
+    redirect: string;
+    enabled: boolean;
   };
 
   type UpdateOrderStatusRequest = {

@@ -1,6 +1,6 @@
 'use client';
 
-import { getOAuthConfig, oAuthCreateConfig, updateOAuthConfig } from '@/services/admin/system';
+import { getOAuthByPlatform, updateOAuthConfig } from '@/services/admin/system';
 import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
@@ -14,28 +14,22 @@ export default function Page() {
   const t = useTranslations('apple');
 
   const { data, refetch } = useQuery({
-    queryKey: ['getOAuthConfig', 'apple'],
+    queryKey: ['getOAuthByPlatform', 'apple'],
     queryFn: async () => {
-      const { data } = await getOAuthConfig();
-      return data.data?.list.find((item) => item.platform === 'apple') as API.OAuthConfig;
+      const { data } = await getOAuthByPlatform({
+        platform: 'apple',
+      });
+      return data.data;
     },
   });
 
-  async function updateConfig(key: keyof API.OAuthConfig, value: unknown) {
+  async function updateConfig(key: keyof API.UpdateOAuthConfig, value: unknown) {
     if (data?.[key] === value) return;
     try {
-      if (data?.id) {
-        await oAuthCreateConfig({
-          ...data,
-          platform: 'apple',
-          [key]: value,
-        } as API.OAuthConfig);
-      } else {
-        await updateOAuthConfig({
-          ...data,
-          [key]: value,
-        } as API.OAuthConfig);
-      }
+      await updateOAuthConfig({
+        ...data,
+        [key]: value,
+      } as API.UpdateOAuthConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -66,21 +60,13 @@ export default function Page() {
           <TableCell className='text-right'>
             <EnhancedInput
               placeholder='ABCDE1FGHI'
-              value={data?.team_id}
-              onValueBlur={(value) => updateConfig('team_id', value)}
-            />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>
-            <Label>{t('clientId')}</Label>
-            <p className='text-muted-foreground text-xs'>{t('clientIdDescription')}</p>
-          </TableCell>
-          <TableCell className='text-right'>
-            <EnhancedInput
-              placeholder='com.your.app.service'
-              value={data?.client_id}
-              onValueBlur={(value) => updateConfig('client_id', value)}
+              value={data?.config?.team_id}
+              onValueBlur={(value) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  team_id: value,
+                });
+              }}
             />
           </TableCell>
         </TableRow>
@@ -92,8 +78,31 @@ export default function Page() {
           <TableCell className='text-right'>
             <EnhancedInput
               placeholder='ABC1234567'
-              value={data?.key_id}
-              onValueBlur={(value) => updateConfig('key_id', value)}
+              value={data?.config?.key_id}
+              onValueBlur={(value) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  key_id: value,
+                });
+              }}
+            />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>
+            <Label>{t('clientId')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('clientIdDescription')}</p>
+          </TableCell>
+          <TableCell className='text-right'>
+            <EnhancedInput
+              placeholder='com.your.app.service'
+              value={data?.config?.client_id}
+              onValueBlur={(value) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  client_id: value,
+                });
+              }}
             />
           </TableCell>
         </TableRow>
@@ -106,8 +115,13 @@ export default function Page() {
             <Textarea
               className='h-20'
               placeholder={`-----BEGIN PRIVATE KEY-----\nMIGTAgEA...\n-----END PRIVATE KEY-----`}
-              value={data?.client_secret}
-              onBlur={(e) => updateConfig('client_secret', e.target.value)}
+              value={data?.config?.client_secret}
+              onBlur={(e) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  client_secret: e.target.value,
+                });
+              }}
             />
           </TableCell>
         </TableRow>

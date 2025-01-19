@@ -226,9 +226,9 @@ export async function updateNodeConfig(body: API.NodeConfig, options?: { [key: s
   });
 }
 
-/** Get OAuth config GET /v1/admin/system/oauth_config */
+/** Get oauth config GET /v1/admin/system/oauth_config */
 export async function getOAuthConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.OAuthQueryResponse }>(
+  return request<API.Response & { data?: API.GetOAuthConfigResponse }>(
     '/v1/admin/system/oauth_config',
     {
       method: 'GET',
@@ -238,7 +238,10 @@ export async function getOAuthConfig(options?: { [key: string]: any }) {
 }
 
 /** Update oauth config PUT /v1/admin/system/oauth_config */
-export async function updateOAuthConfig(body: API.OAuthConfig, options?: { [key: string]: any }) {
+export async function updateOAuthConfig(
+  body: API.UpdateOAuthConfig,
+  options?: { [key: string]: any },
+) {
   return request<API.Response & { data?: any }>('/v1/admin/system/oauth_config', {
     method: 'PUT',
     headers: {
@@ -249,17 +252,17 @@ export async function updateOAuthConfig(body: API.OAuthConfig, options?: { [key:
   });
 }
 
-/** OAuth create config POST /v1/admin/system/oauth_config */
-export async function oAuthCreateConfig(
-  body: API.OAuthCreateRequest,
+/** Get OAuth Config By Platform GET /v1/admin/system/oauth/platform */
+export async function getOAuthByPlatform(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetOAuthByPlatformParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: any }>('/v1/admin/system/oauth_config', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  return request<API.Response & { data?: API.OAuthMethod }>('/v1/admin/system/oauth/platform', {
+    method: 'GET',
+    params: {
+      ...params,
     },
-    data: body,
     ...(options || {}),
   });
 }

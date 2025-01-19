@@ -19,6 +19,7 @@ declare namespace API {
   };
 
   type ApplicationConfig = {
+    encryption: boolean;
     domains: string[];
     startup_picture: string;
     startup_picture_skip_time: number;
@@ -210,19 +211,18 @@ declare namespace API {
     method: string;
   };
 
-  type OAuthConfig = {
-    id: number;
-    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
-    team_id: string;
-    key_id: string;
-    client_id: string;
-    client_secret: string;
-    redirect: string;
-    enabled: boolean;
-  };
-
   type OAuthLoginResponse = {
     redirect: string;
+  };
+
+  type OAuthMethod = {
+    id: number;
+    platform: string;
+    config: Record<string, any>;
+    redirect: string;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type OnlineUser = {
