@@ -1,0 +1,12 @@
+{
+  "clientId": "ID Client",
+  "clientIdDescription": "ID-ul aplicației Facebook din Consola pentru Dezvoltatori Facebook",
+  "clientSecret": "Secretul Clientului",
+  "clientSecretDescription": "Secretul aplicației Facebook din Consola pentru Dezvoltatori Facebook",
+  "enable": "Activează",
+  "enableDescription": "După activare, utilizatorii se pot autentifica cu contul lor de Facebook",
+  "redirectUri": "URI de redirecționare autorizat",
+  "redirectUriDescription": "URL-ul către care utilizatorul va fi redirecționat după autentificarea pe Facebook",
+  "saveFailed": "Salvarea a eșuat",
+  "saveSuccess": "Salvare reușită"
+}

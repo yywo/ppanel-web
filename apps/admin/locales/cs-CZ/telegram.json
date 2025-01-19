@@ -1,0 +1,12 @@
+{
+  "clientId": "ID robota",
+  "clientIdDescription": "ID Telegram bota, které můžete získat od @BotFather",
+  "clientSecret": "Token robota",
+  "clientSecretDescription": "Telegram Bot Token, který můžete získat od @BotFather",
+  "enable": "Povolit",
+  "enableDescription": "Po povolení budou povoleny funkce registrace, přihlášení, připojení a odpojení mobilního telefonu",
+  "redirectUri": "Přesměrovací URL",
+  "redirectUriDescription": "URL, na kterou Telegram přesměruje po úspěšném ověření",
+  "saveFailed": "Uložení se nezdařilo",
+  "saveSuccess": "Uložení bylo úspěšné"
+}

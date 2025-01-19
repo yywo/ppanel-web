@@ -205,6 +205,26 @@ declare namespace API {
     last_at: number;
   };
 
+  type OAthLoginRequest = {
+    /** google, facebook, apple, telegram, github etc. */
+    method: string;
+  };
+
+  type OAuthConfig = {
+    id: number;
+    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
+    team_id: string;
+    key_id: string;
+    client_id: string;
+    client_secret: string;
+    redirect: string;
+    enabled: boolean;
+  };
+
+  type OAuthLoginResponse = {
+    redirect: string;
+  };
+
   type OnlineUser = {
     uid: number;
     ip: string;

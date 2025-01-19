@@ -1,0 +1,12 @@
+{
+  "clientId": "GitHub-asiakastunnus",
+  "clientIdDescription": "Asiakkaan tunnus GitHub OAuth -sovelluksesi asetuksista",
+  "clientSecret": "GitHub-asiakassalasana",
+  "clientSecretDescription": "Asiakassalasana GitHub OAuth -sovelluksesi asetuksista",
+  "enable": "Ota käyttöön GitHub-autentikointi",
+  "enableDescription": "Salli käyttäjien kirjautua sisään GitHub-tileillään",
+  "redirectUri": "Valtuutuksen paluuosoite",
+  "redirectUriDescription": "Sovelluksesi URL-osoite, johon käyttäjät ohjataan GitHub-todennuksen jälkeen",
+  "saveFailed": "GitHub-asetusten tallentaminen epäonnistui",
+  "saveSuccess": "GitHub-asetukset tallennettu onnistuneesti"
+}

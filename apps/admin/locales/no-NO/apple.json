@@ -1,0 +1,16 @@
+{
+  "clientId": "Tjeneste-ID",
+  "clientIdDescription": "Apple-tjeneste-ID, du kan få den fra Apple Developer Portal",
+  "clientSecret": "Privat Nøkkel",
+  "clientSecretDescription": "Innholdet i den private nøkkelen (.p8-fil) brukt for autentisering med Apple",
+  "enable": "Aktiver",
+  "enableDescription": "Etter aktivering kan brukere logge inn med sin Apple-ID",
+  "keyId": "Nøkkel-ID",
+  "keyIdDescription": "ID-en til din private nøkkel fra Apple Developer Portal",
+  "redirectUri": "Retur-URL",
+  "redirectUriDescription": "URL-en som Apple vil omdirigere til etter vellykket autentisering",
+  "saveFailed": "Lagring mislyktes",
+  "saveSuccess": "Lagring vellykket",
+  "teamId": "Team-ID",
+  "teamIdDescription": "Apple Developer Team-ID"
+}

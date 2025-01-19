@@ -1,0 +1,12 @@
+{
+  "clientId": "Asiakas ID",
+  "clientIdDescription": "Facebook-sovelluksen tunnus Facebookin kehittäjäkonsolista",
+  "clientSecret": "Asiakassalasana",
+  "clientSecretDescription": "Facebook-sovelluksen salaisuus Facebookin kehittäjäkonsolista",
+  "enable": "Ota käyttöön",
+  "enableDescription": "Kun otat tämän käyttöön, käyttäjät voivat kirjautua sisään Facebook-tilillään",
+  "redirectUri": "Valtuutettu uudelleenohjaus-URI",
+  "redirectUriDescription": "URL, jolle käyttäjä ohjataan Facebook-todennuksen jälkeen",
+  "saveFailed": "Tallennus epäonnistui",
+  "saveSuccess": "Tallennus onnistui"
+}

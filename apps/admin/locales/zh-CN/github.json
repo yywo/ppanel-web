@@ -1,0 +1,12 @@
+{
+  "clientId": "GitHub 客户端 ID",
+  "clientIdDescription": "来自您的 GitHub OAuth 应用程序设置的客户端 ID",
+  "clientSecret": "GitHub 客户端密钥",
+  "clientSecretDescription": "来自您的 GitHub OAuth 应用程序设置的客户端密钥",
+  "enable": "启用 GitHub 认证",
+  "enableDescription": "允许用户使用他们的GitHub账户登录",
+  "redirectUri": "授权回调URL",
+  "redirectUriDescription": "在您的应用程序中，用户在 GitHub 认证后将被重定向到的 URL",
+  "saveFailed": "保存 GitHub 设置失败",
+  "saveSuccess": "GitHub 设置已成功保存"
+}

@@ -1,0 +1,16 @@
+{
+  "clientId": "サービスID",
+  "clientIdDescription": "AppleサービスID。Apple Developer Portalから取得できます。",
+  "clientSecret": "プライベートキー",
+  "clientSecretDescription": "Appleとの認証に使用される秘密鍵コンテンツ（.p8ファイル）",
+  "enable": "有効にする",
+  "enableDescription": "有効にすると、ユーザーはApple IDでサインインできます",
+  "keyId": "キーID",
+  "keyIdDescription": "Apple Developer PortalからのプライベートキーのID",
+  "redirectUri": "リダイレクトURL",
+  "redirectUriDescription": "認証が成功した後にAppleがリダイレクトするURL",
+  "saveFailed": "保存に失敗しました",
+  "saveSuccess": "保存に成功しました",
+  "teamId": "チームID",
+  "teamIdDescription": "Apple Developer チーム ID"
+}

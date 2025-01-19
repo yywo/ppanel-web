@@ -1,0 +1,12 @@
+{
+  "clientId": "클라이언트 ID",
+  "clientIdDescription": "Google Cloud Console에서 가져온 Google OAuth 2.0 클라이언트 ID",
+  "clientSecret": "클라이언트 비밀",
+  "clientSecretDescription": "Google Cloud Console에서 가져온 Google OAuth 2.0 클라이언트 비밀",
+  "enable": "활성화",
+  "enableDescription": "활성화 후 사용자는 Google 계정으로 로그인할 수 있습니다",
+  "redirectUri": "인가된 리디렉션 URI",
+  "redirectUriDescription": "Google 인증 후 사용자가 리디렉션될 URL",
+  "saveFailed": "저장 실패",
+  "saveSuccess": "저장 성공"
+}

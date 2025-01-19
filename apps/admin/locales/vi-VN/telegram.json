@@ -1,0 +1,12 @@
+{
+  "clientId": "ID Bot",
+  "clientIdDescription": "ID Bot Telegram, bạn có thể lấy từ @BotFather",
+  "clientSecret": "Mã thông báo Bot",
+  "clientSecretDescription": "Mã thông báo Bot Telegram, bạn có thể lấy nó từ @BotFather",
+  "enable": "Kích hoạt",
+  "enableDescription": "Sau khi kích hoạt, các chức năng đăng ký, đăng nhập, liên kết và hủy liên kết điện thoại di động sẽ được kích hoạt",
+  "redirectUri": "URL chuyển hướng",
+  "redirectUriDescription": "URL mà Telegram sẽ chuyển hướng đến sau khi xác thực thành công",
+  "saveFailed": "Lưu không thành công",
+  "saveSuccess": "Lưu thành công"
+}

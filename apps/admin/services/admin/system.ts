@@ -226,6 +226,44 @@ export async function updateNodeConfig(body: API.NodeConfig, options?: { [key: s
   });
 }
 
+/** Get OAuth config GET /v1/admin/system/oauth_config */
+export async function getOAuthConfig(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.OAuthQueryResponse }>(
+    '/v1/admin/system/oauth_config',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
+/** Update oauth config PUT /v1/admin/system/oauth_config */
+export async function updateOAuthConfig(body: API.OAuthConfig, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/oauth_config', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** OAuth create config POST /v1/admin/system/oauth_config */
+export async function oAuthCreateConfig(
+  body: API.OAuthCreateRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/oauth_config', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get register config GET /v1/admin/system/register_config */
 export async function getRegisterConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.RegisterConfig }>('/v1/admin/system/register_config', {

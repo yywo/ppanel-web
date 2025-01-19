@@ -1,0 +1,16 @@
+{
+  "clientId": "Palvelun ID",
+  "clientIdDescription": "Apple-palvelutunnus, jonka voit hankkia Apple Developer Portalista",
+  "clientSecret": "Yksityinen avain",
+  "clientSecretDescription": "Yksityinen avain (.p8-tiedosto), jota käytetään todennukseen Applen kanssa",
+  "enable": "Ota käyttöön",
+  "enableDescription": "Kun otat tämän käyttöön, käyttäjät voivat kirjautua sisään Apple ID:llään",
+  "keyId": "Avain ID",
+  "keyIdDescription": "Yksityisen avaimen tunnus Apple Developer -portaalista",
+  "redirectUri": "Paluu-URL",
+  "redirectUriDescription": "URL-osoite, jolle Apple ohjaa onnistuneen todennuksen jälkeen",
+  "saveFailed": "Tallennus epäonnistui",
+  "saveSuccess": "Tallennus onnistui",
+  "teamId": "Tiimin tunnus",
+  "teamIdDescription": "Apple Developer -tiimin tunnus"
+}

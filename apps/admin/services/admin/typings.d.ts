@@ -123,6 +123,7 @@ declare namespace API {
     name: string;
     description: string;
     subscribe_type: string;
+    platform: ApplicationPlatform;
   };
 
   type CreateApplicationVersionRequest = {
@@ -618,6 +619,31 @@ declare namespace API {
     last_at: number;
   };
 
+  type OAuthConfig = {
+    id: number;
+    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
+    team_id: string;
+    key_id: string;
+    client_id: string;
+    client_secret: string;
+    redirect: string;
+    enabled: boolean;
+  };
+
+  type OAuthCreateRequest = {
+    platform: 'github' | 'google' | 'apple' | 'qq' | 'wechat' | 'telegram' | 'facebook';
+    team_id: string;
+    key_id: string;
+    client_id: string;
+    client_secret: string;
+    enabled: boolean;
+    redirect: string;
+  };
+
+  type OAuthQueryResponse = {
+    list: OAuthConfig[];
+  };
+
   type OnlineUser = {
     uid: number;
     ip: string;
@@ -1027,6 +1053,7 @@ declare namespace API {
     name: string;
     description: string;
     subscribe_type: string;
+    platform: ApplicationPlatform;
   };
 
   type UpdateApplicationVersionRequest = {

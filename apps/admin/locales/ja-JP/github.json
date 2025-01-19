@@ -1,0 +1,12 @@
+{
+  "clientId": "GitHub クライアント ID",
+  "clientIdDescription": "GitHub OAuthアプリケーション設定からのクライアントID",
+  "clientSecret": "GitHub クライアントシークレット",
+  "clientSecretDescription": "GitHub OAuthアプリケーション設定からのクライアントシークレット",
+  "enable": "GitHub認証を有効にする",
+  "enableDescription": "ユーザーがGitHubアカウントでサインインできるようにする",
+  "redirectUri": "認証コールバックURL",
+  "redirectUriDescription": "GitHub認証後にユーザーがリダイレクトされるアプリケーション内のURL",
+  "saveFailed": "GitHub設定の保存に失敗しました",
+  "saveSuccess": "GitHubの設定が正常に保存されました"
+}

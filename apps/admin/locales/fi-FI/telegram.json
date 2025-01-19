@@ -1,0 +1,12 @@
+{
+  "clientId": "Botti ID",
+  "clientIdDescription": "Telegram Botin ID, jonka saat @BotFatherilta",
+  "clientSecret": "Bottitunnus",
+  "clientSecretDescription": "Telegram-bottitunnus, jonka voit saada @BotFatherilta",
+  "enable": "Ota käyttöön",
+  "enableDescription": "Kun otat tämän käyttöön, matkapuhelimen rekisteröinti-, kirjautumis-, sitomis- ja purkutoiminnot otetaan käyttöön",
+  "redirectUri": "Uudelleenohjaus-URL",
+  "redirectUriDescription": "URL, jolle Telegram ohjaa onnistuneen todennuksen jälkeen",
+  "saveFailed": "Tallennus epäonnistui",
+  "saveSuccess": "Tallennus onnistui"
+}
