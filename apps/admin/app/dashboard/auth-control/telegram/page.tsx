@@ -23,7 +23,6 @@ export default function Page() {
   });
 
   async function updateConfig(key: keyof API.UpdateOAuthConfig, value: unknown) {
-    if (data?.[key] === value) return;
     try {
       await updateOAuthConfig({
         ...data,
