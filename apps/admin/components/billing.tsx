@@ -3,8 +3,6 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@workspace/ui/comp
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
-const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets/billing/index.json';
-
 interface BillingProps {
   type: 'dashboard' | 'payment';
 }
@@ -17,23 +15,48 @@ interface ItemType {
   href: string;
 }
 
+async function getBillingURL() {
+  try {
+    const response = await fetch(
+      'https://api.github.com/repos/perfect-panel/ppanel-assets/commits',
+    );
+    const json = await response.json();
+    const version = json[0]?.sha;
+    const url = new URL('https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets');
+    url.pathname += `@${version}/billing/index.json`;
+    return url.toString();
+  } catch (error) {
+    return 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets/billing/index.json';
+  }
+}
+
 export default async function Billing({ type }: BillingProps) {
   const t = await getTranslations('common.billing');
   let list: ItemType[] = [];
+
   try {
-    const response = await fetch(BASE_URL, { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    const data = await response.json();
-    const now = new Date().getTime();
-    list = data[type].filter((item: { expiryDate: string }) => {
-      const expiryDate = Date.parse(item.expiryDate);
-      return !isNaN(expiryDate) && expiryDate > now;
+    const url = await getBillingURL();
+    const response = await fetch(url, {
+      headers: {
+        Accept: 'application/json',
+      },
     });
+    const data = await response.json();
+    const now = Date.now();
+
+    list = Array.isArray(data[type])
+      ? data[type].filter((item: { expiryDate: string }) => {
+          const expiryDate = Date.parse(item.expiryDate);
+          return !isNaN(expiryDate) && expiryDate > now;
+        })
+      : [];
   } catch (error) {
-    console.log('Error fetching billing data:', error);
+    console.log(error);
     return null;
   }
-  if (list && list.length === 0) return null;
+
+  if (!list?.length) return null;
+
   return (
     <>
       <h1 className='text mt-2 font-bold'>

@@ -1,6 +1,10 @@
 'use client';
 
-import { getApplicationConfig, updateApplicationConfig } from '@/services/admin/system';
+import {
+  getApplication,
+  getApplicationConfig,
+  updateApplicationConfig,
+} from '@/services/admin/system';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Icon } from '@iconify/react';
 import { useQuery } from '@tanstack/react-query';
@@ -24,18 +28,24 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { Textarea } from '@workspace/ui/components/textarea';
+import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { UploadImage } from '@workspace/ui/custom-components/upload-image';
+import { DicesIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { uid } from 'radash';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
 const formSchema = z.object({
-  startup_picture: z.string(),
-  startup_picture_skip_time: z.number(),
-  domains: z.array(z.string()),
+  app_id: z.number().optional(),
+  app_key: z.string().optional(),
+  encryption: z.string().optional(),
+  startup_picture: z.string().optional(),
+  startup_picture_skip_time: z.number().optional(),
+  domains: z.array(z.string()).optional(),
 });
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -48,6 +58,9 @@ export default function ConfigForm() {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      app_id: 0,
+      app_key: '',
+      encryption: '',
       startup_picture: '',
       startup_picture_skip_time: 0,
       domains: [],
@@ -59,6 +72,14 @@ export default function ConfigForm() {
     queryFn: async () => {
       const { data } = await getApplicationConfig();
       return data.data;
+    },
+  });
+
+  const { data: applications } = useQuery({
+    queryKey: ['getApplication'],
+    queryFn: async () => {
+      const { data } = await getApplication();
+      return data.data?.applications || [];
     },
   });
 
@@ -102,6 +123,80 @@ export default function ConfigForm() {
             <form className='space-y-4 py-4'>
               <FormField
                 control={form.control}
+                name='app_id'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('selectApp')}</FormLabel>
+                    <FormDescription>{t('selectAppDescription')}</FormDescription>
+                    <FormControl>
+                      <Combobox
+                        {...field}
+                        options={
+                          applications?.map((app) => ({
+                            label: app.name,
+                            value: app.id,
+                          })) || []
+                        }
+                        value={field.value}
+                        onChange={(value) => form.setValue(field.name, value)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='app_key'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('communicationKey')}</FormLabel>
+                    <FormDescription>{t('communicationKeyDescription')}</FormDescription>
+                    <FormControl>
+                      <EnhancedInput
+                        value={field.value}
+                        onValueChange={(value) => form.setValue(field.name, value as string)}
+                        suffix={
+                          <div className='bg-muted flex h-9 items-center text-nowrap px-3'>
+                            <DicesIcon
+                              onClick={() => {
+                                const id = uid(32).toLowerCase();
+                                const formatted = `${id.slice(0, 8)}-${id.slice(8, 12)}-${id.slice(12, 16)}-${id.slice(16, 20)}-${id.slice(20)}`;
+                                form.setValue(field.name, formatted);
+                              }}
+                              className='cursor-pointer'
+                            />
+                          </div>
+                        }
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='encryption'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('encryption')}</FormLabel>
+                    <FormDescription>{t('encryptionDescription')}</FormDescription>
+                    <FormControl>
+                      <Combobox
+                        options={[
+                          { label: 'none', value: 'none' },
+                          { label: 'AES', value: 'aes' },
+                        ]}
+                        value={field.value}
+                        onChange={(value) => form.setValue(field.name, value)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
                 name='startup_picture'
                 render={({ field }) => (
                   <FormItem>
@@ -109,7 +204,8 @@ export default function ConfigForm() {
                     <FormDescription>{t('startupPictureDescription')}</FormDescription>
                     <FormControl>
                       <EnhancedInput
-                        {...field}
+                        value={field.value}
+                        onValueChange={(value) => form.setValue(field.name, value as string)}
                         suffix={
                           <UploadImage
                             className='bg-muted h-9 rounded-none border-none px-2'
@@ -158,7 +254,7 @@ export default function ConfigForm() {
                       <Textarea
                         className='h-52'
                         placeholder='example.com'
-                        value={field.value.join('\n')}
+                        value={field.value?.join('\n')}
                         onChange={(e) =>
                           form.setValue(
                             'domains',

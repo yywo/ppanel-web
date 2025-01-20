@@ -27,7 +27,9 @@ declare namespace API {
   };
 
   type ApplicationConfig = {
-    encryption: boolean;
+    app_id: number;
+    encryption_key: string;
+    encryption_method: string;
     domains: string[];
     startup_picture: string;
     startup_picture_skip_time: number;
