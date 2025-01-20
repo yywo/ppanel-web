@@ -1,9 +1,17 @@
 const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-tutorial';
 
+async function getVersion() {
+  const response = await fetch(
+    'https://api.github.com/repos/perfect-panel/ppanel-tutorial/commits',
+  );
+  const json = await response.json();
+  return json[0].sha;
+}
+
 export async function getTutorial(path: string): Promise<string> {
+  const version = await getVersion();
   try {
-    const url = `${BASE_URL}/${path}`;
-    await fetch(url.replace('cdn', 'purge'));
+    const url = `${BASE_URL}@${version}/${path}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
