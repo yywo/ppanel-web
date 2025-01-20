@@ -119,7 +119,9 @@ export default function Page() {
                                 method,
                                 redirect: `${window.location.origin}/oauth/${method}`,
                               });
-                              console.log(data);
+                              if (data.data?.redirect) {
+                                window.location.href = data.data?.redirect;
+                              }
                             }}
                           >
                             <Icon icon={icons[method as keyof typeof icons]} />
