@@ -3,8 +3,11 @@
 import LanguageSwitch from '@/components/language-switch';
 import ThemeSwitch from '@/components/theme-switch';
 import useGlobalStore from '@/config/use-global';
+import { oAuthLogin } from '@/services/common/oauth';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Button } from '@workspace/ui/components/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import LoginLottie from '@workspace/ui/lotties/login.json';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
@@ -12,10 +15,18 @@ import Link from 'next/link';
 import EmailAuthForm from './email/auth-form';
 import PhoneAuthForm from './phone/auth-form';
 
+const icons = {
+  apple: 'uil:apple',
+  google: 'logos:google-icon',
+  facebook: 'logos:facebook',
+  github: 'uil:github',
+  telegram: 'logos:telegram',
+};
+
 export default function Page() {
   const t = useTranslations('auth');
   const { common } = useGlobalStore();
-  const { site, auth } = common;
+  const { site, auth, oauth_methods } = common;
 
   const AUTH_COMPONENT_MAP = {
     email: <EmailAuthForm />,
@@ -23,15 +34,21 @@ export default function Page() {
   } as const;
 
   type AuthMethod = keyof typeof AUTH_COMPONENT_MAP;
-  const enabledAuthMethods = Object.entries(auth).reduce<AuthMethod[]>((acc, [key, value]) => {
-    const enabledKey = `${key}_enabled` as const;
-    if (typeof value === 'object' && value !== null && enabledKey in value) {
-      const enabled = (value as Record<typeof enabledKey, boolean>)[enabledKey];
-      if (enabled) acc.push(key as AuthMethod);
-    }
-    return acc;
-  }, []);
 
+  const enabledAuthMethods = (Object.keys(AUTH_COMPONENT_MAP) as AuthMethod[]).filter((key) => {
+    const value = auth[key];
+    const enabledKey = `${key}_enabled` as const;
+
+    if (typeof value !== 'object' || value === null) {
+      return false;
+    }
+
+    if (!(enabledKey in value)) {
+      return false;
+    }
+    const isEnabled = (value as unknown as Record<typeof enabledKey, boolean>)[enabledKey];
+    return isEnabled;
+  });
   return (
     <main className='bg-muted/50 flex h-full min-h-screen items-center'>
       <div className='flex size-full flex-auto flex-col lg:flex-row'>
@@ -57,7 +74,7 @@ export default function Page() {
         <div className='flex flex-initial justify-center p-12 lg:flex-auto lg:justify-end'>
           <div className='lg:bg-background flex w-full flex-col items-center rounded-2xl md:w-[600px] md:p-10 lg:flex-auto lg:shadow'>
             <div className='flex w-full flex-col items-stretch justify-center md:w-[400px] lg:h-full'>
-              <div className='pb-15 flex flex-col justify-center lg:flex-auto lg:pb-20'>
+              <div className='flex flex-col justify-center lg:flex-auto'>
                 <h1 className='mb-3 text-center text-2xl font-bold'>{t('verifyAccount')}</h1>
                 <div className='text-muted-foreground mb-6 text-center font-medium'>
                   {t('verifyAccountDesc')}
@@ -80,6 +97,38 @@ export default function Page() {
                         ))}
                       </Tabs>
                     )}
+              </div>
+              <div className='py-8'>
+                {oauth_methods?.length > 0 && (
+                  <>
+                    <div className='after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t'>
+                      <span className='bg-background text-muted-foreground relative z-10 px-2'>
+                        Or continue with
+                      </span>
+                    </div>
+                    <div className='mt-6 flex justify-center gap-4 *:size-12 *:p-2'>
+                      {oauth_methods?.map((method: any) => {
+                        return (
+                          <Button
+                            key={method}
+                            variant='ghost'
+                            size='icon'
+                            asChild
+                            onClick={async () => {
+                              const { data } = await oAuthLogin({
+                                method,
+                                redirect: `${window.location.origin}/oauth/${method}`,
+                              });
+                              console.log(data);
+                            }}
+                          >
+                            <Icon icon={icons[method as keyof typeof icons]} />
+                          </Button>
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
               </div>
               <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-5'>

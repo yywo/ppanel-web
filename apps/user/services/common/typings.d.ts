@@ -10,6 +10,12 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AppleLoginCallbackRequest = {
+    code: string;
+    id_token: string;
+    state: string;
+  };
+
   type Application = {
     id: number;
     icon: string;
@@ -19,6 +25,9 @@ declare namespace API {
   };
 
   type ApplicationConfig = {
+    app_id: number;
+    encryption_key: string;
+    encryption_method: string;
     domains: string[];
     startup_picture: string;
     startup_picture_skip_time: number;
@@ -152,6 +161,7 @@ declare namespace API {
     invite: InviteConfig;
     currency: CurrencyConfig;
     subscribe: SubscribeConfig;
+    oauth_methods: string[];
   };
 
   type GetStatResponse = {
@@ -167,6 +177,16 @@ declare namespace API {
 
   type GetTosResponse = {
     tos_content: string;
+  };
+
+  type GoogleLoginCallbackParams = {
+    code: string;
+    state: string;
+  };
+
+  type GoogleLoginCallbackRequest = {
+    code: string;
+    state: string;
   };
 
   type Hysteria2 = {
@@ -203,6 +223,26 @@ declare namespace API {
     online_users: OnlineUser[];
     status: ServerStatus;
     last_at: number;
+  };
+
+  type OAthLoginRequest = {
+    /** google, facebook, apple, telegram, github etc. */
+    method: string;
+    redirect: string;
+  };
+
+  type OAuthLoginResponse = {
+    redirect: string;
+  };
+
+  type OAuthMethod = {
+    id: number;
+    platform: string;
+    config: Record<string, any>;
+    redirect: string;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type OnlineUser = {

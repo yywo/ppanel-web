@@ -161,6 +161,7 @@ declare namespace API {
     invite: InviteConfig;
     currency: CurrencyConfig;
     subscribe: SubscribeConfig;
+    oauth_methods: string[];
   };
 
   type GetStatResponse = {
@@ -227,6 +228,7 @@ declare namespace API {
   type OAthLoginRequest = {
     /** google, facebook, apple, telegram, github etc. */
     method: string;
+    redirect: string;
   };
 
   type OAuthLoginResponse = {

@@ -64,6 +64,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       subscribe_domain: '',
       pan_domain: false,
     },
+    oauth_methods: [],
   },
   user: undefined,
   setCommon: (common) =>

@@ -19,6 +19,9 @@ declare namespace API {
   };
 
   type ApplicationConfig = {
+    app_id: number;
+    encryption_key: string;
+    encryption_method: string;
     domains: string[];
     startup_picture: string;
     startup_picture_skip_time: number;
@@ -224,6 +227,16 @@ declare namespace API {
     online_users: OnlineUser[];
     status: ServerStatus;
     last_at: number;
+  };
+
+  type OAuthMethod = {
+    id: number;
+    platform: string;
+    config: Record<string, any>;
+    redirect: string;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type OnlineUser = {
