@@ -10,6 +10,12 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AppleLoginCallbackRequest = {
+    code: string;
+    id_token: string;
+    state: string;
+  };
+
   type Application = {
     id: number;
     icon: string;
@@ -170,6 +176,16 @@ declare namespace API {
 
   type GetTosResponse = {
     tos_content: string;
+  };
+
+  type GoogleLoginCallbackParams = {
+    code: string;
+    state: string;
+  };
+
+  type GoogleLoginCallbackRequest = {
+    code: string;
+    state: string;
   };
 
   type Hysteria2 = {

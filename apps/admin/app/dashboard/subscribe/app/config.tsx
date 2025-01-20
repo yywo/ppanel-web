@@ -41,8 +41,8 @@ import { z } from 'zod';
 
 const formSchema = z.object({
   app_id: z.number().optional(),
-  app_key: z.string().optional(),
-  encryption: z.string().optional(),
+  encryption_key: z.string().optional(),
+  encryption_method: z.string().optional(),
   startup_picture: z.string().optional(),
   startup_picture_skip_time: z.number().optional(),
   domains: z.array(z.string()).optional(),
@@ -59,8 +59,8 @@ export default function ConfigForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       app_id: 0,
-      app_key: '',
-      encryption: '',
+      encryption_key: '',
+      encryption_method: '',
       startup_picture: '',
       startup_picture_skip_time: 0,
       domains: [],
@@ -85,17 +85,17 @@ export default function ConfigForm() {
 
   useEffect(() => {
     if (data) {
-      form.reset({
-        ...data,
-        domains: data.domains || [],
-      });
+      form.reset(data);
     }
   }, [data, form]);
 
   async function onSubmit(values: FormSchema) {
     setLoading(true);
     try {
-      await updateApplicationConfig(values as API.ApplicationConfig);
+      await updateApplicationConfig({
+        ...values,
+        domains: values.domains?.filter((domain) => domain),
+      } as API.ApplicationConfig);
       toast.success(t('updateSuccess'));
       refetch();
       setOpen(false);
@@ -147,7 +147,7 @@ export default function ConfigForm() {
               />
               <FormField
                 control={form.control}
-                name='app_key'
+                name='encryption_key'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('communicationKey')}</FormLabel>
@@ -176,7 +176,7 @@ export default function ConfigForm() {
               />
               <FormField
                 control={form.control}
-                name='encryption'
+                name='encryption_method'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('encryption')}</FormLabel>
@@ -252,15 +252,12 @@ export default function ConfigForm() {
                     <FormDescription>{t('backupDomainsDescription')}</FormDescription>
                     <FormControl>
                       <Textarea
-                        className='h-52'
+                        className='h-28'
                         placeholder='example.com'
                         value={field.value?.join('\n')}
-                        onChange={(e) =>
-                          form.setValue(
-                            'domains',
-                            e.target.value.split('\n').filter((line) => line.trim()),
-                          )
-                        }
+                        onChange={(e) => {
+                          form.setValue(field.name, e.target.value.split('\n'));
+                        }}
                       />
                     </FormControl>
                     <FormMessage />
