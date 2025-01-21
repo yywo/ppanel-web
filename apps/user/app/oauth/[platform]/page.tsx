@@ -5,25 +5,33 @@ import { getTranslations } from 'next-intl/server';
 import Certification from './certification';
 
 export async function generateStaticParams() {
-  return {
-    paths: [
-      { params: { platform: 'telegram' } },
-      { params: { platform: 'apple' } },
-      { params: { platform: 'facebook' } },
-      { params: { platform: 'google' } },
-      { params: { platform: 'github' } },
-    ],
-    fallback: false,
-  };
+  return [
+    {
+      platform: 'telegram',
+    },
+    {
+      platform: 'apple',
+    },
+    {
+      platform: 'facebook',
+    },
+    {
+      platform: 'google',
+    },
+    {
+      platform: 'github',
+    },
+  ];
 }
 
 export default async function Page({
-  params: { platform },
+  params,
 }: {
   params: {
     platform: string;
   };
 }) {
+  const { platform } = await params;
   const t = await getTranslations('auth');
   return (
     <Certification platform={platform}>

@@ -29,6 +29,7 @@ export default function Certification({ platform, children }: CertificationProps
       case 'google':
         return googleLoginCallback(body);
       case 'telegram':
+        // 回调参数是 # 开头的，需要去掉
         return telegramLoginCallback(body);
       default:
         break;
