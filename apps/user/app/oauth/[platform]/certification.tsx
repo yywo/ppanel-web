@@ -1,11 +1,6 @@
 'use client';
 
-import {
-  appleLoginCallback,
-  facebookLoginCallback,
-  googleLoginCallback,
-  telegramLoginCallback,
-} from '@/services/common/oauth';
+import { oAuthLoginGetToken } from '@/services/common/oauth';
 import { getRedirectUrl, setAuthorization } from '@/utils/common';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
@@ -19,26 +14,16 @@ export default function Certification({ platform, children }: CertificationProps
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  async function LoginCallback() {
-    const body = Object.fromEntries(searchParams.entries()) as any;
-    switch (platform) {
-      case 'apple':
-        return appleLoginCallback(body);
-      case 'facebook':
-        return facebookLoginCallback(body);
-      case 'google':
-        return googleLoginCallback(body);
-      case 'telegram':
-        // 回调参数是 # 开头的，需要去掉
-        return telegramLoginCallback(body);
-      default:
-        break;
-    }
-  }
   useEffect(() => {
-    LoginCallback()
+    oAuthLoginGetToken({
+      method: platform,
+      code: searchParams.get('code') || '',
+    })
       .then((res) => {
         const token = res?.data?.data?.token;
+        if (!token) {
+          throw new Error('Invalid token');
+        }
         setAuthorization(token);
         router.replace(getRedirectUrl());
         router.refresh();

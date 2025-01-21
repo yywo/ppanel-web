@@ -32,6 +32,7 @@ export async function appleLoginCallback(
   return request<API.Response & { data?: any }>('/v1/auth/oauth/callback/apple', {
     method: 'POST',
     data: formData,
+    requestType: 'form',
     ...(options || {}),
   });
 }
@@ -70,6 +71,21 @@ export async function telegramLoginCallback(options?: { [key: string]: any }) {
 /** OAuth login POST /v1/auth/oauth/login */
 export async function oAuthLogin(body: API.OAthLoginRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.OAuthLoginResponse }>('/v1/auth/oauth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** OAuth login get token POST /v1/auth/oauth/login/token */
+export async function oAuthLoginGetToken(
+  body: API.OAuthLoginGetTokenRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/oauth/login/token', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

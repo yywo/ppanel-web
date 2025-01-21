@@ -231,6 +231,12 @@ declare namespace API {
     redirect: string;
   };
 
+  type OAuthLoginGetTokenRequest = {
+    /** google, facebook, apple, telegram, github etc. */
+    method: string;
+    code: string;
+  };
+
   type OAuthLoginResponse = {
     redirect: string;
   };
