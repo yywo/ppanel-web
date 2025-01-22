@@ -114,7 +114,7 @@ export default function Page() {
             <Textarea
               className='h-20'
               placeholder={`-----BEGIN PRIVATE KEY-----\nMIGTAgEA...\n-----END PRIVATE KEY-----`}
-              value={data?.config?.client_secret}
+              defaultValue={data?.config?.client_secret}
               onBlur={(e) => {
                 updateConfig('config', {
                   ...data?.config,
