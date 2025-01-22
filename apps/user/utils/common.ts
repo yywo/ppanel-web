@@ -38,15 +38,21 @@ export function setRedirectUrl(value?: string) {
 }
 
 export function getRedirectUrl() {
-  return sessionStorage.getItem('redirect-url') ?? '/dashboard';
+  let url = sessionStorage.getItem('redirect-url') ?? '/dashboard';
+  if (url.startsWith('/oauth/') || url.startsWith('/auth')) {
+    url = '/dashboard';
+  }
+  if (url) {
+    sessionStorage.removeItem('redirect-url');
+    return url;
+  }
 }
 
 export function Logout() {
   if (!isBrowser()) return;
   cookies.remove('Authorization');
   const pathname = location.pathname;
-  console.log(pathname);
-  if (!['', '/', '/auth', '/tos'].includes(pathname) || !pathname.includes('/oauth/')) {
+  if (!['', '/', '/auth', '/tos'].includes(pathname) && !pathname.startsWith('/oauth/')) {
     setRedirectUrl(location.pathname);
     location.href = `/auth`;
   }
