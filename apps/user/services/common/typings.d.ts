@@ -234,7 +234,7 @@ declare namespace API {
   type OAuthLoginGetTokenRequest = {
     /** google, facebook, apple, telegram, github etc. */
     method: string;
-    code: string;
+    callback: Record<string, any>;
   };
 
   type OAuthLoginResponse = {

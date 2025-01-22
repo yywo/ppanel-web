@@ -1,8 +1,8 @@
 'use client';
 
 import { oAuthLoginGetToken } from '@/services/common/oauth';
-import { getRedirectUrl, setAuthorization } from '@/utils/common';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { getAllUrlParams, getRedirectUrl, setAuthorization } from '@/utils/common';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 interface CertificationProps {
@@ -11,13 +11,14 @@ interface CertificationProps {
 }
 
 export default function Certification({ platform, children }: CertificationProps) {
-  const searchParams = useSearchParams();
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
+    const searchParams = getAllUrlParams();
     oAuthLoginGetToken({
       method: platform,
-      code: searchParams.get('code') || '',
+      callback: searchParams,
     })
       .then((res) => {
         const token = res?.data?.data?.token;
@@ -31,7 +32,7 @@ export default function Certification({ platform, children }: CertificationProps
       .catch((error) => {
         router.replace('/auth');
       });
-  }, [platform, searchParams.values()]);
+  }, [pathname]);
 
   return children;
 }

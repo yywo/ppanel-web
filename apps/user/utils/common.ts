@@ -75,3 +75,20 @@ export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' |
 
   return 'windows';
 }
+
+export function getAllUrlParams() {
+  const searchParams = new URLSearchParams(window.location.search);
+  const hashParams = new URLSearchParams(window.location.hash.substring(1));
+
+  const params: { [key: string]: string } = {};
+
+  for (const [key, value] of searchParams.entries()) {
+    params[key] = value;
+  }
+
+  for (const [key, value] of hashParams.entries()) {
+    params[key] = value;
+  }
+
+  return params;
+}
