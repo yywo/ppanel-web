@@ -42,10 +42,8 @@ export function getRedirectUrl() {
   if (url.startsWith('/oauth/') || url.startsWith('/auth')) {
     url = '/dashboard';
   }
-  if (url) {
-    sessionStorage.removeItem('redirect-url');
-    return url;
-  }
+  sessionStorage.removeItem('redirect-url');
+  return url;
 }
 
 export function Logout() {
