@@ -75,15 +75,7 @@ export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseP
           const type = data.data?.type;
           const checkout_url = data.data?.checkout_url;
           if (type === 'link') {
-            const width = 600;
-            const height = 800;
-            const left = (screen.width - width) / 2;
-            const top = (screen.height - height) / 2;
-            window.open(
-              checkout_url,
-              'newWindow',
-              `width=${width},height=${height},top=${top},left=${left},menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1`,
-            );
+            window.location.href = checkout_url!;
           }
           getUserInfo();
           router.push(`/payment?order_no=${orderNo}`);

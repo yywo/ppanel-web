@@ -175,15 +175,9 @@ export default function Page() {
               <div className='flex gap-4'>
                 <Button
                   onClick={() => {
-                    const width = 600;
-                    const height = 800;
-                    const left = (screen.width - width) / 2;
-                    const top = (screen.height - height) / 2;
-                    window.open(
-                      payment?.checkout_url,
-                      'newWindow',
-                      `width=${width},height=${height},top=${top},left=${left},menubar=0,scrollbars=1,resizable=1,status=1,titlebar=0,toolbar=0,location=1`,
-                    );
+                    if (payment?.checkout_url) {
+                      window.location.href = payment?.checkout_url;
+                    }
                   }}
                 >
                   {t('goToPayment')}
