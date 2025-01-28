@@ -278,20 +278,20 @@ export default function SubscribeTable() {
         const sourceIndex = items.findIndex((item) => String(item.id) === source);
         const targetIndex = items.findIndex((item) => String(item.id) === target);
 
-        const originalSortMap = new Map(items.map((item) => [item.id, item.sort || item.id]));
+        const originalSorts = items.map((item) => item.sort);
 
         const [movedItem] = items.splice(sourceIndex, 1);
         items.splice(targetIndex, 0, movedItem!);
 
         const updatedItems = items.map((item, index) => {
-          const originalSort = originalSortMap.get(item.id);
+          const originalSort = originalSorts[index];
           const newSort = originalSort !== undefined ? originalSort : item.sort;
           return { ...item, sort: newSort };
         });
 
-        const changedItems = updatedItems.filter(
-          (item) => originalSortMap.get(item.id) !== item.sort,
-        );
+        const changedItems = updatedItems.filter((item, index) => {
+          return item.sort !== items[index]?.sort;
+        });
 
         if (changedItems.length > 0) {
           subscribeSort({

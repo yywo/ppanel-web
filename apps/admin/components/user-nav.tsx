@@ -27,7 +27,7 @@ export function UserNav() {
             <Avatar className='size-8'>
               <AvatarImage alt={user?.avatar ?? ''} src={user?.avatar ?? ''} />
               <AvatarFallback className='rounded-none bg-transparent'>
-                {user?.email?.[0]?.toUpperCase()}
+                {user?.auth_methods?.[0]?.auth_identifier.toUpperCase().charAt(0)}
               </AvatarFallback>
             </Avatar>
           </Button>
@@ -35,7 +35,9 @@ export function UserNav() {
         <DropdownMenuContent forceMount align='end' className='w-56'>
           <DropdownMenuLabel className='font-normal'>
             <div className='flex flex-col space-y-1'>
-              <p className='text-sm font-medium leading-none'>{user?.email}</p>
+              <p className='text-sm font-medium leading-none'>
+                {user?.auth_methods?.[0]?.auth_identifier}
+              </p>
               {/* <p className='text-xs leading-none text-muted-foreground'>ID: {user?.id}</p> */}
             </div>
           </DropdownMenuLabel>
