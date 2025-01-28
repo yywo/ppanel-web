@@ -28,6 +28,7 @@
     "20004": "User is disabled, please contact customer service if you have any questions.",
     "20005": "Insufficient balance, please recharge and try again.",
     "20006": "Registration function is temporarily unavailable, please try again later.",
+    "20008": "User information is incorrect, please check and try again.",
     "30001": "Node already exists, please do not add it again.",
     "30002": "Related node not found, please check and try again.",
     "30003": "Group already exists, please try using a different name.",

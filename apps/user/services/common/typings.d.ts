@@ -69,6 +69,12 @@ declare namespace API {
     register: RegisterConfig;
   };
 
+  type AuthMethod = {
+    auth_type: string;
+    auth_identifier: string;
+    verified: boolean;
+  };
+
   type CheckUserParams = {
     email: string;
   };
@@ -571,9 +577,6 @@ declare namespace API {
 
   type User = {
     id: number;
-    email: string;
-    telephone: string;
-    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;
@@ -590,6 +593,7 @@ declare namespace API {
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
     enable_trade_notify: boolean;
+    auth_methods: AuthMethod[];
     created_at: number;
     updated_at: number;
     deleted_at?: number;
@@ -611,6 +615,17 @@ declare namespace API {
     order_id: number;
     balance: number;
     created_at: number;
+  };
+
+  type UserDevice = {
+    id: number;
+    user_id: number;
+    device_number: string;
+    online: boolean;
+    last_online: number;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type UserLoginRequest = {

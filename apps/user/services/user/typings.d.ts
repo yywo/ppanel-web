@@ -63,6 +63,26 @@ declare namespace API {
     register: RegisterConfig;
   };
 
+  type AuthMethod = {
+    auth_type: string;
+    auth_identifier: string;
+    verified: boolean;
+  };
+
+  type BindOAuthCallbackRequest = {
+    method: string;
+    callback: Record<string, any>;
+  };
+
+  type BindOAuthRequest = {
+    method: string;
+    redirect: string;
+  };
+
+  type BindOAuthResponse = {
+    redirect: string;
+  };
+
   type BindTelegramResponse = {
     url: string;
     expired_at: number;
@@ -168,6 +188,10 @@ declare namespace API {
 
   type GetAvailablePaymentMethodsResponse = {
     list: PaymentConfig[];
+  };
+
+  type GetOAuthMethodsResponse = {
+    methods: AuthMethod[];
   };
 
   type GetUserTicketDetailRequest = {
@@ -482,6 +506,10 @@ declare namespace API {
     order_no: string;
   };
 
+  type ResetUserSubscribeTokenRequest = {
+    user_subscribe_id: number;
+  };
+
   type Response = {
     /** 状态码 */
     code?: number;
@@ -680,6 +708,10 @@ declare namespace API {
     security_config: SecurityConfig;
   };
 
+  type UnbindOAuthRequest = {
+    method: string;
+  };
+
   type UnsubscribeRequest = {
     id: number;
   };
@@ -708,9 +740,6 @@ declare namespace API {
 
   type User = {
     id: number;
-    email: string;
-    telephone: string;
-    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;
@@ -727,6 +756,7 @@ declare namespace API {
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
     enable_trade_notify: boolean;
+    auth_methods: AuthMethod[];
     created_at: number;
     updated_at: number;
     deleted_at?: number;
@@ -748,6 +778,17 @@ declare namespace API {
     order_id: number;
     balance: number;
     created_at: number;
+  };
+
+  type UserDevice = {
+    id: number;
+    user_id: number;
+    device_number: string;
+    online: boolean;
+    last_online: number;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type UserSubscribe = {
