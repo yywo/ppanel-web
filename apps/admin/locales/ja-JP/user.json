@@ -46,5 +46,5 @@
   "telephone": "電話番号",
   "updateSuccess": "更新が成功しました",
   "userList": "ユーザーリスト",
-  "userName": "ユーザーのメールアドレス"
+  "userName": "ユーザー識別子"
 }
