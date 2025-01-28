@@ -26,6 +26,7 @@
     "20004": "Cet utilisateur a été désactivé, si vous avez des questions, veuillez contacter le service client.",
     "20005": "Solde insuffisant, veuillez recharger et réessayer.",
     "20006": "La fonction d'inscription est temporairement indisponible, veuillez réessayer plus tard.",
+    "20008": "Les informations de l'utilisateur sont incorrectes, veuillez vérifier et réessayer.",
     "30001": "Ce nœud existe déjà, veuillez ne pas l'ajouter à nouveau.",
     "30002": "Nœud non trouvé, veuillez vérifier et réessayer.",
     "30003": "Le groupe existe déjà, veuillez essayer un autre nom.",

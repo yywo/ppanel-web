@@ -71,6 +71,12 @@ declare namespace API {
     register: RegisterConfig;
   };
 
+  type AuthMethod = {
+    auth_type: string;
+    auth_identifier: string;
+    verified: boolean;
+  };
+
   type BatchDeleteCouponRequest = {
     ids: number[];
   };
@@ -233,6 +239,12 @@ declare namespace API {
     content: string;
   };
 
+  type CreateUserAuthMethodRequest = {
+    user_id: number;
+    auth_type: string;
+    auth_identifier: string;
+  };
+
   type CreateUserRequest = {
     email: string;
     telephone: string;
@@ -286,6 +298,10 @@ declare namespace API {
   };
 
   type DeleteSubscribeRequest = {
+    id: number;
+  };
+
+  type DeleteUserDeivceRequest = {
     id: number;
   };
 
@@ -571,6 +587,14 @@ declare namespace API {
 
   type GetTicketRequest = {
     id: number;
+  };
+
+  type GetUserAuthMethodRequest = {
+    user_id: number;
+  };
+
+  type GetUserAuthMethodResponse = {
+    auth_methods: AuthMethod[];
   };
 
   type GetUserDetailParams = {
@@ -1192,10 +1216,7 @@ declare namespace API {
 
   type UpdateUserRequest = {
     id: number;
-    email: string;
     password: string;
-    telephone: string;
-    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;
@@ -1205,7 +1226,6 @@ declare namespace API {
     referer_id: number;
     enable: boolean;
     is_admin: boolean;
-    valid_email: boolean;
     enable_email_notify: boolean;
     enable_telegram_notify: boolean;
     enable_balance_notify: boolean;
@@ -1216,9 +1236,6 @@ declare namespace API {
 
   type User = {
     id: number;
-    email: string;
-    telephone: string;
-    telephone_area_code: string;
     avatar: string;
     balance: number;
     commission: number;
@@ -1235,6 +1252,7 @@ declare namespace API {
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
     enable_trade_notify: boolean;
+    auth_methods: AuthMethod[];
     created_at: number;
     updated_at: number;
     deleted_at?: number;
@@ -1256,6 +1274,17 @@ declare namespace API {
     order_id: number;
     balance: number;
     created_at: number;
+  };
+
+  type UserDevice = {
+    id: number;
+    user_id: number;
+    device_number: string;
+    online: boolean;
+    last_online: number;
+    enabled: boolean;
+    created_at: number;
+    updated_at: number;
   };
 
   type UserStatistics = {

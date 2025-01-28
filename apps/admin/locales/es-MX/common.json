@@ -26,6 +26,7 @@
     "20004": "El usuario ha sido deshabilitado, si tienes dudas por favor contacta al servicio al cliente.",
     "20005": "Saldo insuficiente, por favor recarga e intenta de nuevo.",
     "20006": "La función de registro no está disponible por el momento, por favor intenta más tarde.",
+    "20008": "La información del usuario es incorrecta, por favor verifica e intenta de nuevo.",
     "30001": "El nodo ya existe, por favor no lo agregues de nuevo.",
     "30002": "No se encontró el nodo relacionado, por favor verifica e intenta de nuevo.",
     "30003": "El grupo ya existe, por favor intenta usar otro nombre.",
