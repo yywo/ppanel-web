@@ -7,7 +7,7 @@ import Unsubscribe from '@/components/subscribe/unsubscribe';
 import useGlobalStore from '@/config/use-global';
 import { getStat } from '@/services/common/common';
 import { queryApplicationConfig } from '@/services/user/subscribe';
-import { queryUserSubscribe } from '@/services/user/user';
+import { queryUserSubscribe, resetUserSubscribeToken } from '@/services/user/user';
 import { getPlatform } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -58,7 +58,7 @@ export default function Content() {
 
   const [protocol, setProtocol] = useState('');
 
-  const { data: userSubscribe = [] } = useQuery({
+  const { data: userSubscribe = [], refetch } = useQuery({
     queryKey: ['queryUserSubscribe'],
     queryFn: async () => {
       const { data } = await queryUserSubscribe();
@@ -159,7 +159,15 @@ export default function Content() {
                       </AlertDialogHeader>
                       <AlertDialogFooter>
                         <AlertDialogCancel>{t('cancel')}</AlertDialogCancel>
-                        <AlertDialogAction onClick={() => toast.success(t('resetSuccess'))}>
+                        <AlertDialogAction
+                          onClick={async () => {
+                            await resetUserSubscribeToken({
+                              user_subscribe_id: item.id,
+                            });
+                            await refetch();
+                            toast.success(t('resetSuccess'));
+                          }}
+                        >
                           {t('confirm')}
                         </AlertDialogAction>
                       </AlertDialogFooter>
