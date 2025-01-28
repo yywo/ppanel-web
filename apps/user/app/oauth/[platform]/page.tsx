@@ -24,14 +24,8 @@ export async function generateStaticParams() {
   ];
 }
 
-export default async function Page({
-  params,
-}: {
-  params: {
-    platform: string;
-  };
-}) {
-  const { platform } = await params;
+export default async function Page({ params }: any) {
+  const { platform } = params;
   const t = await getTranslations('auth');
   return (
     <Certification platform={platform}>

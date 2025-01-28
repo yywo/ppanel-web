@@ -69,7 +69,7 @@ export default function HyperText({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setTimeout(() => {
             setIsAnimating(true);
           }, delay);
@@ -100,8 +100,8 @@ export default function HyperText({
             letter === ' '
               ? letter
               : index <= iterationCount.current
-                ? children[index]
-                : characterSet[getRandomInt(characterSet.length)],
+                ? (children[index] ?? ' ')
+                : (characterSet[getRandomInt(characterSet.length)] ?? ' '),
           ),
         );
         iterationCount.current = iterationCount.current + 0.1;

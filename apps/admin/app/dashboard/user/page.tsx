@@ -71,18 +71,18 @@ export default function Page() {
           accessorKey: 'id',
           header: 'ID',
         },
-        {
-          accessorKey: 'email',
-          header: t('userName'),
-        },
-        {
-          accessorKey: 'telephone',
-          header: t('telephone'),
-          cell: ({ row }) => {
-            if (!row.original.telephone) return '--';
-            return `+${row.original.telephone_area_code} ${row.original.telephone}`;
-          },
-        },
+        // {
+        //   accessorKey: 'email',
+        //   header: t('userName'),
+        // },
+        // {
+        //   accessorKey: 'telephone',
+        //   header: t('telephone'),
+        //   cell: ({ row }) => {
+        //     if (!row.original.telephone) return '--';
+        //     return `+${row.original.telephone_area_code} ${row.original.telephone}`;
+        //   },
+        // },
         {
           accessorKey: 'balance',
           header: t('balance'),
