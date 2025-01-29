@@ -59,18 +59,6 @@ export default function ResetForm({
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder='Enter your password...' type='password' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
 
           {auth?.email?.email_enable_verify && (
             <FormField
@@ -101,6 +89,18 @@ export default function ResetForm({
               )}
             />
           )}
+          <FormField
+            control={form.control}
+            name='password'
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder='Enter your new password...' type='password' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           {verify.enable_reset_password_verify && (
             <FormField
               control={form.control}

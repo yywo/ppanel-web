@@ -21,7 +21,6 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { Switch } from '@workspace/ui/components/switch';
-import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { unitConversion } from '@workspace/ui/utils';
@@ -52,9 +51,9 @@ export default function UserForm<T extends Record<string, any>>({
 
   const [open, setOpen] = useState(false);
   const formSchema = z.object({
-    email: z.string().email(t('form.invalidEmailFormat')),
-    telephone_area_code: z.string().optional(),
-    telephone: z.string().optional(),
+    // email: z.string().email(t('form.invalidEmailFormat')),
+    // telephone_area_code: z.string().optional(),
+    // telephone: z.string().optional(),
     password: z.string().optional(),
     referer_id: z.number().optional(),
     refer_code: z.string().optional(),
@@ -99,7 +98,7 @@ export default function UserForm<T extends Record<string, any>>({
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))]'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-4 px-6 pt-4'>
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name='email'
                 render={({ field }) => (
@@ -159,7 +158,7 @@ export default function UserForm<T extends Record<string, any>>({
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
               <FormField
                 control={form.control}
                 name='password'
