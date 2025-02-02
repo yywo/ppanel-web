@@ -13,7 +13,14 @@
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
   "orderNumber": "Order Number",
-  "status": "Order Status",
+  "status": {
+    "0": "Status",
+    "1": "Pending",
+    "2": "Paid",
+    "3": "Cancelled",
+    "4": "Closed",
+    "5": "Completed"
+  },
   "subscribe": "Subscribe",
   "subscribePrice": "Subscription Price",
   "total": "Total",

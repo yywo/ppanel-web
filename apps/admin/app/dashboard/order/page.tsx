@@ -17,7 +17,7 @@ import { cn } from '@workspace/ui/lib/utils';
 import { formatDate } from '@workspace/ui/utils';
 import { UserDetail } from '../user/user-detail';
 
-export default function Page() {
+export default function Page(props: { userId?: string }) {
   const t = useTranslations('order');
 
   const statusOptions = [
@@ -115,7 +115,7 @@ export default function Page() {
                 <Separator className='my-4' />
                 <ul className='grid gap-3'>
                   <li className='flex items-center justify-between'>
-                    <span className='text-muted-foreground'>支付方式</span>
+                    <span className='text-muted-foreground'>{t('method')}</span>
                     <span>{t(`methods.${row.original.method}`)}</span>
                   </li>
                 </ul>
@@ -177,10 +177,19 @@ export default function Page() {
             value: String(item.id),
           })),
         },
-        { key: 'user_id', placeholder: `${t('user')}ID` },
-      ]}
+      ].concat(
+        props.userId
+          ? []
+          : [
+              {
+                key: 'user_id',
+                placeholder: `${t('user')} ID`,
+                options: undefined,
+              },
+            ],
+      )}
       request={async (pagination, filter) => {
-        const { data } = await getOrderList({ ...pagination, ...filter });
+        const { data } = await getOrderList({ ...pagination, ...filter, user_id: props.userId });
         return {
           list: data.data?.list || [],
           total: data.data?.total || 0,

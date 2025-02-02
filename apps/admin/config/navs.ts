@@ -101,6 +101,12 @@ export const navs = [
         title: 'User Management',
         url: '/dashboard/user',
         icon: 'flat-color-icons:conference-call',
+        items: [
+          {
+            title: 'User Detail',
+            url: '/dashboard/user/:id',
+          },
+        ],
       },
       {
         title: 'Announcement Management',
@@ -127,9 +133,15 @@ export const navs = [
 ];
 
 export function findNavByUrl(url: string) {
+  function matchDynamicRoute(pattern: string, path: string): boolean {
+    const regexPattern = pattern.replace(/:[^/]+/g, '[^/]+').replace(/\//g, '\\/');
+    const regex = new RegExp(`^${regexPattern}$`);
+    return regex.test(path);
+  }
+
   function findNav(items: any[], url: string, path: any[] = []): any[] {
     for (const item of items) {
-      if (item.url === url) {
+      if (item.url === url || (item.url && matchDynamicRoute(item.url, url))) {
         return [...path, item];
       }
       if (item.items) {

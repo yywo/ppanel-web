@@ -21,6 +21,7 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { Switch } from '@workspace/ui/components/switch';
+import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { unitConversion } from '@workspace/ui/utils';
@@ -51,9 +52,9 @@ export default function UserForm<T extends Record<string, any>>({
 
   const [open, setOpen] = useState(false);
   const formSchema = z.object({
-    // email: z.string().email(t('form.invalidEmailFormat')),
-    // telephone_area_code: z.string().optional(),
-    // telephone: z.string().optional(),
+    email: z.string().email(t('invalidEmailFormat')),
+    telephone_area_code: z.string().optional(),
+    telephone: z.string().optional(),
     password: z.string().optional(),
     referer_id: z.number().optional(),
     refer_code: z.string().optional(),
@@ -98,15 +99,15 @@ export default function UserForm<T extends Record<string, any>>({
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))]'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-4 px-6 pt-4'>
-              {/* <FormField
+              <FormField
                 control={form.control}
                 name='email'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.userEmail')}</FormLabel>
+                    <FormLabel>{t('userEmail')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
-                        placeholder={t('form.userEmailPlaceholder')}
+                        placeholder={t('userEmailPlaceholder')}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
@@ -123,7 +124,7 @@ export default function UserForm<T extends Record<string, any>>({
                 name='telephone'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.telephone')}</FormLabel>
+                    <FormLabel>{t('telephone')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         prefix={
@@ -136,7 +137,7 @@ export default function UserForm<T extends Record<string, any>>({
                                   <AreaCodeSelect
                                     className='w-32 rounded-none border-y-0 border-l-0'
                                     simple
-                                    placeholder={t('form.areaCodePlaceholder')}
+                                    placeholder={t('areaCodePlaceholder')}
                                     value={field.value}
                                     onChange={(value) => {
                                       form.setValue(field.name, value.phone);
@@ -148,7 +149,7 @@ export default function UserForm<T extends Record<string, any>>({
                             )}
                           />
                         }
-                        placeholder={t('form.telephonePlaceholder')}
+                        placeholder={t('telephonePlaceholder')}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
@@ -158,16 +159,16 @@ export default function UserForm<T extends Record<string, any>>({
                     <FormMessage />
                   </FormItem>
                 )}
-              /> */}
+              />
               <FormField
                 control={form.control}
                 name='password'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.password')}</FormLabel>
+                    <FormLabel>{t('password')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
-                        placeholder={t('form.passwordPlaceholder')}
+                        placeholder={t('passwordPlaceholder')}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
@@ -183,10 +184,10 @@ export default function UserForm<T extends Record<string, any>>({
                 name='referer_id'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.refererId')}</FormLabel>
+                    <FormLabel>{t('refererId')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
-                        placeholder={t('form.refererIdPlaceholder')}
+                        placeholder={t('refererIdPlaceholder')}
                         {...field}
                         type='number'
                         onValueChange={(value) => {
@@ -203,10 +204,10 @@ export default function UserForm<T extends Record<string, any>>({
                 name='refer_code'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.inviteCode')}</FormLabel>
+                    <FormLabel>{t('inviteCode')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
-                        placeholder={t('form.inviteCodePlaceholder')}
+                        placeholder={t('inviteCodePlaceholder')}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
@@ -222,11 +223,11 @@ export default function UserForm<T extends Record<string, any>>({
                 name='balance'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.balance')}</FormLabel>
+                    <FormLabel>{t('balance')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         prefix={currency?.currency_symbol ?? '$'}
-                        placeholder={t('form.balancePlaceholder')}
+                        placeholder={t('balancePlaceholder')}
                         type='number'
                         {...field}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
@@ -246,11 +247,11 @@ export default function UserForm<T extends Record<string, any>>({
                 name='gift_amount'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.giftAmount')}</FormLabel>
+                    <FormLabel>{t('giftAmount')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         prefix={currency?.currency_symbol ?? '$'}
-                        placeholder={t('form.giftAmountPlaceholder')}
+                        placeholder={t('giftAmountPlaceholder')}
                         type='number'
                         {...field}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
@@ -270,11 +271,11 @@ export default function UserForm<T extends Record<string, any>>({
                 name='commission'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.commission')}</FormLabel>
+                    <FormLabel>{t('commission')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         prefix={currency?.currency_symbol ?? '$'}
-                        placeholder={t('form.commissionPlaceholder')}
+                        placeholder={t('commissionPlaceholder')}
                         type='number'
                         {...field}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
@@ -294,7 +295,7 @@ export default function UserForm<T extends Record<string, any>>({
                 name='is_admin'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.manager')}</FormLabel>
+                    <FormLabel>{t('manager')}</FormLabel>
                     <FormControl>
                       <div className='pt-2'>
                         <Switch checked={!!field.value} onCheckedChange={field.onChange} />
@@ -315,11 +316,10 @@ export default function UserForm<T extends Record<string, any>>({
               setOpen(false);
             }}
           >
-            {t('form.cancel')}
+            {t('cancel')}
           </Button>
           <Button disabled={loading} onClick={form.handleSubmit(handleSubmit)}>
-            {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}{' '}
-            {t('form.confirm')}
+            {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />} {t('confirm')}
           </Button>
         </SheetFooter>
       </SheetContent>

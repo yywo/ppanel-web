@@ -2,6 +2,7 @@
 
 import { ProTable as _ProTable, ProTableProps } from '@workspace/ui/custom-components/pro-table';
 import { useTranslations } from 'next-intl';
+import { Empty } from './empty';
 export { type ProTableActions } from '@workspace/ui/custom-components/pro-table';
 
 export function ProTable<
@@ -25,6 +26,7 @@ export function ProTable<
         },
         textRowsPerPage: t('rowsPerPage'),
       }}
+      empty={<Empty />}
     />
   );
 }

@@ -7,6 +7,7 @@ import { Button } from '@workspace/ui/components/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export function UserDetail({ id }: { id: number }) {
@@ -27,8 +28,10 @@ export function UserDetail({ id }: { id: number }) {
   return (
     <HoverCard>
       <HoverCardTrigger asChild onMouseEnter={() => setShouldFetch(true)}>
-        <Button variant='link' className='p-0'>
-          @{data?.email?.split('@')[0] || 'Loading...'}
+        <Button variant='link' className='p-0' asChild>
+          <Link href={`/dashboard/user/${id}`}>
+            {data?.auth_methods[0]?.auth_identifier || t('loading')}
+          </Link>
         </Button>
       </HoverCardTrigger>
       <HoverCardContent>
@@ -37,10 +40,6 @@ export function UserDetail({ id }: { id: number }) {
             <li className='flex items-center justify-between font-semibold'>
               <span className='text-muted-foreground'>ID</span>
               <span>{data?.id}</span>
-            </li>
-            <li className='flex items-center justify-between font-semibold'>
-              <span className='text-muted-foreground'>{t('email')}</span>
-              <span>{data?.email}</span>
             </li>
             <li className='flex items-center justify-between font-semibold'>
               <span className='text-muted-foreground'>{t('balance')}</span>
