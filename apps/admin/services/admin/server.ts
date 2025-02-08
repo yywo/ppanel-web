@@ -154,6 +154,62 @@ export async function getNodeList(
   });
 }
 
+/** Update rule group PUT /v1/admin/server/rule_group */
+export async function updateRuleGroup(
+  body: API.UpdateRuleGroupRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Create rule group POST /v1/admin/server/rule_group */
+export async function createRuleGroup(
+  body: API.CreateRuleGroupRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Delete rule group DELETE /v1/admin/server/rule_group */
+export async function deleteRuleGroup(
+  body: API.DeleteRuleGroupRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Get rule group list GET /v1/admin/server/rule_group_list */
+export async function getRuleGroupList(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetRuleGroupResponse }>(
+    '/v1/admin/server/rule_group_list',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** Node sort  POST /v1/admin/server/sort */
 export async function nodeSort(body: API.NodeSortRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/server/sort', {

@@ -67,7 +67,7 @@
       "zh-CN",
       "zh-HK"
     ],
-    "modelName": "gpt-4o",
+    "modelName": "gpt-4o-mini",
     "experimental": {
       "jsonMode": true
     },

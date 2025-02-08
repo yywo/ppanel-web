@@ -1,7 +1,7 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { updateUser } from '@/services/admin/user';
+import { updateUserBasicInfo } from '@/services/admin/user';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
@@ -18,6 +18,7 @@ import { Switch } from '@workspace/ui/components/switch';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { UploadImage } from '@workspace/ui/custom-components/upload-image';
 import { unitConversion } from '@workspace/ui/utils';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
@@ -37,6 +38,8 @@ const basicInfoSchema = z.object({
 type BasicInfoValues = z.infer<typeof basicInfoSchema>;
 
 export function BasicInfoForm({ user }: { user: API.User }) {
+  const t = useTranslations('user');
+
   const { common } = useGlobalStore();
   const { currency } = common;
 
@@ -55,11 +58,12 @@ export function BasicInfoForm({ user }: { user: API.User }) {
   });
 
   async function onSubmit(data: BasicInfoValues) {
-    await updateUser({
-      id: user.id,
+    await updateUserBasicInfo({
+      user_id: user.id,
+      telegram: user.telegram,
       ...data,
-    } as API.UpdateUserRequest);
-    toast.success('Saved successfully');
+    } as API.UpdateUserBasiceInfoRequest);
+    toast.success(t('updateSuccess'));
   }
 
   return (
@@ -67,9 +71,9 @@ export function BasicInfoForm({ user }: { user: API.User }) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between'>
-            <CardTitle>Basic Information</CardTitle>
+            <CardTitle>{t('basicInfoTitle')}</CardTitle>
             <Button type='submit' size='sm'>
-              Save
+              {t('save')}
             </Button>
           </CardHeader>
           <CardContent className='space-y-4'>
@@ -78,7 +82,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
               name='enable'
               render={({ field }) => (
                 <FormItem className='flex items-center justify-between space-x-2'>
-                  <FormLabel>Account Enable</FormLabel>
+                  <FormLabel>{t('accountEnable')}</FormLabel>
                   <FormControl>
                     <Switch checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
@@ -91,7 +95,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
               name='is_admin'
               render={({ field }) => (
                 <FormItem className='flex items-center justify-between space-x-2'>
-                  <FormLabel>Administrator</FormLabel>
+                  <FormLabel>{t('administrator')}</FormLabel>
                   <FormControl>
                     <Switch checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
@@ -104,7 +108,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
                 name='balance'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Balance</FormLabel>
+                    <FormLabel>{t('balance')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         type='number'
@@ -127,7 +131,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
                 name='commission'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Commission</FormLabel>
+                    <FormLabel>{t('commission')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         type='number'
@@ -150,7 +154,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
                 name='gift_amount'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Gift Amount</FormLabel>
+                    <FormLabel>{t('giftAmount')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         type='number'
@@ -175,7 +179,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
                 name='refer_code'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Referral Code</FormLabel>
+                    <FormLabel>{t('referralCode')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         value={field.value}
@@ -193,7 +197,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
                 name='referer_id'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Referrer (User ID)</FormLabel>
+                    <FormLabel>{t('referrerUserId')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         type='number'
@@ -213,7 +217,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
               name='avatar'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Avatar</FormLabel>
+                  <FormLabel>{t('avatar')}</FormLabel>
                   <FormControl>
                     <EnhancedInput
                       value={field.value}
@@ -238,9 +242,9 @@ export function BasicInfoForm({ user }: { user: API.User }) {
               name='password'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>{t('password')}</FormLabel>
                   <FormControl>
-                    <Input type='password' placeholder='Leave empty to keep unchanged' {...field} />
+                    <Input type='password' placeholder={t('passwordPlaceholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

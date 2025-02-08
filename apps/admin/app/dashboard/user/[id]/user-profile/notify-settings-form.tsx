@@ -1,10 +1,12 @@
 'use client';
 
+import { updateUserNotifySetting } from '@/services/admin/user';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@workspace/ui/components/form';
 import { Switch } from '@workspace/ui/components/switch';
+import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
@@ -21,6 +23,8 @@ const notifySettingsSchema = z.object({
 type NotifySettingsValues = z.infer<typeof notifySettingsSchema>;
 
 export function NotifySettingsForm({ user }: { user: API.User }) {
+  const t = useTranslations('user');
+
   const form = useForm<NotifySettingsValues>({
     resolver: zodResolver(notifySettingsSchema),
     defaultValues: {
@@ -34,7 +38,11 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
   });
 
   async function onSubmit(data: NotifySettingsValues) {
-    toast.warning('In Development...');
+    await updateUserNotifySetting({
+      ...data,
+      user_id: user.id,
+    });
+    toast.success(t('updateSuccess'));
   }
 
   return (
@@ -42,9 +50,9 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between'>
-            <CardTitle>Notification Settings</CardTitle>
+            <CardTitle>{t('notifySettingsTitle')}</CardTitle>
             <Button type='submit' size='sm'>
-              Save
+              {t('save')}
             </Button>
           </CardHeader>
           <CardContent className='space-y-4'>
@@ -54,7 +62,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_email_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Email Notifications</FormLabel>
+                    <FormLabel>{t('emailNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
@@ -67,7 +75,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_telegram_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Telegram Notifications</FormLabel>
+                    <FormLabel>{t('telegramNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
@@ -80,7 +88,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_balance_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Balance Change Notifications</FormLabel>
+                    <FormLabel>{t('balanceNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
@@ -93,7 +101,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_login_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Login Notifications</FormLabel>
+                    <FormLabel>{t('loginNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
@@ -106,7 +114,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_subscribe_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Subscription Notifications</FormLabel>
+                    <FormLabel>{t('subscriptionNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>
@@ -119,7 +127,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
                 name='enable_trade_notify'
                 render={({ field }) => (
                   <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>Trade Notifications</FormLabel>
+                    <FormLabel>{t('tradeNotifications')}</FormLabel>
                     <FormControl>
                       <Switch checked={field.value} onCheckedChange={field.onChange} />
                     </FormControl>

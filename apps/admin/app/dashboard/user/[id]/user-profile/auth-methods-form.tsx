@@ -1,17 +1,48 @@
 'use client';
 
+import {
+  createUserAuthMethod,
+  deleteUserAuthMethod,
+  updateUserAuthMethod,
+} from '@/services/admin/user';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { toast } from 'sonner';
 
 export function AuthMethodsForm({ user }: { user: API.User }) {
+  const t = useTranslations('user');
+
   const [emailChanges, setEmailChanges] = useState<Record<string, string>>({});
 
-  const handleRemoveAuth = async (authType: string) => {};
-  const handleUpdateEmail = async (authType: string) => {};
-  const handleCreateEmail = async (email: string) => {};
+  const handleRemoveAuth = async (authType: string) => {
+    await deleteUserAuthMethod({
+      user_id: user.id,
+      auth_type: authType,
+    });
+    toast.success(t('deleteSuccess'));
+  };
+
+  const handleUpdateEmail = async (email: string) => {
+    await updateUserAuthMethod({
+      user_id: user.id,
+      auth_type: 'email',
+      auth_identifier: email,
+    });
+    toast.success(t('updateSuccess'));
+  };
+
+  const handleCreateEmail = async (email: string) => {
+    await createUserAuthMethod({
+      user_id: user.id,
+      auth_type: 'email',
+      auth_identifier: email,
+    });
+    toast.success(t('createSuccess'));
+  };
 
   const handleEmailChange = (authType: string, value: string) => {
     setEmailChanges((prev) => ({
@@ -34,7 +65,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
   const handleEmailAction = () => {
     const email = emailChanges['email'];
     if (isEmailExists) {
-      handleUpdateEmail('email');
+      handleUpdateEmail(email as string);
     } else {
       handleCreateEmail(email as string);
     }
@@ -43,7 +74,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Authentication Settings</CardTitle>
+        <CardTitle>{t('authMethodsTitle')}</CardTitle>
       </CardHeader>
       <CardContent className='space-y-6'>
         <div className='space-y-6'>
@@ -52,14 +83,14 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
               <div className='flex items-center justify-between'>
                 <div className='font-medium uppercase'>email</div>
                 <Badge variant={defaultEmailMethod.verified ? 'default' : 'destructive'}>
-                  {defaultEmailMethod.verified ? 'Verified' : 'Unverified'}
+                  {defaultEmailMethod.verified ? t('verified') : t('unverified')}
                 </Badge>
               </div>
               <div className='flex items-center gap-2'>
                 <div className='flex-1'>
                   <EnhancedInput
                     value={defaultEmailMethod.auth_identifier}
-                    placeholder='Please enter email'
+                    placeholder={t('pleaseEnterEmail')}
                     onValueChange={(value) => handleEmailChange('email', value as string)}
                   />
                 </div>
@@ -70,7 +101,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
                     (isEmailExists && emailChanges['email'] === defaultEmailMethod.auth_identifier)
                   }
                 >
-                  {isEmailExists ? 'Update' : 'Add'}
+                  {isEmailExists ? t('update') : t('add')}
                 </Button>
               </div>
             </CardContent>
@@ -82,7 +113,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
                 <div className='flex items-center justify-between'>
                   <div className='font-medium uppercase'>{method.auth_type}</div>
                   <Badge variant={method.verified ? 'default' : 'destructive'}>
-                    {method.verified ? 'Verified' : 'Unverified'}
+                    {method.verified ? t('verified') : t('unverified')}
                   </Badge>
                 </div>
                 <div className='flex items-center gap-4'>
@@ -94,7 +125,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
                     size='sm'
                     onClick={() => handleRemoveAuth(method.auth_type)}
                   >
-                    Remove
+                    {t('remove')}
                   </Button>
                 </div>
               </CardContent>

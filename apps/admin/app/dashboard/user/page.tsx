@@ -2,7 +2,7 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
-import { createUser, deleteUser, getUserList, updateUser } from '@/services/admin/user';
+import { createUser, deleteUser, getUserList, updateUserBasicInfo } from '@/services/admin/user';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
@@ -58,10 +58,10 @@ export default function Page() {
               <Switch
                 defaultChecked={row.getValue('enable')}
                 onCheckedChange={async (checked) => {
-                  await updateUser({
+                  await updateUserBasicInfo({
                     ...row.original,
                     enable: checked,
-                  } as unknown as API.UpdateUserRequest);
+                  } as unknown as API.UpdateUserBasiceInfoRequest);
                   toast.success(t('updateSuccess'));
                   ref.current?.refresh();
                 }}

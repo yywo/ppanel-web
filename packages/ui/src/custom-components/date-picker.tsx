@@ -23,7 +23,7 @@ export function DatePicker({
   const handleSelect = (selectedDate: Date | undefined) => {
     setDate(selectedDate);
     if (onChange) {
-      onChange(selectedDate?.getTime());
+      onChange(selectedDate?.getTime() || 0);
     }
   };
 

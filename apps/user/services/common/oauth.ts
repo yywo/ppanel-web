@@ -32,6 +32,7 @@ export async function appleLoginCallback(
   return request<API.Response & { data?: any }>('/v1/auth/oauth/callback/apple', {
     method: 'POST',
     data: formData,
+    requestType: 'form',
     ...(options || {}),
   });
 }

@@ -45,6 +45,7 @@
     "60002": "Não é possível usar a assinatura no momento, por favor, tente novamente mais tarde.",
     "60003": "Uma assinatura existente foi detectada. Cancele-a antes de prosseguir.",
     "60004": "Não é possível excluir no momento, pois a assinatura possui usuários ativos.",
+    "60005": "O modo de assinatura única excedeu o limite de usuários",
     "70001": "Código de verificação incorreto, por favor, digite novamente.",
     "80001": "A tarefa não foi adicionada à fila com sucesso, por favor, tente novamente mais tarde.",
     "90001": "Por favor, desative o modo DEBUG e tente novamente.",

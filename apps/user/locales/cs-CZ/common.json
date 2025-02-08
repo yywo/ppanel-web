@@ -47,6 +47,7 @@
     "60002": "Toto předplatné nelze momentálně použít, zkuste to prosím později.",
     "60003": "Bylo zjištěno existující předplatné. Zrušte ho, než budete pokračovat.",
     "60004": "Nelze momentálně odstranit, protože předplatné má aktivní uživatele.",
+    "60005": "Režim jediné předplatné překročil limit uživatelů.",
     "70001": "Ověřovací kód je nesprávný, zadejte ho prosím znovu.",
     "80001": "Úkol nebyl úspěšně přidán do fronty, zkuste to prosím později.",
     "undefined": "Došlo k chybě systému, zkuste to prosím později."

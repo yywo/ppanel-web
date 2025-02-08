@@ -47,6 +47,7 @@
     "60002": "Das Abonnement kann derzeit nicht verwendet werden, bitte versuchen Sie es später erneut.",
     "60003": "Ein bestehendes Abonnement wurde erkannt. Bitte kündigen Sie es, bevor Sie fortfahren.",
     "60004": "Kann derzeit nicht gelöscht werden, da das Abonnement aktive Benutzer hat.",
+    "60005": "Im Ein-Abonnement-Modus wurde das Benutzerlimit überschritten.",
     "70001": "Der Bestätigungscode ist falsch, bitte erneut eingeben.",
     "80001": "Die Aufgabe konnte nicht erfolgreich in die Warteschlange aufgenommen werden, bitte versuchen Sie es später erneut.",
     "undefined": "Es ist ein Systemfehler aufgetreten, bitte versuchen Sie es später erneut."

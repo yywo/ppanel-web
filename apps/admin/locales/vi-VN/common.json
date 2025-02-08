@@ -45,6 +45,7 @@
     "60002": "Tạm thời không thể sử dụng đăng ký này, vui lòng thử lại sau.",
     "60003": "Phát hiện đăng ký hiện có. Vui lòng hủy trước khi tiếp tục.",
     "60004": "Không thể xóa vào lúc này vì đăng ký có người dùng đang hoạt động.",
+    "60005": "Chế độ đăng ký đơn đã vượt quá giới hạn người dùng.",
     "70001": "Mã xác nhận không chính xác, vui lòng nhập lại.",
     "80001": "Nhiệm vụ không được thêm vào hàng đợi thành công, vui lòng thử lại sau.",
     "90001": "Vui lòng tắt chế độ DEBUG trước khi thử lại.",

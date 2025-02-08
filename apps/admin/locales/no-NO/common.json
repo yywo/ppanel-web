@@ -45,6 +45,7 @@
     "60002": "Kan for øyeblikket ikke bruke abonnementet, vennligst prøv igjen senere.",
     "60003": "Et eksisterende abonnement er oppdaget. Vennligst avbryt det før du fortsetter.",
     "60004": "Kan ikke slettes for øyeblikket da abonnementet har aktive brukere.",
+    "60005": "Enkel abonnementsmodus har overskredet brukergrensen",
     "70001": "Verifikasjonskoden er feil, vennligst skriv den inn på nytt.",
     "80001": "Oppgaven ble ikke vellykket lagt til i køen, vennligst prøv igjen senere.",
     "90001": "Vennligst deaktiver DEBUG-modus og prøv igjen.",

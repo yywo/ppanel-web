@@ -47,6 +47,7 @@
     "60002": "Nu se poate utiliza momentan acest abonament, vă rugăm să încercați din nou mai târziu.",
     "60003": "A fost detectat un abonament existent. Vă rugăm să-l anulați înainte de a continua.",
     "60004": "Nu se poate șterge în acest moment, deoarece abonamentul are utilizatori activi.",
+    "60005": "Modul de abonament unic a depășit limita de utilizatori.",
     "70001": "Codul de verificare este incorect, vă rugăm să îl introduceți din nou.",
     "80001": "Sarcina nu a fost adăugată cu succes în coadă, vă rugăm să încercați din nou mai târziu.",
     "undefined": "A apărut o eroare în sistem, vă rugăm să încercați din nou mai târziu."

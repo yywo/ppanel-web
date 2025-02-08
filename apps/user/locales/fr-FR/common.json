@@ -47,6 +47,7 @@
     "60002": "Impossible d'utiliser cet abonnement pour le moment, veuillez réessayer plus tard.",
     "60003": "Un abonnement existant a été détecté. Veuillez l'annuler avant de continuer.",
     "60004": "Impossible de supprimer pour le moment car l'abonnement a des utilisateurs actifs.",
+    "60005": "Le mode d'abonnement unique a dépassé la limite d'utilisateurs.",
     "70001": "Le code de vérification est incorrect, veuillez le ressaisir.",
     "80001": "La tâche n'a pas été ajoutée avec succès à la file d'attente, veuillez réessayer plus tard.",
     "undefined": "Une erreur système s'est produite, veuillez réessayer plus tard."

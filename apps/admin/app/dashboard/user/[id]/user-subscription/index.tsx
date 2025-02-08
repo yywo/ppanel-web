@@ -2,66 +2,40 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
+import { createUserSubscribe, getUserSubscribe, updateUserSubscribe } from '@/services/admin/user';
 import { Button } from '@workspace/ui/components/button';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { formatDate } from '@workspace/ui/utils';
+import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
+import { toast } from 'sonner';
 import { SubscriptionDetail } from './subscription-detail';
 import { SubscriptionForm } from './subscription-form';
 
-// 模拟数据
-const mockData: API.Subscribe[] = [
-  {
-    id: 1,
-    name: 'Basic Package',
-    description: 'Basic Traffic Package',
-    unit_price: 9.9,
-    unit_time: '30d',
-    discount: [],
-    replacement: 0,
-    inventory: 100,
-    traffic: 1073741824, // 1GB
-    speed_limit: 10,
-    device_limit: 3,
-    quota: 0,
-    group_id: 1,
-    server_group: [1],
-    server: [1, 2],
-    show: true,
-    sell: true,
-    sort: 1,
-    deduction_ratio: 0,
-    allow_deduction: false,
-    reset_cycle: 30,
-    renewal_reset: true,
-    created_at: Date.now(),
-    updated_at: Date.now(),
-  },
-  // 可以添加更多模拟数据...
-];
-
-interface Props {
-  userId: string;
-}
-
-export default function UserSubscription({ userId }: Props) {
+export default function UserSubscription({ userId }: { userId: number }) {
+  const t = useTranslations('user');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
 
   return (
-    <ProTable<API.Subscribe, Record<string, unknown>>
+    <ProTable<API.UserSubscribe, Record<string, unknown>>
       action={ref}
       header={{
-        title: 'Subscription List',
+        title: t('subscriptionList'),
         toolbar: (
           <SubscriptionForm
             key='create'
-            trigger={<Button>Create</Button>}
-            title='Create Subscription'
+            trigger={t('add')}
+            title={t('createSubscription')}
             loading={loading}
             userId={userId}
             onSubmit={async (values) => {
-              console.log('创建订阅:', values);
+              await createUserSubscribe({
+                user_id: userId,
+                ...values,
+              });
+              toast.success(t('createSuccess'));
+              ref.current?.refresh();
               return true;
             }}
           />
@@ -74,34 +48,67 @@ export default function UserSubscription({ userId }: Props) {
         },
         {
           accessorKey: 'name',
-          header: '名称',
+          header: t('subscriptionName'),
+          cell: ({ row }) => row.original.subscribe.name,
+        },
+        {
+          accessorKey: 'upload',
+          header: t('upload'),
+          cell: ({ row }) => <Display type='traffic' value={row.getValue('upload')} />,
+        },
+        {
+          accessorKey: 'download',
+          header: t('download'),
+          cell: ({ row }) => <Display type='traffic' value={row.getValue('download')} />,
         },
         {
           accessorKey: 'traffic',
-          header: '流量',
-          cell: ({ row }) => <Display type='traffic' value={row.getValue('traffic')} />,
+          header: t('totalTraffic'),
+          cell: ({ row }) => <Display type='traffic' value={row.getValue('traffic')} unlimited />,
         },
         {
           accessorKey: 'speed_limit',
-          header: '限速',
-          cell: ({ row }) => `${row.getValue('speed_limit')} Mbps`,
+          header: t('speedLimit'),
+          cell: ({ row }) => {
+            const speed = row.original?.subscribe?.speed_limit;
+            return <Display type='trafficSpeed' value={speed} />;
+          },
         },
         {
           accessorKey: 'device_limit',
-          header: '设备限制',
+          header: t('deviceLimit'),
+          cell: ({ row }) => {
+            const limit = row.original?.subscribe?.device_limit;
+            return <Display type='number' value={limit} unlimited />;
+          },
+        },
+        {
+          accessorKey: 'reset_time',
+          header: t('resetTime'),
+          cell: ({ row }) => {
+            return <Display type='number' value={row.getValue('reset_time')} unlimited />;
+          },
+        },
+        {
+          accessorKey: 'expire_time',
+          header: t('expireTime'),
+          cell: ({ row }) =>
+            row.getValue('expire_time') ? formatDate(row.getValue('expire_time')) : t('permanent'),
         },
         {
           accessorKey: 'created_at',
-          header: '创建时间',
+          header: t('createdAt'),
           cell: ({ row }) => formatDate(row.getValue('created_at')),
         },
       ]}
-      request={async () => {
-        // 模拟异步请求
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+      request={async (pagination) => {
+        const { data } = await getUserSubscribe({
+          user_id: userId,
+          ...pagination,
+        });
         return {
-          list: mockData,
-          total: mockData.length,
+          list: data.data?.list || [],
+          total: data.data?.total || 0,
         };
       }}
       actions={{
@@ -109,31 +116,38 @@ export default function UserSubscription({ userId }: Props) {
           return [
             <SubscriptionForm
               key='edit'
-              trigger={<Button>Edit</Button>}
-              title='Edit Subscription'
+              trigger={t('edit')}
+              title={t('editSubscription')}
               loading={loading}
               userId={userId}
               initialData={row}
               onSubmit={async (values) => {
-                console.log('编辑订阅:', values);
+                await updateUserSubscribe({
+                  user_id: userId,
+                  user_subscribe_id: row.id,
+                  ...values,
+                });
+                toast.success(t('updateSuccess'));
+                ref.current?.refresh();
                 return true;
               }}
             />,
             <SubscriptionDetail
               key='detail'
-              trigger={<Button variant='secondary'>Details</Button>}
-              subscriptionId={row.id.toString()}
+              trigger={<Button variant='secondary'>{t('detail')}</Button>}
+              userId={userId}
+              subscriptionId={row.id}
             />,
             <ConfirmButton
               key='delete'
-              trigger={<Button variant='destructive'>Delete</Button>}
-              title='Confirm Delete'
-              description='Are you sure to delete this subscription?'
+              trigger={<Button variant='destructive'>{t('delete')}</Button>}
+              title={t('confirmDelete')}
+              description={t('deleteSubscriptionDescription')}
               onConfirm={async () => {
                 console.log('删除订阅:', row.id);
               }}
-              cancelText='Cancel'
-              confirmText='Confirm'
+              cancelText={t('cancel')}
+              confirmText={t('confirm')}
             />,
           ];
         },

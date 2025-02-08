@@ -2,18 +2,6 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
-/** Update user PUT /v1/admin/user/ */
-export async function updateUser(body: API.UpdateUserRequest, options?: { [key: string]: any }) {
-  return request<API.Response & { data?: any }>('/v1/admin/user/', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
 /** Create user POST /v1/admin/user/ */
 export async function createUser(body: API.CreateUserRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/user/', {
@@ -52,6 +40,21 @@ export async function getUserAuthMethod(options?: { [key: string]: any }) {
   );
 }
 
+/** Update user auth method PUT /v1/admin/user/auth_method */
+export async function updateUserAuthMethod(
+  body: API.UpdateUserAuthMethodRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/auth_method', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Create user auth method POST /v1/admin/user/auth_method */
 export async function createUserAuthMethod(
   body: API.CreateUserAuthMethodRequest,
@@ -59,6 +62,36 @@ export async function createUserAuthMethod(
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/user/auth_method', {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Delete user auth method DELETE /v1/admin/user/auth_method */
+export async function deleteUserAuthMethod(
+  body: API.DeleteUserAuthMethodRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/auth_method', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Update user basic info PUT /v1/admin/user/basic */
+export async function updateUserBasicInfo(
+  body: API.UpdateUserBasiceInfoRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/basic', {
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -106,7 +139,7 @@ export async function getUserDetail(
 }
 
 /** User device PUT /v1/admin/user/device */
-export async function updaeUserDevice(body: API.UserDevice, options?: { [key: string]: any }) {
+export async function updateUserDevice(body: API.UserDevice, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/user/device', {
     method: 'PUT',
     headers: {
@@ -132,6 +165,21 @@ export async function deleteUserDevice(
   });
 }
 
+/** kick offline user device PUT /v1/admin/user/device/kick_offline */
+export async function kickOfflineByUserDevice(
+  body: API.KickOfflineRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/device/kick_offline', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get user list GET /v1/admin/user/list */
 export async function getUserList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
@@ -145,4 +193,139 @@ export async function getUserList(
     },
     ...(options || {}),
   });
+}
+
+/** Get user login logs GET /v1/admin/user/login/logs */
+export async function getUserLoginLogs(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserLoginLogsParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetUserLoginLogsResponse }>(
+    '/v1/admin/user/login/logs',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
+/** Update user notify setting PUT /v1/admin/user/notify */
+export async function updateUserNotifySetting(
+  body: API.UpdateUserNotifySettingRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/notify', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Get user subcribe GET /v1/admin/user/subscribe */
+export async function getUserSubscribe(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserSubscribeParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetUserSubscribeListResponse }>(
+    '/v1/admin/user/subscribe',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
+/** Update user subcribe PUT /v1/admin/user/subscribe */
+export async function updateUserSubscribe(
+  body: API.UpdateUserSubscribeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/subscribe', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Create user subcribe POST /v1/admin/user/subscribe */
+export async function createUserSubscribe(
+  body: API.CreateUserSubscribeRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/user/subscribe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Get user subcribe devices GET /v1/admin/user/subscribe/device */
+export async function getUserSubscribeDevices(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserSubscribeDevicesParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetUserSubscribeDevicesResponse }>(
+    '/v1/admin/user/subscribe/device',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
+/** Get user subcribe logs GET /v1/admin/user/subscribe/logs */
+export async function getUserSubscribeLogs(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserSubscribeLogsParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetUserSubscribeLogsResponse }>(
+    '/v1/admin/user/subscribe/logs',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
+/** Get user subcribe traffic logs GET /v1/admin/user/subscribe/traffic_logs */
+export async function getUserSubscribeTrafficLogs(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserSubscribeTrafficLogsParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetUserSubscribeTrafficLogsResponse }>(
+    '/v1/admin/user/subscribe/traffic_logs',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
 }

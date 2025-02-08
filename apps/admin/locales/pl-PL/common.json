@@ -45,6 +45,7 @@
     "60002": "Nie można tymczasowo użyć tej subskrypcji, spróbuj ponownie później.",
     "60003": "Wykryto istniejącą subskrypcję. Proszę ją anulować przed kontynuacją.",
     "60004": "Nie można usunąć w tej chwili, ponieważ subskrypcja ma aktywnych użytkowników.",
+    "60005": "Tryb pojedynczej subskrypcji przekroczył limit użytkowników",
     "70001": "Kod weryfikacyjny jest nieprawidłowy, wprowadź ponownie.",
     "80001": "Zadanie nie zostało pomyślnie dodane do kolejki, spróbuj ponownie później.",
     "90001": "Wyłącz tryb DEBUG i spróbuj ponownie.",

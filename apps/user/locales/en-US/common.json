@@ -47,6 +47,7 @@
     "60002": "Unable to use the subscription at the moment, please try again later.",
     "60003": "An existing subscription is detected. Please cancel it before proceeding.",
     "60004": "Unable to delete at the moment as the subscription has active users.",
+    "60005": "Single subscription mode has exceeded user limit.",
     "70001": "Incorrect verification code, please re-enter.",
     "80001": "Task could not be successfully added to the queue, please try again later.",
     "undefined": "An error occurred in the system, please try again later."

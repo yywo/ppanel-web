@@ -45,6 +45,7 @@
     "60002": "Bu abonelik şu anda kullanılamıyor, lütfen daha sonra tekrar deneyin.",
     "60003": "Mevcut bir abonelik tespit edildi. Lütfen devam etmeden önce iptal edin.",
     "60004": "Aboneliğin aktif kullanıcıları olduğu için şu anda silinemiyor.",
+    "60005": "Tek abonelik modu kullanıcı sınırını aştı",
     "70001": "Doğrulama kodu hatalı, lütfen tekrar girin.",
     "80001": "Görev kuyruğa başarıyla eklenemedi, lütfen daha sonra tekrar deneyin.",
     "90001": "Lütfen DEBUG modunu kapatıp tekrar deneyin.",
