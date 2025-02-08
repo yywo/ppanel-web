@@ -1,6 +1,6 @@
 'use client';
 
-import { getOAuthByPlatform, updateOAuthConfig } from '@/services/admin/system';
+import { getAuthMethodConfig, updateAuthMethodConfig } from '@/services/admin/authMethod';
 import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
@@ -13,21 +13,21 @@ export default function Page() {
   const t = useTranslations('google');
 
   const { data, refetch } = useQuery({
-    queryKey: ['getOAuthByPlatform', 'google'],
+    queryKey: ['getAuthMethodConfig', 'google'],
     queryFn: async () => {
-      const { data } = await getOAuthByPlatform({
-        platform: 'google',
+      const { data } = await getAuthMethodConfig({
+        method: 'google',
       });
       return data.data;
     },
   });
 
-  async function updateConfig(key: keyof API.UpdateOAuthConfig, value: unknown) {
+  async function updateConfig(key: keyof API.UpdataAuthMethodConfigRequest, value: unknown) {
     try {
-      await updateOAuthConfig({
+      await updateAuthMethodConfig({
         ...data,
         [key]: value,
-      } as API.UpdateOAuthConfig);
+      } as API.UpdataAuthMethodConfigRequest);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -94,8 +94,13 @@ export default function Page() {
           <TableCell className='text-right'>
             <EnhancedInput
               placeholder='https://your-domain.com/v1/auth/oauth/callback/google'
-              value={data?.redirect}
-              onValueBlur={(value) => updateConfig('redirect', value)}
+              value={data?.config.redirect_url}
+              onValueBlur={(value) =>
+                updateConfig('config', {
+                  ...data?.config,
+                  redirect_url: value,
+                })
+              }
             />
           </TableCell>
         </TableRow>

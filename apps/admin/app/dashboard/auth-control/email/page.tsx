@@ -1,6 +1,10 @@
 'use client';
 
-import { getEmailSmtpConfig, testEmailSmtp, updateEmailSmtpConfig } from '@/services/admin/system';
+import {
+  getAuthMethodConfig,
+  testEmailSend,
+  updateAuthMethodConfig,
+} from '@/services/admin/authMethod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -23,14 +27,16 @@ import { toast } from 'sonner';
 
 export default function Page() {
   const t = useTranslations('email');
-  const ref = useRef<Partial<API.EmailSmtpConfig>>({});
+  const ref = useRef<Partial<API.AuthMethodConfig>>({});
   const [email, setEmail] = useState<string>();
 
   const { data, refetch, isFetching } = useQuery({
-    queryKey: ['getEmailSmtpConfig'],
+    queryKey: ['getAuthMethodConfig', 'email'],
     queryFn: async () => {
-      const { data } = await getEmailSmtpConfig();
-      ref.current = data.data as API.EmailSmtpConfig;
+      const { data } = await getAuthMethodConfig({
+        method: 'email',
+      });
+      ref.current = data.data as API.AuthMethodConfig;
       return data.data;
     },
   });
@@ -38,10 +44,10 @@ export default function Page() {
   async function updateConfig(key: string, value: unknown) {
     if (data?.[key] === value) return;
     try {
-      await updateEmailSmtpConfig({
+      await updateAuthMethodConfig({
         ...ref.current,
         [key]: value,
-      } as API.EmailSmtpConfig);
+      } as API.UpdataAuthMethodConfigRequest);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -59,94 +65,193 @@ export default function Page() {
       <TabsContent value='basic'>
         <Table>
           <TableBody>
-            {[
-              {
-                key: 'email_enabled',
-                label: t('enable'),
-                description: t('enableDescription'),
-                component: 'switch',
-              },
-              {
-                key: 'enable_email_verify',
-                label: t('emailVerification'),
-                description: t('emailVerificationDescription'),
-                component: 'switch',
-              },
-              {
-                key: 'enable_email_domain_suffix',
-                label: t('emailSuffixWhitelist'),
-                description: t('emailSuffixWhitelistDescription'),
-                component: 'switch',
-              },
-              {
-                key: 'email_domain_suffix_list',
-                label: t('whitelistSuffixes'),
-                description: t('whitelistSuffixesDescription'),
-                component: 'textarea',
-              },
-              {
-                key: 'email_smtp_host',
-                label: t('smtpServerAddress'),
-                description: t('smtpServerAddressDescription'),
-              },
-              {
-                key: 'email_smtp_port',
-                label: t('smtpServerPort'),
-                description: t('smtpServerPortDescription'),
-                type: 'number',
-              },
-              {
-                key: 'email_smtp_ssl',
-                label: t('smtpEncryptionMethod'),
-                description: t('smtpEncryptionMethodDescription'),
-                component: 'switch',
-              },
-              {
-                key: 'email_smtp_user',
-                label: t('smtpAccount'),
-                description: t('smtpAccountDescription'),
-              },
-              {
-                key: 'email_smtp_pass',
-                label: t('smtpPassword'),
-                description: t('smtpPasswordDescription'),
-                type: 'password',
-              },
-              {
-                key: 'email_smtp_from',
-                label: t('senderAddress'),
-                description: t('senderAddressDescription'),
-              },
-            ].map(({ key, label, description, type = 'text', component = 'input' }) => (
-              <TableRow key={key}>
-                <TableCell className={component === 'textarea' ? 'align-top' : undefined}>
-                  <Label>{label}</Label>
-                  <p className='text-muted-foreground text-xs'>{description}</p>
-                </TableCell>
-                <TableCell className='text-right'>
-                  {component === 'input' ? (
-                    <EnhancedInput
-                      placeholder={t('inputPlaceholder')}
-                      value={data?.[key]}
-                      type={type}
-                      onValueBlur={(value) => updateConfig(key, value)}
-                    />
-                  ) : component === 'switch' ? (
-                    <Switch
-                      checked={data?.[key]}
-                      onCheckedChange={(checked) => updateConfig(key, checked)}
-                    />
-                  ) : (
-                    <Textarea
-                      className='h-32'
-                      placeholder={t('whitelistSuffixesPlaceholder')}
-                      defaultValue={data?.[key]}
-                      onBlur={(e) => updateConfig(key, e.target.value)}
-                    />
-                  )}
-                </TableCell>
-              </TableRow>
-            ))}
+            <TableRow>
+              <TableCell>
+                <Label>{t('enable')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('enableDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Switch
+                  checked={data?.enabled}
+                  onCheckedChange={(checked) => updateConfig('enabled', checked)}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('emailVerification')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('emailVerificationDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Switch
+                  checked={data?.config?.enable_verify}
+                  onCheckedChange={(checked) =>
+                    updateConfig('config', { ...data?.config, enable_verify: checked })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('emailSuffixWhitelist')}</Label>
+                <p className='text-muted-foreground text-xs'>
+                  {t('emailSuffixWhitelistDescription')}
+                </p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Switch
+                  checked={data?.config?.enable_domain_suffix}
+                  onCheckedChange={(checked) =>
+                    updateConfig('config', { ...data?.config, enable_domain_suffix: checked })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell className='align-top'>
+                <Label>{t('whitelistSuffixes')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('whitelistSuffixesDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Textarea
+                  className='h-32'
+                  placeholder={t('whitelistSuffixesPlaceholder')}
+                  defaultValue={data?.config?.domain_suffix_list}
+                  onBlur={(e) =>
+                    updateConfig('config', { ...data?.config, domain_suffix_list: e.target.value })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('smtpServerAddress')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('smtpServerAddressDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.platform_config?.host}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        host: value,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('smtpServerPort')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('smtpServerPortDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.platform_config?.port}
+                  type='number'
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        port: value,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('smtpEncryptionMethod')}</Label>
+                <p className='text-muted-foreground text-xs'>
+                  {t('smtpEncryptionMethodDescription')}
+                </p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Switch
+                  checked={data?.config?.platform_config?.ssl}
+                  onCheckedChange={(checked) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        ssl: checked,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('smtpAccount')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('smtpAccountDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.platform_config?.user}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        user: value,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('smtpPassword')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('smtpPasswordDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.platform_config?.pass}
+                  type='password'
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        pass: value,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('senderAddress')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('senderAddressDescription')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.platform_config?.from}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.platform_config,
+                        from: value,
+                      },
+                    })
+                  }
+                />
+              </TableCell>
+            </TableRow>
             <TableRow>
               <TableCell>
                 <Label>{t('sendTestEmail')}</Label>
@@ -164,7 +269,7 @@ export default function Page() {
                   onClick={async () => {
                     if (!email) return;
                     try {
-                      await testEmailSmtp({ email });
+                      await testEmailSend({ email });
                       toast.success(t('sendSuccess'));
                     } catch {
                       toast.error(t('sendFailure'));
@@ -193,8 +298,13 @@ export default function Page() {
                 <CardContent>
                   <HTMLEditor
                     placeholder={t('inputPlaceholder')}
-                    value={data?.[templateKey as keyof API.EmailSmtpConfig] as string}
-                    onBlur={(value) => updateConfig(templateKey, value)}
+                    value={data?.config?.[templateKey] as string}
+                    onBlur={(value) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        [templateKey]: value,
+                      })
+                    }
                   />
                 </CardContent>
               </Card>

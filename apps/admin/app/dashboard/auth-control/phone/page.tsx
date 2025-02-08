@@ -1,13 +1,13 @@
 'use client';
 
 import { ProTable, ProTableActions } from '@/components/pro-table';
-import { getSmsList } from '@/services/admin/sms';
 import {
-  getSmsConfig,
+  getAuthMethodConfig,
   getSmsPlatform,
   testSmsSend,
-  updateSmsConfig,
-} from '@/services/admin/system';
+  updateAuthMethodConfig,
+} from '@/services/admin/authMethod';
+import { getSmsList } from '@/services/admin/sms';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -25,6 +25,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/componen
 import { Textarea } from '@workspace/ui/components/textarea';
 import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import TagInput from '@workspace/ui/custom-components/tag-input';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -34,9 +35,11 @@ import { toast } from 'sonner';
 export default function Page() {
   const t = useTranslations('phone');
   const { data, refetch, isFetching } = useQuery({
-    queryKey: ['getSmsConfig'],
+    queryKey: ['getAuthMethodConfig', 'mobile'],
     queryFn: async () => {
-      const { data } = await getSmsConfig();
+      const { data } = await getAuthMethodConfig({
+        method: 'mobile',
+      });
       return data.data;
     },
   });
@@ -49,25 +52,27 @@ export default function Page() {
     },
   });
 
-  const selectedPlatform = platforms?.find((platform) => platform.platform === data?.sms_platform);
+  const selectedPlatform = platforms?.find(
+    (platform) => platform.platform === data?.config?.platform,
+  );
   const { platform_url, platform_field_description: platformConfig } = selectedPlatform ?? {};
 
   async function updateConfig(key: string, value: unknown) {
     if (data?.[key] === value) return;
+
     try {
-      await updateSmsConfig({
+      await updateAuthMethodConfig({
         ...data,
         [key]: value,
-      } as API.SmsConfig);
+      } as API.UpdataAuthMethodConfigRequest);
       toast.success(t('updateSuccess'));
       refetch();
     } catch (error) {
       /* empty */
     }
   }
-  const [params, setParams] = useState<API.SendSmsRequest>({
+  const [params, setParams] = useState<API.TestSmsSendRequest>({
     telephone: '',
-    content: t('testSmsContent'),
     area_code: '1',
   });
 
@@ -88,8 +93,8 @@ export default function Page() {
               </TableCell>
               <TableCell className='text-right'>
                 <Switch
-                  checked={data?.sms_enabled}
-                  onCheckedChange={(checked) => updateConfig('sms_enabled', checked)}
+                  checked={data?.enabled}
+                  onCheckedChange={(checked) => updateConfig('enabled', checked)}
                   disabled={isFetching}
                 />
               </TableCell>
@@ -103,8 +108,13 @@ export default function Page() {
                 <EnhancedInput
                   type='number'
                   min={0}
-                  value={data?.sms_expire_time ?? 300}
-                  onValueBlur={(value) => updateConfig('sms_expire_time', value)}
+                  value={data?.config?.expire_time ?? 300}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      expire_time: value,
+                    })
+                  }
                   suffix='S'
                   disabled={isFetching}
                   placeholder={t('placeholders.expireTime')}
@@ -119,9 +129,14 @@ export default function Page() {
               <TableCell className='text-right'>
                 <EnhancedInput
                   type='number'
-                  value={data?.sms_interval ?? 60}
+                  value={data?.config?.interval ?? 60}
                   min={0}
-                  onValueBlur={(value) => updateConfig('sms_interval', value)}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      interval: value,
+                    })
+                  }
                   suffix='S'
                   disabled={isFetching}
                   placeholder={t('placeholders.interval')}
@@ -136,11 +151,45 @@ export default function Page() {
               <TableCell className='text-right'>
                 <EnhancedInput
                   type='number'
-                  value={data?.sms_limit ?? 20}
+                  value={data?.config?.limit ?? 20}
                   min={0}
-                  onValueBlur={(value) => updateConfig('sms_limit', value)}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      limit: value,
+                    })
+                  }
                   disabled={isFetching}
                   placeholder={t('placeholders.limit')}
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('whitelistValidation')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('whitelistValidationTip')}</p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <Switch
+                  defaultValue={data?.config?.enable_whitelist}
+                  onCheckedChange={(checked) =>
+                    updateConfig('config', { ...data?.config, enable_whitelist: checked })
+                  }
+                />
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Label>{t('whitelistAreaCode')}</Label>
+                <p className='text-muted-foreground text-xs'>{t('whitelistAreaCodeTip')}</p>
+              </TableCell>
+              <TableCell className='w-1/2 text-right'>
+                <TagInput
+                  placeholder='1, 852, 886, 888'
+                  value={data?.config?.whitelist || []}
+                  onChange={(value) =>
+                    updateConfig('config', { ...data?.config, whitelist: value })
+                  }
                 />
               </TableCell>
             </TableRow>
@@ -151,8 +200,13 @@ export default function Page() {
               </TableCell>
               <TableCell className='flex items-center gap-1 text-right'>
                 <Select
-                  value={data?.sms_platform}
-                  onValueChange={(value) => updateConfig('sms_platform', value)}
+                  value={data?.platform}
+                  onValueChange={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform: value,
+                    })
+                  }
                   disabled={isFetching}
                 >
                   <SelectTrigger>
@@ -177,70 +231,128 @@ export default function Page() {
             </TableRow>
             <TableRow>
               <TableCell>
-                <Label>Key</Label>
+                <Label>{t('accessLabel')}</Label>
                 <p className='text-muted-foreground text-xs'>
-                  {t('platformConfigTip', { key: platformConfig?.sms_key })}
+                  {t('platformConfigTip', { key: platformConfig?.access })}
                 </p>
               </TableCell>
               <TableCell className='text-right'>
                 <EnhancedInput
-                  value={data?.sms_key ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_key', value)}
+                  value={data?.config?.platform_config.access ?? ''}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.config?.platform_config,
+                        access: value,
+                      },
+                    })
+                  }
                   disabled={isFetching}
-                  placeholder={t('platformConfigTip', { key: platformConfig?.sms_key })}
+                  placeholder={t('platformConfigTip', { key: platformConfig?.access })}
                 />
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell>
-                <Label>Secret</Label>
-                <p className='text-muted-foreground text-xs'>
-                  {t('platformConfigTip', { key: platformConfig?.sms_secret })}
-                </p>
-              </TableCell>
-              <TableCell className='text-right'>
-                <EnhancedInput
-                  value={data?.sms_secret ?? ''}
-                  onValueBlur={(value) => updateConfig('sms_secret', value)}
-                  disabled={isFetching}
-                  type='password'
-                  placeholder={t('platformConfigTip', { key: platformConfig?.sms_secret })}
-                />
-              </TableCell>
-            </TableRow>
-            {platformConfig?.sms_template_code && (
+            {platformConfig?.endpoint && (
               <TableRow>
                 <TableCell>
-                  <Label>{t('templateCode')}</Label>
+                  <Label>{t('endpointLabel')}</Label>
                   <p className='text-muted-foreground text-xs'>
-                    {t('platformConfigTip', { key: platformConfig?.sms_template_code })}
+                    {t('platformConfigTip', { key: platformConfig?.endpoint })}
                   </p>
                 </TableCell>
                 <TableCell className='text-right'>
                   <EnhancedInput
-                    value={data?.sms_template_code ?? ''}
-                    onValueBlur={(value) => updateConfig('sms_template_code', value)}
+                    value={data?.config?.platform_config.endpoint ?? ''}
+                    onValueBlur={(value) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        platform_config: {
+                          ...data?.config?.platform_config,
+                          endpoint: value,
+                        },
+                      })
+                    }
                     disabled={isFetching}
-                    placeholder={t('platformConfigTip', { key: platformConfig?.sms_template_code })}
+                    placeholder={t('platformConfigTip', { key: platformConfig?.endpoint })}
                   />
                 </TableCell>
               </TableRow>
             )}
-            {platformConfig?.sms_template_param && (
+            <TableRow>
+              <TableCell>
+                <Label>{t('secretLabel')}</Label>
+                <p className='text-muted-foreground text-xs'>
+                  {t('platformConfigTip', { key: platformConfig?.secret })}
+                </p>
+              </TableCell>
+              <TableCell className='text-right'>
+                <EnhancedInput
+                  value={data?.config?.platform_config?.secret ?? ''}
+                  onValueBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.config?.platform_config,
+                        secret: value,
+                      },
+                    })
+                  }
+                  disabled={isFetching}
+                  type='password'
+                  placeholder={t('platformConfigTip', { key: platformConfig?.secret })}
+                />
+              </TableCell>
+            </TableRow>
+            {platformConfig?.template_code && (
               <TableRow>
                 <TableCell>
-                  <Label>{t('templateParam')}</Label>
+                  <Label>{t('templateCodeLabel')}</Label>
                   <p className='text-muted-foreground text-xs'>
-                    {t('platformConfigTip', { key: platformConfig?.sms_template_param })}
+                    {t('platformConfigTip', { key: platformConfig?.template_code })}
                   </p>
                 </TableCell>
                 <TableCell className='text-right'>
                   <EnhancedInput
-                    value={data?.sms_template_param ?? 'code'}
-                    onValueBlur={(value) => updateConfig('sms_template_param', value)}
+                    value={data?.config?.platform_config?.template_code ?? 'code'}
+                    onValueBlur={(value) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        platform_config: {
+                          ...data?.config?.platform_config,
+                          template_code: value,
+                        },
+                      })
+                    }
+                    disabled={isFetching}
+                    placeholder={t('platformConfigTip', { key: platformConfig?.template_code })}
+                  />
+                </TableCell>
+              </TableRow>
+            )}
+            {platformConfig?.sign_name && (
+              <TableRow>
+                <TableCell>
+                  <Label>{t('signNameLabel')}</Label>
+                  <p className='text-muted-foreground text-xs'>
+                    {t('platformConfigTip', { key: platformConfig?.sign_name })}
+                  </p>
+                </TableCell>
+                <TableCell className='text-right'>
+                  <EnhancedInput
+                    value={data?.config?.platform_config?.sign_name ?? ''}
+                    onValueBlur={(value) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        platform_config: {
+                          ...data?.config?.platform_config,
+                          sign_name: value,
+                        },
+                      })
+                    }
                     disabled={isFetching}
                     placeholder={t('platformConfigTip', {
-                      key: platformConfig?.sms_template_param,
+                      key: platformConfig?.sign_name,
                     })}
                   />
                 </TableCell>
@@ -250,15 +362,23 @@ export default function Page() {
               <TableCell>
                 <Label>{t('template')}</Label>
                 <p className='text-muted-foreground text-xs'>
-                  {t('templateTip', { code: platformConfig?.sms_template })}
+                  {t('templateTip', { code: platformConfig?.code_variable })}
                 </p>
               </TableCell>
               <TableCell className='text-right'>
                 <Textarea
-                  defaultValue={data?.sms_template ?? ''}
-                  onBlur={(e) => updateConfig('sms_template', e.target.value)}
+                  defaultValue={data?.platform_config?.template ?? ''}
+                  onBlur={(e) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      platform_config: {
+                        ...data?.config?.platform_config,
+                        template: e.target.value,
+                      },
+                    })
+                  }
                   disabled={isFetching}
-                  placeholder={t('placeholders.template', { code: platformConfig?.sms_template })}
+                  placeholder={t('placeholders.template', { code: platformConfig?.code_variable })}
                 />
               </TableCell>
             </TableRow>
@@ -315,7 +435,7 @@ function LogsTable() {
   const ref = useRef<ProTableActions>(null);
 
   return (
-    <ProTable<API.Sms, { telephone: string }>
+    <ProTable<API.SMS, { telephone: string }>
       action={ref}
       header={{
         title: t('SmsList'),

@@ -32,7 +32,7 @@ export default function ResetForm({
   const formSchema = z.object({
     email: z.string().email(t('email')),
     password: z.string(),
-    code: auth?.email?.email_enable_verify ? z.string() : z.string().nullish(),
+    code: auth?.email?.enable_verify ? z.string() : z.string().nullish(),
     cf_token:
       verify.enable_register_verify && verify.turnstile_site_key
         ? z.string()
@@ -72,7 +72,7 @@ export default function ResetForm({
             )}
           />
 
-          {auth?.email?.email_enable_verify && (
+          {auth?.email?.enable_verify && (
             <FormField
               control={form.control}
               name='code'

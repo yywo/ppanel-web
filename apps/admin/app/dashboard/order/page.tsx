@@ -17,7 +17,7 @@ import { cn } from '@workspace/ui/lib/utils';
 import { formatDate } from '@workspace/ui/utils';
 import { UserDetail } from '../user/user-detail';
 
-export default function Page(props: { userId?: string }) {
+export default function Page(props: any) {
   const t = useTranslations('order');
 
   const statusOptions = [

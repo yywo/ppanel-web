@@ -35,7 +35,7 @@ export default function ResetForm({
     telephone_area_code: z.string(),
     telephone: z.string(),
     password: z.string(),
-    code: auth?.email?.email_enable_verify ? z.string() : z.string().nullish(),
+    code: auth?.email?.enable_verify ? z.string() : z.string().nullish(),
     cf_token:
       verify.enable_register_verify && verify.turnstile_site_key
         ? z.string()

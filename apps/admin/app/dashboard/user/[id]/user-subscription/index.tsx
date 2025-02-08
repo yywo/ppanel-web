@@ -30,12 +30,14 @@ export default function UserSubscription({ userId }: { userId: number }) {
             loading={loading}
             userId={userId}
             onSubmit={async (values) => {
+              setLoading(true);
               await createUserSubscribe({
                 user_id: userId,
                 ...values,
               });
               toast.success(t('createSuccess'));
               ref.current?.refresh();
+              setLoading(false);
               return true;
             }}
           />
@@ -122,6 +124,7 @@ export default function UserSubscription({ userId }: { userId: number }) {
               userId={userId}
               initialData={row}
               onSubmit={async (values) => {
+                setLoading(true);
                 await updateUserSubscribe({
                   user_id: userId,
                   user_subscribe_id: row.id,
@@ -129,6 +132,7 @@ export default function UserSubscription({ userId }: { userId: number }) {
                 });
                 toast.success(t('updateSuccess'));
                 ref.current?.refresh();
+                setLoading(false);
                 return true;
               }}
             />,
@@ -144,7 +148,7 @@ export default function UserSubscription({ userId }: { userId: number }) {
               title={t('confirmDelete')}
               description={t('deleteSubscriptionDescription')}
               onConfirm={async () => {
-                console.log('删除订阅:', row.id);
+                console.log('Delete subscription:', row.id);
               }}
               cancelText={t('cancel')}
               confirmText={t('confirm')}

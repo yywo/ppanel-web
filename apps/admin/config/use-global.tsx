@@ -16,23 +16,23 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       site_logo: '',
     },
     verify: {
+      turnstile_site_key: '',
       enable_login_verify: false,
       enable_register_verify: false,
       enable_reset_password_verify: false,
-      turnstile_site_key: '',
     },
     auth: {
-      sms: {
-        sms_enabled: false,
-        sms_limit: 0,
-        sms_interval: 0,
-        sms_expire_time: 0,
+      mobile: {
+        enable: false,
+        limit: 0,
+        interval: 0,
+        expire_time: 0,
       },
       email: {
-        email_enabled: false,
-        email_enable_verify: false,
-        email_enable_domain_suffix: false,
-        email_domain_suffix_list: '',
+        enable: false,
+        enable_verify: false,
+        enable_domain_suffix: false,
+        domain_suffix_list: '',
       },
       register: {
         stop_register: false,
@@ -42,31 +42,14 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
         ip_register_limit_duration: 0,
       },
     },
-    register: {
-      stop_register: false,
-      enable_email_verify: false,
-      enable_email_domain_suffix: false,
-      email_domain_suffix_list: '',
-      enable_trial: false,
-      enable_ip_register_limit: false,
-      ip_register_limit: 0,
-      ip_register_limit_duration: 0,
-      sms: {
-        sms_enabled: false,
-        sms_limit: 0,
-        sms_interval: 0,
-        sms_expire_time: 0,
-      },
-    },
     invite: {
       forced_invite: false,
       referral_percentage: 0,
       only_first_purchase: false,
     },
     currency: {
-      currency_unit: 'USD',
-      currency_symbol: '$',
-      access_key: '',
+      currency_unit: '',
+      currency_symbol: '',
     },
     subscribe: {
       single_model: false,

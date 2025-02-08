@@ -1,5 +1,6 @@
 import { Badge } from '@workspace/ui/components/badge';
 import { Input } from '@workspace/ui/components/input';
+import { cn } from '@workspace/ui/lib/utils';
 import { X } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
@@ -8,9 +9,16 @@ interface TagInputProps {
   onChange?: (tags: string[]) => void;
   placeholder?: string;
   separator?: string;
+  className?: string;
 }
 
-export function TagInput({ value = [], onChange, placeholder, separator = ',' }: TagInputProps) {
+export function TagInput({
+  value = [],
+  onChange,
+  placeholder,
+  separator = ',',
+  className,
+}: TagInputProps) {
   const [inputValue, setInputValue] = useState('');
   const [tags, setTags] = useState<string[]>(value);
 
@@ -19,7 +27,6 @@ export function TagInput({ value = [], onChange, placeholder, separator = ',' }:
   }, [value]);
 
   function normalizeInput(input: string) {
-    // 将中文逗号替换为英文逗号
     return input.replace(/，/g, ',');
   }
 
@@ -58,7 +65,12 @@ export function TagInput({ value = [], onChange, placeholder, separator = ',' }:
   }
 
   return (
-    <div className='border-input focus-within:ring-primary flex min-h-9 w-full flex-wrap items-center gap-2 rounded-md border bg-transparent p-2 shadow-sm transition-colors focus-within:ring-1'>
+    <div
+      className={cn(
+        'border-input focus-within:ring-primary flex min-h-9 w-full flex-wrap items-center gap-2 rounded-md border bg-transparent p-2 shadow-sm transition-colors focus-within:ring-1',
+        className,
+      )}
+    >
       {tags.map((tag, index) => (
         <Badge
           key={tag}

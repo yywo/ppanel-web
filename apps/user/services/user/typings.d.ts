@@ -58,7 +58,7 @@ declare namespace API {
   };
 
   type AuthConfig = {
-    sms: MobileAuthenticateConfig;
+    mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
     register: RegisterConfig;
   };

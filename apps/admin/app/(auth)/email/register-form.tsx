@@ -33,8 +33,8 @@ export default function RegisterForm({
     try {
       const domain = email.split('@')[1];
       const isValid =
-        !auth.email.email_enable_verify ||
-        auth.email?.email_domain_suffix_list.split('\n').includes(domain || '');
+        !auth.email.enable_verify ||
+        auth.email?.domain_suffix_list.split('\n').includes(domain || '');
       return !isValid;
     } catch (error) {
       console.log('Error checking user:', error);
@@ -52,7 +52,7 @@ export default function RegisterForm({
         }),
       password: z.string(),
       repeat_password: z.string(),
-      code: auth.email.email_enable_verify ? z.string() : z.string().nullish(),
+      code: auth.email.enable_verify ? z.string() : z.string().nullish(),
       invite: invite.forced_invite ? z.string() : z.string().nullish(),
       cf_token:
         verify.enable_register_verify && verify.turnstile_site_key
@@ -120,7 +120,7 @@ export default function RegisterForm({
                 </FormItem>
               )}
             />
-            {auth.email.email_enable_verify && (
+            {auth.email.enable_verify && (
               <FormField
                 control={form.control}
                 name='code'

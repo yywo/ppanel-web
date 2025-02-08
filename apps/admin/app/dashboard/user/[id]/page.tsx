@@ -5,7 +5,7 @@ import UserLoginHistory from './user-login-history';
 import { UserProfileForm } from './user-profile';
 import UserSubscription from './user-subscription';
 
-export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+export default async function Page({ params }: { params: Promise<{ id: number }> }) {
   const t = await getTranslations('user');
   const { id } = await params;
   return (
