@@ -368,7 +368,7 @@ export default function Page() {
                 </TableCell>
                 <TableCell className='text-right'>
                   <Textarea
-                    defaultValue={data?.platform_config?.template ?? ''}
+                    defaultValue={data?.config?.platform_config?.template ?? ''}
                     onBlur={(e) =>
                       updateConfig('config', {
                         ...data?.config,
