@@ -200,7 +200,7 @@ export default function Page() {
               </TableCell>
               <TableCell className='flex items-center gap-1 text-right'>
                 <Select
-                  value={data?.platform}
+                  value={data?.config?.platform}
                   onValueChange={(value) =>
                     updateConfig('config', {
                       ...data?.config,
