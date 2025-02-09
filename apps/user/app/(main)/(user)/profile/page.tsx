@@ -1,12 +1,12 @@
 import ChangePassword from './change-password';
-import NotifyEvent from './notify-event';
 import NotifySettings from './notify-settings';
+import ThirdPartyAccounts from './third-party-accounts';
 
 export default function Page() {
   return (
-    <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
+    <div className='flex flex-col gap-3 lg:flex-row lg:flex-wrap lg:*:flex-auto'>
+      <ThirdPartyAccounts />
       <NotifySettings />
-      <NotifyEvent />
       <ChangePassword />
     </div>
   );

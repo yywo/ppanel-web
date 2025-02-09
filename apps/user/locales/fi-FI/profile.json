@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Tiliasetukset",
-    "loginPassword": "Kirjautumissalasana",
     "newPassword": "Uusi salasana",
     "passwordMismatch": "Salasanat eivät täsmää",
     "repeatNewPassword": "Toista uusi salasana",
@@ -9,21 +8,64 @@
     "updateSuccess": "Päivitys onnistui"
   },
   "notify": {
+    "balanceChange": "Saldo Muutos",
     "bind": "Siirry sitomiseen",
+    "channels": "Ilmoituskanavat",
     "emailNotification": "Sähköposti-ilmoitus",
+    "finance": "Rahoitus",
+    "login": "Kirjaudu",
     "notificationSettings": "Ilmoitusasetukset",
-    "telegramId": "Telegram ID",
+    "notificationTypes": "Ilmoitustyypit",
+    "save": "Tallenna muutokset",
+    "subscribe": "Tilaa",
     "telegramIdPlaceholder": "Syötä Telegram ID",
     "telegramNotification": "Telegram-ilmoitus",
     "unbind": "Poista sitominen",
     "updateSuccess": "Päivitys onnistui"
   },
-  "notifyEvent": {
-    "balanceChange": "Saldon muutos",
-    "finance": "Talous",
-    "login": "Kirjautuminen",
-    "notificationEvents": "Ilmoitustapahtumat",
-    "subscribe": "Tilaa",
+  "thirdParty": {
+    "apple": {
+      "description": "Kirjaudu sisään Applen kanssa"
+    },
+    "bind": "Yhdistä",
+    "bindFailed": "Yhteyden muodostaminen epäonnistui",
+    "bindMobile": "Yhdistä puhelin",
+    "bindSuccess": "Yhteys onnistui",
+    "change": "Vaihda",
+    "confirm": "Vahvista",
+    "email": {
+      "description": "Linkitä sähköpostiosoitteesi",
+      "invalid": "Ole hyvä ja syötä voimassa oleva sähköpostiosoite",
+      "placeholder": "Syötä sähköpostiosoitteesi",
+      "title": "Vaihda sähköposti"
+    },
+    "facebook": {
+      "description": "Kirjaudu sisään Facebookilla"
+    },
+    "github": {
+      "description": "Kirjaudu sisään GitHubilla"
+    },
+    "google": {
+      "description": "Kirjaudu sisään Googlella"
+    },
+    "mobile": {
+      "description": "Linkitä matkapuhelinnumerosi",
+      "invalid": "Ole hyvä ja syötä voimassa oleva matkapuhelinnumero",
+      "placeholder": "Syötä matkapuhelinnumerosi",
+      "title": "Vaihda puhelinnumero"
+    },
+    "phone": {
+      "description": "Linkitä puhelinnumerosi",
+      "placeholder": "Syötä puhelinnumerosi",
+      "title": "Vaihda puhelin"
+    },
+    "save": "Tallenna",
+    "telegram": {
+      "description": "Kirjaudu sisään Telegramilla"
+    },
+    "title": "Yhdistetyt tilit",
+    "unbind": "Irrota",
+    "update": "Päivitä",
     "updateSuccess": "Päivitys onnistui"
   }
 }

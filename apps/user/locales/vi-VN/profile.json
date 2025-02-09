@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Cài đặt tài khoản",
-    "loginPassword": "Mật khẩu đăng nhập",
     "newPassword": "Mật khẩu mới",
     "passwordMismatch": "Hai lần nhập mật khẩu không khớp",
     "repeatNewPassword": "Nhập lại mật khẩu mới",
@@ -9,21 +8,64 @@
     "updateSuccess": "Cập nhật thành công"
   },
   "notify": {
+    "balanceChange": "Thay Đổi Số Dư",
     "bind": "Đi đến Liên kết",
+    "channels": "Kênh Thông Báo",
     "emailNotification": "Thông báo Email",
+    "finance": "Tài Chính",
+    "login": "Đăng Nhập",
     "notificationSettings": "Cài đặt Thông báo",
-    "telegramId": "Telegram ID",
+    "notificationTypes": "Loại Thông Báo",
+    "save": "Lưu Thay Đổi",
+    "subscribe": "Đăng Ký",
     "telegramIdPlaceholder": "Nhập Telegram ID",
     "telegramNotification": "Thông báo Telegram",
     "unbind": "Hủy liên kết",
     "updateSuccess": "Cập nhật thành công"
   },
-  "notifyEvent": {
-    "balanceChange": "Thay đổi số dư",
-    "finance": "Tài chính",
-    "login": "Đăng nhập",
-    "notificationEvents": "Sự kiện thông báo",
-    "subscribe": "Đăng ký",
-    "updateSuccess": "Cập nhật thành công"
+  "thirdParty": {
+    "apple": {
+      "description": "Đăng nhập bằng Apple"
+    },
+    "bind": "Kết Nối",
+    "bindFailed": "Kết nối thất bại",
+    "bindMobile": "Kết nối điện thoại di động",
+    "bindSuccess": "Kết nối thành công",
+    "change": "Thay Đổi",
+    "confirm": "Xác nhận",
+    "email": {
+      "description": "Liên kết địa chỉ email của bạn",
+      "invalid": "Vui lòng nhập một địa chỉ email hợp lệ",
+      "placeholder": "Nhập địa chỉ email của bạn",
+      "title": "Thay Đổi Email"
+    },
+    "facebook": {
+      "description": "Đăng nhập bằng Facebook"
+    },
+    "github": {
+      "description": "Đăng nhập bằng GitHub"
+    },
+    "google": {
+      "description": "Đăng nhập bằng Google"
+    },
+    "mobile": {
+      "description": "Liên kết số di động của bạn",
+      "invalid": "Vui lòng nhập một số di động hợp lệ",
+      "placeholder": "Nhập số di động của bạn",
+      "title": "Thay đổi số điện thoại di động"
+    },
+    "phone": {
+      "description": "Liên kết số điện thoại của bạn",
+      "placeholder": "Nhập số điện thoại của bạn",
+      "title": "Thay Đổi Số Điện Thoại"
+    },
+    "save": "Lưu",
+    "telegram": {
+      "description": "Đăng nhập bằng Telegram"
+    },
+    "title": "Tài Khoản Kết Nối",
+    "unbind": "Ngắt Kết Nối",
+    "update": "Cập nhật",
+    "updateSuccess": "Cập Nhật Thành Công"
   }
 }

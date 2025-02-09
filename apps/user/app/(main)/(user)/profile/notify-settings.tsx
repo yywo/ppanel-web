@@ -1,19 +1,11 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { bindTelegram, unbindTelegram, updateUserNotifySetting } from '@/services/user/user';
+import { updateUserNotify } from '@/services/user/user';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@workspace/ui/components/form';
-import { Input } from '@workspace/ui/components/input';
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@workspace/ui/components/form';
 import { Switch } from '@workspace/ui/components/switch';
 import { useTranslations } from 'next-intl';
 import { useForm } from 'react-hook-form';
@@ -24,10 +16,14 @@ const FormSchema = z.object({
   telegram: z.number().nullish(),
   enable_email_notify: z.boolean(),
   enable_telegram_notify: z.boolean(),
+  enable_balance_notify: z.boolean(),
+  enable_login_notify: z.boolean(),
+  enable_subscribe_notify: z.boolean(),
+  enable_trade_notify: z.boolean(),
 });
 
 export default function NotifySettings() {
-  const t = useTranslations('profile.notify');
+  const t = useTranslations('profile');
   const { user, getUserInfo } = useGlobalStore();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -35,101 +31,58 @@ export default function NotifySettings() {
       telegram: user?.telegram,
       enable_email_notify: user?.enable_email_notify,
       enable_telegram_notify: user?.enable_telegram_notify,
+      enable_balance_notify: user?.enable_balance_notify,
+      enable_login_notify: user?.enable_login_notify,
+      enable_subscribe_notify: user?.enable_subscribe_notify,
+      enable_trade_notify: user?.enable_trade_notify,
     },
   });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    await updateUserNotifySetting(data as API.UpdateUserNotifySettingRequet);
-    toast.success(t('updateSuccess'));
+    await updateUserNotify(data);
+    toast.success(t('notify.updateSuccess'));
+    getUserInfo();
   }
 
   return (
     <Card>
-      <CardHeader className='bg-muted/50 flex flex-row items-start'>
-        <CardTitle>{t('notificationSettings')}</CardTitle>
+      <CardHeader className='bg-muted/50'>
+        <CardTitle className='flex items-center justify-between'>
+          {t('notify.notificationSettings')}
+          <Button type='submit' size='sm' form='notify-form'>
+            {t('notify.save')}
+          </Button>
+        </CardTitle>
       </CardHeader>
-      <CardContent className='grid gap-4 p-6 text-sm'>
+      <CardContent className='grid gap-6 p-6'>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='grid gap-6'>
-            <FormField
-              control={form.control}
-              name='telegram'
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t('telegramId')}</FormLabel>
-                  <FormControl>
-                    <div className='flex w-full items-center space-x-2'>
-                      <Input
-                        type='number'
-                        placeholder={t('telegramIdPlaceholder')}
-                        {...field}
-                        value={field.value ? field.value : ''}
-                        onChange={(e) => {
-                          field.onChange(e.target.value ? Number(e.target.value) : '');
-                        }}
-                        disabled
-                      />
-                      <Button
-                        size='sm'
-                        type='button'
-                        onClick={async () => {
-                          if (user?.telegram) {
-                            await unbindTelegram();
-                            await getUserInfo();
-                          } else {
-                            const { data } = await bindTelegram();
-                            if (data.data?.url) {
-                              window.open(data.data.url, '_blank');
-                            }
-                          }
-                        }}
-                      >
-                        {t(user?.telegram ? 'unbind' : 'bind')}
-                      </Button>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='enable_email_notify'
-              render={({ field }) => (
-                <FormItem className='text-muted-foreground flex items-center justify-between'>
-                  <FormLabel>{t('emailNotification')}</FormLabel>
-                  <FormControl>
-                    <Switch
-                      checked={field.value}
-                      onCheckedChange={(value) => {
-                        field.onChange(value);
-                        form.handleSubmit(onSubmit)();
-                      }}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name='enable_telegram_notify'
-              render={({ field }) => (
-                <FormItem className='text-muted-foreground flex items-center justify-between'>
-                  <FormLabel>{t('telegramNotification')}</FormLabel>
-                  <FormControl>
-                    <Switch
-                      checked={field.value}
-                      onCheckedChange={(value) => {
-                        field.onChange(value);
-                        form.handleSubmit(onSubmit)();
-                      }}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <form id='notify-form' onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+            <div className='space-y-4'>
+              {[
+                { name: 'enable_email_notify', label: 'emailNotification' },
+                { name: 'enable_telegram_notify', label: 'telegramNotification' },
+                { name: 'enable_balance_notify', label: 'balanceChange' },
+                { name: 'enable_login_notify', label: 'login' },
+                { name: 'enable_subscribe_notify', label: 'subscribe' },
+                { name: 'enable_trade_notify', label: 'finance' },
+              ].map(({ name, label }) => (
+                <FormField
+                  key={name}
+                  control={form.control}
+                  name={name as any}
+                  render={({ field }) => (
+                    <FormItem className='flex items-center justify-between space-x-4'>
+                      <FormLabel className='text-muted-foreground'>
+                        {t(`notify.${label}`)}
+                      </FormLabel>
+                      <FormControl>
+                        <Switch checked={field.value} onCheckedChange={field.onChange} />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              ))}
+            </div>
           </form>
         </Form>
       </CardContent>

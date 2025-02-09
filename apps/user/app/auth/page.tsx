@@ -28,27 +28,21 @@ export default function Page() {
   const { common } = useGlobalStore();
   const { site, auth, oauth_methods } = common;
 
-  const AUTH_COMPONENT_MAP = {
-    email: <EmailAuthForm />,
-    sms: <PhoneAuthForm />,
-  } as const;
+  const AUTH_METHODS = [
+    {
+      key: 'email',
+      enabled: auth.email.enable,
+      children: <EmailAuthForm />,
+    },
+    {
+      key: 'mobile',
+      enabled: auth.mobile.enable,
+      children: <PhoneAuthForm />,
+    },
+  ].filter((method) => method.enabled);
 
-  type AuthMethod = keyof typeof AUTH_COMPONENT_MAP;
+  const OAUTH_METHODS = oauth_methods?.filter((method) => !['mobile', 'email'].includes(method));
 
-  const enabledAuthMethods = (Object.keys(AUTH_COMPONENT_MAP) as AuthMethod[]).filter((key) => {
-    const value = auth[key];
-    const enabledKey = `${key}_enabled` as const;
-
-    if (typeof value !== 'object' || value === null) {
-      return false;
-    }
-
-    if (!(enabledKey in value)) {
-      return false;
-    }
-    const isEnabled = (value as unknown as Record<typeof enabledKey, boolean>)[enabledKey];
-    return isEnabled;
-  });
   return (
     <main className='bg-muted/50 flex h-full min-h-screen items-center'>
       <div className='flex size-full flex-auto flex-col lg:flex-row'>
@@ -79,27 +73,27 @@ export default function Page() {
                 <div className='text-muted-foreground mb-6 text-center font-medium'>
                   {t('verifyAccountDesc')}
                 </div>
-                {enabledAuthMethods.length === 1
-                  ? AUTH_COMPONENT_MAP[enabledAuthMethods[0] as AuthMethod]
-                  : enabledAuthMethods[0] && (
-                      <Tabs defaultValue={enabledAuthMethods[0]}>
+                {AUTH_METHODS.length === 1
+                  ? AUTH_METHODS[0]?.children
+                  : AUTH_METHODS[0] && (
+                      <Tabs defaultValue={AUTH_METHODS[0].key}>
                         <TabsList className='mb-6 flex w-full *:flex-1'>
-                          {enabledAuthMethods.map((method) => (
-                            <TabsTrigger key={method} value={method}>
-                              {t(`methods.${method}`)}
+                          {AUTH_METHODS.map((item) => (
+                            <TabsTrigger key={item.key} value={item.key}>
+                              {t(`methods.${item.key}`)}
                             </TabsTrigger>
                           ))}
                         </TabsList>
-                        {enabledAuthMethods.map((method) => (
-                          <TabsContent key={method} value={method}>
-                            {AUTH_COMPONENT_MAP[method]}
+                        {AUTH_METHODS.map((item) => (
+                          <TabsContent key={item.key} value={item.key}>
+                            {item.children}
                           </TabsContent>
                         ))}
                       </Tabs>
                     )}
               </div>
               <div className='py-8'>
-                {oauth_methods?.length > 0 && (
+                {OAUTH_METHODS?.length > 0 && (
                   <>
                     <div className='after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t'>
                       <span className='bg-background text-muted-foreground relative z-10 px-2'>
@@ -107,7 +101,7 @@ export default function Page() {
                       </span>
                     </div>
                     <div className='mt-6 flex justify-center gap-4 *:size-12 *:p-2'>
-                      {oauth_methods?.map((method: any) => {
+                      {OAUTH_METHODS?.map((method: any) => {
                         return (
                           <Button
                             key={method}

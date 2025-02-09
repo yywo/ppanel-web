@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Настройки аккаунта",
-    "loginPassword": "Пароль для входа",
     "newPassword": "Новый пароль",
     "passwordMismatch": "Пароли не совпадают",
     "repeatNewPassword": "Повторите новый пароль",
@@ -9,21 +8,64 @@
     "updateSuccess": "Успешно обновлено"
   },
   "notify": {
+    "balanceChange": "Изменение баланса",
     "bind": "Перейти к привязке",
+    "channels": "Каналы уведомлений",
     "emailNotification": "Уведомление по электронной почте",
+    "finance": "Финансы",
+    "login": "Вход",
     "notificationSettings": "Настройки уведомлений",
-    "telegramId": "Telegram ID",
+    "notificationTypes": "Типы уведомлений",
+    "save": "Сохранить изменения",
+    "subscribe": "Подписаться",
     "telegramIdPlaceholder": "Введите Telegram ID",
     "telegramNotification": "Уведомление в Telegram",
     "unbind": "Отвязать",
     "updateSuccess": "Успешно обновлено"
   },
-  "notifyEvent": {
-    "balanceChange": "Изменение баланса",
-    "finance": "Финансы",
-    "login": "Вход",
-    "notificationEvents": "События уведомлений",
-    "subscribe": "Подписка",
+  "thirdParty": {
+    "apple": {
+      "description": "Войти с помощью Apple"
+    },
+    "bind": "Подключить",
+    "bindFailed": "Не удалось подключить",
+    "bindMobile": "Подключить мобильный",
+    "bindSuccess": "Успешно подключено",
+    "change": "Изменить",
+    "confirm": "Подтвердить",
+    "email": {
+      "description": "Привязать ваш адрес электронной почты",
+      "invalid": "Пожалуйста, введите действительный адрес электронной почты",
+      "placeholder": "Введите ваш адрес электронной почты",
+      "title": "Изменить электронную почту"
+    },
+    "facebook": {
+      "description": "Войти с помощью Facebook"
+    },
+    "github": {
+      "description": "Войти с помощью GitHub"
+    },
+    "google": {
+      "description": "Войти с помощью Google"
+    },
+    "mobile": {
+      "description": "Привязать ваш мобильный номер",
+      "invalid": "Пожалуйста, введите действительный мобильный номер",
+      "placeholder": "Введите ваш мобильный номер",
+      "title": "Изменить номер мобильного телефона"
+    },
+    "phone": {
+      "description": "Привязать ваш номер телефона",
+      "placeholder": "Введите ваш номер телефона",
+      "title": "Изменить телефон"
+    },
+    "save": "Сохранить",
+    "telegram": {
+      "description": "Войти с помощью Telegram"
+    },
+    "title": "Подключенные аккаунты",
+    "unbind": "Отключить",
+    "update": "Обновить",
     "updateSuccess": "Успешное обновление"
   }
 }

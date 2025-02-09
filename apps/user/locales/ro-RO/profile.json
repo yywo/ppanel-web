@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Setări cont",
-    "loginPassword": "Parolă de autentificare",
     "newPassword": "Parolă nouă",
     "passwordMismatch": "Parolele introduse nu se potrivesc",
     "repeatNewPassword": "Repetă parola nouă",
@@ -9,21 +8,64 @@
     "updateSuccess": "Actualizare reușită"
   },
   "notify": {
+    "balanceChange": "Schimbare Sold",
     "bind": "Mergi la Legare",
+    "channels": "Canale de Notificare",
     "emailNotification": "Notificare prin email",
+    "finance": "Finanțe",
+    "login": "Autentificare",
     "notificationSettings": "Setări notificări",
-    "telegramId": "ID Telegram",
+    "notificationTypes": "Tipuri de Notificare",
+    "save": "Salvează Modificările",
+    "subscribe": "Abonează-te",
     "telegramIdPlaceholder": "Introduceți ID-ul Telegram",
     "telegramNotification": "Notificare Telegram",
     "unbind": "Dezleagă",
     "updateSuccess": "Actualizare reușită"
   },
-  "notifyEvent": {
-    "balanceChange": "Schimbare de sold",
-    "finance": "Finanțe",
-    "login": "Autentificare",
-    "notificationEvents": "Evenimente de notificare",
-    "subscribe": "Abonare",
-    "updateSuccess": "Actualizare reușită"
+  "thirdParty": {
+    "apple": {
+      "description": "Autentificare cu Apple"
+    },
+    "bind": "Conectează",
+    "bindFailed": "Conectare eșuată",
+    "bindMobile": "Conectează mobilul",
+    "bindSuccess": "Conectare reușită",
+    "change": "Schimbă",
+    "confirm": "Confirmă",
+    "email": {
+      "description": "Leagă adresa ta de email",
+      "invalid": "Te rugăm să introduci o adresă de email validă",
+      "placeholder": "Introdu adresa ta de email",
+      "title": "Schimbă Email"
+    },
+    "facebook": {
+      "description": "Autentificare cu Facebook"
+    },
+    "github": {
+      "description": "Autentificare cu GitHub"
+    },
+    "google": {
+      "description": "Autentificare cu Google"
+    },
+    "mobile": {
+      "description": "Leagă numărul tău de mobil",
+      "invalid": "Te rugăm să introduci un număr de mobil valid",
+      "placeholder": "Introdu numărul tău de mobil",
+      "title": "Schimbă numărul de mobil"
+    },
+    "phone": {
+      "description": "Leagă numărul tău de telefon",
+      "placeholder": "Introdu numărul tău de telefon",
+      "title": "Schimbă Telefon"
+    },
+    "save": "Salvează",
+    "telegram": {
+      "description": "Autentificare cu Telegram"
+    },
+    "title": "Conturi Conectate",
+    "unbind": "Deconectează",
+    "update": "Actualizează",
+    "updateSuccess": "Actualizare Reușită"
   }
 }

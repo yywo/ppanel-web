@@ -1,7 +1,6 @@
 {
   "accountSettings": {
-    "accountSettings": "Account Settings",
-    "loginPassword": "Login Password",
+    "accountSettings": "Password Settings",
     "newPassword": "New Password",
     "passwordMismatch": "Passwords do not match",
     "repeatNewPassword": "Repeat New Password",
@@ -9,21 +8,64 @@
     "updateSuccess": "Update Successful"
   },
   "notify": {
+    "balanceChange": "Balance Change",
     "bind": "Go to Binding",
+    "channels": "Notification Channels",
     "emailNotification": "Email Notification",
+    "finance": "Finance",
+    "login": "Login",
     "notificationSettings": "Notification Settings",
-    "telegramId": "Telegram ID",
+    "notificationTypes": "Notification Types",
+    "save": "Save Changes",
+    "subscribe": "Subscribe",
     "telegramIdPlaceholder": "Enter Telegram ID",
     "telegramNotification": "Telegram Notification",
     "unbind": "Unbind",
     "updateSuccess": "Update Successful"
   },
-  "notifyEvent": {
-    "balanceChange": "Balance Change",
-    "finance": "Finance",
-    "login": "Login",
-    "notificationEvents": "Notification Events",
-    "subscribe": "Subscribe",
+  "thirdParty": {
+    "apple": {
+      "description": "Sign in with Apple"
+    },
+    "bind": "Connect",
+    "bindFailed": "Failed to connect",
+    "bindMobile": "Connect Mobile",
+    "bindSuccess": "Successfully connected",
+    "change": "Change",
+    "confirm": "Confirm",
+    "email": {
+      "description": "Link your email address",
+      "invalid": "Please enter a valid email address",
+      "placeholder": "Enter your email address",
+      "title": "Change Email"
+    },
+    "facebook": {
+      "description": "Sign in with Facebook"
+    },
+    "github": {
+      "description": "Sign in with GitHub"
+    },
+    "google": {
+      "description": "Sign in with Google"
+    },
+    "mobile": {
+      "description": "Link your mobile number",
+      "invalid": "Please enter a valid mobile number",
+      "placeholder": "Enter your mobile number",
+      "title": "Change Mobile Number"
+    },
+    "phone": {
+      "description": "Link your phone number",
+      "placeholder": "Enter your phone number",
+      "title": "Change Phone"
+    },
+    "save": "Save",
+    "telegram": {
+      "description": "Sign in with Telegram"
+    },
+    "title": "Connected Accounts",
+    "unbind": "Disconnect",
+    "update": "Update",
     "updateSuccess": "Update Successful"
   }
 }

@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Налаштування облікового запису",
-    "loginPassword": "Пароль для входу",
     "newPassword": "Новий пароль",
     "passwordMismatch": "Паролі не співпадають",
     "repeatNewPassword": "Повторіть новий пароль",
@@ -9,21 +8,64 @@
     "updateSuccess": "Оновлення успішне"
   },
   "notify": {
+    "balanceChange": "Зміна балансу",
     "bind": "Перейти до прив'язки",
+    "channels": "Канали сповіщень",
     "emailNotification": "Сповіщення електронною поштою",
+    "finance": "Фінанси",
+    "login": "Увійти",
     "notificationSettings": "Налаштування сповіщень",
-    "telegramId": "Telegram ID",
+    "notificationTypes": "Типи сповіщень",
+    "save": "Зберегти зміни",
+    "subscribe": "Підписатися",
     "telegramIdPlaceholder": "Введіть Telegram ID",
     "telegramNotification": "Сповіщення Telegram",
     "unbind": "Відв'язати",
     "updateSuccess": "Оновлення успішне"
   },
-  "notifyEvent": {
-    "balanceChange": "Зміна балансу",
-    "finance": "Фінанси",
-    "login": "Вхід",
-    "notificationEvents": "Події сповіщень",
-    "subscribe": "Підписка",
+  "thirdParty": {
+    "apple": {
+      "description": "Увійти через Apple"
+    },
+    "bind": "Підключити",
+    "bindFailed": "Не вдалося підключити",
+    "bindMobile": "Підключити мобільний",
+    "bindSuccess": "Успішно підключено",
+    "change": "Змінити",
+    "confirm": "Підтвердити",
+    "email": {
+      "description": "Прив'яжіть вашу електронну адресу",
+      "invalid": "Будь ласка, введіть дійсну електронну адресу",
+      "placeholder": "Введіть вашу електронну адресу",
+      "title": "Змінити електронну пошту"
+    },
+    "facebook": {
+      "description": "Увійти через Facebook"
+    },
+    "github": {
+      "description": "Увійти через GitHub"
+    },
+    "google": {
+      "description": "Увійти через Google"
+    },
+    "mobile": {
+      "description": "Прив'яжіть ваш мобільний номер",
+      "invalid": "Будь ласка, введіть дійсний мобільний номер",
+      "placeholder": "Введіть ваш мобільний номер",
+      "title": "Змінити номер мобільного телефону"
+    },
+    "phone": {
+      "description": "Прив'яжіть ваш номер телефону",
+      "placeholder": "Введіть ваш номер телефону",
+      "title": "Змінити номер телефону"
+    },
+    "save": "Зберегти",
+    "telegram": {
+      "description": "Увійти через Telegram"
+    },
+    "title": "Підключені акаунти",
+    "unbind": "Відключити",
+    "update": "Оновити",
     "updateSuccess": "Оновлення успішне"
   }
 }

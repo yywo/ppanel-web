@@ -1,7 +1,6 @@
 {
   "accountSettings": {
     "accountSettings": "Paramètres du compte",
-    "loginPassword": "Mot de passe de connexion",
     "newPassword": "Nouveau mot de passe",
     "passwordMismatch": "Les deux mots de passe ne correspondent pas",
     "repeatNewPassword": "Répéter le nouveau mot de passe",
@@ -9,21 +8,64 @@
     "updateSuccess": "Mise à jour réussie"
   },
   "notify": {
+    "balanceChange": "Changement de Solde",
     "bind": "Aller à la liaison",
+    "channels": "Canaux de Notification",
     "emailNotification": "Notification par e-mail",
+    "finance": "Finance",
+    "login": "Connexion",
     "notificationSettings": "Paramètres de notification",
-    "telegramId": "ID Telegram",
+    "notificationTypes": "Types de Notification",
+    "save": "Enregistrer les Modifications",
+    "subscribe": "S'abonner",
     "telegramIdPlaceholder": "Entrez l'ID Telegram",
     "telegramNotification": "Notification Telegram",
     "unbind": "Délier",
     "updateSuccess": "Mise à jour réussie"
   },
-  "notifyEvent": {
-    "balanceChange": "Changement de solde",
-    "finance": "Finance",
-    "login": "Connexion",
-    "notificationEvents": "Événements de notification",
-    "subscribe": "S'abonner",
-    "updateSuccess": "Mise à jour réussie"
+  "thirdParty": {
+    "apple": {
+      "description": "Connectez-vous avec Apple"
+    },
+    "bind": "Connecter",
+    "bindFailed": "Échec de la connexion",
+    "bindMobile": "Connecter le mobile",
+    "bindSuccess": "Connecté avec succès",
+    "change": "Changer",
+    "confirm": "Confirmer",
+    "email": {
+      "description": "Liez votre adresse email",
+      "invalid": "Veuillez entrer une adresse email valide",
+      "placeholder": "Entrez votre adresse email",
+      "title": "Changer d'Email"
+    },
+    "facebook": {
+      "description": "Connectez-vous avec Facebook"
+    },
+    "github": {
+      "description": "Connectez-vous avec GitHub"
+    },
+    "google": {
+      "description": "Connectez-vous avec Google"
+    },
+    "mobile": {
+      "description": "Liez votre numéro de mobile",
+      "invalid": "Veuillez entrer un numéro de mobile valide",
+      "placeholder": "Entrez votre numéro de mobile",
+      "title": "Changer le numéro de mobile"
+    },
+    "phone": {
+      "description": "Liez votre numéro de téléphone",
+      "placeholder": "Entrez votre numéro de téléphone",
+      "title": "Changer de Téléphone"
+    },
+    "save": "Enregistrer",
+    "telegram": {
+      "description": "Connectez-vous avec Telegram"
+    },
+    "title": "Comptes Connectés",
+    "unbind": "Déconnecter",
+    "update": "Mettre à jour",
+    "updateSuccess": "Mise à Jour Réussie"
   }
 }
