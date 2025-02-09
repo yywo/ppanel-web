@@ -8,16 +8,6 @@
     "currencyUnitDescription": "فقط برای نمایش استفاده می‌شود؛ تغییر این مورد بر تمام واحدهای ارزی در سیستم تأثیر خواهد گذاشت",
     "saveSuccess": "ذخیره‌سازی موفقیت‌آمیز"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "کمیسیون فقط برای اولین خرید",
-    "commissionFirstTimeOnlyDescription": "هنگامی که فعال شود، کمیسیون فقط بر روی اولین پرداخت دعوت‌کننده تولید می‌شود؛ شما می‌توانید کاربران فردی را در مدیریت کاربران پیکربندی کنید",
-    "enableForcedInvite": "فعال‌سازی دعوت اجباری",
-    "enableForcedInviteDescription": "هنگامی که فعال شود، فقط کاربران دعوت‌شده می‌توانند ثبت‌نام کنند",
-    "inputPlaceholder": "وارد کنید",
-    "inviteCommissionPercentage": "درصد کمیسیون دعوت",
-    "inviteCommissionPercentageDescription": "نسبت توزیع کمیسیون جهانی پیش‌فرض؛ شما می‌توانید نسبت‌های فردی را در مدیریت کاربران پیکربندی کنید",
-    "saveSuccess": "ذخیره‌سازی موفقیت‌آمیز"
-  },
   "site": {
     "logo": "لوگو",
     "logoDescription": "برای نمایش لوگو در مکان‌های تعیین‌شده استفاده می‌شود",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "ارز",
-    "invite": "دعوت",
     "site": "سایت",
-    "telegram": "تلگرام",
-    "tos": "شرایط خدمات",
-    "verify": "تأیید"
-  },
-  "telegram": {
-    "botToken": "توکن ربات",
-    "botTokenDescription": "توکنی که توسط Botfather ارائه شده است را وارد کنید",
-    "enableBotNotifications": "فعال‌سازی اعلان‌های ربات",
-    "enableBotNotificationsDescription": "در صورت فعال بودن، ربات اعلان‌های پایه را به مدیران و کاربران متصل در تلگرام ارسال می‌کند",
-    "groupURL": "آدرس گروه",
-    "groupURLDescription": "در صورت پر شدن، به کاربران نمایش داده می‌شود یا در مکان‌های مورد نیاز استفاده می‌شود",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "ذخیره با موفقیت انجام شد",
-    "webhookDomain": "دامنه وب‌هوک",
-    "webhookDomainDescription": "نام دامنه سرور وب‌هوک را وارد کنید"
+    "tos": "شرایط خدمات"
   },
   "tos": {
     "saveSuccess": "ذخیره با موفقیت انجام شد",
     "title": "شرایط خدمات"
-  },
-  "verify": {
-    "inputPlaceholder": "وارد کنید",
-    "loginVerificationCode": "کد تأیید ورود",
-    "loginVerificationCodeDescription": "تأیید انسانی در هنگام ورود",
-    "registrationVerificationCode": "کد تأیید ثبت‌نام",
-    "registrationVerificationCodeDescription": "تأیید انسانی در هنگام ثبت‌نام",
-    "resetPasswordVerificationCode": "کد تأیید بازنشانی رمز عبور",
-    "resetPasswordVerificationCodeDescription": "تأیید انسانی در هنگام بازنشانی رمز عبور",
-    "saveSuccess": "ذخیره با موفقیت انجام شد",
-    "turnstileSecret": "کلید مخفی Turnstile",
-    "turnstileSecretDescription": "کلید مخفی Turnstile ارائه شده توسط Cloudflare",
-    "turnstileSiteKey": "کلید سایت Turnstile",
-    "turnstileSiteKeyDescription": "کلید سایت Turnstile ارائه شده توسط Cloudflare"
   }
 }

@@ -8,16 +8,6 @@
     "currencyUnitDescription": "표시용으로만 사용되며, 변경 시 시스템 내 모든 통화 단위가 변경됩니다",
     "saveSuccess": "저장 성공"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "최초 구매 시에만 커미션",
-    "commissionFirstTimeOnlyDescription": "활성화하면, 초대받은 사람이 최초 결제 시에만 커미션이 생성됩니다. 사용자 관리에서 개별 사용자를 구성할 수 있습니다.",
-    "enableForcedInvite": "강제 초대 활성화",
-    "enableForcedInviteDescription": "활성화하면, 초대받은 사용자만 등록할 수 있습니다.",
-    "inputPlaceholder": "입력하세요",
-    "inviteCommissionPercentage": "초대 커미션 비율",
-    "inviteCommissionPercentageDescription": "기본 전역 커미션 배분 비율입니다. 사용자 관리에서 개별 비율을 구성할 수 있습니다.",
-    "saveSuccess": "저장 성공"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "LOGO를 표시해야 하는 위치에 사용됩니다",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "통화",
-    "invite": "초대",
     "site": "사이트",
-    "telegram": "텔레그램",
-    "tos": "서비스 약관",
-    "verify": "검증"
-  },
-  "telegram": {
-    "botToken": "봇 토큰",
-    "botTokenDescription": "Botfather가 제공한 토큰을 입력하세요",
-    "enableBotNotifications": "봇 알림 활성화",
-    "enableBotNotificationsDescription": "활성화하면, 봇이 Telegram에 연결된 관리자와 사용자에게 기본 알림을 보냅니다",
-    "groupURL": "그룹 URL",
-    "groupURLDescription": "입력하면 사용자 인터페이스에 표시되거나 필요한 위치에 사용됩니다",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "저장 성공",
-    "webhookDomain": "웹훅 도메인",
-    "webhookDomainDescription": "웹훅 서버의 도메인 이름을 입력하세요"
+    "tos": "서비스 약관"
   },
   "tos": {
     "saveSuccess": "저장 성공",
     "title": "서비스 약관"
-  },
-  "verify": {
-    "inputPlaceholder": "입력하세요",
-    "loginVerificationCode": "로그인 인증 코드",
-    "loginVerificationCodeDescription": "로그인 시의 인간 확인",
-    "registrationVerificationCode": "등록 인증 코드",
-    "registrationVerificationCodeDescription": "등록 시의 인간 확인",
-    "resetPasswordVerificationCode": "비밀번호 재설정 인증 코드",
-    "resetPasswordVerificationCodeDescription": "비밀번호 재설정 시의 인간 확인",
-    "saveSuccess": "저장 성공",
-    "turnstileSecret": "Turnstile 비밀키",
-    "turnstileSecretDescription": "Cloudflare에서 제공하는 Turnstile 비밀키",
-    "turnstileSiteKey": "Turnstile 사이트 키",
-    "turnstileSiteKeyDescription": "Cloudflare에서 제공하는 Turnstile 사이트 키"
   }
 }

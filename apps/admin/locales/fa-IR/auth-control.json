@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "محدودیت ثبت‌نام IP",
-  "ipRegistrationLimitDescription": "هنگامی که فعال شود، آی‌پی‌هایی که شرایط قوانین را برآورده می‌کنند از ثبت‌نام محدود خواهند شد؛ توجه داشته باشید که تعیین آی‌پی ممکن است به دلیل شبکه‌های تحویل محتوا (CDN) یا پروکسی‌های فرانت‌اند مشکلاتی ایجاد کند",
-  "penaltyTime": "زمان جریمه (دقیقه)",
-  "penaltyTimeDescription": "کاربران باید منتظر بمانند تا زمان جریمه به پایان برسد و سپس دوباره ثبت‌نام کنند",
-  "registrationLimitCount": "تعداد محدودیت ثبت‌نام",
-  "registrationLimitCountDescription": "فعال‌سازی جریمه پس از رسیدن به حد ثبت‌نام",
-  "saveSuccess": "ذخیره با موفقیت انجام شد",
-  "stopNewUserRegistration": "توقف ثبت‌نام کاربر جدید",
-  "stopNewUserRegistrationDescription": "وقتی فعال باشد، هیچ‌کس نمی‌تواند ثبت‌نام کند",
-  "trialRegistration": "ثبت‌نام آزمایشی",
-  "trialRegistrationDescription": "فعال‌سازی ثبت‌نام آزمایشی؛ ابتدا بسته و مدت زمان آزمایشی را تغییر دهید"
+  "invite": {
+    "commissionFirstTimeOnly": "کمیسیون فقط برای خرید اول",
+    "commissionFirstTimeOnlyDescription": "زمانی که فعال باشد، کمیسیون فقط بر روی اولین پرداخت دعوت‌کننده تولید می‌شود؛ می‌توانید کاربران فردی را در مدیریت کاربران پیکربندی کنید",
+    "enableForcedInvite": "فعال‌سازی دعوت اجباری",
+    "enableForcedInviteDescription": "زمانی که فعال باشد، فقط کاربران دعوت‌شده می‌توانند ثبت‌نام کنند",
+    "inputPlaceholder": "وارد کنید",
+    "inviteCommissionPercentage": "درصد کمیسیون دعوت",
+    "inviteCommissionPercentageDescription": "نسبت توزیع کمیسیون جهانی پیش‌فرض؛ می‌توانید نسبت‌های فردی را در مدیریت کاربران پیکربندی کنید",
+    "inviteSettings": "تنظیمات دعوت",
+    "saveSuccess": "ذخیره با موفقیت انجام شد"
+  },
+  "register": {
+    "ipRegistrationLimit": "محدودیت ثبت‌نام IP",
+    "ipRegistrationLimitDescription": "زمانی که فعال باشد، IPهایی که شرایط قوانین را برآورده می‌کنند از ثبت‌نام محدود خواهند شد؛ توجه داشته باشید که تعیین IP ممکن است به دلیل CDNها یا پروکسی‌های جلویی مشکلاتی ایجاد کند",
+    "penaltyTime": "زمان جریمه (دقیقه)",
+    "penaltyTimeDescription": "کاربران باید منتظر بمانند تا زمان جریمه به پایان برسد قبل از اینکه دوباره ثبت‌نام کنند",
+    "registerSettings": "تنظیمات ثبت‌نام",
+    "registrationLimitCount": "تعداد محدودیت ثبت‌نام",
+    "registrationLimitCountDescription": "پس از رسیدن به محدودیت ثبت‌نام، جریمه را فعال کنید",
+    "saveSuccess": "ذخیره با موفقیت انجام شد",
+    "stopNewUserRegistration": "متوقف کردن ثبت‌نام کاربران جدید",
+    "stopNewUserRegistrationDescription": "زمانی که فعال باشد، هیچ‌کس نمی‌تواند ثبت‌نام کند",
+    "trialRegistration": "ثبت‌نام آزمایشی",
+    "trialRegistrationDescription": "فعال‌سازی ثبت‌نام آزمایشی؛ ابتدا بسته آزمایشی و مدت زمان را تغییر دهید"
+  },
+  "verify": {
+    "inputPlaceholder": "وارد کنید",
+    "loginVerificationCode": "کد تأیید ورود",
+    "loginVerificationCodeDescription": "تأیید انسانی در حین ورود",
+    "registrationVerificationCode": "کد تأیید ثبت‌نام",
+    "registrationVerificationCodeDescription": "تأیید انسانی در حین ثبت‌نام",
+    "resetPasswordVerificationCode": "کد تأیید بازنشانی رمز عبور",
+    "resetPasswordVerificationCodeDescription": "تأیید انسانی در حین بازنشانی رمز عبور",
+    "saveSuccess": "ذخیره با موفقیت انجام شد",
+    "turnstileSecret": "کلید مخفی ترنستایل",
+    "turnstileSecretDescription": "کلید مخفی ترنستایل ارائه شده توسط Cloudflare",
+    "turnstileSiteKey": "کلید سایت ترنستایل",
+    "turnstileSiteKeyDescription": "کلید سایت ترنستایل ارائه شده توسط Cloudflare",
+    "verifySettings": "تنظیمات تأیید"
+  }
 }

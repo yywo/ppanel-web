@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Utilisé uniquement pour l'affichage, toute modification entraînera un changement de toutes les unités monétaires dans le système",
     "saveSuccess": "Enregistrement réussi"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Commission uniquement sur le premier achat",
-    "commissionFirstTimeOnlyDescription": "Une fois activé, la commission est générée uniquement lors du premier paiement de l'invité. Vous pouvez configurer chaque utilisateur individuellement dans la gestion des utilisateurs.",
-    "enableForcedInvite": "Activer l'invitation forcée",
-    "enableForcedInviteDescription": "Une fois activé, seuls les utilisateurs invités peuvent s'inscrire.",
-    "inputPlaceholder": "Veuillez entrer",
-    "inviteCommissionPercentage": "Pourcentage de commission d'invitation",
-    "inviteCommissionPercentageDescription": "Pourcentage de commission global par défaut, vous pouvez configurer un pourcentage individuel dans la gestion des utilisateurs.",
-    "saveSuccess": "Enregistrement réussi"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Utilisé pour afficher l'emplacement où le LOGO doit être montré",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Devise",
-    "invite": "Inviter",
     "site": "Site",
-    "telegram": "Telegram",
-    "tos": "Conditions de service",
-    "verify": "Vérifier"
-  },
-  "telegram": {
-    "botToken": "Jeton du robot",
-    "botTokenDescription": "Veuillez entrer le jeton fourni par Botfather",
-    "enableBotNotifications": "Activer les notifications du robot",
-    "enableBotNotificationsDescription": "Une fois activé, le robot enverra des notifications de base aux administrateurs et utilisateurs liés à Telegram",
-    "groupURL": "URL du groupe",
-    "groupURLDescription": "Une fois rempli, il sera affiché ou utilisé là où nécessaire sur le côté utilisateur",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://exemple.com",
-    "saveSuccess": "Enregistrement réussi",
-    "webhookDomain": "Domaine du Webhook",
-    "webhookDomainDescription": "Entrez le nom de domaine du serveur de webhook"
+    "tos": "Conditions de service"
   },
   "tos": {
     "saveSuccess": "Enregistrement réussi",
     "title": "Conditions de service"
-  },
-  "verify": {
-    "inputPlaceholder": "Veuillez entrer",
-    "loginVerificationCode": "Code de vérification de connexion",
-    "loginVerificationCodeDescription": "Vérification humaine lors de la connexion",
-    "registrationVerificationCode": "Code de vérification d'inscription",
-    "registrationVerificationCodeDescription": "Vérification humaine lors de l'inscription",
-    "resetPasswordVerificationCode": "Code de vérification de réinitialisation du mot de passe",
-    "resetPasswordVerificationCodeDescription": "Vérification humaine lors de la réinitialisation du mot de passe",
-    "saveSuccess": "Enregistrement réussi",
-    "turnstileSecret": "Clé secrète Turnstile",
-    "turnstileSecretDescription": "Clé secrète Turnstile fournie par Cloudflare",
-    "turnstileSiteKey": "Clé de site Turnstile",
-    "turnstileSiteKeyDescription": "Clé de site Turnstile fournie par Cloudflare"
   }
 }

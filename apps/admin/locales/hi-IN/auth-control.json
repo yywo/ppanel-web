@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "आईपी पंजीकरण सीमा",
-  "ipRegistrationLimitDescription": "जब सक्षम किया जाता है, तो नियम आवश्यकताओं को पूरा करने वाले IPs को पंजीकरण से प्रतिबंधित कर दिया जाएगा; ध्यान दें कि IP निर्धारण CDNs या फ्रंटेंड प्रॉक्सी के कारण समस्याएं उत्पन्न कर सकता है",
-  "penaltyTime": "दंड समय (मिनटों में)",
-  "penaltyTimeDescription": "उपयोगकर्ताओं को फिर से पंजीकरण करने से पहले दंड समय समाप्त होने की प्रतीक्षा करनी होगी",
-  "registrationLimitCount": "पंजीकरण सीमा संख्या",
-  "registrationLimitCountDescription": "पंजीकरण सीमा तक पहुँचने के बाद दंड सक्षम करें",
-  "saveSuccess": "सहेजना सफल हुआ",
-  "stopNewUserRegistration": "नए उपयोगकर्ता पंजीकरण को रोकें",
-  "stopNewUserRegistrationDescription": "सक्रिय होने पर, कोई भी पंजीकरण नहीं कर सकता",
-  "trialRegistration": "परीक्षण पंजीकरण",
-  "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि संशोधित करें"
+  "invite": {
+    "commissionFirstTimeOnly": "पहली खरीद पर कमीशन केवल",
+    "commissionFirstTimeOnlyDescription": "जब सक्षम किया जाता है, तो कमीशन केवल निमंत्रक के पहले भुगतान पर उत्पन्न होता है; आप उपयोगकर्ता प्रबंधन में व्यक्तिगत उपयोगकर्ताओं को कॉन्फ़िगर कर सकते हैं",
+    "enableForcedInvite": "अनिवार्य निमंत्रण सक्षम करें",
+    "enableForcedInviteDescription": "जब सक्षम किया जाता है, तो केवल निमंत्रित उपयोगकर्ता पंजीकरण कर सकते हैं",
+    "inputPlaceholder": "डालें",
+    "inviteCommissionPercentage": "निमंत्रण कमीशन प्रतिशत",
+    "inviteCommissionPercentageDescription": "डिफ़ॉल्ट वैश्विक कमीशन वितरण अनुपात; आप उपयोगकर्ता प्रबंधन में व्यक्तिगत अनुपात कॉन्फ़िगर कर सकते हैं",
+    "inviteSettings": "निमंत्रण सेटिंग्स",
+    "saveSuccess": "सफलता से सहेजा गया"
+  },
+  "register": {
+    "ipRegistrationLimit": "आईपी पंजीकरण सीमा",
+    "ipRegistrationLimitDescription": "जब सक्षम किया जाता है, तो नियम आवश्यकताओं को पूरा करने वाले आईपी पंजीकरण से प्रतिबंधित होंगे; ध्यान दें कि आईपी निर्धारण सीडीएन या फ्रंटेंड प्रॉक्सी के कारण समस्याएँ उत्पन्न कर सकता है",
+    "penaltyTime": "दंड समय (मिनट)",
+    "penaltyTimeDescription": "उपयोगकर्ताओं को फिर से पंजीकरण करने से पहले दंड समय समाप्त होने का इंतजार करना होगा",
+    "registerSettings": "पंजीकरण सेटिंग्स",
+    "registrationLimitCount": "पंजीकरण सीमा संख्या",
+    "registrationLimitCountDescription": "पंजीकरण सीमा तक पहुँचने के बाद दंड सक्षम करें",
+    "saveSuccess": "सफलता से सहेजा गया",
+    "stopNewUserRegistration": "नए उपयोगकर्ता पंजीकरण रोकें",
+    "stopNewUserRegistrationDescription": "जब सक्षम किया जाता है, तो कोई भी पंजीकरण नहीं कर सकता",
+    "trialRegistration": "परीक्षण पंजीकरण",
+    "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि को संशोधित करें"
+  },
+  "verify": {
+    "inputPlaceholder": "डालें",
+    "loginVerificationCode": "लॉगिन सत्यापन कोड",
+    "loginVerificationCodeDescription": "लॉगिन के दौरान मानव सत्यापन",
+    "registrationVerificationCode": "पंजीकरण सत्यापन कोड",
+    "registrationVerificationCodeDescription": "पंजीकरण के दौरान मानव सत्यापन",
+    "resetPasswordVerificationCode": "पासवर्ड रीसेट सत्यापन कोड",
+    "resetPasswordVerificationCodeDescription": "पासवर्ड रीसेट के दौरान मानव सत्यापन",
+    "saveSuccess": "सफलता से सहेजा गया",
+    "turnstileSecret": "टर्नस्टाइल गुप्त कुंजी",
+    "turnstileSecretDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल गुप्त कुंजी",
+    "turnstileSiteKey": "टर्नस्टाइल साइट कुंजी",
+    "turnstileSiteKeyDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल साइट कुंजी",
+    "verifySettings": "सत्यापन सेटिंग्स"
+  }
 }

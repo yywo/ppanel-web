@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Pouze pro zobrazení, po změně se změní všechny měnové jednotky v systému",
     "saveSuccess": "Úspěšně uloženo"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Provize pouze při prvním nákupu",
-    "commissionFirstTimeOnlyDescription": "Po aktivaci se provize generuje pouze při první platbě pozvaného uživatele. Můžete konfigurovat jednotlivé uživatele ve správě uživatelů.",
-    "enableForcedInvite": "Povolit povinné pozvání",
-    "enableForcedInviteDescription": "Po aktivaci se mohou registrovat pouze pozvaní uživatelé.",
-    "inputPlaceholder": "Prosím zadejte",
-    "inviteCommissionPercentage": "Procento provize za pozvání",
-    "inviteCommissionPercentageDescription": "Výchozí globální procento rozdělení provize, můžete konfigurovat jednotlivé procento ve správě uživatelů.",
-    "saveSuccess": "Úspěšně uloženo"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Používá se k zobrazení místa, kde je potřeba zobrazit LOGO",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Měna",
-    "invite": "Pozvat",
     "site": "Stránka",
-    "telegram": "Telegram",
-    "tos": "Podmínky služby",
-    "verify": "Ověřit"
-  },
-  "telegram": {
-    "botToken": "Token robota",
-    "botTokenDescription": "Zadejte token poskytnutý Botfatherem",
-    "enableBotNotifications": "Povolit oznámení robota",
-    "enableBotNotificationsDescription": "Po povolení bude robot posílat základní oznámení správcům a uživatelům propojeným s Telegramem",
-    "groupURL": "URL skupiny",
-    "groupURLDescription": "Po vyplnění se zobrazí na uživatelské straně nebo tam, kde je potřeba",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Úspěšně uloženo",
-    "webhookDomain": "Doména webhooku",
-    "webhookDomainDescription": "Zadejte název domény serveru webhooku"
+    "tos": "Podmínky služby"
   },
   "tos": {
     "saveSuccess": "Uložení bylo úspěšné",
     "title": "Podmínky služby"
-  },
-  "verify": {
-    "inputPlaceholder": "Prosím zadejte",
-    "loginVerificationCode": "Ověřovací kód pro přihlášení",
-    "loginVerificationCodeDescription": "Ověření člověka při přihlášení",
-    "registrationVerificationCode": "Ověřovací kód pro registraci",
-    "registrationVerificationCodeDescription": "Ověření člověka při registraci",
-    "resetPasswordVerificationCode": "Ověřovací kód pro resetování hesla",
-    "resetPasswordVerificationCodeDescription": "Ověření člověka při resetování hesla",
-    "saveSuccess": "Úspěšně uloženo",
-    "turnstileSecret": "Turnstile tajný klíč",
-    "turnstileSecretDescription": "Turnstile tajný klíč poskytovaný Cloudflare",
-    "turnstileSiteKey": "Turnstile klíč webu",
-    "turnstileSiteKeyDescription": "Turnstile klíč webu poskytovaný Cloudflare"
   }
 }

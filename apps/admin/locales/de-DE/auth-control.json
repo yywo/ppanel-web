@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP-Registrierungsgrenze",
-  "ipRegistrationLimitDescription": "Wenn aktiviert, werden IPs, die die Regelanforderungen erfüllen, von der Registrierung ausgeschlossen; beachten Sie, dass die Bestimmung der IPs aufgrund von CDNs oder Frontend-Proxys Probleme verursachen kann",
-  "penaltyTime": "Strafzeit (Minuten)",
-  "penaltyTimeDescription": "Benutzer müssen warten, bis die Strafzeit abgelaufen ist, bevor sie sich erneut registrieren können",
-  "registrationLimitCount": "Anzahl der Anmeldungen",
-  "registrationLimitCountDescription": "Strafe aktivieren, nachdem das Registrierungslimit erreicht wurde",
-  "saveSuccess": "Erfolgreich gespeichert",
-  "stopNewUserRegistration": "Neue Benutzerregistrierung stoppen",
-  "stopNewUserRegistrationDescription": "Wenn aktiviert, kann sich niemand registrieren",
-  "trialRegistration": "Studienregistrierung",
-  "trialRegistrationDescription": "Testregistrierung aktivieren; zuerst Testpaket und -dauer anpassen"
+  "invite": {
+    "commissionFirstTimeOnly": "Provision nur beim ersten Kauf",
+    "commissionFirstTimeOnlyDescription": "Wenn aktiviert, wird die Provision nur bei der ersten Zahlung des Einladers generiert; individuelle Benutzer können in der Benutzerverwaltung konfiguriert werden",
+    "enableForcedInvite": "Erzwinge Einladung",
+    "enableForcedInviteDescription": "Wenn aktiviert, können sich nur eingeladene Benutzer registrieren",
+    "inputPlaceholder": "Eingeben",
+    "inviteCommissionPercentage": "Einladungsprovisionssatz",
+    "inviteCommissionPercentageDescription": "Standardmäßiges globales Provisionsverteilungsschema; individuelle Sätze können in der Benutzerverwaltung konfiguriert werden",
+    "inviteSettings": "Einladungseinstellungen",
+    "saveSuccess": "Erfolgreich gespeichert"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP-Registrierungsgrenze",
+    "ipRegistrationLimitDescription": "Wenn aktiviert, werden IPs, die die Regelanforderungen erfüllen, von der Registrierung ausgeschlossen; beachten Sie, dass die IP-Bestimmung aufgrund von CDNs oder Frontend-Proxys Probleme verursachen kann",
+    "penaltyTime": "Strafzeit (Minuten)",
+    "penaltyTimeDescription": "Benutzer müssen warten, bis die Strafzeit abgelaufen ist, bevor sie sich erneut registrieren",
+    "registerSettings": "Registrierungseinstellungen",
+    "registrationLimitCount": "Registrierungsgrenzanzahl",
+    "registrationLimitCountDescription": "Strafe aktivieren, nachdem die Registrierungsgrenze erreicht wurde",
+    "saveSuccess": "Erfolgreich gespeichert",
+    "stopNewUserRegistration": "Neue Benutzerregistrierung stoppen",
+    "stopNewUserRegistrationDescription": "Wenn aktiviert, kann sich niemand registrieren",
+    "trialRegistration": "Testregistrierung",
+    "trialRegistrationDescription": "Testregistrierung aktivieren; Testpaket und -dauer zuerst ändern"
+  },
+  "verify": {
+    "inputPlaceholder": "Eingeben",
+    "loginVerificationCode": "Anmeldebestätigungscode",
+    "loginVerificationCodeDescription": "Menschliche Überprüfung während der Anmeldung",
+    "registrationVerificationCode": "Registrierungsbestätigungscode",
+    "registrationVerificationCodeDescription": "Menschliche Überprüfung während der Registrierung",
+    "resetPasswordVerificationCode": "Bestätigungscode zum Zurücksetzen des Passworts",
+    "resetPasswordVerificationCodeDescription": "Menschliche Überprüfung während der Passwortzurücksetzung",
+    "saveSuccess": "Erfolgreich gespeichert",
+    "turnstileSecret": "Turnstile-Geheimschlüssel",
+    "turnstileSecretDescription": "Turnstile-Geheimschlüssel, bereitgestellt von Cloudflare",
+    "turnstileSiteKey": "Turnstile-Seitenschlüssel",
+    "turnstileSiteKeyDescription": "Turnstile-Seitenschlüssel, bereitgestellt von Cloudflare",
+    "verifySettings": "Überprüfungseinstellungen"
+  }
 }

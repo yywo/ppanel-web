@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP 註冊限制",
-  "ipRegistrationLimitDescription": "啟用後，符合規則要求的IP將被限制註冊；請注意，由於CDN或前端代理的原因，IP判斷可能會引起問題",
-  "penaltyTime": "罰時（分鐘）",
-  "penaltyTimeDescription": "用戶必須等待懲罰時間結束後才能再次註冊",
-  "registrationLimitCount": "報名人數上限",
-  "registrationLimitCountDescription": "達到註冊限制後啟用懲罰",
-  "saveSuccess": "儲存成功",
-  "stopNewUserRegistration": "停止新用戶註冊",
-  "stopNewUserRegistrationDescription": "啟用後，任何人都無法註冊",
-  "trialRegistration": "試驗註冊",
-  "trialRegistrationDescription": "啟用試用註冊；首先修改試用套餐和期限"
+  "invite": {
+    "commissionFirstTimeOnly": "僅首次購買佣金",
+    "commissionFirstTimeOnlyDescription": "啟用後，佣金僅在邀請者的首次付款時產生；您可以在用戶管理中配置個別用戶",
+    "enableForcedInvite": "啟用強制邀請",
+    "enableForcedInviteDescription": "啟用後，只有被邀請的用戶才能註冊",
+    "inputPlaceholder": "輸入",
+    "inviteCommissionPercentage": "邀請佣金百分比",
+    "inviteCommissionPercentageDescription": "默認全局佣金分配比例；您可以在用戶管理中配置個別比例",
+    "inviteSettings": "邀請設置",
+    "saveSuccess": "保存成功"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP 註冊限制",
+    "ipRegistrationLimitDescription": "啟用後，符合規則要求的 IP 將被限制註冊；請注意，IP 判定可能因 CDN 或前端代理而出現問題",
+    "penaltyTime": "懲罰時間（分鐘）",
+    "penaltyTimeDescription": "用戶必須等待懲罰時間過後才能再次註冊",
+    "registerSettings": "註冊設置",
+    "registrationLimitCount": "註冊限制次數",
+    "registrationLimitCountDescription": "達到註冊限制後啟用懲罰",
+    "saveSuccess": "保存成功",
+    "stopNewUserRegistration": "停止新用戶註冊",
+    "stopNewUserRegistrationDescription": "啟用後，任何人都無法註冊",
+    "trialRegistration": "試用註冊",
+    "trialRegistrationDescription": "啟用試用註冊；請先修改試用包和時長"
+  },
+  "verify": {
+    "inputPlaceholder": "輸入",
+    "loginVerificationCode": "登錄驗證碼",
+    "loginVerificationCodeDescription": "登錄時的人機驗證",
+    "registrationVerificationCode": "註冊驗證碼",
+    "registrationVerificationCodeDescription": "註冊時的人機驗證",
+    "resetPasswordVerificationCode": "重置密碼驗證碼",
+    "resetPasswordVerificationCodeDescription": "重置密碼時的人機驗證",
+    "saveSuccess": "保存成功",
+    "turnstileSecret": "轉閘密鑰",
+    "turnstileSecretDescription": "Cloudflare 提供的轉閘密鑰",
+    "turnstileSiteKey": "轉閘網站密鑰",
+    "turnstileSiteKeyDescription": "Cloudflare 提供的轉閘網站密鑰",
+    "verifySettings": "驗證設置"
+  }
 }

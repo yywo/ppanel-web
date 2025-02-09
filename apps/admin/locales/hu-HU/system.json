@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Csak megjelenítésre használatos, a módosítás után a rendszer összes pénznem egysége megváltozik",
     "saveSuccess": "Sikeres mentés"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Csak az első vásárláskor járó jutalék",
-    "commissionFirstTimeOnlyDescription": "Bekapcsolás után a jutalék csak az első fizetéskor keletkezik. Az egyes felhasználók beállításait a felhasználókezelésben konfigurálhatja.",
-    "enableForcedInvite": "Kényszerített meghívás engedélyezése",
-    "enableForcedInviteDescription": "Bekapcsolás után csak meghívott felhasználók regisztrálhatnak.",
-    "inputPlaceholder": "Kérem, írja be",
-    "inviteCommissionPercentage": "Meghívási jutalék százalék",
-    "inviteCommissionPercentageDescription": "Alapértelmezett globális jutalék elosztási arány, az egyes arányokat a felhasználókezelésben konfigurálhatja.",
-    "saveSuccess": "Sikeres mentés"
-  },
   "site": {
     "logo": "LOGÓ",
     "logoDescription": "A LOGÓ megjelenítésére szolgáló hely",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Pénznem",
-    "invite": "Meghívás",
     "site": "Webhely",
-    "telegram": "Telegram",
-    "tos": "Szolgáltatási feltételek",
-    "verify": "Ellenőrzés"
-  },
-  "telegram": {
-    "botToken": "Bot Token",
-    "botTokenDescription": "Kérjük, adja meg a Botfather által biztosított tokent",
-    "enableBotNotifications": "Bot értesítések engedélyezése",
-    "enableBotNotificationsDescription": "Engedélyezés után a bot alapértesítéseket küld a Telegramhoz kapcsolt adminisztrátoroknak és felhasználóknak",
-    "groupURL": "Csoport URL",
-    "groupURLDescription": "Kitöltés után megjelenik a felhasználói oldalon vagy ahol szükséges",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Sikeres mentés",
-    "webhookDomain": "Webhook Domain",
-    "webhookDomainDescription": "Adja meg a webhook szerver domain nevét"
+    "tos": "Szolgáltatási feltételek"
   },
   "tos": {
     "saveSuccess": "Sikeres mentés",
     "title": "Szolgáltatási feltételek"
-  },
-  "verify": {
-    "inputPlaceholder": "Kérjük, írja be",
-    "loginVerificationCode": "Bejelentkezési ellenőrző kód",
-    "loginVerificationCodeDescription": "Emberi gép ellenőrzés bejelentkezéskor",
-    "registrationVerificationCode": "Regisztrációs ellenőrző kód",
-    "registrationVerificationCodeDescription": "Emberi gép ellenőrzés regisztrációkor",
-    "resetPasswordVerificationCode": "Jelszó visszaállító ellenőrző kód",
-    "resetPasswordVerificationCodeDescription": "Emberi gép ellenőrzés jelszó visszaállításakor",
-    "saveSuccess": "Sikeres mentés",
-    "turnstileSecret": "Turnstile titkos kulcs",
-    "turnstileSecretDescription": "A Cloudflare által biztosított Turnstile titkos kulcs",
-    "turnstileSiteKey": "Turnstile webhely kulcs",
-    "turnstileSiteKeyDescription": "A Cloudflare által biztosított Turnstile webhely kulcs"
   }
 }

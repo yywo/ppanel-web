@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "Giới hạn Đăng ký IP",
-  "ipRegistrationLimitDescription": "Khi được kích hoạt, các địa chỉ IP đáp ứng yêu cầu của quy tắc sẽ bị hạn chế đăng ký; lưu ý rằng việc xác định IP có thể gây ra vấn đề do các CDN hoặc proxy phía trước",
-  "penaltyTime": "Thời gian phạt (phút)",
-  "penaltyTimeDescription": "Người dùng phải chờ thời gian phạt kết thúc trước khi đăng ký lại",
-  "registrationLimitCount": "Số lượng giới hạn đăng ký",
-  "registrationLimitCountDescription": "Kích hoạt hình phạt sau khi đạt đến giới hạn đăng ký",
-  "saveSuccess": "Lưu thành công",
-  "stopNewUserRegistration": "Dừng Đăng Ký Người Dùng Mới",
-  "stopNewUserRegistrationDescription": "Khi được bật, không ai có thể đăng ký",
-  "trialRegistration": "Đăng ký Thử nghiệm",
-  "trialRegistrationDescription": "Kích hoạt đăng ký dùng thử; trước tiên hãy chỉnh sửa gói và thời gian dùng thử"
+  "invite": {
+    "commissionFirstTimeOnly": "Hoa hồng chỉ cho lần mua đầu tiên",
+    "commissionFirstTimeOnlyDescription": "Khi được kích hoạt, hoa hồng chỉ được tạo ra trên khoản thanh toán đầu tiên của người mời; bạn có thể cấu hình từng người dùng trong quản lý người dùng",
+    "enableForcedInvite": "Kích hoạt Mời Bắt Buộc",
+    "enableForcedInviteDescription": "Khi được kích hoạt, chỉ những người dùng được mời mới có thể đăng ký",
+    "inputPlaceholder": "Nhập",
+    "inviteCommissionPercentage": "Tỷ lệ Hoa hồng Mời",
+    "inviteCommissionPercentageDescription": "Tỷ lệ phân phối hoa hồng toàn cầu mặc định; bạn có thể cấu hình tỷ lệ riêng cho từng người dùng trong quản lý người dùng",
+    "inviteSettings": "Cài đặt Mời",
+    "saveSuccess": "Lưu thành công"
+  },
+  "register": {
+    "ipRegistrationLimit": "Giới hạn Đăng ký theo IP",
+    "ipRegistrationLimitDescription": "Khi được kích hoạt, các IP đáp ứng yêu cầu quy tắc sẽ bị hạn chế đăng ký; lưu ý rằng việc xác định IP có thể gây ra vấn đề do CDN hoặc proxy phía trước",
+    "penaltyTime": "Thời gian Phạt (phút)",
+    "penaltyTimeDescription": "Người dùng phải chờ thời gian phạt hết hạn trước khi đăng ký lại",
+    "registerSettings": "Cài đặt Đăng ký",
+    "registrationLimitCount": "Số lượng Giới hạn Đăng ký",
+    "registrationLimitCountDescription": "Kích hoạt hình phạt sau khi đạt giới hạn đăng ký",
+    "saveSuccess": "Lưu thành công",
+    "stopNewUserRegistration": "Ngừng Đăng ký Người dùng Mới",
+    "stopNewUserRegistrationDescription": "Khi được kích hoạt, không ai có thể đăng ký",
+    "trialRegistration": "Đăng ký Thử nghiệm",
+    "trialRegistrationDescription": "Kích hoạt đăng ký thử nghiệm; sửa đổi gói thử nghiệm và thời gian trước"
+  },
+  "verify": {
+    "inputPlaceholder": "Nhập",
+    "loginVerificationCode": "Mã Xác minh Đăng nhập",
+    "loginVerificationCodeDescription": "Xác minh con người trong quá trình đăng nhập",
+    "registrationVerificationCode": "Mã Xác minh Đăng ký",
+    "registrationVerificationCodeDescription": "Xác minh con người trong quá trình đăng ký",
+    "resetPasswordVerificationCode": "Mã Xác minh Đặt lại Mật khẩu",
+    "resetPasswordVerificationCodeDescription": "Xác minh con người trong quá trình đặt lại mật khẩu",
+    "saveSuccess": "Lưu thành công",
+    "turnstileSecret": "Khóa Bí mật Turnstile",
+    "turnstileSecretDescription": "Khóa bí mật Turnstile được cung cấp bởi Cloudflare",
+    "turnstileSiteKey": "Khóa Trang Turnstile",
+    "turnstileSiteKeyDescription": "Khóa trang Turnstile được cung cấp bởi Cloudflare",
+    "verifySettings": "Cài đặt Xác minh"
+  }
 }

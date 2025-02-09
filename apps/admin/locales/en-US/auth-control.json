@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP Registration Limit",
-  "ipRegistrationLimitDescription": "When enabled, IPs that meet the rule requirements will be restricted from registering; note that IP determination may cause issues due to CDNs or frontend proxies",
-  "penaltyTime": "Penalty Time (minutes)",
-  "penaltyTimeDescription": "Users must wait for the penalty time to expire before registering again",
-  "registrationLimitCount": "Registration Limit Count",
-  "registrationLimitCountDescription": "Enable penalty after reaching registration limit",
-  "saveSuccess": "Save Successful",
-  "stopNewUserRegistration": "Stop New User Registration",
-  "stopNewUserRegistrationDescription": "When enabled, no one can register",
-  "trialRegistration": "Trial Registration",
-  "trialRegistrationDescription": "Enable trial registration; modify trial package and duration first"
+  "invite": {
+    "commissionFirstTimeOnly": "Commission for First Purchase Only",
+    "commissionFirstTimeOnlyDescription": "When enabled, commission is generated only on the inviter's first payment; you can configure individual users in user management",
+    "enableForcedInvite": "Enable Forced Invite",
+    "enableForcedInviteDescription": "When enabled, only invited users can register",
+    "inputPlaceholder": "Enter",
+    "inviteCommissionPercentage": "Invite Commission Percentage",
+    "inviteCommissionPercentageDescription": "Default global commission distribution ratio; you can configure individual ratios in user management",
+    "inviteSettings": "Invite Settings",
+    "saveSuccess": "Save Successful"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP Registration Limit",
+    "ipRegistrationLimitDescription": "When enabled, IPs that meet the rule requirements will be restricted from registering; note that IP determination may cause issues due to CDNs or frontend proxies",
+    "penaltyTime": "Penalty Time (minutes)",
+    "penaltyTimeDescription": "Users must wait for the penalty time to expire before registering again",
+    "registerSettings": "Register Settings",
+    "registrationLimitCount": "Registration Limit Count",
+    "registrationLimitCountDescription": "Enable penalty after reaching registration limit",
+    "saveSuccess": "Save Successful",
+    "stopNewUserRegistration": "Stop New User Registration",
+    "stopNewUserRegistrationDescription": "When enabled, no one can register",
+    "trialRegistration": "Trial Registration",
+    "trialRegistrationDescription": "Enable trial registration; modify trial package and duration first"
+  },
+  "verify": {
+    "inputPlaceholder": "Enter",
+    "loginVerificationCode": "Login Verification Code",
+    "loginVerificationCodeDescription": "Human verification during login",
+    "registrationVerificationCode": "Registration Verification Code",
+    "registrationVerificationCodeDescription": "Human verification during registration",
+    "resetPasswordVerificationCode": "Reset Password Verification Code",
+    "resetPasswordVerificationCodeDescription": "Human verification during password reset",
+    "saveSuccess": "Save Successful",
+    "turnstileSecret": "Turnstile Secret Key",
+    "turnstileSecretDescription": "Turnstile secret key provided by Cloudflare",
+    "turnstileSiteKey": "Turnstile Site Key",
+    "turnstileSiteKeyDescription": "Turnstile site key provided by Cloudflare",
+    "verifySettings": "Verify Settings"
+  }
 }

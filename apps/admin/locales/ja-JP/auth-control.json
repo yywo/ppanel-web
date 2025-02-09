@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP登録制限",
-  "ipRegistrationLimitDescription": "有効にすると、ルール要件を満たすIPは登録が制限されます。ただし、CDNやフロントエンドプロキシの影響でIPの判定に問題が生じる可能性があることに注意してください。",
-  "penaltyTime": "ペナルティ時間（分）",
-  "penaltyTimeDescription": "ユーザーは再登録する前にペナルティ時間が終了するのを待たなければなりません",
-  "registrationLimitCount": "登録制限数",
-  "registrationLimitCountDescription": "登録制限に達した後にペナルティを有効にする",
-  "saveSuccess": "保存に成功しました",
-  "stopNewUserRegistration": "新規ユーザー登録を停止",
-  "stopNewUserRegistrationDescription": "有効にすると、誰も登録できなくなります",
-  "trialRegistration": "試験登録",
-  "trialRegistrationDescription": "トライアル登録を有効にします。まずトライアルパッケージと期間を変更してください"
+  "invite": {
+    "commissionFirstTimeOnly": "初回購入のみの手数料",
+    "commissionFirstTimeOnlyDescription": "有効にすると、招待者の最初の支払い時のみ手数料が発生します。ユーザー管理で個別のユーザーを設定できます。",
+    "enableForcedInvite": "強制招待を有効にする",
+    "enableForcedInviteDescription": "有効にすると、招待されたユーザーのみが登録できます。",
+    "inputPlaceholder": "入力してください",
+    "inviteCommissionPercentage": "招待手数料の割合",
+    "inviteCommissionPercentageDescription": "デフォルトのグローバル手数料分配比率。ユーザー管理で個別の比率を設定できます。",
+    "inviteSettings": "招待設定",
+    "saveSuccess": "保存に成功しました"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP登録制限",
+    "ipRegistrationLimitDescription": "有効にすると、ルール要件を満たすIPは登録が制限されます。CDNやフロントエンドプロキシの影響でIPの判定に問題が生じる可能性があります。",
+    "penaltyTime": "ペナルティ時間（分）",
+    "penaltyTimeDescription": "ユーザーは再登録する前にペナルティ時間が経過するのを待つ必要があります。",
+    "registerSettings": "登録設定",
+    "registrationLimitCount": "登録制限数",
+    "registrationLimitCountDescription": "登録制限に達した後にペナルティを有効にします。",
+    "saveSuccess": "保存に成功しました",
+    "stopNewUserRegistration": "新規ユーザー登録を停止",
+    "stopNewUserRegistrationDescription": "有効にすると、誰も登録できなくなります。",
+    "trialRegistration": "トライアル登録",
+    "trialRegistrationDescription": "トライアル登録を有効にします。トライアルパッケージと期間を最初に変更してください。"
+  },
+  "verify": {
+    "inputPlaceholder": "入力してください",
+    "loginVerificationCode": "ログイン確認コード",
+    "loginVerificationCodeDescription": "ログイン時の人間確認",
+    "registrationVerificationCode": "登録確認コード",
+    "registrationVerificationCodeDescription": "登録時の人間確認",
+    "resetPasswordVerificationCode": "パスワードリセット確認コード",
+    "resetPasswordVerificationCodeDescription": "パスワードリセット時の人間確認",
+    "saveSuccess": "保存に成功しました",
+    "turnstileSecret": "ターンスタイル秘密鍵",
+    "turnstileSecretDescription": "Cloudflareが提供するターンスタイル秘密鍵",
+    "turnstileSiteKey": "ターンスタイルサイトキー",
+    "turnstileSiteKeyDescription": "Cloudflareが提供するターンスタイルサイトキー",
+    "verifySettings": "確認設定"
+  }
 }

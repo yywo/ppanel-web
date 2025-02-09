@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Використовується лише для відображення, після зміни всі валютні одиниці в системі будуть змінені",
     "saveSuccess": "Успішно збережено"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Лише комісія за першу покупку",
-    "commissionFirstTimeOnlyDescription": "Після увімкнення комісія нараховується лише при першій оплаті запрошеної особи. Ви можете налаштувати окремого користувача в управлінні користувачами.",
-    "enableForcedInvite": "Увімкнути примусове запрошення",
-    "enableForcedInviteDescription": "Після увімкнення лише запрошені користувачі можуть реєструватися",
-    "inputPlaceholder": "Будь ласка, введіть",
-    "inviteCommissionPercentage": "Відсоток комісії за запрошення",
-    "inviteCommissionPercentageDescription": "Загальний відсоток розподілу комісії за замовчуванням, ви можете налаштувати окремий відсоток в управлінні користувачами",
-    "saveSuccess": "Успішно збережено"
-  },
   "site": {
     "logo": "ЛОГО",
     "logoDescription": "Використовується для відображення місця, де потрібно показати ЛОГО",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Валюта",
-    "invite": "Запрошення",
     "site": "Сайт",
-    "telegram": "Telegram",
-    "tos": "Умови обслуговування",
-    "verify": "Перевірка"
-  },
-  "telegram": {
-    "botToken": "Токен бота",
-    "botTokenDescription": "Будь ласка, введіть токен, наданий Botfather",
-    "enableBotNotifications": "Увімкнути сповіщення бота",
-    "enableBotNotificationsDescription": "Після увімкнення бот надсилатиме основні сповіщення адміністраторам та користувачам, які підключені до Telegram",
-    "groupURL": "URL групи",
-    "groupURLDescription": "Після заповнення буде відображатися на стороні користувача або використовуватися там, де це потрібно",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Успішно збережено",
-    "webhookDomain": "Домен вебхука",
-    "webhookDomainDescription": "Введіть ім'я домену сервера вебхука"
+    "tos": "Умови обслуговування"
   },
   "tos": {
     "saveSuccess": "Збережено успішно",
     "title": "Умови обслуговування"
-  },
-  "verify": {
-    "inputPlaceholder": "Будь ласка, введіть",
-    "loginVerificationCode": "Код перевірки для входу",
-    "loginVerificationCodeDescription": "Перевірка людина-машина при вході",
-    "registrationVerificationCode": "Код перевірки для реєстрації",
-    "registrationVerificationCodeDescription": "Перевірка людина-машина при реєстрації",
-    "resetPasswordVerificationCode": "Код перевірки для скидання пароля",
-    "resetPasswordVerificationCodeDescription": "Перевірка людина-машина при скиданні пароля",
-    "saveSuccess": "Збережено успішно",
-    "turnstileSecret": "Секрет Turnstile",
-    "turnstileSecretDescription": "Секрет Turnstile, наданий Cloudflare",
-    "turnstileSiteKey": "Ключ сайту Turnstile",
-    "turnstileSiteKeyDescription": "Ключ сайту Turnstile, наданий Cloudflare"
   }
 }

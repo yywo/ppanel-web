@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Nur zur Anzeige verwendet, nach der Änderung werden alle Währungseinheiten im System geändert",
     "saveSuccess": "Erfolgreich gespeichert"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Nur Provision beim ersten Kauf",
-    "commissionFirstTimeOnlyDescription": "Nach Aktivierung wird die Provision nur bei der ersten Zahlung des Eingeladenen generiert. Sie können in der Benutzerverwaltung einen individuellen Benutzer konfigurieren.",
-    "enableForcedInvite": "Erzwungene Einladung aktivieren",
-    "enableForcedInviteDescription": "Nach Aktivierung können sich nur eingeladene Benutzer registrieren.",
-    "inputPlaceholder": "Bitte eingeben",
-    "inviteCommissionPercentage": "Einladungsprovisionsprozentsatz",
-    "inviteCommissionPercentageDescription": "Standardmäßiger globaler Provisionsverteilungssatz. Sie können in der Benutzerverwaltung einen individuellen Satz konfigurieren.",
-    "saveSuccess": "Erfolgreich gespeichert"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Position zur Anzeige des LOGOs",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Währung",
-    "invite": "Einladen",
     "site": "Seite",
-    "telegram": "Telegram",
-    "tos": "Nutzungsbedingungen",
-    "verify": "Verifizieren"
-  },
-  "telegram": {
-    "botToken": "Bot-Token",
-    "botTokenDescription": "Bitte geben Sie das von Botfather bereitgestellte Token ein",
-    "enableBotNotifications": "Bot-Benachrichtigungen aktivieren",
-    "enableBotNotificationsDescription": "Nach Aktivierung sendet der Bot grundlegende Benachrichtigungen an Administratoren und Benutzer, die mit Telegram verbunden sind",
-    "groupURL": "Gruppen-URL",
-    "groupURLDescription": "Nach Eingabe wird sie auf der Benutzerseite angezeigt oder dort verwendet, wo sie benötigt wird",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Erfolgreich gespeichert",
-    "webhookDomain": "Webhook-Domain",
-    "webhookDomainDescription": "Geben Sie den Domainnamen des Webhook-Servers ein"
+    "tos": "Nutzungsbedingungen"
   },
   "tos": {
     "saveSuccess": "Erfolgreich gespeichert",
     "title": "Nutzungsbedingungen"
-  },
-  "verify": {
-    "inputPlaceholder": "Bitte eingeben",
-    "loginVerificationCode": "Anmeldebestätigungscode",
-    "loginVerificationCodeDescription": "Mensch-Maschine-Verifizierung bei der Anmeldung",
-    "registrationVerificationCode": "Registrierungsbestätigungscode",
-    "registrationVerificationCodeDescription": "Mensch-Maschine-Verifizierung bei der Registrierung",
-    "resetPasswordVerificationCode": "Passwort-zurücksetzen-Bestätigungscode",
-    "resetPasswordVerificationCodeDescription": "Mensch-Maschine-Verifizierung beim Zurücksetzen des Passworts",
-    "saveSuccess": "Erfolgreich gespeichert",
-    "turnstileSecret": "Turnstile-Schlüssel",
-    "turnstileSecretDescription": "Von Cloudflare bereitgestellter Turnstile-Schlüssel",
-    "turnstileSiteKey": "Turnstile-Standortschlüssel",
-    "turnstileSiteKeyDescription": "Von Cloudflare bereitgestellter Turnstile-Standortschlüssel"
   }
 }

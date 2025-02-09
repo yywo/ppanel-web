@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "Лимит регистрации по IP",
-  "ipRegistrationLimitDescription": "Когда включено, IP-адреса, соответствующие требованиям правила, будут ограничены в регистрации; обратите внимание, что определение IP-адреса может вызвать проблемы из-за CDN или фронтенд-прокси",
-  "penaltyTime": "Время штрафа (минуты)",
-  "penaltyTimeDescription": "Пользователи должны дождаться истечения времени штрафа, прежде чем снова зарегистрироваться",
-  "registrationLimitCount": "Лимит количества регистраций",
-  "registrationLimitCountDescription": "Включить штраф после достижения лимита регистрации",
-  "saveSuccess": "Сохранение успешно",
-  "stopNewUserRegistration": "Остановить регистрацию новых пользователей",
-  "stopNewUserRegistrationDescription": "Когда включено, никто не может зарегистрироваться",
-  "trialRegistration": "Регистрация на испытание",
-  "trialRegistrationDescription": "Включить регистрацию пробной версии; сначала измените пробный пакет и продолжительность"
+  "invite": {
+    "commissionFirstTimeOnly": "Комиссия только за первую покупку",
+    "commissionFirstTimeOnlyDescription": "При включении комиссия начисляется только за первый платеж пригласившего; вы можете настроить отдельных пользователей в управлении пользователями",
+    "enableForcedInvite": "Включить принудительное приглашение",
+    "enableForcedInviteDescription": "При включении только приглашенные пользователи могут зарегистрироваться",
+    "inputPlaceholder": "Введите",
+    "inviteCommissionPercentage": "Процент комиссии за приглашение",
+    "inviteCommissionPercentageDescription": "Стандартное глобальное соотношение распределения комиссии; вы можете настроить индивидуальные соотношения в управлении пользователями",
+    "inviteSettings": "Настройки приглашения",
+    "saveSuccess": "Сохранение успешно"
+  },
+  "register": {
+    "ipRegistrationLimit": "Ограничение регистрации по IP",
+    "ipRegistrationLimitDescription": "При включении IP-адреса, соответствующие требованиям правила, будут ограничены в регистрации; обратите внимание, что определение IP может вызвать проблемы из-за CDN или прокси-серверов",
+    "penaltyTime": "Время штрафа (минуты)",
+    "penaltyTimeDescription": "Пользователи должны подождать истечения времени штрафа перед повторной регистрацией",
+    "registerSettings": "Настройки регистрации",
+    "registrationLimitCount": "Количество ограничений на регистрацию",
+    "registrationLimitCountDescription": "Включить штраф после достижения лимита регистрации",
+    "saveSuccess": "Сохранение успешно",
+    "stopNewUserRegistration": "Остановить регистрацию новых пользователей",
+    "stopNewUserRegistrationDescription": "При включении никто не сможет зарегистрироваться",
+    "trialRegistration": "Пробная регистрация",
+    "trialRegistrationDescription": "Включить пробную регистрацию; сначала измените пробный пакет и срок"
+  },
+  "verify": {
+    "inputPlaceholder": "Введите",
+    "loginVerificationCode": "Код проверки входа",
+    "loginVerificationCodeDescription": "Проверка человека при входе",
+    "registrationVerificationCode": "Код проверки регистрации",
+    "registrationVerificationCodeDescription": "Проверка человека при регистрации",
+    "resetPasswordVerificationCode": "Код проверки сброса пароля",
+    "resetPasswordVerificationCodeDescription": "Проверка человека при сбросе пароля",
+    "saveSuccess": "Сохранение успешно",
+    "turnstileSecret": "Секретный ключ Turnstile",
+    "turnstileSecretDescription": "Секретный ключ Turnstile, предоставленный Cloudflare",
+    "turnstileSiteKey": "Ключ сайта Turnstile",
+    "turnstileSiteKeyDescription": "Ключ сайта Turnstile, предоставленный Cloudflare",
+    "verifySettings": "Настройки проверки"
+  }
 }

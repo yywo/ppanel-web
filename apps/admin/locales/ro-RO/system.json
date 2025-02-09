@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Utilizat doar pentru afișare, după modificare toate unitățile monetare din sistem vor fi schimbate",
     "saveSuccess": "Salvare reușită"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Comision doar la prima achiziție",
-    "commissionFirstTimeOnlyDescription": "După activare, comisionul este generat doar la prima plată a persoanei invitate. Puteți configura utilizatori individuali în gestionarea utilizatorilor.",
-    "enableForcedInvite": "Activează invitația obligatorie",
-    "enableForcedInviteDescription": "După activare, doar utilizatorii invitați se pot înregistra.",
-    "inputPlaceholder": "Vă rugăm să introduceți",
-    "inviteCommissionPercentage": "Procentul comisionului de invitație",
-    "inviteCommissionPercentageDescription": "Procentul implicit de distribuire a comisionului la nivel global. Puteți configura un procent individual în gestionarea utilizatorilor.",
-    "saveSuccess": "Salvare reușită"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Utilizat pentru a afișa locația unde trebuie să fie prezentat LOGO-ul",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Monedă",
-    "invite": "Invitație",
     "site": "Site",
-    "telegram": "Telegram",
-    "tos": "Termeni de serviciu",
-    "verify": "Verificare"
-  },
-  "telegram": {
-    "botToken": "Token Bot",
-    "botTokenDescription": "Vă rugăm să introduceți token-ul furnizat de Botfather",
-    "enableBotNotifications": "Activează notificările Bot",
-    "enableBotNotificationsDescription": "După activare, botul va trimite notificări de bază administratorilor și utilizatorilor care au legat Telegram",
-    "groupURL": "URL Grup",
-    "groupURLDescription": "După completare, va fi afișat pe partea utilizatorului sau utilizat acolo unde este necesar",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Salvare reușită",
-    "webhookDomain": "Domeniu Webhook",
-    "webhookDomainDescription": "Introduceți numele de domeniu al serverului webhook"
+    "tos": "Termeni de serviciu"
   },
   "tos": {
     "saveSuccess": "Salvare reușită",
     "title": "Termeni de serviciu"
-  },
-  "verify": {
-    "inputPlaceholder": "Introduceți",
-    "loginVerificationCode": "Cod de verificare pentru autentificare",
-    "loginVerificationCodeDescription": "Verificare umană la autentificare",
-    "registrationVerificationCode": "Cod de verificare pentru înregistrare",
-    "registrationVerificationCodeDescription": "Verificare umană la înregistrare",
-    "resetPasswordVerificationCode": "Cod de verificare pentru resetarea parolei",
-    "resetPasswordVerificationCodeDescription": "Verificare umană la resetarea parolei",
-    "saveSuccess": "Salvare reușită",
-    "turnstileSecret": "Cheie secretă Turnstile",
-    "turnstileSecretDescription": "Cheia secretă Turnstile furnizată de Cloudflare",
-    "turnstileSiteKey": "Cheie de site Turnstile",
-    "turnstileSiteKeyDescription": "Cheia de site Turnstile furnizată de Cloudflare"
   }
 }

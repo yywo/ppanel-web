@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Sadece gösterim amaçlı kullanılır, değiştirildiğinde sistemdeki tüm para birimi birimleri değişecektir",
     "saveSuccess": "Başarıyla kaydedildi"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Yalnızca İlk Satın Alma Komisyonu",
-    "commissionFirstTimeOnlyDescription": "Etkinleştirildiğinde, komisyon yalnızca davet edenin ilk ödemesi sırasında oluşturulur. Kullanıcı yönetiminde tek bir kullanıcıyı yapılandırabilirsiniz.",
-    "enableForcedInvite": "Zorunlu Daveti Etkinleştir",
-    "enableForcedInviteDescription": "Etkinleştirildiğinde, yalnızca davet edilen kullanıcılar kayıt olabilir.",
-    "inputPlaceholder": "Lütfen giriniz",
-    "inviteCommissionPercentage": "Davet Komisyon Yüzdesi",
-    "inviteCommissionPercentageDescription": "Varsayılan küresel komisyon dağıtım oranı, kullanıcı yönetiminde tek bir oran yapılandırabilirsiniz.",
-    "saveSuccess": "Başarıyla kaydedildi"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "LOGO'nun gösterilmesi gereken yeri belirtir",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Para Birimi",
-    "invite": "Davet Et",
     "site": "Site",
-    "telegram": "Telegram",
-    "tos": "Hizmet Şartları",
-    "verify": "Doğrula"
-  },
-  "telegram": {
-    "botToken": "Bot Token",
-    "botTokenDescription": "Lütfen Botfather tarafından sağlanan tokeni girin",
-    "enableBotNotifications": "Bot Bildirimlerini Etkinleştir",
-    "enableBotNotificationsDescription": "Etkinleştirildiğinde, bot Telegram'a bağlı yöneticilere ve kullanıcılara temel bildirimler gönderecektir",
-    "groupURL": "Grup URL'si",
-    "groupURLDescription": "Doldurulduğunda, kullanıcı arayüzünde gösterilecek veya gerektiği yerlerde kullanılacaktır",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Başarıyla kaydedildi",
-    "webhookDomain": "Webhook Alan Adı",
-    "webhookDomainDescription": "Webhook sunucusunun alan adını girin"
+    "tos": "Hizmet Şartları"
   },
   "tos": {
     "saveSuccess": "Kaydetme Başarılı",
     "title": "Hizmet Şartları"
-  },
-  "verify": {
-    "inputPlaceholder": "Lütfen giriniz",
-    "loginVerificationCode": "Giriş Doğrulama Kodu",
-    "loginVerificationCodeDescription": "Giriş sırasında insan-makine doğrulaması",
-    "registrationVerificationCode": "Kayıt Doğrulama Kodu",
-    "registrationVerificationCodeDescription": "Kayıt sırasında insan-makine doğrulaması",
-    "resetPasswordVerificationCode": "Şifre Sıfırlama Doğrulama Kodu",
-    "resetPasswordVerificationCodeDescription": "Şifre sıfırlama sırasında insan-makine doğrulaması",
-    "saveSuccess": "Başarıyla kaydedildi",
-    "turnstileSecret": "Turnstile Gizli Anahtarı",
-    "turnstileSecretDescription": "Cloudflare tarafından sağlanan Turnstile gizli anahtarı",
-    "turnstileSiteKey": "Turnstile Site Anahtarı",
-    "turnstileSiteKeyDescription": "Cloudflare tarafından sağlanan Turnstile site anahtarı"
   }
 }

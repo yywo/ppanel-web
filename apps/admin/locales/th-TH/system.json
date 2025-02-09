@@ -8,16 +8,6 @@
     "currencyUnitDescription": "ใช้สำหรับการแสดงผลเท่านั้น การเปลี่ยนแปลงจะส่งผลต่อหน่วยสกุลเงินทั้งหมดในระบบ",
     "saveSuccess": "บันทึกสำเร็จ"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "ค่าคอมมิชชั่นเฉพาะการซื้อครั้งแรก",
-    "commissionFirstTimeOnlyDescription": "เมื่อเปิดใช้งาน ค่าคอมมิชชั่นจะเกิดขึ้นเฉพาะเมื่อผู้ถูกเชิญชำระเงินครั้งแรกเท่านั้น คุณสามารถกำหนดค่าผู้ใช้แต่ละรายในระบบจัดการผู้ใช้",
-    "enableForcedInvite": "เปิดใช้งานการเชิญบังคับ",
-    "enableForcedInviteDescription": "เมื่อเปิดใช้งาน เฉพาะผู้ใช้ที่ได้รับเชิญเท่านั้นที่สามารถลงทะเบียนได้",
-    "inputPlaceholder": "กรุณาใส่ข้อมูล",
-    "inviteCommissionPercentage": "เปอร์เซ็นต์ค่าคอมมิชชั่นการเชิญ",
-    "inviteCommissionPercentageDescription": "อัตราการแบ่งปันค่าคอมมิชชั่นทั่วโลกเริ่มต้น คุณสามารถกำหนดค่าอัตราเฉพาะในระบบจัดการผู้ใช้",
-    "saveSuccess": "บันทึกสำเร็จ"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "ใช้สำหรับแสดงตำแหน่งที่ต้องการแสดง LOGO",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "สกุลเงิน",
-    "invite": "เชิญ",
     "site": "เว็บไซต์",
-    "telegram": "Telegram",
-    "tos": "ข้อกำหนดการให้บริการ",
-    "verify": "ยืนยัน"
-  },
-  "telegram": {
-    "botToken": "โทเค็นบอท",
-    "botTokenDescription": "กรุณาใส่โทเค็นที่ได้รับจาก Botfather",
-    "enableBotNotifications": "เปิดการแจ้งเตือนบอท",
-    "enableBotNotificationsDescription": "เมื่อเปิดใช้งาน บอทจะส่งการแจ้งเตือนพื้นฐานไปยังผู้ดูแลและผู้ใช้ที่เชื่อมต่อกับ Telegram",
-    "groupURL": "URL ของกลุ่ม",
-    "groupURLDescription": "เมื่อกรอกแล้ว จะแสดงในฝั่งผู้ใช้หรือใช้ในตำแหน่งที่ต้องการ",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "บันทึกสำเร็จ",
-    "webhookDomain": "โดเมนของ Webhook",
-    "webhookDomainDescription": "กรอกชื่อโดเมนของเซิร์ฟเวอร์ webhook"
+    "tos": "ข้อกำหนดการให้บริการ"
   },
   "tos": {
     "saveSuccess": "บันทึกสำเร็จ",
     "title": "ข้อกำหนดการให้บริการ"
-  },
-  "verify": {
-    "inputPlaceholder": "กรุณาใส่",
-    "loginVerificationCode": "รหัสยืนยันการเข้าสู่ระบบ",
-    "loginVerificationCodeDescription": "การยืนยันตัวตนเมื่อเข้าสู่ระบบ",
-    "registrationVerificationCode": "รหัสยืนยันการลงทะเบียน",
-    "registrationVerificationCodeDescription": "การยืนยันตัวตนเมื่อลงทะเบียน",
-    "resetPasswordVerificationCode": "รหัสยืนยันการรีเซ็ตรหัสผ่าน",
-    "resetPasswordVerificationCodeDescription": "การยืนยันตัวตนเมื่อรีเซ็ตรหัสผ่าน",
-    "saveSuccess": "บันทึกสำเร็จ",
-    "turnstileSecret": "รหัสลับ Turnstile",
-    "turnstileSecretDescription": "รหัสลับ Turnstile ที่ Cloudflare ให้มา",
-    "turnstileSiteKey": "รหัสไซต์ Turnstile",
-    "turnstileSiteKeyDescription": "รหัสไซต์ Turnstile ที่ Cloudflare ให้มา"
   }
 }

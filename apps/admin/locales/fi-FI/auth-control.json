@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP-rekisteröintirajoitus",
-  "ipRegistrationLimitDescription": "Kun tämä on käytössä, säännön vaatimukset täyttävät IP-osoitteet estetään rekisteröitymästä; huomaa, että IP-määritys voi aiheuttaa ongelmia CDN:ien tai etupään välityspalvelimien vuoksi",
-  "penaltyTime": "Rangaistusaika (minuuttia)",
-  "penaltyTimeDescription": "Käyttäjien on odotettava rangaistusajan päättymistä ennen kuin he voivat rekisteröityä uudelleen",
-  "registrationLimitCount": "Rekisteröitymisrajoituksen määrä",
-  "registrationLimitCountDescription": "Ota käyttöön rangaistus rekisteröintirajan saavuttamisen jälkeen",
-  "saveSuccess": "Tallennus onnistui",
-  "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
-  "stopNewUserRegistrationDescription": "Kun tämä on käytössä, kukaan ei voi rekisteröityä",
-  "trialRegistration": "Kokeilurekisteröinti",
-  "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa"
+  "invite": {
+    "commissionFirstTimeOnly": "Komissio vain ensimmäisestä ostosta",
+    "commissionFirstTimeOnlyDescription": "Kun tämä on käytössä, komissio kertyy vain kutsujan ensimmäisestä maksusta; voit määrittää yksittäiset käyttäjät käyttäjähallinnassa",
+    "enableForcedInvite": "Ota pakollinen kutsu käyttöön",
+    "enableForcedInviteDescription": "Kun tämä on käytössä, vain kutsutut käyttäjät voivat rekisteröityä",
+    "inputPlaceholder": "Syötä",
+    "inviteCommissionPercentage": "Kutsukomission prosenttiosuus",
+    "inviteCommissionPercentageDescription": "Oletusarvoinen globaali komission jakosuhde; voit määrittää yksittäiset suhteet käyttäjähallinnassa",
+    "inviteSettings": "Kutsuasetukset",
+    "saveSuccess": "Tallennus onnistui"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP-rekisteröintiraja",
+    "ipRegistrationLimitDescription": "Kun tämä on käytössä, säännön vaatimukset täyttävät IP-osoitteet estetään rekisteröitymästä; huomaa, että IP-määritys voi aiheuttaa ongelmia CDN:ien tai etupään välityspalvelimien vuoksi",
+    "penaltyTime": "Rangaistusaika (minuuttia)",
+    "penaltyTimeDescription": "Käyttäjien on odotettava rangaistusajan päättymistä ennen uudelleenrekisteröitymistä",
+    "registerSettings": "Rekisteröintiasetukset",
+    "registrationLimitCount": "Rekisteröintirajamäärä",
+    "registrationLimitCountDescription": "Ota rangaistus käyttöön rekisteröintirajan saavuttamisen jälkeen",
+    "saveSuccess": "Tallennus onnistui",
+    "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
+    "stopNewUserRegistrationDescription": "Kun tämä on käytössä, kukaan ei voi rekisteröityä",
+    "trialRegistration": "Kokeilurekisteröinti",
+    "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa"
+  },
+  "verify": {
+    "inputPlaceholder": "Syötä",
+    "loginVerificationCode": "Kirjautumisen vahvistuskoodi",
+    "loginVerificationCodeDescription": "Ihmisen vahvistus kirjautumisen aikana",
+    "registrationVerificationCode": "Rekisteröinnin vahvistuskoodi",
+    "registrationVerificationCodeDescription": "Ihmisen vahvistus rekisteröinnin aikana",
+    "resetPasswordVerificationCode": "Salasanan palautuksen vahvistuskoodi",
+    "resetPasswordVerificationCodeDescription": "Ihmisen vahvistus salasanan palautuksen aikana",
+    "saveSuccess": "Tallennus onnistui",
+    "turnstileSecret": "Turnstile-salaisavain",
+    "turnstileSecretDescription": "Turnstile-salaisavain, jonka Cloudflare on toimittanut",
+    "turnstileSiteKey": "Turnstile-sivuston avain",
+    "turnstileSiteKeyDescription": "Turnstile-sivuston avain, jonka Cloudflare on toimittanut",
+    "verifySettings": "Vahvistusasetukset"
+  }
 }

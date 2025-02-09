@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Chỉ sử dụng để hiển thị, sau khi thay đổi tất cả các đơn vị tiền tệ trong hệ thống sẽ thay đổi",
     "saveSuccess": "Lưu thành công"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Chỉ hoa hồng lần đầu tiên mua",
-    "commissionFirstTimeOnlyDescription": "Khi kích hoạt, hoa hồng chỉ được tạo khi người được mời thanh toán lần đầu tiên. Bạn có thể cấu hình từng người dùng trong quản lý người dùng",
-    "enableForcedInvite": "Kích hoạt mời bắt buộc",
-    "enableForcedInviteDescription": "Khi kích hoạt, chỉ người dùng được mời mới có thể đăng ký",
-    "inputPlaceholder": "Vui lòng nhập",
-    "inviteCommissionPercentage": "Phần trăm hoa hồng mời",
-    "inviteCommissionPercentageDescription": "Tỷ lệ phân chia hoa hồng toàn cầu mặc định, bạn có thể cấu hình tỷ lệ riêng cho từng người dùng trong quản lý người dùng",
-    "saveSuccess": "Lưu thành công"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Dùng để hiển thị vị trí cần hiển thị LOGO",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Tiền tệ",
-    "invite": "Mời",
     "site": "Trang web",
-    "telegram": "Telegram",
-    "tos": "Điều khoản dịch vụ",
-    "verify": "Xác minh"
-  },
-  "telegram": {
-    "botToken": "Token của bot",
-    "botTokenDescription": "Vui lòng nhập token do Botfather cung cấp",
-    "enableBotNotifications": "Kích hoạt thông báo bot",
-    "enableBotNotificationsDescription": "Sau khi kích hoạt, bot sẽ gửi thông báo cơ bản đến quản trị viên và người dùng đã liên kết Telegram",
-    "groupURL": "URL nhóm",
-    "groupURLDescription": "Sau khi điền, sẽ hiển thị ở phía người dùng hoặc sử dụng ở vị trí cần thiết",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Lưu thành công",
-    "webhookDomain": "Tên miền Webhook",
-    "webhookDomainDescription": "Nhập tên miền của máy chủ webhook"
+    "tos": "Điều khoản dịch vụ"
   },
   "tos": {
     "saveSuccess": "Lưu thành công",
     "title": "Điều khoản dịch vụ"
-  },
-  "verify": {
-    "inputPlaceholder": "Vui lòng nhập",
-    "loginVerificationCode": "Mã xác minh đăng nhập",
-    "loginVerificationCodeDescription": "Xác minh con người khi đăng nhập",
-    "registrationVerificationCode": "Mã xác minh đăng ký",
-    "registrationVerificationCodeDescription": "Xác minh con người khi đăng ký",
-    "resetPasswordVerificationCode": "Mã xác minh đặt lại mật khẩu",
-    "resetPasswordVerificationCodeDescription": "Xác minh con người khi đặt lại mật khẩu",
-    "saveSuccess": "Lưu thành công",
-    "turnstileSecret": "Khóa bí mật Turnstile",
-    "turnstileSecretDescription": "Khóa bí mật Turnstile do Cloudflare cung cấp",
-    "turnstileSiteKey": "Khóa trang Turnstile",
-    "turnstileSiteKeyDescription": "Khóa trang Turnstile do Cloudflare cung cấp"
   }
 }

@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Kun for visningsformål, endring vil påvirke alle valutaenheter i systemet",
     "saveSuccess": "Lagring vellykket"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Kun kommisjon ved første kjøp",
-    "commissionFirstTimeOnlyDescription": "Når aktivert, genereres kommisjon kun ved den første betalingen fra den inviterte. Du kan konfigurere individuelle brukere i brukerstyring",
-    "enableForcedInvite": "Aktiver tvungen invitasjon",
-    "enableForcedInviteDescription": "Når aktivert, kan kun inviterte brukere registrere seg",
-    "inputPlaceholder": "Vennligst skriv inn",
-    "inviteCommissionPercentage": "Invitasjonskommisjon i prosent",
-    "inviteCommissionPercentageDescription": "Standard global kommisjonsfordelingsprosent, du kan konfigurere individuelle prosenter i brukerstyring",
-    "saveSuccess": "Lagret vellykket"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Brukes til å vise hvor LOGO skal vises",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Valuta",
-    "invite": "Invitasjon",
     "site": "Nettsted",
-    "telegram": "Telegram",
-    "tos": "Vilkår for bruk",
-    "verify": "Verifiser"
-  },
-  "telegram": {
-    "botToken": "Bot-token",
-    "botTokenDescription": "Vennligst skriv inn token gitt av Botfather",
-    "enableBotNotifications": "Aktiver bot-varsler",
-    "enableBotNotificationsDescription": "Når aktivert, vil boten sende grunnleggende varsler til administratorer og brukere som har koblet til Telegram",
-    "groupURL": "Gruppe-URL",
-    "groupURLDescription": "Når fylt ut, vil den vises på brukersiden eller brukes der det er nødvendig",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Lagret vellykket",
-    "webhookDomain": "Webhook-domene",
-    "webhookDomainDescription": "Skriv inn domenenavnet til webhook-serveren"
+    "tos": "Vilkår for bruk"
   },
   "tos": {
     "saveSuccess": "Lagring vellykket",
     "title": "Tjenestevilkår"
-  },
-  "verify": {
-    "inputPlaceholder": "Vennligst skriv inn",
-    "loginVerificationCode": "Innloggingsverifiseringskode",
-    "loginVerificationCodeDescription": "Menneskelig verifisering ved innlogging",
-    "registrationVerificationCode": "Registreringsverifiseringskode",
-    "registrationVerificationCodeDescription": "Menneskelig verifisering ved registrering",
-    "resetPasswordVerificationCode": "Tilbakestill passord verifiseringskode",
-    "resetPasswordVerificationCodeDescription": "Menneskelig verifisering ved tilbakestilling av passord",
-    "saveSuccess": "Lagring vellykket",
-    "turnstileSecret": "Turnstile hemmelighet",
-    "turnstileSecretDescription": "Turnstile hemmelighet levert av Cloudflare",
-    "turnstileSiteKey": "Turnstile nettstednøkkel",
-    "turnstileSiteKeyDescription": "Turnstile nettstednøkkel levert av Cloudflare"
   }
 }

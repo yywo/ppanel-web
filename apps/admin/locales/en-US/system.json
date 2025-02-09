@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Used for display purposes only; changing this will affect all currency units in the system",
     "saveSuccess": "Save Successful"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Commission for First Purchase Only",
-    "commissionFirstTimeOnlyDescription": "When enabled, commission is generated only on the inviter's first payment; you can configure individual users in user management",
-    "enableForcedInvite": "Enable Forced Invite",
-    "enableForcedInviteDescription": "When enabled, only invited users can register",
-    "inputPlaceholder": "Enter",
-    "inviteCommissionPercentage": "Invite Commission Percentage",
-    "inviteCommissionPercentageDescription": "Default global commission distribution ratio; you can configure individual ratios in user management",
-    "saveSuccess": "Save Successful"
-  },
   "site": {
     "logo": "Logo",
     "logoDescription": "Used for displaying the logo in designated locations",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Currency",
-    "invite": "Invite",
     "site": "Site",
-    "telegram": "Telegram",
-    "tos": "Terms of Service",
-    "verify": "Verify"
-  },
-  "telegram": {
-    "botToken": "Bot Token",
-    "botTokenDescription": "Enter the token provided by Botfather",
-    "enableBotNotifications": "Enable Bot Notifications",
-    "enableBotNotificationsDescription": "When enabled, the bot will send basic notifications to linked Telegram admins and users",
-    "groupURL": "Group URL",
-    "groupURLDescription": "If filled, will be displayed to users or used in required locations",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Save Successful",
-    "webhookDomain": "Webhook Domain",
-    "webhookDomainDescription": "Enter the domain name of the webhook server"
+    "tos": "Terms of Service"
   },
   "tos": {
     "saveSuccess": "Save Successful",
     "title": "Terms of Service"
-  },
-  "verify": {
-    "inputPlaceholder": "Enter",
-    "loginVerificationCode": "Login Verification Code",
-    "loginVerificationCodeDescription": "Human verification during login",
-    "registrationVerificationCode": "Registration Verification Code",
-    "registrationVerificationCodeDescription": "Human verification during registration",
-    "resetPasswordVerificationCode": "Reset Password Verification Code",
-    "resetPasswordVerificationCodeDescription": "Human verification during password reset",
-    "saveSuccess": "Save Successful",
-    "turnstileSecret": "Turnstile Secret Key",
-    "turnstileSecretDescription": "Turnstile secret key provided by Cloudflare",
-    "turnstileSiteKey": "Turnstile Site Key",
-    "turnstileSiteKeyDescription": "Turnstile site key provided by Cloudflare"
   }
 }

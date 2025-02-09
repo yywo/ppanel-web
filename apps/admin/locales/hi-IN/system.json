@@ -8,16 +8,6 @@
     "currencyUnitDescription": "केवल प्रदर्शन के लिए उपयोग किया जाता है, परिवर्तन के बाद सिस्टम में सभी मुद्रा इकाइयाँ बदल जाएँगी",
     "saveSuccess": "सफलतापूर्वक सहेजा गया"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "केवल पहली खरीद पर कमीशन",
-    "commissionFirstTimeOnlyDescription": "सक्रिय करने पर, कमीशन केवल तब उत्पन्न होगा जब आमंत्रित व्यक्ति पहली बार भुगतान करेगा। आप उपयोगकर्ता प्रबंधन में व्यक्तिगत उपयोगकर्ता को कॉन्फ़िगर कर सकते हैं।",
-    "enableForcedInvite": "अनिवार्य आमंत्रण सक्षम करें",
-    "enableForcedInviteDescription": "सक्रिय करने पर, केवल आमंत्रित उपयोगकर्ता ही पंजीकरण कर सकते हैं।",
-    "inputPlaceholder": "कृपया दर्ज करें",
-    "inviteCommissionPercentage": "आमंत्रण कमीशन प्रतिशत",
-    "inviteCommissionPercentageDescription": "डिफ़ॉल्ट वैश्विक कमीशन वितरण अनुपात, आप उपयोगकर्ता प्रबंधन में व्यक्तिगत अनुपात को कॉन्फ़िगर कर सकते हैं।",
-    "saveSuccess": "सफलतापूर्वक सहेजा गया"
-  },
   "site": {
     "logo": "लोगो",
     "logoDescription": "लोगो प्रदर्शित करने के लिए आवश्यक स्थान",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "मुद्रा",
-    "invite": "आमंत्रण",
     "site": "साइट",
-    "telegram": "टेलीग्राम",
-    "tos": "सेवा की शर्तें",
-    "verify": "सत्यापन"
-  },
-  "telegram": {
-    "botToken": "बॉट टोकन",
-    "botTokenDescription": "कृपया Botfather द्वारा प्रदान किया गया टोकन दर्ज करें",
-    "enableBotNotifications": "बॉट सूचनाएं सक्षम करें",
-    "enableBotNotificationsDescription": "सक्षम करने पर, बॉट लिंक किए गए Telegram के व्यवस्थापकों और उपयोगकर्ताओं को बुनियादी सूचनाएं भेजेगा",
-    "groupURL": "समूह URL",
-    "groupURLDescription": "भरने पर, यह उपयोगकर्ता पक्ष पर प्रदर्शित होगा या आवश्यक स्थानों पर उपयोग किया जाएगा",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "सफलतापूर्वक सहेजा गया",
-    "webhookDomain": "वेबहुक डोमेन",
-    "webhookDomainDescription": "वेबहुक सर्वर के डोमेन नाम को दर्ज करें"
+    "tos": "सेवा की शर्तें"
   },
   "tos": {
     "saveSuccess": "सहेजा गया",
     "title": "सेवा की शर्तें"
-  },
-  "verify": {
-    "inputPlaceholder": "कृपया दर्ज करें",
-    "loginVerificationCode": "लॉगिन सत्यापन कोड",
-    "loginVerificationCodeDescription": "लॉगिन के समय मानव-मशीन सत्यापन",
-    "registrationVerificationCode": "पंजीकरण सत्यापन कोड",
-    "registrationVerificationCodeDescription": "पंजीकरण के समय मानव-मशीन सत्यापन",
-    "resetPasswordVerificationCode": "पासवर्ड रीसेट सत्यापन कोड",
-    "resetPasswordVerificationCodeDescription": "पासवर्ड रीसेट के समय मानव-मशीन सत्यापन",
-    "saveSuccess": "सफलतापूर्वक सहेजा गया",
-    "turnstileSecret": "टर्नस्टाइल सीक्रेट",
-    "turnstileSecretDescription": "Cloudflare द्वारा प्रदत्त टर्नस्टाइल सीक्रेट",
-    "turnstileSiteKey": "टर्नस्टाइल साइट कुंजी",
-    "turnstileSiteKeyDescription": "Cloudflare द्वारा प्रदत्त टर्नस्टाइल साइट कुंजी"
   }
 }

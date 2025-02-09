@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "Limit rejestracji IP",
-  "ipRegistrationLimitDescription": "Po włączeniu, adresy IP spełniające wymagania reguły będą miały ograniczoną możliwość rejestracji; należy pamiętać, że określanie adresów IP może powodować problemy z powodu użycia CDN-ów lub proxy frontendowych",
-  "penaltyTime": "Czas kary (minuty)",
-  "penaltyTimeDescription": "Użytkownicy muszą poczekać na wygaśnięcie czasu kary, zanim będą mogli zarejestrować się ponownie",
-  "registrationLimitCount": "Limit rejestracji",
-  "registrationLimitCountDescription": "Włącz karę po osiągnięciu limitu rejestracji",
-  "saveSuccess": "Zapisano pomyślnie",
-  "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
-  "stopNewUserRegistrationDescription": "Gdy włączone, nikt nie może się zarejestrować",
-  "trialRegistration": "Rejestracja próbna",
-  "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania"
+  "invite": {
+    "commissionFirstTimeOnly": "Prowizja tylko za pierwsze zakupy",
+    "commissionFirstTimeOnlyDescription": "Po włączeniu prowizja jest generowana tylko przy pierwszej płatności zapraszającego; możesz skonfigurować poszczególnych użytkowników w zarządzaniu użytkownikami",
+    "enableForcedInvite": "Włącz wymuszone zaproszenie",
+    "enableForcedInviteDescription": "Po włączeniu tylko zaproszeni użytkownicy mogą się rejestrować",
+    "inputPlaceholder": "Wprowadź",
+    "inviteCommissionPercentage": "Procent prowizji za zaproszenie",
+    "inviteCommissionPercentageDescription": "Domyślny globalny wskaźnik podziału prowizji; możesz skonfigurować indywidualne wskaźniki w zarządzaniu użytkownikami",
+    "inviteSettings": "Ustawienia zaproszeń",
+    "saveSuccess": "Zapisano pomyślnie"
+  },
+  "register": {
+    "ipRegistrationLimit": "Limit rejestracji IP",
+    "ipRegistrationLimitDescription": "Po włączeniu IP, które spełniają wymagania reguły, będą miały ograniczenia w rejestracji; pamiętaj, że określenie IP może powodować problemy z powodu CDN-ów lub proxy frontendowych",
+    "penaltyTime": "Czas kary (minuty)",
+    "penaltyTimeDescription": "Użytkownicy muszą poczekać na upływ czasu kary przed ponowną rejestracją",
+    "registerSettings": "Ustawienia rejestracji",
+    "registrationLimitCount": "Limit liczby rejestracji",
+    "registrationLimitCountDescription": "Włącz karę po osiągnięciu limitu rejestracji",
+    "saveSuccess": "Zapisano pomyślnie",
+    "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
+    "stopNewUserRegistrationDescription": "Po włączeniu nikt nie może się zarejestrować",
+    "trialRegistration": "Rejestracja próbna",
+    "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania"
+  },
+  "verify": {
+    "inputPlaceholder": "Wprowadź",
+    "loginVerificationCode": "Kod weryfikacji logowania",
+    "loginVerificationCodeDescription": "Weryfikacja ludzka podczas logowania",
+    "registrationVerificationCode": "Kod weryfikacji rejestracji",
+    "registrationVerificationCodeDescription": "Weryfikacja ludzka podczas rejestracji",
+    "resetPasswordVerificationCode": "Kod weryfikacji resetowania hasła",
+    "resetPasswordVerificationCodeDescription": "Weryfikacja ludzka podczas resetowania hasła",
+    "saveSuccess": "Zapisano pomyślnie",
+    "turnstileSecret": "Sekretny klucz bramki",
+    "turnstileSecretDescription": "Sekretny klucz bramki dostarczony przez Cloudflare",
+    "turnstileSiteKey": "Klucz witryny bramki",
+    "turnstileSiteKeyDescription": "Klucz witryny bramki dostarczony przez Cloudflare",
+    "verifySettings": "Ustawienia weryfikacji"
+  }
 }

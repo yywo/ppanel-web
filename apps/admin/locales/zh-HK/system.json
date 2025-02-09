@@ -8,16 +8,6 @@
     "currencyUnitDescription": "僅用於展示使用，更改後系統中所有的貨幣單位都將發生變更",
     "saveSuccess": "保存成功"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "僅首次購買佣金",
-    "commissionFirstTimeOnlyDescription": "啟用後，佣金僅在邀請人首次付款時生成您可以在用戶管理中配置單個用戶",
-    "enableForcedInvite": "啟用強制邀請",
-    "enableForcedInviteDescription": "啟用後，只有受邀用戶才能註冊",
-    "inputPlaceholder": "請輸入",
-    "inviteCommissionPercentage": "邀請佣金百分比",
-    "inviteCommissionPercentageDescription": "默認全局佣金分配比例，您可以在用戶管理中配置單個比例",
-    "saveSuccess": "保存成功"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "用於顯示需要展示 LOGO 的位置",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "貨幣",
-    "invite": "邀請",
     "site": "網站",
-    "telegram": "Telegram",
-    "tos": "服務條款",
-    "verify": "驗證"
-  },
-  "telegram": {
-    "botToken": "機器人 Token",
-    "botTokenDescription": "請輸入 Botfather 提供的 token",
-    "enableBotNotifications": "啟用機器人通知",
-    "enableBotNotificationsDescription": "啟用後，機器人將向已連結 Telegram 的管理員和用戶發送基本通知",
-    "groupURL": "群組 URL",
-    "groupURLDescription": "填寫後，將在用戶端顯示或用於需要的位置",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "儲存成功",
-    "webhookDomain": "Webhook 網域",
-    "webhookDomainDescription": "輸入 Webhook 伺服器的網域名稱"
+    "tos": "服務條款"
   },
   "tos": {
     "saveSuccess": "儲存成功",
     "title": "服務條款"
-  },
-  "verify": {
-    "inputPlaceholder": "請輸入",
-    "loginVerificationCode": "登入驗證碼",
-    "loginVerificationCodeDescription": "登入時的人機驗證",
-    "registrationVerificationCode": "註冊驗證碼",
-    "registrationVerificationCodeDescription": "註冊時的人機驗證",
-    "resetPasswordVerificationCode": "重設密碼驗證碼",
-    "resetPasswordVerificationCodeDescription": "重設密碼時的人機驗證",
-    "saveSuccess": "儲存成功",
-    "turnstileSecret": "Turnstile 密鑰",
-    "turnstileSecretDescription": "Cloudflare 提供的 Turnstile 密鑰",
-    "turnstileSiteKey": "Turnstile 站點密鑰",
-    "turnstileSiteKeyDescription": "Cloudflare 提供的 Turnstile 站點密鑰"
   }
 }

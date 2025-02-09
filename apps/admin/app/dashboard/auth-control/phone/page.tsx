@@ -358,30 +358,34 @@ export default function Page() {
                 </TableCell>
               </TableRow>
             )}
-            <TableRow>
-              <TableCell>
-                <Label>{t('template')}</Label>
-                <p className='text-muted-foreground text-xs'>
-                  {t('templateTip', { code: platformConfig?.code_variable })}
-                </p>
-              </TableCell>
-              <TableCell className='text-right'>
-                <Textarea
-                  defaultValue={data?.platform_config?.template ?? ''}
-                  onBlur={(e) =>
-                    updateConfig('config', {
-                      ...data?.config,
-                      platform_config: {
-                        ...data?.config?.platform_config,
-                        template: e.target.value,
-                      },
-                    })
-                  }
-                  disabled={isFetching}
-                  placeholder={t('placeholders.template', { code: platformConfig?.code_variable })}
-                />
-              </TableCell>
-            </TableRow>
+            {platformConfig?.code_variable && (
+              <TableRow>
+                <TableCell>
+                  <Label>{t('template')}</Label>
+                  <p className='text-muted-foreground text-xs'>
+                    {t('templateTip', { code: platformConfig?.code_variable })}
+                  </p>
+                </TableCell>
+                <TableCell className='text-right'>
+                  <Textarea
+                    defaultValue={data?.platform_config?.template ?? ''}
+                    onBlur={(e) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        platform_config: {
+                          ...data?.config?.platform_config,
+                          template: e.target.value,
+                        },
+                      })
+                    }
+                    disabled={isFetching}
+                    placeholder={t('placeholders.template', {
+                      code: platformConfig?.code_variable,
+                    })}
+                  />
+                </TableCell>
+              </TableRow>
+            )}
             <TableRow>
               <TableCell>
                 <Label>{t('testSms')}</Label>

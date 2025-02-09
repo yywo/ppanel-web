@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "IP Kayıt Sınırı",
-  "ipRegistrationLimitDescription": "Etkinleştirildiğinde, kural gereksinimlerini karşılayan IP'lerin kaydolması kısıtlanacaktır; IP belirlemesinin CDN'ler veya ön uç proxy'ler nedeniyle sorunlara yol açabileceğini unutmayın",
-  "penaltyTime": "Ceza Süresi (dakika)",
-  "penaltyTimeDescription": "Kullanıcılar, tekrar kayıt olmadan önce ceza süresinin dolmasını beklemelidir",
-  "registrationLimitCount": "Kayıt Sınır Sayısı",
-  "registrationLimitCountDescription": "Kayıt sınırına ulaşıldığında ceza uygulamasını etkinleştir",
-  "saveSuccess": "Kaydetme Başarılı",
-  "stopNewUserRegistration": "Yeni Kullanıcı Kaydını Durdur",
-  "stopNewUserRegistrationDescription": "Etkinleştirildiğinde, kimse kayıt olamaz",
-  "trialRegistration": "Deneme Kaydı",
-  "trialRegistrationDescription": "Deneme kaydını etkinleştir; önce deneme paketini ve süresini değiştir"
+  "invite": {
+    "commissionFirstTimeOnly": "Sadece İlk Alımda Komisyon",
+    "commissionFirstTimeOnlyDescription": "Etkinleştirildiğinde, komisyon yalnızca davet edenin ilk ödemesi üzerinden oluşturulur; kullanıcı yönetiminde bireysel kullanıcıları yapılandırabilirsiniz.",
+    "enableForcedInvite": "Zorunlu Davetiye Etkinleştir",
+    "enableForcedInviteDescription": "Etkinleştirildiğinde, yalnızca davet edilen kullanıcılar kayıt olabilir.",
+    "inputPlaceholder": "Giriniz",
+    "inviteCommissionPercentage": "Davet Komisyon Yüzdesi",
+    "inviteCommissionPercentageDescription": "Varsayılan küresel komisyon dağıtım oranı; kullanıcı yönetiminde bireysel oranları yapılandırabilirsiniz.",
+    "inviteSettings": "Davet Ayarları",
+    "saveSuccess": "Başarıyla Kaydedildi"
+  },
+  "register": {
+    "ipRegistrationLimit": "IP Kayıt Sınırı",
+    "ipRegistrationLimitDescription": "Etkinleştirildiğinde, kural gereksinimlerini karşılayan IP'lerin kayıt olması kısıtlanacaktır; IP belirlemenin CDN'ler veya ön uç proxy'leri nedeniyle sorunlara yol açabileceğini unutmayın.",
+    "penaltyTime": "Ceza Süresi (dakika)",
+    "penaltyTimeDescription": "Kullanıcıların tekrar kayıt olabilmesi için ceza süresinin dolmasını beklemesi gerekmektedir.",
+    "registerSettings": "Kayıt Ayarları",
+    "registrationLimitCount": "Kayıt Sınır Sayısı",
+    "registrationLimitCountDescription": "Kayıt sınırına ulaşıldığında ceza uygulamasını etkinleştir.",
+    "saveSuccess": "Başarıyla Kaydedildi",
+    "stopNewUserRegistration": "Yeni Kullanıcı Kayıtlarını Durdur",
+    "stopNewUserRegistrationDescription": "Etkinleştirildiğinde, kimse kayıt olamaz.",
+    "trialRegistration": "Deneme Kaydı",
+    "trialRegistrationDescription": "Deneme kaydını etkinleştir; önce deneme paketini ve süresini değiştir."
+  },
+  "verify": {
+    "inputPlaceholder": "Giriniz",
+    "loginVerificationCode": "Giriş Doğrulama Kodu",
+    "loginVerificationCodeDescription": "Giriş sırasında insan doğrulaması.",
+    "registrationVerificationCode": "Kayıt Doğrulama Kodu",
+    "registrationVerificationCodeDescription": "Kayıt sırasında insan doğrulaması.",
+    "resetPasswordVerificationCode": "Şifre Sıfırlama Doğrulama Kodu",
+    "resetPasswordVerificationCodeDescription": "Şifre sıfırlama sırasında insan doğrulaması.",
+    "saveSuccess": "Başarıyla Kaydedildi",
+    "turnstileSecret": "Turnstile Gizli Anahtarı",
+    "turnstileSecretDescription": "Cloudflare tarafından sağlanan turnstile gizli anahtarı.",
+    "turnstileSiteKey": "Turnstile Site Anahtarı",
+    "turnstileSiteKeyDescription": "Cloudflare tarafından sağlanan turnstile site anahtarı.",
+    "verifySettings": "Doğrulama Ayarları"
+  }
 }

@@ -8,16 +8,6 @@
     "currencyUnitDescription": "Używane wyłącznie do celów wyświetlania, po zmianie wszystkie jednostki walutowe w systemie zostaną zmienione",
     "saveSuccess": "Zapisano pomyślnie"
   },
-  "invite": {
-    "commissionFirstTimeOnly": "Prowizja tylko przy pierwszym zakupie",
-    "commissionFirstTimeOnlyDescription": "Po włączeniu, prowizja jest generowana tylko przy pierwszej płatności zaproszonego użytkownika. Możesz skonfigurować indywidualnych użytkowników w zarządzaniu użytkownikami.",
-    "enableForcedInvite": "Włącz wymuszone zaproszenie",
-    "enableForcedInviteDescription": "Po włączeniu, tylko zaproszeni użytkownicy mogą się zarejestrować.",
-    "inputPlaceholder": "Proszę wprowadzić",
-    "inviteCommissionPercentage": "Procent prowizji za zaproszenie",
-    "inviteCommissionPercentageDescription": "Domyślny globalny procent podziału prowizji, możesz skonfigurować indywidualny procent w zarządzaniu użytkownikami.",
-    "saveSuccess": "Zapisano pomyślnie"
-  },
   "site": {
     "logo": "LOGO",
     "logoDescription": "Miejsce do wyświetlania LOGO",
@@ -35,42 +25,11 @@
   },
   "tabs": {
     "currency": "Waluta",
-    "invite": "Zaproszenie",
     "site": "Strona",
-    "telegram": "Telegram",
-    "tos": "Warunki usługi",
-    "verify": "Weryfikacja"
-  },
-  "telegram": {
-    "botToken": "Token bota",
-    "botTokenDescription": "Wprowadź token dostarczony przez Botfather",
-    "enableBotNotifications": "Włącz powiadomienia bota",
-    "enableBotNotificationsDescription": "Po włączeniu bot będzie wysyłał podstawowe powiadomienia do administratorów i użytkowników połączonych z Telegramem",
-    "groupURL": "URL grupy",
-    "groupURLDescription": "Po wypełnieniu będzie wyświetlany na interfejsie użytkownika lub używany tam, gdzie jest to potrzebne",
-    "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
-    "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "inputPlaceholderWebhookDomain": "https://example.com",
-    "saveSuccess": "Zapisano pomyślnie",
-    "webhookDomain": "Domena Webhook",
-    "webhookDomainDescription": "Wprowadź nazwę domeny serwera webhook"
+    "tos": "Warunki usługi"
   },
   "tos": {
     "saveSuccess": "Zapisano pomyślnie",
     "title": "Warunki usługi"
-  },
-  "verify": {
-    "inputPlaceholder": "Wprowadź",
-    "loginVerificationCode": "Kod weryfikacyjny logowania",
-    "loginVerificationCodeDescription": "Weryfikacja człowieka przy logowaniu",
-    "registrationVerificationCode": "Kod weryfikacyjny rejestracji",
-    "registrationVerificationCodeDescription": "Weryfikacja człowieka przy rejestracji",
-    "resetPasswordVerificationCode": "Kod weryfikacyjny resetowania hasła",
-    "resetPasswordVerificationCodeDescription": "Weryfikacja człowieka przy resetowaniu hasła",
-    "saveSuccess": "Zapisano pomyślnie",
-    "turnstileSecret": "Sekret Turnstile",
-    "turnstileSecretDescription": "Sekret Turnstile dostarczony przez Cloudflare",
-    "turnstileSiteKey": "Klucz witryny Turnstile",
-    "turnstileSiteKeyDescription": "Klucz witryny Turnstile dostarczony przez Cloudflare"
   }
 }

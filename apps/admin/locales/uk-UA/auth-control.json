@@ -1,13 +1,42 @@
 {
-  "ipRegistrationLimit": "Ліміт реєстрацій з IP-адреси",
-  "ipRegistrationLimitDescription": "Коли увімкнено, IP-адреси, які відповідають вимогам правила, будуть обмежені в реєстрації; зверніть увагу, що визначення IP-адреси може викликати проблеми через CDN або фронтенд-проксі",
-  "penaltyTime": "Час штрафу (хвилини)",
-  "penaltyTimeDescription": "Користувачі повинні дочекатися закінчення часу штрафу, перш ніж знову зареєструватися",
-  "registrationLimitCount": "Ліміт кількості реєстрацій",
-  "registrationLimitCountDescription": "Увімкнути штраф після досягнення ліміту реєстрацій",
-  "saveSuccess": "Збереження успішне",
-  "stopNewUserRegistration": "Зупинити реєстрацію нових користувачів",
-  "stopNewUserRegistrationDescription": "Коли ввімкнено, ніхто не може зареєструватися",
-  "trialRegistration": "Реєстрація на пробний період",
-  "trialRegistrationDescription": "Увімкніть реєстрацію на пробний період; спочатку змініть пробний пакет і тривалість"
+  "invite": {
+    "commissionFirstTimeOnly": "Комісія лише за першу покупку",
+    "commissionFirstTimeOnlyDescription": "При увімкненні комісія нараховується лише за перший платіж запрошуючого; ви можете налаштувати окремих користувачів у керуванні користувачами",
+    "enableForcedInvite": "Увімкнути примусове запрошення",
+    "enableForcedInviteDescription": "При увімкненні лише запрошені користувачі можуть зареєструватися",
+    "inputPlaceholder": "Введіть",
+    "inviteCommissionPercentage": "Відсоток комісії за запрошення",
+    "inviteCommissionPercentageDescription": "Стандартне глобальне співвідношення розподілу комісії; ви можете налаштувати окремі співвідношення у керуванні користувачами",
+    "inviteSettings": "Налаштування запрошення",
+    "saveSuccess": "Успішно збережено"
+  },
+  "register": {
+    "ipRegistrationLimit": "Обмеження реєстрації за IP",
+    "ipRegistrationLimitDescription": "При увімкненні IP, які відповідають вимогам правила, будуть обмежені в реєстрації; зверніть увагу, що визначення IP може викликати проблеми через CDN або проксі-сервери",
+    "penaltyTime": "Час покарання (хвилини)",
+    "penaltyTimeDescription": "Користувачі повинні почекати, поки час покарання не закінчиться, перш ніж знову реєструватися",
+    "registerSettings": "Налаштування реєстрації",
+    "registrationLimitCount": "Ліміт кількості реєстрацій",
+    "registrationLimitCountDescription": "Увімкнути покарання після досягнення ліміту реєстрацій",
+    "saveSuccess": "Успішно збережено",
+    "stopNewUserRegistration": "Зупинити реєстрацію нових користувачів",
+    "stopNewUserRegistrationDescription": "При увімкненні ніхто не може зареєструватися",
+    "trialRegistration": "Пробна реєстрація",
+    "trialRegistrationDescription": "Увімкнути пробну реєстрацію; спочатку змініть пакет пробного періоду та тривалість"
+  },
+  "verify": {
+    "inputPlaceholder": "Введіть",
+    "loginVerificationCode": "Код перевірки входу",
+    "loginVerificationCodeDescription": "Перевірка людини під час входу",
+    "registrationVerificationCode": "Код перевірки реєстрації",
+    "registrationVerificationCodeDescription": "Перевірка людини під час реєстрації",
+    "resetPasswordVerificationCode": "Код перевірки скидання пароля",
+    "resetPasswordVerificationCodeDescription": "Перевірка людини під час скидання пароля",
+    "saveSuccess": "Успішно збережено",
+    "turnstileSecret": "Секретний ключ Turnstile",
+    "turnstileSecretDescription": "Секретний ключ Turnstile, наданий Cloudflare",
+    "turnstileSiteKey": "Ключ сайту Turnstile",
+    "turnstileSiteKeyDescription": "Ключ сайту Turnstile, наданий Cloudflare",
+    "verifySettings": "Налаштування перевірки"
+  }
 }
