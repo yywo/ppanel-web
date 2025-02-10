@@ -220,7 +220,7 @@ export default function ThirdPartyAccounts() {
         method: account.id,
         redirect: `${window.location.origin}/bind/${account.id}`,
       });
-      if (res.data?.data?.url) {
+      if (res.data?.data?.redirect) {
         window.location.href = res.data.data.redirect;
       }
     }
@@ -246,8 +246,9 @@ export default function ThirdPartyAccounts() {
                   break;
                 case 'mobile':
                   displayValue =
-                    `${method?.area_code || ''}${method?.auth_identifier || ''}` ||
-                    t(`${account.id}.description`);
+                    method?.area_code && method?.auth_identifier
+                      ? `${method?.area_code || ''} ${method?.auth_identifier || ''}`
+                      : t(`${account.id}.description`);
                   break;
                 default:
                   displayValue = method?.auth_identifier || t(`${account.id}.description`);
