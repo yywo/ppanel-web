@@ -49,6 +49,7 @@
     "70001": "El código de verificación es incorrecto, por favor ingréselo nuevamente.",
     "80001": "La tarea no se agregó exitosamente a la cola, por favor intente de nuevo más tarde.",
     "90001": "Por favor desactive el modo DEBUG e intente nuevamente.",
+    "90015": "Esta cuenta ha alcanzado el límite de envíos de hoy, inténtelo de nuevo mañana",
     "undefined": "Ocurrió un error en el sistema, por favor intente más tarde."
   },
   "table": {

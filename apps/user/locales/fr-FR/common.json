@@ -50,6 +50,8 @@
     "60005": "Le mode d'abonnement unique a dépassé la limite d'utilisateurs.",
     "70001": "Le code de vérification est incorrect, veuillez le ressaisir.",
     "80001": "La tâche n'a pas été ajoutée avec succès à la file d'attente, veuillez réessayer plus tard.",
+    "90001": "Veuillez désactiver le mode DEBUG et réessayer.",
+    "90015": "Ce compte a atteint la limite d'envoi quotidienne, veuillez réessayer demain.",
     "undefined": "Une erreur système s'est produite, veuillez réessayer plus tard."
   },
   "unlimited": "illimité"

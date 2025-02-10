@@ -49,6 +49,7 @@
     "70001": "Le code de vérification est incorrect, veuillez le ressaisir.",
     "80001": "La tâche n'a pas été ajoutée avec succès à la file d'attente, veuillez réessayer plus tard.",
     "90001": "Veuillez désactiver le mode DEBUG et réessayer.",
+    "90015": "Ce compte a atteint la limite d'envoi du jour, veuillez réessayer demain",
     "undefined": "Une erreur système est survenue, veuillez réessayer plus tard."
   },
   "table": {

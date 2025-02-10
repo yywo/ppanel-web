@@ -49,6 +49,7 @@
     "70001": "Código de verificação incorreto, por favor, digite novamente.",
     "80001": "A tarefa não foi adicionada à fila com sucesso, por favor, tente novamente mais tarde.",
     "90001": "Por favor, desative o modo DEBUG e tente novamente.",
+    "90015": "Esta conta atingiu o limite de envios do dia, tente novamente amanhã",
     "undefined": "Ocorreu um erro no sistema, por favor, tente novamente mais tarde."
   },
   "table": {

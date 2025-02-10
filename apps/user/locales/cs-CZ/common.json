@@ -50,6 +50,8 @@
     "60005": "Režim jediné předplatné překročil limit uživatelů.",
     "70001": "Ověřovací kód je nesprávný, zadejte ho prosím znovu.",
     "80001": "Úkol nebyl úspěšně přidán do fronty, zkuste to prosím později.",
+    "90001": "Vypněte prosím režim DEBUG a zkuste to znovu.",
+    "90015": "Tento účet dosáhl dnešního limitu odesílání, zkuste to prosím zítra znovu",
     "undefined": "Došlo k chybě systému, zkuste to prosím později."
   },
   "unlimited": "neomezený"

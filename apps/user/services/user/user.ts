@@ -42,10 +42,13 @@ export async function queryUserBalanceLog(options?: { [key: string]: any }) {
   );
 }
 
-/** Bind Email POST /v1/public/user/bind_email */
-export async function bindEmail(body: API.BindEmailRequest, options?: { [key: string]: any }) {
+/** Update Bind Email PUT /v1/public/user/bind_email */
+export async function updateBindEmail(
+  body: API.UpdateBindEmailRequest,
+  options?: { [key: string]: any },
+) {
   return request<API.Response & { data?: any }>('/v1/public/user/bind_email', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -54,10 +57,13 @@ export async function bindEmail(body: API.BindEmailRequest, options?: { [key: st
   });
 }
 
-/** Bind Mobile POST /v1/public/user/bind_mobile */
-export async function bindMobile(body: API.BindMobileRequest, options?: { [key: string]: any }) {
+/** Update Bind Mobile PUT /v1/public/user/bind_mobile */
+export async function updateBindMobile(
+  body: API.UpdateBindMobileRequest,
+  options?: { [key: string]: any },
+) {
   return request<API.Response & { data?: any }>('/v1/public/user/bind_mobile', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -102,36 +108,6 @@ export async function bindTelegram(options?: { [key: string]: any }) {
       ...(options || {}),
     },
   );
-}
-
-/** Change Bind Email POST /v1/public/user/change_bind_email */
-export async function changebindEmail(
-  body: API.ChangebindEmailRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/public/user/change_bind_email', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Change Bind Mobile POST /v1/public/user/change_bind_mobile */
-export async function changebindMobile(
-  body: API.ChangebindMobileRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/public/user/change_bind_mobile', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
 }
 
 /** Query User Commission Log GET /v1/public/user/commission_log */

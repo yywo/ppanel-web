@@ -50,6 +50,8 @@
     "60005": "Tryb pojedynczej subskrypcji przekroczył limit użytkowników.",
     "70001": "Kod weryfikacyjny jest nieprawidłowy, wprowadź go ponownie.",
     "80001": "Zadanie nie zostało pomyślnie dodane do kolejki, spróbuj ponownie później.",
+    "90001": "Wyłącz tryb DEBUG i spróbuj ponownie.",
+    "90015": "To konto osiągnęło dzienny limit wysyłania, spróbuj ponownie jutro.",
     "undefined": "Wystąpił błąd systemu, spróbuj ponownie później."
   },
   "unlimited": "nieograniczony"

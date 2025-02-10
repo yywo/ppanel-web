@@ -49,6 +49,7 @@
     "70001": "Doğrulama kodu hatalı, lütfen tekrar girin.",
     "80001": "Görev kuyruğa başarıyla eklenemedi, lütfen daha sonra tekrar deneyin.",
     "90001": "Lütfen DEBUG modunu kapatıp tekrar deneyin.",
+    "90015": "Bu hesap bugünkü gönderim limitine ulaştı, lütfen yarın tekrar deneyin",
     "undefined": "Sistem hatası oluştu, lütfen daha sonra tekrar deneyin."
   },
   "table": {

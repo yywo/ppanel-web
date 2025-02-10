@@ -50,6 +50,8 @@
     "60005": "Az egyedi előfizetés mód túllépte a felhasználói limitet.",
     "70001": "A megerősítő kód hibás, kérjük, írja be újra.",
     "80001": "A feladat nem került sikeresen a sorba, kérjük, próbálja meg később újra.",
+    "90001": "Kérjük, kapcsolja ki a DEBUG módot, és próbálja újra.",
+    "90015": "Ez a fiók elérte a mai küldési limitet, kérjük próbálja újra holnap.",
     "undefined": "Rendszerhiba történt, kérjük, próbálja meg később újra."
   },
   "unlimited": "korlátlan"

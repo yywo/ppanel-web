@@ -50,6 +50,8 @@
     "60005": "Chế độ đăng ký đơn đã vượt quá giới hạn người dùng.",
     "70001": "Mã xác nhận không chính xác, vui lòng nhập lại.",
     "80001": "Nhiệm vụ không được thêm vào hàng đợi thành công, vui lòng thử lại sau.",
+    "90001": "Vui lòng tắt chế độ DEBUG và thử lại.",
+    "90015": "Tài khoản này đã đạt giới hạn gửi trong ngày, vui lòng thử lại vào ngày mai.",
     "undefined": "Hệ thống xảy ra lỗi, vui lòng thử lại sau."
   },
   "unlimited": "không giới hạn"

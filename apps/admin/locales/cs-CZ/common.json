@@ -49,6 +49,7 @@
     "70001": "Ověřovací kód je nesprávný, zadejte ho prosím znovu.",
     "80001": "Úkol nebyl úspěšně přidán do fronty, zkuste to prosím později.",
     "90001": "Vypněte prosím režim DEBUG a zkuste to znovu.",
+    "90015": "Tento účet dnes dosáhl limitu pro odesílání, zkuste to prosím znovu zítra",
     "undefined": "Došlo k chybě systému, zkuste to prosím později."
   },
   "table": {

@@ -49,6 +49,7 @@
     "70001": "Mã xác nhận không chính xác, vui lòng nhập lại.",
     "80001": "Nhiệm vụ không được thêm vào hàng đợi thành công, vui lòng thử lại sau.",
     "90001": "Vui lòng tắt chế độ DEBUG trước khi thử lại.",
+    "90015": "Tài khoản này đã đạt đến giới hạn gửi của ngày hôm nay, vui lòng thử lại vào ngày mai",
     "undefined": "Hệ thống xảy ra lỗi, vui lòng thử lại sau."
   },
   "table": {

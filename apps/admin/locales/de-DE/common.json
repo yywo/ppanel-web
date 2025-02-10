@@ -49,6 +49,7 @@
     "70001": "Der Bestätigungscode ist falsch, bitte erneut eingeben.",
     "80001": "Die Aufgabe wurde nicht erfolgreich in die Warteschlange aufgenommen, bitte versuchen Sie es später erneut.",
     "90001": "Bitte deaktivieren Sie den DEBUG-Modus und versuchen Sie es erneut.",
+    "90015": "Dieses Konto hat das tägliche Sendelimit erreicht. Bitte versuchen Sie es morgen erneut",
     "undefined": "Es ist ein Systemfehler aufgetreten, bitte versuchen Sie es später erneut."
   },
   "table": {

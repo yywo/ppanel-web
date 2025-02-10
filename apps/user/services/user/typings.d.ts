@@ -70,16 +70,6 @@ declare namespace API {
     enabled: boolean;
   };
 
-  type BindEmailRequest = {
-    email: string;
-  };
-
-  type BindMobileRequest = {
-    area_code: string;
-    mobile: string;
-    code: string;
-  };
-
   type BindOAuthCallbackRequest = {
     method: string;
     callback: Record<string, any>;
@@ -97,16 +87,6 @@ declare namespace API {
   type BindTelegramResponse = {
     url: string;
     expired_at: number;
-  };
-
-  type ChangebindEmailRequest = {
-    email: string;
-  };
-
-  type ChangebindMobileRequest = {
-    area_code: string;
-    mobile: string;
-    code: string;
   };
 
   type CheckoutOrderRequest = {
@@ -746,6 +726,16 @@ declare namespace API {
 
   type UnsubscribeRequest = {
     id: number;
+  };
+
+  type UpdateBindEmailRequest = {
+    email: string;
+  };
+
+  type UpdateBindMobileRequest = {
+    area_code: string;
+    mobile: string;
+    code: string;
   };
 
   type UpdateUserNotifyRequest = {

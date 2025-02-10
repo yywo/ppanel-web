@@ -2,7 +2,7 @@
 
 import SendCode from '@/app/auth/send-code';
 import useGlobalStore from '@/config/use-global';
-import { bindOAuth } from '@/services/user/user';
+import { bindOAuth, unbindOAuth, updateBindEmail, updateBindMobile } from '@/services/user/user';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
@@ -37,9 +37,9 @@ function MobileBindDialog({
   const [open, setOpen] = useState(false);
 
   const formSchema = z.object({
-    telephone_area_code: z.string().min(1, 'Area code is required'),
-    telephone: z.string().min(5, 'Phone number is required'),
-    telephone_code: z.string().min(4, 'Verification code is required'),
+    area_code: z.string().min(1, 'Area code is required'),
+    mobile: z.string().min(5, 'Phone number is required'),
+    code: z.string().min(4, 'Verification code is required'),
   });
 
   type MobileBindFormValues = z.infer<typeof formSchema>;
@@ -47,15 +47,15 @@ function MobileBindDialog({
   const form = useForm<MobileBindFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      // @ts-ignore
-      telephone_area_code: method?.area_code || '1',
-      telephone: method?.auth_identifier || '',
-      telephone_code: '',
+      area_code: method?.area_code || '1',
+      mobile: method?.auth_identifier || '',
+      code: '',
     },
   });
 
   const onSubmit = async (values: MobileBindFormValues) => {
     try {
+      await updateBindMobile(values);
       toast.success(t('bindSuccess'));
       onSuccess();
       setOpen(false);
@@ -75,14 +75,14 @@ function MobileBindDialog({
           <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
             <FormField
               control={form.control}
-              name='telephone'
+              name='mobile'
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
                     <div className='flex'>
                       <FormField
                         control={form.control}
-                        name='telephone_area_code'
+                        name='area_code'
                         render={({ field }) => (
                           <FormItem>
                             <FormControl>
@@ -93,7 +93,7 @@ function MobileBindDialog({
                                 value={field.value}
                                 onChange={(value) => {
                                   if (value.phone) {
-                                    form.setValue('telephone_area_code', value.phone);
+                                    form.setValue(field.name, value.phone);
                                   }
                                 }}
                               />
@@ -117,7 +117,7 @@ function MobileBindDialog({
 
             <FormField
               control={form.control}
-              name='telephone_code'
+              name='code'
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
@@ -126,8 +126,9 @@ function MobileBindDialog({
                       <SendCode
                         type='phone'
                         params={{
-                          ...form.getValues(),
-                          type: 2,
+                          telephone_area_code: form.getValues().area_code,
+                          telephone: form.getValues().mobile,
+                          type: 1,
                         }}
                       />
                     </div>
@@ -195,14 +196,13 @@ export default function ThirdPartyAccounts() {
       name: 'GitHub',
       type: 'OAuth',
     },
-  ];
-  // .filter((account) => oauth_methods?.includes(account.id));
+  ].filter((account) => oauth_methods?.includes(account.id));
 
   const [editValues, setEditValues] = useState<Record<string, any>>({});
 
   const handleBasicAccountUpdate = async (account: (typeof accounts)[0], value: string) => {
     if (account.id === 'email') {
-      // TODO: Create a new email auth or update the existing one
+      await updateBindEmail({ email: value });
       await getUserInfo();
       toast.success(t('updateSuccess'));
     }
@@ -213,8 +213,7 @@ export default function ThirdPartyAccounts() {
       (auth) => auth.auth_type === account.id,
     )?.auth_identifier;
     if (isBound) {
-      // unbindOAuth
-      // await unbindOAuth(account.id);
+      await unbindOAuth({ method: account.id });
       await getUserInfo();
     } else {
       const res = await bindOAuth({
@@ -222,7 +221,7 @@ export default function ThirdPartyAccounts() {
         redirect: `${window.location.origin}/bind/${account.id}`,
       });
       if (res.data?.data?.url) {
-        window.location.href = res.data.data.url;
+        window.location.href = res.data.data.redirect;
       }
     }
   };
@@ -239,9 +238,20 @@ export default function ThirdPartyAccounts() {
               const method = user?.auth_methods?.find((auth) => auth.auth_type === account.id);
               const isEditing = account.id === 'email';
               const currentValue = method?.auth_identifier || editValues[account.id];
-              const displayValue = isEditing
-                ? currentValue
-                : method?.auth_identifier || t(`${account.id}.description`);
+              let displayValue = '';
+
+              switch (account.id) {
+                case 'email':
+                  displayValue = isEditing ? currentValue : method?.auth_identifier || '';
+                  break;
+                case 'mobile':
+                  displayValue =
+                    `${method?.area_code || ''}${method?.auth_identifier || ''}` ||
+                    t(`${account.id}.description`);
+                  break;
+                default:
+                  displayValue = method?.auth_identifier || t(`${account.id}.description`);
+              }
 
               return (
                 <div key={account.id} className='flex w-full flex-col gap-2'>

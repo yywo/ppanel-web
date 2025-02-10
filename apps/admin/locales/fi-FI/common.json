@@ -49,6 +49,7 @@
     "70001": "Vahvistuskoodi on virheellinen, syötä se uudelleen.",
     "80001": "Tehtävää ei lisätty jonoon, yritä myöhemmin uudelleen.",
     "90001": "Sulje DEBUG-tila ja yritä uudelleen.",
+    "90015": "Tämä tili on saavuttanut päivittäisen lähetysrajan, yritä uudelleen huomenna",
     "undefined": "Järjestelmässä tapahtui virhe, yritä myöhemmin uudelleen."
   },
   "table": {

@@ -50,6 +50,8 @@
     "60005": "Enkelt abonnementsmodus har overskredet brukergrensen.",
     "70001": "Verifikasjonskoden er feil, vennligst skriv inn på nytt.",
     "80001": "Oppgaven ble ikke vellykket lagt til i køen, vennligst prøv igjen senere.",
+    "90001": "Deaktiver DEBUG-modus og prøv igjen.",
+    "90015": "Denne kontoen har nådd dagens sendingsgrense, vennligst prøv igjen i morgen.",
     "undefined": "Det oppstod en systemfeil, vennligst prøv igjen senere."
   },
   "unlimited": "ubegrenset"

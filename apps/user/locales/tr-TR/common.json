@@ -50,6 +50,8 @@
     "60005": "Tekli abonelik moduğu kullanıcı sınırını aştı.",
     "70001": "Doğrulama kodu hatalı, lütfen tekrar girin.",
     "80001": "Görev sıraya başarıyla eklenemedi, lütfen daha sonra tekrar deneyin.",
+    "90001": "Lütfen DEBUG modunu devre dışı bırakın ve tekrar deneyin.",
+    "90015": "Bu hesap bugünkü gönderim limitine ulaştı, lütfen yarın tekrar deneyin.",
     "undefined": "Sistem hatası oluştu, lütfen daha sonra tekrar deneyin."
   },
   "unlimited": "sınırsız"

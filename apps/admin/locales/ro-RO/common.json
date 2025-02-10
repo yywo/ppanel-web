@@ -49,6 +49,7 @@
     "70001": "Codul de verificare este incorect, vă rugăm să îl introduceți din nou.",
     "80001": "Sarcina nu a fost adăugată cu succes în coadă, vă rugăm să încercați din nou mai târziu.",
     "90001": "Vă rugăm să dezactivați modul DEBUG și să încercați din nou.",
+    "90015": "Acest cont a atins limita de trimitere pentru astăzi, încercați din nou mâine",
     "undefined": "A apărut o eroare în sistem, vă rugăm să încercați din nou mai târziu."
   },
   "table": {
