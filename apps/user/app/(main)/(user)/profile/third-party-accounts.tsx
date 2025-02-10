@@ -244,12 +244,6 @@ export default function ThirdPartyAccounts() {
                 case 'email':
                   displayValue = isEditing ? currentValue : method?.auth_identifier || '';
                   break;
-                case 'mobile':
-                  displayValue =
-                    method?.area_code && method?.auth_identifier
-                      ? `${method?.area_code || ''} ${method?.auth_identifier || ''}`
-                      : t(`${account.id}.description`);
-                  break;
                 default:
                   displayValue = method?.auth_identifier || t(`${account.id}.description`);
               }
