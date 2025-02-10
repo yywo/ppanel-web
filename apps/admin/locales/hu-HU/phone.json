@@ -15,6 +15,7 @@
   "limit": "Napi limit",
   "limitTip": "Napi SMS ellenőrző kód küldési limit ugyanarra a telefonszámra, 0 azt jelenti, hogy nincs korlátozás",
   "logs": "Naplók",
+  "phoneNumberLabel": "Telefonszám",
   "placeholders": {
     "expireTime": "Adja meg a lejárati időt, alapértelmezett érték: 300",
     "interval": "Adja meg az intervallum időt, alapértelmezett 60",

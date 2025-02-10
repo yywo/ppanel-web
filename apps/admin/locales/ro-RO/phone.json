@@ -15,6 +15,7 @@
   "limit": "Limită zilnică",
   "limitTip": "Limita zilnică de trimitere a codului de verificare prin SMS pentru același număr de telefon, 0 înseamnă fără limită",
   "logs": "Jurnale",
+  "phoneNumberLabel": "Număr de telefon",
   "placeholders": {
     "expireTime": "Introduceți timpul de expirare, implicit este 300",
     "interval": "Introduceți timpul de interval, implicit este 60",

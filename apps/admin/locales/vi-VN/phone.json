@@ -15,6 +15,7 @@
   "limit": "Giới hạn hàng ngày",
   "limitTip": "Giới hạn gửi mã xác minh SMS hàng ngày cho cùng một số điện thoại, 0 có nghĩa là không giới hạn",
   "logs": "Nhật ký",
+  "phoneNumberLabel": "Số Điện Thoại",
   "placeholders": {
     "expireTime": "Nhập thời gian hết hạn, mặc định là 300",
     "interval": "Nhập thời gian khoảng cách, mặc định là 60",

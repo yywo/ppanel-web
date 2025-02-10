@@ -15,6 +15,7 @@
   "limit": "Denní limit",
   "limitTip": "Denní limit pro odesílání ověřovacích SMS kódů na stejné telefonní číslo, 0 znamená bez omezení",
   "logs": "Protokoly",
+  "phoneNumberLabel": "Telefonní číslo",
   "placeholders": {
     "expireTime": "Zadejte dobu vypršení, výchozí je 300",
     "interval": "Zadejte interval, výchozí je 60",

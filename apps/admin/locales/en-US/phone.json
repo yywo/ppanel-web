@@ -15,6 +15,7 @@
   "limit": "Daily Limit",
   "limitTip": "Daily SMS verification code sending limit for the same phone number, 0 means no limit",
   "logs": "Logs",
+  "phoneNumberLabel": "Phone Number",
   "placeholders": {
     "expireTime": "Enter expire time, default is 300",
     "interval": "Enter interval time, default is 60",

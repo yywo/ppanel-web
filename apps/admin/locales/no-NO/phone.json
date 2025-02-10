@@ -15,6 +15,7 @@
   "limit": "Daglig grense",
   "limitTip": "Daglig grense for sending av SMS-verifiseringskode til samme telefonnummer, 0 betyr ingen grense",
   "logs": "Logger",
+  "phoneNumberLabel": "Telefonnummer",
   "placeholders": {
     "expireTime": "Skriv inn utløpstid, standard er 300",
     "interval": "Skriv inn intervalltid, standard er 60",

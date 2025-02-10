@@ -15,6 +15,7 @@
   "limit": "每日限额",
   "limitTip": "同一手机号每日短信验证码发送限制，0表示无限制",
   "logs": "日志",
+  "phoneNumberLabel": "电话号码",
   "placeholders": {
     "expireTime": "输入过期时间，默认为300",
     "interval": "输入间隔时间，默认为60",

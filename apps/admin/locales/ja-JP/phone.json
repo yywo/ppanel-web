@@ -15,6 +15,7 @@
   "limit": "1日の制限",
   "limitTip": "同一の電話番号に対する1日のSMS認証コード送信制限。0は制限なしを意味します。",
   "logs": "ログ",
+  "phoneNumberLabel": "電話番号",
   "placeholders": {
     "expireTime": "有効期限を入力してください。デフォルトは300です",
     "interval": "間隔時間を入力してください。デフォルトは60です",

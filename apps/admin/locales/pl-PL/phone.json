@@ -15,6 +15,7 @@
   "limit": "Dzienne ograniczenie",
   "limitTip": "Dzienny limit wysyłania kodów weryfikacyjnych SMS dla tego samego numeru telefonu, 0 oznacza brak limitu",
   "logs": "Dzienniki",
+  "phoneNumberLabel": "Numer telefonu",
   "placeholders": {
     "expireTime": "Wprowadź czas wygaśnięcia, domyślnie 300",
     "interval": "Wprowadź czas interwału, domyślnie 60",

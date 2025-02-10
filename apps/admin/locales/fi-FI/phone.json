@@ -15,6 +15,7 @@
   "limit": "Päivittäinen raja",
   "limitTip": "Päivittäinen tekstiviestivarmistuskoodin lähetysraja samalle puhelinnumerolle, 0 tarkoittaa ei rajoitusta",
   "logs": "Lokit",
+  "phoneNumberLabel": "Puhelinnumero",
   "placeholders": {
     "expireTime": "Syötä vanhentumisaika, oletus on 300",
     "interval": "Anna aikaväli, oletus on 60",

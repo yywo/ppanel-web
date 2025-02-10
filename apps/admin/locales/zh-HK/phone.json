@@ -15,6 +15,7 @@
   "limit": "每日限額",
   "limitTip": "同一電話號碼每日發送SMS驗證碼的限制，0表示無限制",
   "logs": "日誌",
+  "phoneNumberLabel": "電話號碼",
   "placeholders": {
     "expireTime": "輸入過期時間，預設為300",
     "interval": "輸入間隔時間，默認為60",

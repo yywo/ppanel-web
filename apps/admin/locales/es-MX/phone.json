@@ -15,6 +15,7 @@
   "limit": "Límite Diario",
   "limitTip": "Límite diario de envío de códigos de verificación por SMS para el mismo número de teléfono, 0 significa sin límite",
   "logs": "Registros",
+  "phoneNumberLabel": "Número de Teléfono",
   "placeholders": {
     "expireTime": "Ingrese el tiempo de expiración, el valor predeterminado es 300",
     "interval": "Ingrese el tiempo de intervalo, el valor predeterminado es 60",

@@ -15,6 +15,7 @@
   "limit": "Günlük Limit",
   "limitTip": "Aynı telefon numarası için günlük SMS doğrulama kodu gönderim limiti, 0 sınırsız demektir",
   "logs": "Günlükler",
+  "phoneNumberLabel": "Telefon Numarası",
   "placeholders": {
     "expireTime": "Sona erme süresini girin, varsayılan 300",
     "interval": "Aralık süresini girin, varsayılan 60'tır",

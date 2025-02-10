@@ -15,6 +15,7 @@
   "limit": "일일 한도",
   "limitTip": "동일한 전화번호에 대한 일일 SMS 인증 코드 전송 제한, 0은 제한 없음",
   "logs": "로그",
+  "phoneNumberLabel": "전화번호",
   "placeholders": {
     "expireTime": "만료 시간을 입력하세요. 기본값은 300입니다",
     "interval": "간격 시간을 입력하세요, 기본값은 60입니다",

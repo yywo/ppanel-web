@@ -358,6 +358,34 @@ export default function Page() {
                 </TableCell>
               </TableRow>
             )}
+            {platformConfig?.phone_number && (
+              <TableRow>
+                <TableCell>
+                  <Label>{t('phoneNumberLabel')}</Label>
+                  <p className='text-muted-foreground text-xs'>
+                    {t('platformConfigTip', { key: platformConfig?.phone_number })}
+                  </p>
+                </TableCell>
+                <TableCell className='text-right'>
+                  <Textarea
+                    defaultValue={data?.config?.platform_config?.phone_variable ?? ''}
+                    onBlur={(e) =>
+                      updateConfig('config', {
+                        ...data?.config,
+                        platform_config: {
+                          ...data?.config?.platform_config,
+                          phone_variable: e.target.value,
+                        },
+                      })
+                    }
+                    disabled={isFetching}
+                    placeholder={t('platformConfigTip', {
+                      key: platformConfig?.phone_number,
+                    })}
+                  />
+                </TableCell>
+              </TableRow>
+            )}
             {platformConfig?.code_variable && (
               <TableRow>
                 <TableCell>

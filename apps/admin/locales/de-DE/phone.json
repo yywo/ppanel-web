@@ -15,6 +15,7 @@
   "limit": "Tageslimit",
   "limitTip": "Tägliches Limit für das Senden von SMS-Verifizierungscodes an dieselbe Telefonnummer, 0 bedeutet kein Limit",
   "logs": "Protokolle",
+  "phoneNumberLabel": "Telefonnummer",
   "placeholders": {
     "expireTime": "Geben Sie die Ablaufzeit ein, Standard ist 300",
     "interval": "Geben Sie das Intervall ein, Standard ist 60",
