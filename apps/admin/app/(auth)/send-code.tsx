@@ -37,10 +37,11 @@ export default function SendCode({ type, params }: SendCodeProps) {
   };
 
   const getPhoneCode = async () => {
-    if (params.telephone && params.telephone_area_code) {
+    if (params.telephone && params.telephone_area_code && params.type) {
       await sendSmsCode({
         telephone: params.telephone,
         telephone_area_code: params.telephone_area_code,
+        type: params.type,
       });
       setTargetDate(Date.now() + 60000);
     }

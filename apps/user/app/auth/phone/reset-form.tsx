@@ -104,7 +104,13 @@ export default function ResetForm({
                       {...field}
                       value={field.value as string}
                     />
-                    <SendCode type='phone' params={form.getValues()} />
+                    <SendCode
+                      type='phone'
+                      params={{
+                        ...form.getValues(),
+                        type: 2,
+                      }}
+                    />
                   </div>
                 </FormControl>
                 <FormMessage />

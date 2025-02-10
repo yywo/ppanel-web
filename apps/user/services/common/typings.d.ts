@@ -348,6 +348,7 @@ declare namespace API {
   };
 
   type SendSmsCodeRequest = {
+    type: number;
     telephone: string;
     telephone_area_code: string;
   };
@@ -594,6 +595,7 @@ declare namespace API {
     auth_type: string;
     auth_identifier: string;
     verified: boolean;
+    area_code?: string;
   };
 
   type UserBalanceLog = {

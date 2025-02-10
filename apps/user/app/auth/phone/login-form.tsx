@@ -103,7 +103,15 @@ export default function LoginForm({
                       type={mode === 'code' ? 'text' : 'password'}
                       {...field}
                     />
-                    {mode === 'code' && <SendCode type='phone' params={form.getValues()} />}
+                    {mode === 'code' && (
+                      <SendCode
+                        type='phone'
+                        params={{
+                          ...form.getValues(),
+                          type: 2,
+                        }}
+                      />
+                    )}
                   </div>
                 </FormControl>
                 <div className='!mt-0 text-right'>

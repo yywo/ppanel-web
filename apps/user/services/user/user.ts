@@ -42,6 +42,30 @@ export async function queryUserBalanceLog(options?: { [key: string]: any }) {
   );
 }
 
+/** Bind Email POST /v1/public/user/bind_email */
+export async function bindEmail(body: API.BindEmailRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/public/user/bind_email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Bind Mobile POST /v1/public/user/bind_mobile */
+export async function bindMobile(body: API.BindMobileRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/public/user/bind_mobile', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Bind OAuth POST /v1/public/user/bind_oauth */
 export async function bindOAuth(body: API.BindOAuthRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.BindOAuthResponse }>('/v1/public/user/bind_oauth', {
@@ -78,6 +102,36 @@ export async function bindTelegram(options?: { [key: string]: any }) {
       ...(options || {}),
     },
   );
+}
+
+/** Change Bind Email POST /v1/public/user/change_bind_email */
+export async function changebindEmail(
+  body: API.ChangebindEmailRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/public/user/change_bind_email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Change Bind Mobile POST /v1/public/user/change_bind_mobile */
+export async function changebindMobile(
+  body: API.ChangebindMobileRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/public/user/change_bind_mobile', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
 }
 
 /** Query User Commission Log GET /v1/public/user/commission_log */
@@ -254,4 +308,16 @@ export async function preUnsubscribe(
       ...(options || {}),
     },
   );
+}
+
+/** Verify Email POST /v1/public/user/verify_email */
+export async function verifyEmail(body: API.VerifyEmailRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/public/user/verify_email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
 }

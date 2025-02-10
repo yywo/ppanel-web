@@ -123,7 +123,13 @@ function MobileBindDialog({
                   <FormControl>
                     <div className='flex gap-2'>
                       <Input placeholder='Enter code...' type='text' {...field} />
-                      <SendCode type='phone' params={form.getValues()} />
+                      <SendCode
+                        type='phone'
+                        params={{
+                          ...form.getValues(),
+                          type: 2,
+                        }}
+                      />
                     </div>
                   </FormControl>
 

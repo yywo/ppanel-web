@@ -70,6 +70,16 @@ declare namespace API {
     enabled: boolean;
   };
 
+  type BindEmailRequest = {
+    email: string;
+  };
+
+  type BindMobileRequest = {
+    area_code: string;
+    mobile: string;
+    code: string;
+  };
+
   type BindOAuthCallbackRequest = {
     method: string;
     callback: Record<string, any>;
@@ -87,6 +97,16 @@ declare namespace API {
   type BindTelegramResponse = {
     url: string;
     expired_at: number;
+  };
+
+  type ChangebindEmailRequest = {
+    email: string;
+  };
+
+  type ChangebindMobileRequest = {
+    area_code: string;
+    mobile: string;
+    code: string;
   };
 
   type CheckoutOrderRequest = {
@@ -783,6 +803,7 @@ declare namespace API {
     auth_type: string;
     auth_identifier: string;
     verified: boolean;
+    area_code?: string;
   };
 
   type UserBalanceLog = {
@@ -849,6 +870,11 @@ declare namespace API {
     enable_login_verify: boolean;
     enable_register_verify: boolean;
     enable_reset_password_verify: boolean;
+  };
+
+  type VerifyEmailRequest = {
+    email: string;
+    code: string;
   };
 
   type Vless = {

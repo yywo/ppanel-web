@@ -153,7 +153,14 @@ export default function RegisterForm({
                         {...field}
                         value={field.value as string}
                       />
-                      <SendCode type='phone' params={form.getValues()} />
+
+                      <SendCode
+                        type='phone'
+                        params={{
+                          ...form.getValues(),
+                          type: 1,
+                        }}
+                      />
                     </div>
                   </FormControl>
                   <FormMessage />
