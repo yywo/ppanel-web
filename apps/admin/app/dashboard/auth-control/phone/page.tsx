@@ -368,13 +368,13 @@ export default function Page() {
                 </TableCell>
                 <TableCell className='text-right'>
                   <Textarea
-                    defaultValue={data?.config?.platform_config?.phone_variable ?? ''}
+                    defaultValue={data?.config?.platform_config?.phone_number ?? ''}
                     onBlur={(e) =>
                       updateConfig('config', {
                         ...data?.config,
                         platform_config: {
                           ...data?.config?.platform_config,
-                          phone_variable: e.target.value,
+                          phone_number: e.target.value,
                         },
                       })
                     }
