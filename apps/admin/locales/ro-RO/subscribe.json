@@ -51,6 +51,7 @@
     "subscriptionPath": "Calea Abonamentului",
     "subscriptionPathDescription": "Folosit pentru abonament; asigurați-vă că reporniți sistemul după modificare pentru performanțe optime",
     "subscriptionPathPlaceholder": "Introduceți",
+    "updateSuccess": "Actualizat cu succes",
     "wildcardResolution": "Rezoluție Wildcard",
     "wildcardResolutionDescription": "Folosit pentru abonament"
   },

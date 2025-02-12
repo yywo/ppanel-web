@@ -51,6 +51,7 @@
     "subscriptionPath": "مسیر اشتراک",
     "subscriptionPathDescription": "برای اشتراک استفاده می‌شود؛ حتماً پس از تغییر، سیستم را برای عملکرد بهینه راه‌اندازی مجدد کنید",
     "subscriptionPathPlaceholder": "وارد کنید",
+    "updateSuccess": "به‌روزرسانی با موفقیت انجام شد",
     "wildcardResolution": "حل و فصل کاراکترهای جایگزین",
     "wildcardResolutionDescription": "برای اشتراک استفاده می‌شود"
   },

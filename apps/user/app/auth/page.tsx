@@ -41,7 +41,9 @@ export default function Page() {
     },
   ].filter((method) => method.enabled);
 
-  const OAUTH_METHODS = oauth_methods?.filter((method) => !['mobile', 'email'].includes(method));
+  const OAUTH_METHODS = oauth_methods?.filter(
+    (method) => !['mobile', 'email', 'imei'].includes(method),
+  );
 
   return (
     <main className='bg-muted/50 flex h-full min-h-screen items-center'>

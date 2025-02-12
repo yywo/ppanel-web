@@ -35,6 +35,10 @@ export const AuthControl = [
     title: 'GitHub',
     url: '/dashboard/auth-control/github',
   },
+  {
+    title: 'IMEI',
+    url: '/dashboard/auth-control/imei',
+  },
 ];
 
 export const navs = [

@@ -51,6 +51,7 @@
     "subscriptionPath": "सदस्यता पथ",
     "subscriptionPathDescription": "सदस्यता के लिए उपयोग किया जाता है; इष्टतम प्रदर्शन के लिए संशोधन के बाद सिस्टम को पुनः आरंभ करना सुनिश्चित करें",
     "subscriptionPathPlaceholder": "दर्ज करें",
+    "updateSuccess": "सफलता से अपडेट किया गया",
     "wildcardResolution": "वाइल्डकार्ड समाधान",
     "wildcardResolutionDescription": "सदस्यता के लिए उपयोग किया जाता है"
   },

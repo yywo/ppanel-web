@@ -5,8 +5,6 @@
   "clientSecretDescription": "รหัสลับของไคลเอนต์จากการตั้งค่าแอปพลิเคชัน GitHub OAuth ของคุณ",
   "enable": "เปิดใช้งานการยืนยันตัวตนของ GitHub",
   "enableDescription": "อนุญาตให้ผู้ใช้ลงชื่อเข้าใช้ด้วยบัญชี GitHub ของพวกเขา",
-  "redirectUri": "URL การเรียกกลับการอนุญาต",
-  "redirectUriDescription": "URL ในแอปพลิเคชันของคุณที่ผู้ใช้จะถูกเปลี่ยนเส้นทางหลังจากการยืนยันตัวตนของ GitHub",
   "saveFailed": "ไม่สามารถบันทึกการตั้งค่า GitHub ได้",
   "saveSuccess": "บันทึกการตั้งค่า GitHub สำเร็จเรียบร้อยแล้ว"
 }

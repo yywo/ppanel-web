@@ -5,8 +5,6 @@
   "clientSecretDescription": "Google OAuth 2.0-Client-Geheimnis aus der Google Cloud Console",
   "enable": "Aktivieren",
   "enableDescription": "Nach der Aktivierung können sich Benutzer mit ihrem Google-Konto anmelden",
-  "redirectUri": "Autorisierte Umleitungs-URI",
-  "redirectUriDescription": "Die URL, zu der der Benutzer nach der Google-Authentifizierung weitergeleitet wird",
   "saveFailed": "Speichern fehlgeschlagen",
   "saveSuccess": "Erfolgreich gespeichert"
 }

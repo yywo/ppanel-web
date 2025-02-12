@@ -5,8 +5,6 @@
   "clientSecretDescription": "Токен бота Telegram, который вы можете получить у @BotFather",
   "enable": "Включить",
   "enableDescription": "После включения будут доступны функции регистрации, входа, привязки и отвязки мобильного телефона",
-  "redirectUri": "URL перенаправления",
-  "redirectUriDescription": "URL, на который Telegram перенаправит после успешной аутентификации",
   "saveFailed": "Не удалось сохранить",
   "saveSuccess": "Сохранение успешно"
 }

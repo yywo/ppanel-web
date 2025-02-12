@@ -5,8 +5,6 @@
   "clientSecretDescription": "Telegram 机器人令牌，您可以从 @BotFather 获取",
   "enable": "启用",
   "enableDescription": "启用后，将启用手机注册、登录、绑定和解绑功能",
-  "redirectUri": "重定向 URL",
-  "redirectUriDescription": "Telegram 成功认证后将重定向到的 URL",
   "saveFailed": "保存失败",
   "saveSuccess": "保存成功"
 }

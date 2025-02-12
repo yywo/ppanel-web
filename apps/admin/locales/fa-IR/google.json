@@ -5,8 +5,6 @@
   "clientSecretDescription": "رمز مشتری OAuth 2.0 گوگل از کنسول Google Cloud",
   "enable": "فعال کردن",
   "enableDescription": "پس از فعال‌سازی، کاربران می‌توانند با حساب گوگل خود وارد شوند",
-  "redirectUri": "نشانی مجاز تغییر مسیر",
-  "redirectUriDescription": "آدرس URL که کاربر پس از احراز هویت گوگل به آن هدایت می‌شود",
   "saveFailed": "ذخیره‌سازی ناموفق بود",
   "saveSuccess": "ذخیره با موفقیت انجام شد"
 }

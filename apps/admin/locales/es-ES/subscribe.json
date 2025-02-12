@@ -51,6 +51,7 @@
     "subscriptionPath": "Ruta de Suscripción",
     "subscriptionPathDescription": "Usado para suscripción; asegúrese de reiniciar el sistema después de la modificación para un rendimiento óptimo",
     "subscriptionPathPlaceholder": "Ingrese",
+    "updateSuccess": "Actualizado con éxito",
     "wildcardResolution": "Resolución de Comodín",
     "wildcardResolutionDescription": "Usado para suscripción"
   },

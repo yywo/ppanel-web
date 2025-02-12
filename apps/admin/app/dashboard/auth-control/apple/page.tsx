@@ -131,7 +131,7 @@ export default function Page() {
           </TableCell>
           <TableCell className='text-right'>
             <EnhancedInput
-              placeholder='https://your-domain.com/v1/auth/oauth/callback/apple'
+              placeholder='https://your-domain.com'
               value={data?.config.redirect_url}
               onValueBlur={(value) =>
                 updateConfig('config', {

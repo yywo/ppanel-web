@@ -57,7 +57,7 @@ export default function Page() {
 
   return (
     <Tabs defaultValue='basic'>
-      <TabsList>
+      <TabsList className='h-full flex-wrap'>
         <TabsTrigger value='basic'>{t('emailBasicConfig')}</TabsTrigger>
         <TabsTrigger value='template'>{t('emailTemplate')}</TabsTrigger>
         <TabsTrigger value='logs'>{t('emailLogs')}</TabsTrigger>

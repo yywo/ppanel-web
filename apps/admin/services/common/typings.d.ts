@@ -170,11 +170,6 @@ declare namespace API {
     tos_content: string;
   };
 
-  type GoogleLoginCallbackParams = {
-    code: string;
-    state: string;
-  };
-
   type GoogleLoginCallbackRequest = {
     code: string;
     state: string;
@@ -595,7 +590,6 @@ declare namespace API {
     auth_type: string;
     auth_identifier: string;
     verified: boolean;
-    area_code?: string;
   };
 
   type UserBalanceLog = {

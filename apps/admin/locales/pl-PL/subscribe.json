@@ -51,6 +51,7 @@
     "subscriptionPath": "Ścieżka subskrypcji",
     "subscriptionPathDescription": "Używane do subskrypcji; upewnij się, że zrestartujesz system po modyfikacji dla optymalnej wydajności",
     "subscriptionPathPlaceholder": "Wprowadź",
+    "updateSuccess": "Zaktualizowano pomyślnie",
     "wildcardResolution": "Rozwiązanie wieloznaczne",
     "wildcardResolutionDescription": "Używane do subskrypcji"
   },

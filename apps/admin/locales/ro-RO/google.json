@@ -5,8 +5,6 @@
   "clientSecretDescription": "Secretul clientului Google OAuth 2.0 din Consola Google Cloud",
   "enable": "Activează",
   "enableDescription": "După activare, utilizatorii se pot autentifica cu contul lor Google",
-  "redirectUri": "URI de redirecționare autorizat",
-  "redirectUriDescription": "URL-ul către care utilizatorul va fi redirecționat după autentificarea Google",
   "saveFailed": "Salvarea a eșuat",
   "saveSuccess": "Salvare reușită"
 }

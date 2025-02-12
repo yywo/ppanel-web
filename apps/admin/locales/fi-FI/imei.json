@@ -1,0 +1,4 @@
+{
+  "enable": "Ota käyttöön",
+  "enableDescription": "Kun tämä on otettu käyttöön, käyttäjät voivat kirjautua sisään IMEI:n avulla"
+}

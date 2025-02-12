@@ -5,8 +5,6 @@
   "clientSecretDescription": "Tokenul Bot Telegram, îl puteți obține de la @BotFather",
   "enable": "Activează",
   "enableDescription": "După activare, funcțiile de înregistrare, autentificare, asociere și disociere a telefonului mobil vor fi activate",
-  "redirectUri": "URL de redirecționare",
-  "redirectUriDescription": "URL-ul către care Telegram va redirecționa după autentificarea cu succes",
   "saveFailed": "Salvarea a eșuat",
   "saveSuccess": "Salvare reușită"
 }

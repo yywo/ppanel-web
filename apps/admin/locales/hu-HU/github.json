@@ -5,8 +5,6 @@
   "clientSecretDescription": "A kliens titkos kulcsa a GitHub OAuth alkalmazás beállításaiból",
   "enable": "GitHub-hitelesítés engedélyezése",
   "enableDescription": "Engedélyezze a felhasználóknak, hogy GitHub fiókjukkal jelentkezzenek be",
-  "redirectUri": "Engedélyezési visszahívási URL",
-  "redirectUriDescription": "Az URL az alkalmazásában, ahová a felhasználók a GitHub-hitelesítés után lesznek átirányítva",
   "saveFailed": "Nem sikerült menteni a GitHub beállításokat",
   "saveSuccess": "A GitHub beállítások sikeresen mentve"
 }

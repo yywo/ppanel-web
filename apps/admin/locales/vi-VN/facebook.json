@@ -5,8 +5,6 @@
   "clientSecretDescription": "Mã bí mật ứng dụng Facebook từ Bảng điều khiển Nhà phát triển Facebook",
   "enable": "Kích hoạt",
   "enableDescription": "Sau khi kích hoạt, người dùng có thể đăng nhập bằng tài khoản Facebook của họ",
-  "redirectUri": "URI chuyển hướng được ủy quyền",
-  "redirectUriDescription": "URL mà người dùng sẽ được chuyển hướng đến sau khi xác thực Facebook",
   "saveFailed": "Lưu thất bại",
   "saveSuccess": "Lưu thành công"
 }

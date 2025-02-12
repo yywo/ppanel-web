@@ -8,7 +8,7 @@
   "keyId": "キーID",
   "keyIdDescription": "Apple Developer PortalからのプライベートキーのID",
   "redirectUri": "リダイレクトURL",
-  "redirectUriDescription": "認証が成功した後にAppleがリダイレクトするURL",
+  "redirectUriDescription": "Apple認証に成功した後、リダイレクトされるURLのAPIアドレスを入力してください。末尾に/を使用しないでください。",
   "saveFailed": "保存に失敗しました",
   "saveSuccess": "保存に成功しました",
   "teamId": "チームID",

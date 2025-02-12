@@ -5,8 +5,6 @@
   "clientSecretDescription": "Секрет клиента из настроек вашего OAuth-приложения GitHub",
   "enable": "Включить аутентификацию через GitHub",
   "enableDescription": "Разрешить пользователям входить в систему с помощью их учетных записей GitHub",
-  "redirectUri": "URL обратного вызова авторизации",
-  "redirectUriDescription": "URL в вашем приложении, куда пользователи будут перенаправлены после аутентификации через GitHub",
   "saveFailed": "Не удалось сохранить настройки GitHub",
   "saveSuccess": "Настройки GitHub успешно сохранены"
 }

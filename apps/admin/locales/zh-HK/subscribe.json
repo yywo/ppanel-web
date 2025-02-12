@@ -51,6 +51,7 @@
     "subscriptionPath": "訂閱路徑",
     "subscriptionPathDescription": "用於訂閱；修改後請務必重啟系統以獲得最佳性能",
     "subscriptionPathPlaceholder": "輸入",
+    "updateSuccess": "更新成功",
     "wildcardResolution": "通配符解析",
     "wildcardResolutionDescription": "用於訂閱"
   },

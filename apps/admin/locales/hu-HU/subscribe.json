@@ -51,6 +51,7 @@
     "subscriptionPath": "Előfizetési Útvonal",
     "subscriptionPathDescription": "Előfizetéshez használatos; a módosítás után feltétlenül indítsa újra a rendszert az optimális teljesítmény érdekében",
     "subscriptionPathPlaceholder": "Adja meg",
+    "updateSuccess": "Sikeresen frissítve",
     "wildcardResolution": "Joker Feloldás",
     "wildcardResolutionDescription": "Előfizetéshez használatos"
   },

@@ -5,8 +5,6 @@
   "clientSecretDescription": "Secretul clientului din setările aplicației tale GitHub OAuth",
   "enable": "Activează autentificarea GitHub",
   "enableDescription": "Permite utilizatorilor să se autentifice cu conturile lor GitHub",
-  "redirectUri": "URL de redirecționare pentru autorizare",
-  "redirectUriDescription": "URL-ul din aplicația dumneavoastră unde utilizatorii vor fi redirecționați după autentificarea pe GitHub",
   "saveFailed": "Nu s-a reușit salvarea setărilor GitHub",
   "saveSuccess": "Setările GitHub au fost salvate cu succes"
 }

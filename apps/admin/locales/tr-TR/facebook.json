@@ -5,8 +5,6 @@
   "clientSecretDescription": "Facebook Geliştirici Konsolundan Facebook Uygulama Sırrı",
   "enable": "Etkinleştir",
   "enableDescription": "Etkinleştirildikten sonra, kullanıcılar Facebook hesaplarıyla oturum açabilirler",
-  "redirectUri": "Yetkili yönlendirme URI'si",
-  "redirectUriDescription": "Kullanıcının Facebook kimlik doğrulamasından sonra yönlendirileceği URL",
   "saveFailed": "Kaydetme başarısız oldu",
   "saveSuccess": "Kaydetme başarılı"
 }

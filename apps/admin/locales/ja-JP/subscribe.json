@@ -51,6 +51,7 @@
     "subscriptionPath": "サブスクリプションパス",
     "subscriptionPathDescription": "サブスクリプションに使用します。最適なパフォーマンスのために、変更後は必ずシステムを再起動してください",
     "subscriptionPathPlaceholder": "入力してください",
+    "updateSuccess": "更新が成功しました",
     "wildcardResolution": "ワイルドカード解決",
     "wildcardResolutionDescription": "サブスクリプションに使用します"
   },

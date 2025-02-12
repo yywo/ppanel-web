@@ -5,8 +5,6 @@
   "clientSecretDescription": "Tajný klíč klienta z nastavení vaší GitHub OAuth aplikace",
   "enable": "Povolit ověřování GitHub",
   "enableDescription": "Povolit uživatelům přihlásit se pomocí jejich účtů na GitHubu",
-  "redirectUri": "URL pro zpětné volání autorizace",
-  "redirectUriDescription": "URL ve vaší aplikaci, kam budou uživatelé přesměrováni po autentizaci na GitHubu",
   "saveFailed": "Nepodařilo se uložit nastavení GitHubu",
   "saveSuccess": "Nastavení GitHubu bylo úspěšně uloženo"
 }

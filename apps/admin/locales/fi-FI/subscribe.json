@@ -51,6 +51,7 @@
     "subscriptionPath": "Tilauspolku",
     "subscriptionPathDescription": "Käytetään tilaukseen; varmista, että käynnistät järjestelmän uudelleen muutoksen jälkeen parhaan suorituskyvyn saavuttamiseksi",
     "subscriptionPathPlaceholder": "Syötä",
+    "updateSuccess": "Päivitys onnistui",
     "wildcardResolution": "Yleismerkkien ratkaisu",
     "wildcardResolutionDescription": "Käytetään tilaukseen"
   },

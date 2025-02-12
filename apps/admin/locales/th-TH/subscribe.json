@@ -51,6 +51,7 @@
     "subscriptionPath": "เส้นทางการสมัครสมาชิก",
     "subscriptionPathDescription": "ใช้สำหรับการสมัครสมาชิก; อย่าลืมรีสตาร์ทระบบหลังจากการแก้ไขเพื่อประสิทธิภาพที่ดีที่สุด",
     "subscriptionPathPlaceholder": "กรอก",
+    "updateSuccess": "อัปเดตสำเร็จ",
     "wildcardResolution": "การแก้ไขไวลด์การ์ด",
     "wildcardResolutionDescription": "ใช้สำหรับการสมัครสมาชิก"
   },

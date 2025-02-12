@@ -28,11 +28,10 @@ export default function UserSubscription({ userId }: { userId: number }) {
             trigger={t('add')}
             title={t('createSubscription')}
             loading={loading}
-            userId={userId}
             onSubmit={async (values) => {
               setLoading(true);
               await createUserSubscribe({
-                user_id: userId,
+                user_id: Number(userId),
                 ...values,
               });
               toast.success(t('createSuccess'));
@@ -121,12 +120,11 @@ export default function UserSubscription({ userId }: { userId: number }) {
               trigger={t('edit')}
               title={t('editSubscription')}
               loading={loading}
-              userId={userId}
               initialData={row}
               onSubmit={async (values) => {
                 setLoading(true);
                 await updateUserSubscribe({
-                  user_id: userId,
+                  user_id: Number(userId),
                   user_subscribe_id: row.id,
                   ...values,
                 });

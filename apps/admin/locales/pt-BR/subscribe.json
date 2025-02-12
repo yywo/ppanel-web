@@ -51,6 +51,7 @@
     "subscriptionPath": "Caminho de Assinatura",
     "subscriptionPathDescription": "Usado para assinatura; certifique-se de reiniciar o sistema após a modificação para um desempenho ideal",
     "subscriptionPathPlaceholder": "Insira",
+    "updateSuccess": "Atualizado com sucesso",
     "wildcardResolution": "Resolução de Curinga",
     "wildcardResolutionDescription": "Usado para assinatura"
   },

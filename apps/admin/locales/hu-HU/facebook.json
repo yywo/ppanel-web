@@ -5,8 +5,6 @@
   "clientSecretDescription": "Facebook alkalmazás titok a Facebook Fejlesztői Konzolból",
   "enable": "Engedélyez",
   "enableDescription": "A bekapcsolás után a felhasználók bejelentkezhetnek a Facebook-fiókjukkal",
-  "redirectUri": "Engedélyezett átirányítási URI",
-  "redirectUriDescription": "Az URL, ahová a felhasználó a Facebook-hitelesítés után átirányításra kerül",
   "saveFailed": "Mentés sikertelen",
   "saveSuccess": "Sikeres mentés"
 }

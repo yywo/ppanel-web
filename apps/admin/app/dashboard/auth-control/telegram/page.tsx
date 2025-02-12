@@ -86,24 +86,6 @@ export default function Page() {
             />
           </TableCell>
         </TableRow>
-        <TableRow>
-          <TableCell>
-            <Label>{t('redirectUri')}</Label>
-            <p className='text-muted-foreground text-xs'>{t('redirectUriDescription')}</p>
-          </TableCell>
-          <TableCell className='text-right'>
-            <EnhancedInput
-              placeholder='https://your-domain.com/v1/auth/oauth/callback/telegram'
-              value={data?.config.redirect_url}
-              onValueBlur={(value) =>
-                updateConfig('config', {
-                  ...data?.config,
-                  redirect_url: value,
-                })
-              }
-            />
-          </TableCell>
-        </TableRow>
       </TableBody>
     </Table>
   );

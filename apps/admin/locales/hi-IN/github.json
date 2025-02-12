@@ -5,8 +5,6 @@
   "clientSecretDescription": "आपके GitHub OAuth एप्लिकेशन सेटिंग्स से क्लाइंट सीक्रेट",
   "enable": "GitHub प्रमाणीकरण सक्षम करें",
   "enableDescription": "उपयोगकर्ताओं को उनके GitHub खातों के साथ साइन इन करने की अनुमति दें",
-  "redirectUri": "प्राधिकरण कॉलबैक URL",
-  "redirectUriDescription": "आपके एप्लिकेशन में वह URL जहाँ उपयोगकर्ताओं को GitHub प्रमाणीकरण के बाद पुनः निर्देशित किया जाएगा",
   "saveFailed": "GitHub सेटिंग्स सहेजने में विफल",
   "saveSuccess": "GitHub सेटिंग्स सफलतापूर्वक सहेजी गईं"
 }

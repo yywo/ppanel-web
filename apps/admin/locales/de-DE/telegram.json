@@ -5,8 +5,6 @@
   "clientSecretDescription": "Telegram-Bot-Token, den Sie von @BotFather erhalten können",
   "enable": "Aktivieren",
   "enableDescription": "Nach der Aktivierung werden die Funktionen zur Registrierung, Anmeldung, Bindung und Entbindung von Mobiltelefonen aktiviert",
-  "redirectUri": "Weiterleitungs-URL",
-  "redirectUriDescription": "Die URL, zu der Telegram nach erfolgreicher Authentifizierung weiterleitet",
   "saveFailed": "Speichern fehlgeschlagen",
   "saveSuccess": "Erfolgreich gespeichert"
 }

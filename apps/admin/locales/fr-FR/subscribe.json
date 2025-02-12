@@ -51,6 +51,7 @@
     "subscriptionPath": "Chemin d'abonnement",
     "subscriptionPathDescription": "Utilisé pour l'abonnement ; assurez-vous de redémarrer le système après modification pour des performances optimales",
     "subscriptionPathPlaceholder": "Entrez",
+    "updateSuccess": "Mise à jour réussie",
     "wildcardResolution": "Résolution générique",
     "wildcardResolutionDescription": "Utilisé pour l'abonnement"
   },

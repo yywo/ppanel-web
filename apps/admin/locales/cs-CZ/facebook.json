@@ -5,8 +5,6 @@
   "clientSecretDescription": "Facebook App Secret z Facebook Developers Console",
   "enable": "Povolit",
   "enableDescription": "Po povolení se uživatelé mohou přihlásit pomocí svého účtu na Facebooku",
-  "redirectUri": "Autorizovaná přesměrovací URI",
-  "redirectUriDescription": "URL, na kterou bude uživatel přesměrován po ověření na Facebooku",
   "saveFailed": "Uložení se nezdařilo",
   "saveSuccess": "Uložení bylo úspěšné"
 }

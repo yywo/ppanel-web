@@ -51,6 +51,7 @@
     "subscriptionPath": "구독 경로",
     "subscriptionPathDescription": "구독에 사용됩니다; 최적의 성능을 위해 수정 후 시스템을 재시작하세요",
     "subscriptionPathPlaceholder": "입력하세요",
+    "updateSuccess": "성공적으로 업데이트되었습니다",
     "wildcardResolution": "와일드카드 해상도",
     "wildcardResolutionDescription": "구독에 사용됩니다"
   },

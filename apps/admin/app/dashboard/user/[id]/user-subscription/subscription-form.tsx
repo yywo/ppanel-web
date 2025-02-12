@@ -35,7 +35,6 @@ interface Props {
   trigger: ReactNode;
   title: string;
   loading?: boolean;
-  userId: number;
   initialData?: API.UserSubscribe;
   onSubmit: (values: any) => Promise<boolean>;
 }
@@ -48,21 +47,13 @@ const formSchema = z.object({
   expired_at: z.number().nullish().optional(),
 });
 
-export function SubscriptionForm({
-  trigger,
-  title,
-  loading,
-  userId,
-  initialData,
-  onSubmit,
-}: Props) {
+export function SubscriptionForm({ trigger, title, loading, initialData, onSubmit }: Props) {
   const t = useTranslations('user');
   const [open, setOpen] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      user_id: userId,
       subscribe_id: initialData?.subscribe_id || 0,
       traffic: initialData?.traffic || 0,
       upload: initialData?.upload || 0,

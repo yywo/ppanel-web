@@ -5,8 +5,6 @@
   "clientSecretDescription": "O segredo do cliente das configurações do aplicativo OAuth do seu GitHub",
   "enable": "Ativar Autenticação do GitHub",
   "enableDescription": "Permitir que os usuários façam login com suas contas do GitHub",
-  "redirectUri": "URL de retorno de autorização",
-  "redirectUriDescription": "A URL no seu aplicativo para onde os usuários serão redirecionados após a autenticação no GitHub",
   "saveFailed": "Falha ao salvar as configurações do GitHub",
   "saveSuccess": "Configurações do GitHub salvas com sucesso"
 }

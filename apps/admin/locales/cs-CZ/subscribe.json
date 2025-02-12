@@ -51,6 +51,7 @@
     "subscriptionPath": "Cesta předplatného",
     "subscriptionPathDescription": "Používá se pro předplatné; po úpravě nezapomeňte restartovat systém pro optimální výkon",
     "subscriptionPathPlaceholder": "Zadejte",
+    "updateSuccess": "Úspěšně aktualizováno",
     "wildcardResolution": "Řešení zástupných znaků",
     "wildcardResolutionDescription": "Používá se pro předplatné"
   },

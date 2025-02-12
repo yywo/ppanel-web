@@ -5,8 +5,6 @@
   "clientSecretDescription": "Jeton du bot Telegram, vous pouvez l'obtenir auprès de @BotFather",
   "enable": "Activer",
   "enableDescription": "Après activation, les fonctions d'enregistrement, de connexion, de liaison et de dissociation par téléphone mobile seront activées",
-  "redirectUri": "URL de redirection",
-  "redirectUriDescription": "L'URL vers laquelle Telegram redirigera après une authentification réussie",
   "saveFailed": "Échec de l'enregistrement",
   "saveSuccess": "Enregistrement réussi"
 }

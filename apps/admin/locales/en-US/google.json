@@ -5,8 +5,6 @@
   "clientSecretDescription": "Google OAuth 2.0 Client Secret from Google Cloud Console",
   "enable": "Enable",
   "enableDescription": "After enabling, users can sign in with their Google account",
-  "redirectUri": "Authorized redirect URI",
-  "redirectUriDescription": "The URL to which the user will be redirected after Google authentication",
   "saveFailed": "Save failed",
   "saveSuccess": "Save successful"
 }

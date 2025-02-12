@@ -5,8 +5,6 @@
   "clientSecretDescription": "Telegram Bot Token, du kan få den fra @BotFather",
   "enable": "Aktiver",
   "enableDescription": "Etter aktivering vil funksjonene for registrering, innlogging, binding og frakobling av mobiltelefon bli aktivert",
-  "redirectUri": "Omdirigerings-URL",
-  "redirectUriDescription": "URL-en som Telegram vil omdirigere til etter vellykket autentisering",
   "saveFailed": "Lagring mislyktes",
   "saveSuccess": "Lagring vellykket"
 }

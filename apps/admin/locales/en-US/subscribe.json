@@ -51,6 +51,7 @@
     "subscriptionPath": "Subscription Path",
     "subscriptionPathDescription": "Used for subscription; be sure to restart the system after modification for optimal performance",
     "subscriptionPathPlaceholder": "Enter",
+    "updateSuccess": "Updated successfully",
     "wildcardResolution": "Wildcard Resolution",
     "wildcardResolutionDescription": "Used for subscription"
   },

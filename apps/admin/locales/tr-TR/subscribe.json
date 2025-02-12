@@ -51,6 +51,7 @@
     "subscriptionPath": "Abonelik Yolu",
     "subscriptionPathDescription": "Abonelik için kullanılır; en iyi performans için değişiklikten sonra sistemi yeniden başlattığınızdan emin olun",
     "subscriptionPathPlaceholder": "Giriniz",
+    "updateSuccess": "Başarıyla güncellendi",
     "wildcardResolution": "Genel Çözümleme",
     "wildcardResolutionDescription": "Abonelik için kullanılır"
   },

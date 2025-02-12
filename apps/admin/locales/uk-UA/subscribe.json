@@ -51,6 +51,7 @@
     "subscriptionPath": "Шлях Підписки",
     "subscriptionPathDescription": "Використовується для підписки; обов'язково перезапустіть систему після зміни для оптимальної продуктивності",
     "subscriptionPathPlaceholder": "Введіть",
+    "updateSuccess": "Оновлено успішно",
     "wildcardResolution": "Розв'язання Маски",
     "wildcardResolutionDescription": "Використовується для підписки"
   },

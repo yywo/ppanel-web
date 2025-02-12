@@ -793,7 +793,6 @@ declare namespace API {
     auth_type: string;
     auth_identifier: string;
     verified: boolean;
-    area_code?: string;
   };
 
   type UserBalanceLog = {

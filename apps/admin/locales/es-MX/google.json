@@ -5,8 +5,6 @@
   "clientSecretDescription": "Secreto del cliente de Google OAuth 2.0 desde la Consola de Google Cloud",
   "enable": "Habilitar",
   "enableDescription": "Después de habilitar, los usuarios pueden iniciar sesión con su cuenta de Google",
-  "redirectUri": "URI de redirección autorizada",
-  "redirectUriDescription": "La URL a la que se redirigirá al usuario después de la autenticación de Google",
   "saveFailed": "Error al guardar",
   "saveSuccess": "Guardado exitoso"
 }

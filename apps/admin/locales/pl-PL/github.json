@@ -5,8 +5,6 @@
   "clientSecretDescription": "Tajny klucz klienta z ustawień aplikacji OAuth na GitHubie",
   "enable": "Włącz uwierzytelnianie GitHub",
   "enableDescription": "Pozwól użytkownikom logować się za pomocą ich kont GitHub",
-  "redirectUri": "URL przekierowania autoryzacji",
-  "redirectUriDescription": "Adres URL w Twojej aplikacji, na który użytkownicy zostaną przekierowani po uwierzytelnieniu przez GitHub",
   "saveFailed": "Nie udało się zapisać ustawień GitHub",
   "saveSuccess": "Ustawienia GitHub zostały pomyślnie zapisane"
 }

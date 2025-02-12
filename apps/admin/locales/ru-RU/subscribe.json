@@ -51,6 +51,7 @@
     "subscriptionPath": "Путь подписки",
     "subscriptionPathDescription": "Используется для подписки; обязательно перезапустите систему после изменения для оптимальной производительности",
     "subscriptionPathPlaceholder": "Введите",
+    "updateSuccess": "Успешно обновлено",
     "wildcardResolution": "Разрешение подстановочных знаков",
     "wildcardResolutionDescription": "Используется для подписки"
   },

@@ -51,6 +51,7 @@
     "subscriptionPath": "Abonnementssti",
     "subscriptionPathDescription": "Brukes for abonnement; sørg for å starte systemet på nytt etter endring for optimal ytelse",
     "subscriptionPathPlaceholder": "Skriv inn",
+    "updateSuccess": "Oppdatering vellykket",
     "wildcardResolution": "Jokertegnoppløsning",
     "wildcardResolutionDescription": "Brukes for abonnement"
   },

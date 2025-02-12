@@ -80,11 +80,7 @@ export default function Page() {
             const method = row.original.auth_methods?.[0];
             return (
               <div>
-                <Badge
-                  variant={method?.verified ? 'default' : 'destructive'}
-                  className='mr-1 uppercase'
-                  title={method?.verified ? t('verified') : ''}
-                >
+                <Badge className='mr-1 uppercase' title={method?.verified ? t('verified') : ''}>
                   {method?.auth_type}
                 </Badge>
                 {method?.auth_identifier}

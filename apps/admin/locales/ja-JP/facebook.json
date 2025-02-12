@@ -5,8 +5,6 @@
   "clientSecretDescription": "Facebook開発者コンソールからのFacebookアプリシークレット",
   "enable": "有効にする",
   "enableDescription": "有効にすると、ユーザーはFacebookアカウントでサインインできます",
-  "redirectUri": "認可されたリダイレクトURI",
-  "redirectUriDescription": "Facebook認証後にユーザーがリダイレクトされるURL",
   "saveFailed": "保存に失敗しました",
   "saveSuccess": "保存に成功しました"
 }

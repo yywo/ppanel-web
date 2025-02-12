@@ -51,6 +51,7 @@
     "subscriptionPath": "Abonnement-Pfad",
     "subscriptionPathDescription": "Wird für Abonnements verwendet; starten Sie das System nach der Änderung neu, um die optimale Leistung zu gewährleisten",
     "subscriptionPathPlaceholder": "Eingeben",
+    "updateSuccess": "Erfolgreich aktualisiert",
     "wildcardResolution": "Wildcard-Auflösung",
     "wildcardResolutionDescription": "Wird für Abonnements verwendet"
   },

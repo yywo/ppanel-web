@@ -5,8 +5,6 @@
   "clientSecretDescription": "Telegram Bot Token, bunu @BotFather'dan alabilirsiniz",
   "enable": "Etkinleştir",
   "enableDescription": "Etkinleştirildikten sonra, cep telefonu kaydı, giriş, bağlama ve bağlantı kesme işlevleri etkinleştirilecektir",
-  "redirectUri": "Yönlendirme URL'si",
-  "redirectUriDescription": "Telegram'un başarılı kimlik doğrulama sonrasında yönlendireceği URL",
   "saveFailed": "Kaydetme başarısız oldu",
   "saveSuccess": "Kaydetme başarılı"
 }

@@ -51,6 +51,7 @@
     "subscriptionPath": "Đường Dẫn Đăng Ký",
     "subscriptionPathDescription": "Dùng cho đăng ký; hãy chắc chắn khởi động lại hệ thống sau khi sửa đổi để có hiệu suất tối ưu",
     "subscriptionPathPlaceholder": "Nhập",
+    "updateSuccess": "Cập nhật thành công",
     "wildcardResolution": "Giải Quyết Ký Tự Đại Diện",
     "wildcardResolutionDescription": "Dùng cho đăng ký"
   },

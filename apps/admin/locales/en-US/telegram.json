@@ -5,8 +5,6 @@
   "clientSecretDescription": "Telegram Bot Token, you can get it from @BotFather",
   "enable": "Enable",
   "enableDescription": "After enabling, mobile phone registration, login, binding, and unbinding functions will be enabled",
-  "redirectUri": "Redirect URL",
-  "redirectUriDescription": "The URL that Telegram will redirect to after successful authentication",
   "saveFailed": "Save failed",
   "saveSuccess": "Save successful"
 }

@@ -5,8 +5,6 @@
   "clientSecretDescription": "GitHub OAuth uygulama ayarlarından gelen istemci sırrı",
   "enable": "GitHub Kimlik Doğrulamayı Etkinleştir",
   "enableDescription": "Kullanıcıların GitHub hesaplarıyla oturum açmalarına izin ver",
-  "redirectUri": "Yetkilendirme geri arama URL'si",
-  "redirectUriDescription": "GitHub kimlik doğrulamasından sonra kullanıcıların yönlendirileceği uygulamanızdaki URL",
   "saveFailed": "GitHub ayarlarını kaydetme başarısız oldu",
   "saveSuccess": "GitHub ayarları başarıyla kaydedildi"
 }

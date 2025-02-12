@@ -5,8 +5,6 @@
   "clientSecretDescription": "Secreto de la aplicación de Facebook desde la Consola de Desarrolladores de Facebook",
   "enable": "Habilitar",
   "enableDescription": "Después de habilitar, los usuarios pueden iniciar sesión con su cuenta de Facebook",
-  "redirectUri": "URI de redirección autorizada",
-  "redirectUriDescription": "La URL a la que se redirigirá al usuario después de la autenticación de Facebook",
   "saveFailed": "Error al guardar",
   "saveSuccess": "Guardado exitoso"
 }
