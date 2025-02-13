@@ -10,9 +10,27 @@
     "inviteSettings": "Kutsuasetukset",
     "saveSuccess": "Tallennus onnistui"
   },
+  "log": {
+    "content": "Sisältö",
+    "createdAt": "Luotu",
+    "emailLog": "Sähköpostiloki",
+    "mobileLog": "Mobiililoki",
+    "platform": "Alusta",
+    "sendFailed": "Lähetys epäonnistui",
+    "sendSuccess": "Lähetys onnistui",
+    "status": "Tila",
+    "subject": "Aihe",
+    "to": "Vastaanottaja",
+    "updatedAt": "Päivitetty"
+  },
   "register": {
+    "day": "Päivä",
+    "hour": "Tunti",
     "ipRegistrationLimit": "IP-rekisteröintiraja",
     "ipRegistrationLimitDescription": "Kun tämä on käytössä, säännön vaatimukset täyttävät IP-osoitteet estetään rekisteröitymästä; huomaa, että IP-määritys voi aiheuttaa ongelmia CDN:ien tai etupään välityspalvelimien vuoksi",
+    "minute": "Minuutti",
+    "month": "Kuukausi",
+    "noLimit": "Ei rajoituksia",
     "penaltyTime": "Rangaistusaika (minuuttia)",
     "penaltyTimeDescription": "Käyttäjien on odotettava rangaistusajan päättymistä ennen uudelleenrekisteröitymistä",
     "registerSettings": "Rekisteröintiasetukset",
@@ -21,8 +39,12 @@
     "saveSuccess": "Tallennus onnistui",
     "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
     "stopNewUserRegistrationDescription": "Kun tämä on käytössä, kukaan ei voi rekisteröityä",
+    "trialDuration": "Kokeilujakson kesto",
     "trialRegistration": "Kokeilurekisteröinti",
-    "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa"
+    "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa",
+    "trialSubscribePlan": "Kokeilutilaus",
+    "trialSubscribePlanDescription": "Valitse kokeilutilaus",
+    "year": "Vuosi"
   },
   "verify": {
     "inputPlaceholder": "Syötä",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Salasanan palautuksen vahvistuskoodi",
     "resetPasswordVerificationCodeDescription": "Ihmisen vahvistus salasanan palautuksen aikana",
     "saveSuccess": "Tallennus onnistui",
-    "turnstileSecret": "Turnstile-salaisavain",
     "turnstileSecretDescription": "Turnstile-salaisavain, jonka Cloudflare on toimittanut",
-    "turnstileSiteKey": "Turnstile-sivuston avain",
     "turnstileSiteKeyDescription": "Turnstile-sivuston avain, jonka Cloudflare on toimittanut",
     "verifySettings": "Vahvistusasetukset"
   }

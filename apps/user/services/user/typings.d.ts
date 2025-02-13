@@ -250,6 +250,18 @@ declare namespace API {
     only_first_purchase: boolean;
   };
 
+  type MessageLog = {
+    id: number;
+    type: string;
+    platform: string;
+    to: string;
+    subject: string;
+    content: string;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type MobileAuthenticateConfig = {
     enable: boolean;
     limit: number;
@@ -493,6 +505,9 @@ declare namespace API {
   type RegisterConfig = {
     stop_register: boolean;
     enable_trial: boolean;
+    trial_subscribe: number;
+    trial_time: number;
+    trial_time_unit: string;
     enable_ip_register_limit: boolean;
     ip_register_limit: number;
     ip_register_limit_duration: number;

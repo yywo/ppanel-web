@@ -10,9 +10,27 @@
     "inviteSettings": "邀请设置",
     "saveSuccess": "保存成功"
   },
+  "log": {
+    "content": "内容",
+    "createdAt": "创建时间",
+    "emailLog": "邮件日志",
+    "mobileLog": "短信日志",
+    "platform": "平台",
+    "sendFailed": "发送失败",
+    "sendSuccess": "发送成功",
+    "status": "状态",
+    "subject": "主题",
+    "to": "接收人",
+    "updatedAt": "更新时间"
+  },
   "register": {
+    "day": "天",
+    "hour": "小时",
     "ipRegistrationLimit": "IP 注册限制",
     "ipRegistrationLimitDescription": "启用后，符合规则要求的 IP 将被限制注册；请注意，由于 CDN 或前端代理，IP 确定可能会导致问题",
+    "minute": "分钟",
+    "month": "月",
+    "noLimit": "无限制",
     "penaltyTime": "惩罚时间（分钟）",
     "penaltyTimeDescription": "用户必须等待惩罚时间过后才能再次注册",
     "registerSettings": "注册设置",
@@ -21,8 +39,12 @@
     "saveSuccess": "保存成功",
     "stopNewUserRegistration": "停止新用户注册",
     "stopNewUserRegistrationDescription": "启用后，任何人都无法注册",
+    "trialDuration": "试用期",
     "trialRegistration": "试用注册",
-    "trialRegistrationDescription": "启用试用注册；请先修改试用套餐和时长"
+    "trialRegistrationDescription": "启用试用注册；请先修改试用套餐和时长",
+    "trialSubscribePlan": "试用订阅计划",
+    "trialSubscribePlanDescription": "选择试用订阅计划",
+    "year": "年"
   },
   "verify": {
     "inputPlaceholder": "输入",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "重置密码验证码",
     "resetPasswordVerificationCodeDescription": "重置密码时的人机验证",
     "saveSuccess": "保存成功",
-    "turnstileSecret": "闸机密钥",
     "turnstileSecretDescription": "由 Cloudflare 提供的闸机密钥",
-    "turnstileSiteKey": "闸机站点密钥",
     "turnstileSiteKeyDescription": "由 Cloudflare 提供的闸机站点密钥",
     "verifySettings": "验证设置"
   }

@@ -10,9 +10,27 @@
     "inviteSettings": "تنظیمات دعوت",
     "saveSuccess": "ذخیره با موفقیت انجام شد"
   },
+  "log": {
+    "content": "محتوا",
+    "createdAt": "تاریخ ایجاد",
+    "emailLog": "گزارش ایمیل",
+    "mobileLog": "گزارش موبایل",
+    "platform": "پلتفرم",
+    "sendFailed": "ناموفق",
+    "sendSuccess": "موفق",
+    "status": "وضعیت",
+    "subject": "موضوع",
+    "to": "گیرنده",
+    "updatedAt": "تاریخ به‌روزرسانی"
+  },
   "register": {
+    "day": "روز",
+    "hour": "ساعت",
     "ipRegistrationLimit": "محدودیت ثبت‌نام IP",
     "ipRegistrationLimitDescription": "زمانی که فعال باشد، IPهایی که شرایط قوانین را برآورده می‌کنند از ثبت‌نام محدود خواهند شد؛ توجه داشته باشید که تعیین IP ممکن است به دلیل CDNها یا پروکسی‌های جلویی مشکلاتی ایجاد کند",
+    "minute": "دقیقه",
+    "month": "ماه",
+    "noLimit": "بدون محدودیت",
     "penaltyTime": "زمان جریمه (دقیقه)",
     "penaltyTimeDescription": "کاربران باید منتظر بمانند تا زمان جریمه به پایان برسد قبل از اینکه دوباره ثبت‌نام کنند",
     "registerSettings": "تنظیمات ثبت‌نام",
@@ -21,8 +39,12 @@
     "saveSuccess": "ذخیره با موفقیت انجام شد",
     "stopNewUserRegistration": "متوقف کردن ثبت‌نام کاربران جدید",
     "stopNewUserRegistrationDescription": "زمانی که فعال باشد، هیچ‌کس نمی‌تواند ثبت‌نام کند",
+    "trialDuration": "مدت آزمایشی",
     "trialRegistration": "ثبت‌نام آزمایشی",
-    "trialRegistrationDescription": "فعال‌سازی ثبت‌نام آزمایشی؛ ابتدا بسته آزمایشی و مدت زمان را تغییر دهید"
+    "trialRegistrationDescription": "فعال‌سازی ثبت‌نام آزمایشی؛ ابتدا بسته آزمایشی و مدت زمان را تغییر دهید",
+    "trialSubscribePlan": "طرح اشتراک آزمایشی",
+    "trialSubscribePlanDescription": "طرح اشتراک آزمایشی را انتخاب کنید",
+    "year": "سال"
   },
   "verify": {
     "inputPlaceholder": "وارد کنید",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "کد تأیید بازنشانی رمز عبور",
     "resetPasswordVerificationCodeDescription": "تأیید انسانی در حین بازنشانی رمز عبور",
     "saveSuccess": "ذخیره با موفقیت انجام شد",
-    "turnstileSecret": "کلید مخفی ترنستایل",
     "turnstileSecretDescription": "کلید مخفی ترنستایل ارائه شده توسط Cloudflare",
-    "turnstileSiteKey": "کلید سایت ترنستایل",
     "turnstileSiteKeyDescription": "کلید سایت ترنستایل ارائه شده توسط Cloudflare",
     "verifySettings": "تنظیمات تأیید"
   }

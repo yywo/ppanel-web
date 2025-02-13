@@ -10,9 +10,27 @@
     "inviteSettings": "Configurações de Convite",
     "saveSuccess": "Salvo com Sucesso"
   },
+  "log": {
+    "content": "Conteúdo",
+    "createdAt": "Criado Em",
+    "emailLog": "Registro de Email",
+    "mobileLog": "Registro Móvel",
+    "platform": "Plataforma",
+    "sendFailed": "Falha ao Enviar",
+    "sendSuccess": "Sucesso ao Enviar",
+    "status": "Status",
+    "subject": "Assunto",
+    "to": "Destinatário",
+    "updatedAt": "Atualizado Em"
+  },
   "register": {
+    "day": "Dia",
+    "hour": "Hora",
     "ipRegistrationLimit": "Limite de Registro por IP",
     "ipRegistrationLimitDescription": "Quando ativado, IPs que atendem aos requisitos da regra serão restritos de se registrar; note que a determinação de IP pode causar problemas devido a CDNs ou proxies de frontend",
+    "minute": "Minuto",
+    "month": "Mês",
+    "noLimit": "Sem Limite",
     "penaltyTime": "Tempo de Penalidade (minutos)",
     "penaltyTimeDescription": "Os usuários devem esperar o tempo de penalidade expirar antes de se registrar novamente",
     "registerSettings": "Configurações de Registro",
@@ -21,8 +39,12 @@
     "saveSuccess": "Salvo com Sucesso",
     "stopNewUserRegistration": "Parar Registro de Novos Usuários",
     "stopNewUserRegistrationDescription": "Quando ativado, ninguém pode se registrar",
+    "trialDuration": "Duração do Teste",
     "trialRegistration": "Registro de Teste",
-    "trialRegistrationDescription": "Ativar registro de teste; modifique o pacote de teste e a duração primeiro"
+    "trialRegistrationDescription": "Ativar registro de teste; modifique o pacote de teste e a duração primeiro",
+    "trialSubscribePlan": "Plano de Assinatura de Teste",
+    "trialSubscribePlanDescription": "Selecione o plano de assinatura de teste",
+    "year": "Ano"
   },
   "verify": {
     "inputPlaceholder": "Digite",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Código de Verificação para Redefinir Senha",
     "resetPasswordVerificationCodeDescription": "Verificação humana durante a redefinição de senha",
     "saveSuccess": "Salvo com Sucesso",
-    "turnstileSecret": "Chave Secreta do Turnstile",
     "turnstileSecretDescription": "Chave secreta do Turnstile fornecida pela Cloudflare",
-    "turnstileSiteKey": "Chave do Site do Turnstile",
     "turnstileSiteKeyDescription": "Chave do site do Turnstile fornecida pela Cloudflare",
     "verifySettings": "Configurações de Verificação"
   }

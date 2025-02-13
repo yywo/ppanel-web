@@ -10,9 +10,27 @@
     "inviteSettings": "Invitasjonsinnstillinger",
     "saveSuccess": "Lagring Vel Lyktes"
   },
+  "log": {
+    "content": "Innhold",
+    "createdAt": "Opprettet den",
+    "emailLog": "E-postlogg",
+    "mobileLog": "Mobil logg",
+    "platform": "Plattform",
+    "sendFailed": "Feilet",
+    "sendSuccess": "Suksess",
+    "status": "Status",
+    "subject": "Emne",
+    "to": "Mottaker",
+    "updatedAt": "Oppdatert den"
+  },
   "register": {
+    "day": "Dag",
+    "hour": "Time",
     "ipRegistrationLimit": "IP Registreringsgrense",
     "ipRegistrationLimitDescription": "Når aktivert, vil IP-er som oppfyller regelkravene bli begrenset fra å registrere seg; merk at IP-bestemmelse kan forårsake problemer på grunn av CDN-er eller frontend-proxyer",
+    "minute": "Minutt",
+    "month": "Måned",
+    "noLimit": "Ingen grense",
     "penaltyTime": "Straffetid (minutter)",
     "penaltyTimeDescription": "Brukere må vente til straffetiden er utløpt før de kan registrere seg igjen",
     "registerSettings": "Registreringsinnstillinger",
@@ -21,8 +39,12 @@
     "saveSuccess": "Lagring Vel Lyktes",
     "stopNewUserRegistration": "Stopp Registrering av Nye Brukere",
     "stopNewUserRegistrationDescription": "Når aktivert, kan ingen registrere seg",
+    "trialDuration": "Prøveperiode",
     "trialRegistration": "Prøveregistrering",
-    "trialRegistrationDescription": "Aktiver prøveregistrering; endre prøvepakke og varighet først"
+    "trialRegistrationDescription": "Aktiver prøveregistrering; endre prøvepakke og varighet først",
+    "trialSubscribePlan": "Prøveabonnementsplan",
+    "trialSubscribePlanDescription": "Velg prøveabonnementsplan",
+    "year": "År"
   },
   "verify": {
     "inputPlaceholder": "Skriv inn",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Tilbakestill Passord Verifiseringskode",
     "resetPasswordVerificationCodeDescription": "Menneskelig verifisering under tilbakestilling av passord",
     "saveSuccess": "Lagring Vel Lyktes",
-    "turnstileSecret": "Turnstile Hemmelig Nøkkel",
     "turnstileSecretDescription": "Turnstile hemmelig nøkkel levert av Cloudflare",
-    "turnstileSiteKey": "Turnstile Nettsted Nøkkel",
     "turnstileSiteKeyDescription": "Turnstile nettsted nøkkel levert av Cloudflare",
     "verifySettings": "Verifiseringsinnstillinger"
   }

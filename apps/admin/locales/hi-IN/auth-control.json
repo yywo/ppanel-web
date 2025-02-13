@@ -10,9 +10,27 @@
     "inviteSettings": "निमंत्रण सेटिंग्स",
     "saveSuccess": "सफलता से सहेजा गया"
   },
+  "log": {
+    "content": "सामग्री",
+    "createdAt": "निर्माण तिथि",
+    "emailLog": "ईमेल लॉग",
+    "mobileLog": "मोबाइल लॉग",
+    "platform": "प्लेटफ़ॉर्म",
+    "sendFailed": "भेजना विफल",
+    "sendSuccess": "सफलता",
+    "status": "स्थिति",
+    "subject": "विषय",
+    "to": "प्राप्तकर्ता",
+    "updatedAt": "अद्यतन तिथि"
+  },
   "register": {
+    "day": "दिन",
+    "hour": "घंटा",
     "ipRegistrationLimit": "आईपी पंजीकरण सीमा",
     "ipRegistrationLimitDescription": "जब सक्षम किया जाता है, तो नियम आवश्यकताओं को पूरा करने वाले आईपी पंजीकरण से प्रतिबंधित होंगे; ध्यान दें कि आईपी निर्धारण सीडीएन या फ्रंटेंड प्रॉक्सी के कारण समस्याएँ उत्पन्न कर सकता है",
+    "minute": "मिनट",
+    "month": "महीना",
+    "noLimit": "कोई सीमा नहीं",
     "penaltyTime": "दंड समय (मिनट)",
     "penaltyTimeDescription": "उपयोगकर्ताओं को फिर से पंजीकरण करने से पहले दंड समय समाप्त होने का इंतजार करना होगा",
     "registerSettings": "पंजीकरण सेटिंग्स",
@@ -21,8 +39,12 @@
     "saveSuccess": "सफलता से सहेजा गया",
     "stopNewUserRegistration": "नए उपयोगकर्ता पंजीकरण रोकें",
     "stopNewUserRegistrationDescription": "जब सक्षम किया जाता है, तो कोई भी पंजीकरण नहीं कर सकता",
+    "trialDuration": "परीक्षण अवधि",
     "trialRegistration": "परीक्षण पंजीकरण",
-    "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि को संशोधित करें"
+    "trialRegistrationDescription": "परीक्षण पंजीकरण सक्षम करें; पहले परीक्षण पैकेज और अवधि को संशोधित करें",
+    "trialSubscribePlan": "परीक्षण सदस्यता योजना",
+    "trialSubscribePlanDescription": "परीक्षण सदस्यता योजना चुनें",
+    "year": "वर्ष"
   },
   "verify": {
     "inputPlaceholder": "डालें",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "पासवर्ड रीसेट सत्यापन कोड",
     "resetPasswordVerificationCodeDescription": "पासवर्ड रीसेट के दौरान मानव सत्यापन",
     "saveSuccess": "सफलता से सहेजा गया",
-    "turnstileSecret": "टर्नस्टाइल गुप्त कुंजी",
     "turnstileSecretDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल गुप्त कुंजी",
-    "turnstileSiteKey": "टर्नस्टाइल साइट कुंजी",
     "turnstileSiteKeyDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल साइट कुंजी",
     "verifySettings": "सत्यापन सेटिंग्स"
   }

@@ -10,9 +10,27 @@
     "inviteSettings": "Meghívási beállítások",
     "saveSuccess": "Mentés sikeres"
   },
+  "log": {
+    "content": "Tartalom",
+    "createdAt": "Létrehozva",
+    "emailLog": "Email Napló",
+    "mobileLog": "Mobil Napló",
+    "platform": "Platform",
+    "sendFailed": "Sikertelen",
+    "sendSuccess": "Sikeres",
+    "status": "Állapot",
+    "subject": "Tárgy",
+    "to": "Címzett",
+    "updatedAt": "Frissítve"
+  },
   "register": {
+    "day": "Nap",
+    "hour": "Óra",
     "ipRegistrationLimit": "IP regisztrációs korlát",
     "ipRegistrationLimitDescription": "Ha engedélyezve van, a szabályoknak megfelelő IP-k nem tudnak regisztrálni; vegye figyelembe, hogy az IP meghatározása problémákat okozhat CDN-ek vagy frontend proxyk miatt",
+    "minute": "Perc",
+    "month": "Hónap",
+    "noLimit": "Nincs Korlátozás",
     "penaltyTime": "Büntetési idő (perc)",
     "penaltyTimeDescription": "A felhasználóknak meg kell várniuk a büntetési idő leteltét, mielőtt újra regisztrálnának",
     "registerSettings": "Regisztrációs beállítások",
@@ -21,8 +39,12 @@
     "saveSuccess": "Mentés sikeres",
     "stopNewUserRegistration": "Új felhasználók regisztrációjának leállítása",
     "stopNewUserRegistrationDescription": "Ha engedélyezve van, senki sem tud regisztrálni",
+    "trialDuration": "Próbaidőszak Hossza",
     "trialRegistration": "Próbaregistráció",
-    "trialRegistrationDescription": "Próbaregistráció engedélyezése; először módosítsa a próbacsomagot és a tartamot"
+    "trialRegistrationDescription": "Próbaregistráció engedélyezése; először módosítsa a próbacsomagot és a tartamot",
+    "trialSubscribePlan": "Próba Előfizetési Terv",
+    "trialSubscribePlanDescription": "Válassza ki a próba előfizetési tervet",
+    "year": "Év"
   },
   "verify": {
     "inputPlaceholder": "Írja be",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Jelszó visszaállító ellenőrző kód",
     "resetPasswordVerificationCodeDescription": "Emberi ellenőrzés jelszó visszaállításakor",
     "saveSuccess": "Mentés sikeres",
-    "turnstileSecret": "Forgókapu titkos kulcs",
     "turnstileSecretDescription": "A Cloudflare által biztosított forgókapu titkos kulcs",
-    "turnstileSiteKey": "Forgókapu webhely kulcs",
     "turnstileSiteKeyDescription": "A Cloudflare által biztosított forgókapu webhely kulcs",
     "verifySettings": "Ellenőrzési beállítások"
   }

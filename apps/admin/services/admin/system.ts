@@ -303,29 +303,6 @@ export async function getSubscribeType(options?: { [key: string]: any }) {
   });
 }
 
-/** Get Telegram Config GET /v1/admin/system/telegram_config */
-export async function getTelegramConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.TelegramConfig }>('/v1/admin/system/telegram_config', {
-    method: 'GET',
-    ...(options || {}),
-  });
-}
-
-/** Update Telegram Config PUT /v1/admin/system/telegram_config */
-export async function updateTelegramConfig(
-  body: API.TelegramConfig,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/system/telegram_config', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
 /** Get Team of Service Config GET /v1/admin/system/tos_config */
 export async function getTosConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.TosConfig }>('/v1/admin/system/tos_config', {

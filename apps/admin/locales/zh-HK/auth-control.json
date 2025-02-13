@@ -10,9 +10,27 @@
     "inviteSettings": "邀請設置",
     "saveSuccess": "保存成功"
   },
+  "log": {
+    "content": "內容",
+    "createdAt": "創建於",
+    "emailLog": "電子郵件日誌",
+    "mobileLog": "手機日誌",
+    "platform": "平台",
+    "sendFailed": "發送失敗",
+    "sendSuccess": "發送成功",
+    "status": "狀態",
+    "subject": "主題",
+    "to": "收件人",
+    "updatedAt": "更新於"
+  },
   "register": {
+    "day": "天",
+    "hour": "小時",
     "ipRegistrationLimit": "IP 註冊限制",
     "ipRegistrationLimitDescription": "啟用後，符合規則要求的 IP 將被限制註冊；請注意，IP 判定可能因 CDN 或前端代理而出現問題",
+    "minute": "分鐘",
+    "month": "月",
+    "noLimit": "無限制",
     "penaltyTime": "懲罰時間（分鐘）",
     "penaltyTimeDescription": "用戶必須等待懲罰時間過後才能再次註冊",
     "registerSettings": "註冊設置",
@@ -21,8 +39,12 @@
     "saveSuccess": "保存成功",
     "stopNewUserRegistration": "停止新用戶註冊",
     "stopNewUserRegistrationDescription": "啟用後，任何人都無法註冊",
+    "trialDuration": "試用期",
     "trialRegistration": "試用註冊",
-    "trialRegistrationDescription": "啟用試用註冊；請先修改試用包和時長"
+    "trialRegistrationDescription": "啟用試用註冊；請先修改試用包和時長",
+    "trialSubscribePlan": "試用訂閱計劃",
+    "trialSubscribePlanDescription": "選擇試用訂閱計劃",
+    "year": "年"
   },
   "verify": {
     "inputPlaceholder": "輸入",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "重置密碼驗證碼",
     "resetPasswordVerificationCodeDescription": "重置密碼時的人機驗證",
     "saveSuccess": "保存成功",
-    "turnstileSecret": "轉閘密鑰",
     "turnstileSecretDescription": "Cloudflare 提供的轉閘密鑰",
-    "turnstileSiteKey": "轉閘網站密鑰",
     "turnstileSiteKeyDescription": "Cloudflare 提供的轉閘網站密鑰",
     "verifySettings": "驗證設置"
   }

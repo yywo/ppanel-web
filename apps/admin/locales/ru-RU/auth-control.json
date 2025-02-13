@@ -10,9 +10,27 @@
     "inviteSettings": "Настройки приглашения",
     "saveSuccess": "Сохранение успешно"
   },
+  "log": {
+    "content": "Содержимое",
+    "createdAt": "Дата создания",
+    "emailLog": "Журнал электронной почты",
+    "mobileLog": "Журнал мобильных устройств",
+    "platform": "Платформа",
+    "sendFailed": "Не удалось отправить",
+    "sendSuccess": "Успешно отправлено",
+    "status": "Статус",
+    "subject": "Тема",
+    "to": "Получатель",
+    "updatedAt": "Дата обновления"
+  },
   "register": {
+    "day": "День",
+    "hour": "Час",
     "ipRegistrationLimit": "Ограничение регистрации по IP",
     "ipRegistrationLimitDescription": "При включении IP-адреса, соответствующие требованиям правила, будут ограничены в регистрации; обратите внимание, что определение IP может вызвать проблемы из-за CDN или прокси-серверов",
+    "minute": "Минута",
+    "month": "Месяц",
+    "noLimit": "Без ограничений",
     "penaltyTime": "Время штрафа (минуты)",
     "penaltyTimeDescription": "Пользователи должны подождать истечения времени штрафа перед повторной регистрацией",
     "registerSettings": "Настройки регистрации",
@@ -21,8 +39,12 @@
     "saveSuccess": "Сохранение успешно",
     "stopNewUserRegistration": "Остановить регистрацию новых пользователей",
     "stopNewUserRegistrationDescription": "При включении никто не сможет зарегистрироваться",
+    "trialDuration": "Срок пробного периода",
     "trialRegistration": "Пробная регистрация",
-    "trialRegistrationDescription": "Включить пробную регистрацию; сначала измените пробный пакет и срок"
+    "trialRegistrationDescription": "Включить пробную регистрацию; сначала измените пробный пакет и срок",
+    "trialSubscribePlan": "План пробной подписки",
+    "trialSubscribePlanDescription": "Выберите план пробной подписки",
+    "year": "Год"
   },
   "verify": {
     "inputPlaceholder": "Введите",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Код проверки сброса пароля",
     "resetPasswordVerificationCodeDescription": "Проверка человека при сбросе пароля",
     "saveSuccess": "Сохранение успешно",
-    "turnstileSecret": "Секретный ключ Turnstile",
     "turnstileSecretDescription": "Секретный ключ Turnstile, предоставленный Cloudflare",
-    "turnstileSiteKey": "Ключ сайта Turnstile",
     "turnstileSiteKeyDescription": "Ключ сайта Turnstile, предоставленный Cloudflare",
     "verifySettings": "Настройки проверки"
   }

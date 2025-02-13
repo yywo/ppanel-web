@@ -458,6 +458,33 @@ declare namespace API {
     list: Document[];
   };
 
+  type GetMessageLogListParams = {
+    page: number;
+    size: number;
+    type: string;
+    platform?: string;
+    to?: string;
+    subject?: string;
+    content?: string;
+    status?: number;
+  };
+
+  type GetMessageLogListRequest = {
+    page: number;
+    size: number;
+    type: string;
+    platform?: string;
+    to?: string;
+    subject?: string;
+    content?: string;
+    status?: number;
+  };
+
+  type GetMessageLogListResponse = {
+    total: number;
+    list: MessageLog[];
+  };
+
   type GetNodeDetailParams = {
     id: number;
   };
@@ -522,23 +549,6 @@ declare namespace API {
   type GetRuleGroupResponse = {
     total: number;
     list: ServerRuleGroup[];
-  };
-
-  type GetSmsListParams = {
-    page: number;
-    size: number;
-    telephone?: string;
-  };
-
-  type GetSmsListRequest = {
-    page: number;
-    size: number;
-    telephone?: string;
-  };
-
-  type GetSmsListResponse = {
-    total: number;
-    list: SMS[];
   };
 
   type GetSubscribeDetailsParams = {
@@ -744,6 +754,18 @@ declare namespace API {
     list: Record<string, any>;
   };
 
+  type MessageLog = {
+    id: number;
+    type: string;
+    platform: string;
+    to: string;
+    subject: string;
+    content: string;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type MobileAuthenticateConfig = {
     enable: boolean;
     limit: number;
@@ -857,6 +879,9 @@ declare namespace API {
   type RegisterConfig = {
     stop_register: boolean;
     enable_trial: boolean;
+    trial_subscribe: number;
+    trial_time: number;
+    trial_time_unit: string;
     enable_ip_register_limit: boolean;
     ip_register_limit: number;
     ip_register_limit_duration: number;
@@ -971,16 +996,6 @@ declare namespace API {
     site_name: string;
     site_desc: string;
     site_logo: string;
-  };
-
-  type SMS = {
-    id: string;
-    content: string;
-    platform: string;
-    areaCode: string;
-    telephone: string;
-    status: number;
-    created_at: number;
   };
 
   type SortItem = {

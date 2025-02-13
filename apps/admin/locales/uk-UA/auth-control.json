@@ -10,9 +10,27 @@
     "inviteSettings": "Налаштування запрошення",
     "saveSuccess": "Успішно збережено"
   },
+  "log": {
+    "content": "Контент",
+    "createdAt": "Дата створення",
+    "emailLog": "Лог електронної пошти",
+    "mobileLog": "Мобільний лог",
+    "platform": "Платформа",
+    "sendFailed": "Не вдалося надіслати",
+    "sendSuccess": "Успішно надіслано",
+    "status": "Статус",
+    "subject": "Тема",
+    "to": "Одержувач",
+    "updatedAt": "Дата оновлення"
+  },
   "register": {
+    "day": "День",
+    "hour": "Година",
     "ipRegistrationLimit": "Обмеження реєстрації за IP",
     "ipRegistrationLimitDescription": "При увімкненні IP, які відповідають вимогам правила, будуть обмежені в реєстрації; зверніть увагу, що визначення IP може викликати проблеми через CDN або проксі-сервери",
+    "minute": "Хвилина",
+    "month": "Місяць",
+    "noLimit": "Без обмежень",
     "penaltyTime": "Час покарання (хвилини)",
     "penaltyTimeDescription": "Користувачі повинні почекати, поки час покарання не закінчиться, перш ніж знову реєструватися",
     "registerSettings": "Налаштування реєстрації",
@@ -21,8 +39,12 @@
     "saveSuccess": "Успішно збережено",
     "stopNewUserRegistration": "Зупинити реєстрацію нових користувачів",
     "stopNewUserRegistrationDescription": "При увімкненні ніхто не може зареєструватися",
+    "trialDuration": "Тривалість пробного періоду",
     "trialRegistration": "Пробна реєстрація",
-    "trialRegistrationDescription": "Увімкнути пробну реєстрацію; спочатку змініть пакет пробного періоду та тривалість"
+    "trialRegistrationDescription": "Увімкнути пробну реєстрацію; спочатку змініть пакет пробного періоду та тривалість",
+    "trialSubscribePlan": "План пробної підписки",
+    "trialSubscribePlanDescription": "Виберіть план пробної підписки",
+    "year": "Рік"
   },
   "verify": {
     "inputPlaceholder": "Введіть",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Код перевірки скидання пароля",
     "resetPasswordVerificationCodeDescription": "Перевірка людини під час скидання пароля",
     "saveSuccess": "Успішно збережено",
-    "turnstileSecret": "Секретний ключ Turnstile",
     "turnstileSecretDescription": "Секретний ключ Turnstile, наданий Cloudflare",
-    "turnstileSiteKey": "Ключ сайту Turnstile",
     "turnstileSiteKeyDescription": "Ключ сайту Turnstile, наданий Cloudflare",
     "verifySettings": "Налаштування перевірки"
   }

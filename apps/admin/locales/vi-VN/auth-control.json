@@ -10,9 +10,27 @@
     "inviteSettings": "Cài đặt Mời",
     "saveSuccess": "Lưu thành công"
   },
+  "log": {
+    "content": "Nội dung",
+    "createdAt": "Ngày tạo",
+    "emailLog": "Nhật ký Email",
+    "mobileLog": "Nhật ký Di động",
+    "platform": "Nền tảng",
+    "sendFailed": "Gửi thất bại",
+    "sendSuccess": "Gửi thành công",
+    "status": "Trạng thái",
+    "subject": "Chủ đề",
+    "to": "Người nhận",
+    "updatedAt": "Ngày cập nhật"
+  },
   "register": {
+    "day": "Ngày",
+    "hour": "Giờ",
     "ipRegistrationLimit": "Giới hạn Đăng ký theo IP",
     "ipRegistrationLimitDescription": "Khi được kích hoạt, các IP đáp ứng yêu cầu quy tắc sẽ bị hạn chế đăng ký; lưu ý rằng việc xác định IP có thể gây ra vấn đề do CDN hoặc proxy phía trước",
+    "minute": "Phút",
+    "month": "Tháng",
+    "noLimit": "Không giới hạn",
     "penaltyTime": "Thời gian Phạt (phút)",
     "penaltyTimeDescription": "Người dùng phải chờ thời gian phạt hết hạn trước khi đăng ký lại",
     "registerSettings": "Cài đặt Đăng ký",
@@ -21,8 +39,12 @@
     "saveSuccess": "Lưu thành công",
     "stopNewUserRegistration": "Ngừng Đăng ký Người dùng Mới",
     "stopNewUserRegistrationDescription": "Khi được kích hoạt, không ai có thể đăng ký",
+    "trialDuration": "Thời gian dùng thử",
     "trialRegistration": "Đăng ký Thử nghiệm",
-    "trialRegistrationDescription": "Kích hoạt đăng ký thử nghiệm; sửa đổi gói thử nghiệm và thời gian trước"
+    "trialRegistrationDescription": "Kích hoạt đăng ký thử nghiệm; sửa đổi gói thử nghiệm và thời gian trước",
+    "trialSubscribePlan": "Kế hoạch đăng ký dùng thử",
+    "trialSubscribePlanDescription": "Chọn kế hoạch đăng ký dùng thử",
+    "year": "Năm"
   },
   "verify": {
     "inputPlaceholder": "Nhập",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Mã Xác minh Đặt lại Mật khẩu",
     "resetPasswordVerificationCodeDescription": "Xác minh con người trong quá trình đặt lại mật khẩu",
     "saveSuccess": "Lưu thành công",
-    "turnstileSecret": "Khóa Bí mật Turnstile",
     "turnstileSecretDescription": "Khóa bí mật Turnstile được cung cấp bởi Cloudflare",
-    "turnstileSiteKey": "Khóa Trang Turnstile",
     "turnstileSiteKeyDescription": "Khóa trang Turnstile được cung cấp bởi Cloudflare",
     "verifySettings": "Cài đặt Xác minh"
   }

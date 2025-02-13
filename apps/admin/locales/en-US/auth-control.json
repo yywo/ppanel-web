@@ -10,9 +10,27 @@
     "inviteSettings": "Invite Settings",
     "saveSuccess": "Save Successful"
   },
+  "log": {
+    "content": "Content",
+    "createdAt": "Created At",
+    "emailLog": "Email Log",
+    "mobileLog": "Mobile Log",
+    "platform": "Platform",
+    "sendFailed": "Failed",
+    "sendSuccess": "Success",
+    "status": "Status",
+    "subject": "Subject",
+    "to": "Recipient",
+    "updatedAt": "Updated At"
+  },
   "register": {
+    "day": "Day",
+    "hour": "Hour",
     "ipRegistrationLimit": "IP Registration Limit",
     "ipRegistrationLimitDescription": "When enabled, IPs that meet the rule requirements will be restricted from registering; note that IP determination may cause issues due to CDNs or frontend proxies",
+    "minute": "Minute",
+    "month": "Month",
+    "noLimit": "No Limit",
     "penaltyTime": "Penalty Time (minutes)",
     "penaltyTimeDescription": "Users must wait for the penalty time to expire before registering again",
     "registerSettings": "Register Settings",
@@ -21,8 +39,12 @@
     "saveSuccess": "Save Successful",
     "stopNewUserRegistration": "Stop New User Registration",
     "stopNewUserRegistrationDescription": "When enabled, no one can register",
+    "trialDuration": "Trial Duration",
     "trialRegistration": "Trial Registration",
-    "trialRegistrationDescription": "Enable trial registration; modify trial package and duration first"
+    "trialRegistrationDescription": "Enable trial registration; modify trial package and duration first",
+    "trialSubscribePlan": "Trial Subscription Plan",
+    "trialSubscribePlanDescription": "Select trial subscription plan",
+    "year": "Year"
   },
   "verify": {
     "inputPlaceholder": "Enter",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Reset Password Verification Code",
     "resetPasswordVerificationCodeDescription": "Human verification during password reset",
     "saveSuccess": "Save Successful",
-    "turnstileSecret": "Turnstile Secret Key",
     "turnstileSecretDescription": "Turnstile secret key provided by Cloudflare",
-    "turnstileSiteKey": "Turnstile Site Key",
     "turnstileSiteKeyDescription": "Turnstile site key provided by Cloudflare",
     "verifySettings": "Verify Settings"
   }

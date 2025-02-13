@@ -10,9 +10,27 @@
     "inviteSettings": "Paramètres d'invitation",
     "saveSuccess": "Enregistrement réussi"
   },
+  "log": {
+    "content": "Contenu",
+    "createdAt": "Créé le",
+    "emailLog": "Journal des e-mails",
+    "mobileLog": "Journal mobile",
+    "platform": "Plateforme",
+    "sendFailed": "Échec de l'envoi",
+    "sendSuccess": "Envoi réussi",
+    "status": "Statut",
+    "subject": "Objet",
+    "to": "Destinataire",
+    "updatedAt": "Mis à jour le"
+  },
   "register": {
+    "day": "Jour",
+    "hour": "Heure",
     "ipRegistrationLimit": "Limite d'inscription par IP",
     "ipRegistrationLimitDescription": "Lorsqu'il est activé, les IP qui répondent aux exigences de la règle seront restreintes pour s'inscrire ; notez que la détermination de l'IP peut causer des problèmes en raison des CDN ou des proxies frontend",
+    "minute": "Minute",
+    "month": "Mois",
+    "noLimit": "Pas de limite",
     "penaltyTime": "Temps de pénalité (minutes)",
     "penaltyTimeDescription": "Les utilisateurs doivent attendre l'expiration du temps de pénalité avant de s'inscrire à nouveau",
     "registerSettings": "Paramètres d'inscription",
@@ -21,8 +39,12 @@
     "saveSuccess": "Enregistrement réussi",
     "stopNewUserRegistration": "Arrêter l'inscription de nouveaux utilisateurs",
     "stopNewUserRegistrationDescription": "Lorsqu'il est activé, personne ne peut s'inscrire",
+    "trialDuration": "Durée d'essai",
     "trialRegistration": "Inscription d'essai",
-    "trialRegistrationDescription": "Activer l'inscription d'essai ; modifier d'abord le package d'essai et la durée"
+    "trialRegistrationDescription": "Activer l'inscription d'essai ; modifier d'abord le package d'essai et la durée",
+    "trialSubscribePlan": "Plan d'abonnement d'essai",
+    "trialSubscribePlanDescription": "Sélectionnez le plan d'abonnement d'essai",
+    "year": "An"
   },
   "verify": {
     "inputPlaceholder": "Entrer",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Code de vérification de réinitialisation de mot de passe",
     "resetPasswordVerificationCodeDescription": "Vérification humaine lors de la réinitialisation du mot de passe",
     "saveSuccess": "Enregistrement réussi",
-    "turnstileSecret": "Clé secrète de tourniquet",
     "turnstileSecretDescription": "Clé secrète de tourniquet fournie par Cloudflare",
-    "turnstileSiteKey": "Clé de site de tourniquet",
     "turnstileSiteKeyDescription": "Clé de site de tourniquet fournie par Cloudflare",
     "verifySettings": "Paramètres de vérification"
   }

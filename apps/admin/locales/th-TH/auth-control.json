@@ -10,9 +10,27 @@
     "inviteSettings": "การตั้งค่าการเชิญ",
     "saveSuccess": "บันทึกสำเร็จ"
   },
+  "log": {
+    "content": "เนื้อหา",
+    "createdAt": "สร้างเมื่อ",
+    "emailLog": "บันทึกอีเมล",
+    "mobileLog": "บันทึกมือถือ",
+    "platform": "แพลตฟอร์ม",
+    "sendFailed": "ส่งล้มเหลว",
+    "sendSuccess": "ส่งสำเร็จ",
+    "status": "สถานะ",
+    "subject": "หัวข้อ",
+    "to": "ผู้รับ",
+    "updatedAt": "ปรับปรุงเมื่อ"
+  },
   "register": {
+    "day": "วัน",
+    "hour": "ชั่วโมง",
     "ipRegistrationLimit": "ขีดจำกัดการลงทะเบียน IP",
     "ipRegistrationLimitDescription": "เมื่อเปิดใช้งาน IP ที่ตรงตามข้อกำหนดจะถูกจำกัดไม่ให้ลงทะเบียน; โปรดทราบว่าการกำหนด IP อาจทำให้เกิดปัญหาเนื่องจาก CDN หรือพร็อกซี่ด้านหน้า",
+    "minute": "นาที",
+    "month": "เดือน",
+    "noLimit": "ไม่มีขีดจำกัด",
     "penaltyTime": "เวลาลงโทษ (นาที)",
     "penaltyTimeDescription": "ผู้ใช้ต้องรอให้เวลาลงโทษหมดก่อนที่จะลงทะเบียนอีกครั้ง",
     "registerSettings": "การตั้งค่าการลงทะเบียน",
@@ -21,8 +39,12 @@
     "saveSuccess": "บันทึกสำเร็จ",
     "stopNewUserRegistration": "หยุดการลงทะเบียนผู้ใช้ใหม่",
     "stopNewUserRegistrationDescription": "เมื่อเปิดใช้งาน จะไม่มีใครสามารถลงทะเบียนได้",
+    "trialDuration": "ระยะเวลาทดลอง",
     "trialRegistration": "การลงทะเบียนทดลอง",
-    "trialRegistrationDescription": "เปิดใช้งานการลงทะเบียนทดลอง; ปรับเปลี่ยนแพ็คเกจทดลองและระยะเวลาก่อน"
+    "trialRegistrationDescription": "เปิดใช้งานการลงทะเบียนทดลอง; ปรับเปลี่ยนแพ็คเกจทดลองและระยะเวลาก่อน",
+    "trialSubscribePlan": "แผนการสมัครทดลอง",
+    "trialSubscribePlanDescription": "เลือกแผนการสมัครทดลอง",
+    "year": "ปี"
   },
   "verify": {
     "inputPlaceholder": "กรอก",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "รหัสตรวจสอบการรีเซ็ตรหัสผ่าน",
     "resetPasswordVerificationCodeDescription": "การตรวจสอบมนุษย์ระหว่างการรีเซ็ตรหัสผ่าน",
     "saveSuccess": "บันทึกสำเร็จ",
-    "turnstileSecret": "รหัสลับ Turnstile",
     "turnstileSecretDescription": "รหัสลับ Turnstile ที่จัดเตรียมโดย Cloudflare",
-    "turnstileSiteKey": "รหัสไซต์ Turnstile",
     "turnstileSiteKeyDescription": "รหัสไซต์ Turnstile ที่จัดเตรียมโดย Cloudflare",
     "verifySettings": "การตั้งค่าการตรวจสอบ"
   }

@@ -10,9 +10,27 @@
     "inviteSettings": "Configuración de Invitaciones",
     "saveSuccess": "Guardado Exitoso"
   },
+  "log": {
+    "content": "Contenido",
+    "createdAt": "Creado En",
+    "emailLog": "Registro de Correo Electrónico",
+    "mobileLog": "Registro Móvil",
+    "platform": "Plataforma",
+    "sendFailed": "Fallido",
+    "sendSuccess": "Éxito",
+    "status": "Estado",
+    "subject": "Asunto",
+    "to": "Destinatario",
+    "updatedAt": "Actualizado En"
+  },
   "register": {
+    "day": "Día",
+    "hour": "Hora",
     "ipRegistrationLimit": "Límite de Registro por IP",
     "ipRegistrationLimitDescription": "Cuando está habilitado, las IP que cumplan con los requisitos de la regla estarán restringidas para registrarse; ten en cuenta que la determinación de IP puede causar problemas debido a CDNs o proxies de frontend",
+    "minute": "Minuto",
+    "month": "Mes",
+    "noLimit": "Sin Límite",
     "penaltyTime": "Tiempo de Penalización (minutos)",
     "penaltyTimeDescription": "Los usuarios deben esperar a que expire el tiempo de penalización antes de registrarse nuevamente",
     "registerSettings": "Configuración de Registro",
@@ -21,8 +39,12 @@
     "saveSuccess": "Guardado Exitoso",
     "stopNewUserRegistration": "Detener Registro de Nuevos Usuarios",
     "stopNewUserRegistrationDescription": "Cuando está habilitado, nadie puede registrarse",
+    "trialDuration": "Duración de la Prueba",
     "trialRegistration": "Registro de Prueba",
-    "trialRegistrationDescription": "Habilitar registro de prueba; modifica el paquete de prueba y la duración primero"
+    "trialRegistrationDescription": "Habilitar registro de prueba; modifica el paquete de prueba y la duración primero",
+    "trialSubscribePlan": "Plan de Suscripción de Prueba",
+    "trialSubscribePlanDescription": "Selecciona el plan de suscripción de prueba",
+    "year": "Año"
   },
   "verify": {
     "inputPlaceholder": "Introducir",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Código de Verificación para Restablecer Contraseña",
     "resetPasswordVerificationCodeDescription": "Verificación humana durante el restablecimiento de contraseña",
     "saveSuccess": "Guardado Exitoso",
-    "turnstileSecret": "Clave Secreta de Turnstile",
     "turnstileSecretDescription": "Clave secreta de Turnstile proporcionada por Cloudflare",
-    "turnstileSiteKey": "Clave del Sitio de Turnstile",
     "turnstileSiteKeyDescription": "Clave del sitio de Turnstile proporcionada por Cloudflare",
     "verifySettings": "Configuración de Verificación"
   }

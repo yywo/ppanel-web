@@ -10,9 +10,27 @@
     "inviteSettings": "Ustawienia zaproszeń",
     "saveSuccess": "Zapisano pomyślnie"
   },
+  "log": {
+    "content": "Treść",
+    "createdAt": "Utworzono",
+    "emailLog": "Dziennik e-maili",
+    "mobileLog": "Dziennik mobilny",
+    "platform": "Platforma",
+    "sendFailed": "Niepowodzenie",
+    "sendSuccess": "Sukces",
+    "status": "Status",
+    "subject": "Temat",
+    "to": "Odbiorca",
+    "updatedAt": "Zaktualizowano"
+  },
   "register": {
+    "day": "Dzień",
+    "hour": "Godzina",
     "ipRegistrationLimit": "Limit rejestracji IP",
     "ipRegistrationLimitDescription": "Po włączeniu IP, które spełniają wymagania reguły, będą miały ograniczenia w rejestracji; pamiętaj, że określenie IP może powodować problemy z powodu CDN-ów lub proxy frontendowych",
+    "minute": "Minuta",
+    "month": "Miesiąc",
+    "noLimit": "Brak limitu",
     "penaltyTime": "Czas kary (minuty)",
     "penaltyTimeDescription": "Użytkownicy muszą poczekać na upływ czasu kary przed ponowną rejestracją",
     "registerSettings": "Ustawienia rejestracji",
@@ -21,8 +39,12 @@
     "saveSuccess": "Zapisano pomyślnie",
     "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
     "stopNewUserRegistrationDescription": "Po włączeniu nikt nie może się zarejestrować",
+    "trialDuration": "Czas trwania okresu próbnego",
     "trialRegistration": "Rejestracja próbna",
-    "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania"
+    "trialRegistrationDescription": "Włącz rejestrację próbną; najpierw zmodyfikuj pakiet próbny i czas trwania",
+    "trialSubscribePlan": "Plan subskrypcyjny na okres próbny",
+    "trialSubscribePlanDescription": "Wybierz plan subskrypcyjny na okres próbny",
+    "year": "Rok"
   },
   "verify": {
     "inputPlaceholder": "Wprowadź",
@@ -33,9 +55,7 @@
     "resetPasswordVerificationCode": "Kod weryfikacji resetowania hasła",
     "resetPasswordVerificationCodeDescription": "Weryfikacja ludzka podczas resetowania hasła",
     "saveSuccess": "Zapisano pomyślnie",
-    "turnstileSecret": "Sekretny klucz bramki",
     "turnstileSecretDescription": "Sekretny klucz bramki dostarczony przez Cloudflare",
-    "turnstileSiteKey": "Klucz witryny bramki",
     "turnstileSiteKeyDescription": "Klucz witryny bramki dostarczony przez Cloudflare",
     "verifySettings": "Ustawienia weryfikacji"
   }

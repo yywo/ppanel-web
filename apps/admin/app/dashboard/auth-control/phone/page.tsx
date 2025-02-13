@@ -1,15 +1,12 @@
 'use client';
 
-import { ProTable, ProTableActions } from '@/components/pro-table';
 import {
   getAuthMethodConfig,
   getSmsPlatform,
   testSmsSend,
   updateAuthMethodConfig,
 } from '@/services/admin/authMethod';
-import { getSmsList } from '@/services/admin/sms';
 import { useQuery } from '@tanstack/react-query';
-import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Label } from '@workspace/ui/components/label';
 import {
@@ -26,11 +23,11 @@ import { Textarea } from '@workspace/ui/components/textarea';
 import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import TagInput from '@workspace/ui/custom-components/tag-input';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
+import { LogsTable } from '../log';
 
 export default function Page() {
   const t = useTranslations('phone');
@@ -456,67 +453,8 @@ export default function Page() {
       </TabsContent>
 
       <TabsContent value='logs'>
-        <LogsTable />
+        <LogsTable type='mobile' />
       </TabsContent>
     </Tabs>
-  );
-}
-
-function LogsTable() {
-  const t = useTranslations('phone');
-  const ref = useRef<ProTableActions>(null);
-
-  return (
-    <ProTable<API.SMS, { telephone: string }>
-      action={ref}
-      header={{
-        title: t('SmsList'),
-      }}
-      columns={[
-        {
-          accessorKey: 'platform',
-          header: t('platform'),
-        },
-        {
-          accessorKey: 'areaCode',
-          header: t('areaCode'),
-        },
-        {
-          accessorKey: 'telephone',
-          header: t('telephone'),
-        },
-        {
-          accessorKey: 'content',
-          header: t('content'),
-        },
-        {
-          accessorKey: 'status',
-          header: t('status'),
-          cell: ({ row }) => {
-            const status = row.getValue('status');
-            const text = status === 1 ? t('sendSuccess') : t('sendFailed');
-            return <Badge variant={status === 1 ? 'default' : 'destructive'}>{text}</Badge>;
-          },
-        },
-        {
-          accessorKey: 'created_at',
-          header: t('createdAt'),
-          cell: ({ row }) => formatDate(row.getValue('created_at')),
-        },
-      ]}
-      params={[
-        {
-          key: 'telephone',
-          placeholder: t('search'),
-        },
-      ]}
-      request={async (pagination, filter) => {
-        const { data } = await getSmsList({ ...pagination, ...filter });
-        return {
-          list: data.data?.list || [],
-          total: data.data?.total || 0,
-        };
-      }}
-    />
   );
 }

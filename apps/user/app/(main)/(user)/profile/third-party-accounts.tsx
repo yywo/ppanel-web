@@ -24,12 +24,9 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 function MobileBindDialog({
-  method,
-
   onSuccess,
   children,
 }: {
-  method?: API.UserAuthMethod;
   onSuccess: () => void;
   children: React.ReactNode;
 }) {
@@ -47,8 +44,8 @@ function MobileBindDialog({
   const form = useForm<MobileBindFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      area_code: method?.area_code || '1',
-      mobile: method?.auth_identifier || '',
+      area_code: '1',
+      mobile: '',
       code: '',
     },
   });
@@ -270,7 +267,7 @@ export default function ThirdPartyAccounts() {
                       }}
                     />
                     {account.id === 'mobile' ? (
-                      <MobileBindDialog method={method} onSuccess={getUserInfo}>
+                      <MobileBindDialog onSuccess={getUserInfo}>
                         <Button
                           variant={method?.auth_identifier ? 'outline' : 'default'}
                           className='whitespace-nowrap'

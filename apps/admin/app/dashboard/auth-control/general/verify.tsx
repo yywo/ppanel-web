@@ -45,7 +45,7 @@ export function Verify() {
           <TableBody>
             <TableRow>
               <TableCell>
-                <Label>{t('turnstileSiteKey')}</Label>
+                <Label>Turnstile Site Key</Label>
                 <p className='text-muted-foreground text-xs'>{t('turnstileSiteKeyDescription')}</p>
               </TableCell>
               <TableCell className='text-right'>
@@ -58,7 +58,7 @@ export function Verify() {
             </TableRow>
             <TableRow>
               <TableCell>
-                <Label>{t('turnstileSecret')}</Label>
+                <Label>Turnstile Site Secret</Label>
                 <p className='text-muted-foreground text-xs'>{t('turnstileSecretDescription')}</p>
               </TableCell>
               <TableCell className='text-right'>

@@ -24,6 +24,7 @@ import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
+import { LogsTable } from '../log';
 
 export default function Page() {
   const t = useTranslations('email');
@@ -56,13 +57,13 @@ export default function Page() {
   }
 
   return (
-    <Tabs defaultValue='basic'>
+    <Tabs defaultValue='settings'>
       <TabsList className='h-full flex-wrap'>
-        <TabsTrigger value='basic'>{t('emailBasicConfig')}</TabsTrigger>
-        <TabsTrigger value='template'>{t('emailTemplate')}</TabsTrigger>
-        <TabsTrigger value='logs'>{t('emailLogs')}</TabsTrigger>
+        <TabsTrigger value='settings'>{t('settings')}</TabsTrigger>
+        <TabsTrigger value='template'>{t('template')}</TabsTrigger>
+        <TabsTrigger value='logs'>{t('logs')}</TabsTrigger>
       </TabsList>
-      <TabsContent value='basic'>
+      <TabsContent value='settings'>
         <Table>
           <TableBody>
             <TableRow>
@@ -313,7 +314,9 @@ export default function Page() {
         </div>
       </TabsContent>
 
-      <TabsContent value='logs'>Logs</TabsContent>
+      <TabsContent value='logs'>
+        <LogsTable type='email' />
+      </TabsContent>
     </Tabs>
   );
 }
