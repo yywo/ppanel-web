@@ -33,6 +33,9 @@
     "bindSuccess": "绑定成功",
     "change": "更改",
     "confirm": "确认",
+    "device": {
+      "description": "使用设备 ID 登录"
+    },
     "email": {
       "description": "绑定邮箱地址",
       "invalid": "请输入有效的邮箱地址",

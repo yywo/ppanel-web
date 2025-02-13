@@ -33,6 +33,9 @@
     "bindSuccess": "Sikeresen csatlakozott",
     "change": "Változtatás",
     "confirm": "Megerősítés",
+    "device": {
+      "description": "Bejelentkezés Eszközazonosítóval"
+    },
     "email": {
       "description": "Kapcsold össze az email címed",
       "invalid": "Kérlek, adj meg egy érvényes email címet",

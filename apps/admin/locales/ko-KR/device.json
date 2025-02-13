@@ -1,0 +1,4 @@
+{
+  "enable": "활성화",
+  "enableDescription": "활성화 후 IMEI/IDFA/IDFV/AndroidID/Mac 주소와 같은 여러 장치 식별자를 사용하여 로그인 및 등록할 수 있습니다."
+}

@@ -1,0 +1,4 @@
+{
+  "enable": "啟用",
+  "enableDescription": "啟用後，支持多個設備識別碼，例如 IMEI/IDFA/IDFV/AndroidID/Mac 地址，用於登錄和註冊"
+}

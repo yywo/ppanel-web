@@ -33,6 +33,9 @@
     "bindSuccess": "Conectare reușită",
     "change": "Schimbă",
     "confirm": "Confirmă",
+    "device": {
+      "description": "Conectează-te cu ID-ul dispozitivului"
+    },
     "email": {
       "description": "Leagă adresa ta de email",
       "invalid": "Te rugăm să introduci o adresă de email validă",

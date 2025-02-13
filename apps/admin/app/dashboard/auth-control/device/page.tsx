@@ -9,13 +9,13 @@ import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 
 export default function Page() {
-  const t = useTranslations('imei');
+  const t = useTranslations('device');
 
   const { data, refetch } = useQuery({
-    queryKey: ['getAuthMethodConfig', 'imei'],
+    queryKey: ['getAuthMethodConfig', 'device'],
     queryFn: async () => {
       const { data } = await getAuthMethodConfig({
-        method: 'imei',
+        method: 'device',
       });
       return data.data;
     },

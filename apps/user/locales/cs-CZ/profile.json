@@ -33,6 +33,9 @@
     "bindSuccess": "Úspěšně připojeno",
     "change": "Změnit",
     "confirm": "Potvrdit",
+    "device": {
+      "description": "Přihlásit se pomocí ID zařízení"
+    },
     "email": {
       "description": "Propojte svou e-mailovou adresu",
       "invalid": "Zadejte platnou e-mailovou adresu",

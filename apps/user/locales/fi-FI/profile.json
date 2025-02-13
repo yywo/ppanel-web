@@ -33,6 +33,9 @@
     "bindSuccess": "Yhteys onnistui",
     "change": "Vaihda",
     "confirm": "Vahvista",
+    "device": {
+      "description": "Kirjaudu sisään laite-ID:llä"
+    },
     "email": {
       "description": "Linkitä sähköpostiosoitteesi",
       "invalid": "Ole hyvä ja syötä voimassa oleva sähköpostiosoite",

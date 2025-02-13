@@ -33,6 +33,9 @@
     "bindSuccess": "Koblet til med suksess",
     "change": "Endre",
     "confirm": "Bekreft",
+    "device": {
+      "description": "Logg inn med enhets-ID"
+    },
     "email": {
       "description": "Koble e-postadressen din",
       "invalid": "Vennligst skriv inn en gyldig e-postadresse",

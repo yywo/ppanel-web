@@ -33,6 +33,9 @@
     "bindSuccess": "成功連接",
     "change": "更改",
     "confirm": "確認",
+    "device": {
+      "description": "使用設備 ID 登入"
+    },
     "email": {
       "description": "綁定您的電子郵件地址",
       "invalid": "請輸入有效的電子郵件地址",

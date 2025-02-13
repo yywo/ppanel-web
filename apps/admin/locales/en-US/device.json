@@ -1,0 +1,4 @@
+{
+  "enable": "Enable",
+  "enableDescription": "After enabling, multiple device identifiers such as IMEI/IDFA/IDFV/AndroidID/Mac address are supported for login and registration"
+}

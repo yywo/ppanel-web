@@ -1,0 +1,4 @@
+{
+  "enable": "Aktiver",
+  "enableDescription": "Etter aktivering støttes flere enhetsidentifikatorer som IMEI/IDFA/IDFV/AndroidID/Mac-adresse for pålogging og registrering"
+}

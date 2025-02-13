@@ -1,0 +1,4 @@
+{
+  "enable": "启用",
+  "enableDescription": "启用后，支持使用多个设备标识符，如 IMEI/IDFA/IDFV/AndroidID/Mac 地址进行登录和注册"
+}

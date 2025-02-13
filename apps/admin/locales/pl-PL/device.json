@@ -1,0 +1,4 @@
+{
+  "enable": "Włącz",
+  "enableDescription": "Po włączeniu obsługiwane są różne identyfikatory urządzeń, takie jak IMEI/IDFA/IDFV/AndroidID/adres MAC do logowania i rejestracji"
+}

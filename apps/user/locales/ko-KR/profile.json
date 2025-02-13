@@ -33,6 +33,9 @@
     "bindSuccess": "연결 성공",
     "change": "변경",
     "confirm": "확인",
+    "device": {
+      "description": "장치 ID로 로그인"
+    },
     "email": {
       "description": "이메일 주소를 연결하세요",
       "invalid": "유효한 이메일 주소를 입력하세요",

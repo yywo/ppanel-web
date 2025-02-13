@@ -33,6 +33,9 @@
     "bindSuccess": "接続に成功しました",
     "change": "変更",
     "confirm": "確認",
+    "device": {
+      "description": "デバイスIDでサインイン"
+    },
     "email": {
       "description": "メールアドレスをリンクする",
       "invalid": "有効なメールアドレスを入力してください",

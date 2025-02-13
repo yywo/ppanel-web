@@ -193,7 +193,14 @@ export default function ThirdPartyAccounts() {
       name: 'GitHub',
       type: 'OAuth',
     },
-  ].filter((account) => oauth_methods?.includes(account.id));
+    {
+      id: 'device',
+      icon: 'mdi:devices',
+      name: 'Device',
+      type: 'OAuth',
+    },
+  ];
+  // .filter((account) => oauth_methods?.includes(account.id));
 
   const [editValues, setEditValues] = useState<Record<string, any>>({});
 

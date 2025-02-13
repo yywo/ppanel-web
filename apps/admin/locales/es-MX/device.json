@@ -1,0 +1,4 @@
+{
+  "enable": "Habilitar",
+  "enableDescription": "Después de habilitar, se admiten múltiples identificadores de dispositivos como IMEI/IDFA/IDFV/AndroidID/dirección Mac para iniciar sesión y registrarse"
+}

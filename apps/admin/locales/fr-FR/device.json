@@ -1,0 +1,4 @@
+{
+  "enable": "Activer",
+  "enableDescription": "Après activation, plusieurs identifiants de périphériques tels que IMEI/IDFA/IDFV/AndroidID/adresse Mac sont pris en charge pour la connexion et l'enregistrement"
+}

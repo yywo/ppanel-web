@@ -33,6 +33,9 @@
     "bindSuccess": "Conectado con éxito",
     "change": "Cambiar",
     "confirm": "Confirmar",
+    "device": {
+      "description": "Iniciar sesión con ID de dispositivo"
+    },
     "email": {
       "description": "Vincula tu dirección de correo electrónico",
       "invalid": "Por favor, introduce una dirección de correo electrónico válida",

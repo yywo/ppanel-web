@@ -1,0 +1,4 @@
+{
+  "enable": "Aktivieren",
+  "enableDescription": "Nach der Aktivierung werden mehrere Geräteidentifikatoren wie IMEI/IDFA/IDFV/AndroidID/Mac-Adresse für die Anmeldung und Registrierung unterstützt."
+}

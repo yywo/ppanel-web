@@ -33,6 +33,9 @@
     "bindSuccess": "Connecté avec succès",
     "change": "Changer",
     "confirm": "Confirmer",
+    "device": {
+      "description": "Se connecter avec l'ID de l'appareil"
+    },
     "email": {
       "description": "Liez votre adresse email",
       "invalid": "Veuillez entrer une adresse email valide",

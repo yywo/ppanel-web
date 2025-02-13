@@ -33,6 +33,9 @@
     "bindSuccess": "Bağlantı başarıyla kuruldu",
     "change": "Değiştir",
     "confirm": "Onayla",
+    "device": {
+      "description": "Cihaz Kimliği ile Giriş Yap"
+    },
     "email": {
       "description": "E-posta adresinizi bağlayın",
       "invalid": "Lütfen geçerli bir e-posta adresi girin",

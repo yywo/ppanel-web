@@ -33,6 +33,9 @@
     "bindSuccess": "Kết nối thành công",
     "change": "Thay Đổi",
     "confirm": "Xác nhận",
+    "device": {
+      "description": "Đăng nhập bằng ID thiết bị"
+    },
     "email": {
       "description": "Liên kết địa chỉ email của bạn",
       "invalid": "Vui lòng nhập một địa chỉ email hợp lệ",

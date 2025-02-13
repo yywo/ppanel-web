@@ -1,0 +1,4 @@
+{
+  "enable": "Etkinleştir",
+  "enableDescription": "Etkinleştirildikten sonra, giriş ve kayıt için IMEI/IDFA/IDFV/AndroidID/Mac adresi gibi birden fazla cihaz tanımlayıcısı desteklenir."
+}

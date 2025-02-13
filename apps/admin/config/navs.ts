@@ -36,8 +36,8 @@ export const AuthControl = [
     url: '/dashboard/auth-control/github',
   },
   {
-    title: 'IMEI',
-    url: '/dashboard/auth-control/imei',
+    title: 'Device',
+    url: '/dashboard/auth-control/device',
   },
 ];
 

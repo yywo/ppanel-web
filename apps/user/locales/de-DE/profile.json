@@ -33,6 +33,9 @@
     "bindSuccess": "Erfolgreich verbunden",
     "change": "Ändern",
     "confirm": "Bestätigen",
+    "device": {
+      "description": "Mit Geräte-ID anmelden"
+    },
     "email": {
       "description": "Verknüpfen Sie Ihre E-Mail-Adresse",
       "invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",

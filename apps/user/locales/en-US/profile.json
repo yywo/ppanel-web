@@ -33,6 +33,9 @@
     "bindSuccess": "Successfully connected",
     "change": "Change",
     "confirm": "Confirm",
+    "device": {
+      "description": "Sign in with Device ID"
+    },
     "email": {
       "description": "Link your email address",
       "invalid": "Please enter a valid email address",

@@ -1,0 +1,4 @@
+{
+  "enable": "Activare",
+  "enableDescription": "După activare, sunt acceptate mai multe identificatoare de dispozitive, cum ar fi IMEI/IDFA/IDFV/AndroidID/adresa Mac pentru autentificare și înregistrare."
+}

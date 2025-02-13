@@ -1,0 +1,4 @@
+{
+  "enable": "Povolit",
+  "enableDescription": "Po povolení jsou podporovány různé identifikátory zařízení, jako jsou IMEI/IDFA/IDFV/AndroidID/Mac adresa pro přihlášení a registraci"
+}

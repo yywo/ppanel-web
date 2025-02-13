@@ -33,6 +33,9 @@
     "bindSuccess": "Pomyślnie połączono",
     "change": "Zmień",
     "confirm": "Potwierdź",
+    "device": {
+      "description": "Zaloguj się za pomocą identyfikatora urządzenia"
+    },
     "email": {
       "description": "Połącz swój adres e-mail",
       "invalid": "Proszę wprowadzić prawidłowy adres e-mail",

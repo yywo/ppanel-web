@@ -1,0 +1,4 @@
+{
+  "enable": "Ota käyttöön",
+  "enableDescription": "Kun otat käyttöön, useita laiteidentifikaattoreita, kuten IMEI/IDFA/IDFV/AndroidID/Mac-osoite, tuetaan kirjautumiseen ja rekisteröitymiseen."
+}

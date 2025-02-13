@@ -1,0 +1,4 @@
+{
+  "enable": "有効化",
+  "enableDescription": "有効化後、ログインおよび登録のために、IMEI/IDFA/IDFV/AndroidID/Macアドレスなどの複数のデバイス識別子がサポートされます。"
+}

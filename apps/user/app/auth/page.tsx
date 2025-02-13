@@ -42,7 +42,7 @@ export default function Page() {
   ].filter((method) => method.enabled);
 
   const OAUTH_METHODS = oauth_methods?.filter(
-    (method) => !['mobile', 'email', 'imei'].includes(method),
+    (method) => !['mobile', 'email', 'device'].includes(method),
   );
 
   return (

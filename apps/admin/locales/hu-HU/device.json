@@ -1,0 +1,4 @@
+{
+  "enable": "Engedélyezés",
+  "enableDescription": "Engedélyezés után több eszközazonosító, például IMEI/IDFA/IDFV/AndroidID/Mac-cím támogatott a bejelentkezéshez és a regisztrációhoz."
+}

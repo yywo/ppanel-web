@@ -1,0 +1,4 @@
+{
+  "enable": "Ativar",
+  "enableDescription": "Após a ativação, múltiplos identificadores de dispositivo, como IMEI/IDFA/IDFV/AndroidID/endereço Mac, são suportados para login e registro"
+}
