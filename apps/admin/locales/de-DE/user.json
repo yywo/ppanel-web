@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Ungültiges E-Mail-Format",
   "inviteCode": "Einladungscode",
   "inviteCodePlaceholder": "Einladungscode eingeben (leer lassen, um zu generieren)",
+  "kickOfflineConfirm": "Sind Sie sicher, dass Sie die IP {ip} abmelden möchten?",
+  "kickOfflineSuccess": "Erfolgreich offline benachrichtigt",
   "loading": "Laden...",
   "loginIp": "Login-IP",
   "loginNotifications": "Anmeldebenachrichtigungen",

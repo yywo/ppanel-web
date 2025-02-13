@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Định dạng email không hợp lệ",
   "inviteCode": "Mã Mời",
   "inviteCodePlaceholder": "Nhập mã mời (để trống để tạo mới)",
+  "kickOfflineConfirm": "Bạn có chắc chắn muốn ngắt kết nối IP {ip} không?",
+  "kickOfflineSuccess": "Thông báo ngắt kết nối thành công",
   "loading": "Đang tải...",
   "loginIp": "Địa chỉ IP đăng nhập",
   "loginNotifications": "Thông báo Đăng nhập",

@@ -66,15 +66,15 @@ export function SubscriptionDetail({
                   },
                   {
                     accessorKey: 'user_agent',
-                    header: 'User Agent',
+                    header: t('userAgent'),
                   },
                   {
                     accessorKey: 'token',
-                    header: 'Token',
+                    header: t('token'),
                   },
                   {
                     accessorKey: 'created_at',
-                    header: 'Time',
+                    header: t('time'),
                     cell: ({ row }) => formatDate(row.getValue('created_at')),
                   },
                 ]}
@@ -96,17 +96,17 @@ export function SubscriptionDetail({
                 columns={[
                   {
                     accessorKey: 'download',
-                    header: 'Download',
+                    header: t('download'),
                     cell: ({ row }) => <Display type='traffic' value={row.getValue('download')} />,
                   },
                   {
                     accessorKey: 'upload',
-                    header: 'Upload',
+                    header: t('upload'),
                     cell: ({ row }) => <Display type='traffic' value={row.getValue('upload')} />,
                   },
                   {
                     accessorKey: 'timestamp',
-                    header: 'Time',
+                    header: t('time'),
                     cell: ({ row }) => formatDate(row.getValue('timestamp')),
                   },
                 ]}
@@ -128,7 +128,7 @@ export function SubscriptionDetail({
                 columns={[
                   {
                     accessorKey: 'enabled',
-                    header: 'Enabled',
+                    header: t('enable'),
                     cell: ({ row }) => (
                       <Switch
                         checked={row.getValue('enabled')}
@@ -148,7 +148,7 @@ export function SubscriptionDetail({
                   },
                   {
                     accessorKey: 'user_agent',
-                    header: 'User Agent',
+                    header: t('userAgent'),
                   },
                   {
                     accessorKey: 'ip',
@@ -156,16 +156,16 @@ export function SubscriptionDetail({
                   },
                   {
                     accessorKey: 'online',
-                    header: 'Online',
+                    header: t('loginStatus'),
                     cell: ({ row }) => (
                       <Badge variant={row.getValue('online') ? 'default' : 'destructive'}>
-                        {row.getValue('online') ? 'Online' : 'Offline'}
+                        {row.getValue('online') ? t('online') : t('offline')}
                       </Badge>
                     ),
                   },
                   {
                     accessorKey: 'updated_at',
-                    header: 'Last Seen',
+                    header: t('lastSeen'),
                     cell: ({ row }) => formatDate(row.getValue('updated_at')),
                   },
                 ]}
@@ -188,13 +188,13 @@ export function SubscriptionDetail({
                         key='offline'
                         trigger={<Button variant='destructive'>{t('confirmOffline')}</Button>}
                         title={t('confirmOffline')}
-                        description={`Are you sure to offline IP ${row.ip}?`}
+                        description={t('kickOfflineConfirm', { ip: row.ip })}
                         onConfirm={async () => {
                           await kickOfflineByUserDevice({ id: row.id });
-                          toast.success('已通知下线');
+                          toast.success(t('kickOfflineSuccess'));
                         }}
-                        cancelText='Cancel'
-                        confirmText='Confirm'
+                        cancelText={t('cancel')}
+                        confirmText={t('confirm')}
                       />,
                     ];
                   },

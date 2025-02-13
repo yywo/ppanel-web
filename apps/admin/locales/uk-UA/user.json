@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Неправильний формат електронної пошти",
   "inviteCode": "Код запрошення",
   "inviteCodePlaceholder": "Введіть код запрошення (залиште порожнім для генерації)",
+  "kickOfflineConfirm": "Ви впевнені, що хочете відключити IP {ip}?",
+  "kickOfflineSuccess": "Успішно надіслано повідомлення про відключення",
   "loading": "Завантаження...",
   "loginIp": "IP-адреса входу",
   "loginNotifications": "Сповіщення про вхід",

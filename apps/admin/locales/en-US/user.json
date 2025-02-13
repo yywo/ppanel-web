@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Invalid email format",
   "inviteCode": "Invite Code",
   "inviteCodePlaceholder": "Enter invite code (leave blank to generate)",
+  "kickOfflineConfirm": "Are you sure to kick offline IP {ip}?",
+  "kickOfflineSuccess": "Successfully notified offline",
   "loading": "Loading...",
   "loginIp": "Login IP",
   "loginNotifications": "Login Notifications",

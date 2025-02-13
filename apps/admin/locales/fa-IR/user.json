@@ -49,6 +49,8 @@
   "invalidEmailFormat": "فرمت ایمیل نامعتبر است",
   "inviteCode": "کد دعوت",
   "inviteCodePlaceholder": "کد دعوت را وارد کنید (برای تولید خالی بگذارید)",
+  "kickOfflineConfirm": "آیا مطمئن هستید که می‌خواهید IP {ip} را از سیستم خارج کنید؟",
+  "kickOfflineSuccess": "با موفقیت اطلاع‌رسانی به حالت آفلاین انجام شد",
   "loading": "در حال بارگذاری...",
   "loginIp": "آی‌پی ورود",
   "loginNotifications": "اعلان‌های ورود",

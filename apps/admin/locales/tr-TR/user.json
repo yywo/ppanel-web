@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Geçersiz e-posta formatı",
   "inviteCode": "Davet Kodu",
   "inviteCodePlaceholder": "Davet kodunu girin (oluşturmak için boş bırakın)",
+  "kickOfflineConfirm": "IP {ip}'yi çevrimdışı olarak atmak istediğinize emin misiniz?",
+  "kickOfflineSuccess": "Başarıyla çevrimdışı bildirildi",
   "loading": "Yükleniyor...",
   "loginIp": "Giriş IP'si",
   "loginNotifications": "Giriş Bildirimleri",

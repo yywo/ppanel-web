@@ -49,6 +49,8 @@
   "invalidEmailFormat": "잘못된 이메일 형식입니다",
   "inviteCode": "초대 코드",
   "inviteCodePlaceholder": "초대 코드를 입력하세요 (생성을 원하시면 비워두세요)",
+  "kickOfflineConfirm": "정말로 오프라인 IP {ip}를 강제로 종료하시겠습니까?",
+  "kickOfflineSuccess": "오프라인 알림이 성공적으로 전송되었습니다.",
   "loading": "로딩 중...",
   "loginIp": "로그인 IP",
   "loginNotifications": "로그인 알림",

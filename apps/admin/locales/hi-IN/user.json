@@ -49,6 +49,8 @@
   "invalidEmailFormat": "अमान्य ईमेल प्रारूप",
   "inviteCode": "आमंत्रण कोड",
   "inviteCodePlaceholder": "आमंत्रण कोड दर्ज करें (उत्पन्न करने के लिए खाली छोड़ें)",
+  "kickOfflineConfirm": "क्या आप सुनिश्चित हैं कि IP {ip} को ऑफलाइन करें?",
+  "kickOfflineSuccess": "सफलता से ऑफलाइन करने की सूचना दी गई",
   "loading": "लोड हो रहा है...",
   "loginIp": "लॉगिन आईपी",
   "loginNotifications": "लॉगिन सूचनाएं",

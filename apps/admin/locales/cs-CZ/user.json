@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Neplatný formát e-mailu",
   "inviteCode": "Pozvánkový kód",
   "inviteCodePlaceholder": "Zadejte kód pozvánky (ponechte prázdné pro vygenerování)",
+  "kickOfflineConfirm": "Opravdu chcete odpojit IP {ip}?",
+  "kickOfflineSuccess": "Úspěšně oznámeno odpojení",
   "loading": "Načítání...",
   "loginIp": "Přihlašovací IP",
   "loginNotifications": "Oznámení o přihlášení",

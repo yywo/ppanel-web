@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Ugyldig e-postformat",
   "inviteCode": "Invitasjonskode",
   "inviteCodePlaceholder": "Skriv inn invitasjonskode (la stå tom for å generere)",
+  "kickOfflineConfirm": "Er du sikker på at du vil fjerne IP {ip} fra nettverket?",
+  "kickOfflineSuccess": "Varsel om fjerning ble sendt med suksess",
   "loading": "Laster inn...",
   "loginIp": "Innloggings-IP",
   "loginNotifications": "Påloggingsvarsler",

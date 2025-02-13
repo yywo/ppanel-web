@@ -49,6 +49,8 @@
   "invalidEmailFormat": "รูปแบบอีเมลไม่ถูกต้อง",
   "inviteCode": "รหัสเชิญ",
   "inviteCodePlaceholder": "กรอกรหัสเชิญ (เว้นว่างไว้เพื่อสร้างใหม่)",
+  "kickOfflineConfirm": "คุณแน่ใจหรือว่าต้องการเตะ IP {ip} ออกจากระบบ?",
+  "kickOfflineSuccess": "แจ้งเตือนการเตะออกสำเร็จ",
   "loading": "กำลังโหลด...",
   "loginIp": "ไอพีที่เข้าสู่ระบบ",
   "loginNotifications": "การแจ้งเตือนการเข้าสู่ระบบ",

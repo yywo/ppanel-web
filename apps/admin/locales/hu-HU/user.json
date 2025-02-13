@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Érvénytelen e-mail formátum",
   "inviteCode": "Meghívókód",
   "inviteCodePlaceholder": "Adja meg a meghívó kódot (hagyja üresen a generáláshoz)",
+  "kickOfflineConfirm": "Biztosan ki szeretnéd léptetni a {ip} IP címet?",
+  "kickOfflineSuccess": "Sikeresen értesítettük a kikapcsolásról",
   "loading": "Betöltés...",
   "loginIp": "Bejelentkezési IP",
   "loginNotifications": "Bejelentkezési értesítések",

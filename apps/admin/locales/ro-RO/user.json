@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Format de email invalid",
   "inviteCode": "Cod de invitație",
   "inviteCodePlaceholder": "Introduceți codul de invitație (lăsați necompletat pentru a genera)",
+  "kickOfflineConfirm": "Ești sigur că vrei să deconectezi IP-ul {ip}?",
+  "kickOfflineSuccess": "Notificare de deconectare reușită",
   "loading": "Se încarcă...",
   "loginIp": "IP de autentificare",
   "loginNotifications": "Notificări de autentificare",

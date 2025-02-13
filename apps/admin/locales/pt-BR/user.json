@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Formato de e-mail inválido",
   "inviteCode": "Código de Convite",
   "inviteCodePlaceholder": "Digite o código de convite (deixe em branco para gerar)",
+  "kickOfflineConfirm": "Você tem certeza de que deseja desconectar o IP {ip}?",
+  "kickOfflineSuccess": "Notificação de desconexão enviada com sucesso",
   "loading": "Carregando...",
   "loginIp": "IP de Login",
   "loginNotifications": "Notificações de Login",

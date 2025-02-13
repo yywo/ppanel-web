@@ -49,6 +49,8 @@
   "invalidEmailFormat": "Virheellinen sähköpostimuoto",
   "inviteCode": "Kutsukoodi",
   "inviteCodePlaceholder": "Syötä kutsukoodi (jätä tyhjäksi luodaksesi uuden)",
+  "kickOfflineConfirm": "Oletko varma, että haluat poistaa IP-osoitteen {ip} käytöstä?",
+  "kickOfflineSuccess": "Poistaminen käytöstä onnistui",
   "loading": "Ladataan...",
   "loginIp": "Kirjautumis-IP",
   "loginNotifications": "Kirjautumisilmoitukset",
