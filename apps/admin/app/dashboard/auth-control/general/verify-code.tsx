@@ -50,10 +50,10 @@ export function VerifyCode() {
               <TableCell className='text-right'>
                 <EnhancedInput
                   type='number'
-                  placeholder='5'
+                  placeholder='300'
                   value={data?.verify_code_expire_time}
                   onValueBlur={(value) => updateConfig('verify_code_expire_time', Number(value))}
-                  suffix={t('minute')}
+                  suffix={t('second')}
                 />
               </TableCell>
             </TableRow>
