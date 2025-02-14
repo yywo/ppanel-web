@@ -2,7 +2,12 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
-import { createUserSubscribe, getUserSubscribe, updateUserSubscribe } from '@/services/admin/user';
+import {
+  createUserSubscribe,
+  deleteUserSubscribe,
+  getUserSubscribe,
+  updateUserSubscribe,
+} from '@/services/admin/user';
 import { Button } from '@workspace/ui/components/button';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { formatDate } from '@workspace/ui/utils';
@@ -146,7 +151,9 @@ export default function UserSubscription({ userId }: { userId: number }) {
               title={t('confirmDelete')}
               description={t('deleteSubscriptionDescription')}
               onConfirm={async () => {
-                console.log('Delete subscription:', row.id);
+                await deleteUserSubscribe({ user_subscribe_id: row.id });
+                toast.success(t('deleteSuccess'));
+                ref.current?.refresh();
               }}
               cancelText={t('cancel')}
               confirmText={t('confirm')}

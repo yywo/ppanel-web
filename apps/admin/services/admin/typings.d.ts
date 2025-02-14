@@ -333,6 +333,10 @@ declare namespace API {
     id: number;
   };
 
+  type DeleteUserSubscribeRequest = {
+    user_subscribe_id: number;
+  };
+
   type Document = {
     id: number;
     title: string;
