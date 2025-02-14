@@ -34,7 +34,7 @@ export default function ChangePassword() {
   }
 
   return (
-    <Card>
+    <Card className='min-w-80'>
       <CardHeader className='bg-muted/50'>
         <CardTitle className='flex items-center justify-between'>
           {t('accountSettings')}

@@ -299,14 +299,14 @@ export default function Page() {
                   </p>
                 </TableCell>
                 <TableCell className='text-right'>
-                  <Textarea
-                    defaultValue={data?.config?.platform_config?.phone_number ?? ''}
-                    onBlur={(e) =>
+                  <EnhancedInput
+                    value={data?.config?.platform_config?.phone_number ?? ''}
+                    onValueBlur={(value) =>
                       updateConfig('config', {
                         ...data?.config,
                         platform_config: {
                           ...data?.config?.platform_config,
-                          phone_number: e.target.value,
+                          phone_number: value,
                         },
                       })
                     }

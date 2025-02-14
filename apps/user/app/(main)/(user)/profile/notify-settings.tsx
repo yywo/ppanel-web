@@ -39,7 +39,7 @@ export default function NotifySettings() {
   }
 
   return (
-    <Card className='min-w-60'>
+    <Card className='min-w-80'>
       <CardHeader className='bg-muted/50'>
         <CardTitle className='flex items-center justify-between'>
           {t('notify.notificationSettings')}
