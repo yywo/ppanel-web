@@ -35,7 +35,7 @@ export default function NotifySettings() {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     await updateUserNotify(data);
     toast.success(t('notify.updateSuccess'));
-    getUserInfo();
+    await getUserInfo();
   }
 
   return (
