@@ -31,6 +31,8 @@ function MobileBindDialog({
   children: React.ReactNode;
 }) {
   const t = useTranslations('profile.thirdParty');
+  const { common } = useGlobalStore();
+  const { enable_whitelist, whitelist } = common.auth.mobile;
   const [open, setOpen] = useState(false);
 
   const formSchema = z.object({
@@ -88,6 +90,7 @@ function MobileBindDialog({
                                 className='w-32 rounded-r-none border-r-0'
                                 placeholder='Area code...'
                                 value={field.value}
+                                whitelist={enable_whitelist ? whitelist : []}
                                 onChange={(value) => {
                                   if (value.phone) {
                                     form.setValue(field.name, value.phone);

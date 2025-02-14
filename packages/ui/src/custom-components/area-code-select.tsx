@@ -22,21 +22,27 @@ interface AreaCodeSelectProps {
   className?: string;
   placeholder?: string;
   simple?: boolean;
+  whitelist?: string[];
 }
 
-const items = countries
-  .filter((item) => !!item.phone)
-  .map((item) => {
-    const phones = item.phone!.split(',');
-    if (phones.length > 1) {
-      return [...phones].map((phone) => ({
-        ...item,
-        phone,
-      }));
-    }
-    return item;
-  })
-  .flat();
+const filterItems = (whitelist?: string[]) => {
+  const baseItems = countries
+    .filter((item) => !!item.phone)
+    .map((item) => {
+      const phones = item.phone!.split(',');
+      if (phones.length > 1) {
+        return [...phones].map((phone) => ({
+          ...item,
+          phone,
+        }));
+      }
+      return item;
+    })
+    .flat();
+
+  if (!whitelist?.length) return baseItems;
+  return baseItems.filter((item) => whitelist.includes(item.phone!));
+};
 
 export const AreaCodeSelect = ({
   value,
@@ -44,16 +50,18 @@ export const AreaCodeSelect = ({
   className,
   placeholder = 'Select Area Code',
   simple = false,
+  whitelist,
 }: AreaCodeSelectProps) => {
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<ICountry | undefined>();
+  const items = filterItems(whitelist);
 
   useEffect(() => {
     if (value !== selectedItem?.phone) {
       const found = items.find((item) => item.phone === value);
       setSelectedItem(found);
     }
-  }, [selectedItem?.phone, value]);
+  }, [selectedItem?.phone, value, items]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>

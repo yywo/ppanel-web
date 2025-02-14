@@ -30,9 +30,8 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
     auth: {
       mobile: {
         enable: false,
-        limit: 0,
-        interval: 0,
-        expire_time: 0,
+        enable_whitelist: false,
+        whitelist: [],
       },
       email: {
         enable: false,
@@ -42,10 +41,6 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       },
       register: {
         stop_register: false,
-        enable_trial: false,
-        trial_subscribe: 0,
-        trial_time: 0,
-        trial_time_unit: '',
         enable_ip_register_limit: false,
         ip_register_limit: 0,
         ip_register_limit_duration: 0,

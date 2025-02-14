@@ -66,7 +66,7 @@ declare namespace API {
   type AuthConfig = {
     mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
-    register: RegisterConfig;
+    register: PubilcRegisterConfig;
   };
 
   type AuthMethodConfig = {
@@ -152,7 +152,7 @@ declare namespace API {
     invite: InviteConfig;
     currency: CurrencyConfig;
     subscribe: SubscribeConfig;
-    verify_code: VerifyCodeConfig;
+    verify_code: PubilcVerifyCodeConfig;
     oauth_methods: string[];
   };
 
@@ -208,9 +208,8 @@ declare namespace API {
 
   type MobileAuthenticateConfig = {
     enable: boolean;
-    limit: number;
-    interval: number;
-    expire_time: number;
+    enable_whitelist: boolean;
+    whitelist: string[];
   };
 
   type NodeConfig = {
@@ -308,6 +307,17 @@ declare namespace API {
     fee_percent?: number;
     fee_amount?: number;
     enable: boolean;
+  };
+
+  type PubilcRegisterConfig = {
+    stop_register: boolean;
+    enable_ip_register_limit: boolean;
+    ip_register_limit: number;
+    ip_register_limit_duration: number;
+  };
+
+  type PubilcVerifyCodeConfig = {
+    verify_code_interval: number;
   };
 
   type RegisterConfig = {

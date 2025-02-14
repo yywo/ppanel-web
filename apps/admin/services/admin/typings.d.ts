@@ -68,7 +68,7 @@ declare namespace API {
   type AuthConfig = {
     mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
-    register: RegisterConfig;
+    register: PubilcRegisterConfig;
   };
 
   type AuthMethodConfig = {
@@ -768,9 +768,8 @@ declare namespace API {
 
   type MobileAuthenticateConfig = {
     enable: boolean;
-    limit: number;
-    interval: number;
-    expire_time: number;
+    enable_whitelist: boolean;
+    whitelist: string[];
   };
 
   type NodeConfig = {
@@ -874,6 +873,17 @@ declare namespace API {
 
   type PlatformResponse = {
     list: PlatformInfo[];
+  };
+
+  type PubilcRegisterConfig = {
+    stop_register: boolean;
+    enable_ip_register_limit: boolean;
+    ip_register_limit: number;
+    ip_register_limit_duration: number;
+  };
+
+  type PubilcVerifyCodeConfig = {
+    verify_code_interval: number;
   };
 
   type RegisterConfig = {
