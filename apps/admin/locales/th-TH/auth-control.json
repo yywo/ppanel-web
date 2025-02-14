@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "รหัสลับ Turnstile ที่จัดเตรียมโดย Cloudflare",
     "turnstileSiteKeyDescription": "รหัสไซต์ Turnstile ที่จัดเตรียมโดย Cloudflare",
     "verifySettings": "การตั้งค่าการตรวจสอบ"
+  },
+  "verify-code": {
+    "dailyLimit": "ขีดจำกัดรายวัน",
+    "dailyLimitDescription": "จำนวนสูงสุดของรหัสยืนยันที่สามารถส่งได้ต่อวัน",
+    "expireTime": "เวลาหมดอายุ",
+    "expireTimeDescription": "เวลาหมดอายุของรหัสยืนยัน (นาที)",
+    "interval": "ช่วงเวลาส่ง",
+    "intervalDescription": "ช่วงเวลาขั้นต่ำระหว่างการส่งรหัสยืนยัน (วินาที)",
+    "minute": "นาที",
+    "saveSuccess": "บันทึกสำเร็จ",
+    "second": "วินาที",
+    "times": "ครั้ง",
+    "verifyCodeSettings": "การตั้งค่ารหัสยืนยัน"
   }
 }

@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Změna zůstatku",
-    "bind": "Přejít na vazbu",
     "channels": "Notifikační kanály",
-    "emailNotification": "E-mailové oznámení",
     "finance": "Finance",
     "login": "Přihlášení",
     "notificationSettings": "Nastavení oznámení",
     "notificationTypes": "Typy notifikací",
     "save": "Uložit změny",
     "subscribe": "Přihlásit se",
-    "telegramIdPlaceholder": "Zadejte Telegram ID",
-    "telegramNotification": "Telegram oznámení",
-    "unbind": "Zrušit vazbu",
     "updateSuccess": "Aktualizace byla úspěšná"
   },
   "thirdParty": {

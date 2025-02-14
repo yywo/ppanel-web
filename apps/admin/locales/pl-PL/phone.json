@@ -4,18 +4,9 @@
   "enable": "Włącz",
   "enableTip": "Po włączeniu zostaną aktywowane funkcje rejestracji, logowania, wiązania i odwiązywania telefonu komórkowego",
   "endpointLabel": "Punkt końcowy",
-  "expireTime": "Czas wygaśnięcia",
-  "expireTimeTip": "Okres ważności kodu weryfikacyjnego SMS (sekundy)",
-  "interval": "Interwał",
-  "intervalTip": "Interwał wysyłania kodu weryfikacyjnego SMS dla tego samego numeru telefonu (w sekundach), 0 oznacza brak ograniczeń",
-  "limit": "Dzienne ograniczenie",
-  "limitTip": "Dzienny limit wysyłania kodów weryfikacyjnych SMS dla tego samego numeru telefonu, 0 oznacza brak limitu",
   "logs": "Dzienniki",
   "phoneNumberLabel": "Numer telefonu",
   "placeholders": {
-    "expireTime": "Wprowadź czas wygaśnięcia, domyślnie 300",
-    "interval": "Wprowadź czas interwału, domyślnie 60",
-    "limit": "Wprowadź dzienny limit, domyślnie 20",
     "template": "Twój kod weryfikacyjny to {code}, ważny przez 5 minut",
     "templateCode": "Wprowadź kod szablonu"
   },

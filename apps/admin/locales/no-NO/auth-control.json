@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Turnstile hemmelig nøkkel levert av Cloudflare",
     "turnstileSiteKeyDescription": "Turnstile nettsted nøkkel levert av Cloudflare",
     "verifySettings": "Verifiseringsinnstillinger"
+  },
+  "verify-code": {
+    "dailyLimit": "Dagsgrense",
+    "dailyLimitDescription": "Maksimalt antall bekreftelseskoder som kan sendes per dag",
+    "expireTime": "Utløpstid",
+    "expireTimeDescription": "Utløpstid for bekreftelseskode (minutter)",
+    "interval": "Sendingsintervall",
+    "intervalDescription": "Minimum intervall mellom sending av bekreftelseskoder (sekunder)",
+    "minute": "minutter",
+    "saveSuccess": "Lagring vellykket",
+    "second": "sekunder",
+    "times": "ganger",
+    "verifyCodeSettings": "Innstillinger for bekreftelseskode"
   }
 }

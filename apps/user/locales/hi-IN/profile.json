@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "बैलेंस परिवर्तन",
-    "bind": "बाइंडिंग पर जाएं",
     "channels": "सूचना चैनल",
-    "emailNotification": "ईमेल सूचना",
     "finance": "वित्त",
     "login": "लॉगिन",
     "notificationSettings": "सूचना सेटिंग्स",
     "notificationTypes": "सूचना प्रकार",
     "save": "परिवर्तन सहेजें",
     "subscribe": "सदस्यता लें",
-    "telegramIdPlaceholder": "टेलीग्राम आईडी दर्ज करें",
-    "telegramNotification": "टेलीग्राम सूचना",
-    "unbind": "अनबाइंड करें",
     "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
   },
   "thirdParty": {

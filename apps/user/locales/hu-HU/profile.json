@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Egyenleg Változás",
-    "bind": "Menj a kötéshez",
     "channels": "Értesítési Csatornák",
-    "emailNotification": "E-mail értesítés",
     "finance": "Pénzügy",
     "login": "Bejelentkezés",
     "notificationSettings": "Értesítési beállítások",
     "notificationTypes": "Értesítési Típusok",
     "save": "Változtatások Mentése",
     "subscribe": "Feliratkozás",
-    "telegramIdPlaceholder": "Adja meg a Telegram azonosítót",
-    "telegramNotification": "Telegram értesítés",
-    "unbind": "Kötés feloldása",
     "updateSuccess": "Sikeres frissítés"
   },
   "thirdParty": {

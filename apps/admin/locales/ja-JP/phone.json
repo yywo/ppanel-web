@@ -4,18 +4,9 @@
   "enable": "有効にする",
   "enableTip": "有効にすると、携帯電話の登録、ログイン、バインド、アンバインド機能が有効になります",
   "endpointLabel": "エンドポイント",
-  "expireTime": "有効期限",
-  "expireTimeTip": "SMS認証コードの有効期間（秒）",
-  "interval": "間隔",
-  "intervalTip": "同じ電話番号へのSMS認証コード送信間隔（秒）、0は制限なしを意味します",
-  "limit": "1日の制限",
-  "limitTip": "同一の電話番号に対する1日のSMS認証コード送信制限。0は制限なしを意味します。",
   "logs": "ログ",
   "phoneNumberLabel": "電話番号",
   "placeholders": {
-    "expireTime": "有効期限を入力してください。デフォルトは300です",
-    "interval": "間隔時間を入力してください。デフォルトは60です",
-    "limit": "1日の制限を入力してください。デフォルトは20です",
     "template": "あなたの認証コードは{code}です。5分間有効です",
     "templateCode": "テンプレートコードを入力してください"
   },

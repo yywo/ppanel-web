@@ -37,6 +37,9 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       register: {
         stop_register: false,
         enable_trial: false,
+        trial_subscribe: 0,
+        trial_time: 0,
+        trial_time_unit: '',
         enable_ip_register_limit: false,
         ip_register_limit: 0,
         ip_register_limit_duration: 0,
@@ -48,14 +51,19 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       only_first_purchase: false,
     },
     currency: {
-      currency_unit: '',
-      currency_symbol: '',
+      currency_unit: 'USD',
+      currency_symbol: '$',
     },
     subscribe: {
       single_model: false,
       subscribe_path: '',
       subscribe_domain: '',
       pan_domain: false,
+    },
+    verify_code: {
+      verify_code_expire_time: 5,
+      verify_code_limit: 15,
+      verify_code_interval: 60,
     },
     oauth_methods: [],
   },

@@ -12,8 +12,6 @@ import { toast } from 'sonner';
 import * as z from 'zod';
 
 const notifySettingsSchema = z.object({
-  enable_email_notify: z.boolean(),
-  enable_telegram_notify: z.boolean(),
   enable_balance_notify: z.boolean(),
   enable_login_notify: z.boolean(),
   enable_subscribe_notify: z.boolean(),
@@ -28,8 +26,6 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
   const form = useForm<NotifySettingsValues>({
     resolver: zodResolver(notifySettingsSchema),
     defaultValues: {
-      enable_email_notify: user.enable_email_notify,
-      enable_telegram_notify: user.enable_telegram_notify,
       enable_balance_notify: user.enable_balance_notify,
       enable_login_notify: user.enable_login_notify,
       enable_subscribe_notify: user.enable_subscribe_notify,
@@ -57,32 +53,6 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
           </CardHeader>
           <CardContent className='space-y-4'>
             <div className='grid grid-cols-1 gap-4'>
-              <FormField
-                control={form.control}
-                name='enable_email_notify'
-                render={({ field }) => (
-                  <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>{t('emailNotifications')}</FormLabel>
-                    <FormControl>
-                      <Switch checked={field.value} onCheckedChange={field.onChange} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name='enable_telegram_notify'
-                render={({ field }) => (
-                  <FormItem className='flex items-center justify-between space-x-2'>
-                    <FormLabel>{t('telegramNotifications')}</FormLabel>
-                    <FormControl>
-                      <Switch checked={field.value} onCheckedChange={field.onChange} />
-                    </FormControl>
-                  </FormItem>
-                )}
-              />
-
               <FormField
                 control={form.control}
                 name='enable_balance_notify'

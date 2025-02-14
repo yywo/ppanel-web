@@ -13,9 +13,6 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 const FormSchema = z.object({
-  telegram: z.number().nullish(),
-  enable_email_notify: z.boolean(),
-  enable_telegram_notify: z.boolean(),
   enable_balance_notify: z.boolean(),
   enable_login_notify: z.boolean(),
   enable_subscribe_notify: z.boolean(),
@@ -28,9 +25,6 @@ export default function NotifySettings() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      telegram: user?.telegram,
-      enable_email_notify: user?.enable_email_notify,
-      enable_telegram_notify: user?.enable_telegram_notify,
       enable_balance_notify: user?.enable_balance_notify,
       enable_login_notify: user?.enable_login_notify,
       enable_subscribe_notify: user?.enable_subscribe_notify,
@@ -59,8 +53,6 @@ export default function NotifySettings() {
           <form id='notify-form' onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
             <div className='space-y-4'>
               {[
-                { name: 'enable_email_notify', label: 'emailNotification' },
-                { name: 'enable_telegram_notify', label: 'telegramNotification' },
                 { name: 'enable_balance_notify', label: 'balanceChange' },
                 { name: 'enable_login_notify', label: 'login' },
                 { name: 'enable_subscribe_notify', label: 'subscribe' },

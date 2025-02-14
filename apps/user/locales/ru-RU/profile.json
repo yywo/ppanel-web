@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Изменение баланса",
-    "bind": "Перейти к привязке",
     "channels": "Каналы уведомлений",
-    "emailNotification": "Уведомление по электронной почте",
     "finance": "Финансы",
     "login": "Вход",
     "notificationSettings": "Настройки уведомлений",
     "notificationTypes": "Типы уведомлений",
     "save": "Сохранить изменения",
     "subscribe": "Подписаться",
-    "telegramIdPlaceholder": "Введите Telegram ID",
-    "telegramNotification": "Уведомление в Telegram",
-    "unbind": "Отвязать",
     "updateSuccess": "Успешно обновлено"
   },
   "thirdParty": {

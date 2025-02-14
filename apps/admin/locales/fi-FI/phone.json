@@ -4,18 +4,9 @@
   "enable": "Ota käyttöön",
   "enableTip": "Kun otat tämän käyttöön, matkapuhelimen rekisteröinti-, kirjautumis-, sitomis- ja purkutoiminnot otetaan käyttöön",
   "endpointLabel": "Päätepiste",
-  "expireTime": "Vanhentumisaika",
-  "expireTimeTip": "Tekstiviestivarmennuskoodin voimassaoloaika (sekunteina)",
-  "interval": "Aikaväli",
-  "intervalTip": "Saman puhelinnumeron SMS-varmistuskoodin lähetysväli (sekunteina), 0 tarkoittaa ei rajoitusta",
-  "limit": "Päivittäinen raja",
-  "limitTip": "Päivittäinen tekstiviestivarmistuskoodin lähetysraja samalle puhelinnumerolle, 0 tarkoittaa ei rajoitusta",
   "logs": "Lokit",
   "phoneNumberLabel": "Puhelinnumero",
   "placeholders": {
-    "expireTime": "Syötä vanhentumisaika, oletus on 300",
-    "interval": "Anna aikaväli, oletus on 60",
-    "limit": "Anna päivittäinen raja, oletus on 20",
     "template": "Vahvistuskoodisi on {code}, voimassa 5 minuuttia",
     "templateCode": "Anna mallikoodi"
   },

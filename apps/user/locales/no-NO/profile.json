@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Endring i saldo",
-    "bind": "Gå til binding",
     "channels": "Varslingskanaler",
-    "emailNotification": "E-postvarsling",
     "finance": "Økonomi",
     "login": "Logg inn",
     "notificationSettings": "Varslingsinnstillinger",
     "notificationTypes": "Varslingstyper",
     "save": "Lagre endringer",
     "subscribe": "Abonner",
-    "telegramIdPlaceholder": "Skriv inn Telegram-ID",
-    "telegramNotification": "Telegram-varsling",
-    "unbind": "Løsne",
     "updateSuccess": "Oppdatering vellykket"
   },
   "thirdParty": {

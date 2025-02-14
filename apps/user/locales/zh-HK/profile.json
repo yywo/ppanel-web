@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "餘額變更",
-    "bind": "前往綁定",
     "channels": "通知渠道",
-    "emailNotification": "郵件通知",
     "finance": "財務",
     "login": "登錄",
     "notificationSettings": "通知設定",
     "notificationTypes": "通知類型",
     "save": "保存更改",
     "subscribe": "訂閱",
-    "telegramIdPlaceholder": "輸入 Telegram ID",
-    "telegramNotification": "Telegram 通知",
-    "unbind": "解除綁定",
     "updateSuccess": "更新成功"
   },
   "thirdParty": {

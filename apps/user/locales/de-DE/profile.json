@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Kontostandsänderung",
-    "bind": "Zur Bindung gehen",
     "channels": "Benachrichtigungskanäle",
-    "emailNotification": "E-Mail-Benachrichtigung",
     "finance": "Finanzen",
     "login": "Anmelden",
     "notificationSettings": "Benachrichtigungseinstellungen",
     "notificationTypes": "Benachrichtigungstypen",
     "save": "Änderungen speichern",
     "subscribe": "Abonnieren",
-    "telegramIdPlaceholder": "Telegram-ID eingeben",
-    "telegramNotification": "Telegram-Benachrichtigung",
-    "unbind": "Lösen",
     "updateSuccess": "Erfolgreich aktualisiert"
   },
   "thirdParty": {

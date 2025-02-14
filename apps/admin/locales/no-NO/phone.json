@@ -4,18 +4,9 @@
   "enable": "Aktiver",
   "enableTip": "Etter aktivering vil funksjonene for registrering, innlogging, binding og frakobling av mobiltelefon bli aktivert",
   "endpointLabel": "Endepunkt",
-  "expireTime": "Utløpstid",
-  "expireTimeTip": "Gyldighetsperiode for SMS-bekreftelseskode (sekunder)",
-  "interval": "Intervall",
-  "intervalTip": "SMS-verifiseringskode sendingsintervall for samme telefonnummer (sekunder), 0 betyr ingen begrensning",
-  "limit": "Daglig grense",
-  "limitTip": "Daglig grense for sending av SMS-verifiseringskode til samme telefonnummer, 0 betyr ingen grense",
   "logs": "Logger",
   "phoneNumberLabel": "Telefonnummer",
   "placeholders": {
-    "expireTime": "Skriv inn utløpstid, standard er 300",
-    "interval": "Skriv inn intervalltid, standard er 60",
-    "limit": "Skriv inn daglig grense, standard er 20",
     "template": "Din verifiseringskode er {code}, gyldig i 5 minutter",
     "templateCode": "Skriv inn malkode"
   },

@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "残高の変更",
-    "bind": "バインディングに移動",
     "channels": "通知チャネル",
-    "emailNotification": "メール通知",
     "finance": "ファイナンス",
     "login": "ログイン",
     "notificationSettings": "通知設定",
     "notificationTypes": "通知タイプ",
     "save": "変更を保存",
     "subscribe": "購読する",
-    "telegramIdPlaceholder": "Telegram IDを入力",
-    "telegramNotification": "Telegram通知",
-    "unbind": "バインド解除",
     "updateSuccess": "更新成功"
   },
   "thirdParty": {

@@ -4,18 +4,9 @@
   "enable": "Habilitar",
   "enableTip": "Após a ativação, as funções de registro, login, vinculação e desvinculação de telefone celular serão ativadas",
   "endpointLabel": "Endpoint",
-  "expireTime": "Tempo de Expiração",
-  "expireTimeTip": "Período de validade do código de verificação por SMS (segundos)",
-  "interval": "Intervalo",
-  "intervalTip": "Intervalo de envio do código de verificação por SMS para o mesmo número de telefone (segundos), 0 significa sem limite",
-  "limit": "Limite Diário",
-  "limitTip": "Limite diário de envio de código de verificação por SMS para o mesmo número de telefone, 0 significa sem limite",
   "logs": "Registros",
   "phoneNumberLabel": "Número de Telefone",
   "placeholders": {
-    "expireTime": "Insira o tempo de expiração, o padrão é 300",
-    "interval": "Insira o tempo de intervalo, o padrão é 60",
-    "limit": "Insira o limite diário, o padrão é 20",
     "template": "Seu código de verificação é {code}, válido por 5 minutos",
     "templateCode": "Insira o código do modelo"
   },

@@ -4,18 +4,9 @@
   "enable": "Etkinleştir",
   "enableTip": "Etkinleştirildikten sonra, cep telefonu kaydı, giriş, bağlama ve bağlantı kesme işlevleri etkinleştirilecektir",
   "endpointLabel": "Uç Nokta",
-  "expireTime": "Sona Erme Süresi",
-  "expireTimeTip": "SMS doğrulama kodu geçerlilik süresi (saniye)",
-  "interval": "Aralık",
-  "intervalTip": "Aynı telefon numarası için SMS doğrulama kodu gönderme aralığı (saniye), 0 sınırsız demektir",
-  "limit": "Günlük Limit",
-  "limitTip": "Aynı telefon numarası için günlük SMS doğrulama kodu gönderim limiti, 0 sınırsız demektir",
   "logs": "Günlükler",
   "phoneNumberLabel": "Telefon Numarası",
   "placeholders": {
-    "expireTime": "Sona erme süresini girin, varsayılan 300",
-    "interval": "Aralık süresini girin, varsayılan 60'tır",
-    "limit": "Günlük limiti girin, varsayılan 20'dir",
     "template": "Doğrulama kodunuz {code}, 5 dakika geçerlidir",
     "templateCode": "Şablon kodunu girin"
   },

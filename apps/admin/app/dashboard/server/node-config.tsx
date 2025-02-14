@@ -35,7 +35,7 @@ function getTimeRangeData(slots: API.TimePeriod[]) {
     .filter((slot) => slot.start_time && slot.end_time)
     .flatMap((slot) => {
       const [startH = 0, startM = 0] = slot.start_time.split(':').map(Number);
-      const [endH = 0, endM = 0] = slot?.end_time?.split(':').map(Number);
+      const [endH = 0, endM = 0] = slot?.end_time.split(':').map(Number);
       const start = startH * 60 + startM;
       let end = endH * 60 + endM;
       if (end < start) end += MINUTES_IN_DAY;
@@ -117,7 +117,7 @@ export default function NodeConfig() {
   }, [timeSlots]);
 
   const chartConfig = useMemo(() => {
-    return chartTimeSlots.reduce(
+    return chartTimeSlots?.reduce(
       (acc, item, index) => {
         acc[item.name] = {
           label: item.name,

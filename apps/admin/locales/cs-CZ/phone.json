@@ -4,18 +4,9 @@
   "enable": "Povolit",
   "enableTip": "Po povolení budou povoleny funkce registrace, přihlášení, připojení a odpojení mobilního telefonu",
   "endpointLabel": "Koncový bod",
-  "expireTime": "Čas vypršení",
-  "expireTimeTip": "Doba platnosti ověřovacího kódu SMS (v sekundách)",
-  "interval": "Interval",
-  "intervalTip": "Interval odesílání SMS ověřovacího kódu pro stejné telefonní číslo (v sekundách), 0 znamená bez omezení",
-  "limit": "Denní limit",
-  "limitTip": "Denní limit pro odesílání ověřovacích SMS kódů na stejné telefonní číslo, 0 znamená bez omezení",
   "logs": "Protokoly",
   "phoneNumberLabel": "Telefonní číslo",
   "placeholders": {
-    "expireTime": "Zadejte dobu vypršení, výchozí je 300",
-    "interval": "Zadejte interval, výchozí je 60",
-    "limit": "Zadejte denní limit, výchozí je 20",
     "template": "Váš ověřovací kód je {code}, platný po dobu 5 minut",
     "templateCode": "Zadejte kód šablony"
   },

@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Schimbare Sold",
-    "bind": "Mergi la Legare",
     "channels": "Canale de Notificare",
-    "emailNotification": "Notificare prin email",
     "finance": "Finanțe",
     "login": "Autentificare",
     "notificationSettings": "Setări notificări",
     "notificationTypes": "Tipuri de Notificare",
     "save": "Salvează Modificările",
     "subscribe": "Abonează-te",
-    "telegramIdPlaceholder": "Introduceți ID-ul Telegram",
-    "telegramNotification": "Notificare Telegram",
-    "unbind": "Dezleagă",
     "updateSuccess": "Actualizare reușită"
   },
   "thirdParty": {

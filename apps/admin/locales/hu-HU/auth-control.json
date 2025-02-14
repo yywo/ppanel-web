@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "A Cloudflare által biztosított forgókapu titkos kulcs",
     "turnstileSiteKeyDescription": "A Cloudflare által biztosított forgókapu webhely kulcs",
     "verifySettings": "Ellenőrzési beállítások"
+  },
+  "verify-code": {
+    "dailyLimit": "Napi Korlát",
+    "dailyLimitDescription": "A naponta küldhető ellenőrző kódok maximális száma",
+    "expireTime": "Lejárati Idő",
+    "expireTimeDescription": "Az ellenőrző kód lejárati ideje (perc)",
+    "interval": "Küldési Intervallum",
+    "intervalDescription": "Minimum intervallum az ellenőrző kódok küldése között (másodperc)",
+    "minute": "perc",
+    "saveSuccess": "Mentés Sikeres",
+    "second": "másodperc",
+    "times": "alkalom",
+    "verifyCodeSettings": "Ellenőrző Kód Beállítások"
   }
 }

@@ -4,18 +4,9 @@
   "enable": "Activer",
   "enableTip": "Après activation, les fonctions d'enregistrement, de connexion, de liaison et de déliaison par téléphone mobile seront activées",
   "endpointLabel": "Point de terminaison",
-  "expireTime": "Date d'expiration",
-  "expireTimeTip": "Période de validité du code de vérification par SMS (secondes)",
-  "interval": "Intervalle",
-  "intervalTip": "Intervalle d'envoi du code de vérification par SMS pour le même numéro de téléphone (secondes), 0 signifie aucune limite",
-  "limit": "Limite quotidienne",
-  "limitTip": "Limite quotidienne d'envoi de code de vérification par SMS pour le même numéro de téléphone, 0 signifie aucune limite",
   "logs": "Journaux",
   "phoneNumberLabel": "Numéro de téléphone",
   "placeholders": {
-    "expireTime": "Entrez le temps d'expiration, par défaut 300",
-    "interval": "Entrez le temps d'intervalle, par défaut 60",
-    "limit": "Entrez la limite quotidienne, par défaut 20",
     "template": "Votre code de vérification est {code}, valable pendant 5 minutes",
     "templateCode": "Entrez le code du modèle"
   },

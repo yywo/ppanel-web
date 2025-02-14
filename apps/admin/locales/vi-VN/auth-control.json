@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Khóa bí mật Turnstile được cung cấp bởi Cloudflare",
     "turnstileSiteKeyDescription": "Khóa trang Turnstile được cung cấp bởi Cloudflare",
     "verifySettings": "Cài đặt Xác minh"
+  },
+  "verify-code": {
+    "dailyLimit": "Giới hạn hàng ngày",
+    "dailyLimitDescription": "Số lượng mã xác minh tối đa có thể gửi trong một ngày",
+    "expireTime": "Thời gian hết hạn",
+    "expireTimeDescription": "Thời gian hết hạn của mã xác minh (phút)",
+    "interval": "Khoảng thời gian gửi",
+    "intervalDescription": "Khoảng thời gian tối thiểu giữa các lần gửi mã xác minh (giây)",
+    "minute": "phút",
+    "saveSuccess": "Lưu thành công",
+    "second": "giây",
+    "times": "lần",
+    "verifyCodeSettings": "Cài đặt mã xác minh"
   }
 }

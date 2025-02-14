@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Cloudflareが提供するターンスタイル秘密鍵",
     "turnstileSiteKeyDescription": "Cloudflareが提供するターンスタイルサイトキー",
     "verifySettings": "確認設定"
+  },
+  "verify-code": {
+    "dailyLimit": "1日の制限",
+    "dailyLimitDescription": "1日に送信できる認証コードの最大数",
+    "expireTime": "有効期限",
+    "expireTimeDescription": "認証コードの有効期限（分）",
+    "interval": "送信間隔",
+    "intervalDescription": "認証コード送信の最小間隔（秒）",
+    "minute": "分",
+    "saveSuccess": "保存成功",
+    "second": "秒",
+    "times": "回",
+    "verifyCodeSettings": "認証コード設定"
   }
 }

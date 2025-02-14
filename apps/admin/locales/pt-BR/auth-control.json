@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Chave secreta do Turnstile fornecida pela Cloudflare",
     "turnstileSiteKeyDescription": "Chave do site do Turnstile fornecida pela Cloudflare",
     "verifySettings": "Configurações de Verificação"
+  },
+  "verify-code": {
+    "dailyLimit": "Limite Diário",
+    "dailyLimitDescription": "Número máximo de códigos de verificação que podem ser enviados por dia",
+    "expireTime": "Tempo de Expiração",
+    "expireTimeDescription": "Tempo de expiração do código de verificação (minutos)",
+    "interval": "Intervalo de Envio",
+    "intervalDescription": "Intervalo mínimo entre o envio de códigos de verificação (segundos)",
+    "minute": "minutos",
+    "saveSuccess": "Salvo com Sucesso",
+    "second": "segundos",
+    "times": "vezes",
+    "verifyCodeSettings": "Configurações do Código de Verificação"
   }
 }

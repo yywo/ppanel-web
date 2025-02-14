@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Clé secrète de tourniquet fournie par Cloudflare",
     "turnstileSiteKeyDescription": "Clé de site de tourniquet fournie par Cloudflare",
     "verifySettings": "Paramètres de vérification"
+  },
+  "verify-code": {
+    "dailyLimit": "Limite quotidienne",
+    "dailyLimitDescription": "Nombre maximum de codes de vérification pouvant être envoyés par jour",
+    "expireTime": "Temps d'expiration",
+    "expireTimeDescription": "Temps d'expiration du code de vérification (minutes)",
+    "interval": "Intervalle d'envoi",
+    "intervalDescription": "Intervalle minimum entre l'envoi des codes de vérification (secondes)",
+    "minute": "minutes",
+    "saveSuccess": "Enregistrement réussi",
+    "second": "secondes",
+    "times": "fois",
+    "verifyCodeSettings": "Paramètres du code de vérification"
   }
 }

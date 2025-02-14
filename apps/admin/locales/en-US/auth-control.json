@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Turnstile secret key provided by Cloudflare",
     "turnstileSiteKeyDescription": "Turnstile site key provided by Cloudflare",
     "verifySettings": "Verify Settings"
+  },
+  "verify-code": {
+    "dailyLimit": "Daily Limit",
+    "dailyLimitDescription": "Maximum number of verification codes that can be sent per day",
+    "expireTime": "Expire Time",
+    "expireTimeDescription": "Verification code expiration time (minutes)",
+    "interval": "Send Interval",
+    "intervalDescription": "Minimum interval between sending verification codes (seconds)",
+    "minute": "minutes",
+    "saveSuccess": "Save Successful",
+    "second": "seconds",
+    "times": "times",
+    "verifyCodeSettings": "Verification Code Settings"
   }
 }

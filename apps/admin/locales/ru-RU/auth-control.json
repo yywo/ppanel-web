@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Секретный ключ Turnstile, предоставленный Cloudflare",
     "turnstileSiteKeyDescription": "Ключ сайта Turnstile, предоставленный Cloudflare",
     "verifySettings": "Настройки проверки"
+  },
+  "verify-code": {
+    "dailyLimit": "Ежедневный лимит",
+    "dailyLimitDescription": "Максимальное количество кодов подтверждения, которые можно отправить за день",
+    "expireTime": "Время истечения",
+    "expireTimeDescription": "Время истечения кода подтверждения (минуты)",
+    "interval": "Интервал отправки",
+    "intervalDescription": "Минимальный интервал между отправкой кодов подтверждения (секунды)",
+    "minute": "минуты",
+    "saveSuccess": "Сохранение успешно",
+    "second": "секунды",
+    "times": "раз",
+    "verifyCodeSettings": "Настройки кода подтверждения"
   }
 }

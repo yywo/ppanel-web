@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "由 Cloudflare 提供的闸机密钥",
     "turnstileSiteKeyDescription": "由 Cloudflare 提供的闸机站点密钥",
     "verifySettings": "验证设置"
+  },
+  "verify-code": {
+    "dailyLimit": "每日限制",
+    "dailyLimitDescription": "每天最多可发送的验证码数量",
+    "expireTime": "过期时间",
+    "expireTimeDescription": "验证码的有效期（分钟）",
+    "interval": "发送间隔",
+    "intervalDescription": "两次发送验证码的最小间隔时间（秒）",
+    "minute": "分钟",
+    "saveSuccess": "保存成功",
+    "second": "秒",
+    "times": "次",
+    "verifyCodeSettings": "验证码设置"
   }
 }

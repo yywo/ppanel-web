@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Saldo Muutos",
-    "bind": "Siirry sitomiseen",
     "channels": "Ilmoituskanavat",
-    "emailNotification": "Sähköposti-ilmoitus",
     "finance": "Rahoitus",
     "login": "Kirjaudu",
     "notificationSettings": "Ilmoitusasetukset",
     "notificationTypes": "Ilmoitustyypit",
     "save": "Tallenna muutokset",
     "subscribe": "Tilaa",
-    "telegramIdPlaceholder": "Syötä Telegram ID",
-    "telegramNotification": "Telegram-ilmoitus",
-    "unbind": "Poista sitominen",
     "updateSuccess": "Päivitys onnistui"
   },
   "thirdParty": {

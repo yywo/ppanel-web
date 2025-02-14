@@ -4,18 +4,9 @@
   "enable": "Kích hoạt",
   "enableTip": "Sau khi kích hoạt, các chức năng đăng ký, đăng nhập, liên kết và hủy liên kết điện thoại di động sẽ được kích hoạt",
   "endpointLabel": "Điểm cuối",
-  "expireTime": "Thời Gian Hết Hạn",
-  "expireTimeTip": "Thời gian hiệu lực của mã xác minh SMS (giây)",
-  "interval": "Khoảng thời gian",
-  "intervalTip": "Khoảng thời gian gửi mã xác minh SMS cho cùng một số điện thoại (giây), 0 có nghĩa là không giới hạn",
-  "limit": "Giới hạn hàng ngày",
-  "limitTip": "Giới hạn gửi mã xác minh SMS hàng ngày cho cùng một số điện thoại, 0 có nghĩa là không giới hạn",
   "logs": "Nhật ký",
   "phoneNumberLabel": "Số Điện Thoại",
   "placeholders": {
-    "expireTime": "Nhập thời gian hết hạn, mặc định là 300",
-    "interval": "Nhập thời gian khoảng cách, mặc định là 60",
-    "limit": "Nhập giới hạn hàng ngày, mặc định là 20",
     "template": "Mã xác minh của bạn là {code}, có hiệu lực trong 5 phút",
     "templateCode": "Nhập mã mẫu"
   },

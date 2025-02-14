@@ -4,18 +4,9 @@
   "enable": "Aktivieren",
   "enableTip": "Nach der Aktivierung werden die Funktionen zur Registrierung, Anmeldung, Bindung und Entbindung von Mobiltelefonen aktiviert",
   "endpointLabel": "Endpunkt",
-  "expireTime": "Ablaufzeit",
-  "expireTimeTip": "Gültigkeitsdauer des SMS-Bestätigungscodes (Sekunden)",
-  "interval": "Intervall",
-  "intervalTip": "SMS-Bestätigungscode-Sendeintervall für dieselbe Telefonnummer (Sekunden), 0 bedeutet keine Begrenzung",
-  "limit": "Tageslimit",
-  "limitTip": "Tägliches Limit für das Senden von SMS-Verifizierungscodes an dieselbe Telefonnummer, 0 bedeutet kein Limit",
   "logs": "Protokolle",
   "phoneNumberLabel": "Telefonnummer",
   "placeholders": {
-    "expireTime": "Geben Sie die Ablaufzeit ein, Standard ist 300",
-    "interval": "Geben Sie das Intervall ein, Standard ist 60",
-    "limit": "Geben Sie das tägliche Limit ein, Standard ist 20",
     "template": "Ihr Bestätigungscode ist {code}, gültig für 5 Minuten",
     "templateCode": "Geben Sie den Vorlagen-Code ein"
   },

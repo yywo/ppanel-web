@@ -4,18 +4,9 @@
   "enable": "啟用",
   "enableTip": "啟用後，將啟用手機註冊、登入、綁定和解綁功能",
   "endpointLabel": "端點",
-  "expireTime": "到期時間",
-  "expireTimeTip": "SMS 驗證碼有效期（秒）",
-  "interval": "間隔",
-  "intervalTip": "相同電話號碼的短信驗證碼發送間隔（秒），0 表示無限制",
-  "limit": "每日限額",
-  "limitTip": "同一電話號碼每日發送SMS驗證碼的限制，0表示無限制",
   "logs": "日誌",
   "phoneNumberLabel": "電話號碼",
   "placeholders": {
-    "expireTime": "輸入過期時間，預設為300",
-    "interval": "輸入間隔時間，默認為60",
-    "limit": "輸入每日限制，默認為20",
     "template": "您的驗證碼是{code}，有效期為5分鐘",
     "templateCode": "輸入模板代碼"
   },

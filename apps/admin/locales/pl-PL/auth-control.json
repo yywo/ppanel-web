@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Sekretny klucz bramki dostarczony przez Cloudflare",
     "turnstileSiteKeyDescription": "Klucz witryny bramki dostarczony przez Cloudflare",
     "verifySettings": "Ustawienia weryfikacji"
+  },
+  "verify-code": {
+    "dailyLimit": "Limit dzienny",
+    "dailyLimitDescription": "Maksymalna liczba kodów weryfikacyjnych, które można wysłać dziennie",
+    "expireTime": "Czas wygaśnięcia",
+    "expireTimeDescription": "Czas wygaśnięcia kodu weryfikacyjnego (minuty)",
+    "interval": "Interwał wysyłania",
+    "intervalDescription": "Minimalny interwał między wysyłaniem kodów weryfikacyjnych (sekundy)",
+    "minute": "minuty",
+    "saveSuccess": "Zapisano pomyślnie",
+    "second": "sekundy",
+    "times": "razy",
+    "verifyCodeSettings": "Ustawienia kodu weryfikacyjnego"
   }
 }

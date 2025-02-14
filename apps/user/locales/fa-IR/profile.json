@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "تغییر موجودی",
-    "bind": "رفتن به اتصال",
     "channels": "کانال‌های اعلان",
-    "emailNotification": "اعلان ایمیل",
     "finance": "مالی",
     "login": "ورود",
     "notificationSettings": "تنظیمات اعلان",
     "notificationTypes": "نوع‌های اعلان",
     "save": "ذخیره تغییرات",
     "subscribe": "اشتراک‌گذاری",
-    "telegramIdPlaceholder": "شناسه تلگرام را وارد کنید",
-    "telegramNotification": "اعلان تلگرام",
-    "unbind": "لغو اتصال",
     "updateSuccess": "به‌روزرسانی موفقیت‌آمیز"
   },
   "thirdParty": {

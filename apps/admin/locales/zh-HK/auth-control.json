@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Cloudflare 提供的轉閘密鑰",
     "turnstileSiteKeyDescription": "Cloudflare 提供的轉閘網站密鑰",
     "verifySettings": "驗證設置"
+  },
+  "verify-code": {
+    "dailyLimit": "每日限制",
+    "dailyLimitDescription": "每天可以發送的最大驗證碼數量",
+    "expireTime": "過期時間",
+    "expireTimeDescription": "驗證碼過期時間（分鐘）",
+    "interval": "發送間隔",
+    "intervalDescription": "發送驗證碼的最小間隔（秒）",
+    "minute": "分鐘",
+    "saveSuccess": "保存成功",
+    "second": "秒",
+    "times": "次",
+    "verifyCodeSettings": "驗證碼設置"
   }
 }

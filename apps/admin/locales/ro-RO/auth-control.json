@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Cheia secretă a turnstilei furnizată de Cloudflare",
     "turnstileSiteKeyDescription": "Cheia site-ului turnstile furnizată de Cloudflare",
     "verifySettings": "Setări Verificare"
+  },
+  "verify-code": {
+    "dailyLimit": "Limită Zilnică",
+    "dailyLimitDescription": "Numărul maxim de coduri de verificare care pot fi trimise pe zi",
+    "expireTime": "Timp de Expirare",
+    "expireTimeDescription": "Timpul de expirare a codului de verificare (minute)",
+    "interval": "Interval de Trimitere",
+    "intervalDescription": "Intervalul minim între trimiterea codurilor de verificare (secunde)",
+    "minute": "minute",
+    "saveSuccess": "Salvare cu Succes",
+    "second": "secunde",
+    "times": "ori",
+    "verifyCodeSettings": "Setări Cod de Verificare"
   }
 }

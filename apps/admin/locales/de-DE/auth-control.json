@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Turnstile-Geheimschlüssel, bereitgestellt von Cloudflare",
     "turnstileSiteKeyDescription": "Turnstile-Seitenschlüssel, bereitgestellt von Cloudflare",
     "verifySettings": "Überprüfungseinstellungen"
+  },
+  "verify-code": {
+    "dailyLimit": "Tägliches Limit",
+    "dailyLimitDescription": "Maximale Anzahl von Bestätigungscodes, die pro Tag gesendet werden können",
+    "expireTime": "Ablaufzeit",
+    "expireTimeDescription": "Ablaufzeit des Bestätigungscodes (Minuten)",
+    "interval": "Sendeintervall",
+    "intervalDescription": "Minimales Intervall zwischen dem Versenden von Bestätigungscodes (Sekunden)",
+    "minute": "Minuten",
+    "saveSuccess": "Erfolgreich gespeichert",
+    "second": "Sekunden",
+    "times": "Mal",
+    "verifyCodeSettings": "Einstellungen für den Bestätigungscode"
   }
 }

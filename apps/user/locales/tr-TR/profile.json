@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Bakiye Değişikliği",
-    "bind": "Bağlamaya Git",
     "channels": "Bildirim Kanalları",
-    "emailNotification": "E-posta Bildirimi",
     "finance": "Finans",
     "login": "Giriş",
     "notificationSettings": "Bildirim Ayarları",
     "notificationTypes": "Bildirim Türleri",
     "save": "Değişiklikleri Kaydet",
     "subscribe": "Abone Ol",
-    "telegramIdPlaceholder": "Telegram Kimliği girin",
-    "telegramNotification": "Telegram Bildirimi",
-    "unbind": "Bağlamayı Kaldır",
     "updateSuccess": "Güncelleme Başarılı"
   },
   "thirdParty": {

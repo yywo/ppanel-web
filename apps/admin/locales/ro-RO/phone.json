@@ -4,18 +4,9 @@
   "enable": "Activează",
   "enableTip": "După activare, funcțiile de înregistrare, autentificare, asociere și disociere a telefonului mobil vor fi activate",
   "endpointLabel": "Punct de acces",
-  "expireTime": "Timp de expirare",
-  "expireTimeTip": "Perioada de valabilitate a codului de verificare prin SMS (secunde)",
-  "interval": "Interval",
-  "intervalTip": "Intervalul de trimitere a codului de verificare prin SMS pentru același număr de telefon (secunde), 0 înseamnă fără limită",
-  "limit": "Limită zilnică",
-  "limitTip": "Limita zilnică de trimitere a codului de verificare prin SMS pentru același număr de telefon, 0 înseamnă fără limită",
   "logs": "Jurnale",
   "phoneNumberLabel": "Număr de telefon",
   "placeholders": {
-    "expireTime": "Introduceți timpul de expirare, implicit este 300",
-    "interval": "Introduceți timpul de interval, implicit este 60",
-    "limit": "Introduceți limita zilnică, implicit este 20",
     "template": "Codul dumneavoastră de verificare este {code}, valabil timp de 5 minute",
     "templateCode": "Introduceți codul șablonului"
   },

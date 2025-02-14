@@ -4,18 +4,9 @@
   "enable": "Engedélyez",
   "enableTip": "A bekapcsolás után a mobiltelefon regisztráció, bejelentkezés, kötés és oldás funkciók elérhetővé válnak",
   "endpointLabel": "Végpont",
-  "expireTime": "Lejárati idő",
-  "expireTimeTip": "Az SMS ellenőrző kód érvényességi ideje (másodpercben)",
-  "interval": "Intervallum",
-  "intervalTip": "SMS ellenőrző kód küldési intervalluma ugyanarra a telefonszámra (másodpercben), 0 azt jelenti, hogy nincs korlátozás",
-  "limit": "Napi limit",
-  "limitTip": "Napi SMS ellenőrző kód küldési limit ugyanarra a telefonszámra, 0 azt jelenti, hogy nincs korlátozás",
   "logs": "Naplók",
   "phoneNumberLabel": "Telefonszám",
   "placeholders": {
-    "expireTime": "Adja meg a lejárati időt, alapértelmezett érték: 300",
-    "interval": "Adja meg az intervallum időt, alapértelmezett 60",
-    "limit": "Adja meg a napi limitet, alapértelmezett 20",
     "template": "Az Ön ellenőrző kódja {code}, érvényes 5 percig",
     "templateCode": "Adja meg a sablonkódot"
   },

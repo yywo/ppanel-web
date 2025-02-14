@@ -4,18 +4,9 @@
   "enable": "Enable",
   "enableTip": "After enabling, mobile phone registration, login, binding, and unbinding functions will be enabled",
   "endpointLabel": "Endpoint",
-  "expireTime": "Expire Time",
-  "expireTimeTip": "SMS verification code validity period (seconds)",
-  "interval": "Interval",
-  "intervalTip": "SMS verification code sending interval for the same phone number (seconds), 0 means no limit",
-  "limit": "Daily Limit",
-  "limitTip": "Daily SMS verification code sending limit for the same phone number, 0 means no limit",
   "logs": "Logs",
   "phoneNumberLabel": "Phone Number",
   "placeholders": {
-    "expireTime": "Enter expire time, default is 300",
-    "interval": "Enter interval time, default is 60",
-    "limit": "Enter daily limit, default is 20",
     "template": "Your verification code is {code}, valid for 5 minutes",
     "templateCode": "Enter template code"
   },

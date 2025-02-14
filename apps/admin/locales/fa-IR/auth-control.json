@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "کلید مخفی ترنستایل ارائه شده توسط Cloudflare",
     "turnstileSiteKeyDescription": "کلید سایت ترنستایل ارائه شده توسط Cloudflare",
     "verifySettings": "تنظیمات تأیید"
+  },
+  "verify-code": {
+    "dailyLimit": "حداکثر روزانه",
+    "dailyLimitDescription": "حداکثر تعداد کدهای تأیید که می‌توان در روز ارسال کرد",
+    "expireTime": "زمان انقضا",
+    "expireTimeDescription": "زمان انقضای کد تأیید (دقیقه)",
+    "interval": "فاصله ارسال",
+    "intervalDescription": "حداقل فاصله بین ارسال کدهای تأیید (ثانیه)",
+    "minute": "دقیقه",
+    "saveSuccess": "ذخیره با موفقیت",
+    "second": "ثانیه",
+    "times": "بار",
+    "verifyCodeSettings": "تنظیمات کد تأیید"
   }
 }

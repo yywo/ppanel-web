@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Turnstile-salaisavain, jonka Cloudflare on toimittanut",
     "turnstileSiteKeyDescription": "Turnstile-sivuston avain, jonka Cloudflare on toimittanut",
     "verifySettings": "Vahvistusasetukset"
+  },
+  "verify-code": {
+    "dailyLimit": "Päivittäinen raja",
+    "dailyLimitDescription": "Suurin määrä vahvistuskoodien lähettämistä päivässä",
+    "expireTime": "Voimassaoloaika",
+    "expireTimeDescription": "Vahvistuskoodin voimassaoloaika (minuutteina)",
+    "interval": "Lähetysväli",
+    "intervalDescription": "Minimi väli vahvistuskoodien lähettämisen välillä (sekunteina)",
+    "minute": "minuuttia",
+    "saveSuccess": "Tallennus onnistui",
+    "second": "sekuntia",
+    "times": "kertaa",
+    "verifyCodeSettings": "Vahvistuskoodin asetukset"
   }
 }

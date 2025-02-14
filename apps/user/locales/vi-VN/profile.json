@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Thay Đổi Số Dư",
-    "bind": "Đi đến Liên kết",
     "channels": "Kênh Thông Báo",
-    "emailNotification": "Thông báo Email",
     "finance": "Tài Chính",
     "login": "Đăng Nhập",
     "notificationSettings": "Cài đặt Thông báo",
     "notificationTypes": "Loại Thông Báo",
     "save": "Lưu Thay Đổi",
     "subscribe": "Đăng Ký",
-    "telegramIdPlaceholder": "Nhập Telegram ID",
-    "telegramNotification": "Thông báo Telegram",
-    "unbind": "Hủy liên kết",
     "updateSuccess": "Cập nhật thành công"
   },
   "thirdParty": {

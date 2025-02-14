@@ -1362,8 +1362,6 @@ declare namespace API {
 
   type UpdateUserNotifySettingRequest = {
     user_id: number;
-    enable_email_notify: boolean;
-    enable_telegram_notify: boolean;
     enable_balance_notify: boolean;
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
@@ -1390,9 +1388,6 @@ declare namespace API {
     referer_id: number;
     enable: boolean;
     is_admin?: boolean;
-    valid_email: boolean;
-    enable_email_notify: boolean;
-    enable_telegram_notify: boolean;
     enable_balance_notify: boolean;
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
@@ -1495,6 +1490,12 @@ declare namespace API {
     email: string;
     upload: number;
     download: number;
+  };
+
+  type VerifyCodeConfig = {
+    verify_code_expire_time: number;
+    verify_code_limit: number;
+    verify_code_interval: number;
   };
 
   type VerifyConfig = {

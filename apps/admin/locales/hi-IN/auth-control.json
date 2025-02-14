@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल गुप्त कुंजी",
     "turnstileSiteKeyDescription": "क्लाउडफ्लेयर द्वारा प्रदान की गई टर्नस्टाइल साइट कुंजी",
     "verifySettings": "सत्यापन सेटिंग्स"
+  },
+  "verify-code": {
+    "dailyLimit": "दैनिक सीमा",
+    "dailyLimitDescription": "प्रति दिन भेजे जा सकने वाले अधिकतम सत्यापन कोड की संख्या",
+    "expireTime": "समाप्ति समय",
+    "expireTimeDescription": "सत्यापन कोड की समाप्ति का समय (मिनट)",
+    "interval": "भेजने का अंतराल",
+    "intervalDescription": "सत्यापन कोड भेजने के बीच का न्यूनतम अंतराल (सेकंड)",
+    "minute": "मिनट",
+    "saveSuccess": "सफलतापूर्वक सहेजा गया",
+    "second": "सेकंड",
+    "times": "बार",
+    "verifyCodeSettings": "सत्यापन कोड सेटिंग्स"
   }
 }

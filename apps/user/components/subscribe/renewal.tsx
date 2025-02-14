@@ -92,7 +92,7 @@ export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
         console.log(error);
       }
     });
-  }, [params, router]);
+  }, [params, router, getUserInfo]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

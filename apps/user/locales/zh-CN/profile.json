@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "余额变动",
-    "bind": "去绑定",
     "channels": "通知渠道",
-    "emailNotification": "邮件通知",
     "finance": "财务相关",
     "login": "登录",
     "notificationSettings": "通知设置",
     "notificationTypes": "通知类型",
     "save": "保存更改",
     "subscribe": "订阅",
-    "telegramIdPlaceholder": "输入 Telegram ID",
-    "telegramNotification": "Telegram 通知",
-    "unbind": "解除绑定",
     "updateSuccess": "更新成功"
   },
   "thirdParty": {

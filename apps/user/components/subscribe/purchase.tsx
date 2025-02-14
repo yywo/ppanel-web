@@ -84,7 +84,7 @@ export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseP
         console.log(error);
       }
     });
-  }, [params, router]);
+  }, [params, router, getUserInfo]);
 
   return (
     <Dialog

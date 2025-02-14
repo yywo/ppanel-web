@@ -152,6 +152,7 @@ declare namespace API {
     invite: InviteConfig;
     currency: CurrencyConfig;
     subscribe: SubscribeConfig;
+    verify_code: VerifyCodeConfig;
     oauth_methods: string[];
   };
 
@@ -579,9 +580,6 @@ declare namespace API {
     referer_id: number;
     enable: boolean;
     is_admin?: boolean;
-    valid_email: boolean;
-    enable_email_notify: boolean;
-    enable_telegram_notify: boolean;
     enable_balance_notify: boolean;
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
@@ -684,6 +682,12 @@ declare namespace API {
     enable_login_verify: boolean;
     enable_register_verify: boolean;
     enable_reset_password_verify: boolean;
+  };
+
+  type VerifyCodeConfig = {
+    verify_code_expire_time: number;
+    verify_code_limit: number;
+    verify_code_interval: number;
   };
 
   type VerifyConfig = {

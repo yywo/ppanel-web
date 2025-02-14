@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "Cambio de Saldo",
-    "bind": "Ir a Vinculación",
     "channels": "Canales de Notificación",
-    "emailNotification": "Notificación por correo electrónico",
     "finance": "Finanzas",
     "login": "Iniciar Sesión",
     "notificationSettings": "Configuración de notificaciones",
     "notificationTypes": "Tipos de Notificación",
     "save": "Guardar Cambios",
     "subscribe": "Suscribirse",
-    "telegramIdPlaceholder": "Ingrese ID de Telegram",
-    "telegramNotification": "Notificación de Telegram",
-    "unbind": "Desvincular",
     "updateSuccess": "Actualización exitosa"
   },
   "thirdParty": {

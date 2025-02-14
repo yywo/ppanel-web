@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Cloudflare에서 제공하는 턴스타일 비밀 키",
     "turnstileSiteKeyDescription": "Cloudflare에서 제공하는 턴스타일 사이트 키",
     "verifySettings": "검증 설정"
+  },
+  "verify-code": {
+    "dailyLimit": "일일 한도",
+    "dailyLimitDescription": "하루에 보낼 수 있는 인증 코드의 최대 수",
+    "expireTime": "만료 시간",
+    "expireTimeDescription": "인증 코드 만료 시간(분)",
+    "interval": "전송 간격",
+    "intervalDescription": "인증 코드 전송 간의 최소 간격(초)",
+    "minute": "분",
+    "saveSuccess": "저장 성공",
+    "second": "초",
+    "times": "회",
+    "verifyCodeSettings": "인증 코드 설정"
   }
 }

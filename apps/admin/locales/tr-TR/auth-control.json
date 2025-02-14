@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Cloudflare tarafından sağlanan turnstile gizli anahtarı.",
     "turnstileSiteKeyDescription": "Cloudflare tarafından sağlanan turnstile site anahtarı.",
     "verifySettings": "Doğrulama Ayarları"
+  },
+  "verify-code": {
+    "dailyLimit": "Günlük Limit",
+    "dailyLimitDescription": "Günde gönderilebilecek maksimum doğrulama kodu sayısı",
+    "expireTime": "Son Kullanma Süresi",
+    "expireTimeDescription": "Doğrulama kodunun son kullanma süresi (dakika)",
+    "interval": "Gönderim Aralığı",
+    "intervalDescription": "Doğrulama kodlarının gönderimi arasındaki minimum aralık (saniye)",
+    "minute": "dakika",
+    "saveSuccess": "Başarıyla Kaydedildi",
+    "second": "saniye",
+    "times": "kez",
+    "verifyCodeSettings": "Doğrulama Kodu Ayarları"
   }
 }

@@ -58,5 +58,18 @@
     "turnstileSecretDescription": "Tajný klíč turniketu poskytovaný Cloudflare",
     "turnstileSiteKeyDescription": "Klíč pro web turniketu poskytovaný Cloudflare",
     "verifySettings": "Nastavení ověření"
+  },
+  "verify-code": {
+    "dailyLimit": "Denní limit",
+    "dailyLimitDescription": "Maximální počet ověřovacích kódů, které lze odeslat za den",
+    "expireTime": "Čas vypršení",
+    "expireTimeDescription": "Doba platnosti ověřovacího kódu (minuty)",
+    "interval": "Interval odesílání",
+    "intervalDescription": "Minimální interval mezi odesíláním ověřovacích kódů (sekundy)",
+    "minute": "minuty",
+    "saveSuccess": "Uložení úspěšné",
+    "second": "sekundy",
+    "times": "krát",
+    "verifyCodeSettings": "Nastavení ověřovacího kódu"
   }
 }

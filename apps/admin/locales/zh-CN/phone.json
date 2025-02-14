@@ -4,18 +4,9 @@
   "enable": "启用",
   "enableTip": "启用后，将启用手机注册、登录、绑定和解绑功能",
   "endpointLabel": "端点",
-  "expireTime": "过期时间",
-  "expireTimeTip": "短信验证码有效期（秒）",
-  "interval": "间隔",
-  "intervalTip": "同一手机号发送短信验证码的间隔时间（秒），0表示无限制",
-  "limit": "每日限额",
-  "limitTip": "同一手机号每日短信验证码发送限制，0表示无限制",
   "logs": "日志",
   "phoneNumberLabel": "电话号码",
   "placeholders": {
-    "expireTime": "输入过期时间，默认为300",
-    "interval": "输入间隔时间，默认为60",
-    "limit": "输入每日限制，默认为20",
     "template": "您的验证码是{code}，有效期为5分钟",
     "templateCode": "输入模板代码"
   },

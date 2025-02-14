@@ -9,18 +9,13 @@
   },
   "notify": {
     "balanceChange": "การเปลี่ยนแปลงยอดเงิน",
-    "bind": "ไปที่การผูก",
     "channels": "ช่องทางการแจ้งเตือน",
-    "emailNotification": "การแจ้งเตือนทางอีเมล",
     "finance": "การเงิน",
     "login": "เข้าสู่ระบบ",
     "notificationSettings": "การตั้งค่าการแจ้งเตือน",
     "notificationTypes": "ประเภทการแจ้งเตือน",
     "save": "บันทึกการเปลี่ยนแปลง",
     "subscribe": "สมัครสมาชิก",
-    "telegramIdPlaceholder": "กรอก Telegram ID",
-    "telegramNotification": "การแจ้งเตือนทาง Telegram",
-    "unbind": "ยกเลิกการผูก",
     "updateSuccess": "อัปเดตสำเร็จ"
   },
   "thirdParty": {

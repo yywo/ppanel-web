@@ -323,6 +323,32 @@ export async function updateTosConfig(body: API.TosConfig, options?: { [key: str
   });
 }
 
+/** Get Verify Code Config GET /v1/admin/system/verify_code_config */
+export async function getVerifyCodeConfig(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.VerifyCodeConfig }>(
+    '/v1/admin/system/verify_code_config',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
+/** Update Verify Code Config PUT /v1/admin/system/verify_code_config */
+export async function updateVerifyCodeConfig(
+  body: API.VerifyCodeConfig,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/verify_code_config', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get verify config GET /v1/admin/system/verify_config */
 export async function getVerifyConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.VerifyConfig }>('/v1/admin/system/verify_config', {
