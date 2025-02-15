@@ -31,11 +31,10 @@ export default function RegisterForm({
 
   const handleCheckUser = async (email: string) => {
     try {
+      if (!auth.email.enable_verify) return true;
       const domain = email.split('@')[1];
-      const isValid =
-        !auth.email.enable_verify ||
-        auth.email?.domain_suffix_list.split('\n').includes(domain || '');
-      return !isValid;
+      const isValid = auth.email?.domain_suffix_list.split('\n').includes(domain || '');
+      return isValid;
     } catch (error) {
       console.log('Error checking user:', error);
       return false;
