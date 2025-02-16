@@ -159,7 +159,7 @@ export default function Page() {
                     updateConfig('config', {
                       ...data?.config,
                       platform_config: {
-                        ...data?.platform_config,
+                        ...ref.current?.config?.platform_config,
                         port: value,
                       },
                     })
@@ -181,7 +181,7 @@ export default function Page() {
                     updateConfig('config', {
                       ...data?.config,
                       platform_config: {
-                        ...data?.platform_config,
+                        ...ref.current?.config?.platform_config,
                         ssl: checked,
                       },
                     })
@@ -202,7 +202,7 @@ export default function Page() {
                     updateConfig('config', {
                       ...data?.config,
                       platform_config: {
-                        ...data?.platform_config,
+                        ...ref.current?.config?.platform_config,
                         user: value,
                       },
                     })
@@ -224,7 +224,7 @@ export default function Page() {
                     updateConfig('config', {
                       ...data?.config,
                       platform_config: {
-                        ...data?.platform_config,
+                        ...ref.current?.config?.platform_config,
                         pass: value,
                       },
                     })
@@ -245,7 +245,7 @@ export default function Page() {
                     updateConfig('config', {
                       ...data?.config,
                       platform_config: {
-                        ...data?.platform_config,
+                        ...ref.current?.config?.platform_config,
                         from: value,
                       },
                     })
