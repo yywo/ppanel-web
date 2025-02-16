@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.10](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2025-02-16)
+
+
+### 🐛 Bug Fixes
+
+* **subscribe**: Update forms to include refetch functionality and improve toast messages ([fc55e95](https://github.com/perfect-panel/ppanel-web/commit/fc55e95))
+
 # [1.0.0-beta.9](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2025-02-15)
 
 
