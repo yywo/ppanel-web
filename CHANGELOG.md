@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.11](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2025-02-16)
+
+
+### 🐛 Bug Fixes
+
+* **email**: Update platform configuration handling to use current ref for consistency ([c90175b](https://github.com/perfect-panel/ppanel-web/commit/c90175b))
+
 # [1.0.0-beta.10](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2025-02-16)
 
 
