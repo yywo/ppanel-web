@@ -105,7 +105,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     server_group: z.array(z.number()).optional().default([]),
     server: z.array(z.number()).optional().default([]),
     deduction_ratio: z.number().optional().default(0),
-    purchase_with_discount: z.boolean().optional().default(false),
+    allow_deduction: z.boolean().optional().default(false),
     reset_cycle: z.number().optional().default(0),
     renewal_reset: z.boolean().optional().default(false),
   });
@@ -639,7 +639,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                     />
                     <FormField
                       control={form.control}
-                      name='purchase_with_discount'
+                      name='allow_deduction'
                       render={({ field }) => (
                         <FormItem>
                           <div className='flex items-center justify-between'>

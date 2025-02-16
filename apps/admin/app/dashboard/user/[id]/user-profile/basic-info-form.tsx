@@ -37,7 +37,7 @@ const basicInfoSchema = z.object({
 
 type BasicInfoValues = z.infer<typeof basicInfoSchema>;
 
-export function BasicInfoForm({ user }: { user: API.User }) {
+export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () => void }) {
   const t = useTranslations('user');
 
   const { common } = useGlobalStore();
@@ -64,6 +64,7 @@ export function BasicInfoForm({ user }: { user: API.User }) {
       ...data,
     } as API.UpdateUserBasiceInfoRequest);
     toast.success(t('updateSuccess'));
+    refetch();
   }
 
   return (

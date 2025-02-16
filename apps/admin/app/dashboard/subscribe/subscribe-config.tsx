@@ -30,7 +30,7 @@ export default function SubscribeConfig() {
         ...data,
         [key]: value,
       } as API.SubscribeConfig);
-      toast.success(t('saveSuccess'));
+      toast.success(t('updateSuccess'));
       refetch();
     } catch (error) {
       /* empty */

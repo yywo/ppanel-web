@@ -13,7 +13,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
-export function AuthMethodsForm({ user }: { user: API.User }) {
+export function AuthMethodsForm({ user, refetch }: { user: API.User; refetch: () => void }) {
   const t = useTranslations('user');
 
   const [emailChanges, setEmailChanges] = useState<Record<string, string>>({});
@@ -33,6 +33,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
       auth_identifier: email,
     });
     toast.success(t('updateSuccess'));
+    refetch();
   };
 
   const handleCreateEmail = async (email: string) => {
@@ -42,6 +43,7 @@ export function AuthMethodsForm({ user }: { user: API.User }) {
       auth_identifier: email,
     });
     toast.success(t('createSuccess'));
+    refetch();
   };
 
   const handleEmailChange = (authType: string, value: string) => {

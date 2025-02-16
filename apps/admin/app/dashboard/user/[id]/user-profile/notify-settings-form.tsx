@@ -20,7 +20,7 @@ const notifySettingsSchema = z.object({
 
 type NotifySettingsValues = z.infer<typeof notifySettingsSchema>;
 
-export function NotifySettingsForm({ user }: { user: API.User }) {
+export function NotifySettingsForm({ user, refetch }: { user: API.User; refetch: () => void }) {
   const t = useTranslations('user');
 
   const form = useForm<NotifySettingsValues>({
@@ -39,6 +39,7 @@ export function NotifySettingsForm({ user }: { user: API.User }) {
       user_id: user.id,
     });
     toast.success(t('updateSuccess'));
+    refetch();
   }
 
   return (

@@ -10,7 +10,7 @@ import { NotifySettingsForm } from './notify-settings-form';
 export function UserProfileForm() {
   const { id } = useParams<{ id: string }>();
 
-  const { data: user } = useQuery({
+  const { data: user, refetch } = useQuery({
     queryKey: ['user', id],
     queryFn: async () => {
       const { data } = await getUserDetail({
@@ -25,13 +25,13 @@ export function UserProfileForm() {
   return (
     <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
       <div className='md:col-span-2 xl:col-span-1'>
-        <BasicInfoForm user={user} />
+        <BasicInfoForm user={user} refetch={refetch} />
       </div>
       <div>
-        <NotifySettingsForm user={user} />
+        <NotifySettingsForm user={user} refetch={refetch} />
       </div>
       <div>
-        <AuthMethodsForm user={user} />
+        <AuthMethodsForm user={user} refetch={refetch} />
       </div>
     </div>
   );
