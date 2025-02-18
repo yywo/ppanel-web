@@ -51,7 +51,7 @@ export function Verify() {
               <TableCell className='text-right'>
                 <EnhancedInput
                   placeholder={t('inputPlaceholder')}
-                  defaultValue={data?.turnstile_site_key}
+                  value={data?.turnstile_site_key}
                   onValueBlur={(value) => updateConfig('turnstile_site_key', value)}
                 />
               </TableCell>
@@ -64,7 +64,7 @@ export function Verify() {
               <TableCell className='text-right'>
                 <EnhancedInput
                   placeholder={t('inputPlaceholder')}
-                  defaultValue={data?.turnstile_secret}
+                  value={data?.turnstile_secret}
                   onValueBlur={(value) => updateConfig('turnstile_secret', value)}
                 />
               </TableCell>

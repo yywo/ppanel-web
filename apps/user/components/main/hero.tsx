@@ -42,7 +42,7 @@ export function Hero() {
           <HoverBorderGradient
             containerClassName='rounded-full'
             as='button'
-            className='bg-background text-foreground flex items-center space-x-2'
+            className='m-0.5 flex items-center space-x-2 text-white'
           >
             {t('started')}
           </HoverBorderGradient>
