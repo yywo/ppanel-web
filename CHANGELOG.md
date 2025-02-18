@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.12](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2025-02-18)
+
+
+### 🐛 Bug Fixes
+
+* More bugs ([2d88a3a](https://github.com/perfect-panel/ppanel-web/commit/2d88a3a))
+
 # [1.0.0-beta.11](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2025-02-16)
 
 
