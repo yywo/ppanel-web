@@ -6,7 +6,7 @@
   "emailVerification": "Weryfikacja e-maila",
   "emailVerificationDescription": "Po włączeniu użytkownicy będą musieli zweryfikować swój adres e-mail",
   "enable": "Włącz",
-  "enableDescription": "Po włączeniu zostaną aktywowane funkcje rejestracji, logowania, powiązania i odwiązania telefonu komórkowego",
+  "enableDescription": "Po włączeniu funkcji rejestracji, logowania, powiązania i odłączenia konta e-mail będą dostępne",
   "expiration_email_template": "Szablon Powiadomienia o Wygaśnięciu",
   "expiration_email_templateDescription": "Elementy zastępcze {after}.variable{before} zostaną zastąpione rzeczywistymi danymi. Upewnij się, że te zmienne zostaną zachowane.",
   "failed": "Niepowodzenie",

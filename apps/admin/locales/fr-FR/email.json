@@ -6,7 +6,7 @@
   "emailVerification": "Vérification de l'email",
   "emailVerificationDescription": "Lorsqu'elle est activée, les utilisateurs devront vérifier leur adresse e-mail",
   "enable": "Activer",
-  "enableDescription": "Après activation, les fonctions d'enregistrement, de connexion, de liaison et de déliaison par téléphone mobile seront activées",
+  "enableDescription": "Après activation, les fonctions d'enregistrement par e-mail, de connexion, de liaison et de délégation seront activées",
   "expiration_email_template": "Modèle d'avis d'expiration",
   "expiration_email_templateDescription": "Les espaces réservés {after}.variable{before} seront remplacés par des données réelles. Assurez-vous de conserver ces variables.",
   "failed": "Échoué",

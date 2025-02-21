@@ -6,7 +6,7 @@
   "emailVerification": "Sähköpostin vahvistus",
   "emailVerificationDescription": "Kun tämä on käytössä, käyttäjien on vahvistettava sähköpostinsa",
   "enable": "Ota käyttöön",
-  "enableDescription": "Kun otat tämän käyttöön, matkapuhelimen rekisteröinti-, kirjautumis-, sitomis- ja purkutoiminnot otetaan käyttöön",
+  "enableDescription": "Kun tämä on otettu käyttöön, sähköpostirekisteröinti, kirjautuminen, liittäminen ja irrottaminen aktivoituvat.",
   "expiration_email_template": "Vanhentumisilmoituksen malli",
   "expiration_email_templateDescription": "Paikkamerkit {after}.variable{before} korvataan todellisilla tiedoilla. Varmista, että pidät nämä muuttujat.",
   "failed": "Epäonnistui",

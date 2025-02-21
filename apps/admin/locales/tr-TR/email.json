@@ -6,7 +6,7 @@
   "emailVerification": "E-posta Doğrulama",
   "emailVerificationDescription": "Etkinleştirildiğinde, kullanıcıların e-posta adreslerini doğrulamaları gerekecek",
   "enable": "Etkinleştir",
-  "enableDescription": "Etkinleştirildikten sonra, cep telefonu kaydı, giriş, bağlama ve bağlantı kesme işlevleri etkinleştirilecektir",
+  "enableDescription": "Etkinleştirildikten sonra, e-posta kaydı, giriş, bağlama ve ayırma işlevleri etkinleştirilecektir.",
   "expiration_email_template": "Süre Sonu Bildirimi Şablonu",
   "expiration_email_templateDescription": "{after}.variable{before} yer tutucuları gerçek verilerle değiştirilecektir. Bu değişkenleri koruduğunuzdan emin olun.",
   "failed": "Başarısız",

@@ -6,7 +6,7 @@
   "emailVerification": "Email ellenőrzés",
   "emailVerificationDescription": "Ha engedélyezve van, a felhasználóknak ellenőrizniük kell az e-mail címüket",
   "enable": "Engedélyez",
-  "enableDescription": "A bekapcsolás után a mobiltelefon regisztráció, bejelentkezés, kötés és oldás funkciók elérhetővé válnak",
+  "enableDescription": "A funkció engedélyezése után az e-mailes regisztráció, bejelentkezés, kötés és leválasztás lehetőségei elérhetővé válnak.",
   "expiration_email_template": "Lejárati Értesítő Sablon",
   "expiration_email_templateDescription": "A {after}.variable{before} helyőrzőket tényleges adatokkal fogjuk helyettesíteni. Ügyeljen arra, hogy ezeket a változókat megtartsa.",
   "failed": "Sikertelen",

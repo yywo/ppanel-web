@@ -6,7 +6,7 @@
   "emailVerification": "E-Mail-Verifizierung",
   "emailVerificationDescription": "Wenn aktiviert, müssen Benutzer ihre E-Mail-Adresse verifizieren",
   "enable": "Aktivieren",
-  "enableDescription": "Nach der Aktivierung werden die Funktionen zur Registrierung, Anmeldung, Bindung und Entbindung von Mobiltelefonen aktiviert",
+  "enableDescription": "Nach der Aktivierung werden die Funktionen zur E-Mail-Registrierung, Anmeldung, Bindung und Entbindung aktiviert.",
   "expiration_email_template": "Vorlage für Ablaufbenachrichtigung",
   "expiration_email_templateDescription": "Die Platzhalter {after}.variable{before} werden durch tatsächliche Daten ersetzt. Stellen Sie sicher, dass Sie diese Variablen beibehalten.",
   "failed": "Fehlgeschlagen",

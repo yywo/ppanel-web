@@ -125,7 +125,7 @@ export function ProductShowcase() {
                   className='pb-4 text-2xl font-semibold sm:text-3xl'
                 >
                   <Display type='currency' value={item.unit_price} />
-                  <span className='text-base font-medium'>/{t('per_month')}</span>
+                  <span className='text-base font-medium'>/{t(item.unit_time)}</span>
                 </motion.h2>
                 <motion.div>
                   <Button

@@ -6,7 +6,7 @@
   "emailVerification": "Verificação de Email",
   "emailVerificationDescription": "Quando ativado, os usuários precisarão verificar seu e-mail",
   "enable": "Habilitar",
-  "enableDescription": "Após a ativação, as funções de registro, login, vinculação e desvinculação de telefone celular serão ativadas",
+  "enableDescription": "Após a ativação, as funções de registro por e-mail, login, vinculação e desvinculação serão habilitadas",
   "expiration_email_template": "Modelo de Aviso de Expiração",
   "expiration_email_templateDescription": "Os marcadores {after}.variable{before} serão substituídos por dados reais. Certifique-se de manter essas variáveis.",
   "failed": "Falhou",

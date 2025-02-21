@@ -6,7 +6,7 @@
   "emailVerification": "電郵驗證",
   "emailVerificationDescription": "啟用後，用戶需要驗證他們的電郵",
   "enable": "啟用",
-  "enableDescription": "啟用後，將啟用手機註冊、登入、綁定和解綁功能",
+  "enableDescription": "啟用後，將開啟電子郵件註冊、登錄、綁定及解除綁定功能",
   "expiration_email_template": "到期通知範本",
   "expiration_email_templateDescription": "{after}.variable{before} 佔位符將被實際數據替換。請確保保留這些變數。",
   "failed": "失敗",

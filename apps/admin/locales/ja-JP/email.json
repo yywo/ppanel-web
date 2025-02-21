@@ -6,7 +6,7 @@
   "emailVerification": "メール確認",
   "emailVerificationDescription": "有効にすると、ユーザーはメールを確認する必要があります",
   "enable": "有効にする",
-  "enableDescription": "有効にすると、携帯電話の登録、ログイン、バインディング、バインディング解除の機能が有効になります",
+  "enableDescription": "有効にすると、メールによる登録、ログイン、バインディング、およびバインディング解除の機能が有効になります",
   "expiration_email_template": "有効期限通知テンプレート",
   "expiration_email_templateDescription": "{after}.variable{before} のプレースホルダーは実際のデータに置き換えられます。これらの変数を必ず保持してください。",
   "failed": "失敗しました",

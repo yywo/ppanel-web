@@ -6,7 +6,7 @@
   "emailVerification": "Xác minh Email",
   "emailVerificationDescription": "Khi được bật, người dùng sẽ cần xác minh email của họ",
   "enable": "Kích hoạt",
-  "enableDescription": "Sau khi kích hoạt, các chức năng đăng ký, đăng nhập, liên kết và hủy liên kết điện thoại di động sẽ được kích hoạt",
+  "enableDescription": "Sau khi kích hoạt, các chức năng đăng ký email, đăng nhập, liên kết và hủy liên kết sẽ được bật",
   "expiration_email_template": "Mẫu Thông Báo Hết Hạn",
   "expiration_email_templateDescription": "Các chỗ chèn {after}.variable{before} sẽ được thay thế bằng dữ liệu thực tế. Đảm bảo giữ nguyên các biến này.",
   "failed": "Thất bại",

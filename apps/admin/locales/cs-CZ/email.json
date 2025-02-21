@@ -6,7 +6,7 @@
   "emailVerification": "Ověření e-mailu",
   "emailVerificationDescription": "Když je povoleno, uživatelé budou muset ověřit svůj e-mail",
   "enable": "Povolit",
-  "enableDescription": "Po povolení budou povoleny funkce registrace, přihlášení, připojení a odpojení mobilního telefonu",
+  "enableDescription": "Po aktivaci budou povoleny funkce registrace e-mailem, přihlášení, propojení a odpojení.",
   "expiration_email_template": "Šablona oznámení o vypršení platnosti",
   "expiration_email_templateDescription": "Zástupné symboly {after}.variable{before} budou nahrazeny skutečnými daty. Ujistěte se, že tyto proměnné zachováte.",
   "failed": "Neúspěch",

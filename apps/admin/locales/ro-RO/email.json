@@ -6,7 +6,7 @@
   "emailVerification": "Verificare Email",
   "emailVerificationDescription": "Când este activată, utilizatorii vor trebui să-și verifice emailul",
   "enable": "Activează",
-  "enableDescription": "După activare, funcțiile de înregistrare, autentificare, asociere și disociere a telefonului mobil vor fi activate",
+  "enableDescription": "După activare, funcțiile de înregistrare prin email, autentificare, legare și delegare vor fi activate.",
   "expiration_email_template": "Șablon de Notificare a Expirării",
   "expiration_email_templateDescription": "Locurile rezervate {after}.variable{before} vor fi înlocuite cu date reale. Asigurați-vă că păstrați aceste variabile.",
   "failed": "Eșuat",

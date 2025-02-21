@@ -6,7 +6,7 @@
   "emailVerification": "تأیید ایمیل",
   "emailVerificationDescription": "هنگامی که فعال شود، کاربران باید ایمیل خود را تأیید کنند",
   "enable": "فعال کردن",
-  "enableDescription": "پس از فعال‌سازی، عملکردهای ثبت‌نام، ورود، اتصال و قطع اتصال تلفن همراه فعال خواهند شد",
+  "enableDescription": "پس از فعال‌سازی، ثبت‌نام ایمیلی، ورود، پیوند و جداسازی عملکردها فعال خواهند شد",
   "expiration_email_template": "قالب اطلاعیه انقضا",
   "expiration_email_templateDescription": "جای‌گذاری‌های {after}.variable{before} با داده‌های واقعی جایگزین خواهند شد. اطمینان حاصل کنید که این متغیرها را حفظ کنید.",
   "failed": "ناموفق",

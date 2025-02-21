@@ -6,7 +6,7 @@
   "emailVerification": "Email Verification",
   "emailVerificationDescription": "When enabled, users will need to verify their email",
   "enable": "Enable",
-  "enableDescription": "After enabling, mobile phone registration, login, binding, and unbinding functions will be enabled",
+  "enableDescription": "After enabling, email registration, login, binding, and unbinding functions will be enabled",
   "expiration_email_template": "Expiration Notice Template",
   "expiration_email_templateDescription": "The {after}.variable{before} placeholders will be replaced with actual data. Ensure to keep these variables.",
   "failed": "Failed",

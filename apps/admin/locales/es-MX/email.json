@@ -6,7 +6,7 @@
   "emailVerification": "Verificación de Correo Electrónico",
   "emailVerificationDescription": "Cuando esté habilitado, los usuarios deberán verificar su correo electrónico",
   "enable": "Habilitar",
-  "enableDescription": "Después de habilitar, se activarán las funciones de registro, inicio de sesión, vinculación y desvinculación de teléfonos móviles",
+  "enableDescription": "Después de habilitar, se activarán las funciones de registro por correo electrónico, inicio de sesión, vinculación y desvinculación.",
   "expiration_email_template": "Plantilla de Aviso de Vencimiento",
   "expiration_email_templateDescription": "Los marcadores de posición {after}.variable{before} serán reemplazados con datos reales. Asegúrate de mantener estas variables.",
   "failed": "Fallido",

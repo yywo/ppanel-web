@@ -6,7 +6,7 @@
   "emailVerification": "E-postbekreftelse",
   "emailVerificationDescription": "Når aktivert, må brukere bekrefte e-posten sin",
   "enable": "Aktiver",
-  "enableDescription": "Etter aktivering vil funksjonene for registrering, innlogging, binding og frakobling av mobiltelefon bli aktivert",
+  "enableDescription": "Etter aktivering vil funksjonene for e-postregistrering, innlogging, binding og avbinding bli aktivert",
   "expiration_email_template": "Utløpsvarsel Mal",
   "expiration_email_templateDescription": "Plassholderne {after}.variable{before} vil bli erstattet med faktiske data. Sørg for å beholde disse variablene.",
   "failed": "Mislyktes",
