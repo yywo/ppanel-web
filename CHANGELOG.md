@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.16](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2025-02-21)
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Simplify email verification code input rendering ([6f7bc37](https://github.com/perfect-panel/ppanel-web/commit/6f7bc37))
+
 # [1.0.0-beta.15](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2025-02-21)
 
 
