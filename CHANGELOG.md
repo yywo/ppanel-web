@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.17](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2025-02-21)
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Refactor reset password form to simplify code input and update placeholder text ([23833b4](https://github.com/perfect-panel/ppanel-web/commit/23833b4))
+
 # [1.0.0-beta.16](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2025-02-21)
 
 
