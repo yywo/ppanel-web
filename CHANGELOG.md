@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.14](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2025-02-21)
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Fixed description in multilingual files, updated text related to email registration functionality ([c356bc2](https://github.com/perfect-panel/ppanel-web/commit/c356bc2))
+
 # [1.0.0-beta.13](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2025-02-21)
 
 
