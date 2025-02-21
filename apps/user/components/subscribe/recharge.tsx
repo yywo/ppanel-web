@@ -135,6 +135,7 @@ export default function Recharge(props: Readonly<ButtonProps>) {
                   if (orderNo) {
                     const { data } = await checkoutOrder({
                       orderNo,
+                      returnUrl: window.location.href,
                     });
                     const type = data.data?.type;
                     const checkout_url = data.data?.checkout_url;

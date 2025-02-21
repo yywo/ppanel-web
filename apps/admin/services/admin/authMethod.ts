@@ -19,7 +19,7 @@ export async function getAuthMethodConfig(
 
 /** Update auth method config PUT /v1/admin/auth-method/config */
 export async function updateAuthMethodConfig(
-  body: API.UpdataAuthMethodConfigRequest,
+  body: API.UpdateAuthMethodConfigRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: API.AuthMethodConfig }>('/v1/admin/auth-method/config', {

@@ -86,6 +86,7 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
                   if (orderNo) {
                     const { data } = await checkoutOrder({
                       orderNo,
+                      returnUrl: window.location.href,
                     });
                     const type = data.data?.type;
                     const checkout_url = data.data?.checkout_url;

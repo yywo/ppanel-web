@@ -22,12 +22,12 @@ export default function Page() {
     },
   });
 
-  async function updateConfig(key: keyof API.UpdataAuthMethodConfigRequest, value: unknown) {
+  async function updateConfig(key: keyof API.UpdateAuthMethodConfigRequest, value: unknown) {
     try {
       await updateAuthMethodConfig({
         ...data,
         [key]: value,
-      } as API.UpdataAuthMethodConfigRequest);
+      } as API.UpdateAuthMethodConfigRequest);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

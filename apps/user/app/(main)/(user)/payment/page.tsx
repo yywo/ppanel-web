@@ -50,7 +50,7 @@ export default function Page() {
     enabled: !!orderNo && data?.status === 1,
     queryKey: ['checkoutOrder', orderNo],
     queryFn: async () => {
-      const { data } = await checkoutOrder({ orderNo: orderNo! });
+      const { data } = await checkoutOrder({ orderNo: orderNo!, returnUrl: window.location.href });
       return data?.data;
     },
   });

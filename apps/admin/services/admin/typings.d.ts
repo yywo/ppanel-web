@@ -1177,13 +1177,6 @@ declare namespace API {
     security_config: SecurityConfig;
   };
 
-  type UpdataAuthMethodConfigRequest = {
-    id: number;
-    method: string;
-    config: Record<string, any>;
-    enabled: boolean;
-  };
-
   type UpdateAlipayF2fRequest = {
     id: number;
     name: string;
@@ -1228,6 +1221,13 @@ declare namespace API {
     platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
     is_default: boolean;
     application_id: number;
+  };
+
+  type UpdateAuthMethodConfigRequest = {
+    id: number;
+    method: string;
+    config: Record<string, any>;
+    enabled: boolean;
   };
 
   type UpdateCouponRequest = {
@@ -1440,7 +1440,7 @@ declare namespace API {
   type UserDevice = {
     id: number;
     ip: string;
-    imei: string;
+    identifier: string;
     user_agent: string;
     online: boolean;
     enabled: boolean;

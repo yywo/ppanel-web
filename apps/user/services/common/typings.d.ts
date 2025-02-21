@@ -628,7 +628,7 @@ declare namespace API {
   type UserDevice = {
     id: number;
     ip: string;
-    imei: string;
+    identifier: string;
     user_agent: string;
     online: boolean;
     enabled: boolean;

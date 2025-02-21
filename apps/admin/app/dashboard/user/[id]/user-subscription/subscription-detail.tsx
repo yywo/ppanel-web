@@ -143,7 +143,7 @@ export function SubscriptionDetail({
                     header: 'ID',
                   },
                   {
-                    accessorKey: 'imei',
+                    accessorKey: 'identifier',
                     header: 'IMEI',
                   },
                   {
@@ -182,7 +182,7 @@ export function SubscriptionDetail({
                 }}
                 actions={{
                   render: (row) => {
-                    if (!row.imei) return [];
+                    if (!row.identifier) return [];
                     return [
                       <ConfirmButton
                         key='offline'

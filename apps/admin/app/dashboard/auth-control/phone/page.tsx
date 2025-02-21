@@ -61,7 +61,7 @@ export default function Page() {
       await updateAuthMethodConfig({
         ...data,
         [key]: value,
-      } as API.UpdataAuthMethodConfigRequest);
+      } as API.UpdateAuthMethodConfigRequest);
       toast.success(t('updateSuccess'));
       refetch();
     } catch (error) {
