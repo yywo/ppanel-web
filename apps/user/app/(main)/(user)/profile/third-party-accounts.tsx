@@ -202,8 +202,7 @@ export default function ThirdPartyAccounts() {
       name: 'Device',
       type: 'OAuth',
     },
-  ];
-  // .filter((account) => oauth_methods?.includes(account.id));
+  ].filter((account) => oauth_methods?.includes(account.id));
 
   const [editValues, setEditValues] = useState<Record<string, any>>({});
 
