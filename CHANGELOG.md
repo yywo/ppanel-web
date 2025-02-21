@@ -1,4 +1,14 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.13](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2025-02-21)
+
+
+### 🐛 Bug Fixes
+
+* **api**: Fix type error in API request and add return URL parameter ([ee286dd](https://github.com/perfect-panel/ppanel-web/commit/ee286dd))
+
+<a name="readme-top"></a>
 
 # Changelog
 
