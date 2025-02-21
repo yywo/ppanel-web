@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.15](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2025-02-21)
+
+
+### 🐛 Bug Fixes
+
+* **profile**: Restore filter to ensure only valid OAuth accounts are shown ([315c8f9](https://github.com/perfect-panel/ppanel-web/commit/315c8f9))
+
 # [1.0.0-beta.14](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2025-02-21)
 
 
