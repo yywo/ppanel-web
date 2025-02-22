@@ -1,4 +1,20 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.18](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2025-02-22)
+
+
+### ✨ Features
+
+* **platform**: Update platform naming and add keywords and custom HTML fields ([6384237](https://github.com/perfect-panel/ppanel-web/commit/6384237))
+* **site**: Added localization support for custom HTML and keyword fields ([f9d7736](https://github.com/perfect-panel/ppanel-web/commit/f9d7736))
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Update custom HTML description for clarity across multiple languages ([557c5cd](https://github.com/perfect-panel/ppanel-web/commit/557c5cd))
+
+<a name="readme-top"></a>
 
 # Changelog
 
