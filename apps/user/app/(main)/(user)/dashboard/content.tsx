@@ -45,7 +45,7 @@ import Subscribe from '../subscribe/page';
 
 const platforms: (keyof API.ApplicationPlatform)[] = [
   'windows',
-  'mac',
+  'macos',
   'linux',
   'ios',
   'android',
@@ -106,7 +106,7 @@ export default function Content() {
                       icon={`${
                         {
                           windows: 'mdi:microsoft-windows',
-                          mac: 'uil:apple',
+                          macos: 'uil:apple',
                           linux: 'uil:linux',
                           ios: 'simple-icons:ios',
                           android: 'uil:android',
@@ -261,6 +261,7 @@ export default function Content() {
                                     toast.success(
                                       <>
                                         <p>{t('copySuccess')}</p>
+                                        <br />
                                         <p>{t('manualImportMessage')}</p>
                                       </>,
                                     );
@@ -307,7 +308,10 @@ export default function Content() {
                                       <Link href={app.url}>{t('download')}</Link>
                                     </Button>
 
-                                    <CopyToClipboard text={url} onCopy={handleCopy}>
+                                    <CopyToClipboard
+                                      text={getAppSubLink(application.subscribe_type, url) || url}
+                                      onCopy={handleCopy}
+                                    >
                                       <Button size='sm' className='rounded-l-none p-2'>
                                         {t('import')}
                                       </Button>

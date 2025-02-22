@@ -56,13 +56,13 @@ export function Logout() {
   }
 }
 
-export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony' {
+export function getPlatform(): 'windows' | 'macos' | 'linux' | 'android' | 'ios' | 'harmony' {
   const parser = new UAParser();
   const os = parser.getOS();
   const osName = os.name?.toLowerCase() || '';
 
   if (osName.includes('windows')) return 'windows';
-  if (osName.includes('mac')) return 'mac';
+  if (osName.includes('mac')) return 'macos';
   if (
     osName.includes('linux') ||
     osName.includes('ubuntu') ||
