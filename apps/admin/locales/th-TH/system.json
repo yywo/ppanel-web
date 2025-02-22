@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML ที่กำหนดเอง",
-    "customHtmlDescription": "รหัส HTML ที่กำหนดเองที่จะถูกแทรกลงในแท็ก head ของเว็บไซต์",
+    "customHtmlDescription": "รหัส HTML ที่กำหนดเองเพื่อแทรกลงในส่วนล่างของแท็ก <body> ของเว็บไซต์.",
     "keywords": "คำสำคัญ",
     "keywordsDescription": "ใช้สำหรับวัตถุประสงค์ SEO",
     "logo": "LOGO",

@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML Personalizado",
-    "customHtmlDescription": "Código HTML personalizado a ser inserido na tag head do site",
+    "customHtmlDescription": "Código HTML personalizado a ser inserido no final da tag <body> do site.",
     "keywords": "Palavras-chave",
     "keywordsDescription": "Usado para fins de SEO",
     "logo": "LOGO",

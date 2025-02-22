@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "自定義HTML",
-    "customHtmlDescription": "要插入到網站<head>標籤中的自定義HTML代碼",
+    "customHtmlDescription": "自定義 HTML 代碼，將注入到網站 <body> 標籤的底部。",
     "keywords": "關鍵字",
     "keywordsDescription": "用於SEO目的",
     "logo": "LOGO",

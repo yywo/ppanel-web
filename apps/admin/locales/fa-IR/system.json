@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML سفارشی",
-    "customHtmlDescription": "کد HTML سفارشی که باید در تگ head سایت وارد شود",
+    "customHtmlDescription": "کد HTML سفارشی که باید در انتهای تگ <body> سایت وارد شود.",
     "keywords": "کلمات کلیدی",
     "keywordsDescription": "برای اهداف سئو استفاده می‌شود",
     "logo": "لوگو",

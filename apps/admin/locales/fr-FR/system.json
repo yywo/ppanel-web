@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML personnalisé",
-    "customHtmlDescription": "Code HTML personnalisé à insérer dans la balise head du site",
+    "customHtmlDescription": "Code HTML personnalisé à injecter dans le bas de la balise <body> du site.",
     "keywords": "Mots-clés",
     "keywordsDescription": "Utilisé à des fins de référencement",
     "logo": "LOGO",

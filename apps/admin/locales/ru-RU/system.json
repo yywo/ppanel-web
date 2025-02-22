@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Пользовательский HTML",
-    "customHtmlDescription": "Пользовательский HTML-код, который будет вставлен в тег head сайта",
+    "customHtmlDescription": "Пользовательский HTML-код, который будет вставлен в конец тега <body> сайта.",
     "keywords": "Ключевые слова",
     "keywordsDescription": "Используется для SEO",
     "logo": "ЛОГОТИП",
