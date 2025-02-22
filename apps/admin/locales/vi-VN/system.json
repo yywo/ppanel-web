@@ -9,6 +9,10 @@
     "saveSuccess": "Lưu thành công"
   },
   "site": {
+    "customHtml": "HTML tùy chỉnh",
+    "customHtmlDescription": "Mã HTML tùy chỉnh để chèn vào thẻ head của trang",
+    "keywords": "Từ khóa",
+    "keywordsDescription": "Dùng cho mục đích SEO",
     "logo": "LOGO",
     "logoDescription": "Dùng để hiển thị vị trí cần hiển thị LOGO",
     "logoPlaceholder": "Vui lòng nhập địa chỉ URL của LOGO, không kết thúc bằng '/'",

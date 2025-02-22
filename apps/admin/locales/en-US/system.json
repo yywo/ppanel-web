@@ -9,6 +9,10 @@
     "saveSuccess": "Save Successful"
   },
   "site": {
+    "customHtml": "Custom HTML",
+    "customHtmlDescription": "Custom HTML code to be inserted into the head tag of the site",
+    "keywords": "Keywords",
+    "keywordsDescription": "Used for SEO purposes",
     "logo": "Logo",
     "logoDescription": "Used for displaying the logo in designated locations",
     "logoPlaceholder": "Enter the URL of the logo, without ending with '/'",

@@ -9,6 +9,10 @@
     "saveSuccess": "Lagring vellykket"
   },
   "site": {
+    "customHtml": "Egendefinert HTML",
+    "customHtmlDescription": "Egendefinert HTML-kode som skal settes inn i head-taggen på nettstedet",
+    "keywords": "Nøkkelord",
+    "keywordsDescription": "Brukes til SEO-formål",
     "logo": "LOGO",
     "logoDescription": "Brukes til å vise hvor LOGO skal vises",
     "logoPlaceholder": "Vennligst skriv inn URL-adressen til LOGO, ikke avslutt med '/'",

@@ -86,6 +86,35 @@ export default function Site() {
           </TableCell>
         </TableRow>
         <TableRow>
+          <TableCell>
+            <Label>{t('keywords')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('keywordsDescription')}</p>
+          </TableCell>
+          <TableCell className='text-right'>
+            <EnhancedInput
+              placeholder={t('keywordsDescription')}
+              value={data?.keywords}
+              onValueBlur={(value) => updateConfig('keywords', value)}
+            />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell className='align-top'>
+            <Label>{t('customHtml')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('customHtmlDescription')}</p>
+          </TableCell>
+          <TableCell className='text-right'>
+            <Textarea
+              className='h-52'
+              placeholder={t('customHtmlDescription')}
+              defaultValue={data?.custom_html}
+              onBlur={(e) => {
+                updateConfig('custom_html', e.target.value);
+              }}
+            />
+          </TableCell>
+        </TableRow>
+        <TableRow>
           <TableCell className='align-top'>
             <Label>{t('siteDomain')}</Label>
             <p className='text-muted-foreground text-xs'>{t('siteDomainDescription')}</p>

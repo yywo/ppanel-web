@@ -9,6 +9,10 @@
     "saveSuccess": "Zapisano pomyślnie"
   },
   "site": {
+    "customHtml": "Niestandardowy HTML",
+    "customHtmlDescription": "Niestandardowy kod HTML do wstawienia w tagu head strony",
+    "keywords": "Słowa kluczowe",
+    "keywordsDescription": "Używane do celów SEO",
     "logo": "LOGO",
     "logoDescription": "Miejsce do wyświetlania LOGO",
     "logoPlaceholder": "Wprowadź adres URL LOGO, nie kończ na '/'",

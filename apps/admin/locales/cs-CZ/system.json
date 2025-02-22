@@ -9,6 +9,10 @@
     "saveSuccess": "Úspěšně uloženo"
   },
   "site": {
+    "customHtml": "Vlastní HTML",
+    "customHtmlDescription": "Vlastní HTML kód, který má být vložen do hlavičky stránky",
+    "keywords": "Klíčová slova",
+    "keywordsDescription": "Používá se pro SEO účely",
     "logo": "LOGO",
     "logoDescription": "Používá se k zobrazení místa, kde je potřeba zobrazit LOGO",
     "logoPlaceholder": "Zadejte URL adresu LOGA, nekončete '/'",

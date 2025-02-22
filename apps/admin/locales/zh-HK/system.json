@@ -9,6 +9,10 @@
     "saveSuccess": "保存成功"
   },
   "site": {
+    "customHtml": "自定義HTML",
+    "customHtmlDescription": "要插入到網站<head>標籤中的自定義HTML代碼",
+    "keywords": "關鍵字",
+    "keywordsDescription": "用於SEO目的",
     "logo": "LOGO",
     "logoDescription": "用於顯示需要展示 LOGO 的位置",
     "logoPlaceholder": "請輸入 LOGO 的 URL 地址，不要以 '/' 結尾",

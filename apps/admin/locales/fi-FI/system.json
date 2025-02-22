@@ -9,6 +9,10 @@
     "saveSuccess": "Tallennus onnistui"
   },
   "site": {
+    "customHtml": "Mukautettu HTML",
+    "customHtmlDescription": "Mukautettu HTML-koodi, joka lisätään sivuston head-tagiin",
+    "keywords": "Avainsanat",
+    "keywordsDescription": "Käytetään SEO-tarkoituksiin",
     "logo": "LOGO",
     "logoDescription": "Näyttääksesi paikan, jossa LOGO tulee näkyä",
     "logoPlaceholder": "Syötä LOGO:n URL-osoite, älä lopeta '/'-merkillä",

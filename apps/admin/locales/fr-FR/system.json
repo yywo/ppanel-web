@@ -9,6 +9,10 @@
     "saveSuccess": "Enregistrement réussi"
   },
   "site": {
+    "customHtml": "HTML personnalisé",
+    "customHtmlDescription": "Code HTML personnalisé à insérer dans la balise head du site",
+    "keywords": "Mots-clés",
+    "keywordsDescription": "Utilisé à des fins de référencement",
     "logo": "LOGO",
     "logoDescription": "Utilisé pour afficher l'emplacement où le LOGO doit être montré",
     "logoPlaceholder": "Veuillez entrer l'URL du LOGO, ne pas terminer par '/'",

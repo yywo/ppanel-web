@@ -9,6 +9,10 @@
     "saveSuccess": "ذخیره‌سازی موفقیت‌آمیز"
   },
   "site": {
+    "customHtml": "HTML سفارشی",
+    "customHtmlDescription": "کد HTML سفارشی که باید در تگ head سایت وارد شود",
+    "keywords": "کلمات کلیدی",
+    "keywordsDescription": "برای اهداف سئو استفاده می‌شود",
     "logo": "لوگو",
     "logoDescription": "برای نمایش لوگو در مکان‌های تعیین‌شده استفاده می‌شود",
     "logoPlaceholder": "آدرس URL لوگو را وارد کنید، بدون '/' در انتها",

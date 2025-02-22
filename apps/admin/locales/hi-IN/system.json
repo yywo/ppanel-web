@@ -9,6 +9,10 @@
     "saveSuccess": "सफलतापूर्वक सहेजा गया"
   },
   "site": {
+    "customHtml": "कस्टम HTML",
+    "customHtmlDescription": "साइट के हेड टैग में डाले जाने के लिए कस्टम HTML कोड",
+    "keywords": "कीवर्ड",
+    "keywordsDescription": "SEO उद्देश्यों के लिए उपयोग किया जाता है",
     "logo": "लोगो",
     "logoDescription": "लोगो प्रदर्शित करने के लिए आवश्यक स्थान",
     "logoPlaceholder": "कृपया लोगो का URL पता दर्ज करें, '/' के साथ समाप्त न करें",

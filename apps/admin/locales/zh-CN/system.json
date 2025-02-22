@@ -9,6 +9,10 @@
     "saveSuccess": "保存成功"
   },
   "site": {
+    "customHtml": "自定义HTML",
+    "customHtmlDescription": "要插入到网站头部标签中的自定义HTML代码",
+    "keywords": "关键词",
+    "keywordsDescription": "用于搜索引擎优化",
     "logo": "LOGO",
     "logoDescription": "用于显示需要展示 LOGO 的位置",
     "logoPlaceholder": "请输入 LOGO 的 URL 地址，不要以 '/' 结尾",

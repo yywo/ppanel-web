@@ -9,6 +9,10 @@
     "saveSuccess": "Успешно сохранено"
   },
   "site": {
+    "customHtml": "Пользовательский HTML",
+    "customHtmlDescription": "Пользовательский HTML-код, который будет вставлен в тег head сайта",
+    "keywords": "Ключевые слова",
+    "keywordsDescription": "Используется для SEO",
     "logo": "ЛОГОТИП",
     "logoDescription": "Используется для отображения места, где необходимо показать ЛОГОТИП",
     "logoPlaceholder": "Введите URL-адрес ЛОГОТИПА, не заканчивайте на '/'",

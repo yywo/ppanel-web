@@ -1,40 +1,36 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.17](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.16...v1.0.0-beta.17) (2025-02-21)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Refactor reset password form to simplify code input and update placeholder text ([23833b4](https://github.com/perfect-panel/ppanel-web/commit/23833b4))
+- **auth**: Refactor reset password form to simplify code input and update placeholder text ([23833b4](https://github.com/perfect-panel/ppanel-web/commit/23833b4))
 
 # [1.0.0-beta.16](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.15...v1.0.0-beta.16) (2025-02-21)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Simplify email verification code input rendering ([6f7bc37](https://github.com/perfect-panel/ppanel-web/commit/6f7bc37))
+- **auth**: Simplify email verification code input rendering ([6f7bc37](https://github.com/perfect-panel/ppanel-web/commit/6f7bc37))
 
 # [1.0.0-beta.15](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.14...v1.0.0-beta.15) (2025-02-21)
 
-
 ### 🐛 Bug Fixes
 
-* **profile**: Restore filter to ensure only valid OAuth accounts are shown ([315c8f9](https://github.com/perfect-panel/ppanel-web/commit/315c8f9))
+- **profile**: Restore filter to ensure only valid OAuth accounts are shown ([315c8f9](https://github.com/perfect-panel/ppanel-web/commit/315c8f9))
 
 # [1.0.0-beta.14](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2025-02-21)
 
-
 ### 🐛 Bug Fixes
 
-* **locales**: Fixed description in multilingual files, updated text related to email registration functionality ([c356bc2](https://github.com/perfect-panel/ppanel-web/commit/c356bc2))
+- **locales**: Fixed description in multilingual files, updated text related to email registration functionality ([c356bc2](https://github.com/perfect-panel/ppanel-web/commit/c356bc2))
 
 # [1.0.0-beta.13](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2025-02-21)
 
-
 ### 🐛 Bug Fixes
 
-* **api**: Fix type error in API request and add return URL parameter ([ee286dd](https://github.com/perfect-panel/ppanel-web/commit/ee286dd))
+- **api**: Fix type error in API request and add return URL parameter ([ee286dd](https://github.com/perfect-panel/ppanel-web/commit/ee286dd))
 
 <a name="readme-top"></a>
 

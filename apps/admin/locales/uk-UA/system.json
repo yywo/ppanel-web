@@ -9,6 +9,10 @@
     "saveSuccess": "Успішно збережено"
   },
   "site": {
+    "customHtml": "Користувацький HTML",
+    "customHtmlDescription": "Користувацький HTML-код, який буде вставлено в тег head сайту",
+    "keywords": "Ключові слова",
+    "keywordsDescription": "Використовується для SEO",
     "logo": "ЛОГО",
     "logoDescription": "Використовується для відображення місця, де потрібно показати ЛОГО",
     "logoPlaceholder": "Будь ласка, введіть URL-адресу ЛОГО, не закінчуйте на '/'",

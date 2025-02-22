@@ -9,6 +9,10 @@
     "saveSuccess": "保存に成功しました"
   },
   "site": {
+    "customHtml": "カスタムHTML",
+    "customHtmlDescription": "サイトのheadタグに挿入するカスタムHTMLコード",
+    "keywords": "キーワード",
+    "keywordsDescription": "SEO目的で使用されます",
     "logo": "LOGO",
     "logoDescription": "LOGOを表示する必要がある場所に使用されます",
     "logoPlaceholder": "LOGOのURLアドレスを入力してください。末尾に'/'を付けないでください",

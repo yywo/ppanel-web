@@ -29,7 +29,7 @@ declare namespace API {
 
   type ApplicationPlatform = {
     ios?: ApplicationVersion[];
-    mac?: ApplicationVersion[];
+    macos?: ApplicationVersion[];
     linux?: ApplicationVersion[];
     android?: ApplicationVersion[];
     windows?: ApplicationVersion[];
@@ -625,6 +625,8 @@ declare namespace API {
     site_name: string;
     site_desc: string;
     site_logo: string;
+    keywords: string;
+    custom_html: string;
   };
 
   type SortItem = {

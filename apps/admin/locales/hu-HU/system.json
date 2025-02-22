@@ -9,6 +9,10 @@
     "saveSuccess": "Sikeres mentés"
   },
   "site": {
+    "customHtml": "Egyedi HTML",
+    "customHtmlDescription": "Egyedi HTML kód, amelyet a webhely fejléctagjába kell beilleszteni",
+    "keywords": "Kulcsszavak",
+    "keywordsDescription": "SEO célokra használva",
     "logo": "LOGÓ",
     "logoDescription": "A LOGÓ megjelenítésére szolgáló hely",
     "logoPlaceholder": "Kérjük, adja meg a LOGÓ URL-címét, ne végződjön '/' jellel",

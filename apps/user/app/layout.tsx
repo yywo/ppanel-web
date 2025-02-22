@@ -43,6 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${site?.site_name || 'PPanel'}`,
     },
     description: site?.site_desc || '',
+    keywords: site?.keywords || '',
     icons: {
       icon: site?.site_logo
         ? [
@@ -114,6 +115,10 @@ export default async function RootLayout({
             {children}
           </Providers>
         </NextIntlClientProvider>
+        <div
+          id='custom_html'
+          dangerouslySetInnerHTML={{ __html: config?.site.custom_html || '' }}
+        />
       </body>
     </html>
   );

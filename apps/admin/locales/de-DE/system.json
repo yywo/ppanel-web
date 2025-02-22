@@ -9,6 +9,10 @@
     "saveSuccess": "Erfolgreich gespeichert"
   },
   "site": {
+    "customHtml": "Benutzerdefiniertes HTML",
+    "customHtmlDescription": "Benutzerdefinierter HTML-Code, der in den Head-Tag der Seite eingefügt werden soll",
+    "keywords": "Schlüsselwörter",
+    "keywordsDescription": "Für SEO-Zwecke verwendet",
     "logo": "LOGO",
     "logoDescription": "Position zur Anzeige des LOGOs",
     "logoPlaceholder": "Bitte geben Sie die URL-Adresse des LOGOs ein, ohne '/' am Ende",
