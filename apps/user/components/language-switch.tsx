@@ -14,6 +14,32 @@ import { getCountry } from '@workspace/ui/utils';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
+const languages = {
+  'cs-CZ': 'Čeština',
+  'de-DE': 'Deutsch',
+  'en-US': 'English',
+  'es-ES': 'Español',
+  'es-MX': 'Español (México)',
+  'fa-IR': 'فارسی',
+  'fi-FI': 'Suomi',
+  'fr-FR': 'Français',
+  'hi-IN': 'हिन्दी',
+  'hu-HU': 'Magyar',
+  'ja-JP': '日本語',
+  'ko-KR': '한국어',
+  'no-NO': 'Norsk',
+  'pl-PL': 'Polski',
+  'pt-BR': 'Português (Brasil)',
+  'ro-RO': 'Română',
+  'ru-RU': 'Русский',
+  'th-TH': 'ไทย',
+  'tr-TR': 'Türkçe',
+  'uk-UA': 'Українська',
+  'vi-VN': 'Tiếng Việt',
+  'zh-CN': '简体中文',
+  'zh-HK': '繁體中文',
+} as const;
+
 export default function LanguageSwitch() {
   const locale = useLocale();
   const country = getCountry(locale);
@@ -31,7 +57,7 @@ export default function LanguageSwitch() {
         <SelectValue>
           <div className='flex items-center'>
             <Icon icon={`flagpack:${country?.alpha2.toLowerCase()}`} className='!size-5' />
-            <span className='sr-only'>{t(`${locale}`)}</span>
+            <span className='sr-only'>{languages[locale as keyof typeof languages]}</span>
           </div>
         </SelectValue>
       </SelectTrigger>
@@ -40,7 +66,7 @@ export default function LanguageSwitch() {
           <SelectItem key={`${item?.lang}-${item?.alpha2}`} value={`${item?.lang}-${item?.alpha2}`}>
             <div className='flex items-center gap-2'>
               <Icon icon={`flagpack:${item?.alpha2.toLowerCase()}`} className='!size-5' />
-              {t(`${item?.lang}-${item?.alpha2}`)}
+              {languages[`${item?.lang}-${item?.alpha2}` as keyof typeof languages]}
             </div>
           </SelectItem>
         ))}
