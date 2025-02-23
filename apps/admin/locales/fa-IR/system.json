@@ -8,6 +8,10 @@
     "currencyUnitDescription": "فقط برای نمایش استفاده می‌شود؛ تغییر این مورد بر تمام واحدهای ارزی در سیستم تأثیر خواهد گذاشت",
     "saveSuccess": "ذخیره‌سازی موفقیت‌آمیز"
   },
+  "privacy-policy": {
+    "saveSuccess": "ذخیره با موفقیت انجام شد",
+    "title": "سیاست حفظ حریم خصوصی"
+  },
   "site": {
     "customHtml": "HTML سفارشی",
     "customHtmlDescription": "کد HTML سفارشی که باید در انتهای تگ body سایت وارد شود.",

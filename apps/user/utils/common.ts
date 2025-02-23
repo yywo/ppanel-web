@@ -50,7 +50,10 @@ export function Logout() {
   if (!isBrowser()) return;
   cookies.remove('Authorization');
   const pathname = location.pathname;
-  if (!['', '/', '/auth', '/tos'].includes(pathname) && !pathname.startsWith('/oauth/')) {
+  if (
+    !['', '/', '/auth', '/tos', '/privacy-policy'].includes(pathname) &&
+    !pathname.startsWith('/oauth/')
+  ) {
     setRedirectUrl(location.pathname);
     location.href = `/auth`;
   }

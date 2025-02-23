@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Pouze pro zobrazení, po změně se změní všechny měnové jednotky v systému",
     "saveSuccess": "Úspěšně uloženo"
   },
+  "privacy-policy": {
+    "saveSuccess": "Uložení bylo úspěšné",
+    "title": "Zásady ochrany osobních údajů"
+  },
   "site": {
     "customHtml": "Vlastní HTML",
     "customHtmlDescription": "Vlastní HTML kód, který bude vložen na konec tagu body na stránce.",

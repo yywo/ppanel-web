@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Solo para fines de visualización, cambiarlo alterará todas las unidades monetarias en el sistema",
     "saveSuccess": "Guardado exitosamente"
   },
+  "privacy-policy": {
+    "saveSuccess": "Guardado exitoso",
+    "title": "Política de Privacidad"
+  },
   "site": {
     "customHtml": "HTML personalizado",
     "customHtmlDescription": "Código HTML personalizado que se inyectará al final de la etiqueta body del sitio.",

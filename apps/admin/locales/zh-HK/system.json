@@ -8,6 +8,10 @@
     "currencyUnitDescription": "僅用於展示使用，更改後系統中所有的貨幣單位都將發生變更",
     "saveSuccess": "保存成功"
   },
+  "privacy-policy": {
+    "saveSuccess": "保存成功",
+    "title": "私隱政策"
+  },
   "site": {
     "customHtml": "自定義HTML",
     "customHtmlDescription": "自定義 HTML 代碼，將注入到網站 body 標籤的底部。",

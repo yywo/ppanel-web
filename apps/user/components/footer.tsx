@@ -70,6 +70,9 @@ export default function Footer() {
           <Link href='/tos' className='ml-2 underline'>
             {t('tos')}
           </Link>
+          <Link href='/privacy-policy' className='ml-2 underline'>
+            {t('privacyPolicy')}
+          </Link>
         </div>
       </div>
     </footer>

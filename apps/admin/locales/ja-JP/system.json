@@ -8,6 +8,10 @@
     "currencyUnitDescription": "表示のみに使用され、変更するとシステム内のすべての通貨単位が変更されます",
     "saveSuccess": "保存に成功しました"
   },
+  "privacy-policy": {
+    "saveSuccess": "保存に成功しました",
+    "title": "プライバシーポリシー"
+  },
   "site": {
     "customHtml": "カスタムHTML",
     "customHtmlDescription": "サイトの body タグの下部に挿入されるカスタム HTML コード。",

@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Csak megjelenítésre használatos, a módosítás után a rendszer összes pénznem egysége megváltozik",
     "saveSuccess": "Sikeres mentés"
   },
+  "privacy-policy": {
+    "saveSuccess": "Mentés sikeres",
+    "title": "Adatvédelmi irányelvek"
+  },
   "site": {
     "customHtml": "Egyedi HTML",
     "customHtmlDescription": "Egyedi HTML kód, amelyet a webhely bodyímkéjének aljára kell beilleszteni.",

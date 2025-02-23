@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Chỉ sử dụng để hiển thị, sau khi thay đổi tất cả các đơn vị tiền tệ trong hệ thống sẽ thay đổi",
     "saveSuccess": "Lưu thành công"
   },
+  "privacy-policy": {
+    "saveSuccess": "Lưu thành công",
+    "title": "Chính sách bảo mật"
+  },
   "site": {
     "customHtml": "HTML tùy chỉnh",
     "customHtmlDescription": "Mã HTML tùy chỉnh để được chèn vào cuối thẻ body của trang.",

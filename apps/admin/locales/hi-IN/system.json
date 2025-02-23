@@ -8,6 +8,10 @@
     "currencyUnitDescription": "केवल प्रदर्शन के लिए उपयोग किया जाता है, परिवर्तन के बाद सिस्टम में सभी मुद्रा इकाइयाँ बदल जाएँगी",
     "saveSuccess": "सफलतापूर्वक सहेजा गया"
   },
+  "privacy-policy": {
+    "saveSuccess": "सफलता से सहेजा गया",
+    "title": "गोपनीयता नीति"
+  },
   "site": {
     "customHtml": "कस्टम HTML",
     "customHtmlDescription": "साइट के bodyैग के नीचे इंजेक्ट करने के लिए कस्टम HTML कोड।",

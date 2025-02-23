@@ -8,6 +8,10 @@
     "currencyUnitDescription": "ใช้สำหรับการแสดงผลเท่านั้น การเปลี่ยนแปลงจะส่งผลต่อหน่วยสกุลเงินทั้งหมดในระบบ",
     "saveSuccess": "บันทึกสำเร็จ"
   },
+  "privacy-policy": {
+    "saveSuccess": "บันทึกสำเร็จ",
+    "title": "นโยบายความเป็นส่วนตัว"
+  },
   "site": {
     "customHtml": "HTML ที่กำหนดเอง",
     "customHtmlDescription": "รหัส HTML ที่กำหนดเองเพื่อแทรกลงในส่วนล่างของแท็ก body ของเว็บไซต์.",

@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Kun for visningsformål, endring vil påvirke alle valutaenheter i systemet",
     "saveSuccess": "Lagring vellykket"
   },
+  "privacy-policy": {
+    "saveSuccess": "Lagring vellykket",
+    "title": "Personvernerklæring"
+  },
   "site": {
     "customHtml": "Egendefinert HTML",
     "customHtmlDescription": "Egendefinert HTML-kode som skal settes inn i bunnen av nettstedets body-tag.",

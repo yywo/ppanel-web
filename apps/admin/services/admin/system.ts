@@ -203,6 +203,29 @@ export async function updateNodeConfig(body: API.NodeConfig, options?: { [key: s
   });
 }
 
+/** get Privacy Policy Config GET /v1/admin/system/privacy */
+export async function getPrivacyPolicyConfig(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.PrivacyPolicyConfig }>('/v1/admin/system/privacy', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** Update Privacy Policy Config PUT /v1/admin/system/privacy */
+export async function updatePrivacyPolicyConfig(
+  body: API.PrivacyPolicyConfig,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/privacy', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Get register config GET /v1/admin/system/register_config */
 export async function getRegisterConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.RegisterConfig }>('/v1/admin/system/register_config', {

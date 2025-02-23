@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Nur zur Anzeige verwendet, nach der Änderung werden alle Währungseinheiten im System geändert",
     "saveSuccess": "Erfolgreich gespeichert"
   },
+  "privacy-policy": {
+    "saveSuccess": "Erfolgreich gespeichert",
+    "title": "Datenschutzrichtlinie"
+  },
   "site": {
     "customHtml": "Benutzerdefiniertes HTML",
     "customHtmlDescription": "Benutzerdefinierter HTML-Code, der am Ende des body-Tags der Seite eingefügt werden soll.",

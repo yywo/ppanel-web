@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Sadece gösterim amaçlı kullanılır, değiştirildiğinde sistemdeki tüm para birimi birimleri değişecektir",
     "saveSuccess": "Başarıyla kaydedildi"
   },
+  "privacy-policy": {
+    "saveSuccess": "Başarıyla Kaydedildi",
+    "title": "Gizlilik Politikası"
+  },
   "site": {
     "customHtml": "Özel HTML",
     "customHtmlDescription": "Site'in body etiketinin altına yerleştirilecek özel HTML kodu.",

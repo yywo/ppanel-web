@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Used for display purposes only; changing this will affect all currency units in the system",
     "saveSuccess": "Save Successful"
   },
+  "privacy-policy": {
+    "saveSuccess": "Save Successful",
+    "title": "Privacy Policy"
+  },
   "site": {
     "customHtml": "Custom HTML",
     "customHtmlDescription": "Custom HTML code to be injected into the bottom of the site's body tag.",

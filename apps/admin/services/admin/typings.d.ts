@@ -879,6 +879,10 @@ declare namespace API {
     list: PlatformInfo[];
   };
 
+  type PrivacyPolicyConfig = {
+    privacy_policy: string;
+  };
+
   type PubilcRegisterConfig = {
     stop_register: boolean;
     enable_ip_register_limit: boolean;

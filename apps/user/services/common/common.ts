@@ -42,6 +42,14 @@ export async function getGlobalConfig(options?: { [key: string]: any }) {
   });
 }
 
+/** Get Privacy Policy GET /v1/common/site/privacy */
+export async function getPrivacyPolicy(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.PrivacyPolicyConfig }>('/v1/common/site/privacy', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** Get stat GET /v1/common/site/stat */
 export async function getStat(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.GetStatResponse }>('/v1/common/site/stat', {

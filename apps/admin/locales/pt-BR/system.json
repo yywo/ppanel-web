@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Usado apenas para exibição, após a alteração todas as unidades monetárias no sistema serão alteradas",
     "saveSuccess": "Salvo com sucesso"
   },
+  "privacy-policy": {
+    "saveSuccess": "Salvo com Sucesso",
+    "title": "Política de Privacidade"
+  },
   "site": {
     "customHtml": "HTML Personalizado",
     "customHtmlDescription": "Código HTML personalizado a ser inserido no final da tag bodyo site.",

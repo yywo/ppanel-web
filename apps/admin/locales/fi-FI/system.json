@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Käytetään vain näyttötarkoituksiin, muutoksen jälkeen kaikki järjestelmän valuuttayksiköt muuttuvat",
     "saveSuccess": "Tallennus onnistui"
   },
+  "privacy-policy": {
+    "saveSuccess": "Tallennus onnistui",
+    "title": "Tietosuojakäytäntö"
+  },
   "site": {
     "customHtml": "Mukautettu HTML",
     "customHtmlDescription": "Mukautettu HTML-koodi, joka lisätään sivuston body -tagin loppuun.",

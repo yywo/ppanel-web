@@ -8,6 +8,10 @@
     "currencyUnitDescription": "표시용으로만 사용되며, 변경 시 시스템 내 모든 통화 단위가 변경됩니다",
     "saveSuccess": "저장 성공"
   },
+  "privacy-policy": {
+    "saveSuccess": "저장 성공",
+    "title": "개인정보 처리방침"
+  },
   "site": {
     "customHtml": "사용자 정의 HTML",
     "customHtmlDescription": "사이트의 body그 하단에 삽입될 사용자 정의 HTML 코드입니다.",

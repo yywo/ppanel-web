@@ -8,6 +8,10 @@
     "currencyUnitDescription": "Utilizat doar pentru afișare, după modificare toate unitățile monetare din sistem vor fi schimbate",
     "saveSuccess": "Salvare reușită"
   },
+  "privacy-policy": {
+    "saveSuccess": "Salvare reușită",
+    "title": "Politica de confidențialitate"
+  },
   "site": {
     "customHtml": "HTML personalizat",
     "customHtmlDescription": "Cod HTML personalizat care va fi injectat în partea de jos a etichetei body a site-ului.",
