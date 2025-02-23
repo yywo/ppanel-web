@@ -1,6 +1,18 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.19](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2025-02-23)
+
+
+### ✨ Features
+
+* **form**: Make version field optional and set default value; update site domain placeholder for clarity ([42ba9e8](https://github.com/perfect-panel/ppanel-web/commit/42ba9e8))
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Refactor forms to use Turnstile ref for reset functionality ([320a7dc](https://github.com/perfect-panel/ppanel-web/commit/320a7dc))
+
 # [1.0.0-beta.18](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2025-02-22)
 
 
