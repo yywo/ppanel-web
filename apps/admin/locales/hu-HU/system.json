@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Egyedi HTML",
-    "customHtmlDescription": "Egyedi HTML kód, amelyet a webhely <body> címkéjének aljára kell beilleszteni.",
+    "customHtmlDescription": "Egyedi HTML kód, amelyet a webhely bodyímkéjének aljára kell beilleszteni.",
     "keywords": "Kulcsszavak",
     "keywordsDescription": "SEO célokra használva",
     "logo": "LOGÓ",

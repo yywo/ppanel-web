@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML personalizat",
-    "customHtmlDescription": "Cod HTML personalizat care va fi injectat în partea de jos a etichetei <body> a site-ului.",
+    "customHtmlDescription": "Cod HTML personalizat care va fi injectat în partea de jos a etichetei body a site-ului.",
     "keywords": "Cuvinte cheie",
     "keywordsDescription": "Utilizate în scopuri SEO",
     "logo": "LOGO",

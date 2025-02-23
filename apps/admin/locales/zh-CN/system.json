@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "自定义HTML",
-    "customHtmlDescription": "要注入到网站 <body> 标签底部的自定义 HTML 代码。",
+    "customHtmlDescription": "要注入到网站 body 标签底部的自定义 HTML 代码。",
     "keywords": "关键词",
     "keywordsDescription": "用于搜索引擎优化",
     "logo": "LOGO",

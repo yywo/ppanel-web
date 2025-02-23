@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "कस्टम HTML",
-    "customHtmlDescription": "साइट के <body> टैग के नीचे इंजेक्ट करने के लिए कस्टम HTML कोड।",
+    "customHtmlDescription": "साइट के bodyैग के नीचे इंजेक्ट करने के लिए कस्टम HTML कोड।",
     "keywords": "कीवर्ड",
     "keywordsDescription": "SEO उद्देश्यों के लिए उपयोग किया जाता है",
     "logo": "लोगो",

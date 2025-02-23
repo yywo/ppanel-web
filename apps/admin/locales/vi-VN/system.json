@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML tùy chỉnh",
-    "customHtmlDescription": "Mã HTML tùy chỉnh để được chèn vào cuối thẻ <body> của trang.",
+    "customHtmlDescription": "Mã HTML tùy chỉnh để được chèn vào cuối thẻ body của trang.",
     "keywords": "Từ khóa",
     "keywordsDescription": "Dùng cho mục đích SEO",
     "logo": "LOGO",

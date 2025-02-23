@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Custom HTML",
-    "customHtmlDescription": "Custom HTML code to be injected into the bottom of the site's <body> tag.",
+    "customHtmlDescription": "Custom HTML code to be injected into the bottom of the site's body tag.",
     "keywords": "Keywords",
     "keywordsDescription": "Used for SEO purposes",
     "logo": "Logo",

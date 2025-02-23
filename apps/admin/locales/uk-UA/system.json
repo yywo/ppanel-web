@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Користувацький HTML",
-    "customHtmlDescription": "Користувацький HTML-код, який буде вставлено в кінець тегу <body> сайту.",
+    "customHtmlDescription": "Користувацький HTML-код, який буде вставлено в кінець тегу body сайту.",
     "keywords": "Ключові слова",
     "keywordsDescription": "Використовується для SEO",
     "logo": "ЛОГО",

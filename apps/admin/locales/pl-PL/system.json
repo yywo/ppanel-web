@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Niestandardowy HTML",
-    "customHtmlDescription": "Niestandardowy kod HTML, który ma być wstrzyknięty na końcu tagu <body> witryny.",
+    "customHtmlDescription": "Niestandardowy kod HTML, który ma być wstrzyknięty na końcu tagu bodyitryny.",
     "keywords": "Słowa kluczowe",
     "keywordsDescription": "Używane do celów SEO",
     "logo": "LOGO",

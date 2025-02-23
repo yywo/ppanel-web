@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Egendefinert HTML",
-    "customHtmlDescription": "Egendefinert HTML-kode som skal settes inn i bunnen av nettstedets <body>-tag.",
+    "customHtmlDescription": "Egendefinert HTML-kode som skal settes inn i bunnen av nettstedets body-tag.",
     "keywords": "Nøkkelord",
     "keywordsDescription": "Brukes til SEO-formål",
     "logo": "LOGO",

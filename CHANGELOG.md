@@ -1,38 +1,34 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.20](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2025-02-23)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Add error handling to form submission and reset Turnstile on failure ([715d011](https://github.com/perfect-panel/ppanel-web/commit/715d011))
-* **subscribe**: Update subscription domain placeholder to include examples; improve site name retrieval in global store ([c65a44c](https://github.com/perfect-panel/ppanel-web/commit/c65a44c))
+- **auth**: Add error handling to form submission and reset Turnstile on failure ([715d011](https://github.com/perfect-panel/ppanel-web/commit/715d011))
+- **subscribe**: Update subscription domain placeholder to include examples; improve site name retrieval in global store ([c65a44c](https://github.com/perfect-panel/ppanel-web/commit/c65a44c))
 
 # [1.0.0-beta.19](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2025-02-23)
 
-
 ### ✨ Features
 
-* **form**: Make version field optional and set default value; update site domain placeholder for clarity ([42ba9e8](https://github.com/perfect-panel/ppanel-web/commit/42ba9e8))
-
+- **form**: Make version field optional and set default value; update site domain placeholder for clarity ([42ba9e8](https://github.com/perfect-panel/ppanel-web/commit/42ba9e8))
 
 ### 🐛 Bug Fixes
 
-* **auth**: Refactor forms to use Turnstile ref for reset functionality ([320a7dc](https://github.com/perfect-panel/ppanel-web/commit/320a7dc))
+- **auth**: Refactor forms to use Turnstile ref for reset functionality ([320a7dc](https://github.com/perfect-panel/ppanel-web/commit/320a7dc))
 
 # [1.0.0-beta.18](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.17...v1.0.0-beta.18) (2025-02-22)
 
-
 ### ✨ Features
 
-* **platform**: Update platform naming and add keywords and custom HTML fields ([6384237](https://github.com/perfect-panel/ppanel-web/commit/6384237))
-* **site**: Added localization support for custom HTML and keyword fields ([f9d7736](https://github.com/perfect-panel/ppanel-web/commit/f9d7736))
-
+- **platform**: Update platform naming and add keywords and custom HTML fields ([6384237](https://github.com/perfect-panel/ppanel-web/commit/6384237))
+- **site**: Added localization support for custom HTML and keyword fields ([f9d7736](https://github.com/perfect-panel/ppanel-web/commit/f9d7736))
 
 ### 🐛 Bug Fixes
 
-* **locales**: Update custom HTML description for clarity across multiple languages ([557c5cd](https://github.com/perfect-panel/ppanel-web/commit/557c5cd))
+- **locales**: Update custom HTML description for clarity across multiple languages ([557c5cd](https://github.com/perfect-panel/ppanel-web/commit/557c5cd))
 
 <a name="readme-top"></a>
 

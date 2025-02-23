@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "カスタムHTML",
-    "customHtmlDescription": "サイトの <body> タグの下部に挿入されるカスタム HTML コード。",
+    "customHtmlDescription": "サイトの body タグの下部に挿入されるカスタム HTML コード。",
     "keywords": "キーワード",
     "keywordsDescription": "SEO目的で使用されます",
     "logo": "LOGO",

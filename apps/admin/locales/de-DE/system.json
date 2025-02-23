@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Benutzerdefiniertes HTML",
-    "customHtmlDescription": "Benutzerdefinierter HTML-Code, der am Ende des <body>-Tags der Seite eingefügt werden soll.",
+    "customHtmlDescription": "Benutzerdefinierter HTML-Code, der am Ende des body-Tags der Seite eingefügt werden soll.",
     "keywords": "Schlüsselwörter",
     "keywordsDescription": "Für SEO-Zwecke verwendet",
     "logo": "LOGO",

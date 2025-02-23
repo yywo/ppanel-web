@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Vlastní HTML",
-    "customHtmlDescription": "Vlastní HTML kód, který bude vložen na konec tagu <body> na stránce.",
+    "customHtmlDescription": "Vlastní HTML kód, který bude vložen na konec tagu body na stránce.",
     "keywords": "Klíčová slova",
     "keywordsDescription": "Používá se pro SEO účely",
     "logo": "LOGO",

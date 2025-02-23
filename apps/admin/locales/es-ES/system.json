@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "HTML personalizado",
-    "customHtmlDescription": "Código HTML personalizado que se inyectará en la parte inferior de la etiqueta <body> del sitio.",
+    "customHtmlDescription": "Código HTML personalizado que se inyectará en la parte inferior de la etiqueta body del sitio.",
     "keywords": "Palabras clave",
     "keywordsDescription": "Utilizado para fines de SEO",
     "logo": "LOGO",

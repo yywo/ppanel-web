@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "사용자 정의 HTML",
-    "customHtmlDescription": "사이트의 <body> 태그 하단에 삽입될 사용자 정의 HTML 코드입니다.",
+    "customHtmlDescription": "사이트의 body그 하단에 삽입될 사용자 정의 HTML 코드입니다.",
     "keywords": "키워드",
     "keywordsDescription": "SEO 목적으로 사용됨",
     "logo": "LOGO",

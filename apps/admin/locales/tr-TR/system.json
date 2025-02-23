@@ -10,7 +10,7 @@
   },
   "site": {
     "customHtml": "Özel HTML",
-    "customHtmlDescription": "Site'in <body> etiketinin altına yerleştirilecek özel HTML kodu.",
+    "customHtmlDescription": "Site'in body etiketinin altına yerleştirilecek özel HTML kodu.",
     "keywords": "Anahtar Kelimeler",
     "keywordsDescription": "SEO amaçları için kullanılır",
     "logo": "LOGO",
