@@ -104,7 +104,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
     });
   },
   getAppSubLink: (type: string, url: string) => {
-    const name = get().common.site.site_name || '';
+    const name = get().common?.site?.site_name || '';
     switch (type) {
       case 'Clash':
         return `clash://install-config?url=${url}&name=${name}`;

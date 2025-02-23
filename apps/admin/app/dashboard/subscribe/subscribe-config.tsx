@@ -92,7 +92,7 @@ export default function SubscribeConfig() {
           <TableCell className='text-right'>
             <Textarea
               className='h-52'
-              placeholder={t('subscriptionDomainPlaceholder')}
+              placeholder={`${t('subscriptionDomainPlaceholder')}\nexample.com\nwww.example.com`}
               defaultValue={data?.subscribe_domain}
               onBlur={(e) => {
                 updateConfig('subscribe_domain', e.target.value);
