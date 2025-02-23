@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.22](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2025-02-23)
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Removed language file import to clean up unnecessary language support ([68f6ab2](https://github.com/perfect-panel/ppanel-web/commit/68f6ab2))
+
 # [1.0.0-beta.21](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2025-02-23)
 
 
