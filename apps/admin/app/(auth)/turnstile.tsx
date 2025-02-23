@@ -1,25 +1,37 @@
 'use client';
 
-import useGlobalStore from '@/config/use-global';
 import { useLocale } from 'next-intl';
 import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
+import { forwardRef, useEffect, useImperativeHandle } from 'react';
 import Turnstile, { useTurnstile } from 'react-turnstile';
 
-export default function CloudFlareTurnstile({
-  id,
-  value,
-  onChange,
-}: {
-  id?: string;
-  value?: null | string;
-  onChange: (value?: string) => void;
-}) {
+import useGlobalStore from '@/config/use-global';
+
+export type TurnstileRef = {
+  reset: () => void;
+};
+
+const CloudFlareTurnstile = forwardRef<
+  TurnstileRef,
+  {
+    id?: string;
+    value?: null | string;
+    onChange: (value?: string) => void;
+  }
+>(function CloudFlareTurnstile({ id, value, onChange }, ref) {
   const { common } = useGlobalStore();
   const { verify } = common;
   const { resolvedTheme } = useTheme();
   const locale = useLocale();
   const turnstile = useTurnstile();
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      reset: () => turnstile.reset(),
+    }),
+    [turnstile],
+  );
 
   useEffect(() => {
     if (value === '') {
@@ -51,4 +63,6 @@ export default function CloudFlareTurnstile({
       />
     )
   );
-}
+});
+
+export default CloudFlareTurnstile;

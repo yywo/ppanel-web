@@ -6,11 +6,11 @@ import { Input } from '@workspace/ui/components/input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import SendCode from '../send-code';
-import CloudFlareTurnstile from '../turnstile';
+import CloudFlareTurnstile, { TurnstileRef } from '../turnstile';
 
 export default function RegisterForm({
   loading,
@@ -31,11 +31,10 @@ export default function RegisterForm({
 
   const handleCheckUser = async (email: string) => {
     try {
+      if (!auth.email.enable_verify) return true;
       const domain = email.split('@')[1];
-      const isValid =
-        !auth.email.enable_verify ||
-        auth.email?.domain_suffix_list.split('\n').includes(domain || '');
-      return !isValid;
+      const isValid = auth.email?.domain_suffix_list.split('\n').includes(domain || '');
+      return isValid;
     } catch (error) {
       console.log('Error checking user:', error);
       return false;
@@ -53,7 +52,7 @@ export default function RegisterForm({
       password: z.string(),
       repeat_password: z.string(),
       code: auth.email.enable_verify ? z.string() : z.string().nullish(),
-      invite: invite.forced_invite ? z.string() : z.string().nullish(),
+      invite: invite.forced_invite ? z.string().min(1) : z.string().nullish(),
       cf_token:
         verify.enable_register_verify && verify.turnstile_site_key
           ? z.string()
@@ -77,13 +76,22 @@ export default function RegisterForm({
     },
   });
 
+  const turnstile = useRef<TurnstileRef>(null);
+  const handleSubmit = form.handleSubmit((data) => {
+    try {
+      onSubmit(data);
+    } catch (error) {
+      turnstile.current?.reset();
+    }
+  });
+
   return (
     <>
       {auth.register.stop_register ? (
         <Markdown>{t('message')}</Markdown>
       ) : (
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='grid gap-6'>
+          <form onSubmit={handleSubmit} className='grid gap-6'>
             <FormField
               control={form.control}
               name='email'
@@ -114,7 +122,12 @@ export default function RegisterForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder='Enter password again...' type='password' {...field} />
+                    <Input
+                      disabled={loading}
+                      placeholder='Enter password again...'
+                      type='password'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -129,6 +142,7 @@ export default function RegisterForm({
                     <FormControl>
                       <div className='flex items-center gap-2'>
                         <Input
+                          disabled={loading}
                           placeholder='Enter code...'
                           type='text'
                           {...field}
@@ -172,7 +186,7 @@ export default function RegisterForm({
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <CloudFlareTurnstile id='register' {...field} />
+                      <CloudFlareTurnstile id='register' {...field} ref={turnstile} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

@@ -48,8 +48,11 @@ export default function ResetForm({
 
   const turnstile = useRef<TurnstileRef>(null);
   const handleSubmit = form.handleSubmit((data) => {
-    onSubmit(data);
-    turnstile.current?.reset();
+    try {
+      onSubmit(data);
+    } catch (error) {
+      turnstile.current?.reset();
+    }
   });
 
   return (

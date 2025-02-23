@@ -5,11 +5,11 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from '@workspace/
 import { Input } from '@workspace/ui/components/input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import SendCode from '../send-code';
-import CloudFlareTurnstile from '../turnstile';
+import CloudFlareTurnstile, { TurnstileRef } from '../turnstile';
 
 export default function ResetForm({
   loading,
@@ -43,10 +43,19 @@ export default function ResetForm({
     defaultValues: initialValues,
   });
 
+  const turnstile = useRef<TurnstileRef>(null);
+  const handleSubmit = form.handleSubmit((data) => {
+    try {
+      onSubmit(data);
+    } catch (error) {
+      turnstile.current?.reset();
+    }
+  });
+
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='grid gap-6'>
+        <form onSubmit={handleSubmit} className='grid gap-6'>
           <FormField
             control={form.control}
             name='email'
@@ -67,6 +76,7 @@ export default function ResetForm({
                 <FormControl>
                   <div className='flex items-center gap-2'>
                     <Input
+                      disabled={loading}
                       placeholder='Enter code...'
                       type='text'
                       {...field}
@@ -91,7 +101,7 @@ export default function ResetForm({
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder='Enter your New password...' type='password' {...field} />
+                  <Input placeholder='Enter your new password...' type='password' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,7 +114,7 @@ export default function ResetForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <CloudFlareTurnstile id='reset' {...field} />
+                    <CloudFlareTurnstile id='reset' {...field} ref={turnstile} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
