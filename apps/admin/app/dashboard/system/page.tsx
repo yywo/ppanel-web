@@ -14,7 +14,7 @@ export default async function Page() {
         <TabsTrigger value='site'>{t('tabs.site')}</TabsTrigger>
         <TabsTrigger value='currency'>{t('tabs.currency')}</TabsTrigger>
         <TabsTrigger value='tos'>{t('tabs.tos')}</TabsTrigger>
-        <TabsTrigger value='privacy-policy'>{t('tabs.privacy-policy.title')}</TabsTrigger>
+        <TabsTrigger value='privacy-policy'>{t('privacy-policy.title')}</TabsTrigger>
       </TabsList>
       <TabsContent value='site'>
         <Site />
