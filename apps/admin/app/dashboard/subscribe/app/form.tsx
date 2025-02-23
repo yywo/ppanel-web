@@ -50,7 +50,7 @@ const defaultValues = {
 
 const versionSchema = z.object({
   url: z.string(),
-  version: z.string(),
+  version: z.string().optional(),
   description: z.string().optional(),
   is_default: z.boolean().optional(),
 });
@@ -221,6 +221,7 @@ export default function SubscribeAppForm<
                                     name: 'version',
                                     type: 'text',
                                     placeholder: t('version'),
+                                    defaultValue: '1.0.0',
                                   },
                                   {
                                     name: 'description',
@@ -251,7 +252,10 @@ export default function SubscribeAppForm<
                                 ]}
                                 value={field.value}
                                 onChange={(value) => {
-                                  form.setValue(field.name, value);
+                                  form.setValue(
+                                    field.name,
+                                    value.filter((item) => item.url),
+                                  );
                                 }}
                               />
                             </FormControl>

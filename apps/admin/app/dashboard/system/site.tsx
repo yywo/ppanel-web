@@ -122,7 +122,7 @@ export default function Site() {
           <TableCell className='text-right'>
             <Textarea
               className='h-52'
-              placeholder={t('siteDomainPlaceholder')}
+              placeholder={`${t('siteDomainPlaceholder')}\nexample.com\nwww.example.com`}
               defaultValue={data?.host}
               onBlur={(e) => {
                 updateConfig('host', e.target.value);
