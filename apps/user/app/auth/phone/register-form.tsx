@@ -7,11 +7,11 @@ import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import SendCode from '../send-code';
-import CloudFlareTurnstile from '../turnstile';
+import CloudFlareTurnstile, { TurnstileRef } from '../turnstile';
 
 export default function RegisterForm({
   loading,
@@ -63,13 +63,19 @@ export default function RegisterForm({
     },
   });
 
+  const turnstile = useRef<TurnstileRef>(null);
+  const handleSubmit = form.handleSubmit((data) => {
+    onSubmit(data);
+    turnstile.current?.reset();
+  });
+
   return (
     <>
       {auth.register.stop_register ? (
         <Markdown>{t('message')}</Markdown>
       ) : (
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className='grid gap-6'>
+          <form onSubmit={handleSubmit} className='grid gap-6'>
             <FormField
               control={form.control}
               name='telephone'
@@ -193,7 +199,7 @@ export default function RegisterForm({
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <CloudFlareTurnstile id='register' {...field} />
+                      <CloudFlareTurnstile id='register' {...field} ref={turnstile} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>

@@ -7,11 +7,11 @@ import { AreaCodeSelect } from '@workspace/ui/custom-components/area-code-select
 import { Icon } from '@workspace/ui/custom-components/icon';
 
 import { useTranslations } from 'next-intl';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import SendCode from '../send-code';
-import CloudFlareTurnstile from '../turnstile';
+import CloudFlareTurnstile, { TurnstileRef } from '../turnstile';
 
 export default function LoginForm({
   loading,
@@ -45,10 +45,16 @@ export default function LoginForm({
 
   const [mode, setMode] = useState<'password' | 'code'>('password');
 
+  const turnstile = useRef<TurnstileRef>(null);
+  const handleSubmit = form.handleSubmit((data) => {
+    onSubmit(data);
+    turnstile.current?.reset();
+  });
+
   return (
     <>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className='grid gap-6'>
+        <form onSubmit={handleSubmit} className='grid gap-6'>
           <FormField
             control={form.control}
             name='telephone'
@@ -138,7 +144,7 @@ export default function LoginForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <CloudFlareTurnstile id='login' {...field} />
+                    <CloudFlareTurnstile id='login' {...field} ref={turnstile} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
