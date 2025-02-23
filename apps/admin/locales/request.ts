@@ -10,7 +10,6 @@ export default getRequestConfig(async () => {
   const locale = cookieLocale || defaultLocale || NEXT_PUBLIC_DEFAULT_LANGUAGE;
 
   const messages = {
-    'language': (await import(`./${locale}/language.json`)).default,
     'menu': (await import(`./${locale}/menu.json`)).default,
     'auth': (await import(`./${locale}/auth.json`)).default,
     'common': (await import(`./${locale}/common.json`)).default,
