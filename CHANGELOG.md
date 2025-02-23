@@ -1,4 +1,21 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.21](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2025-02-23)
+
+
+### ✨ Features
+
+* **privacy-policy**: Add privacy policy related text and links ([baa68f0](https://github.com/perfect-panel/ppanel-web/commit/baa68f0))
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Removed multilingual files to clean up unnecessary language support ([5b151cd](https://github.com/perfect-panel/ppanel-web/commit/5b151cd))
+* **locales**: Update custom HTML description in language file, ([87381da](https://github.com/perfect-panel/ppanel-web/commit/87381da))
+* **table**: Update privacy policy tab translation key and remove unnecessary requestType from OAuth callback ([14b3af5](https://github.com/perfect-panel/ppanel-web/commit/14b3af5))
+
+<a name="readme-top"></a>
 
 # Changelog
 
