@@ -31,7 +31,7 @@ export default function RegisterForm({
 
   const handleCheckUser = async (email: string) => {
     try {
-      if (!auth.email.enable_verify) return true;
+      if (!auth.email.enable_domain_suffix) return true;
       const domain = email.split('@')[1];
       const isValid = auth.email?.domain_suffix_list.split('\n').includes(domain || '');
       return isValid;
