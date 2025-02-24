@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.23](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2025-02-24)
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Update email verification logic to use domain suffix check ([62662bb](https://github.com/perfect-panel/ppanel-web/commit/62662bb))
+
 # [1.0.0-beta.22](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2025-02-23)
 
 
