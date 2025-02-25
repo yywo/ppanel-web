@@ -50,28 +50,27 @@ type TutorialItem = {
   subItems?: TutorialItem[];
 };
 
+const processIcon = (item: TutorialItem) => {
+  if ("icon" in item && typeof item.icon === 'string' && !item.icon.startsWith('http')) {
+    item.icon = `${BASE_URL}/${item.icon}`;
+  }
+};
+
 export async function getTutorialList() {
-  return await getTutorial('SUMMARY.md').then(({ config, content }) => {
-    const navigation = config as Record<string, TutorialItem[]> | undefined;
-    let map = new Map<string, TutorialItem[]>();
-    if (navigation) {
-      for (const value of Object.values(navigation)) {
-        for (const item of value) {
-          if (item.subItems) {
-            for (const subItem of item.subItems) {
-              if ("icon" in subItem && typeof subItem.icon === 'string' && !subItem.icon.startsWith('http')) {
-                subItem.icon = `${BASE_URL}/${subItem.icon}`;
-              }
-            }
-          }
-        }
-      }
-      map = new Map(Object.entries(navigation));
-    } else {
-      map = parseTutorialToMap(content);
-    }
-    return map;
-  });
+  const { config, content } = await getTutorial('SUMMARY.md');
+  const navigation = config as Record<string, TutorialItem[]> | undefined;
+
+  if (!navigation) {
+    return parseTutorialToMap(content);
+  }
+
+  Object.values(navigation)
+    .flat()
+    .forEach(item => {
+      item.subItems?.forEach(processIcon);
+    });
+
+  return new Map(Object.entries(navigation));
 }
 
 function parseTutorialToMap(markdown: string): Map<string, TutorialItem[]> {
