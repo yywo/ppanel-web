@@ -43,7 +43,6 @@ const languages = {
 export default function LanguageSwitch() {
   const locale = useLocale();
   const country = getCountry(locale);
-  const t = useTranslations('language');
   const router = useRouter();
 
   const handleLanguageChange = (value: string) => {

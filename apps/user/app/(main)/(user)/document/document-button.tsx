@@ -11,6 +11,7 @@ import { formatDate } from '@workspace/ui/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { RefObject, useEffect, useId, useRef, useState } from 'react';
+import { CloseIcon } from './close-icon';
 
 export function DocumentButton({ items }: { items: API.Document[] }) {
   const t = useTranslations('document');
@@ -78,7 +79,7 @@ export function DocumentButton({ items }: { items: API.Document[] }) {
                   duration: 0.05,
                 },
               }}
-              className='bg-foreground absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full'
+              className='bg-foreground absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full text-white dark:text-black'
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -104,7 +105,7 @@ export function DocumentButton({ items }: { items: API.Document[] }) {
             <div className='flex flex-row items-center gap-4'>
               <motion.div layoutId={`image-${item.id}-${id}`}>
                 <Avatar className='size-12'>
-                  <AvatarFallback className='bg-primary'>{item.title.split('')[0]}</AvatarFallback>
+                  <AvatarFallback className='bg-primary/80 text-white'>{item.title.split('')[0]}</AvatarFallback>
                 </Avatar>
               </motion.div>
               <div className=''>
@@ -136,36 +137,3 @@ export function DocumentButton({ items }: { items: API.Document[] }) {
     </>
   );
 }
-
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      className='h-4 w-4 text-black'
-    >
-      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-      <path d='M18 6l-12 12' />
-      <path d='M6 6l12 12' />
-    </motion.svg>
-  );
-};

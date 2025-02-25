@@ -1,6 +1,9 @@
+import matter from 'gray-matter';
+
 const BASE_URL = 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-tutorial';
 
 async function getVersion() {
+  // API rate limit: 60 requests per hour
   const response = await fetch(
     'https://api.github.com/repos/perfect-panel/ppanel-tutorial/commits',
   );
@@ -8,17 +11,33 @@ async function getVersion() {
   return json[0].sha;
 }
 
-export async function getTutorial(path: string): Promise<string> {
-  const version = await getVersion();
+async function getVersionPath() {
+  return getVersion()
+    .then(version => `${BASE_URL}@${version}`)
+    .catch(error => {
+      console.warn('Error fetching the version:', error);
+      return BASE_URL;
+    });
+}
+
+export async function getTutorial(path: string): Promise<{
+  config?: Record<string, unknown>;
+  content: string;
+}> {
+  const versionPath = await getVersionPath();
   try {
-    const url = `${BASE_URL}@${version}/${path}`;
+    const url = `${versionPath}/${path}`;
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const text = await response.text();
-    const markdown = addPrefixToImageUrls(text, getUrlPrefix(url));
-    return markdown;
+    const { data, content } = matter(text);
+    const markdown = addPrefixToImageUrls(content, getUrlPrefix(url));
+    return {
+      config: data,
+      content: markdown,
+    };
   } catch (error) {
     console.error('Error fetching the markdown file:', error);
     throw error;
@@ -31,17 +50,27 @@ type TutorialItem = {
   subItems?: TutorialItem[];
 };
 
+const processIcon = (item: TutorialItem) => {
+  if ("icon" in item && typeof item.icon === 'string' && !item.icon.startsWith('http')) {
+    item.icon = `${BASE_URL}/${item.icon}`;
+  }
+};
+
 export async function getTutorialList() {
-  return await getTutorial('SUMMARY.md').then((markdown) => {
-    const map = parseTutorialToMap(markdown);
-    map.forEach((value, key) => {
-      map.set(
-        key,
-        value.filter((item) => item.title !== 'README'),
-      );
+  const { config, content } = await getTutorial('SUMMARY.md');
+  const navigation = config as Record<string, TutorialItem[]> | undefined;
+
+  if (!navigation) {
+    return parseTutorialToMap(content);
+  }
+
+  Object.values(navigation)
+    .flat()
+    .forEach(item => {
+      item.subItems?.forEach(processIcon);
     });
-    return map;
-  });
+
+  return new Map(Object.entries(navigation));
 }
 
 function parseTutorialToMap(markdown: string): Map<string, TutorialItem[]> {
