@@ -2,7 +2,7 @@
 
 import { getTutorial } from '@/utils/tutorial';
 import { useQuery } from '@tanstack/react-query';
-import { Avatar, AvatarFallback } from '@workspace/ui/components/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@workspace/ui/components/avatar';
 import { buttonVariants } from '@workspace/ui/components/button';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { useOutsideClick } from '@workspace/ui/hooks/use-outside-click';
@@ -10,10 +10,14 @@ import { cn } from '@workspace/ui/lib/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { RefObject, useEffect, useId, useRef, useState } from 'react';
+import { CloseIcon } from './close-icon';
+import { formatDate } from '@workspace/ui/utils';
 
 interface Item {
   path: string;
   title: string;
+  updated_at?: string;
+  icon?: string;
 }
 export function TutorialButton({ items }: { items: Item[] }) {
   const t = useTranslations('document');
@@ -80,7 +84,7 @@ export function TutorialButton({ items }: { items: Item[] }) {
                   duration: 0.05,
                 },
               }}
-              className='bg-foreground absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full'
+              className='bg-foreground absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full text-white dark:text-black'
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -105,7 +109,7 @@ export function TutorialButton({ items }: { items: Item[] }) {
                   },
                 }}
               >
-                {data || ''}
+                {data?.content || ''}
               </Markdown>
             </motion.div>
           </div>
@@ -122,19 +126,22 @@ export function TutorialButton({ items }: { items: Item[] }) {
             <div className='flex flex-row items-center gap-4'>
               <motion.div layoutId={`image-${item.title}-${id}`}>
                 <Avatar className='size-12'>
-                  <AvatarFallback className='bg-primary'>{item.title.split('')[0]}</AvatarFallback>
+                  <AvatarImage alt={item.title ?? ''} src={item.icon ?? ''} />
+                  <AvatarFallback className='bg-primary/80 text-white'>{item.title.split('')[0]}</AvatarFallback>
                 </Avatar>
               </motion.div>
               <div className=''>
                 <motion.h3 layoutId={`title-${item.title}-${id}`} className='font-medium'>
                   {item.title}
                 </motion.h3>
-                {/* <motion.p
-                  layoutId={`description-${item.title}-${id}`}
-                  className='text-center text-neutral-600 md:text-left dark:text-neutral-400'
-                >
-                  {formatDate(item.updated_at)}
-                </motion.p> */}
+                {item.updated_at && (
+                  <motion.p
+                    layoutId={`description-${item.title}-${id}`}
+                    className='text-center text-neutral-600 md:text-left dark:text-neutral-400'
+                  >
+                    {formatDate(new Date(item.updated_at), false)}
+                  </motion.p>
+                )}
               </div>
             </div>
             <motion.button
@@ -154,36 +161,3 @@ export function TutorialButton({ items }: { items: Item[] }) {
     </>
   );
 }
-
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-      className='h-4 w-4 text-black'
-    >
-      <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-      <path d='M18 6l-12 12' />
-      <path d='M6 6l12 12' />
-    </motion.svg>
-  );
-};
