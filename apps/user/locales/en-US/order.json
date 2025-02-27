@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Balance Recharge",
   "cancel": "Cancel",
   "createdAt": "Created At",
   "detail": "Detail",
@@ -20,6 +21,9 @@
   "paymentMethod": "Payment Method",
   "paymentSuccess": "Payment Success",
   "productList": "Product List",
+  "rechargeAmount": "Recharge Amount",
+  "resetPrice": "Reset Price",
+  "resetTraffic": "Reset Traffic",
   "scanToPay": "Scan to Pay",
   "status": {
     "0": "Status",

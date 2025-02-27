@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Guthabenaufladung",
   "cancel": "Abbrechen",
   "createdAt": "Erstellungszeitpunkt",
   "detail": "Einzelheiten",
@@ -20,6 +21,9 @@
   "paymentMethod": "Zahlungsmethode",
   "paymentSuccess": "Zahlung erfolgreich",
   "productList": "Produktliste",
+  "rechargeAmount": "Aufladebetrag",
+  "resetPrice": "Preis zurücksetzen",
+  "resetTraffic": "Verkehr zurücksetzen",
   "scanToPay": "Bitte scannen Sie zum Bezahlen",
   "status": {
     "0": "Status",

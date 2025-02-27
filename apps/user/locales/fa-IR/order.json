@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "شارژ موجودی",
   "cancel": "لغو",
   "createdAt": "ایجاد شده در",
   "detail": "جزئیات",
@@ -20,6 +21,9 @@
   "paymentMethod": "روش پرداخت",
   "paymentSuccess": "پرداخت موفق",
   "productList": "فهرست محصولات",
+  "rechargeAmount": "مقدار شارژ",
+  "resetPrice": "تنظیم مجدد قیمت",
+  "resetTraffic": "تنظیم مجدد ترافیک",
   "scanToPay": "اسکن برای پرداخت",
   "status": {
     "0": "وضعیت",

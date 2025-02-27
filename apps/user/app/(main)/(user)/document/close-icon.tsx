@@ -1,5 +1,5 @@
-import { cn } from "@workspace/ui/lib/utils";
-import { motion } from "framer-motion";
+import { cn } from '@workspace/ui/lib/utils';
+import { motion } from 'framer-motion';
 
 export const CloseIcon = ({ className }: { className?: string }) => {
   return (

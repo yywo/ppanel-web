@@ -7,11 +7,11 @@ import { buttonVariants } from '@workspace/ui/components/button';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
 import { useOutsideClick } from '@workspace/ui/hooks/use-outside-click';
 import { cn } from '@workspace/ui/lib/utils';
+import { formatDate } from '@workspace/ui/utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { RefObject, useEffect, useId, useRef, useState } from 'react';
 import { CloseIcon } from './close-icon';
-import { formatDate } from '@workspace/ui/utils';
 
 interface Item {
   path: string;
@@ -127,7 +127,9 @@ export function TutorialButton({ items }: { items: Item[] }) {
               <motion.div layoutId={`image-${item.title}-${id}`}>
                 <Avatar className='size-12'>
                   <AvatarImage alt={item.title ?? ''} src={item.icon ?? ''} />
-                  <AvatarFallback className='bg-primary/80 text-white'>{item.title.split('')[0]}</AvatarFallback>
+                  <AvatarFallback className='bg-primary/80 text-white'>
+                    {item.title.split('')[0]}
+                  </AvatarFallback>
                 </Avatar>
               </motion.div>
               <div className=''>

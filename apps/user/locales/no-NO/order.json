@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Balansopplading",
   "cancel": "Avbryt",
   "createdAt": "Opprettet",
   "detail": "Detaljer",
@@ -20,6 +21,9 @@
   "paymentMethod": "Betalingsmetode",
   "paymentSuccess": "Betaling vellykket",
   "productList": "Produktliste",
+  "rechargeAmount": "Oppladingsbeløp",
+  "resetPrice": "Tilbakestill pris",
+  "resetTraffic": "Tilbakestill trafikk",
   "scanToPay": "Vennligst skann for å betale",
   "status": {
     "0": "Status",

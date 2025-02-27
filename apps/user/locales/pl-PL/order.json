@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Doładowanie balansu",
   "cancel": "Anuluj",
   "createdAt": "Czas utworzenia",
   "detail": "Szczegóły",
@@ -20,6 +21,9 @@
   "paymentMethod": "Metoda płatności",
   "paymentSuccess": "Płatność zakończona sukcesem",
   "productList": "Lista produktów",
+  "rechargeAmount": "Kwota doładowania",
+  "resetPrice": "Resetuj cenę",
+  "resetTraffic": "Resetuj ruch",
   "scanToPay": "Zeskanuj kod, aby zapłacić",
   "status": {
     "0": "Status",

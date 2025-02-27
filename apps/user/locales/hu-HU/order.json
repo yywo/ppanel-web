@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Egyenleg Feltöltés",
   "cancel": "Mégse",
   "createdAt": "Létrehozás ideje",
   "detail": "Részletek",
@@ -20,6 +21,9 @@
   "paymentMethod": "Fizetési mód",
   "paymentSuccess": "Fizetés sikeres",
   "productList": "Terméklista",
+  "rechargeAmount": "Feltöltési Összeg",
+  "resetPrice": "Ár Visszaállítása",
+  "resetTraffic": "Forgalom Visszaállítása",
   "scanToPay": "Kérjük, olvassa be a kódot a fizetéshez",
   "status": {
     "0": "Állapot",

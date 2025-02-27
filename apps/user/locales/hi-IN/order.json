@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "बैलेंस रिचार्ज",
   "cancel": "रद्द करें",
   "createdAt": "निर्माण समय",
   "detail": "विवरण",
@@ -20,6 +21,9 @@
   "paymentMethod": "भुगतान विधि",
   "paymentSuccess": "भुगतान सफल",
   "productList": "उत्पाद सूची",
+  "rechargeAmount": "रिचार्ज राशि",
+  "resetPrice": "रीसेट मूल्य",
+  "resetTraffic": "रीसेट ट्रैफिक",
   "scanToPay": "कृपया स्कैन करके भुगतान करें",
   "status": {
     "0": "स्थिति",

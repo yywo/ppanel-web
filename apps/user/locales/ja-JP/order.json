@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "残高のチャージ",
   "cancel": "キャンセル",
   "createdAt": "作成日時",
   "detail": "詳細",
@@ -20,6 +21,9 @@
   "paymentMethod": "支払い方法",
   "paymentSuccess": "支払い成功",
   "productList": "製品リスト",
+  "rechargeAmount": "チャージ金額",
+  "resetPrice": "価格のリセット",
+  "resetTraffic": "トラフィックのリセット",
   "scanToPay": "スキャンしてお支払いください",
   "status": {
     "0": "状態",

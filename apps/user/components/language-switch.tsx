@@ -11,7 +11,7 @@ import {
 } from '@workspace/ui/components/select';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { getCountry } from '@workspace/ui/utils';
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
 const languages = {

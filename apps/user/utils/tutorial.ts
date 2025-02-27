@@ -13,8 +13,8 @@ async function getVersion() {
 
 async function getVersionPath() {
   return getVersion()
-    .then(version => `${BASE_URL}@${version}`)
-    .catch(error => {
+    .then((version) => `${BASE_URL}@${version}`)
+    .catch((error) => {
       console.warn('Error fetching the version:', error);
       return BASE_URL;
     });
@@ -51,7 +51,7 @@ type TutorialItem = {
 };
 
 const processIcon = (item: TutorialItem) => {
-  if ("icon" in item && typeof item.icon === 'string' && !item.icon.startsWith('http')) {
+  if ('icon' in item && typeof item.icon === 'string' && !item.icon.startsWith('http')) {
     item.icon = `${BASE_URL}/${item.icon}`;
   }
 };
@@ -66,7 +66,7 @@ export async function getTutorialList() {
 
   Object.values(navigation)
     .flat()
-    .forEach(item => {
+    .forEach((item) => {
       item.subItems?.forEach(processIcon);
     });
 

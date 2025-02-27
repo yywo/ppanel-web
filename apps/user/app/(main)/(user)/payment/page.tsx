@@ -115,10 +115,12 @@ export default function Page() {
           )}
           {data?.type === 3 && (
             <>
-              <div className='font-semibold'>重置流量</div>
+              <div className='font-semibold'>{t('resetTraffic')}</div>
               <ul className='grid grid-cols-2 gap-3 *:flex *:items-center *:justify-between lg:grid-cols-1'>
                 <li className='flex items-center justify-between'>
-                  <span className='text-muted-foreground line-clamp-2 flex-1'>重置价格</span>
+                  <span className='text-muted-foreground line-clamp-2 flex-1'>
+                    {t('resetPrice')}
+                  </span>
                   <span>
                     <Display type='currency' value={data.amount} />
                   </span>

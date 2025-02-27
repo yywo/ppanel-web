@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Nạp Tiền Vào Tài Khoản",
   "cancel": "Hủy",
   "createdAt": "Thời gian tạo",
   "detail": "Chi tiết",
@@ -20,6 +21,9 @@
   "paymentMethod": "Phương Thức Thanh Toán",
   "paymentSuccess": "Thanh toán thành công",
   "productList": "Danh sách sản phẩm",
+  "rechargeAmount": "Số Tiền Nạp",
+  "resetPrice": "Đặt Lại Giá",
+  "resetTraffic": "Đặt Lại Lưu Lượng",
   "scanToPay": "Vui lòng quét mã để thanh toán",
   "status": {
     "0": "Trạng thái",

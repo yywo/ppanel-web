@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "餘額充值",
   "cancel": "取消",
   "createdAt": "建立時間",
   "detail": "詳情",
@@ -20,6 +21,9 @@
   "paymentMethod": "付款方式",
   "paymentSuccess": "付款成功",
   "productList": "產品列表",
+  "rechargeAmount": "充值金額",
+  "resetPrice": "重置價格",
+  "resetTraffic": "重置流量",
   "scanToPay": "請掃碼支付",
   "status": {
     "0": "狀態",

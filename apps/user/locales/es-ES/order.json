@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Recarga de saldo",
   "cancel": "Cancelar",
   "createdAt": "Fecha de creación",
   "detail": "Detalles",
@@ -20,6 +21,9 @@
   "paymentMethod": "Método de Pago",
   "paymentSuccess": "Pago exitoso",
   "productList": "Lista de productos",
+  "rechargeAmount": "Cantidad de recarga",
+  "resetPrice": "Restablecer precio",
+  "resetTraffic": "Restablecer tráfico",
   "scanToPay": "Por favor, escanee para pagar",
   "status": {
     "0": "estado",

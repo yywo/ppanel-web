@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Bakiye Yenileme",
   "cancel": "İptal",
   "createdAt": "Oluşturulma Zamanı",
   "detail": "Detaylar",
@@ -20,6 +21,9 @@
   "paymentMethod": "Ödeme Yöntemi",
   "paymentSuccess": "Ödeme Başarılı",
   "productList": "Ürün Listesi",
+  "rechargeAmount": "Yenileme Tutarı",
+  "resetPrice": "Fiyatı Sıfırla",
+  "resetTraffic": "Trafiği Sıfırla",
   "scanToPay": "Lütfen tarayıcı ile ödeme yapın",
   "status": {
     "0": "Durum",

@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Поповнення балансу",
   "cancel": "Скасувати",
   "createdAt": "Час створення",
   "detail": "Деталі",
@@ -20,6 +21,9 @@
   "paymentMethod": "Спосіб оплати",
   "paymentSuccess": "Оплата успішна",
   "productList": "Список продуктів",
+  "rechargeAmount": "Сума поповнення",
+  "resetPrice": "Скинути ціну",
+  "resetTraffic": "Скинути трафік",
   "scanToPay": "Будь ласка, відскануйте для оплати",
   "status": {
     "0": "Статус",

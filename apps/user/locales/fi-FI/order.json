@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Saldo Lataus",
   "cancel": "Peruuta",
   "createdAt": "Luontiaika",
   "detail": "Yksityiskohdat",
@@ -20,6 +21,9 @@
   "paymentMethod": "Maksutapa",
   "paymentSuccess": "Maksu onnistui",
   "productList": "Tuotelista",
+  "rechargeAmount": "Latausmäärä",
+  "resetPrice": "Nollaa Hinta",
+  "resetTraffic": "Nollaa Liikenne",
   "scanToPay": "Ole hyvä ja skannaa maksaaksesi",
   "status": {
     "0": "Tila",

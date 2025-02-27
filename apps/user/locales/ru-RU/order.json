@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Пополнение баланса",
   "cancel": "Отмена",
   "createdAt": "Время создания",
   "detail": "Подробности",
@@ -20,6 +21,9 @@
   "paymentMethod": "Способ оплаты",
   "paymentSuccess": "Оплата успешно завершена",
   "productList": "Список продуктов",
+  "rechargeAmount": "Сумма пополнения",
+  "resetPrice": "Сброс цены",
+  "resetTraffic": "Сброс трафика",
   "scanToPay": "Пожалуйста, отсканируйте для оплаты",
   "status": {
     "0": "Статус",

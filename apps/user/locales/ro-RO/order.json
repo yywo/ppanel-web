@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Reîncărcare Sold",
   "cancel": "Anulare",
   "createdAt": "Data creării",
   "detail": "Detalii",
@@ -20,6 +21,9 @@
   "paymentMethod": "Metodă de plată",
   "paymentSuccess": "Plata a fost efectuată cu succes",
   "productList": "Listă de produse",
+  "rechargeAmount": "Sumă de Reîncărcare",
+  "resetPrice": "Resetare Preț",
+  "resetTraffic": "Resetare Trafic",
   "scanToPay": "Vă rugăm să scanați pentru a plăti",
   "status": {
     "0": "stare",

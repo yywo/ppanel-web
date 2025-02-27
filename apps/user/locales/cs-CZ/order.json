@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "Dobití kreditu",
   "cancel": "Zrušit",
   "createdAt": "Datum vytvoření",
   "detail": "Detail",
@@ -20,6 +21,9 @@
   "paymentMethod": "Platební metoda",
   "paymentSuccess": "Platba úspěšná",
   "productList": "Seznam produktů",
+  "rechargeAmount": "Částka dobíjení",
+  "resetPrice": "Obnovit cenu",
+  "resetTraffic": "Obnovit provoz",
   "scanToPay": "Prosím, naskenujte kód pro platbu",
   "status": {
     "0": "Stav",

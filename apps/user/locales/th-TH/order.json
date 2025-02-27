@@ -1,4 +1,5 @@
 {
+  "balanceRecharge": "เติมเงินยอดคงเหลือ",
   "cancel": "ยกเลิก",
   "createdAt": "เวลาที่สร้าง",
   "detail": "รายละเอียด",
@@ -20,6 +21,9 @@
   "paymentMethod": "วิธีการชำระเงิน",
   "paymentSuccess": "ชำระเงินสำเร็จ",
   "productList": "รายการสินค้า",
+  "rechargeAmount": "จำนวนเงินที่เติม",
+  "resetPrice": "รีเซ็ตราคา",
+  "resetTraffic": "รีเซ็ตการใช้งาน",
   "scanToPay": "กรุณาสแกนเพื่อชำระเงิน",
   "status": {
     "0": "สถานะ",
