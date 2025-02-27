@@ -1,4 +1,30 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.24](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2025-02-27)
+
+
+### ♻ Code Refactoring
+
+* **ui**: Optimize document display ([2ca2992](https://github.com/perfect-panel/ppanel-web/commit/2ca2992))
+* Reduce code complexity and improve readability ([e11f18c](https://github.com/perfect-panel/ppanel-web/commit/e11f18c))
+
+
+### ✨ Features
+
+* **loading**: Add loading components and integrate them in Providers ([d5847fa](https://github.com/perfect-panel/ppanel-web/commit/d5847fa))
+
+
+### 🎫 Chores
+
+* **merge**: Add advertising module and device settings ([0130e02](https://github.com/perfect-panel/ppanel-web/commit/0130e02))
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Order recharge related fields ([35210fe](https://github.com/perfect-panel/ppanel-web/commit/35210fe))
+
+<a name="readme-top"></a>
 
 # Changelog
 
