@@ -1,33 +1,30 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.23](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.22...v1.0.0-beta.23) (2025-02-24)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Update email verification logic to use domain suffix check ([62662bb](https://github.com/perfect-panel/ppanel-web/commit/62662bb))
+- **auth**: Update email verification logic to use domain suffix check ([62662bb](https://github.com/perfect-panel/ppanel-web/commit/62662bb))
 
 # [1.0.0-beta.22](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.21...v1.0.0-beta.22) (2025-02-23)
 
-
 ### 🐛 Bug Fixes
 
-* **locales**: Removed language file import to clean up unnecessary language support ([68f6ab2](https://github.com/perfect-panel/ppanel-web/commit/68f6ab2))
+- **locales**: Removed language file import to clean up unnecessary language support ([68f6ab2](https://github.com/perfect-panel/ppanel-web/commit/68f6ab2))
 
 # [1.0.0-beta.21](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2025-02-23)
 
-
 ### ✨ Features
 
-* **privacy-policy**: Add privacy policy related text and links ([baa68f0](https://github.com/perfect-panel/ppanel-web/commit/baa68f0))
-
+- **privacy-policy**: Add privacy policy related text and links ([baa68f0](https://github.com/perfect-panel/ppanel-web/commit/baa68f0))
 
 ### 🐛 Bug Fixes
 
-* **locales**: Removed multilingual files to clean up unnecessary language support ([5b151cd](https://github.com/perfect-panel/ppanel-web/commit/5b151cd))
-* **locales**: Update custom HTML description in language file, ([87381da](https://github.com/perfect-panel/ppanel-web/commit/87381da))
-* **table**: Update privacy policy tab translation key and remove unnecessary requestType from OAuth callback ([14b3af5](https://github.com/perfect-panel/ppanel-web/commit/14b3af5))
+- **locales**: Removed multilingual files to clean up unnecessary language support ([5b151cd](https://github.com/perfect-panel/ppanel-web/commit/5b151cd))
+- **locales**: Update custom HTML description in language file, ([87381da](https://github.com/perfect-panel/ppanel-web/commit/87381da))
+- **table**: Update privacy policy tab translation key and remove unnecessary requestType from OAuth callback ([14b3af5](https://github.com/perfect-panel/ppanel-web/commit/14b3af5))
 
 <a name="readme-top"></a>
 

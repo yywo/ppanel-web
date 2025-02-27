@@ -1,4 +1,18 @@
 declare namespace API {
+  type Ads = {
+    id: number;
+    title: string;
+    type: string;
+    content: string;
+    description: string;
+    target_url: string;
+    start_time: number;
+    end_time: number;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type Announcement = {
     id: number;
     title: string;

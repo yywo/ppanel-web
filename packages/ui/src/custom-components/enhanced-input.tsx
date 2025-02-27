@@ -97,7 +97,7 @@ export function EnhancedInput({
       <Input
         {...props}
         value={value}
-        className='rounded-none border-none'
+        className='block rounded-none border-none'
         onChange={handleChange}
         onBlur={handleBlur}
       />

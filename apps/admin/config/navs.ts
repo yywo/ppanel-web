@@ -62,6 +62,11 @@ export const navs = [
         items: AuthControl,
       },
       {
+        title: 'ADS Config',
+        url: '/dashboard/ads',
+        icon: 'flat-color-icons:electrical-sensor',
+      },
+      {
         title: 'Payment Config',
         url: '/dashboard/payment',
         icon: 'flat-color-icons:currency-exchange',
@@ -115,7 +120,7 @@ export const navs = [
       {
         title: 'Announcement Management',
         url: '/dashboard/announcement',
-        icon: 'flat-color-icons:news',
+        icon: 'flat-color-icons:advertising',
       },
       {
         title: 'Ticket Management',

@@ -23,6 +23,7 @@ export default getRequestConfig(async () => {
     'facebook': (await import(`./${locale}/facebook.json`)).default,
     'github': (await import(`./${locale}/github.json`)).default,
     'device': (await import(`./${locale}/device.json`)).default,
+    'ads': (await import(`./${locale}/ads.json`)).default,
     'payment': (await import(`./${locale}/payment.json`)).default,
     'server': (await import(`./${locale}/server.json`)).default,
     'subscribe': (await import(`./${locale}/subscribe.json`)).default,

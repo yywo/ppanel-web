@@ -1,4 +1,18 @@
 declare namespace API {
+  type Ads = {
+    id: number;
+    title: string;
+    type: string;
+    content: string;
+    description: string;
+    target_url: string;
+    start_time: number;
+    end_time: number;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type Announcement = {
     id: number;
     title: string;
@@ -76,6 +90,17 @@ declare namespace API {
     enabled: boolean;
   };
 
+  type CheckoutOrderRequest = {
+    orderNo: string;
+    returnUrl?: string;
+  };
+
+  type CheckoutOrderResponse = {
+    type: string;
+    checkout_url?: string;
+    stripe?: StripePayment;
+  };
+
   type CheckUserParams = {
     email: string;
   };
@@ -90,6 +115,10 @@ declare namespace API {
 
   type CheckUserTelephoneParams = {
     telephone: string;
+  };
+
+  type CloseOrderRequest = {
+    orderNo: string;
   };
 
   type Coupon = {
@@ -143,6 +172,10 @@ declare namespace API {
   type GetAppcationResponse = {
     config: ApplicationConfig;
     applications: ApplicationResponseInfo[];
+  };
+
+  type GetAvailablePaymentMethodsResponse = {
+    list: PaymentConfig[];
   };
 
   type GetGlobalConfigResponse = {
@@ -309,6 +342,20 @@ declare namespace API {
     enable: boolean;
   };
 
+  type PreOrderResponse = {
+    price: number;
+    amount: number;
+    discount: number;
+    gift_amount: number;
+    coupon: string;
+    coupon_discount: number;
+    fee_amount: number;
+  };
+
+  type PreRenewalOrderResponse = {
+    orderNo: string;
+  };
+
   type PrivacyPolicyConfig = {
     privacy_policy: string;
   };
@@ -324,6 +371,61 @@ declare namespace API {
     verify_code_interval: number;
   };
 
+  type PurchaseOrderRequest = {
+    subscribe_id: number;
+    quantity: number;
+    payment: string;
+    coupon?: string;
+  };
+
+  type PurchaseOrderResponse = {
+    order_no: string;
+  };
+
+  type QueryAnnouncementRequest = {
+    page: number;
+    size: number;
+    pinned: boolean;
+    popup: boolean;
+  };
+
+  type QueryAnnouncementResponse = {
+    total: number;
+    announcements: Announcement[];
+  };
+
+  type QueryDocumentDetailRequest = {
+    id: number;
+  };
+
+  type QueryDocumentListResponse = {
+    total: number;
+    list: Document[];
+  };
+
+  type QueryOrderDetailRequest = {
+    order_no: string;
+  };
+
+  type QueryOrderListRequest = {
+    page: number;
+    size: number;
+  };
+
+  type QueryOrderListResponse = {
+    total: number;
+    list: OrderDetail[];
+  };
+
+  type RechargeOrderRequest = {
+    amount: number;
+    payment: string;
+  };
+
+  type RechargeOrderResponse = {
+    order_no: string;
+  };
+
   type RegisterConfig = {
     stop_register: boolean;
     enable_trial: boolean;
@@ -335,11 +437,31 @@ declare namespace API {
     ip_register_limit_duration: number;
   };
 
+  type RenewalOrderRequest = {
+    user_subscribe_id: number;
+    quantity: number;
+    payment: string;
+    coupon?: string;
+  };
+
+  type RenewalOrderResponse = {
+    order_no: string;
+  };
+
   type ResetPasswordRequest = {
     email: string;
     password: string;
     code?: string;
     cf_token?: string;
+  };
+
+  type ResetTrafficOrderRequest = {
+    user_subscribe_id: number;
+    payment: string;
+  };
+
+  type ResetTrafficOrderResponse = {
+    order_no: string;
   };
 
   type Response = {
@@ -442,6 +564,12 @@ declare namespace API {
   type SortItem = {
     id: number;
     sort: number;
+  };
+
+  type StripePayment = {
+    method: string;
+    client_secret: string;
+    publishable_key: string;
   };
 
   type Subscribe = {
