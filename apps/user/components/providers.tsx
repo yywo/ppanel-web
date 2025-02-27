@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryStreamedHydration } from '@tanstack/react-query-next-experimental';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import React, { useEffect, useState } from 'react';
+import Loading from './loading';
 
 export default function Providers({
   children,
@@ -16,6 +17,7 @@ export default function Providers({
   common: Partial<GlobalStore['common']>;
   user: GlobalStore['user'];
 }) {
+  const [loading, setLoading] = useState(true);
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -31,16 +33,23 @@ export default function Providers({
   const { setCommon, setUser } = useGlobalStore();
 
   useEffect(() => {
-    if (user) {
-      setUser(user);
-    } else {
-      Logout();
-    }
-  }, [setUser, user]);
+    const initializeData = async () => {
+      try {
+        if (user) {
+          setUser(user);
+        } else {
+          Logout();
+        }
+        setCommon(common);
+      } finally {
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }
+    };
 
-  useEffect(() => {
-    setCommon(common);
-  }, [setCommon, common]);
+    initializeData();
+  }, [setUser, setCommon, user, common]);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
@@ -53,7 +62,10 @@ export default function Providers({
   return (
     <NextThemesProvider attribute='class' defaultTheme='system' enableSystem>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryStreamedHydration>{children}</ReactQueryStreamedHydration>
+        <ReactQueryStreamedHydration>
+          <Loading loading={loading || queryClient.isMutating() > 0} />
+          {children}
+        </ReactQueryStreamedHydration>
       </QueryClientProvider>
     </NextThemesProvider>
   );
