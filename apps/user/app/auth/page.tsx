@@ -133,8 +133,10 @@ export default function Page() {
                   <LanguageSwitch />
                   <ThemeSwitch />
                 </div>
-                <div className='text-primary flex gap-5 text-sm font-semibold'>
+                <div className='text-primary flex gap-2 text-sm font-semibold'>
                   <Link href='/tos'>{t('tos')}</Link>
+                  <span className='text-foreground/30'>|</span>
+                  <Link href='/privacy-policy'>{t('privacyPolicy')}</Link>
                 </div>
               </div>
             </div>
