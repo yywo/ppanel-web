@@ -1,6 +1,20 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.25](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2025-03-01)
+
+
+### ✨ Features
+
+* **auth**: Add privacy policy link to the footer ([8e16ef1](https://github.com/perfect-panel/ppanel-web/commit/8e16ef1))
+
+
+### 🐛 Bug Fixes
+
+* **dashboard**: Display subscription creation date in user dashboard ([d0e6df0](https://github.com/perfect-panel/ppanel-web/commit/d0e6df0))
+* **request**: Add error code 40005 to trigger logout ([71bf002](https://github.com/perfect-panel/ppanel-web/commit/71bf002))
+* **subscribe**: Update payment return URL ([2b80496](https://github.com/perfect-panel/ppanel-web/commit/2b80496))
+
 # [1.0.0-beta.24](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2025-02-27)
 
 
