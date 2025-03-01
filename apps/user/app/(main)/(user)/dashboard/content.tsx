@@ -32,7 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/componen
 import { Separator } from '@workspace/ui/components/separator';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Icon } from '@workspace/ui/custom-components/icon';
-import { isBrowser } from '@workspace/ui/utils';
+import { formatDate, isBrowser } from '@workspace/ui/utils';
 import { differenceInDays } from 'date-fns';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -142,7 +142,12 @@ export default function Content() {
           {userSubscribe.map((item) => (
             <Card key={item.id}>
               <CardHeader className='flex flex-row flex-wrap items-center justify-between gap-2 space-y-0'>
-                <CardTitle className='font-medium'>{item.subscribe.name}</CardTitle>
+                <CardTitle className='font-medium'>
+                  {item.subscribe.name}
+                  <p className='text-foreground/50 mt-1 text-sm'>
+                    {formatDate(item.subscribe.created_at)}
+                  </p>
+                </CardTitle>
                 <div className='flex flex-wrap gap-2'>
                   <AlertDialog>
                     <AlertDialogTrigger asChild>
