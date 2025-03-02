@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.26](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2025-03-02)
+
+
+### 🐛 Bug Fixes
+
+* **icon**: Comment out unused icon collection imports ([f17bf8d](https://github.com/perfect-panel/ppanel-web/commit/f17bf8d))
+
 # [1.0.0-beta.25](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2025-03-01)
 
 
