@@ -3,7 +3,6 @@
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { resetTraffic } from '@/services/user/order';
-import { purchaseCheckout } from '@/services/user/portal';
 import { Button } from '@workspace/ui/components/button';
 import {
   Dialog,
@@ -85,15 +84,6 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
                   const response = await resetTraffic(params);
                   const orderNo = response.data.data?.order_no;
                   if (orderNo) {
-                    const { data } = await purchaseCheckout({
-                      orderNo,
-                      returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
-                    });
-                    const type = data.data?.type;
-                    const checkout_url = data.data?.checkout_url;
-                    if (type === 'link') {
-                      window.location.href = checkout_url!;
-                    }
                     getUserInfo();
                     router.push(`/payment?order_no=${orderNo}`);
                   }

@@ -49,12 +49,15 @@ export default function Page() {
 
   const { data: payment } = useQuery({
     enabled: !!orderNo && data?.status === 1,
-    queryKey: ['checkoutOrder', orderNo],
+    queryKey: ['purchaseCheckout', orderNo],
     queryFn: async () => {
       const { data } = await purchaseCheckout({
         orderNo: orderNo!,
         returnUrl: window.location.href,
       });
+      if (data.data?.type === 'link' && data.data.checkout_url) {
+        window.location.href = data.data.checkout_url;
+      }
       return data?.data;
     },
   });
