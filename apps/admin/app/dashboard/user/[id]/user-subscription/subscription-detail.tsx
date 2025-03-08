@@ -57,150 +57,154 @@ export function SubscriptionDetail({
                 {t('onlineDevices')}
               </TabsTrigger>
             </TabsList>
-            <TabsContent value='logs'>
-              <ProTable<API.UserSubscribeLog, Record<string, unknown>>
-                columns={[
-                  {
-                    accessorKey: 'ip',
-                    header: 'IP',
-                  },
-                  {
-                    accessorKey: 'user_agent',
-                    header: t('userAgent'),
-                  },
-                  {
-                    accessorKey: 'token',
-                    header: t('token'),
-                  },
-                  {
-                    accessorKey: 'created_at',
-                    header: t('time'),
-                    cell: ({ row }) => formatDate(row.getValue('created_at')),
-                  },
-                ]}
-                request={async (pagination) => {
-                  const { data } = await getUserSubscribeLogs({
-                    user_id: userId,
-                    subscribe_id: subscriptionId,
-                    ...pagination,
-                  });
-                  return {
-                    list: data.data?.list || [],
-                    total: data.data?.total || 0,
-                  };
-                }}
-              />
-            </TabsContent>
-            <TabsContent value='traffic'>
-              <ProTable<API.TrafficLog, Record<string, unknown>>
-                columns={[
-                  {
-                    accessorKey: 'download',
-                    header: t('download'),
-                    cell: ({ row }) => <Display type='traffic' value={row.getValue('download')} />,
-                  },
-                  {
-                    accessorKey: 'upload',
-                    header: t('upload'),
-                    cell: ({ row }) => <Display type='traffic' value={row.getValue('upload')} />,
-                  },
-                  {
-                    accessorKey: 'timestamp',
-                    header: t('time'),
-                    cell: ({ row }) => formatDate(row.getValue('timestamp')),
-                  },
-                ]}
-                request={async (pagination) => {
-                  const { data } = await getUserSubscribeTrafficLogs({
-                    user_id: userId,
-                    subscribe_id: subscriptionId,
-                    ...pagination,
-                  } as API.GetUserSubscribeTrafficLogsParams);
-                  return {
-                    list: data.data?.list || [],
-                    total: data.data?.total || 0,
-                  };
-                }}
-              />
-            </TabsContent>
-            <TabsContent value='devices'>
-              <ProTable<API.UserDevice, Record<string, unknown>>
-                columns={[
-                  {
-                    accessorKey: 'enabled',
-                    header: t('enable'),
-                    cell: ({ row }) => (
-                      <Switch
-                        checked={row.getValue('enabled')}
-                        onChange={(checked) => {
-                          console.log('Switch:', checked);
-                        }}
-                      />
-                    ),
-                  },
-                  {
-                    accessorKey: 'id',
-                    header: 'ID',
-                  },
-                  {
-                    accessorKey: 'identifier',
-                    header: 'IMEI',
-                  },
-                  {
-                    accessorKey: 'user_agent',
-                    header: t('userAgent'),
-                  },
-                  {
-                    accessorKey: 'ip',
-                    header: 'IP',
-                  },
-                  {
-                    accessorKey: 'online',
-                    header: t('loginStatus'),
-                    cell: ({ row }) => (
-                      <Badge variant={row.getValue('online') ? 'default' : 'destructive'}>
-                        {row.getValue('online') ? t('online') : t('offline')}
-                      </Badge>
-                    ),
-                  },
-                  {
-                    accessorKey: 'updated_at',
-                    header: t('lastSeen'),
-                    cell: ({ row }) => formatDate(row.getValue('updated_at')),
-                  },
-                ]}
-                request={async (pagination) => {
-                  const { data } = await getUserSubscribeDevices({
-                    user_id: userId,
-                    subscribe_id: subscriptionId,
-                    ...pagination,
-                  });
-                  return {
-                    list: data.data?.list || [],
-                    total: data.data?.total || 0,
-                  };
-                }}
-                actions={{
-                  render: (row) => {
-                    if (!row.identifier) return [];
-                    return [
-                      <ConfirmButton
-                        key='offline'
-                        trigger={<Button variant='destructive'>{t('confirmOffline')}</Button>}
-                        title={t('confirmOffline')}
-                        description={t('kickOfflineConfirm', { ip: row.ip })}
-                        onConfirm={async () => {
-                          await kickOfflineByUserDevice({ id: row.id });
-                          toast.success(t('kickOfflineSuccess'));
-                        }}
-                        cancelText={t('cancel')}
-                        confirmText={t('confirm')}
-                      />,
-                    ];
-                  },
-                }}
-              />
-            </TabsContent>
+            <div className='mt-4 max-h-[60dvh] overflow-y-auto'>
+              <TabsContent value='logs'>
+                <ProTable<API.UserSubscribeLog, Record<string, unknown>>
+                  columns={[
+                    {
+                      accessorKey: 'ip',
+                      header: 'IP',
+                    },
+                    {
+                      accessorKey: 'user_agent',
+                      header: t('userAgent'),
+                    },
+                    {
+                      accessorKey: 'token',
+                      header: t('token'),
+                    },
+                    {
+                      accessorKey: 'created_at',
+                      header: t('time'),
+                      cell: ({ row }) => formatDate(row.getValue('created_at')),
+                    },
+                  ]}
+                  request={async (pagination) => {
+                    const { data } = await getUserSubscribeLogs({
+                      user_id: userId,
+                      subscribe_id: subscriptionId,
+                      ...pagination,
+                    });
+                    return {
+                      list: data.data?.list || [],
+                      total: data.data?.total || 0,
+                    };
+                  }}
+                />
+              </TabsContent>
+              <TabsContent value='traffic'>
+                <ProTable<API.TrafficLog, Record<string, unknown>>
+                  columns={[
+                    {
+                      accessorKey: 'download',
+                      header: t('download'),
+                      cell: ({ row }) => (
+                        <Display type='traffic' value={row.getValue('download')} />
+                      ),
+                    },
+                    {
+                      accessorKey: 'upload',
+                      header: t('upload'),
+                      cell: ({ row }) => <Display type='traffic' value={row.getValue('upload')} />,
+                    },
+                    {
+                      accessorKey: 'timestamp',
+                      header: t('time'),
+                      cell: ({ row }) => formatDate(row.getValue('timestamp')),
+                    },
+                  ]}
+                  request={async (pagination) => {
+                    const { data } = await getUserSubscribeTrafficLogs({
+                      user_id: userId,
+                      subscribe_id: subscriptionId,
+                      ...pagination,
+                    } as API.GetUserSubscribeTrafficLogsParams);
+                    return {
+                      list: data.data?.list || [],
+                      total: data.data?.total || 0,
+                    };
+                  }}
+                />
+              </TabsContent>
+              <TabsContent value='devices'>
+                <ProTable<API.UserDevice, Record<string, unknown>>
+                  columns={[
+                    {
+                      accessorKey: 'enabled',
+                      header: t('enable'),
+                      cell: ({ row }) => (
+                        <Switch
+                          checked={row.getValue('enabled')}
+                          onChange={(checked) => {
+                            console.log('Switch:', checked);
+                          }}
+                        />
+                      ),
+                    },
+                    {
+                      accessorKey: 'id',
+                      header: 'ID',
+                    },
+                    {
+                      accessorKey: 'identifier',
+                      header: 'IMEI',
+                    },
+                    {
+                      accessorKey: 'user_agent',
+                      header: t('userAgent'),
+                    },
+                    {
+                      accessorKey: 'ip',
+                      header: 'IP',
+                    },
+                    {
+                      accessorKey: 'online',
+                      header: t('loginStatus'),
+                      cell: ({ row }) => (
+                        <Badge variant={row.getValue('online') ? 'default' : 'destructive'}>
+                          {row.getValue('online') ? t('online') : t('offline')}
+                        </Badge>
+                      ),
+                    },
+                    {
+                      accessorKey: 'updated_at',
+                      header: t('lastSeen'),
+                      cell: ({ row }) => formatDate(row.getValue('updated_at')),
+                    },
+                  ]}
+                  request={async (pagination) => {
+                    const { data } = await getUserSubscribeDevices({
+                      user_id: userId,
+                      subscribe_id: subscriptionId,
+                      ...pagination,
+                    });
+                    return {
+                      list: data.data?.list || [],
+                      total: data.data?.total || 0,
+                    };
+                  }}
+                  actions={{
+                    render: (row) => {
+                      if (!row.identifier) return [];
+                      return [
+                        <ConfirmButton
+                          key='offline'
+                          trigger={<Button variant='destructive'>{t('confirmOffline')}</Button>}
+                          title={t('confirmOffline')}
+                          description={t('kickOfflineConfirm', { ip: row.ip })}
+                          onConfirm={async () => {
+                            await kickOfflineByUserDevice({ id: row.id });
+                            toast.success(t('kickOfflineSuccess'));
+                          }}
+                          cancelText={t('cancel')}
+                          confirmText={t('confirm')}
+                        />,
+                      ];
+                    },
+                  }}
+                />
+              </TabsContent>
+            </div>
           </Tabs>
         </div>
       </DialogContent>
