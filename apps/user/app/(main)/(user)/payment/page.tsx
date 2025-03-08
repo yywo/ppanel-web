@@ -55,7 +55,7 @@ export default function Page() {
         orderNo: orderNo!,
         returnUrl: window.location.href,
       });
-      if (data.data?.type === 'link' && data.data.checkout_url) {
+      if (data.data?.type === 'url' && data.data.checkout_url) {
         window.location.href = data.data.checkout_url;
       }
       return data?.data;
@@ -176,7 +176,7 @@ export default function Page() {
               </div>
             </div>
           )}
-          {data?.status === 1 && payment?.type === 'link' && (
+          {data?.status === 1 && payment?.type === 'url' && (
             <div className='flex flex-col items-center gap-8 text-center'>
               <h3 className='text-2xl font-bold tracking-tight'>{t('waitingForPayment')}</h3>
               <p className='flex items-center text-3xl font-bold'>{countdownDisplay}</p>
