@@ -761,8 +761,8 @@ declare namespace API {
   };
 
   type UserAffiliate = {
-    email: string;
     avatar: string;
+    identifier: string;
     registered_at: number;
     enable: boolean;
   };

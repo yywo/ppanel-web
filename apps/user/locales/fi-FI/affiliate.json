@@ -7,5 +7,5 @@
   "inviteRecords": "Kutsuhistoria",
   "registrationTime": "Rekisteröintiaika",
   "totalCommission": "Kokonaisprovisio",
-  "userEmail": "Käyttäjän sähköposti"
+  "userIdentifier": "Käyttäjän tunnus"
 }

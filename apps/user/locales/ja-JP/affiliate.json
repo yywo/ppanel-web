@@ -7,5 +7,5 @@
   "inviteRecords": "招待記録",
   "registrationTime": "登録時間",
   "totalCommission": "総手数料",
-  "userEmail": "ユーザーのメールアドレス"
+  "userIdentifier": "ユーザー識別子"
 }
