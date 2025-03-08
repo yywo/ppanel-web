@@ -32,8 +32,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/componen
 import { Separator } from '@workspace/ui/components/separator';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Icon } from '@workspace/ui/custom-components/icon';
-import { formatDate, isBrowser } from '@workspace/ui/utils';
-import { differenceInDays } from 'date-fns';
+import { differenceInDays, formatDate, isBrowser } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -206,12 +205,13 @@ export default function Content() {
                     <span className='text-2xl font-semibold'>
                       {item.reset_time
                         ? differenceInDays(new Date(item.reset_time), new Date())
-                        : t('unknown')}
+                        : t('noReset')}
                     </span>
                   </li>
                   <li>
                     <span className='text-muted-foreground'>{t('expirationDays')}</span>
                     <span className='text-2xl font-semibold'>
+                      {}
                       {item.expire_time
                         ? differenceInDays(new Date(item.expire_time), new Date()) || t('unknown')
                         : t('noLimit')}

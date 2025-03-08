@@ -21,11 +21,11 @@ export default function Page() {
     <>
       <Card className='mb-4'>
         <CardContent className='p-6'>
-          <h2 className='text-foreground mb-4 text-2xl font-bold'>{t('totalAssets')}</h2>
+          <h2 className='text-foreground mb-4 text-2xl font-bold'>{t('assetOverview')}</h2>
           <div className='mb-4'>
             <div className='flex items-center justify-between'>
               <div>
-                <p className='text-sm font-medium'>总资产</p>
+                <p className='text-sm font-medium'>{t('totalAssets')}</p>
                 <p className='text-3xl font-bold'>
                   <Display type='currency' value={totalAssets} />
                 </p>
