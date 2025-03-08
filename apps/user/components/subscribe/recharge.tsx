@@ -1,8 +1,9 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, recharge } from '@/services/user/order';
+import { recharge } from '@/services/user/order';
 import { getAvailablePaymentMethods } from '@/services/user/payment';
+import { purchaseCheckout } from '@/services/user/portal';
 import { useQuery } from '@tanstack/react-query';
 import { Button, ButtonProps } from '@workspace/ui/components/button';
 import {
@@ -133,7 +134,7 @@ export default function Recharge(props: Readonly<ButtonProps>) {
                   const response = await recharge(params);
                   const orderNo = response.data.data?.order_no;
                   if (orderNo) {
-                    const { data } = await checkoutOrder({
+                    const { data } = await purchaseCheckout({
                       orderNo,
                       returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
                     });

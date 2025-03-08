@@ -115,7 +115,7 @@ export function SubscriptionDetail({
                     user_id: userId,
                     subscribe_id: subscriptionId,
                     ...pagination,
-                  });
+                  } as API.GetUserSubscribeTrafficLogsParams);
                   return {
                     list: data.data?.list || [],
                     total: data.data?.total || 0,

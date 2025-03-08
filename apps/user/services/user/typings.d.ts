@@ -187,7 +187,7 @@ declare namespace API {
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymentConfig[];
+    list: PaymenMethod[];
   };
 
   type GetLoginLogParams = {
@@ -221,6 +221,24 @@ declare namespace API {
 
   type GetSubscribeLogResponse = {
     list: UserSubscribeLog[];
+    total: number;
+  };
+
+  type GetSubscriptionResponse = {
+    list: Subscribe[];
+  };
+
+  type GetUserSubscribeTrafficLogsRequest = {
+    page: number;
+    size: number;
+    user_id: number;
+    subscribe_id: number;
+    start_time: number;
+    end_time: number;
+  };
+
+  type GetUserSubscribeTrafficLogsResponse = {
+    list: TrafficLog[];
     total: number;
   };
 
@@ -351,6 +369,16 @@ declare namespace API {
     updated_at: number;
   };
 
+  type PaymenMethod = {
+    id: number;
+    name: string;
+    mark: string;
+    icon: string;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
+  };
+
   type PaymentConfig = {
     id: number;
     name: string;
@@ -364,11 +392,42 @@ declare namespace API {
     enable: boolean;
   };
 
+  type PortalPurchaseRequest = {
+    identifier: string;
+    platform: string;
+    password?: string;
+    payment: string;
+    subscribe_id: number;
+    quantity: number;
+    coupon?: string;
+    turnstile_token?: string;
+  };
+
+  type PortalPurchaseResponse = {
+    order_no: string;
+  };
+
   type PreOrderResponse = {
     price: number;
     amount: number;
     discount: number;
     gift_amount: number;
+    coupon: string;
+    coupon_discount: number;
+    fee_amount: number;
+  };
+
+  type PrePurchaseOrderRequest = {
+    payment: string;
+    subscribe_id: number;
+    quantity: number;
+    coupon?: string;
+  };
+
+  type PrePurchaseOrderResponse = {
+    price: number;
+    amount: number;
+    discount: number;
     coupon: string;
     coupon_discount: number;
     fee_amount: number;
@@ -465,6 +524,30 @@ declare namespace API {
   type QueryOrderListResponse = {
     total: number;
     list: OrderDetail[];
+  };
+
+  type QueryPurchaseOrderParams = {
+    order_no: string;
+  };
+
+  type QueryPurchaseOrderRequest = {
+    order_no: string;
+  };
+
+  type QueryPurchaseOrderResponse = {
+    order_no: string;
+    subscribe: Subscribe;
+    quantity: number;
+    price: number;
+    amount: number;
+    discount: number;
+    coupon: string;
+    coupon_discount: number;
+    fee_amount: number;
+    payment: string;
+    status: number;
+    created_at: number;
+    token?: string;
   };
 
   type QuerySubscribeGroupListResponse = {

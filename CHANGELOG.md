@@ -1,49 +1,43 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.26](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2025-03-02)
 
-
 ### 🐛 Bug Fixes
 
-* **icon**: Comment out unused icon collection imports ([f17bf8d](https://github.com/perfect-panel/ppanel-web/commit/f17bf8d))
+- **icon**: Comment out unused icon collection imports ([f17bf8d](https://github.com/perfect-panel/ppanel-web/commit/f17bf8d))
 
 # [1.0.0-beta.25](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.24...v1.0.0-beta.25) (2025-03-01)
 
-
 ### ✨ Features
 
-* **auth**: Add privacy policy link to the footer ([8e16ef1](https://github.com/perfect-panel/ppanel-web/commit/8e16ef1))
-
+- **auth**: Add privacy policy link to the footer ([8e16ef1](https://github.com/perfect-panel/ppanel-web/commit/8e16ef1))
 
 ### 🐛 Bug Fixes
 
-* **dashboard**: Display subscription creation date in user dashboard ([d0e6df0](https://github.com/perfect-panel/ppanel-web/commit/d0e6df0))
-* **request**: Add error code 40005 to trigger logout ([71bf002](https://github.com/perfect-panel/ppanel-web/commit/71bf002))
-* **subscribe**: Update payment return URL ([2b80496](https://github.com/perfect-panel/ppanel-web/commit/2b80496))
+- **dashboard**: Display subscription creation date in user dashboard ([d0e6df0](https://github.com/perfect-panel/ppanel-web/commit/d0e6df0))
+- **request**: Add error code 40005 to trigger logout ([71bf002](https://github.com/perfect-panel/ppanel-web/commit/71bf002))
+- **subscribe**: Update payment return URL ([2b80496](https://github.com/perfect-panel/ppanel-web/commit/2b80496))
 
 # [1.0.0-beta.24](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.23...v1.0.0-beta.24) (2025-02-27)
 
-
 ### ♻ Code Refactoring
 
-* **ui**: Optimize document display ([2ca2992](https://github.com/perfect-panel/ppanel-web/commit/2ca2992))
-* Reduce code complexity and improve readability ([e11f18c](https://github.com/perfect-panel/ppanel-web/commit/e11f18c))
-
+- **ui**: Optimize document display ([2ca2992](https://github.com/perfect-panel/ppanel-web/commit/2ca2992))
+- Reduce code complexity and improve readability ([e11f18c](https://github.com/perfect-panel/ppanel-web/commit/e11f18c))
 
 ### ✨ Features
 
-* **loading**: Add loading components and integrate them in Providers ([d5847fa](https://github.com/perfect-panel/ppanel-web/commit/d5847fa))
-
+- **loading**: Add loading components and integrate them in Providers ([d5847fa](https://github.com/perfect-panel/ppanel-web/commit/d5847fa))
 
 ### 🎫 Chores
 
-* **merge**: Add advertising module and device settings ([0130e02](https://github.com/perfect-panel/ppanel-web/commit/0130e02))
-
+- **merge**: Add advertising module and device settings ([0130e02](https://github.com/perfect-panel/ppanel-web/commit/0130e02))
 
 ### 🐛 Bug Fixes
 
-* **locales**: Order recharge related fields ([35210fe](https://github.com/perfect-panel/ppanel-web/commit/35210fe))
+- **locales**: Order recharge related fields ([35210fe](https://github.com/perfect-panel/ppanel-web/commit/35210fe))
 
 <a name="readme-top"></a>
 

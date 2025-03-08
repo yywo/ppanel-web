@@ -120,17 +120,6 @@ declare namespace API {
     ids: number[];
   };
 
-  type CheckoutOrderRequest = {
-    orderNo: string;
-    returnUrl?: string;
-  };
-
-  type CheckoutOrderResponse = {
-    type: string;
-    checkout_url?: string;
-    stripe?: StripePayment;
-  };
-
   type CloseOrderRequest = {
     orderNo: string;
   };
@@ -488,7 +477,7 @@ declare namespace API {
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymentConfig[];
+    list: PaymenMethod[];
   };
 
   type GetCouponListParams = {
@@ -797,6 +786,8 @@ declare namespace API {
     size: number;
     user_id: number;
     subscribe_id: number;
+    start_time: number;
+    end_time: number;
   };
 
   type GetUserSubscribeTrafficLogsRequest = {
@@ -804,6 +795,8 @@ declare namespace API {
     size: number;
     user_id: number;
     subscribe_id: number;
+    start_time: number;
+    end_time: number;
   };
 
   type GetUserSubscribeTrafficLogsResponse = {
@@ -931,6 +924,16 @@ declare namespace API {
     list?: OrdersStatistics[];
   };
 
+  type PaymenMethod = {
+    id: number;
+    name: string;
+    mark: string;
+    icon: string;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
+  };
+
   type PaymentConfig = {
     id: number;
     name: string;
@@ -1027,6 +1030,21 @@ declare namespace API {
   type QueryOrderListResponse = {
     total: number;
     list: OrderDetail[];
+  };
+
+  type QuerySubscribeGroupListResponse = {
+    list: SubscribeGroup[];
+    total: number;
+  };
+
+  type QuerySubscribeListResponse = {
+    list: Subscribe[];
+    total: number;
+  };
+
+  type QueryUserAffiliateListResponse = {
+    list: UserAffiliate[];
+    total: number;
   };
 
   type RechargeOrderRequest = {

@@ -90,17 +90,6 @@ declare namespace API {
     enabled: boolean;
   };
 
-  type CheckoutOrderRequest = {
-    orderNo: string;
-    returnUrl?: string;
-  };
-
-  type CheckoutOrderResponse = {
-    type: string;
-    checkout_url?: string;
-    stripe?: StripePayment;
-  };
-
   type CheckUserParams = {
     email: string;
   };
@@ -175,7 +164,7 @@ declare namespace API {
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymentConfig[];
+    list: PaymenMethod[];
   };
 
   type GetGlobalConfigResponse = {
@@ -196,12 +185,22 @@ declare namespace API {
     protocol: string[];
   };
 
-  type GetSubscriptionResponse = {
-    list: Subscribe[];
-  };
-
   type GetTosResponse = {
     tos_content: string;
+  };
+
+  type GetUserSubscribeTrafficLogsRequest = {
+    page: number;
+    size: number;
+    user_id: number;
+    subscribe_id: number;
+    start_time: number;
+    end_time: number;
+  };
+
+  type GetUserSubscribeTrafficLogsResponse = {
+    list: TrafficLog[];
+    total: number;
   };
 
   type GoogleLoginCallbackRequest = {
@@ -329,6 +328,16 @@ declare namespace API {
     updated_at: number;
   };
 
+  type PaymenMethod = {
+    id: number;
+    name: string;
+    mark: string;
+    icon: string;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
+  };
+
   type PaymentConfig = {
     id: number;
     name: string;
@@ -415,6 +424,21 @@ declare namespace API {
   type QueryOrderListResponse = {
     total: number;
     list: OrderDetail[];
+  };
+
+  type QuerySubscribeGroupListResponse = {
+    list: SubscribeGroup[];
+    total: number;
+  };
+
+  type QuerySubscribeListResponse = {
+    list: Subscribe[];
+    total: number;
+  };
+
+  type QueryUserAffiliateListResponse = {
+    list: UserAffiliate[];
+    total: number;
   };
 
   type RechargeOrderRequest = {

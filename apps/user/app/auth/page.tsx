@@ -1,13 +1,11 @@
 'use client';
 
+import { OAuthMethods } from '@/components/auth/oauth-methods';
 import LanguageSwitch from '@/components/language-switch';
 import ThemeSwitch from '@/components/theme-switch';
 import useGlobalStore from '@/config/use-global';
-import { oAuthLogin } from '@/services/common/oauth';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { Button } from '@workspace/ui/components/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
-import { Icon } from '@workspace/ui/custom-components/icon';
 import LoginLottie from '@workspace/ui/lotties/login.json';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
@@ -15,18 +13,10 @@ import Link from 'next/link';
 import EmailAuthForm from './email/auth-form';
 import PhoneAuthForm from './phone/auth-form';
 
-const icons = {
-  apple: 'uil:apple',
-  google: 'logos:google-icon',
-  facebook: 'logos:facebook',
-  github: 'uil:github',
-  telegram: 'logos:telegram',
-};
-
 export default function Page() {
   const t = useTranslations('auth');
   const { common } = useGlobalStore();
-  const { site, auth, oauth_methods } = common;
+  const { site, auth } = common;
 
   const AUTH_METHODS = [
     {
@@ -40,10 +30,6 @@ export default function Page() {
       children: <PhoneAuthForm />,
     },
   ].filter((method) => method.enabled);
-
-  const OAUTH_METHODS = oauth_methods?.filter(
-    (method) => !['mobile', 'email', 'device'].includes(method),
-  );
 
   return (
     <main className='bg-muted/50 flex h-full min-h-screen items-center'>
@@ -95,38 +81,7 @@ export default function Page() {
                     )}
               </div>
               <div className='py-8'>
-                {OAUTH_METHODS?.length > 0 && (
-                  <>
-                    <div className='after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t'>
-                      <span className='bg-background text-muted-foreground relative z-10 px-2'>
-                        Or continue with
-                      </span>
-                    </div>
-                    <div className='mt-6 flex justify-center gap-4 *:size-12 *:p-2'>
-                      {OAUTH_METHODS?.map((method: any) => {
-                        return (
-                          <Button
-                            key={method}
-                            variant='ghost'
-                            size='icon'
-                            asChild
-                            onClick={async () => {
-                              const { data } = await oAuthLogin({
-                                method,
-                                redirect: `${window.location.origin}/oauth/${method}`,
-                              });
-                              if (data.data?.redirect) {
-                                window.location.href = data.data?.redirect;
-                              }
-                            }}
-                          >
-                            <Icon icon={icons[method as keyof typeof icons]} />
-                          </Button>
-                        );
-                      })}
-                    </div>
-                  </>
-                )}
+                <OAuthMethods />
               </div>
               <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-5'>

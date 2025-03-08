@@ -2,8 +2,7 @@
 
 import { Display } from '@/components/display';
 import { SubscribeDetail } from '@/components/subscribe/detail';
-import { getSubscription } from '@/services/common/common';
-import { useQuery } from '@tanstack/react-query';
+import useGlobalStore from '@/config/use-global';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@workspace/ui/components/card';
 import { Separator } from '@workspace/ui/components/separator';
@@ -14,19 +13,15 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Key, ReactNode } from 'react';
 
-export function ProductShowcase() {
+interface ProductShowcaseProps {
+  subscriptionData: API.Subscribe[];
+}
+
+export function Content({ subscriptionData }: ProductShowcaseProps) {
   const t = useTranslations('index');
 
-  const { data } = useQuery({
-    queryKey: ['getSubscription'],
-    queryFn: async () => {
-      const { data } = await getSubscription({
-        skipErrorHandler: true,
-      });
-      return data.data?.list || [];
-    },
-  });
-  if (data?.length === 0) return null;
+  const { user } = useGlobalStore();
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -51,7 +46,7 @@ export function ProductShowcase() {
         {t('product_showcase_description')}
       </motion.p>
       <div className='mx-auto flex flex-wrap justify-center gap-8 overflow-x-auto overflow-y-hidden *:max-w-80 *:flex-auto'>
-        {data?.map((item, index) => (
+        {subscriptionData?.map((item, index) => (
           <motion.div
             key={item.id}
             initial={{ opacity: 0, y: 50 }}
@@ -132,7 +127,9 @@ export function ProductShowcase() {
                     className='absolute bottom-0 left-0 w-full rounded-b-xl rounded-t-none'
                     asChild
                   >
-                    <Link href='/subscribe'>{t('subscribe')}</Link>
+                    <Link href={user ? '/subscribe' : `/purchasing?id=${item.id}`}>
+                      {t('subscribe')}
+                    </Link>
                   </Button>
                 </motion.div>
               </CardFooter>

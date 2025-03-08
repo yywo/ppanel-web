@@ -2,7 +2,8 @@
 
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, resetTraffic } from '@/services/user/order';
+import { resetTraffic } from '@/services/user/order';
+import { purchaseCheckout } from '@/services/user/portal';
 import { Button } from '@workspace/ui/components/button';
 import {
   Dialog,
@@ -84,7 +85,7 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
                   const response = await resetTraffic(params);
                   const orderNo = response.data.data?.order_no;
                   if (orderNo) {
-                    const { data } = await checkoutOrder({
+                    const { data } = await purchaseCheckout({
                       orderNo,
                       returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
                     });

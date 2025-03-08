@@ -58,17 +58,6 @@ export async function getStat(options?: { [key: string]: any }) {
   });
 }
 
-/** Get Subscription GET /v1/common/site/subscribe */
-export async function getSubscription(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetSubscriptionResponse }>(
-    '/v1/common/site/subscribe',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
-}
-
 /** Get Tos Content GET /v1/common/site/tos */
 export async function getTos(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.GetTosResponse }>('/v1/common/site/tos', {

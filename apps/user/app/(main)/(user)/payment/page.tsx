@@ -4,7 +4,8 @@ import { Display } from '@/components/display';
 import { SubscribeBilling } from '@/components/subscribe/billing';
 import { SubscribeDetail } from '@/components/subscribe/detail';
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, queryOrderDetail } from '@/services/user/order';
+import { queryOrderDetail } from '@/services/user/order';
+import { purchaseCheckout } from '@/services/user/portal';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -50,7 +51,10 @@ export default function Page() {
     enabled: !!orderNo && data?.status === 1,
     queryKey: ['checkoutOrder', orderNo],
     queryFn: async () => {
-      const { data } = await checkoutOrder({ orderNo: orderNo!, returnUrl: window.location.href });
+      const { data } = await purchaseCheckout({
+        orderNo: orderNo!,
+        returnUrl: window.location.href,
+      });
       return data?.data;
     },
   });
