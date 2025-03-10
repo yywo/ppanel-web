@@ -57,7 +57,11 @@ export default function Content() {
 
   const [protocol, setProtocol] = useState('');
 
-  const { data: userSubscribe = [], refetch } = useQuery({
+  const {
+    data: userSubscribe = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ['queryUserSubscribe'],
     queryFn: async () => {
       const { data } = await queryUserSubscribe();
@@ -88,10 +92,27 @@ export default function Content() {
     <>
       {userSubscribe.length ? (
         <>
-          <h2 className='flex items-center gap-1.5 font-semibold'>
-            <Icon icon='uil:servers' className='size-5' />
-            {t('mySubscriptions')}
-          </h2>
+          <div className='flex items-center justify-between'>
+            <h2 className='flex items-center gap-1.5 font-semibold'>
+              <Icon icon='uil:servers' className='size-5' />
+              {t('mySubscriptions')}
+            </h2>
+            <div className='flex gap-2'>
+              <Button
+                size='sm'
+                variant='outline'
+                onClick={() => {
+                  refetch();
+                }}
+                className={isLoading ? 'animate-pulse' : ''}
+              >
+                <Icon icon='uil:sync' />
+              </Button>
+              <Button size='sm' asChild>
+                <Link href='/subscribe'>{t('purchaseSubscription')}</Link>
+              </Button>
+            </div>
+          </div>
           <div className='flex flex-wrap justify-between gap-4'>
             <Tabs
               value={platform}

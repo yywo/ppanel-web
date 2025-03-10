@@ -19,7 +19,7 @@ export default function Header() {
       {site.site_logo && (
         <Image src={site.site_logo} width={48} height={48} alt='logo' unoptimized />
       )}
-      <span>{site.site_name}</span>
+      <span className=''>{site.site_name}</span>
     </Link>
   );
   return (

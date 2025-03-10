@@ -56,7 +56,7 @@ export default function Page() {
         returnUrl: window.location.href,
       });
       if (data.data?.type === 'url' && data.data.checkout_url) {
-        window.location.href = data.data.checkout_url;
+        window.open(data.data.checkout_url, '_blank');
       }
       return data?.data;
     },
