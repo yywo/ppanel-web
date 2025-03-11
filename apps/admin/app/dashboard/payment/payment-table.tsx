@@ -149,8 +149,8 @@ export default function PaymentTable() {
               setLoading(true);
               try {
                 await updatePaymentMethod({
+                  ...row,
                   ...values,
-                  id: row.id,
                 });
                 toast.success(t('updateSuccess'));
                 ref.current?.refresh();
