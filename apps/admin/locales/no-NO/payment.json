@@ -37,6 +37,7 @@
   "namePlaceholder": "Skriv inn navn på betalingsmetode",
   "nameRequired": "Navn er påkrevd",
   "noFee": "Ingen gebyr",
+  "notify_url": "Varslings-URL",
   "paymentManagement": "Betalingsadministrasjon",
   "percentFee": "Prosentandel",
   "platform": "Plattform",

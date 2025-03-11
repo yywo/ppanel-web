@@ -37,6 +37,7 @@
   "namePlaceholder": "Adja meg a fizetési mód nevét",
   "nameRequired": "A név megadása kötelező",
   "noFee": "Nincs díj",
+  "notify_url": "Értesítési URL",
   "paymentManagement": "Fizetéskezelés",
   "percentFee": "Százalékos díj",
   "platform": "Platform",

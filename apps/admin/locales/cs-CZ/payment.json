@@ -37,6 +37,7 @@
   "namePlaceholder": "Zadejte název platební metody",
   "nameRequired": "Název je povinný",
   "noFee": "Žádný poplatek",
+  "notify_url": "URL pro oznámení",
   "paymentManagement": "Správa plateb",
   "percentFee": "Procento",
   "platform": "Platforma",

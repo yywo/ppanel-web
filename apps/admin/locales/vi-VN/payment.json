@@ -37,6 +37,7 @@
   "namePlaceholder": "Nhập tên phương thức thanh toán",
   "nameRequired": "Tên là bắt buộc",
   "noFee": "Không Có Phí",
+  "notify_url": "URL Thông Báo",
   "paymentManagement": "Quản Lý Thanh Toán",
   "percentFee": "Phần Trăm",
   "platform": "Nền Tảng",

@@ -96,12 +96,8 @@ export default function PaymentTable() {
           cell: ({ row }) => <Badge>{t(row.getValue('platform'))}</Badge>,
         },
         {
-          accessorKey: 'domain',
-          header: t('domain'),
-          cell: ({ row }) => {
-            const domain = row.getValue('domain') as string;
-            return domain ? <Badge variant='outline'>{domain}</Badge> : '--';
-          },
+          accessorKey: 'notify_url',
+          header: t('notify_url'),
         },
         {
           accessorKey: 'fee',

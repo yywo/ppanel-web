@@ -37,6 +37,7 @@
   "namePlaceholder": "Entrez le nom du mode de paiement",
   "nameRequired": "Le nom est requis",
   "noFee": "Pas de frais",
+  "notify_url": "URL de notification",
   "paymentManagement": "Gestion des paiements",
   "percentFee": "Pourcentage",
   "platform": "Plateforme",

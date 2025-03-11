@@ -37,6 +37,7 @@
   "namePlaceholder": "支払い方法の名前を入力してください",
   "nameRequired": "名前は必須です",
   "noFee": "手数料なし",
+  "notify_url": "通知URL",
   "paymentManagement": "支払い管理",
   "percentFee": "パーセンテージ",
   "platform": "プラットフォーム",

@@ -37,6 +37,7 @@
   "namePlaceholder": "Syötä maksutavan nimi",
   "nameRequired": "Nimi on pakollinen",
   "noFee": "Ei maksua",
+  "notify_url": "Ilmoitus-URL",
   "paymentManagement": "Maksujen hallinta",
   "percentFee": "Prosentti",
   "platform": "Alusta",

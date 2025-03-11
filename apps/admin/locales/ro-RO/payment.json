@@ -37,6 +37,7 @@
   "namePlaceholder": "Introdu numele metodei de plată",
   "nameRequired": "Numele este necesar",
   "noFee": "Fără Taxă",
+  "notify_url": "URL de notificare",
   "paymentManagement": "Gestionare Plăți",
   "percentFee": "Procentaj",
   "platform": "Platformă",

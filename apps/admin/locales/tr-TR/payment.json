@@ -37,6 +37,7 @@
   "namePlaceholder": "Ödeme yöntemi adını girin",
   "nameRequired": "İsim gereklidir",
   "noFee": "Ücret Yok",
+  "notify_url": "Bildirim URL'si",
   "paymentManagement": "Ödeme Yönetimi",
   "percentFee": "Yüzde",
   "platform": "Platform",

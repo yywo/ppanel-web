@@ -37,6 +37,7 @@
   "namePlaceholder": "Введіть назву способу оплати",
   "nameRequired": "Назва є обов'язковою",
   "noFee": "Без комісії",
+  "notify_url": "URL сповіщення",
   "paymentManagement": "Управління платежами",
   "percentFee": "Відсоток",
   "platform": "Платформа",

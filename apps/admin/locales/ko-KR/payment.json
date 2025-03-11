@@ -37,6 +37,7 @@
   "namePlaceholder": "결제 수단 이름 입력",
   "nameRequired": "이름은 필수입니다",
   "noFee": "수수료 없음",
+  "notify_url": "알림 URL",
   "paymentManagement": "결제 관리",
   "percentFee": "백분율",
   "platform": "플랫폼",

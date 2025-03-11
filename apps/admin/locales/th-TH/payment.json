@@ -37,6 +37,7 @@
   "namePlaceholder": "กรอกชื่อวิธีการชำระเงิน",
   "nameRequired": "ชื่อเป็นสิ่งจำเป็น",
   "noFee": "ไม่มีค่าธรรมเนียม",
+  "notify_url": "URL การแจ้งเตือน",
   "paymentManagement": "การจัดการการชำระเงิน",
   "percentFee": "เปอร์เซ็นต์",
   "platform": "แพลตฟอร์ม",

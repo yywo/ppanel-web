@@ -37,6 +37,7 @@
   "namePlaceholder": "نام روش پرداخت را وارد کنید",
   "nameRequired": "نام الزامی است",
   "noFee": "بدون هزینه",
+  "notify_url": "آدرس اطلاع‌رسانی",
   "paymentManagement": "مدیریت پرداخت",
   "percentFee": "درصد",
   "platform": "پلتفرم",

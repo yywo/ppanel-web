@@ -37,6 +37,7 @@
   "namePlaceholder": "Geben Sie den Namen der Zahlungsmethode ein",
   "nameRequired": "Name ist erforderlich",
   "noFee": "Keine Gebühr",
+  "notify_url": "Benachrichtigungs-URL",
   "paymentManagement": "Zahlungsverwaltung",
   "percentFee": "Prozentsatz",
   "platform": "Plattform",

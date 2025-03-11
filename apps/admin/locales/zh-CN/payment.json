@@ -37,6 +37,7 @@
   "namePlaceholder": "输入支付方式名称",
   "nameRequired": "名称是必填项",
   "noFee": "无费用",
+  "notify_url": "通知网址",
   "paymentManagement": "支付管理",
   "percentFee": "百分比",
   "platform": "平台",

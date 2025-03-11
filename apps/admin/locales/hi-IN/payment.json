@@ -37,6 +37,7 @@
   "namePlaceholder": "भुगतान विधि का नाम दर्ज करें",
   "nameRequired": "नाम आवश्यक है",
   "noFee": "कोई शुल्क नहीं",
+  "notify_url": "सूचना URL",
   "paymentManagement": "भुगतान प्रबंधन",
   "percentFee": "प्रतिशत",
   "platform": "प्लेटफ़ॉर्म",
