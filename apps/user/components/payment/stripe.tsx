@@ -145,9 +145,9 @@ const CardPaymentForm: React.FC<CardPaymentFormProps> = ({ clientSecret, onError
                 value={cardholderName}
                 onChange={(e) => setCardholderName(e.target.value)}
                 placeholder={t('name_placeholder')}
-                className={errors.name ? 'border-red-500' : ''}
+                className={errors.name ? 'border-destructive' : ''}
               />
-              {errors.name && <p className='text-xs text-red-500'>{errors.name}</p>}
+              {errors.name && <p className='text-destructive text-xs'>{errors.name}</p>}
             </div>
 
             {/* Card Number */}
@@ -166,7 +166,7 @@ const CardPaymentForm: React.FC<CardPaymentFormProps> = ({ clientSecret, onError
                   />
                 </div>
               </div>
-              {errors.cardNumber && <p className='text-xs text-red-500'>{errors.cardNumber}</p>}
+              {errors.cardNumber && <p className='text-destructive text-xs'>{errors.cardNumber}</p>}
             </div>
 
             <div className='grid grid-cols-2 gap-4'>
@@ -184,7 +184,9 @@ const CardPaymentForm: React.FC<CardPaymentFormProps> = ({ clientSecret, onError
                     onChange={(e) => handleChange(e, 'cardExpiry')}
                   />
                 </div>
-                {errors.cardExpiry && <p className='text-xs text-red-500'>{errors.cardExpiry}</p>}
+                {errors.cardExpiry && (
+                  <p className='text-destructive text-xs'>{errors.cardExpiry}</p>
+                )}
               </div>
 
               {/* Security Code */}
@@ -201,7 +203,7 @@ const CardPaymentForm: React.FC<CardPaymentFormProps> = ({ clientSecret, onError
                     onChange={(e) => handleChange(e, 'cardCvc')}
                   />
                 </div>
-                {errors.cardCvc && <p className='text-xs text-red-500'>{errors.cardCvc}</p>}
+                {errors.cardCvc && <p className='text-destructive text-xs'>{errors.cardCvc}</p>}
               </div>
             </div>
           </div>

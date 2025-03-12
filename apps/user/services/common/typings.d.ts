@@ -195,7 +195,7 @@ declare namespace API {
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymenMethod[];
+    list: PaymentMethod[];
   };
 
   type GetGlobalConfigResponse = {
@@ -328,7 +328,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     commission?: number;
-    method: string;
+    payment: PaymentMethod;
     fee_amount: number;
     trade_no: string;
     status: number;
@@ -350,6 +350,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     commission?: number;
+    payment: PaymentMethod;
     method: string;
     fee_amount: number;
     trade_no: string;
@@ -358,17 +359,6 @@ declare namespace API {
     subscribe: Subscribe;
     created_at: number;
     updated_at: number;
-  };
-
-  type PaymenMethod = {
-    id: number;
-    name: string;
-    platform: string;
-    description: string;
-    icon: string;
-    fee_mode: number;
-    fee_percent: number;
-    fee_amount: number;
   };
 
   type PaymentConfig = {
@@ -383,6 +373,17 @@ declare namespace API {
     fee_percent?: number;
     fee_amount?: number;
     enable: boolean;
+  };
+
+  type PaymentMethod = {
+    id: number;
+    name: string;
+    platform: string;
+    description: string;
+    icon: string;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
   };
 
   type PaymentMethodDetail = {

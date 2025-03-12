@@ -1,6 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
+import StripePayment from '@/components/payment/stripe';
 import { SubscribeBilling } from '@/components/subscribe/billing';
 import { SubscribeDetail } from '@/components/subscribe/detail';
 import useGlobalStore from '@/config/use-global';
@@ -25,7 +26,6 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useEffect, useState } from 'react';
-import StripePayment from './stripe';
 
 export default function Page() {
   const t = useTranslations('order');
@@ -111,7 +111,7 @@ export default function Page() {
             <dl className='grid gap-3'>
               <div className='flex items-center justify-between'>
                 <dt className='text-muted-foreground'>
-                  {data?.payment && <Badge>{t(`methods.${data?.payment}`)}</Badge>}
+                  <Badge>{data?.payment.name || data?.payment.platform}</Badge>
                 </dt>
               </div>
             </dl>
@@ -228,19 +228,19 @@ export default function Page() {
               </div>
             )}
 
-            {data?.status === 1 && payment?.type === 'stripe' && (
+            {data?.status === 1 && payment?.type === 'Stripe' && (
               <div className='flex flex-col items-center gap-8 text-center'>
-                <h3 className='text-2xl font-bold tracking-tight'>{t('scanToPay')}</h3>
+                <h3 className='text-2xl font-bold tracking-tight'>{t('waitingForPayment')}</h3>
                 <p className='flex items-center text-3xl font-bold'>{countdownDisplay}</p>
                 {payment.stripe && <StripePayment {...payment.stripe} />}
-                <div className='flex gap-4'>
-                  <Button asChild>
-                    <Link href='/subscribe'>{t('productList')}</Link>
-                  </Button>
-                  <Button asChild variant='outline'>
-                    <Link href='/order'>{t('orderList')}</Link>
-                  </Button>
-                </div>
+                {/* <div className='flex gap-4'>
+                <Button asChild>
+                  <Link href='/subscribe'>{t('productList')}</Link>
+                </Button>
+                <Button asChild variant='outline'>
+                  <Link href='/order'>{t('orderList')}</Link>
+                </Button>
+              </div> */}
               </div>
             )}
 

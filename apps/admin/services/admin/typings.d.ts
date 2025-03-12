@@ -224,7 +224,7 @@ declare namespace API {
     coupon_discount?: number;
     commission: number;
     fee_amount: number;
-    method?: string;
+    payment_id: number;
     trade_no?: string;
     status?: number;
     subscribe_id?: number;
@@ -493,7 +493,7 @@ declare namespace API {
   };
 
   type GetAvailablePaymentMethodsResponse = {
-    list: PaymenMethod[];
+    list: PaymentMethod[];
   };
 
   type GetCouponListParams = {
@@ -921,7 +921,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     commission?: number;
-    method: string;
+    payment: PaymentMethod;
     fee_amount: number;
     trade_no: string;
     status: number;
@@ -943,6 +943,7 @@ declare namespace API {
     coupon: string;
     coupon_discount: number;
     commission?: number;
+    payment: PaymentMethod;
     method: string;
     fee_amount: number;
     trade_no: string;
@@ -961,17 +962,6 @@ declare namespace API {
     list?: OrdersStatistics[];
   };
 
-  type PaymenMethod = {
-    id: number;
-    name: string;
-    platform: string;
-    description: string;
-    icon: string;
-    fee_mode: number;
-    fee_percent: number;
-    fee_amount: number;
-  };
-
   type PaymentConfig = {
     id: number;
     name: string;
@@ -984,6 +974,17 @@ declare namespace API {
     fee_percent?: number;
     fee_amount?: number;
     enable: boolean;
+  };
+
+  type PaymentMethod = {
+    id: number;
+    name: string;
+    platform: string;
+    description: string;
+    icon: string;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
   };
 
   type PaymentMethodDetail = {
@@ -1520,7 +1521,7 @@ declare namespace API {
   type UpdateOrderStatusRequest = {
     id: number;
     status: number;
-    method?: string;
+    payment_id?: number;
     trade_no?: string;
   };
 
