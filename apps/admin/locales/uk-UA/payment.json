@@ -19,6 +19,8 @@
   "delete": "Видалити",
   "deleteSuccess": "Успішно видалено",
   "deleteWarning": "Ви впевнені, що хочете видалити цей спосіб оплати? Цю дію не можна скасувати.",
+  "description": "Опис",
+  "descriptionPlaceholder": "Введіть опис способу оплати",
   "domain": "Домен",
   "domainPlaceholder": "необов'язково, наприклад, {example}",
   "edit": "Редагувати",

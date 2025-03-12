@@ -28,7 +28,7 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const [params, setParams] = useState<API.ResetTrafficOrderRequest>({
-    payment: 'balance',
+    payment: -1,
     user_subscribe_id: id,
   });
   const [loading, startTransition] = useTransition();

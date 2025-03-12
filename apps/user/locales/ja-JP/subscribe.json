@@ -27,6 +27,8 @@
     "connectionSpeed": "接続速度",
     "productDetail": "商品詳細"
   },
+  "discount": "割引",
+  "discountInfo": "割引情報",
   "enterAmount": "リチャージ金額を入力してください",
   "enterCoupon": "クーポンコードを入力",
   "methods": {

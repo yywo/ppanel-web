@@ -19,6 +19,8 @@
   "delete": "हटाएं",
   "deleteSuccess": "सफलता से हटाया गया",
   "deleteWarning": "क्या आप वास्तव में इस भुगतान विधि को हटाना चाहते हैं? यह क्रिया पूर्ववत नहीं की जा सकती।",
+  "description": "विवरण",
+  "descriptionPlaceholder": "भुगतान विधि का विवरण दर्ज करें",
   "domain": "डोमेन",
   "domainPlaceholder": "वैकल्पिक, जैसे कि {example}",
   "edit": "संपादित करें",

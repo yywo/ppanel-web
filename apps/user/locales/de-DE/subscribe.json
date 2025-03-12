@@ -27,6 +27,8 @@
     "connectionSpeed": "Verbindungsgeschwindigkeit",
     "productDetail": "Produktdetails"
   },
+  "discount": "Rabatt",
+  "discountInfo": "Rabattinformationen",
   "enterAmount": "Geben Sie den Aufladebetrag ein",
   "enterCoupon": "Gutscheincode eingeben",
   "methods": {

@@ -27,6 +27,8 @@
     "connectionSpeed": "連接速度",
     "productDetail": "商品詳情"
   },
+  "discount": "折扣",
+  "discountInfo": "折扣資訊",
   "enterAmount": "輸入充值金額",
   "enterCoupon": "輸入優惠券代碼",
   "methods": {

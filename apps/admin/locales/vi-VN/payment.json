@@ -19,6 +19,8 @@
   "delete": "Xóa",
   "deleteSuccess": "Xóa thành công",
   "deleteWarning": "Bạn có chắc chắn muốn xóa phương thức thanh toán này không? Hành động này không thể hoàn tác.",
+  "description": "Mô tả",
+  "descriptionPlaceholder": "Nhập mô tả phương thức thanh toán",
   "domain": "Miền",
   "domainPlaceholder": "tùy chọn, ví dụ: {example}",
   "edit": "Chỉnh Sửa",

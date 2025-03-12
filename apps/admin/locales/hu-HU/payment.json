@@ -19,6 +19,8 @@
   "delete": "Törlés",
   "deleteSuccess": "Sikeresen törölve",
   "deleteWarning": "Biztosan törölni szeretné ezt a fizetési módot? Ez a művelet nem vonható vissza.",
+  "description": "Leírás",
+  "descriptionPlaceholder": "Írja be a fizetési mód leírását",
   "domain": "Domain",
   "domainPlaceholder": "opcionális, pl. {példa}",
   "edit": "Szerkesztés",

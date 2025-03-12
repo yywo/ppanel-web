@@ -1,8 +1,6 @@
 'use client';
 
 import { getAvailablePaymentMethods } from '@/services/user/portal';
-// import { getAvailablePaymentMethods } from '@/services/user/payment';
-// import { getAvailablePaymentMethods } from '@/services/user/payment';
 import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
@@ -11,8 +9,8 @@ import Image from 'next/image';
 import React, { memo } from 'react';
 
 interface PaymentMethodsProps {
-  value: string;
-  onChange: (value: string) => void;
+  value: number;
+  onChange: (value: number) => void;
   balance?: boolean;
 }
 
@@ -24,9 +22,9 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({ value, onChange, balanc
     queryFn: async () => {
       const { data } = await getAvailablePaymentMethods();
       const methods = data.data?.list || [];
-      if (!value && methods[0]?.mark) onChange(methods[0]?.mark);
+      if (!value && methods[0]?.id) onChange(methods[0]?.id);
       if (balance) return methods;
-      return methods.filter((item) => item.mark !== 'balance');
+      return methods.filter((item) => item.id !== -1);
     },
   });
   return (
@@ -34,26 +32,26 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({ value, onChange, balanc
       <div className='font-semibold'>{t('paymentMethod')}</div>
       <RadioGroup
         className='grid grid-cols-2 gap-2 md:grid-cols-5'
-        value={value}
-        onValueChange={onChange}
+        value={String(value)}
+        onValueChange={(val) => onChange(Number(val))}
       >
         {data?.map((item) => (
-          <div key={item.mark}>
-            <RadioGroupItem value={item.mark} id={item.mark} className='peer sr-only' />
+          <div key={item.id}>
+            <RadioGroupItem value={String(item.id)} id={String(item.id)} className='peer sr-only' />
             <Label
-              htmlFor={item.mark}
+              htmlFor={String(item.id)}
               className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary flex flex-col items-center justify-between rounded-md border-2 py-2'
             >
               <div className='mb-3 size-12'>
                 <Image
-                  src={item.icon || `/payment/${item.mark}.svg`}
+                  src={item.icon || `/payment/balance.svg`}
                   width={48}
                   height={48}
-                  alt={item.name || t(`methods.${item.mark}`)}
+                  alt={item.name}
                 />
               </div>
               <span className='w-full overflow-hidden text-ellipsis whitespace-nowrap text-center'>
-                {item.name || t(`methods.${item.mark}`)}
+                {item.name}
               </span>
             </Label>
           </div>

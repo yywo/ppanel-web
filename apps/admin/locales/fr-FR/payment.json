@@ -19,6 +19,8 @@
   "delete": "Supprimer",
   "deleteSuccess": "Supprimé avec succès",
   "deleteWarning": "Êtes-vous sûr de vouloir supprimer ce mode de paiement ? Cette action ne peut pas être annulée.",
+  "description": "Description",
+  "descriptionPlaceholder": "Entrez la description du mode de paiement",
   "domain": "Domaine",
   "domainPlaceholder": "facultatif, par exemple {exemple}",
   "edit": "Modifier",

@@ -19,6 +19,8 @@
   "delete": "ลบ",
   "deleteSuccess": "ลบสำเร็จ",
   "deleteWarning": "คุณแน่ใจหรือไม่ว่าต้องการลบวิธีการชำระเงินนี้? การกระทำนี้ไม่สามารถย้อนกลับได้",
+  "description": "คำอธิบาย",
+  "descriptionPlaceholder": "กรอกคำอธิบายวิธีการชำระเงิน",
   "domain": "โดเมน",
   "domainPlaceholder": "ไม่บังคับ เช่น {example}",
   "edit": "แก้ไข",

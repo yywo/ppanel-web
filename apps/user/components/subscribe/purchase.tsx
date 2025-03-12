@@ -29,7 +29,7 @@ export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseP
   const [params, setParams] = useState<Partial<API.PurchaseOrderRequest>>({
     quantity: 1,
     subscribe_id: 0,
-    payment: 'balance',
+    payment: -1,
     coupon: '',
   });
   const [loading, startTransition] = useTransition();

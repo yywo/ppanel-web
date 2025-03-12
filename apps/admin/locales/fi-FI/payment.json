@@ -19,6 +19,8 @@
   "delete": "Poista",
   "deleteSuccess": "Poisto onnistui",
   "deleteWarning": "Oletko varma, että haluat poistaa tämän maksutavan? Tätä toimintoa ei voi peruuttaa.",
+  "description": "Kuvaus",
+  "descriptionPlaceholder": "Syötä maksutavan kuvaus",
   "domain": "Verkkotunnus",
   "domainPlaceholder": "valinnainen, esim. {esimerkki}",
   "edit": "Muokkaa",

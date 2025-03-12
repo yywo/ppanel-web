@@ -27,6 +27,8 @@
     "connectionSpeed": "连接速度",
     "productDetail": "商品详情"
   },
+  "discount": "折扣",
+  "discountInfo": "折扣信息",
   "enterAmount": "输入充值金额",
   "enterCoupon": "输入优惠券代码",
   "methods": {

@@ -27,6 +27,8 @@
     "connectionSpeed": "연결 속도",
     "productDetail": "제품 세부 정보"
   },
+  "discount": "할인",
+  "discountInfo": "할인 정보",
   "enterAmount": "충전 금액을 입력하세요",
   "enterCoupon": "쿠폰 코드 입력",
   "methods": {

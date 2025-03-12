@@ -27,6 +27,8 @@
     "connectionSpeed": "Tilkoblingshastighet",
     "productDetail": "Produktdetaljer"
   },
+  "discount": "Rabatt",
+  "discountInfo": "Rabattinformasjon",
   "enterAmount": "Skriv inn påfyllingsbeløp",
   "enterCoupon": "Skriv inn kupongkode",
   "methods": {

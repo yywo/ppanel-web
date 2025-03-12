@@ -27,6 +27,8 @@
     "connectionSpeed": "Kapcsolati sebesség",
     "productDetail": "Termék részletei"
   },
+  "discount": "Kedvezmény",
+  "discountInfo": "Kedvezmény Információ",
   "enterAmount": "Adja meg a feltöltési összeget",
   "enterCoupon": "Adja meg a kuponkódot",
   "methods": {

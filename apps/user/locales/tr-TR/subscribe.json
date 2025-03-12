@@ -27,6 +27,8 @@
     "connectionSpeed": "Bağlantı Hızı",
     "productDetail": "Ürün Detayları"
   },
+  "discount": "İndirim",
+  "discountInfo": "İndirim Bilgisi",
   "enterAmount": "Yükleme tutarını girin",
   "enterCoupon": "Kupon Kodunu Girin",
   "methods": {

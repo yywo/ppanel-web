@@ -2,6 +2,21 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
+/** Get Ads GET /v1/common/ads */
+export async function getAds(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetAdsParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.GetAdsResponse }>('/v1/common/ads', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
 /** Get Tos Content GET /v1/common/application */
 export async function getApplication(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.GetAppcationResponse }>('/v1/common/application', {

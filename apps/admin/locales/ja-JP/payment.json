@@ -19,6 +19,8 @@
   "delete": "削除",
   "deleteSuccess": "削除成功",
   "deleteWarning": "この支払い方法を削除してもよろしいですか？この操作は元に戻せません。",
+  "description": "説明",
+  "descriptionPlaceholder": "支払い方法の説明を入力してください",
   "domain": "ドメイン",
   "domainPlaceholder": "任意、例：{example}",
   "edit": "編集",

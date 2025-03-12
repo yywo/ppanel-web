@@ -27,6 +27,8 @@
     "connectionSpeed": "Connection Speed",
     "productDetail": "Product Details"
   },
+  "discount": "Discount",
+  "discountInfo": "Discount Info",
   "enterAmount": "Enter recharge amount",
   "enterCoupon": "Enter Coupon Code",
   "methods": {

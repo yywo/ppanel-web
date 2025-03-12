@@ -19,6 +19,8 @@
   "delete": "刪除",
   "deleteSuccess": "刪除成功",
   "deleteWarning": "您確定要刪除此付款方式嗎？此操作無法撤銷。",
+  "description": "描述",
+  "descriptionPlaceholder": "輸入付款方式描述",
   "domain": "域名",
   "domainPlaceholder": "可選，例如 {example}",
   "edit": "編輯",

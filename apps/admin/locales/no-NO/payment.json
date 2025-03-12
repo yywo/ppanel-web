@@ -19,6 +19,8 @@
   "delete": "Slett",
   "deleteSuccess": "Slettet med suksess",
   "deleteWarning": "Er du sikker på at du vil slette denne betalingsmetoden? Denne handlingen kan ikke angres.",
+  "description": "Beskrivelse",
+  "descriptionPlaceholder": "Skriv inn beskrivelse av betalingsmetode",
   "domain": "Domene",
   "domainPlaceholder": "valgfritt, f.eks. {example}",
   "edit": "Rediger",

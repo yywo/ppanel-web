@@ -364,6 +364,7 @@ declare namespace API {
     id: number;
     name: string;
     platform: string;
+    description: string;
     icon: string;
     fee_mode: number;
     fee_percent: number;
@@ -374,6 +375,7 @@ declare namespace API {
     id: number;
     name: string;
     platform: string;
+    description: string;
     icon?: string;
     domain?: string;
     config: Record<string, any>;
@@ -387,6 +389,7 @@ declare namespace API {
     id: number;
     name: string;
     platform: string;
+    description: string;
     icon: string;
     domain: string;
     config: Record<string, any>;

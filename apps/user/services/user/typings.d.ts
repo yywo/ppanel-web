@@ -13,6 +13,10 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AlipayNotifyResponse = {
+    return_code: string;
+  };
+
   type Announcement = {
     id: number;
     title: string;
@@ -175,6 +179,19 @@ declare namespace API {
     enable_verify: boolean;
     enable_domain_suffix: boolean;
     domain_suffix_list: string;
+  };
+
+  type EPayNotifyRequest = {
+    pid: number;
+    trade_no: string;
+    out_trade_no: string;
+    type: string;
+    name: string;
+    money: string;
+    trade_status: string;
+    param: string;
+    sign: string;
+    sign_type: string;
   };
 
   type Follow = {
@@ -372,7 +389,8 @@ declare namespace API {
   type PaymenMethod = {
     id: number;
     name: string;
-    mark: string;
+    platform: string;
+    description: string;
     icon: string;
     fee_mode: number;
     fee_percent: number;
@@ -382,7 +400,8 @@ declare namespace API {
   type PaymentConfig = {
     id: number;
     name: string;
-    mark: string;
+    platform: string;
+    description: string;
     icon?: string;
     domain?: string;
     config: Record<string, any>;
@@ -392,11 +411,36 @@ declare namespace API {
     enable: boolean;
   };
 
+  type PaymentMethodDetail = {
+    id: number;
+    name: string;
+    platform: string;
+    description: string;
+    icon: string;
+    domain: string;
+    config: Record<string, any>;
+    fee_mode: number;
+    fee_percent: number;
+    fee_amount: number;
+    enable: boolean;
+    notify_url: string;
+  };
+
+  type PlatformInfo = {
+    platform: string;
+    platform_url: string;
+    platform_field_description: Record<string, any>;
+  };
+
+  type PlatformResponse = {
+    list: PlatformInfo[];
+  };
+
   type PortalPurchaseRequest = {
     identifier: string;
     platform: string;
     password?: string;
-    payment: string;
+    payment: number;
     subscribe_id: number;
     quantity: number;
     coupon?: string;
@@ -418,7 +462,7 @@ declare namespace API {
   };
 
   type PrePurchaseOrderRequest = {
-    payment: string;
+    payment: number;
     subscribe_id: number;
     quantity: number;
     coupon?: string;
@@ -463,7 +507,7 @@ declare namespace API {
   type PurchaseOrderRequest = {
     subscribe_id: number;
     quantity: number;
-    payment: string;
+    payment: number;
     coupon?: string;
   };
 
@@ -607,7 +651,7 @@ declare namespace API {
 
   type RechargeOrderRequest = {
     amount: number;
-    payment: string;
+    payment: number;
   };
 
   type RechargeOrderResponse = {
@@ -628,7 +672,7 @@ declare namespace API {
   type RenewalOrderRequest = {
     user_subscribe_id: number;
     quantity: number;
-    payment: string;
+    payment: number;
     coupon?: string;
   };
 
@@ -638,7 +682,7 @@ declare namespace API {
 
   type ResetTrafficOrderRequest = {
     user_subscribe_id: number;
-    payment: string;
+    payment: number;
   };
 
   type ResetTrafficOrderResponse = {

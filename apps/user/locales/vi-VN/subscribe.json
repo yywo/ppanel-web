@@ -27,6 +27,8 @@
     "connectionSpeed": "Tốc độ kết nối",
     "productDetail": "Chi tiết sản phẩm"
   },
+  "discount": "Giảm giá",
+  "discountInfo": "Thông tin giảm giá",
   "enterAmount": "Nhập số tiền nạp",
   "enterCoupon": "Nhập Mã Phiếu Giảm Giá",
   "methods": {

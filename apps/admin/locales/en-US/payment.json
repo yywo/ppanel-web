@@ -19,6 +19,8 @@
   "delete": "Delete",
   "deleteSuccess": "Deleted successfully",
   "deleteWarning": "Are you sure you want to delete this payment method? This action cannot be undone.",
+  "description": "Description",
+  "descriptionPlaceholder": "Enter payment method description",
   "domain": "Domain",
   "domainPlaceholder": "optional, e.g. {example}",
   "edit": "Edit",

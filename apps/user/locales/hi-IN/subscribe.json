@@ -27,6 +27,8 @@
     "connectionSpeed": "कनेक्शन गति",
     "productDetail": "उत्पाद विवरण"
   },
+  "discount": "छूट",
+  "discountInfo": "छूट जानकारी",
   "enterAmount": "रिचार्ज राशि दर्ज करें",
   "enterCoupon": "कूपन कोड दर्ज करें",
   "methods": {

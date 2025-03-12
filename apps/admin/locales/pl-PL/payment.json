@@ -19,6 +19,8 @@
   "delete": "Usuń",
   "deleteSuccess": "Usunięto pomyślnie",
   "deleteWarning": "Czy na pewno chcesz usunąć tę metodę płatności? Ta akcja jest nieodwracalna.",
+  "description": "Opis",
+  "descriptionPlaceholder": "Wprowadź opis metody płatności",
   "domain": "Domena",
   "domainPlaceholder": "opcjonalnie, np. {example}",
   "edit": "Edytuj",

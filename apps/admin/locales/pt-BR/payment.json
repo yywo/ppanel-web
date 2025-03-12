@@ -19,6 +19,8 @@
   "delete": "Excluir",
   "deleteSuccess": "Excluído com sucesso",
   "deleteWarning": "Você tem certeza de que deseja excluir este método de pagamento? Esta ação não pode ser desfeita.",
+  "description": "Descrição",
+  "descriptionPlaceholder": "Insira a descrição do método de pagamento",
   "domain": "Domínio",
   "domainPlaceholder": "opcional, por exemplo, {exemplo}",
   "edit": "Editar",

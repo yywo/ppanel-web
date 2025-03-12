@@ -35,7 +35,7 @@ export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
   const router = useRouter();
   const [params, setParams] = useState<Partial<API.RenewalOrderRequest>>({
     quantity: 1,
-    payment: 'balance',
+    payment: -1,
     coupon: '',
     user_subscribe_id: id,
   });

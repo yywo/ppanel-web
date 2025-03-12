@@ -69,6 +69,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       verify_code_interval: 60,
     },
     oauth_methods: [],
+    web_ad: false,
   },
   user: undefined,
   setCommon: (common) =>

@@ -19,6 +19,8 @@
   "delete": "Löschen",
   "deleteSuccess": "Erfolgreich gelöscht",
   "deleteWarning": "Sind Sie sicher, dass Sie diese Zahlungsmethode löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+  "description": "Beschreibung",
+  "descriptionPlaceholder": "Geben Sie die Beschreibung der Zahlungsmethode ein",
   "domain": "Domain",
   "domainPlaceholder": "optional, z.B. {example}",
   "edit": "Bearbeiten",

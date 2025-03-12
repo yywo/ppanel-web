@@ -19,6 +19,8 @@
   "delete": "Sil",
   "deleteSuccess": "Başarıyla silindi",
   "deleteWarning": "Bu ödeme yöntemini silmek istediğinize emin misiniz? Bu işlem geri alınamaz.",
+  "description": "Açıklama",
+  "descriptionPlaceholder": "Ödeme yöntemi açıklamasını girin",
   "domain": "Alan Adı",
   "domainPlaceholder": "isteğe bağlı, örn. {example}",
   "edit": "Düzenle",

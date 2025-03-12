@@ -30,6 +30,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
+import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { unitConversion } from '@workspace/ui/utils';
@@ -75,6 +76,7 @@ export default function PaymentForm<T>({
     fee_mode: z.coerce.number().min(0).max(2),
     fee_percent: z.coerce.number().optional(),
     fee_amount: z.coerce.number().optional(),
+    description: z.string().optional(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -376,6 +378,23 @@ export default function PaymentForm<T>({
                     ))}
                   </div>
                 )}
+
+                <FormField
+                  control={form.control}
+                  name='description'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('description')}</FormLabel>
+                      <FormControl>
+                        <MarkdownEditor
+                          value={field.value}
+                          onChange={(value) => form.setValue(field.name, value as string)}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
             </form>
           </Form>

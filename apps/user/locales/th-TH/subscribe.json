@@ -27,6 +27,8 @@
     "connectionSpeed": "ความเร็วในการเชื่อมต่อ",
     "productDetail": "รายละเอียดสินค้า"
   },
+  "discount": "ส่วนลด",
+  "discountInfo": "ข้อมูลส่วนลด",
   "enterAmount": "กรอกจำนวนเงินที่ต้องการเติม",
   "enterCoupon": "กรอกรหัสคูปอง",
   "methods": {

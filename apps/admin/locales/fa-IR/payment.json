@@ -19,6 +19,8 @@
   "delete": "حذف",
   "deleteSuccess": "با موفقیت حذف شد",
   "deleteWarning": "آیا مطمئن هستید که می‌خواهید این روش پرداخت را حذف کنید؟ این عمل قابل بازگشت نیست.",
+  "description": "توضیحات",
+  "descriptionPlaceholder": "توضیحات روش پرداخت را وارد کنید",
   "domain": "دامنه",
   "domainPlaceholder": "اختیاری، به عنوان مثال {example}",
   "edit": "ویرایش",
