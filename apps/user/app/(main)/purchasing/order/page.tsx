@@ -228,7 +228,7 @@ export default function Page() {
               </div>
             )}
 
-            {data?.status === 1 && payment?.type === 'Stripe' && (
+            {data?.status === 1 && payment?.type === 'stripe' && (
               <div className='flex flex-col items-center gap-8 text-center'>
                 <h3 className='text-2xl font-bold tracking-tight'>{t('waitingForPayment')}</h3>
                 <p className='flex items-center text-3xl font-bold'>{countdownDisplay}</p>
