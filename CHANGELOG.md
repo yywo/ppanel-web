@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.28](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2025-03-13)
+
+
+### ✨ Features
+
+* **input**: Add minimum value constraint and enhance number handling in EnhancedInput ([94822d9](https://github.com/perfect-panel/ppanel-web/commit/94822d9))
+
 # [1.0.0-beta.27](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2025-03-13)
 
 
