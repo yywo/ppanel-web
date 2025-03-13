@@ -1,9 +1,7 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, recharge } from '@/services/user/order';
-import { getAvailablePaymentMethods } from '@/services/user/payment';
-import { useQuery } from '@tanstack/react-query';
+import { recharge } from '@/services/user/order';
 import { Button, ButtonProps } from '@workspace/ui/components/button';
 import {
   Dialog,
@@ -13,15 +11,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@workspace/ui/components/dialog';
-import { Label } from '@workspace/ui/components/label';
-import { RadioGroup, RadioGroupItem } from '@workspace/ui/components/radio-group';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { unitConversion } from '@workspace/ui/utils';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useEffect, useState, useTransition } from 'react';
+import { useState, useTransition } from 'react';
+import PaymentMethods from './payment-methods';
 
 export default function Recharge(props: Readonly<ButtonProps>) {
   const t = useTranslations('subscribe');
@@ -34,26 +30,8 @@ export default function Recharge(props: Readonly<ButtonProps>) {
 
   const [params, setParams] = useState<API.RechargeOrderRequest>({
     amount: 0,
-    payment: '',
+    payment: 1,
   });
-
-  const { data: paymentMethods } = useQuery({
-    enabled: open,
-    queryKey: ['getAvailablePaymentMethods'],
-    queryFn: async () => {
-      const { data } = await getAvailablePaymentMethods();
-      return data.data?.list || [];
-    },
-  });
-
-  useEffect(() => {
-    if (paymentMethods?.length) {
-      setParams((prev) => ({
-        ...prev,
-        payment: paymentMethods.find((item) => item.mark !== 'balance')?.mark as string,
-      }));
-    }
-  }, [paymentMethods]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -86,43 +64,10 @@ export default function Recharge(props: Readonly<ButtonProps>) {
                 suffix={currency.currency_unit}
               />
             </div>
-            <div className='font-semibold'>{t('paymentMethod')}</div>
-            <RadioGroup
-              className='grid grid-cols-5 gap-2'
+            <PaymentMethods
               value={params.payment}
-              onValueChange={(value) => {
-                setParams({
-                  ...params,
-                  payment: value,
-                });
-              }}
-            >
-              {paymentMethods
-                ?.filter((item) => item.mark !== 'balance')
-                ?.map((item) => {
-                  return (
-                    <div key={item.mark}>
-                      <RadioGroupItem value={item.mark} id={item.mark} className='peer sr-only' />
-                      <Label
-                        htmlFor={item.mark}
-                        className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 py-2'
-                      >
-                        <div className='mb-3 size-12'>
-                          <Image
-                            src={item.icon || `/payment/${item.mark}.svg`}
-                            width={48}
-                            height={48}
-                            alt={item.name!}
-                          />
-                        </div>
-                        <span className='w-full overflow-hidden text-ellipsis whitespace-nowrap text-center'>
-                          {item.name || t(`methods.${item.mark}`)}
-                        </span>
-                      </Label>
-                    </div>
-                  );
-                })}
-            </RadioGroup>
+              onChange={(value) => setParams({ ...params, payment: value })}
+            />
           </div>
           <Button
             className='fixed bottom-0 left-0 w-full rounded-none md:relative md:mt-6'
@@ -133,15 +78,6 @@ export default function Recharge(props: Readonly<ButtonProps>) {
                   const response = await recharge(params);
                   const orderNo = response.data.data?.order_no;
                   if (orderNo) {
-                    const { data } = await checkoutOrder({
-                      orderNo,
-                      returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
-                    });
-                    const type = data.data?.type;
-                    const checkout_url = data.data?.checkout_url;
-                    if (type === 'link') {
-                      window.location.href = checkout_url!;
-                    }
                     router.push(`/payment?order_no=${orderNo}`);
                     setOpen(false);
                   }

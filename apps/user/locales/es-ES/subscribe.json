@@ -27,6 +27,8 @@
     "connectionSpeed": "Velocidad de conexión",
     "productDetail": "Detalles del producto"
   },
+  "discount": "Descuento",
+  "discountInfo": "Información del Descuento",
   "enterAmount": "Ingrese el monto de recarga",
   "enterCoupon": "Introduce el código de cupón",
   "methods": {

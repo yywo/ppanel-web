@@ -2,7 +2,7 @@
 
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, resetTraffic } from '@/services/user/order';
+import { resetTraffic } from '@/services/user/order';
 import { Button } from '@workspace/ui/components/button';
 import {
   Dialog,
@@ -28,7 +28,7 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
   const [open, setOpen] = useState<boolean>(false);
   const router = useRouter();
   const [params, setParams] = useState<API.ResetTrafficOrderRequest>({
-    payment: 'balance',
+    payment: -1,
     user_subscribe_id: id,
   });
   const [loading, startTransition] = useTransition();
@@ -84,15 +84,6 @@ export default function ResetTraffic({ id, replacement }: Readonly<ResetTrafficP
                   const response = await resetTraffic(params);
                   const orderNo = response.data.data?.order_no;
                   if (orderNo) {
-                    const { data } = await checkoutOrder({
-                      orderNo,
-                      returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
-                    });
-                    const type = data.data?.type;
-                    const checkout_url = data.data?.checkout_url;
-                    if (type === 'link') {
-                      window.location.href = checkout_url!;
-                    }
                     getUserInfo();
                     router.push(`/payment?order_no=${orderNo}`);
                   }

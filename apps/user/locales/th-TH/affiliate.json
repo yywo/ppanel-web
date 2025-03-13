@@ -7,5 +7,5 @@
   "inviteRecords": "บันทึกการเชิญ",
   "registrationTime": "เวลาลงทะเบียน",
   "totalCommission": "ค่าคอมมิชชั่นทั้งหมด",
-  "userEmail": "อีเมลผู้ใช้"
+  "userIdentifier": "รหัสผู้ใช้"
 }

@@ -96,8 +96,8 @@ export default function Affiliate() {
               <CardContent className='p-3 text-sm'>
                 <ul className='grid grid-cols-2 gap-3 *:flex *:flex-col'>
                   <li className='font-semibold'>
-                    <span className='text-muted-foreground'>{t('userEmail')}</span>
-                    <span>{item.email}</span>
+                    <span className='text-muted-foreground'>{t('userIdentifier')}</span>
+                    <span>{item.identifier}</span>
                   </li>
                   <li className='font-semibold'>
                     <span className='text-muted-foreground'>{t('registrationTime')}</span>

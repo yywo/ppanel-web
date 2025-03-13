@@ -67,12 +67,14 @@ export default function Footer() {
         </nav>
         <div>
           <strong className='text-foreground'>{site.site_name}</strong> © All rights reserved.
-          <Link href='/tos' className='ml-2 underline'>
-            {t('tos')}
-          </Link>
-          <Link href='/privacy-policy' className='ml-2 underline'>
-            {t('privacyPolicy')}
-          </Link>
+          <div>
+            <Link href='/tos' className='underline'>
+              {t('tos')}
+            </Link>
+            <Link href='/privacy-policy' className='ml-2 underline'>
+              {t('privacyPolicy')}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

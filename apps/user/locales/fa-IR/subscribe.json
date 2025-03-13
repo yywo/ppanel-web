@@ -27,6 +27,8 @@
     "connectionSpeed": "سرعت اتصال",
     "productDetail": "جزئیات محصول"
   },
+  "discount": "تخفیف",
+  "discountInfo": "اطلاعات تخفیف",
   "enterAmount": "مبلغ شارژ را وارد کنید",
   "enterCoupon": "کد تخفیف را وارد کنید",
   "methods": {

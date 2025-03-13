@@ -1,4 +1,4 @@
-import { intlFormat } from 'date-fns';
+import { differenceInMilliseconds, intlFormat } from 'date-fns';
 
 export function formatBytes(bytes: number) {
   if (bytes === 0) return '0 B';
@@ -23,4 +23,11 @@ export function formatDate(date?: Date | number, showTime: boolean = true) {
     }),
     hour12: false,
   });
+}
+
+export function differenceInDays(dateLeft: Date | number, dateRight: Date | number) {
+  const diffInMs = differenceInMilliseconds(dateLeft, dateRight);
+  const diffInDays = diffInMs / (1000 * 60 * 60 * 24);
+  if (diffInDays % 1 === 0) return diffInDays;
+  return Number(diffInDays.toFixed(1));
 }

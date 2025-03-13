@@ -7,5 +7,5 @@
   "inviteRecords": "Записи запрошень",
   "registrationTime": "Час реєстрації",
   "totalCommission": "Загальна сума комісії",
-  "userEmail": "Електронна пошта користувача"
+  "userIdentifier": "Ідентифікатор користувача"
 }

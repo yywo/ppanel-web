@@ -19,6 +19,7 @@ export default getRequestConfig(async () => {
     profile: (await import(`./${locale}/profile.json`)).default,
     subscribe: (await import(`./${locale}/subscribe.json`)).default,
     order: (await import(`./${locale}/order.json`)).default,
+    payment: (await import(`./${locale}/payment.json`)).default,
     wallet: (await import(`./${locale}/wallet.json`)).default,
     ticket: (await import(`./${locale}/ticket.json`)).default,
     document: (await import(`./${locale}/document.json`)).default,

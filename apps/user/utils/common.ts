@@ -52,6 +52,7 @@ export function Logout() {
   const pathname = location.pathname;
   if (
     !['', '/', '/auth', '/tos', '/privacy-policy'].includes(pathname) &&
+    !pathname.startsWith('/purchasing') &&
     !pathname.startsWith('/oauth/')
   ) {
     setRedirectUrl(location.pathname);

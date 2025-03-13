@@ -116,7 +116,7 @@ export default function Page(props: any) {
                 <ul className='grid gap-3'>
                   <li className='flex items-center justify-between'>
                     <span className='text-muted-foreground'>{t('method')}</span>
-                    <span>{t(`methods.${row.original.method}`)}</span>
+                    <span>{row.original?.payment?.name || row.original?.payment?.platform}</span>
                   </li>
                 </ul>
               </HoverCardContent>

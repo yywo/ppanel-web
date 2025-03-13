@@ -1,5 +1,6 @@
 {
   "amount": "Cantidad",
+  "assetOverview": "Descripción del activo",
   "balance": "saldo",
   "commission": "Comisión",
   "createdAt": "hora",

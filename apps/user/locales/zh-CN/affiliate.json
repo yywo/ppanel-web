@@ -7,5 +7,5 @@
   "inviteRecords": "邀请记录",
   "registrationTime": "注册时间",
   "totalCommission": "佣金总额",
-  "userEmail": "用户邮箱"
+  "userIdentifier": "用户标识符"
 }

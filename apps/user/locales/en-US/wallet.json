@@ -1,10 +1,11 @@
 {
   "amount": "Amount",
+  "assetOverview": "Asset Overview",
   "balance": "Balance",
   "commission": "Commission",
   "createdAt": "Time",
   "giftAmount": "Girt Amount",
-  "totalAssets": "Asset overview",
+  "totalAssets": "Total Assets",
   "type": {
     "0": "Type",
     "1": "Recharge",

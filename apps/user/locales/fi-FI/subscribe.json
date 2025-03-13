@@ -27,6 +27,8 @@
     "connectionSpeed": "Yhteysnopeus",
     "productDetail": "Tuotteen tiedot"
   },
+  "discount": "Alennus",
+  "discountInfo": "Alennustiedot",
   "enterAmount": "Syötä latausmäärä",
   "enterCoupon": "Syötä alennuskoodi",
   "methods": {

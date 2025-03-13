@@ -27,11 +27,7 @@ const DurationSelector: React.FC<DurationSelectorProps> = ({
     [onChange],
   );
 
-  const DurationOption: React.FC<{ value: string; label: string; discount?: number }> = ({
-    value,
-    label,
-    discount,
-  }) => (
+  const DurationOption: React.FC<{ value: string; label: string }> = ({ value, label }) => (
     <div className='relative'>
       <RadioGroupItem value={value} id={value} className='peer sr-only' />
       <Label
@@ -39,10 +35,13 @@ const DurationSelector: React.FC<DurationSelectorProps> = ({
         className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
       >
         {label}
-        {discount && <Badge variant='destructive'>-{discount}%</Badge>}
       </Label>
     </div>
   );
+
+  // 查找当前选中项的折扣信息
+  const currentDiscount = discounts?.find((item) => item.quantity === quantity)?.discount;
+  const discountPercentage = currentDiscount ? 100 - currentDiscount : 0;
 
   return (
     <>
@@ -58,10 +57,19 @@ const DurationSelector: React.FC<DurationSelectorProps> = ({
             key={item.quantity}
             value={String(item.quantity)}
             label={`${item.quantity} / ${t(unitTime)}`}
-            discount={100 - item.discount}
           />
         ))}
       </RadioGroup>
+      <div className='flex items-center justify-between'>
+        <span className='text-muted-foreground text-sm'>{t('discountInfo')}:</span>
+        {discountPercentage > 0 ? (
+          <Badge variant='destructive' className='h-6 text-sm'>
+            -{discountPercentage}% {t('discount')}
+          </Badge>
+        ) : (
+          <span className='text-muted-foreground h-6 text-sm'>--</span>
+        )}
+      </div>
     </>
   );
 };

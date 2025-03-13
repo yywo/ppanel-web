@@ -27,6 +27,8 @@
     "connectionSpeed": "Viteza de conectare",
     "productDetail": "Detalii produs"
   },
+  "discount": "Reducere",
+  "discountInfo": "Informații despre reducere",
   "enterAmount": "Introduceți suma de reîncărcare",
   "enterCoupon": "Introduceți codul cuponului",
   "methods": {

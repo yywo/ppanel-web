@@ -4,7 +4,7 @@ import CouponInput from '@/components/subscribe/coupon-input';
 import DurationSelector from '@/components/subscribe/duration-selector';
 import PaymentMethods from '@/components/subscribe/payment-methods';
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, preCreateOrder, purchase } from '@/services/user/order';
+import { preCreateOrder, purchase } from '@/services/user/order';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent } from '@workspace/ui/components/card';
@@ -29,7 +29,7 @@ export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseP
   const [params, setParams] = useState<Partial<API.PurchaseOrderRequest>>({
     quantity: 1,
     subscribe_id: 0,
-    payment: 'balance',
+    payment: -1,
     coupon: '',
   });
   const [loading, startTransition] = useTransition();
@@ -69,20 +69,11 @@ export default function Purchase({ subscribe, setSubscribe }: Readonly<PurchaseP
         const response = await purchase(params as API.PurchaseOrderRequest);
         const orderNo = response.data.data?.order_no;
         if (orderNo) {
-          const { data } = await checkoutOrder({
-            orderNo,
-            returnUrl: `${window.location.origin}/payment?order_no=${orderNo}`,
-          });
-          const type = data.data?.type;
-          const checkout_url = data.data?.checkout_url;
-          if (type === 'link') {
-            window.location.href = checkout_url!;
-          }
           getUserInfo();
           router.push(`/payment?order_no=${orderNo}`);
         }
       } catch (error) {
-        console.log(error);
+        /* empty */
       }
     });
   }, [params, router, getUserInfo]);

@@ -27,6 +27,8 @@
     "connectionSpeed": "Prędkość połączenia",
     "productDetail": "Szczegóły produktu"
   },
+  "discount": "Zniżka",
+  "discountInfo": "Informacje o zniżce",
   "enterAmount": "Wprowadź kwotę doładowania",
   "enterCoupon": "Wprowadź kod kuponu",
   "methods": {

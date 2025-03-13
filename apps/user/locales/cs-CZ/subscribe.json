@@ -27,6 +27,8 @@
     "connectionSpeed": "Rychlost připojení",
     "productDetail": "Detaily produktu"
   },
+  "discount": "Sleva",
+  "discountInfo": "Informace o slevě",
   "enterAmount": "Zadejte částku dobití",
   "enterCoupon": "Zadejte kód kupónu",
   "methods": {

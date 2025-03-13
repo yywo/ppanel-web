@@ -27,6 +27,8 @@
     "connectionSpeed": "Швидкість з'єднання",
     "productDetail": "Деталі товару"
   },
+  "discount": "Знижка",
+  "discountInfo": "Інформація про знижку",
   "enterAmount": "Введіть суму поповнення",
   "enterCoupon": "Введіть код купона",
   "methods": {

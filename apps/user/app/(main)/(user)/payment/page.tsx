@@ -1,10 +1,12 @@
 'use client';
 
 import { Display } from '@/components/display';
+import StripePayment from '@/components/payment/stripe';
 import { SubscribeBilling } from '@/components/subscribe/billing';
 import { SubscribeDetail } from '@/components/subscribe/detail';
 import useGlobalStore from '@/config/use-global';
-import { checkoutOrder, queryOrderDetail } from '@/services/user/order';
+import { queryOrderDetail } from '@/services/user/order';
+import { purchaseCheckout } from '@/services/user/portal';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -24,7 +26,6 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
 import { useEffect, useState } from 'react';
-import StripePayment from './stripe';
 
 export default function Page() {
   const t = useTranslations('order');
@@ -48,9 +49,15 @@ export default function Page() {
 
   const { data: payment } = useQuery({
     enabled: !!orderNo && data?.status === 1,
-    queryKey: ['checkoutOrder', orderNo],
+    queryKey: ['purchaseCheckout', orderNo],
     queryFn: async () => {
-      const { data } = await checkoutOrder({ orderNo: orderNo!, returnUrl: window.location.href });
+      const { data } = await purchaseCheckout({
+        orderNo: orderNo!,
+        returnUrl: window.location.href,
+      });
+      if (data.data?.type === 'url' && data.data.checkout_url) {
+        window.open(data.data.checkout_url, '_blank');
+      }
       return data?.data;
     },
   });
@@ -99,7 +106,7 @@ export default function Page() {
           <dl className='grid gap-3'>
             <div className='flex items-center justify-between'>
               <dt className='text-muted-foreground'>
-                {data?.method && <Badge>{t(`methods.${data?.method}`)}</Badge>}
+                <Badge>{data?.payment.name || data?.payment.platform}</Badge>
               </dt>
             </div>
           </dl>
@@ -169,7 +176,7 @@ export default function Page() {
               </div>
             </div>
           )}
-          {data?.status === 1 && payment?.type === 'link' && (
+          {data?.status === 1 && payment?.type === 'url' && (
             <div className='flex flex-col items-center gap-8 text-center'>
               <h3 className='text-2xl font-bold tracking-tight'>{t('waitingForPayment')}</h3>
               <p className='flex items-center text-3xl font-bold'>{countdownDisplay}</p>
@@ -218,17 +225,17 @@ export default function Page() {
 
           {data?.status === 1 && payment?.type === 'stripe' && (
             <div className='flex flex-col items-center gap-8 text-center'>
-              <h3 className='text-2xl font-bold tracking-tight'>{t('scanToPay')}</h3>
+              <h3 className='text-2xl font-bold tracking-tight'>{t('waitingForPayment')}</h3>
               <p className='flex items-center text-3xl font-bold'>{countdownDisplay}</p>
               {payment.stripe && <StripePayment {...payment.stripe} />}
-              <div className='flex gap-4'>
+              {/* <div className='flex gap-4'>
                 <Button asChild>
                   <Link href='/subscribe'>{t('productList')}</Link>
                 </Button>
                 <Button asChild variant='outline'>
                   <Link href='/order'>{t('orderList')}</Link>
                 </Button>
-              </div>
+              </div> */}
             </div>
           )}
 

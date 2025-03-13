@@ -2,21 +2,6 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
-/** Checkout order POST /v1/public/order/checkout */
-export async function checkoutOrder(
-  body: API.CheckoutOrderRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: API.CheckoutOrderResponse }>('/v1/public/order/checkout', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
 /** Close order POST /v1/public/order/close */
 export async function closeOrder(body: API.CloseOrderRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/public/order/close', {
