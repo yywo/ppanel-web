@@ -1,32 +1,35 @@
 import { evaluate, format } from 'mathjs';
 
-export function unitConversion(
-  type: 'centsToDollars' | 'dollarsToCents' | 'bitsToMb' | 'mbToBits' | 'bytesToGb' | 'gbToBytes',
-  value?: number | string,
-) {
-  if (!value) return;
-  switch (type) {
-    case 'centsToDollars':
-      return evaluate(`${value} / 100`);
-    case 'dollarsToCents':
-      return evaluate(`${value} * 100`);
-    case 'bitsToMb':
-      return evaluate(`${value} / 1024 / 1024`);
-    case 'mbToBits':
-      return evaluate(`${value} * 1024 * 1024`);
-    case 'bytesToGb':
-      return evaluate(`${value} / 1024 / 1024 / 1024`);
-    case 'gbToBytes':
-      return evaluate(`${value} * 1024 * 1024 * 1024`);
-    default:
-      throw new Error('Invalid conversion type');
-  }
+type ConversionType =
+  | 'centsToDollars'
+  | 'dollarsToCents'
+  | 'bitsToMb'
+  | 'mbToBits'
+  | 'bytesToGb'
+  | 'gbToBytes';
+
+const conversionConfig: Record<ConversionType, { formula: string; precision: number }> = {
+  centsToDollars: { formula: 'value / 100', precision: 2 },
+  dollarsToCents: { formula: 'value * 100', precision: 0 },
+  bitsToMb: { formula: 'value / 1024 / 1024', precision: 2 },
+  mbToBits: { formula: 'value * 1024 * 1024', precision: 0 },
+  bytesToGb: { formula: 'value / 1024 / 1024 / 1024', precision: 2 },
+  gbToBytes: { formula: 'value * 1024 * 1024 * 1024', precision: 0 },
+};
+
+export function unitConversion(type: ConversionType, value?: number | string) {
+  if (!value) return 0;
+
+  const config = conversionConfig[type];
+  if (!config) throw new Error('Invalid conversion type');
+
+  const formula = config.formula.replace('value', `${value}`);
+  const result = evaluate(formula);
+  return Number(format(result, { notation: 'fixed', precision: config.precision }));
 }
 
 export function evaluateWithPrecision(expression: string) {
   const result = evaluate(expression);
-
   const formatted = format(result, { notation: 'fixed', precision: 2 });
-
   return Number(formatted);
 }

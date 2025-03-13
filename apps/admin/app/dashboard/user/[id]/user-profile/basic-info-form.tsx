@@ -113,6 +113,7 @@ export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () =
                     <FormControl>
                       <EnhancedInput
                         type='number'
+                        min={0}
                         value={field.value}
                         prefix={currency?.currency_symbol ?? '$'}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
@@ -136,6 +137,7 @@ export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () =
                     <FormControl>
                       <EnhancedInput
                         type='number'
+                        min={0}
                         value={field.value}
                         prefix={currency?.currency_symbol ?? '$'}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
@@ -159,6 +161,7 @@ export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () =
                     <FormControl>
                       <EnhancedInput
                         type='number'
+                        min={0}
                         value={field.value}
                         prefix={currency?.currency_symbol ?? '$'}
                         formatInput={(value) => unitConversion('centsToDollars', value)}
