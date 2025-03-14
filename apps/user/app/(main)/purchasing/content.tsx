@@ -27,7 +27,7 @@ export default function Content({ subscription }: { subscription?: API.Subscribe
     subscribe_id: 0,
     payment: -1,
     coupon: '',
-    platform: 'email',
+    auth_type: 'email',
     identifier: '',
     password: '',
   });
@@ -70,12 +70,15 @@ export default function Content({ subscription }: { subscription?: API.Subscribe
     startTransition(async () => {
       try {
         const { data } = await purchase(params);
-        console.log(data);
-        const { order_no, check_url, type } = data.data!;
+        const { order_no } = data.data!;
         if (order_no) {
-          if (type === 'link') {
-            window.location.href = check_url!;
-          }
+          localStorage.setItem(
+            order_no,
+            JSON.stringify({
+              auth_type: params.auth_type,
+              identifier: params.identifier,
+            }),
+          );
           router.push(`/purchasing/order?order_no=${order_no}`);
         }
       } catch (error) {
