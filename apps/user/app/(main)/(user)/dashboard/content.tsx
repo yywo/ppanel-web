@@ -164,9 +164,7 @@ export default function Content() {
               <CardHeader className='flex flex-row flex-wrap items-center justify-between gap-2 space-y-0'>
                 <CardTitle className='font-medium'>
                   {item.subscribe.name}
-                  <p className='text-foreground/50 mt-1 text-sm'>
-                    {formatDate(item.subscribe.created_at)}
-                  </p>
+                  <p className='text-foreground/50 mt-1 text-sm'>{formatDate(item.start_time)}</p>
                 </CardTitle>
                 <div className='flex flex-wrap gap-2'>
                   <AlertDialog>
