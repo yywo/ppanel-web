@@ -39,6 +39,8 @@
   "status": "स्थिति",
   "subject": "विषय",
   "template": "टेम्पलेट",
+  "traffic_exceed_email_template": "ट्रैफिक अधिकता सूचना टेम्पलेट",
+  "traffic_exceed_email_templateDescription": "{after}.variable{before} प्लेसहोल्डर्स को वास्तविक डेटा के साथ प्रतिस्थापित किया जाएगा। सुनिश्चित करें कि इन वेरिएबल्स को बनाए रखें।",
   "verify_email_template": "सत्यापन ईमेल टेम्पलेट",
   "verify_email_templateDescription": "{after}.variable{before} प्लेसहोल्डर्स को वास्तविक डेटा से बदला जाएगा। सुनिश्चित करें कि इन वेरिएबल्स को बनाए रखें।",
   "whitelistSuffixes": "श्वेतसूची प्रत्यय",

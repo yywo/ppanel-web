@@ -39,6 +39,8 @@
   "status": "Status",
   "subject": "Temat",
   "template": "Szablon",
+  "traffic_exceed_email_template": "Szablon powiadomienia o przekroczeniu ruchu",
+  "traffic_exceed_email_templateDescription": "Miejsca {after}.variable{before} zostaną zastąpione rzeczywistymi danymi. Upewnij się, że te zmienne są zachowane.",
   "verify_email_template": "Szablon e-maila weryfikacyjnego",
   "verify_email_templateDescription": "Elementy zastępcze {after}.variable{before} zostaną zastąpione rzeczywistymi danymi. Upewnij się, że te zmienne zostaną zachowane.",
   "whitelistSuffixes": "Dozwolone Sufiksy",

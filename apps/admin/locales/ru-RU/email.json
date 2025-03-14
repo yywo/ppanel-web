@@ -39,6 +39,8 @@
   "status": "Статус",
   "subject": "Тема",
   "template": "Шаблон",
+  "traffic_exceed_email_template": "Шаблон уведомления о превышении трафика",
+  "traffic_exceed_email_templateDescription": "Места {after}.variable{before} будут заменены на фактические данные. Убедитесь, что эти переменные сохранены.",
   "verify_email_template": "Шаблон письма для подтверждения",
   "verify_email_templateDescription": "Заполнители {after}.variable{before} будут заменены фактическими данными. Убедитесь, что эти переменные сохранены.",
   "whitelistSuffixes": "Белый список суффиксов",

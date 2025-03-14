@@ -39,6 +39,8 @@
   "status": "สถานะ",
   "subject": "เรื่อง",
   "template": "แม่แบบ",
+  "traffic_exceed_email_template": "เทมเพลตการแจ้งเตือนการเกินการจราจร",
+  "traffic_exceed_email_templateDescription": "ตัวแปร {after}.variable{before} จะถูกแทนที่ด้วยข้อมูลจริง โปรดตรวจสอบให้แน่ใจว่าได้เก็บตัวแปรเหล่านี้ไว้",
   "verify_email_template": "เทมเพลตอีเมลยืนยัน",
   "verify_email_templateDescription": "ตัวแปร {after}.variable{before} จะถูกแทนที่ด้วยข้อมูลจริง โปรดตรวจสอบให้แน่ใจว่าเก็บตัวแปรเหล่านี้ไว้",
   "whitelistSuffixes": "อนุญาตให้ใช้คำต่อท้าย",

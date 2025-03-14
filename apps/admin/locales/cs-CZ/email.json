@@ -39,6 +39,8 @@
   "status": "Stav",
   "subject": "Předmět",
   "template": "Šablona",
+  "traffic_exceed_email_template": "Šablona oznámení o překročení provozu",
+  "traffic_exceed_email_templateDescription": "Zástupné symboly {after}.variable{before} budou nahrazeny skutečnými daty. Ujistěte se, že tyto proměnné zachováte.",
   "verify_email_template": "Šablona ověřovacího e-mailu",
   "verify_email_templateDescription": "Zástupné symboly {after}.variable{before} budou nahrazeny skutečnými daty. Ujistěte se, že tyto proměnné zachováte.",
   "whitelistSuffixes": "Povolené přípony",

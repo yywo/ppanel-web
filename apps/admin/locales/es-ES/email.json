@@ -39,6 +39,8 @@
   "status": "Estado",
   "subject": "Asunto",
   "template": "Plantilla",
+  "traffic_exceed_email_template": "Plantilla de Notificación de Exceso de Tráfico",
+  "traffic_exceed_email_templateDescription": "Los marcadores de posición {after}.variable{before} serán reemplazados con datos reales. Asegúrate de mantener estas variables.",
   "verify_email_template": "Plantilla de Correo Electrónico de Verificación",
   "verify_email_templateDescription": "Los marcadores de posición {after}.variable{before} serán reemplazados con datos reales. Asegúrese de mantener estas variables.",
   "whitelistSuffixes": "Sufijos de la lista blanca",

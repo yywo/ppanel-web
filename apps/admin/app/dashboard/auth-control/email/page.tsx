@@ -286,31 +286,34 @@ export default function Page() {
       </TabsContent>
 
       <TabsContent value='template'>
-        <div className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
-          {['verify_email_template', 'expiration_email_template', 'maintenance_email_template'].map(
-            (templateKey) => (
-              <Card key={templateKey}>
-                <CardHeader>
-                  <CardTitle>{t(`${templateKey}`)}</CardTitle>
-                  <CardDescription>
-                    {t(`${templateKey}Description`, { after: '{{', before: '}}' })}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <HTMLEditor
-                    placeholder={t('inputPlaceholder')}
-                    value={data?.config?.[templateKey] as string}
-                    onBlur={(value) =>
-                      updateConfig('config', {
-                        ...data?.config,
-                        [templateKey]: value,
-                      })
-                    }
-                  />
-                </CardContent>
-              </Card>
-            ),
-          )}
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+          {[
+            'verify_email_template',
+            'expiration_email_template',
+            'maintenance_email_template',
+            'traffic_exceed_email_template',
+          ].map((templateKey) => (
+            <Card key={templateKey}>
+              <CardHeader>
+                <CardTitle>{t(`${templateKey}`)}</CardTitle>
+                <CardDescription>
+                  {t(`${templateKey}Description`, { after: '{{', before: '}}' })}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <HTMLEditor
+                  placeholder={t('inputPlaceholder')}
+                  value={data?.config?.[templateKey] as string}
+                  onBlur={(value) =>
+                    updateConfig('config', {
+                      ...data?.config,
+                      [templateKey]: value,
+                    })
+                  }
+                />
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </TabsContent>
 

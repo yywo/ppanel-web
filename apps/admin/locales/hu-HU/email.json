@@ -39,6 +39,8 @@
   "status": "Állapot",
   "subject": "Tárgy",
   "template": "Sablon",
+  "traffic_exceed_email_template": "Forgalmi Túllépés Értesítő Sablon",
+  "traffic_exceed_email_templateDescription": "A {after}.variable{before} helyettesítők tényleges adatokkal lesznek helyettesítve. Győződjön meg róla, hogy ezeket a változókat megőrzi.",
   "verify_email_template": "Ellenőrző Email Sablon",
   "verify_email_templateDescription": "A {after}.variable{before} helyőrzőket tényleges adatokkal fogjuk helyettesíteni. Ügyeljen arra, hogy ezeket a változókat megtartsa.",
   "whitelistSuffixes": "Engedélyezett utótagok",

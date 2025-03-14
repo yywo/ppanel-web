@@ -39,6 +39,8 @@
   "status": "Status",
   "subject": "Betreff",
   "template": "Vorlage",
+  "traffic_exceed_email_template": "Benachrichtigung über überschreitenden Verkehr",
+  "traffic_exceed_email_templateDescription": "Die Platzhalter {after}.variable{before} werden durch tatsächliche Daten ersetzt. Stellen Sie sicher, dass Sie diese Variablen beibehalten.",
   "verify_email_template": "E-Mail-Bestätigungsvorlage",
   "verify_email_templateDescription": "Die Platzhalter {after}.variable{before} werden durch tatsächliche Daten ersetzt. Stellen Sie sicher, dass diese Variablen beibehalten werden.",
   "whitelistSuffixes": "Whitelist-Suffixe",

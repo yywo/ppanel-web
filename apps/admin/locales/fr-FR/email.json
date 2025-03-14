@@ -39,6 +39,8 @@
   "status": "Statut",
   "subject": "Sujet",
   "template": "Modèle",
+  "traffic_exceed_email_template": "Modèle de notification de dépassement de trafic",
+  "traffic_exceed_email_templateDescription": "Les espaces réservés {after}.variable{before} seront remplacés par des données réelles. Assurez-vous de conserver ces variables.",
   "verify_email_template": "Modèle d'Email de Vérification",
   "verify_email_templateDescription": "Les espaces réservés {after}.variable{before} seront remplacés par des données réelles. Assurez-vous de conserver ces variables.",
   "whitelistSuffixes": "Suffixes de la liste blanche",

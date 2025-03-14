@@ -39,6 +39,8 @@
   "status": "وضعیت",
   "subject": "موضوع",
   "template": "الگو",
+  "traffic_exceed_email_template": "الگوی اعلان ترافیک بیش از حد",
+  "traffic_exceed_email_templateDescription": "جایگزین‌های {after}.variable{before} با داده‌های واقعی خواهد شد. اطمینان حاصل کنید که این متغیرها را حفظ کنید.",
   "verify_email_template": "قالب ایمیل تأیید",
   "verify_email_templateDescription": "جای‌گذاری‌های {after}.variable{before} با داده‌های واقعی جایگزین خواهند شد. اطمینان حاصل کنید که این متغیرها را حفظ کنید.",
   "whitelistSuffixes": "پسوندهای لیست سفید",

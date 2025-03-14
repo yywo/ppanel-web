@@ -39,6 +39,8 @@
   "status": "Stare",
   "subject": "Subiect",
   "template": "Șablon",
+  "traffic_exceed_email_template": "Șablon de notificare a depășirii traficului",
+  "traffic_exceed_email_templateDescription": "Plasamentele {after}.variable{before} vor fi înlocuite cu datele reale. Asigurați-vă că păstrați aceste variabile.",
   "verify_email_template": "Șablon de e-mail pentru verificare",
   "verify_email_templateDescription": "Locurile rezervate {after}.variable{before} vor fi înlocuite cu date reale. Asigurați-vă că păstrați aceste variabile.",
   "whitelistSuffixes": "Sufixe pe lista albă",

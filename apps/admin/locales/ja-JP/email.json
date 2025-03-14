@@ -39,6 +39,8 @@
   "status": "ステータス",
   "subject": "件名",
   "template": "テンプレート",
+  "traffic_exceed_email_template": "トラフィック超過通知テンプレート",
+  "traffic_exceed_email_templateDescription": "{after}と{before}の変数は実際のデータに置き換えられます。これらの変数を保持することを確認してください。",
   "verify_email_template": "確認メールテンプレート",
   "verify_email_templateDescription": "{after}.variable{before} のプレースホルダーは実際のデータに置き換えられます。これらの変数を保持してください。",
   "whitelistSuffixes": "ホワイトリストのサフィックス",

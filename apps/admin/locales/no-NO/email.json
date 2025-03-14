@@ -39,6 +39,8 @@
   "status": "Status",
   "subject": "Emne",
   "template": "Mal",
+  "traffic_exceed_email_template": "Varsel om overskridelse av trafikk",
+  "traffic_exceed_email_templateDescription": "Plassholderne {after}.variable{before} vil bli erstattet med faktiske data. Sørg for å beholde disse variablene.",
   "verify_email_template": "Verifikasjons-e-postmal",
   "verify_email_templateDescription": "Plassholderne {after}.variable{before} vil bli erstattet med faktiske data. Sørg for å beholde disse variablene.",
   "whitelistSuffixes": "Hvitelistesuffikser",

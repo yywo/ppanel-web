@@ -39,6 +39,8 @@
   "status": "Durum",
   "subject": "Konu",
   "template": "Şablon",
+  "traffic_exceed_email_template": "Trafik Aşım Bildirimi Şablonu",
+  "traffic_exceed_email_templateDescription": "{after}.variable{before} yer tutucuları gerçek verilerle değiştirilecektir. Bu değişkenleri koruduğunuzdan emin olun.",
   "verify_email_template": "Doğrulama E-posta Şablonu",
   "verify_email_templateDescription": "{after}.variable{before} yer tutucuları gerçek verilerle değiştirilecektir. Bu değişkenleri koruduğunuzdan emin olun.",
   "whitelistSuffixes": "Beyaz Liste Sonekleri",

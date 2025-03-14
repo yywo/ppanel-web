@@ -39,6 +39,8 @@
   "status": "Tila",
   "subject": "Aihe",
   "template": "Malline",
+  "traffic_exceed_email_template": "Liikenteen Ylitysilmoitusmalli",
+  "traffic_exceed_email_templateDescription": "{after}.variable{before} -paikat korvataan todellisilla tiedoilla. Varmista, että säilytät nämä muuttujat.",
   "verify_email_template": "Sähköpostin Vahvistusmalli",
   "verify_email_templateDescription": "Paikkamerkit {after}.variable{before} korvataan todellisilla tiedoilla. Varmista, että pidät nämä muuttujat.",
   "whitelistSuffixes": "Sallittujen luetteloiden päätteet",

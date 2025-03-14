@@ -39,6 +39,8 @@
   "status": "狀態",
   "subject": "主題",
   "template": "模板",
+  "traffic_exceed_email_template": "流量超標通知模板",
+  "traffic_exceed_email_templateDescription": "{after}和{before}變量將會被實際數據替換。請確保保留這些變量。",
   "verify_email_template": "驗證電郵範本",
   "verify_email_templateDescription": "{after}.variable{before} 佔位符將被實際數據替換。請確保保留這些變數。",
   "whitelistSuffixes": "白名單後綴",

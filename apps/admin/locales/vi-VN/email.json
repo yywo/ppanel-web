@@ -39,6 +39,8 @@
   "status": "Trạng thái",
   "subject": "Chủ đề",
   "template": "Mẫu",
+  "traffic_exceed_email_template": "Mẫu Thông Báo Vượt Quá Lưu Lượng",
+  "traffic_exceed_email_templateDescription": "Các biến {after}.variable{before} sẽ được thay thế bằng dữ liệu thực tế. Đảm bảo giữ nguyên các biến này.",
   "verify_email_template": "Mẫu Email Xác Minh",
   "verify_email_templateDescription": "Các chỗ trống {after}.variable{before} sẽ được thay thế bằng dữ liệu thực tế. Đảm bảo giữ nguyên các biến này.",
   "whitelistSuffixes": "Danh sách trắng Hậu tố",

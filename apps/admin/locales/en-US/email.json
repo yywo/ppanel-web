@@ -39,6 +39,8 @@
   "status": "Status",
   "subject": "Subject",
   "template": "Template",
+  "traffic_exceed_email_template": "Traffic Exceed Notice Template",
+  "traffic_exceed_email_templateDescription": "The {after}.variable{before} placeholders will be replaced with actual data. Ensure to keep these variables.",
   "verify_email_template": "Verification Email Template",
   "verify_email_templateDescription": "The {after}.variable{before} placeholders will be replaced with actual data. Ensure to keep these variables.",
   "whitelistSuffixes": "Whitelist Suffixes",

@@ -39,6 +39,8 @@
   "status": "상태",
   "subject": "제목",
   "template": "템플릿",
+  "traffic_exceed_email_template": "트래픽 초과 알림 템플릿",
+  "traffic_exceed_email_templateDescription": "{after}.variable{before} 자리표시는 실제 데이터로 대체됩니다. 이러한 변수를 유지해야 합니다.",
   "verify_email_template": "이메일 인증 템플릿",
   "verify_email_templateDescription": "{after}.variable{before} 자리표시는 실제 데이터로 대체됩니다. 이 변수를 반드시 유지하십시오.",
   "whitelistSuffixes": "허용 목록 접미사",
