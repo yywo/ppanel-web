@@ -1,4 +1,15 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.29](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2025-03-14)
+
+
+### ✨ Features
+
+* **api**: Add CheckoutOrder request and response types, and update user purchase request parameters ([dddc21c](https://github.com/perfect-panel/ppanel-web/commit/dddc21c))
+* **loading**: Replace loading animation with a simpler spinner and loading text ([b8316bb](https://github.com/perfect-panel/ppanel-web/commit/b8316bb))
+
+<a name="readme-top"></a>
 
 # Changelog
 
