@@ -45,6 +45,7 @@ interface PaymentFormProps<T> {
   loading?: boolean;
   initialValues?: T;
   onSubmit: (values: T) => Promise<boolean>;
+  isEdit?: boolean;
 }
 
 export default function PaymentForm<T>({
@@ -53,6 +54,7 @@ export default function PaymentForm<T>({
   loading,
   initialValues,
   onSubmit,
+  isEdit,
 }: PaymentFormProps<T>) {
   const t = useTranslations('payment');
   const { common } = useGlobalStore();
@@ -317,6 +319,7 @@ export default function PaymentForm<T>({
                           }}
                           defaultValue={field.value}
                           value={field.value}
+                          disabled={isEdit}
                         >
                           <FormControl>
                             <SelectTrigger>

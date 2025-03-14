@@ -136,6 +136,7 @@ export default function PaymentTable() {
       actions={{
         render: (row) => [
           <PaymentForm<API.UpdatePaymentMethodRequest>
+            isEdit
             key='edit'
             trigger={<Button>{t('edit')}</Button>}
             title={t('editPayment')}
