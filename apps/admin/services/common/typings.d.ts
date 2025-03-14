@@ -94,6 +94,17 @@ declare namespace API {
     enabled: boolean;
   };
 
+  type CheckoutOrderRequest = {
+    orderNo: string;
+    returnUrl?: string;
+  };
+
+  type CheckoutOrderResponse = {
+    type: string;
+    checkout_url?: string;
+    stripe?: StripePayment;
+  };
+
   type CheckUserParams = {
     email: string;
   };
@@ -494,6 +505,11 @@ declare namespace API {
   type QuerySubscribeListResponse = {
     list: Subscribe[];
     total: number;
+  };
+
+  type QueryUserAffiliateListRequest = {
+    page: number;
+    size: number;
   };
 
   type QueryUserAffiliateListResponse = {

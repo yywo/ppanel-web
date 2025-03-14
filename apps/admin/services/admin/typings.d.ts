@@ -116,6 +116,17 @@ declare namespace API {
     ids: number[];
   };
 
+  type CheckoutOrderRequest = {
+    orderNo: string;
+    returnUrl?: string;
+  };
+
+  type CheckoutOrderResponse = {
+    type: string;
+    checkout_url?: string;
+    stripe?: StripePayment;
+  };
+
   type CloseOrderRequest = {
     orderNo: string;
   };
@@ -1095,6 +1106,11 @@ declare namespace API {
   type QuerySubscribeListResponse = {
     list: Subscribe[];
     total: number;
+  };
+
+  type QueryUserAffiliateListRequest = {
+    page: number;
+    size: number;
   };
 
   type QueryUserAffiliateListResponse = {

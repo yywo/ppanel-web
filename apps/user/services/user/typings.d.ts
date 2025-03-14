@@ -438,8 +438,8 @@ declare namespace API {
   };
 
   type PortalPurchaseRequest = {
+    auth_type: string;
     identifier: string;
-    platform: string;
     password?: string;
     payment: number;
     subscribe_id: number;
@@ -572,10 +572,14 @@ declare namespace API {
   };
 
   type QueryPurchaseOrderParams = {
+    auth_type: string;
+    identifier: string;
     order_no: string;
   };
 
   type QueryPurchaseOrderRequest = {
+    auth_type: string;
+    identifier: string;
     order_no: string;
   };
 

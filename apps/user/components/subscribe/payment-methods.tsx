@@ -22,10 +22,11 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({ value, onChange, balanc
     queryKey: ['getAvailablePaymentMethods', { balance }],
     queryFn: async () => {
       const { data } = await getAvailablePaymentMethods();
-      const methods = data.data?.list || [];
-      if (!value && methods[0]?.id) onChange(methods[0]?.id);
-      if (balance) return methods;
-      return methods.filter((item) => item.id !== -1);
+      const list = data.data?.list || [];
+      const methods = balance ? list : list.filter((item) => item.id !== -1);
+      const defaultMethod = methods.find((item) => item.id)?.id;
+      if (defaultMethod) onChange(defaultMethod);
+      return methods;
     },
   });
   return (

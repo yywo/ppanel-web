@@ -37,7 +37,10 @@ export default function Page() {
     enabled: enabled,
     queryKey: ['queryPurchaseOrder', orderNo],
     queryFn: async () => {
-      const { data } = await queryPurchaseOrder({ order_no: orderNo! });
+      if (!orderNo) return;
+      const params = localStorage.getItem(orderNo);
+      const authParams = params ? JSON.parse(params) : {};
+      const { data } = await queryPurchaseOrder({ order_no: orderNo!, ...authParams });
       if (data?.data?.status !== 1) {
         setEnabled(false);
         if (data?.data?.token) {
