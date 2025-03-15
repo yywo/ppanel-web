@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.31](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2025-03-15)
+
+
+### 🐛 Bug Fixes
+
+* **site**: Se ref to store site configuration for updates ([0c8f091](https://github.com/perfect-panel/ppanel-web/commit/0c8f091))
+
 # [1.0.0-beta.30](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2025-03-15)
 
 
