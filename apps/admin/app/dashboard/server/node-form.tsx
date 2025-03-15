@@ -362,9 +362,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           <EnhancedInput
                             {...field}
                             type='number'
-                            placeholder='1-65535'
+                            step={1}
                             min={1}
                             max={65535}
+                            placeholder='1-65535'
                             onValueChange={(value) => {
                               form.setValue(field.name, value);
                             }}
@@ -418,6 +419,9 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             <EnhancedInput
                               {...field}
                               type='number'
+                              step={1}
+                              min={1}
+                              max={65535}
                               placeholder='1-65535'
                               onValueChange={(value) => {
                                 form.setValue(field.name, value);
@@ -899,6 +903,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 {
                                   name: 'port',
                                   type: 'number',
+                                  step: 1,
                                   min: 1,
                                   max: 65535,
                                   placeholder: t('form.relayPort'),
