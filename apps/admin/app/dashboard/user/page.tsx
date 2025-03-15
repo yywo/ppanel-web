@@ -58,8 +58,21 @@ export default function Page() {
               <Switch
                 defaultChecked={row.getValue('enable')}
                 onCheckedChange={async (checked) => {
+                  const {
+                    auth_methods,
+                    user_devices,
+                    enable_balance_notify,
+                    enable_login_notify,
+                    enable_subscribe_notify,
+                    enable_trade_notify,
+                    updated_at,
+                    created_at,
+                    id,
+                    ...rest
+                  } = row.original;
                   await updateUserBasicInfo({
-                    ...row.original,
+                    user_id: id,
+                    ...rest,
                     enable: checked,
                   } as unknown as API.UpdateUserBasiceInfoRequest);
                   toast.success(t('updateSuccess'));

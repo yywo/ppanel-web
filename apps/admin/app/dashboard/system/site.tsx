@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Label } from '@workspace/ui/components/label';
 import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
 import { Textarea } from '@workspace/ui/components/textarea';
+import { JSONEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { UploadImage } from '@workspace/ui/custom-components/upload-image';
 import { useTranslations } from 'next-intl';
@@ -127,6 +128,49 @@ export default function Site() {
               onBlur={(e) => {
                 updateConfig('host', e.target.value);
               }}
+            />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>
+            <Label>{t('customData')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('customDataDescription')}</p>
+          </TableCell>
+          <TableCell className='w-1/2 text-right'>
+            <JSONEditor
+              schema={{
+                type: 'object',
+                additionalProperties: true,
+                properties: {
+                  website: { type: 'string', title: 'Website' },
+                  contacts: {
+                    type: 'object',
+                    title: 'Contacts',
+                    additionalProperties: true,
+                    properties: {
+                      email: { type: 'string', title: 'Email' },
+                      telephone: { type: 'string', title: 'Telephone' },
+                      address: { type: 'string', title: 'Address' },
+                    },
+                  },
+                  community: {
+                    type: 'object',
+                    title: 'Community',
+                    additionalProperties: true,
+                    properties: {
+                      telegram: { type: 'string', title: 'Telegram' },
+                      twitter: { type: 'string', title: 'Twitter' },
+                      discord: { type: 'string', title: 'Discord' },
+                      instagram: { type: 'string', title: 'Instagram' },
+                      linkedin: { type: 'string', title: 'Linkedin' },
+                      facebook: { type: 'string', title: 'Facebook' },
+                      github: { type: 'string', title: 'Github' },
+                    },
+                  },
+                },
+              }}
+              value={data?.custom_data}
+              onBlur={(value) => updateConfig('custom_data', value)}
             />
           </TableCell>
         </TableRow>

@@ -13,6 +13,8 @@
     "title": "Privacy Policy"
   },
   "site": {
+    "customData": "Custom Data",
+    "customDataDescription": "Custom Data, used for custom data of the site",
     "customHtml": "Custom HTML",
     "customHtmlDescription": "Custom HTML code to be injected into the bottom of the site's body tag.",
     "keywords": "Keywords",

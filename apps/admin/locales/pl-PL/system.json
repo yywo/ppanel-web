@@ -13,6 +13,8 @@
     "title": "Polityka prywatności"
   },
   "site": {
+    "customData": "Dane niestandardowe",
+    "customDataDescription": "Dane niestandardowe, używane do niestandardowych danych witryny",
     "customHtml": "Niestandardowy HTML",
     "customHtmlDescription": "Niestandardowy kod HTML, który ma być wstrzyknięty na końcu tagu bodyitryny.",
     "keywords": "Słowa kluczowe",

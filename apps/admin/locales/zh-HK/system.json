@@ -13,6 +13,8 @@
     "title": "私隱政策"
   },
   "site": {
+    "customData": "自定義數據",
+    "customDataDescription": "自定義數據，用於網站的自定義數據",
     "customHtml": "自定義HTML",
     "customHtmlDescription": "自定義 HTML 代碼，將注入到網站 body 標籤的底部。",
     "keywords": "關鍵字",

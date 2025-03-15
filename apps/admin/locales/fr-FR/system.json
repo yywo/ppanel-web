@@ -13,6 +13,8 @@
     "title": "Politique de confidentialité"
   },
   "site": {
+    "customData": "Données personnalisées",
+    "customDataDescription": "Données personnalisées, utilisées pour les données personnalisées du site",
     "customHtml": "HTML personnalisé",
     "customHtmlDescription": "Code HTML personnalisé à injecter dans le bas de la balise body du site.",
     "keywords": "Mots-clés",

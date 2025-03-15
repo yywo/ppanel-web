@@ -13,6 +13,8 @@
     "title": "Datenschutzrichtlinie"
   },
   "site": {
+    "customData": "Benutzerdefinierte Daten",
+    "customDataDescription": "Benutzerdefinierte Daten, die für benutzerdefinierte Daten der Website verwendet werden",
     "customHtml": "Benutzerdefiniertes HTML",
     "customHtmlDescription": "Benutzerdefinierter HTML-Code, der am Ende des body-Tags der Seite eingefügt werden soll.",
     "keywords": "Schlüsselwörter",

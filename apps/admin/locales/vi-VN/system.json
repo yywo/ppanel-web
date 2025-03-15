@@ -13,6 +13,8 @@
     "title": "Chính sách bảo mật"
   },
   "site": {
+    "customData": "Dữ liệu tùy chỉnh",
+    "customDataDescription": "Dữ liệu tùy chỉnh, được sử dụng cho dữ liệu tùy chỉnh của trang web",
     "customHtml": "HTML tùy chỉnh",
     "customHtmlDescription": "Mã HTML tùy chỉnh để được chèn vào cuối thẻ body của trang.",
     "keywords": "Từ khóa",

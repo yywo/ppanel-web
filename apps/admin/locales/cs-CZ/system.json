@@ -13,6 +13,8 @@
     "title": "Zásady ochrany osobních údajů"
   },
   "site": {
+    "customData": "Vlastní data",
+    "customDataDescription": "Vlastní data, používaná pro vlastní data webu",
     "customHtml": "Vlastní HTML",
     "customHtmlDescription": "Vlastní HTML kód, který bude vložen na konec tagu body na stránce.",
     "keywords": "Klíčová slova",

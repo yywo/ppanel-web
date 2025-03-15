@@ -13,6 +13,8 @@
     "title": "Personvernerklæring"
   },
   "site": {
+    "customData": "Egendata",
+    "customDataDescription": "Egendata, brukt for egendata på nettstedet",
     "customHtml": "Egendefinert HTML",
     "customHtmlDescription": "Egendefinert HTML-kode som skal settes inn i bunnen av nettstedets body-tag.",
     "keywords": "Nøkkelord",

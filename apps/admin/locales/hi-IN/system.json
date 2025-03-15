@@ -13,6 +13,8 @@
     "title": "गोपनीयता नीति"
   },
   "site": {
+    "customData": "कस्टम डेटा",
+    "customDataDescription": "कस्टम डेटा, साइट के कस्टम डेटा के लिए उपयोग किया जाता है",
     "customHtml": "कस्टम HTML",
     "customHtmlDescription": "साइट के bodyैग के नीचे इंजेक्ट करने के लिए कस्टम HTML कोड।",
     "keywords": "कीवर्ड",

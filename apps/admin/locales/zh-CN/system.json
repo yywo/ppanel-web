@@ -13,6 +13,8 @@
     "title": "隐私政策"
   },
   "site": {
+    "customData": "自定义数据",
+    "customDataDescription": "自定义数据，用于网站的自定义数据",
     "customHtml": "自定义HTML",
     "customHtmlDescription": "要注入到网站 body 标签底部的自定义 HTML 代码。",
     "keywords": "关键词",

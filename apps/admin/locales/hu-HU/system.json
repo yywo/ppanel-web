@@ -13,6 +13,8 @@
     "title": "Adatvédelmi irányelvek"
   },
   "site": {
+    "customData": "Egyedi adatok",
+    "customDataDescription": "Egyedi adatok, a webhely egyedi adatainak használatára",
     "customHtml": "Egyedi HTML",
     "customHtmlDescription": "Egyedi HTML kód, amelyet a webhely bodyímkéjének aljára kell beilleszteni.",
     "keywords": "Kulcsszavak",

@@ -13,6 +13,8 @@
     "title": "سیاست حفظ حریم خصوصی"
   },
   "site": {
+    "customData": "داده‌های سفارشی",
+    "customDataDescription": "داده‌های سفارشی، استفاده شده برای داده‌های سفارشی سایت",
     "customHtml": "HTML سفارشی",
     "customHtmlDescription": "کد HTML سفارشی که باید در انتهای تگ body سایت وارد شود.",
     "keywords": "کلمات کلیدی",

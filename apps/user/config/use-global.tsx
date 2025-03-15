@@ -22,6 +22,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       site_logo: '',
       keywords: '',
       custom_html: '',
+      custom_data: '',
     },
     verify: {
       turnstile_site_key: '',

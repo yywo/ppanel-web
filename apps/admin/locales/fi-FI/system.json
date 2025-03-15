@@ -13,6 +13,8 @@
     "title": "Tietosuojakäytäntö"
   },
   "site": {
+    "customData": "Mukautettu tieto",
+    "customDataDescription": "Mukautettu tieto, jota käytetään sivuston mukautettuun tietoon",
     "customHtml": "Mukautettu HTML",
     "customHtmlDescription": "Mukautettu HTML-koodi, joka lisätään sivuston body -tagin loppuun.",
     "keywords": "Avainsanat",

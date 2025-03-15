@@ -13,6 +13,8 @@
     "title": "プライバシーポリシー"
   },
   "site": {
+    "customData": "カスタムデータ",
+    "customDataDescription": "サイトのカスタムデータに使用されるカスタムデータ",
     "customHtml": "カスタムHTML",
     "customHtmlDescription": "サイトの body タグの下部に挿入されるカスタム HTML コード。",
     "keywords": "キーワード",

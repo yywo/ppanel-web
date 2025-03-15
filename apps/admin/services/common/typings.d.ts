@@ -659,6 +659,13 @@ declare namespace API {
     site_logo: string;
     keywords: string;
     custom_html: string;
+    custom_data: string;
+  };
+
+  type SiteCustomDataContacts = {
+    email: string;
+    telephone: string;
+    address: string;
   };
 
   type SortItem = {

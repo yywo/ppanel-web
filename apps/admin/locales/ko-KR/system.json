@@ -13,6 +13,8 @@
     "title": "개인정보 처리방침"
   },
   "site": {
+    "customData": "사용자 정의 데이터",
+    "customDataDescription": "사이트의 사용자 정의 데이터에 사용되는 사용자 정의 데이터",
     "customHtml": "사용자 정의 HTML",
     "customHtmlDescription": "사이트의 body그 하단에 삽입될 사용자 정의 HTML 코드입니다.",
     "keywords": "키워드",
