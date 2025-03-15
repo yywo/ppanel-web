@@ -9,15 +9,17 @@ import { JSONEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { UploadImage } from '@workspace/ui/custom-components/upload-image';
 import { useTranslations } from 'next-intl';
+import { useRef } from 'react';
 import { toast } from 'sonner';
 
 export default function Site() {
   const t = useTranslations('system.site');
-
+  const ref = useRef<API.SiteConfig | undefined>(undefined);
   const { data, refetch } = useQuery({
     queryKey: ['getSiteConfig'],
     queryFn: async () => {
       const { data } = await getSiteConfig();
+      ref.current = data.data;
       return data.data;
     },
   });
@@ -26,7 +28,7 @@ export default function Site() {
     if (data?.[key] === value) return;
     try {
       await updateSiteConfig({
-        ...data,
+        ...ref.current,
         [key]: value,
       } as API.SiteConfig);
       toast.success(t('saveSuccess'));
