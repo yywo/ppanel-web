@@ -2,6 +2,59 @@
 
 # Changelog
 
+# [1.0.0-beta.29](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.28...v1.0.0-beta.29) (2025-03-14)
+
+### ✨ Features
+
+- **api**: Add CheckoutOrder request and response types, and update user purchase request parameters ([dddc21c](https://github.com/perfect-panel/ppanel-web/commit/dddc21c))
+- **loading**: Replace loading animation with a simpler spinner and loading text ([b8316bb](https://github.com/perfect-panel/ppanel-web/commit/b8316bb))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+# [1.0.0-beta.28](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2025-03-13)
+
+### ✨ Features
+
+- **input**: Add minimum value constraint and enhance number handling in EnhancedInput ([94822d9](https://github.com/perfect-panel/ppanel-web/commit/94822d9))
+
+# [1.0.0-beta.27](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.26...v1.0.0-beta.27) (2025-03-13)
+
+### ♻ Code Refactoring
+
+- **payment**: Reconstruct the payment page ([7109472](https://github.com/perfect-panel/ppanel-web/commit/7109472))
+- Enhance user navigation dropdown ui and styling ([d2732e6](https://github.com/perfect-panel/ppanel-web/commit/d2732e6))
+
+### ✨ Features
+
+- **cdn**: Add CDN URL configuration and update related references ([0c90733](https://github.com/perfect-panel/ppanel-web/commit/0c90733))
+- **payment**: Add bank card payment ([7fa3a57](https://github.com/perfect-panel/ppanel-web/commit/7fa3a57))
+- **subscription**: Improve layout and organization of subscription detail tabs ([e4630f8](https://github.com/perfect-panel/ppanel-web/commit/e4630f8))
+- **subscription**: Refactor subscription handling and update imports for better organization ([2215c7f](https://github.com/perfect-panel/ppanel-web/commit/2215c7f))
+
+### 🎫 Chores
+
+- **merge**: Bump version to 1.0.0-beta.26 and update changelog ([3222016](https://github.com/perfect-panel/ppanel-web/commit/3222016))
+
+### 🐛 Bug Fixes
+
+- **affiliate**: Update user identifier ([35f92c9](https://github.com/perfect-panel/ppanel-web/commit/35f92c9))
+- **changelog**: Update change log style ([cfa3fc0](https://github.com/perfect-panel/ppanel-web/commit/cfa3fc0))
+- **payment**: Add notification URL field to payment management interface ([5c710e1](https://github.com/perfect-panel/ppanel-web/commit/5c710e1))
+- **payment**: Fix payment related type definitions and update payment method references ([c3138a8](https://github.com/perfect-panel/ppanel-web/commit/c3138a8))
+- **payment**: Refactor purchaseCheckout usage and remove redundant code ([a5e2079](https://github.com/perfect-panel/ppanel-web/commit/a5e2079))
+- **payment**: Update checkout type from 'link' to 'url' for consistency ([136a1ab](https://github.com/perfect-panel/ppanel-web/commit/136a1ab))
+- **payment**: Update payment information ([70d6a38](https://github.com/perfect-panel/ppanel-web/commit/70d6a38))
+- **payment**: Update payment method update logic to include row data ([6752420](https://github.com/perfect-panel/ppanel-web/commit/6752420))
+- **purchasing**: Update payment type to lowercase and add optional chaining for discounts ([c06ea49](https://github.com/perfect-panel/ppanel-web/commit/c06ea49))
+- **ui**: Improve dashboard layout and enhance button functionality; open checkout URLs in a new tab ([fc0da76](https://github.com/perfect-panel/ppanel-web/commit/fc0da76))
+- **ui**: Multiple display bugs ([f5d8fd3](https://github.com/perfect-panel/ppanel-web/commit/f5d8fd3))
+
+<a name="readme-top"></a>
+
+# Changelog
+
 # [1.0.0-beta.28](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2025-03-13)
 
 ### ✨ Features
