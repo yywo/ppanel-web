@@ -319,7 +319,8 @@ export default function PaymentForm<T>({
                           }}
                           defaultValue={field.value}
                           value={field.value}
-                          disabled={isEdit}
+                          // @ts-expect-error
+                          disabled={isEdit && Boolean(initialValues?.platform)}
                         >
                           <FormControl>
                             <SelectTrigger>

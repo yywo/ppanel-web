@@ -298,6 +298,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               <EnhancedInput
                                 placeholder={t('form.noLimit')}
                                 type='number'
+                                step={1}
                                 {...field}
                                 onValueChange={(value) => {
                                   form.setValue(field.name, value);
@@ -321,7 +322,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               <EnhancedInput
                                 placeholder={t('form.noLimit')}
                                 type='number'
-                                value={field.value === -1 ? 0 : field.value}
+                                step={1}
+                                value={field.value}
                                 min={0}
                                 onValueChange={(value) => {
                                   form.setValue(field.name, value);
@@ -343,6 +345,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               <EnhancedInput
                                 placeholder={t('form.noLimit')}
                                 type='number'
+                                step={1}
                                 {...field}
                                 onValueChange={(value) => {
                                   form.setValue(field.name, value);
@@ -545,6 +548,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 {
                                   name: 'quantity',
                                   type: 'number',
+                                  step: 1,
                                   min: 1,
                                   suffix: unit_time && t(`form.${unit_time}`),
                                 },
@@ -569,7 +573,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   name: 'price',
                                   placeholder: t('form.discount_price'),
                                   type: 'number',
-                                  min: 0,
                                   formatInput: (value) => unitConversion('centsToDollars', value),
                                   formatOutput: (value) => unitConversion('dollarsToCents', value),
                                   internal: true,
@@ -586,6 +589,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               ]}
                               value={field.value}
                               onChange={(value) => {
+                                console.log(value);
                                 form.setValue(field.name, value);
                               }}
                             />

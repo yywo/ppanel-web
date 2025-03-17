@@ -307,6 +307,7 @@ export default function CouponForm<T extends Record<string, any>>({
                       <EnhancedInput
                         placeholder={t('form.countPlaceholder')}
                         type='number'
+                        step={1}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
@@ -327,6 +328,7 @@ export default function CouponForm<T extends Record<string, any>>({
                       <EnhancedInput
                         placeholder={t('form.userLimitPlaceholder')}
                         type='number'
+                        step={1}
                         {...field}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);

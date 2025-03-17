@@ -33,8 +33,16 @@ export function ObjectInput<T extends Record<string, any>>({
   const [internalState, setInternalState] = useState<T>(value);
 
   useEffect(() => {
-    setInternalState(value);
-  }, [value]);
+    let updatedState = { ...internalState, ...value };
+
+    fields.forEach((field) => {
+      if (field.calculateValue) {
+        updatedState = field.calculateValue(updatedState);
+      }
+    });
+
+    setInternalState(updatedState);
+  }, [value, fields]);
 
   const updateField = (key: keyof T, fieldValue: string | number | boolean) => {
     let updatedInternalState = { ...internalState, [key]: fieldValue };
