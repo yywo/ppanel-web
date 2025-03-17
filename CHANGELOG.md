@@ -1,4 +1,15 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.32](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2025-03-17)
+
+
+### 🐛 Bug Fixes
+
+* **forms**: Add step attribute to number inputs for better value control ([b8f4f1e](https://github.com/perfect-panel/ppanel-web/commit/b8f4f1e))
+* **locales**: Update invite code text to indicate it's optional ([6a34bfb](https://github.com/perfect-panel/ppanel-web/commit/6a34bfb))
+
+<a name="readme-top"></a>
 
 # Changelog
 
