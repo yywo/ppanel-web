@@ -1,39 +1,36 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.31](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2025-03-15)
 
-
 ### 🐛 Bug Fixes
 
-* **site**: Se ref to store site configuration for updates ([0c8f091](https://github.com/perfect-panel/ppanel-web/commit/0c8f091))
+- **site**: Se ref to store site configuration for updates ([0c8f091](https://github.com/perfect-panel/ppanel-web/commit/0c8f091))
 
 # [1.0.0-beta.30](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2025-03-15)
 
-
 ### ✨ Features
 
-* **api**: Add CheckoutOrder request and response types, and update user purchase request parameters ([48a1b97](https://github.com/perfect-panel/ppanel-web/commit/48a1b97))
-* **email**: Add traffic exhaustion template ([bb3bd7b](https://github.com/perfect-panel/ppanel-web/commit/bb3bd7b))
-* **formatting**: Update differenceInDays function to return whole days or two decimal places ([bf58f25](https://github.com/perfect-panel/ppanel-web/commit/bf58f25))
-* **global**: Add custom data ([6dbebd1](https://github.com/perfect-panel/ppanel-web/commit/6dbebd1))
-* **input**: Add minimum value constraint and enhance number handling in EnhancedInput ([ce31972](https://github.com/perfect-panel/ppanel-web/commit/ce31972))
-* **loading**: Replace loading animation with a simpler spinner and loading text ([f72df3a](https://github.com/perfect-panel/ppanel-web/commit/f72df3a))
-* **node-form**: Update number input fields to enforce step, min, and max values ([3f7b6d1](https://github.com/perfect-panel/ppanel-web/commit/3f7b6d1))
-* **payment**: Add isEdit prop to PaymentForm and disable fields when editing ([85f55de](https://github.com/perfect-panel/ppanel-web/commit/85f55de))
-* **timeline**: Simplify timeline component layout and remove commented-out code ([fbad3b0](https://github.com/perfect-panel/ppanel-web/commit/fbad3b0))
-
+- **api**: Add CheckoutOrder request and response types, and update user purchase request parameters ([48a1b97](https://github.com/perfect-panel/ppanel-web/commit/48a1b97))
+- **email**: Add traffic exhaustion template ([bb3bd7b](https://github.com/perfect-panel/ppanel-web/commit/bb3bd7b))
+- **formatting**: Update differenceInDays function to return whole days or two decimal places ([bf58f25](https://github.com/perfect-panel/ppanel-web/commit/bf58f25))
+- **global**: Add custom data ([6dbebd1](https://github.com/perfect-panel/ppanel-web/commit/6dbebd1))
+- **input**: Add minimum value constraint and enhance number handling in EnhancedInput ([ce31972](https://github.com/perfect-panel/ppanel-web/commit/ce31972))
+- **loading**: Replace loading animation with a simpler spinner and loading text ([f72df3a](https://github.com/perfect-panel/ppanel-web/commit/f72df3a))
+- **node-form**: Update number input fields to enforce step, min, and max values ([3f7b6d1](https://github.com/perfect-panel/ppanel-web/commit/3f7b6d1))
+- **payment**: Add isEdit prop to PaymentForm and disable fields when editing ([85f55de](https://github.com/perfect-panel/ppanel-web/commit/85f55de))
+- **timeline**: Simplify timeline component layout and remove commented-out code ([fbad3b0](https://github.com/perfect-panel/ppanel-web/commit/fbad3b0))
 
 ### 🎫 Chores
 
-* **release**: V1.0.0-beta.27 [skip ci] ([092477b](https://github.com/perfect-panel/ppanel-web/commit/092477b))
-* **release**: V1.0.0-beta.28 [skip ci] ([786ba0e](https://github.com/perfect-panel/ppanel-web/commit/786ba0e))
-* Merge branch 'beta' into develop ([f219c52](https://github.com/perfect-panel/ppanel-web/commit/f219c52))
-
+- **release**: V1.0.0-beta.27 [skip ci] ([092477b](https://github.com/perfect-panel/ppanel-web/commit/092477b))
+- **release**: V1.0.0-beta.28 [skip ci] ([786ba0e](https://github.com/perfect-panel/ppanel-web/commit/786ba0e))
+- Merge branch 'beta' into develop ([f219c52](https://github.com/perfect-panel/ppanel-web/commit/f219c52))
 
 ### 🐛 Bug Fixes
 
-* **dashboard**:  Update date display to use start_time if available ([e551232](https://github.com/perfect-panel/ppanel-web/commit/e551232))
+- **dashboard**: Update date display to use start_time if available ([e551232](https://github.com/perfect-panel/ppanel-web/commit/e551232))
 
 <a name="readme-top"></a>
 
