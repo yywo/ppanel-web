@@ -36,7 +36,7 @@ export function ObjectInput<T extends Record<string, any>>({
     let updatedState = { ...internalState, ...value };
 
     fields.forEach((field) => {
-      if (field.calculateValue) {
+      if (field?.calculateValue) {
         updatedState = field.calculateValue(updatedState);
       }
     });

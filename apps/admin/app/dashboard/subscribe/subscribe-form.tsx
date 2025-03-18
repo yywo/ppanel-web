@@ -564,7 +564,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                     return {
                                       ...data,
                                       price: evaluateWithPrecision(
-                                        `${unit_price} * ${data.quantity} * ${data.discount} / 100`,
+                                        `${unit_price || 0} * ${data.quantity || 0} * ${data.discount || 0} / 100`,
                                       ),
                                     };
                                   },
@@ -581,7 +581,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                     return {
                                       ...data,
                                       discount: evaluateWithPrecision(
-                                        `${data.price} / ${data.quantity} / ${unit_price} * 100`,
+                                        `${data.price || 0} / ${data.quantity || 0} / ${unit_price || 0} * 100`,
                                       ),
                                     };
                                   },
@@ -589,7 +589,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               ]}
                               value={field.value}
                               onChange={(value) => {
-                                console.log(value);
                                 form.setValue(field.name, value);
                               }}
                             />
