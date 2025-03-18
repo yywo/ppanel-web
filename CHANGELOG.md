@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+# [1.0.0-beta.33](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.32...v1.0.0-beta.33) (2025-03-18)
+
+
+### 🐛 Bug Fixes
+
+* **subscribe**: Handle optional values in price and discount calculations ([5939763](https://github.com/perfect-panel/ppanel-web/commit/5939763))
+
 # [1.0.0-beta.32](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2025-03-17)
 
 
