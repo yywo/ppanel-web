@@ -291,6 +291,24 @@ export async function deleteUserSubscribe(
   });
 }
 
+/** Get user subcribe by id GET /v1/admin/user/subscribe/detail */
+export async function getUserSubscribeById(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.GetUserSubscribeByIdParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.UserSubscribeDetail }>(
+    '/v1/admin/user/subscribe/detail',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
 /** Get user subcribe devices GET /v1/admin/user/subscribe/device */
 export async function getUserSubscribeDevices(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)

@@ -71,7 +71,7 @@ export function Content({ subscriptionData }: ProductShowcaseProps) {
                     return (
                       <>
                         {description && <li className='text-muted-foreground'>{description}</li>}
-                        {features.map(
+                        {features?.map(
                           (
                             feature: {
                               type: string;

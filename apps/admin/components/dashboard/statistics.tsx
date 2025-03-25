@@ -1,5 +1,6 @@
 'use client';
 
+import { UserSubscribeDetail } from '@/app/dashboard/user/user-detail';
 import { queryServerTotalData, queryTicketWaitReply } from '@/services/admin/console';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
@@ -11,6 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@workspace/ui/components/select';
+import { Separator } from '@workspace/ui/components/separator';
 import { Tabs, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { formatBytes } from '@workspace/ui/utils';
@@ -59,15 +61,13 @@ export default function Statistics() {
     users: {
       today:
         ServerTotal?.user_traffic_ranking_today?.map((item) => ({
-          name: item.user_id,
+          name: item.sid,
           traffic: item.download + item.upload,
-          email: item.email,
         })) || [],
       yesterday:
         ServerTotal?.user_traffic_ranking_yesterday?.map((item) => ({
-          name: item.user_id,
+          name: item.sid,
           traffic: item.download + item.upload,
-          email: item.email,
         })) || [],
     },
   };
@@ -175,10 +175,6 @@ export default function Statistics() {
                     label: t('type'),
                     color: 'hsl(var(--muted))',
                   },
-                  email: {
-                    label: t('email'),
-                    color: 'hsl(var(--muted))',
-                  },
                   label: {
                     color: 'hsl(var(--foreground))',
                   },
@@ -204,13 +200,22 @@ export default function Statistics() {
                     tickFormatter={(value, index) => String(index + 1)}
                   />
                   <ChartTooltip
+                    trigger='hover'
                     content={
                       <ChartTooltipContent
                         label={true}
-                        labelFormatter={(label) =>
-                          dataType === 'nodes'
-                            ? `${t('nodes')}: ${label}`
-                            : `${t('users')}: ${label}`
+                        labelFormatter={(label, [payload]) =>
+                          dataType === 'nodes' ? (
+                            `${t('nodes')}: ${label}`
+                          ) : (
+                            <>
+                              <div className='w-80'>
+                                <UserSubscribeDetail id={payload?.payload.name} enabled={true} />
+                              </div>
+                              <Separator className='my-2' />
+                              <div>{`${t('users')}: ${label}`}</div>
+                            </>
+                          )
                         }
                         formatter={(value) => {
                           return formatBytes(Number(value) || 0);

@@ -142,7 +142,13 @@ declare namespace API {
     updated_at: number;
   };
 
+  type Currency = {
+    currency_unit: string;
+    currency_symbol: string;
+  };
+
   type CurrencyConfig = {
+    access_key: string;
     currency_unit: string;
     currency_symbol: string;
   };
@@ -214,7 +220,7 @@ declare namespace API {
     verify: VeifyConfig;
     auth: AuthConfig;
     invite: InviteConfig;
-    currency: CurrencyConfig;
+    currency: Currency;
     subscribe: SubscribeConfig;
     verify_code: PubilcVerifyCodeConfig;
     oauth_methods: string[];
@@ -300,9 +306,11 @@ declare namespace API {
   };
 
   type NodeStatus = {
-    online_users: OnlineUser[];
-    status: ServerStatus;
-    last_at: number;
+    online: Record<string, any>;
+    cpu: number;
+    mem: number;
+    disk: number;
+    updated_at: number;
   };
 
   type OAthLoginRequest = {
@@ -636,13 +644,6 @@ declare namespace API {
     description: string;
     enable: boolean;
     created_at: number;
-    updated_at: number;
-  };
-
-  type ServerStatus = {
-    cpu: number;
-    mem: number;
-    disk: number;
     updated_at: number;
   };
 

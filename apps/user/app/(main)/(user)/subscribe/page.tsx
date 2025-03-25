@@ -76,7 +76,7 @@ export default function Page() {
                       return (
                         <>
                           {description && <li className='text-muted-foreground'>{description}</li>}
-                          {features.map(
+                          {features?.map(
                             (
                               feature: {
                                 icon: string;

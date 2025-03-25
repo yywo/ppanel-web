@@ -160,6 +160,7 @@ declare namespace API {
   };
 
   type CurrencyConfig = {
+    access_key: string;
     currency_unit: string;
     currency_symbol: string;
   };
@@ -331,9 +332,11 @@ declare namespace API {
   };
 
   type NodeStatus = {
-    online_users: OnlineUser[];
-    status: ServerStatus;
-    last_at: number;
+    online: Record<string, any>;
+    cpu: number;
+    mem: number;
+    disk: number;
+    updated_at: number;
   };
 
   type OnlineUser = {
@@ -754,13 +757,6 @@ declare namespace API {
     description: string;
     enable: boolean;
     created_at: number;
-    updated_at: number;
-  };
-
-  type ServerStatus = {
-    cpu: number;
-    mem: number;
-    disk: number;
     updated_at: number;
   };
 

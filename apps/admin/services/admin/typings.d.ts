@@ -325,6 +325,7 @@ declare namespace API {
   };
 
   type CurrencyConfig = {
+    access_key: string;
     currency_unit: string;
     currency_symbol: string;
   };
@@ -774,6 +775,14 @@ declare namespace API {
     total: number;
   };
 
+  type GetUserSubscribeByIdParams = {
+    id: number;
+  };
+
+  type GetUserSubscribeByIdRequest = {
+    id: number;
+  };
+
   type GetUserSubscribeDevicesParams = {
     page: number;
     size: number;
@@ -909,9 +918,11 @@ declare namespace API {
   };
 
   type NodeStatus = {
-    online_users: OnlineUser[];
-    status: ServerStatus;
-    last_at: number;
+    online: Record<string, any>;
+    cpu: number;
+    mem: number;
+    disk: number;
+    updated_at: number;
   };
 
   type OnlineUser = {
@@ -1220,13 +1231,6 @@ declare namespace API {
     description: string;
     enable: boolean;
     created_at: number;
-    updated_at: number;
-  };
-
-  type ServerStatus = {
-    cpu: number;
-    mem: number;
-    disk: number;
     updated_at: number;
   };
 
@@ -1741,6 +1745,25 @@ declare namespace API {
     updated_at: number;
   };
 
+  type UserSubscribeDetail = {
+    id: number;
+    user_id: number;
+    user: User;
+    order_id: number;
+    subscribe_id: number;
+    subscribe: Subscribe;
+    start_time: number;
+    expire_time: number;
+    reset_time: number;
+    traffic: number;
+    download: number;
+    upload: number;
+    token: string;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type UserSubscribeLog = {
     id: number;
     user_id: number;
@@ -1752,8 +1775,7 @@ declare namespace API {
   };
 
   type UserTrafficData = {
-    user_id: number;
-    email: string;
+    sid: number;
     upload: number;
     download: number;
   };
