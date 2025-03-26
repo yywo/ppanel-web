@@ -2,7 +2,9 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
+import { getSubscribeList } from '@/services/admin/subscribe';
 import { createUser, deleteUser, getUserList, updateUserBasicInfo } from '@/services/admin/user';
+import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
@@ -20,8 +22,19 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
 
+  const { data: subscribeList } = useQuery({
+    queryKey: ['getSubscribeList', 'all'],
+    queryFn: async () => {
+      const { data } = await getSubscribeList({
+        page: 1,
+        size: 9999,
+      });
+      return data.data?.list as API.SubscribeGroup[];
+    },
+  });
+
   return (
-    <ProTable<API.User, Record<string, unknown>>
+    <ProTable<API.User, API.GetUserListParams>
       action={ref}
       header={{
         title: t('userList'),
@@ -132,13 +145,38 @@ export default function Page() {
           cell: ({ row }) => formatDate(row.getValue('created_at')),
         },
       ]}
-      request={async (pagination) => {
-        const { data } = await getUserList(pagination);
+      request={async (pagination, filter) => {
+        const { data } = await getUserList({
+          ...pagination,
+          ...filter,
+        });
         return {
           list: data.data?.list || [],
           total: data.data?.total || 0,
         };
       }}
+      params={[
+        {
+          key: 'subscribe_id',
+          placeholder: t('subscription'),
+          options: subscribeList?.map((item) => ({
+            label: item.name,
+            value: String(item.id),
+          })),
+        },
+        {
+          key: 'search',
+          placeholder: 'Search',
+        },
+        {
+          key: 'user_id',
+          placeholder: t('userId'),
+        },
+        {
+          key: 'user_subscribe_id',
+          placeholder: t('subscriptionId'),
+        },
+      ]}
       actions={{
         render: (row) => {
           return [

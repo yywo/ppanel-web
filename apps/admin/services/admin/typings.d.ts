@@ -745,12 +745,18 @@ declare namespace API {
     page: number;
     size: number;
     search?: string;
+    user_id?: number;
+    subscribe_id?: number;
+    user_subscribe_id?: number;
   };
 
   type GetUserListRequest = {
     page: number;
     size: number;
     search?: string;
+    user_id?: number;
+    subscribe_id?: number;
+    user_subscribe_id?: number;
   };
 
   type GetUserListResponse = {
