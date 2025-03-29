@@ -157,6 +157,32 @@ export default function SubscribeForm<T extends Record<string, any>>({
   });
 
   const unit_time = form.watch('unit_time');
+  const unit_price = form.watch('unit_price');
+  const discounts = form.watch('discount');
+
+  useEffect(() => {
+    if (!discounts?.length || !unit_price) return;
+
+    const calculatedValues = discounts.map((item: any) => {
+      const result = { ...item };
+
+      if (item.quantity && item.discount) {
+        result.price = evaluateWithPrecision(
+          `${unit_price || 0} * ${item.quantity} * ${item.discount} / 100`,
+        );
+      } else if (item.quantity && item.price && !item.discount) {
+        result.discount = evaluateWithPrecision(
+          `${item.price} / ${item.quantity} / ${unit_price} * 100`,
+        );
+      }
+
+      return result;
+    });
+
+    if (JSON.stringify(calculatedValues) !== JSON.stringify(discounts)) {
+      form.setValue('discount', calculatedValues);
+    }
+  }, [unit_price, discounts, form]);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -543,7 +569,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                         <FormItem>
                           <FormLabel>{t('form.discount')}</FormLabel>
                           <FormControl>
-                            <ArrayInput<API.SubscribeDiscount>
+                            <ArrayInput<API.SubscribeDiscount & { price?: number }>
                               fields={[
                                 {
                                   name: 'quantity',
@@ -559,15 +585,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   max: 100,
                                   placeholder: t('form.discountPercent'),
                                   suffix: '%',
-                                  calculateValue: function (data) {
-                                    const { unit_price } = form.getValues();
-                                    return {
-                                      ...data,
-                                      price: evaluateWithPrecision(
-                                        `${unit_price || 0} * ${data.quantity || 0} * ${data.discount || 0} / 100`,
-                                      ),
-                                    };
-                                  },
                                 },
                                 {
                                   name: 'price',
@@ -575,21 +592,49 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   type: 'number',
                                   formatInput: (value) => unitConversion('centsToDollars', value),
                                   formatOutput: (value) => unitConversion('dollarsToCents', value),
-                                  internal: true,
-                                  calculateValue: (data) => {
-                                    const { unit_price } = form.getValues();
-                                    return {
-                                      ...data,
-                                      discount: evaluateWithPrecision(
-                                        `${data.price || 0} / ${data.quantity || 0} / ${unit_price || 0} * 100`,
-                                      ),
-                                    };
-                                  },
                                 },
                               ]}
                               value={field.value}
-                              onChange={(value) => {
-                                form.setValue(field.name, value);
+                              onChange={(newValues) => {
+                                const oldValues = field.value || [];
+                                const { unit_price } = form.getValues();
+
+                                const calculatedValues = newValues.map((newItem, index) => {
+                                  const oldItem = oldValues[index] || {};
+
+                                  const result = { ...newItem };
+
+                                  const quantityChanged = newItem.quantity !== oldItem.quantity;
+                                  const discountChanged = newItem.discount !== oldItem.discount;
+                                  const priceChanged = newItem.price !== oldItem.price;
+
+                                  if (
+                                    (quantityChanged || discountChanged) &&
+                                    !priceChanged &&
+                                    newItem.quantity &&
+                                    newItem.discount
+                                  ) {
+                                    result.price = evaluateWithPrecision(
+                                      `${unit_price || 0} * ${newItem.quantity} * ${newItem.discount} / 100`,
+                                    );
+                                  }
+
+                                  if (
+                                    priceChanged &&
+                                    !discountChanged &&
+                                    newItem.price &&
+                                    newItem.quantity &&
+                                    unit_price
+                                  ) {
+                                    result.discount = evaluateWithPrecision(
+                                      `${newItem.price} / ${newItem.quantity} / ${unit_price} * 100`,
+                                    );
+                                  }
+
+                                  return result;
+                                });
+
+                                form.setValue(field.name, calculatedValues);
                               }}
                             />
                           </FormControl>

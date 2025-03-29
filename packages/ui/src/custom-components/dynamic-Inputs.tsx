@@ -11,9 +11,6 @@ interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
   type: 'text' | 'number' | 'select' | 'time' | 'boolean';
   options?: { label: string; value: string }[];
-  internal?: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  calculateValue?: (value: Record<string, any>) => any;
 }
 
 interface ObjectInputProps<T> {
@@ -33,36 +30,13 @@ export function ObjectInput<T extends Record<string, any>>({
   const [internalState, setInternalState] = useState<T>(value);
 
   useEffect(() => {
-    let updatedState = { ...internalState, ...value };
-
-    fields.forEach((field) => {
-      if (field?.calculateValue) {
-        updatedState = field.calculateValue(updatedState);
-      }
-    });
-
-    setInternalState(updatedState);
-  }, [value, fields]);
+    setInternalState(value);
+  }, [value]);
 
   const updateField = (key: keyof T, fieldValue: string | number | boolean) => {
-    let updatedInternalState = { ...internalState, [key]: fieldValue };
-    fields.forEach((field) => {
-      if (field.calculateValue && field.name === key) {
-        const newValue = field.calculateValue(updatedInternalState);
-        updatedInternalState = newValue;
-      }
-    });
+    const updatedInternalState = { ...internalState, [key]: fieldValue };
     setInternalState(updatedInternalState);
-
-    const filteredValue = Object.keys(updatedInternalState).reduce((acc, fieldKey) => {
-      const field = fields.find((f) => f.name === fieldKey);
-      if (field && !field.internal) {
-        acc[fieldKey as keyof T] = updatedInternalState[fieldKey as keyof T];
-      }
-      return acc;
-    }, {} as T);
-
-    onChange(filteredValue);
+    onChange(updatedInternalState);
   };
   const renderField = (field: FieldConfig) => {
     switch (field.type) {
