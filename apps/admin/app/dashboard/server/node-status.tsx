@@ -38,7 +38,7 @@ export function NodeStatusCell({ status }: { status: API.NodeStatus }) {
   const isOnline = updated_at > 0;
   const badgeVariant = isOnline ? 'default' : 'destructive';
   const badgeText = isOnline ? t('normal') : t('abnormal');
-  const onlineCount = Object.keys(online).length || 0;
+  const onlineCount = (online && Object.keys(online).length) || 0;
 
   return (
     <TooltipProvider>
