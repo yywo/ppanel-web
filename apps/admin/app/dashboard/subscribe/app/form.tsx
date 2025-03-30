@@ -240,6 +240,7 @@ export default function SubscribeAppForm<
                                     className: 'col-span-3',
                                   },
                                 ]}
+                                value={field.value}
                                 onChange={(value) => {
                                   const filteredValue = value.filter((item) => item.url);
 
