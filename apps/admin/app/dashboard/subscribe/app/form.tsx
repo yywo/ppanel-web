@@ -244,16 +244,23 @@ export default function SubscribeAppForm<
                                 onChange={(value) => {
                                   const filteredValue = value.filter((item) => item.url);
 
-                                  const defaultIndex = filteredValue.findIndex(
-                                    (item) => item.is_default,
+                                  const newDefaultIndex = value.findIndex(
+                                    (item, idx) =>
+                                      item.is_default &&
+                                      (!field.value?.[idx] || !field.value[idx].is_default),
                                   );
+
                                   let finalValue = filteredValue;
-                                  if (defaultIndex >= 0) {
+
+                                  if (newDefaultIndex >= 0 && filteredValue[newDefaultIndex]) {
                                     finalValue = filteredValue.map((item, index) => ({
                                       ...item,
-                                      is_default: index === defaultIndex,
+                                      is_default: index === newDefaultIndex,
                                     }));
-                                  } else if (filteredValue.length > 0) {
+                                  } else if (
+                                    !filteredValue.some((item) => item.is_default) &&
+                                    filteredValue.length > 0
+                                  ) {
                                     finalValue = filteredValue.map((item, index) => ({
                                       ...item,
                                       is_default: index === 0,
