@@ -10,7 +10,6 @@ import {
 } from '@workspace/ui/components/accordion';
 import {
   AlertDialog,
-  AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -67,7 +66,7 @@ export default function Page() {
           <CardDescription>{t('viewLogsAndManage')}</CardDescription>
         </div>
         <div className='mt-4 flex flex-col space-y-2 sm:mt-0 sm:flex-row sm:space-x-2 sm:space-y-0'>
-          <AlertDialog>
+          {/* <AlertDialog>
             <AlertDialogTrigger asChild>
               <Button>{t('systemUpgrade')}</Button>
             </AlertDialogTrigger>
@@ -81,7 +80,7 @@ export default function Page() {
                 <AlertDialogAction>{t('confirmUpgrade')}</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
-          </AlertDialog>
+          </AlertDialog> */}
           <AlertDialog open={openRestart} onOpenChange={setOpenRestart}>
             <AlertDialogTrigger asChild>
               <Button variant='destructive'>{t('systemReboot')}</Button>
@@ -113,14 +112,14 @@ export default function Page() {
       </CardHeader>
       <CardContent>
         <div className='space-y-6'>
-          <div className='flex items-center justify-between'>
+          {/* <div className='flex items-center justify-between'>
             <div className='text-lg font-semibold'>
               {t('currentVersion')} <span>V1.0.0</span>
             </div>
             <div className='text-muted-foreground text-sm'>
               {t('lastUpdated')} <span>2024-12-16 12:00:00</span>
             </div>
-          </div>
+          </div> */}
           <Card className='overflow-hidden'>
             <CardHeader className='bg-secondary py-1'>
               <div className='flex items-center justify-between'>
