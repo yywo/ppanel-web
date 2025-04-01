@@ -257,7 +257,8 @@ declare namespace API {
   type CreateRuleGroupRequest = {
     name: string;
     icon: string;
-    description: string;
+    tags: string[];
+    rules: string;
     enable: boolean;
   };
 
@@ -617,6 +618,10 @@ declare namespace API {
   type GetNodeServerListResponse = {
     total: number;
     list: Server[];
+  };
+
+  type GetNodeTagListResponse = {
+    tags: string[];
   };
 
   type GetOrderListParams = {
@@ -1232,9 +1237,10 @@ declare namespace API {
 
   type ServerRuleGroup = {
     id: number;
-    name: string;
     icon: string;
-    description: string;
+    name: string;
+    tags: string[];
+    rules: string;
     enable: boolean;
     created_at: number;
     updated_at: number;
@@ -1574,9 +1580,10 @@ declare namespace API {
 
   type UpdateRuleGroupRequest = {
     id: number;
-    name: string;
     icon: string;
-    description: string;
+    name: string;
+    tags: string[];
+    rules: string;
     enable: boolean;
   };
 

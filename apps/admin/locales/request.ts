@@ -27,6 +27,7 @@ export default getRequestConfig(async () => {
     'payment': (await import(`./${locale}/payment.json`)).default,
     'server': (await import(`./${locale}/server.json`)).default,
     'subscribe': (await import(`./${locale}/subscribe.json`)).default,
+    'rules': (await import(`./${locale}/rules.json`)).default,
     'order': (await import(`./${locale}/order.json`)).default,
     'coupon': (await import(`./${locale}/coupon.json`)).default,
     'user': (await import(`./${locale}/user.json`)).default,

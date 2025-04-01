@@ -12,6 +12,7 @@ interface UploadImageProps {
   id?: string;
   children?: React.ReactNode;
   className?: string;
+  maxSize?: number; // Maximum file size in MB
 }
 
 export const UploadImage = ({
@@ -20,6 +21,7 @@ export const UploadImage = ({
   id = 'image-upload',
   children,
   className,
+  maxSize = 1,
 }: UploadImageProps) => {
   const [isDragging, setIsDragging] = useState(false);
 
@@ -32,11 +34,22 @@ export const UploadImage = ({
     });
   };
 
+  const validateFileSize = (file: File): boolean => {
+    const maxSizeInBytes = maxSize * 1024 * 1024;
+    if (file.size > maxSizeInBytes) {
+      alert(`File size exceeds the limit (${maxSize}MB)`);
+      return false;
+    }
+    return true;
+  };
+
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     try {
+      if (!validateFileSize(file)) return;
+
       if (returnType === 'base64') {
         const base64 = await toBase64(file);
         onChange(base64);
@@ -66,6 +79,8 @@ export const UploadImage = ({
     if (!file) return;
 
     try {
+      if (!validateFileSize(file)) return;
+
       if (returnType === 'base64') {
         const base64 = await toBase64(file);
         onChange(base64);

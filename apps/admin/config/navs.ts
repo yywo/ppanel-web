@@ -81,16 +81,26 @@ export const navs = [
         url: '/dashboard/server',
         icon: 'flat-color-icons:data-protection',
       },
-    ],
-  },
-  {
-    title: 'Finance',
-    items: [
+      {
+        title: 'Application Management',
+        url: '/dashboard/application',
+        icon: 'flat-color-icons:touchscreen-smartphone',
+      },
+      {
+        title: 'Rule Management',
+        url: '/dashboard/rules',
+        icon: 'flat-color-icons:ruler',
+      },
       {
         title: 'Subscribe Management',
         url: '/dashboard/subscribe',
         icon: 'flat-color-icons:shop',
       },
+    ],
+  },
+  {
+    title: 'Finance',
+    items: [
       {
         title: 'Order Management',
         url: '/dashboard/order',

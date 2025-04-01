@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 
-import SubscribeApp from './app/table';
 import GroupTable from './group/table';
 import SubscribeConfig from './subscribe-config';
 import SubscribeTable from './subscribe-table';
@@ -16,7 +15,6 @@ export default async function Page() {
         <TabsTrigger value='subscribe'>{t('tabs.subscribe')}</TabsTrigger>
         <TabsTrigger value='group'>{t('tabs.subscribeGroup')}</TabsTrigger>
         <TabsTrigger value='config'>{t('tabs.subscribeConfig')}</TabsTrigger>
-        <TabsTrigger value='app'>{t('tabs.subscribeApp')}</TabsTrigger>
       </TabsList>
       <TabsContent value='subscribe'>
         <SubscribeTable />
@@ -26,9 +24,6 @@ export default async function Page() {
       </TabsContent>
       <TabsContent value='config'>
         <SubscribeConfig />
-      </TabsContent>
-      <TabsContent value='app'>
-        <SubscribeApp />
       </TabsContent>
     </Tabs>
   );

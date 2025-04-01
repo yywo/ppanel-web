@@ -752,9 +752,10 @@ declare namespace API {
 
   type ServerRuleGroup = {
     id: number;
-    name: string;
     icon: string;
-    description: string;
+    name: string;
+    tags: string[];
+    rules: string;
     enable: boolean;
     created_at: number;
     updated_at: number;

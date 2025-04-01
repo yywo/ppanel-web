@@ -221,3 +221,14 @@ export async function nodeSort(body: API.NodeSortRequest, options?: { [key: stri
     ...(options || {}),
   });
 }
+
+/** Get node tag list GET /v1/admin/server/tag/list */
+export async function getNodeTagList(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetNodeTagListResponse }>(
+    '/v1/admin/server/tag/list',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
