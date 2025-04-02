@@ -33,7 +33,7 @@ import { z } from 'zod';
 
 const formSchema = z.object({
   name: z.string().min(1, { message: '请输入规则名称' }),
-  tags: z.array(z.number()).default([]),
+  tags: z.array(z.string()).default([]),
   rules: z.string().default(''),
   icon: z.string().default(''),
 });
