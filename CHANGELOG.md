@@ -1,24 +1,23 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.0.0-beta.34](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2025-04-02)
 
-
 ### ✨ Features
 
-* **admin**: Add application and rule management entries to localization files ([8b43e69](https://github.com/perfect-panel/ppanel-web/commit/8b43e69))
-* **api**: Add an interface to obtain user subscription details, update related type definitions and localized text ([cf5c39c](https://github.com/perfect-panel/ppanel-web/commit/cf5c39c))
-* **user**: Integrate subscription list into user management, update request parameters and types ([8d49dac](https://github.com/perfect-panel/ppanel-web/commit/8d49dac))
-
+- **admin**: Add application and rule management entries to localization files ([8b43e69](https://github.com/perfect-panel/ppanel-web/commit/8b43e69))
+- **api**: Add an interface to obtain user subscription details, update related type definitions and localized text ([cf5c39c](https://github.com/perfect-panel/ppanel-web/commit/cf5c39c))
+- **user**: Integrate subscription list into user management, update request parameters and types ([8d49dac](https://github.com/perfect-panel/ppanel-web/commit/8d49dac))
 
 ### 🐛 Bug Fixes
 
-* **admin**: Hidden versions and system upgrades ([64cd842](https://github.com/perfect-panel/ppanel-web/commit/64cd842))
-* **admin**: Modify the label type in the rule form to a string array ([a7aa5fe](https://github.com/perfect-panel/ppanel-web/commit/a7aa5fe))
-* **node**: Handle potential null value for online users count ([fa2fb28](https://github.com/perfect-panel/ppanel-web/commit/fa2fb28))
-* **subscribe**: Add value prop to field in subscription form for proper state management ([328838d](https://github.com/perfect-panel/ppanel-web/commit/328838d))
-* **subscribe**: Refactor discount calculations and default selection logic in subscription forms ([423b240](https://github.com/perfect-panel/ppanel-web/commit/423b240))
-* **subscribe**: Update default selection logic in subscription form to ensure proper state management ([ef15374](https://github.com/perfect-panel/ppanel-web/commit/ef15374))
+- **admin**: Hidden versions and system upgrades ([64cd842](https://github.com/perfect-panel/ppanel-web/commit/64cd842))
+- **admin**: Modify the label type in the rule form to a string array ([a7aa5fe](https://github.com/perfect-panel/ppanel-web/commit/a7aa5fe))
+- **node**: Handle potential null value for online users count ([fa2fb28](https://github.com/perfect-panel/ppanel-web/commit/fa2fb28))
+- **subscribe**: Add value prop to field in subscription form for proper state management ([328838d](https://github.com/perfect-panel/ppanel-web/commit/328838d))
+- **subscribe**: Refactor discount calculations and default selection logic in subscription forms ([423b240](https://github.com/perfect-panel/ppanel-web/commit/423b240))
+- **subscribe**: Update default selection logic in subscription form to ensure proper state management ([ef15374](https://github.com/perfect-panel/ppanel-web/commit/ef15374))
 
 <a name="readme-top"></a>
 

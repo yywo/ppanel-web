@@ -1010,6 +1010,7 @@ declare namespace API {
     subscribe: Subscribe;
     start_time: number;
     expire_time: number;
+    finished_at: number;
     reset_time: number;
     traffic: number;
     download: number;

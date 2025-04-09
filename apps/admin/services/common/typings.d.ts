@@ -121,6 +121,17 @@ declare namespace API {
     telephone: string;
   };
 
+  type CheckVerificationCodeRequest = {
+    method: 'email' | 'mobile';
+    account: string;
+    code: string;
+    type: number;
+  };
+
+  type CheckVerificationCodeRespone = {
+    status: boolean;
+  };
+
   type CloseOrderRequest = {
     orderNo: string;
   };
@@ -910,6 +921,7 @@ declare namespace API {
     subscribe: Subscribe;
     start_time: number;
     expire_time: number;
+    finished_at: number;
     reset_time: number;
     traffic: number;
     download: number;
