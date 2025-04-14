@@ -201,7 +201,6 @@ export default function RuleForm<T extends Record<string, any>>({
                         <p className='font-mono'>DST-PORT,80,DIRECT</p>
                         <p className='font-mono'>SRC-PORT,7777,REJECT</p>
                         <p className='font-mono'>PROCESS-NAME,telegram</p>
-                        <p className='font-mono'>RULE-SET,netflix</p>
                       </div>
                     </div>
                     <FormMessage />
