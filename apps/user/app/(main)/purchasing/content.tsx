@@ -12,6 +12,7 @@ import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader } from '@workspace/ui/components/card';
 import { Separator } from '@workspace/ui/components/separator';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
+import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
@@ -167,7 +168,51 @@ export default function Content({ subscription }: { subscription?: API.Subscribe
         <Card>
           <CardContent className='grid gap-3 p-6 text-sm'>
             <h2 className='text-xl font-semibold'>{subscription.name}</h2>
-            <p className='text-muted-foreground'>{subscription.description}</p>
+            <ul className='flex flex-grow flex-col gap-3'>
+              {(() => {
+                let parsedDescription;
+                try {
+                  parsedDescription = JSON.parse(subscription.description);
+                } catch {
+                  parsedDescription = { description: '', features: [] };
+                }
+
+                const { description, features } = parsedDescription;
+                return (
+                  <>
+                    {description && <li className='text-muted-foreground'>{description}</li>}
+                    {features?.map(
+                      (
+                        feature: {
+                          icon: string;
+                          label: string;
+                          type: 'default' | 'success' | 'destructive';
+                        },
+                        index: number,
+                      ) => (
+                        <li
+                          className={cn('flex items-center gap-1', {
+                            'text-muted-foreground line-through': feature.type === 'destructive',
+                          })}
+                          key={index}
+                        >
+                          {feature.icon && (
+                            <Icon
+                              icon={feature.icon}
+                              className={cn('text-primary size-5', {
+                                'text-green-500': feature.type === 'success',
+                                'text-destructive': feature.type === 'destructive',
+                              })}
+                            />
+                          )}
+                          {feature.label}
+                        </li>
+                      ),
+                    )}
+                  </>
+                );
+              })()}
+            </ul>
             <SubscribeDetail
               subscribe={{
                 ...subscription,
