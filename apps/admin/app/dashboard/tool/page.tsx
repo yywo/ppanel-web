@@ -18,7 +18,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@workspace/ui/components/alert-dialog';
-import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
   Card,
@@ -145,20 +144,24 @@ export default function Page() {
                       <AccordionItem key={index} value={`item-${index}`} className='px-4'>
                         <AccordionTrigger className='hover:no-underline'>
                           <div className='flex w-full flex-col items-start space-y-2 sm:flex-row sm:items-center sm:space-x-4 sm:space-y-0'>
-                            <Badge
-                              variant='outline'
-                              className={`${getLogLevelColor(log.level)} mb-2 sm:mb-0`}
-                            >
-                              {log.level}
-                            </Badge>
-                            <span className='text-xs font-medium sm:text-sm'>{log.time}</span>
-                            <span className='text-muted-foreground flex-1 truncate text-xs sm:text-sm'>
-                              {log.message}
-                            </span>
+                            <span className='text-xs font-medium sm:text-sm'>{log.timestamp}</span>
                           </div>
                         </AccordionTrigger>
                         <AccordionContent className='px-2'>
-                          <div className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'>
+                          {
+                            // 直接渲染 key: value
+
+                            Object.entries(log).map(([key, value]) => (
+                              <div
+                                key={key}
+                                className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'
+                              >
+                                <span className='font-medium'>{key}:</span>
+                                <span className='break-all'>{value as string}</span>
+                              </div>
+                            ))
+                          }
+                          {/* <div className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'>
                             <div className='font-medium'>{t('ip')}:</div>
                             <div>{log.ip}</div>
                             <div className='font-medium'>{t('request')}:</div>
@@ -173,7 +176,7 @@ export default function Page() {
                             <div className='break-all'>{log.query || t('none')}</div>
                             <div className='font-medium'>{t('userAgent')}:</div>
                             <div className='break-all'>{log['user-agent']}</div>
-                          </div>
+                          </div> */}
                         </AccordionContent>
                       </AccordionItem>
                     ))}
