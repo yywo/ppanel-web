@@ -22,7 +22,6 @@
   "description": "Descrição",
   "descriptionPlaceholder": "Insira a descrição do método de pagamento",
   "domain": "Domínio",
-  "domainPlaceholder": "opcional, por exemplo, {exemplo}",
   "edit": "Editar",
   "editPayment": "Editar Método de Pagamento",
   "enable": "Habilitar",

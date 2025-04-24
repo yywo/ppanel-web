@@ -22,7 +22,6 @@
   "description": "Описание",
   "descriptionPlaceholder": "Введите описание метода оплаты",
   "domain": "Домен",
-  "domainPlaceholder": "необязательно, например, {example}",
   "edit": "Редактировать",
   "editPayment": "Редактировать способ оплаты",
   "enable": "Включить",

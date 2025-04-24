@@ -22,7 +22,6 @@
   "description": "توضیحات",
   "descriptionPlaceholder": "توضیحات روش پرداخت را وارد کنید",
   "domain": "دامنه",
-  "domainPlaceholder": "اختیاری، به عنوان مثال {example}",
   "edit": "ویرایش",
   "editPayment": "ویرایش روش پرداخت",
   "enable": "فعال کردن",

@@ -22,7 +22,6 @@
   "description": "Опис",
   "descriptionPlaceholder": "Введіть опис способу оплати",
   "domain": "Домен",
-  "domainPlaceholder": "необов'язково, наприклад, {example}",
   "edit": "Редагувати",
   "editPayment": "Редагувати спосіб оплати",
   "enable": "Увімкнути",

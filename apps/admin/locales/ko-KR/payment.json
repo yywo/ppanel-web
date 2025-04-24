@@ -22,7 +22,6 @@
   "description": "설명",
   "descriptionPlaceholder": "결제 수단 설명을 입력하세요",
   "domain": "도메인",
-  "domainPlaceholder": "선택 사항, 예: {example}",
   "edit": "편집",
   "editPayment": "결제 수단 편집",
   "enable": "사용",

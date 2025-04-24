@@ -22,7 +22,6 @@
   "description": "विवरण",
   "descriptionPlaceholder": "भुगतान विधि का विवरण दर्ज करें",
   "domain": "डोमेन",
-  "domainPlaceholder": "वैकल्पिक, जैसे कि {example}",
   "edit": "संपादित करें",
   "editPayment": "भुगतान विधि संपादित करें",
   "enable": "सक्षम करें",

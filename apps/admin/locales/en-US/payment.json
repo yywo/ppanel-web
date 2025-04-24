@@ -22,7 +22,6 @@
   "description": "Description",
   "descriptionPlaceholder": "Enter payment method description",
   "domain": "Domain",
-  "domainPlaceholder": "optional, e.g. {example}",
   "edit": "Edit",
   "editPayment": "Edit Payment Method",
   "enable": "Enable",

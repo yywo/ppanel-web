@@ -22,7 +22,6 @@
   "description": "Mô tả",
   "descriptionPlaceholder": "Nhập mô tả phương thức thanh toán",
   "domain": "Miền",
-  "domainPlaceholder": "tùy chọn, ví dụ: {example}",
   "edit": "Chỉnh Sửa",
   "editPayment": "Chỉnh Sửa Phương Thức Thanh Toán",
   "enable": "Kích hoạt",

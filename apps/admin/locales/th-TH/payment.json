@@ -22,7 +22,6 @@
   "description": "คำอธิบาย",
   "descriptionPlaceholder": "กรอกคำอธิบายวิธีการชำระเงิน",
   "domain": "โดเมน",
-  "domainPlaceholder": "ไม่บังคับ เช่น {example}",
   "edit": "แก้ไข",
   "editPayment": "แก้ไขวิธีการชำระเงิน",
   "enable": "เปิดใช้งาน",

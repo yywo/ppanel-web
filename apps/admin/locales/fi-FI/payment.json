@@ -22,7 +22,6 @@
   "description": "Kuvaus",
   "descriptionPlaceholder": "Syötä maksutavan kuvaus",
   "domain": "Verkkotunnus",
-  "domainPlaceholder": "valinnainen, esim. {esimerkki}",
   "edit": "Muokkaa",
   "editPayment": "Muokkaa maksutapaa",
   "enable": "Ota käyttöön",

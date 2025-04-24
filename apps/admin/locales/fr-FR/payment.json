@@ -22,7 +22,6 @@
   "description": "Description",
   "descriptionPlaceholder": "Entrez la description du mode de paiement",
   "domain": "Domaine",
-  "domainPlaceholder": "facultatif, par exemple {exemple}",
   "edit": "Modifier",
   "editPayment": "Modifier le mode de paiement",
   "enable": "Activer",

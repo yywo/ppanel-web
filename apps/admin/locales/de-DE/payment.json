@@ -22,7 +22,6 @@
   "description": "Beschreibung",
   "descriptionPlaceholder": "Geben Sie die Beschreibung der Zahlungsmethode ein",
   "domain": "Domain",
-  "domainPlaceholder": "optional, z.B. {example}",
   "edit": "Bearbeiten",
   "editPayment": "Zahlungsmethode bearbeiten",
   "enable": "Aktivieren",

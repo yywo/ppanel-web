@@ -22,7 +22,6 @@
   "description": "Leírás",
   "descriptionPlaceholder": "Írja be a fizetési mód leírását",
   "domain": "Domain",
-  "domainPlaceholder": "opcionális, pl. {példa}",
   "edit": "Szerkesztés",
   "editPayment": "Fizetési mód szerkesztése",
   "enable": "Engedélyezés",

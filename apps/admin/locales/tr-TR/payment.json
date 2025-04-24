@@ -22,7 +22,6 @@
   "description": "Açıklama",
   "descriptionPlaceholder": "Ödeme yöntemi açıklamasını girin",
   "domain": "Alan Adı",
-  "domainPlaceholder": "isteğe bağlı, örn. {example}",
   "edit": "Düzenle",
   "editPayment": "Ödeme Yöntemini Düzenle",
   "enable": "Etkinleştir",

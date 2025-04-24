@@ -22,7 +22,6 @@
   "description": "Descriere",
   "descriptionPlaceholder": "Introduceți descrierea metodei de plată",
   "domain": "Domeniu",
-  "domainPlaceholder": "opțional, de exemplu {example}",
   "edit": "Editează",
   "editPayment": "Editează Metodă de Plată",
   "enable": "Activare",

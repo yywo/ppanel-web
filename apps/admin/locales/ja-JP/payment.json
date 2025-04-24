@@ -22,7 +22,6 @@
   "description": "説明",
   "descriptionPlaceholder": "支払い方法の説明を入力してください",
   "domain": "ドメイン",
-  "domainPlaceholder": "任意、例：{example}",
   "edit": "編集",
   "editPayment": "支払い方法を編集",
   "enable": "有効",

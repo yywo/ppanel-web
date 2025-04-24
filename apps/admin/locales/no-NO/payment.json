@@ -22,7 +22,6 @@
   "description": "Beskrivelse",
   "descriptionPlaceholder": "Skriv inn beskrivelse av betalingsmetode",
   "domain": "Domene",
-  "domainPlaceholder": "valgfritt, f.eks. {example}",
   "edit": "Rediger",
   "editPayment": "Rediger betalingsmetode",
   "enable": "Aktiver",

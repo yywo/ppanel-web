@@ -22,7 +22,6 @@
   "description": "Opis",
   "descriptionPlaceholder": "Wprowadź opis metody płatności",
   "domain": "Domena",
-  "domainPlaceholder": "opcjonalnie, np. {example}",
   "edit": "Edytuj",
   "editPayment": "Edytuj metodę płatności",
   "enable": "Włącz",

@@ -201,7 +201,7 @@ export default function PaymentForm<T>({
                       <FormLabel>{t('domain')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
-                          placeholder={t('domainPlaceholder', { example: 'http(s)://example.com' })}
+                          placeholder='http(s)://example.com'
                           value={field.value}
                           onValueChange={(value) => form.setValue('domain', value as string)}
                         />

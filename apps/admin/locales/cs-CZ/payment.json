@@ -22,7 +22,6 @@
   "description": "Popis",
   "descriptionPlaceholder": "Zadejte popis platební metody",
   "domain": "Doména",
-  "domainPlaceholder": "volitelné, např. {example}",
   "edit": "Upravit",
   "editPayment": "Upravit platební metodu",
   "enable": "Povolit",

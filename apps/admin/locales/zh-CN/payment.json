@@ -22,7 +22,6 @@
   "description": "描述",
   "descriptionPlaceholder": "输入支付方式描述",
   "domain": "域名",
-  "domainPlaceholder": "可选，例如 {example}",
   "edit": "编辑",
   "editPayment": "编辑支付方式",
   "enable": "启用",
