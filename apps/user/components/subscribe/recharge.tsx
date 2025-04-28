@@ -65,6 +65,7 @@ export default function Recharge(props: Readonly<ButtonProps>) {
               />
             </div>
             <PaymentMethods
+              balance={false}
               value={params.payment}
               onChange={(value) => setParams({ ...params, payment: value })}
             />
