@@ -371,6 +371,7 @@ export default function PaymentForm<T>({
                                 ? configValues[fieldKey]
                                 : ''
                             }
+                            disabled={fieldKey === 'webhook_secret'}
                             onValueChange={(value) => {
                               const newConfig = { ...configValues };
                               newConfig[fieldKey] = value;
