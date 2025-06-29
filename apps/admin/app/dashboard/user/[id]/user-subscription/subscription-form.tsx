@@ -45,6 +45,9 @@ const formSchema = z.object({
   speed_limit: z.number().optional(),
   device_limit: z.number().optional(),
   expired_at: z.number().nullish().optional(),
+  upload: z.number().optional(),
+  download: z.number().optional(),
+  id: z.number().optional(),
 });
 
 export function SubscriptionForm({ trigger, title, loading, initialData, onSubmit }: Props) {
