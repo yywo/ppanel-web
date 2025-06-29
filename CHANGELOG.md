@@ -1,6 +1,14 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.0.1](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0...v1.0.1) (2025-04-28)
+
+
+### 🐛 Bug Fixes
+
+* **payment**: Disable webhook_secret field in PaymentForm component ([d323af8](https://github.com/perfect-panel/ppanel-web/commit/d323af8))
+* **recharge**: Set balance prop to false in PaymentMethods component ([356ae5b](https://github.com/perfect-panel/ppanel-web/commit/356ae5b))
+
 # 1.0.0 (2025-04-24)
 
 
