@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.0.2](https://github.com/perfect-panel/ppanel-web/compare/v1.0.1...v1.0.2) (2025-06-29)
+
+
+### 🐛 Bug Fixes
+
+* **subscription**: User subscription information ([7d18ff6](https://github.com/perfect-panel/ppanel-web/commit/7d18ff6))
+
 ## [1.0.1](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0...v1.0.1) (2025-04-28)
 
 
