@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const protocols = ['shadowsocks', 'vmess', 'vless', 'trojan', 'hysteria2', 'tuic'];
+export const protocols = ['shadowsocks', 'vmess', 'vless', 'trojan', 'hysteria2', 'tuic', 'anytls'];
 
 const nullableString = z.string().nullish();
 const portSchema = z.number().max(65535).nullish();
@@ -58,7 +58,15 @@ const hysteria2Schema = z.object({
 
 const tuicSchema = z.object({
   port: portSchema,
-  security: z.string(),
+  disable_sni: z.boolean().default(false),
+  reduce_rtt: z.boolean().default(false),
+  udp_relay_mode: z.string().default('native'),
+  congestion_controller: z.string().default('bbr'),
+  security_config: securityConfigSchema,
+});
+
+const anytlsSchema = z.object({
+  port: portSchema,
   security_config: securityConfigSchema,
 });
 
@@ -86,6 +94,10 @@ const protocolConfigSchema = z.discriminatedUnion('protocol', [
   z.object({
     protocol: z.literal('tuic'),
     config: tuicSchema,
+  }),
+  z.object({
+    protocol: z.literal('anytls'),
+    config: anytlsSchema,
   }),
 ]);
 

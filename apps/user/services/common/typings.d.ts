@@ -28,6 +28,11 @@ declare namespace API {
     updated_at: number;
   };
 
+  type AnyTLS = {
+    port: number;
+    security_config: SecurityConfig;
+  };
+
   type AppleLoginCallbackRequest = {
     code: string;
     id_token: string;
@@ -79,6 +84,40 @@ declare namespace API {
     version: string;
     description: string;
     is_default: boolean;
+  };
+
+  type AppUserSubcbribe = {
+    id: number;
+    name: string;
+    upload: number;
+    traffic: number;
+    download: number;
+    device_limit: number;
+    start_time: string;
+    expire_time: string;
+    list: AppUserSubscbribeNode[];
+  };
+
+  type AppUserSubscbribeNode = {
+    id: number;
+    name: string;
+    uuid: string;
+    protocol: string;
+    relay_mode: string;
+    relay_node: string;
+    server_addr: string;
+    speed_limit: number;
+    tags: string[];
+    traffic: number;
+    traffic_ratio: number;
+    upload: number;
+    config: string;
+    country: string;
+    city: string;
+    latitude: string;
+    longitude: string;
+    created_at: number;
+    download: number;
   };
 
   type AuthConfig = {
@@ -473,7 +512,7 @@ declare namespace API {
   type PurchaseOrderRequest = {
     subscribe_id: number;
     quantity: number;
-    payment: number;
+    payment?: number;
     coupon?: string;
   };
 
@@ -524,6 +563,11 @@ declare namespace API {
   type QuerySubscribeListResponse = {
     list: Subscribe[];
     total: number;
+  };
+
+  type QueryUserAffiliateCountResponse = {
+    registers: number;
+    total_commission: number;
   };
 
   type QueryUserAffiliateListRequest = {
@@ -830,6 +874,10 @@ declare namespace API {
 
   type Tuic = {
     port: number;
+    disable_sni: boolean;
+    reduce_rtt: boolean;
+    udp_relay_mode: string;
+    congestion_controller: string;
     security_config: SecurityConfig;
   };
 
