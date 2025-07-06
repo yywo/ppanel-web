@@ -1,5 +1,5 @@
 // @ts-ignore
-/* eslint-disable */
+
 import request from '@/utils/request';
 
 /** Apple Login Callback POST /v1/auth/oauth/callback/apple */

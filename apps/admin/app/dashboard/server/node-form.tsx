@@ -110,7 +110,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
           {trigger}
         </Button>
       </SheetTrigger>
-      <SheetContent className='w-[520px] max-w-full md:max-w-screen-md'>
+      <SheetContent className='w-[580px] max-w-full md:max-w-screen-md'>
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
         </SheetHeader>
@@ -290,7 +290,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                         value={field.value}
                         onValueChange={(value) => {
                           form.setValue(field.name, value);
-                          if (['trojan', 'hysteria2', 'tuic'].includes(value)) {
+                          if (['trojan', 'hysteria2', 'tuic', 'anytls'].includes(value)) {
                             form.setValue('config.security', 'tls');
                           }
                         }}
@@ -402,11 +402,11 @@ export default function NodeForm<T extends { [x: string]: any }>({
                 </div>
               )}
 
-              {['vmess', 'vless', 'trojan', 'hysteria2', 'tuic'].includes(protocol) && (
+              {['vmess', 'vless', 'trojan', 'hysteria2', 'tuic', 'anytls'].includes(protocol) && (
                 <div className='grid gap-4'>
                   <div
                     className={cn('flex gap-4 *:flex-1', {
-                      'grid grid-cols-2': ['hysteria2'].includes(protocol),
+                      'grid grid-cols-2': ['hysteria2', 'tuic'].includes(protocol),
                     })}
                   >
                     <FormField
@@ -524,6 +524,109 @@ export default function NodeForm<T extends { [x: string]: any }>({
                         />
                       </>
                     )}
+                    {protocol === 'tuic' && (
+                      <>
+                        <FormField
+                          control={form.control}
+                          name='config.udp_relay_mode'
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>{t('form.udpRelayMode')}</FormLabel>
+                              <FormControl>
+                                <Select
+                                  value={field.value}
+                                  onValueChange={(value) => {
+                                    form.setValue(field.name, value);
+                                  }}
+                                >
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    <SelectItem value='native'>Native</SelectItem>
+                                    <SelectItem value='quic'>QUIC</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name='config.congestion_controller'
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>{t('form.congestionController')}</FormLabel>
+                              <FormControl>
+                                <Select
+                                  value={field.value}
+                                  onValueChange={(value) => {
+                                    form.setValue(field.name, value);
+                                  }}
+                                >
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    <SelectItem value='bbr'>BBR</SelectItem>
+                                    <SelectItem value='cubic'>Cubic</SelectItem>
+                                    <SelectItem value='reno'>Reno</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <div className='flex gap-2'>
+                          <FormField
+                            control={form.control}
+                            name='config.disable_sni'
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>{t('form.disableSni')}</FormLabel>
+                                <FormControl>
+                                  <div className='pt-2'>
+                                    <Switch
+                                      checked={field.value}
+                                      onCheckedChange={(checked) => {
+                                        form.setValue(field.name, checked);
+                                      }}
+                                    />
+                                  </div>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                          <FormField
+                            control={form.control}
+                            name='config.reduce_rtt'
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>{t('form.reduceRtt')}</FormLabel>
+                                <FormControl>
+                                  <div className='pt-2'>
+                                    <Switch
+                                      checked={field.value}
+                                      onCheckedChange={(checked) => {
+                                        form.setValue(field.name, checked);
+                                      }}
+                                    />
+                                  </div>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+                      </>
+                    )}
                   </div>
                   {['vmess', 'vless', 'trojan'].includes(protocol) && (
                     <Card>
@@ -630,171 +733,17 @@ export default function NodeForm<T extends { [x: string]: any }>({
                       )}
                     </Card>
                   )}
-                  <Card>
-                    <CardHeader className='flex flex-row items-center justify-between p-3'>
-                      <CardTitle>{t('form.securityConfig')}</CardTitle>
-                      <FormField
-                        control={form.control}
-                        name='config.security'
-                        render={({ field }) => (
-                          <FormItem className='!mt-0 min-w-32'>
-                            <Select
-                              value={field.value}
-                              onValueChange={(value) => {
-                                form.setValue(field.name, value);
-                              }}
-                            >
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder={t('form.pleaseSelect')} />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                {['vmess', 'vless'].includes(protocol) && (
-                                  <SelectItem value='none'>NONE</SelectItem>
-                                )}
-                                <SelectItem value='tls'>TLS</SelectItem>
-                                {protocol === 'vless' && (
-                                  <SelectItem value='reality'>Reality</SelectItem>
-                                )}
-                              </SelectContent>
-                            </Select>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </CardHeader>
-                    {security !== 'none' && (
-                      <CardContent className='grid grid-cols-2 gap-4 p-3'>
-                        <FormField
-                          control={form.control}
-                          name='config.security_config.sni'
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Server Name(SNI)</FormLabel>
-                              <FormControl>
-                                <EnhancedInput
-                                  {...field}
-                                  onValueChange={(value) => {
-                                    form.setValue(field.name, value);
-                                  }}
-                                />
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
-                        {protocol === 'vless' && security === 'reality' && (
-                          <>
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.reality_server_addr'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.serverAddress')}</FormLabel>
-                                  <FormControl>
-                                    <EnhancedInput
-                                      {...field}
-                                      placeholder={t(
-                                        'form.security_config.serverAddressPlaceholder',
-                                      )}
-                                      onValueChange={(value) => {
-                                        form.setValue(field.name, value);
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.reality_server_port'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.serverPort')}</FormLabel>
-                                  <FormControl>
-                                    <EnhancedInput
-                                      {...field}
-                                      type='number'
-                                      min={1}
-                                      max={65535}
-                                      placeholder={t('form.security_config.serverPortPlaceholder')}
-                                      onValueChange={(value) => {
-                                        form.setValue(field.name, value);
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.reality_private_key'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.privateKey')}</FormLabel>
-                                  <FormControl>
-                                    <EnhancedInput
-                                      {...field}
-                                      placeholder={t('form.security_config.privateKeyPlaceholder')}
-                                      onValueChange={(value) => {
-                                        form.setValue(field.name, value);
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.reality_public_key'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.publicKey')}</FormLabel>
-                                  <FormControl>
-                                    <EnhancedInput
-                                      {...field}
-                                      placeholder={t('form.security_config.publicKeyPlaceholder')}
-                                      onValueChange={(value) => {
-                                        form.setValue(field.name, value);
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                            <FormField
-                              control={form.control}
-                              name='config.security_config.reality_short_id'
-                              render={({ field }) => (
-                                <FormItem>
-                                  <FormLabel>{t('form.security_config.shortId')}</FormLabel>
-                                  <FormControl>
-                                    <EnhancedInput
-                                      {...field}
-                                      placeholder={t('form.security_config.shortIdPlaceholder')}
-                                      onValueChange={(value) => {
-                                        form.setValue(field.name, value);
-                                      }}
-                                    />
-                                  </FormControl>
-                                  <FormMessage />
-                                </FormItem>
-                              )}
-                            />
-                          </>
-                        )}
-                        {protocol === 'vless' && (
+                  {(['vmess', 'vless', 'trojan'].includes(protocol) ||
+                    ['anytls', 'tuic', 'hysteria2'].includes(protocol)) && (
+                    <Card>
+                      <CardHeader className='flex flex-row items-center justify-between p-3'>
+                        <CardTitle>{t('form.securityConfig')}</CardTitle>
+                        {['vmess', 'vless', 'trojan'].includes(protocol) && (
                           <FormField
                             control={form.control}
-                            name='config.security_config.fingerprint'
+                            name='config.security'
                             render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>{t('form.security_config.fingerprint')}</FormLabel>
+                              <FormItem className='!mt-0 min-w-32'>
                                 <Select
                                   value={field.value}
                                   onValueChange={(value) => {
@@ -807,45 +756,213 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value='chrome'>Chrome</SelectItem>
-                                    <SelectItem value='firefox'>Firefox</SelectItem>
-                                    <SelectItem value='safari'>Safari</SelectItem>
-                                    <SelectItem value='ios'>IOS</SelectItem>
-                                    <SelectItem value='android'>Android</SelectItem>
-                                    <SelectItem value='edge'>edge</SelectItem>
-                                    <SelectItem value='360'>360</SelectItem>
-                                    <SelectItem value='qq'>QQ</SelectItem>
+                                    {['vmess', 'vless'].includes(protocol) && (
+                                      <SelectItem value='none'>NONE</SelectItem>
+                                    )}
+                                    <SelectItem value='tls'>TLS</SelectItem>
+                                    {protocol === 'vless' && (
+                                      <SelectItem value='reality'>Reality</SelectItem>
+                                    )}
                                   </SelectContent>
                                 </Select>
-                                <FormMessage />
                                 <FormMessage />
                               </FormItem>
                             )}
                           />
                         )}
-                        <FormField
-                          control={form.control}
-                          name='config.security_config.allow_insecure'
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Allow Insecure</FormLabel>
-                              <FormControl>
-                                <div className='pt-2'>
-                                  <Switch
-                                    checked={!!field.value}
-                                    onCheckedChange={(value) => {
+                      </CardHeader>
+                      {(['anytls', 'tuic', 'hysteria2'].includes(protocol) ||
+                        (['vmess', 'vless', 'trojan'].includes(protocol) &&
+                          security !== 'none')) && (
+                        <CardContent className='grid grid-cols-2 gap-4 p-3'>
+                          <FormField
+                            control={form.control}
+                            name='config.security_config.sni'
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Server Name(SNI)</FormLabel>
+                                <FormControl>
+                                  <EnhancedInput
+                                    {...field}
+                                    onValueChange={(value) => {
                                       form.setValue(field.name, value);
                                     }}
                                   />
-                                </div>
-                              </FormControl>
-                              <FormMessage />
-                            </FormItem>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          {/* Reality 特殊配置只在 vless + reality 时显示 */}
+                          {protocol === 'vless' && security === 'reality' && (
+                            <>
+                              <FormField
+                                control={form.control}
+                                name='config.security_config.reality_server_addr'
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel>{t('form.security_config.serverAddress')}</FormLabel>
+                                    <FormControl>
+                                      <EnhancedInput
+                                        {...field}
+                                        placeholder={t(
+                                          'form.security_config.serverAddressPlaceholder',
+                                        )}
+                                        onValueChange={(value) => {
+                                          form.setValue(field.name, value);
+                                        }}
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              <FormField
+                                control={form.control}
+                                name='config.security_config.reality_server_port'
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel>{t('form.security_config.serverPort')}</FormLabel>
+                                    <FormControl>
+                                      <EnhancedInput
+                                        {...field}
+                                        type='number'
+                                        min={1}
+                                        max={65535}
+                                        placeholder={t(
+                                          'form.security_config.serverPortPlaceholder',
+                                        )}
+                                        onValueChange={(value) => {
+                                          form.setValue(field.name, value);
+                                        }}
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              <FormField
+                                control={form.control}
+                                name='config.security_config.reality_private_key'
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel>{t('form.security_config.privateKey')}</FormLabel>
+                                    <FormControl>
+                                      <EnhancedInput
+                                        {...field}
+                                        placeholder={t(
+                                          'form.security_config.privateKeyPlaceholder',
+                                        )}
+                                        onValueChange={(value) => {
+                                          form.setValue(field.name, value);
+                                        }}
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              <FormField
+                                control={form.control}
+                                name='config.security_config.reality_public_key'
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel>{t('form.security_config.publicKey')}</FormLabel>
+                                    <FormControl>
+                                      <EnhancedInput
+                                        {...field}
+                                        placeholder={t('form.security_config.publicKeyPlaceholder')}
+                                        onValueChange={(value) => {
+                                          form.setValue(field.name, value);
+                                        }}
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                              <FormField
+                                control={form.control}
+                                name='config.security_config.reality_short_id'
+                                render={({ field }) => (
+                                  <FormItem>
+                                    <FormLabel>{t('form.security_config.shortId')}</FormLabel>
+                                    <FormControl>
+                                      <EnhancedInput
+                                        {...field}
+                                        placeholder={t('form.security_config.shortIdPlaceholder')}
+                                        onValueChange={(value) => {
+                                          form.setValue(field.name, value);
+                                        }}
+                                      />
+                                    </FormControl>
+                                    <FormMessage />
+                                  </FormItem>
+                                )}
+                              />
+                            </>
                           )}
-                        />
-                      </CardContent>
-                    )}
-                  </Card>
+
+                          {protocol === 'vless' && (
+                            <FormField
+                              control={form.control}
+                              name='config.security_config.fingerprint'
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>{t('form.security_config.fingerprint')}</FormLabel>
+                                  <Select
+                                    value={field.value}
+                                    onValueChange={(value) => {
+                                      form.setValue(field.name, value);
+                                    }}
+                                  >
+                                    <FormControl>
+                                      <SelectTrigger>
+                                        <SelectValue placeholder={t('form.pleaseSelect')} />
+                                      </SelectTrigger>
+                                    </FormControl>
+                                    <SelectContent>
+                                      <SelectItem value='chrome'>Chrome</SelectItem>
+                                      <SelectItem value='firefox'>Firefox</SelectItem>
+                                      <SelectItem value='safari'>Safari</SelectItem>
+                                      <SelectItem value='ios'>IOS</SelectItem>
+                                      <SelectItem value='android'>Android</SelectItem>
+                                      <SelectItem value='edge'>edge</SelectItem>
+                                      <SelectItem value='360'>360</SelectItem>
+                                      <SelectItem value='qq'>QQ</SelectItem>
+                                    </SelectContent>
+                                  </Select>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          )}
+
+                          <FormField
+                            control={form.control}
+                            name='config.security_config.allow_insecure'
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Allow Insecure</FormLabel>
+                                <FormControl>
+                                  <div className='pt-2'>
+                                    <Switch
+                                      checked={!!field.value}
+                                      onCheckedChange={(checked) => {
+                                        form.setValue(field.name, checked);
+                                      }}
+                                    />
+                                  </div>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </CardContent>
+                      )}
+                    </Card>
+                  )}
                 </div>
               )}
 

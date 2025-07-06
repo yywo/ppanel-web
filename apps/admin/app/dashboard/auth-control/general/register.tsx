@@ -136,14 +136,14 @@ export function Register() {
                 />
               </TableCell>
             </TableRow>
-            <TableRow>
-              <TableCell>
+            <TableRow className='flex flex-col'>
+              <TableCell className='w-full'>
                 <Label>{t('trialSubscribePlan')}</Label>
                 <p className='text-muted-foreground text-xs'>
                   {t('trialSubscribePlanDescription')}
                 </p>
               </TableCell>
-              <TableCell className='text-right'>
+              <TableCell className='max-w-96'>
                 <EnhancedInput
                   placeholder={t('trialDuration')}
                   type='number'

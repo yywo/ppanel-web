@@ -87,6 +87,7 @@ export default function NodeTable() {
                       'bg-yellow-500': row.original.protocol === 'trojan',
                       'bg-purple-500': row.original.protocol === 'hysteria2',
                       'bg-cyan-500': row.original.protocol === 'tuic',
+                      'bg-gray-500': row.original.protocol === 'anytls',
                     })}
                   >
                     {row.getValue('id')}
