@@ -1,4 +1,14 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.1.0](https://github.com/perfect-panel/ppanel-web/compare/v1.0.2...v1.1.0) (2025-07-06)
+
+
+### ✨ Features
+
+* **view**: Add AnyTLS protocol support and enhance node configuration options ([bcfb10a](https://github.com/perfect-panel/ppanel-web/commit/bcfb10a))
+
+<a name="readme-top"></a>
 
 # Changelog
 
