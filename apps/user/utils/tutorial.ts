@@ -17,7 +17,7 @@ async function getVersionPath() {
     .then((version) => `${BASE_URL}@${version}`)
     .catch((error) => {
       console.warn('Error fetching the version:', error);
-      return BASE_URL;
+      return `${BASE_URL}@latest`;
     });
 }
 
