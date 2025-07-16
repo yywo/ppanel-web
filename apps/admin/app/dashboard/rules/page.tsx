@@ -50,6 +50,8 @@ export default function Page() {
                     enable: false,
                     tags: values.tags || [],
                     icon: values.icon || '',
+                    type: values.type || 'auto',
+                    default: false,
                   });
                   toast.success(t('createSuccess'));
                   ref.current?.refresh();
@@ -100,6 +102,22 @@ export default function Page() {
           },
         },
         {
+          accessorKey: 'default',
+          header: t('defaultRule'),
+          cell: ({ row }) => (
+            <Switch
+              defaultChecked={row.original.default}
+              onCheckedChange={async (checked) => {
+                await updateRuleGroup({
+                  ...row.original,
+                  default: checked,
+                } as API.UpdateRuleGroupRequest);
+                ref.current?.refresh();
+              }}
+            />
+          ),
+        },
+        {
           accessorKey: 'icon',
           header: t('appIcon'),
           cell: ({ row }) =>
@@ -121,6 +139,16 @@ export default function Page() {
         {
           accessorKey: 'name',
           header: t('name'),
+        },
+        {
+          accessorKey: 'type',
+          header: t('type'),
+          cell: ({ row }) => {
+            const type = row.original.type;
+            if (type === 'auto') return t('auto');
+            if (type === 'ban') return t('ban');
+            return type || '--';
+          },
         },
         {
           accessorKey: 'tags',
@@ -163,6 +191,8 @@ export default function Page() {
                   rules: values.rules,
                   enable: row.enable,
                   icon: values.icon,
+                  type: values.type,
+                  default: row.default,
                 });
                 toast.success(t('updateSuccess'));
                 ref.current?.refresh();
