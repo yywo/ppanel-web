@@ -159,7 +159,7 @@ export default function ImportYamlRules({ onImportSuccess }: ImportYamlRulesProp
           enable: false,
           tags: [],
           icon: '',
-          type: 'auto',
+          type: 'default',
           default: isDefault,
         });
         setImportProgress(i + 1);

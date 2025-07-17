@@ -1288,8 +1288,8 @@ declare namespace API {
     type: string;
     tags: string[];
     rules: string;
-    default: boolean;
     enable: boolean;
+    default: boolean;
     created_at: number;
     updated_at: number;
   };

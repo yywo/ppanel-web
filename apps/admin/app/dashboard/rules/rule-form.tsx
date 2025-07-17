@@ -43,7 +43,7 @@ const formSchema = z.object({
   tags: z.array(z.string()).default([]),
   rules: z.string().default(''),
   icon: z.string().default(''),
-  type: z.string().default('auto'),
+  type: z.string().default('default'),
 });
 
 interface RuleFormProps<T> {
@@ -172,8 +172,9 @@ export default function RuleForm<T extends Record<string, any>>({
                           <SelectValue placeholder={t('selectType')} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value='auto'>{t('auto')}</SelectItem>
-                          <SelectItem value='ban'>{t('ban')}</SelectItem>
+                          <SelectItem value='default'>{t('default')}</SelectItem>
+                          <SelectItem value='reject'>{t('reject')}</SelectItem>
+                          <SelectItem value='direct'>{t('direct')}</SelectItem>
                         </SelectContent>
                       </Select>
                     </FormControl>
