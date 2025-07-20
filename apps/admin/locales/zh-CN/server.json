@@ -63,6 +63,7 @@
     "edit": "编辑",
     "editNode": "编辑节点",
     "enable": "启用",
+    "id": "ID",
     "form": {
       "allowInsecure": "允许不安全",
       "cancel": "取消",
@@ -141,6 +142,7 @@
     "name": "名称",
     "node": "节点",
     "nodeGroup": "节点组",
+    "noData": "--",
     "normal": "正常",
     "onlineCount": "在线人数",
     "onlineUsers": "在线用户",

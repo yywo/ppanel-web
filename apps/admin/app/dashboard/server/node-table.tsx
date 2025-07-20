@@ -73,7 +73,7 @@ export default function NodeTable() {
       columns={[
         {
           accessorKey: 'id',
-          header: 'ID',
+          header: t('id'),
           cell: ({ row }) => (
             <TooltipProvider>
               <Tooltip>
@@ -160,7 +160,7 @@ export default function NodeTable() {
           header: t('nodeGroup'),
           cell: ({ row }) => {
             const name = groups?.find((group) => group.id === row.getValue('group_id'))?.name;
-            return name ? <Badge variant='outline'>{name}</Badge> : '--';
+            return name ? <Badge variant='outline'>{name}</Badge> : t('noData');
           },
         },
         {
@@ -177,7 +177,7 @@ export default function NodeTable() {
                 ))}
               </div>
             ) : (
-              '--'
+              t('noData')
             );
           },
         },
@@ -273,17 +273,17 @@ export default function NodeTable() {
             <ConfirmButton
               key='delete'
               trigger={<Button variant='destructive'>{t('delete')}</Button>}
-              title={t('group.confirmDelete')}
-              description={t('group.deleteWarning')}
+              title={t('confirmDelete')}
+              description={t('deleteWarning')}
               onConfirm={async () => {
                 await batchDeleteNode({
                   ids: rows.map((item) => item.id),
                 });
-                toast.success(t('group.deleteSuccess'));
+                toast.success(t('deleteSuccess'));
                 ref.current?.refresh();
               }}
-              cancelText={t('group.cancel')}
-              confirmText={t('group.confirm')}
+              cancelText={t('cancel')}
+              confirmText={t('confirm')}
             />,
           ];
         },

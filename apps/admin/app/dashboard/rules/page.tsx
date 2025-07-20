@@ -50,6 +50,8 @@ export default function Page() {
                     enable: false,
                     tags: values.tags || [],
                     icon: values.icon || '',
+                    type: values.type || 'default',
+                    default: false,
                   });
                   toast.success(t('createSuccess'));
                   ref.current?.refresh();
@@ -100,27 +102,55 @@ export default function Page() {
           },
         },
         {
-          accessorKey: 'icon',
-          header: t('appIcon'),
-          cell: ({ row }) =>
-            row.getValue('icon') ? (
-              <Image
-                src={row.getValue('icon')}
-                alt={row.getValue('name')}
-                className='h-8 w-8 rounded-md'
-                width={32}
-                height={32}
-              />
-            ) : (
-              <div className='bg-muted flex h-8 w-8 items-center justify-center rounded-md'>
-                {row.original.name?.slice(0, 2)}
-              </div>
-            ),
+          accessorKey: 'default',
+          header: t('defaultRule'),
+          cell: ({ row }) => (
+            <Switch
+              defaultChecked={row.original.default}
+              onCheckedChange={async (checked) => {
+                await updateRuleGroup({
+                  ...row.original,
+                  default: checked,
+                } as API.UpdateRuleGroupRequest);
+                ref.current?.refresh();
+              }}
+            />
+          ),
         },
-
+        {
+          accessorKey: 'type',
+          header: t('type'),
+          cell: ({ row }) => {
+            const type = row.original.type || 'default';
+            if (type === 'default') {
+              return <Badge variant='default'>{t('default')}</Badge>;
+            }
+            if (type === 'reject') {
+              return <Badge variant='destructive'>{t('reject')}</Badge>;
+            }
+            if (type === 'direct') {
+              return <Badge variant='secondary'>{t('direct')}</Badge>;
+            }
+            return <Badge variant='default'>{t('default')}</Badge>;
+          },
+        },
         {
           accessorKey: 'name',
           header: t('name'),
+          cell: ({ row }) => (
+            <div className='flex items-center gap-2'>
+              {row.original.icon && (
+                <Image
+                  src={row.original.icon}
+                  alt={row.original.name}
+                  className='h-6 w-6 rounded-md'
+                  width={24}
+                  height={24}
+                />
+              )}
+              <span>{row.original.name}</span>
+            </div>
+          ),
         },
         {
           accessorKey: 'tags',
@@ -163,6 +193,8 @@ export default function Page() {
                   rules: values.rules,
                   enable: row.enable,
                   icon: values.icon,
+                  type: values.type,
+                  default: row.default,
                 });
                 toast.success(t('updateSuccess'));
                 ref.current?.refresh();

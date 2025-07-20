@@ -14,6 +14,13 @@ import {
 } from '@workspace/ui/components/form';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@workspace/ui/components/select';
+import {
   Sheet,
   SheetContent,
   SheetFooter,
@@ -36,6 +43,7 @@ const formSchema = z.object({
   tags: z.array(z.string()).default([]),
   rules: z.string().default(''),
   icon: z.string().default(''),
+  type: z.string().default('default'),
 });
 
 interface RuleFormProps<T> {
@@ -142,6 +150,33 @@ export default function RuleForm<T extends Record<string, any>>({
                           form.setValue(field.name, value);
                         }}
                       />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='type'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('type')}</FormLabel>
+                    <FormControl>
+                      <Select
+                        value={field.value}
+                        onValueChange={(value) => {
+                          form.setValue(field.name, value);
+                        }}
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder={t('selectType')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value='default'>{t('default')}</SelectItem>
+                          <SelectItem value='reject'>{t('reject')}</SelectItem>
+                          <SelectItem value='direct'>{t('direct')}</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </FormControl>
                     <FormMessage />
                   </FormItem>

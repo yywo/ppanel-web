@@ -696,9 +696,11 @@ declare namespace API {
     id: number;
     icon: string;
     name: string;
+    type: string;
     tags: string[];
     rules: string;
     enable: boolean;
+    default: boolean;
     created_at: number;
     updated_at: number;
   };

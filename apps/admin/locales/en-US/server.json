@@ -63,6 +63,7 @@
     "edit": "Edit",
     "editNode": "Edit Node",
     "enable": "Enable",
+    "id": "ID",
     "form": {
       "allowInsecure": "Allow Insecure",
       "cancel": "Cancel",
@@ -141,6 +142,7 @@
     "name": "Name",
     "node": "Node",
     "nodeGroup": "Node Group",
+    "noData": "--",
     "normal": "Normal",
     "onlineCount": "Online users",
     "onlineUsers": "Online Users",

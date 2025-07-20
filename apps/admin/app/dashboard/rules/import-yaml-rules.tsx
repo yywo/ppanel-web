@@ -88,10 +88,30 @@ export default function ImportYamlRules({ onImportSuccess }: ImportYamlRulesProp
       if (!groups[policyGroup]) {
         groups[policyGroup] = [];
       }
-      groups[policyGroup].push(cleanRule);
+
+      // 不插入 MATCH 规则，只用于标识默认规则组
+      if (!rule.trim().startsWith('MATCH,')) {
+        groups[policyGroup].push(cleanRule);
+      }
     }
 
     return groups;
+  };
+
+  const checkIfDefaultRule = (originalRules: string[], groupName: string): boolean => {
+    return originalRules.some((rule) => {
+      const trimmedRule = rule.trim();
+      if (!trimmedRule.startsWith('MATCH,')) return false;
+
+      // 检查 MATCH 规则是否属于当前组
+      const parts = trimmedRule.split(',');
+      if (parts.length >= 3) {
+        const ruleGroup = parts[2]?.trim();
+        return ruleGroup === groupName;
+      }
+
+      return groupName === 'default';
+    });
   };
 
   const handleImport = async () => {
@@ -130,12 +150,17 @@ export default function ImportYamlRules({ onImportSuccess }: ImportYamlRulesProp
       for (let i = 0; i < groups.length; i++) {
         const group = groups[i];
         if (!group?.name || !group?.rules.length) continue;
+
+        const isDefault = checkIfDefaultRule(allRules, group.name);
+
         await createRuleGroup({
           name: group.name,
           rules: group?.rules.join('\n'),
           enable: false,
           tags: [],
           icon: '',
+          type: 'default',
+          default: isDefault,
         });
         setImportProgress(i + 1);
       }
