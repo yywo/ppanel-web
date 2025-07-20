@@ -42,7 +42,7 @@ import { evaluateWithPrecision, unitConversion } from '@workspace/ui/utils';
 import { CreditCard, Server, Settings } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { assign, shake } from 'radash';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -81,6 +81,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
 }: Readonly<SubscribeFormProps<T>>) {
   const t = useTranslations('subscribe');
   const [open, setOpen] = useState(false);
+  const updateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const formSchema = z.object({
     name: z.string(),
@@ -118,11 +119,110 @@ export default function SubscribeForm<T extends Record<string, any>>({
     ),
   });
 
+  const debouncedCalculateDiscount = useCallback(
+    (values: any[], fieldName: string, lastChangedField?: string, changedIndex?: number) => {
+      if (updateTimeoutRef.current) {
+        clearTimeout(updateTimeoutRef.current);
+      }
+
+      updateTimeoutRef.current = setTimeout(() => {
+        const { unit_price } = form.getValues();
+        if (!unit_price || !values?.length) return;
+
+        let hasChanges = false;
+        const calculatedValues = values.map((item: any, index: number) => {
+          const result = { ...item };
+
+          if (changedIndex !== undefined && index !== changedIndex) {
+            return result;
+          }
+
+          const quantity = Number(item.quantity) || 0;
+          const discount = Number(item.discount) || 0;
+          const price = Number(item.price) || 0;
+
+          switch (lastChangedField) {
+            case 'quantity':
+            case 'discount':
+              if (quantity > 0 && discount > 0) {
+                const newPrice = evaluateWithPrecision(
+                  `${unit_price} * ${quantity} * ${discount} / 100`,
+                );
+                if (Math.abs(newPrice - price) > 0.01) {
+                  result.price = newPrice;
+                  hasChanges = true;
+                }
+              }
+              break;
+
+            case 'price':
+              if (quantity > 0 && price > 0) {
+                const newDiscount = evaluateWithPrecision(
+                  `${price} / ${quantity} / ${unit_price} * 100`,
+                );
+                if (Math.abs(newDiscount - discount) > 0.01) {
+                  result.discount = Math.min(100, Math.max(0, newDiscount));
+                  hasChanges = true;
+                }
+              } else if (discount > 0 && price > 0) {
+                const newQuantity = evaluateWithPrecision(
+                  `${price} / ${unit_price} / ${discount} * 100`,
+                );
+                if (Math.abs(newQuantity - quantity) > 0.01 && newQuantity > 0) {
+                  result.quantity = Math.max(1, Math.round(newQuantity));
+                  hasChanges = true;
+                }
+              }
+              break;
+
+            default:
+              if (quantity > 0 && discount > 0 && price === 0) {
+                result.price = evaluateWithPrecision(
+                  `${unit_price} * ${quantity} * ${discount} / 100`,
+                );
+                hasChanges = true;
+              } else if (quantity > 0 && price > 0 && discount === 0) {
+                const newDiscount = evaluateWithPrecision(
+                  `${price} / ${quantity} / ${unit_price} * 100`,
+                );
+                result.discount = Math.min(100, Math.max(0, newDiscount));
+                hasChanges = true;
+              } else if (discount > 0 && price > 0 && quantity === 0) {
+                const newQuantity = evaluateWithPrecision(
+                  `${price} / ${unit_price} / ${discount} * 100`,
+                );
+                if (newQuantity > 0) {
+                  result.quantity = Math.max(1, Math.round(newQuantity));
+                  hasChanges = true;
+                }
+              }
+              break;
+          }
+
+          return result;
+        });
+
+        if (hasChanges) {
+          form.setValue(fieldName, calculatedValues, { shouldDirty: true });
+        }
+      }, 300);
+    },
+    [form],
+  );
+
   useEffect(() => {
     form?.reset(
       assign(defaultValues, shake(initialValues, (value) => value === null) as Record<string, any>),
     );
   }, [form, initialValues]);
+
+  useEffect(() => {
+    return () => {
+      if (updateTimeoutRef.current) {
+        clearTimeout(updateTimeoutRef.current);
+      }
+    };
+  }, []);
 
   async function handleSubmit(data: { [x: string]: any }) {
     const bool = await onSubmit(data as T);
@@ -158,31 +258,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
 
   const unit_time = form.watch('unit_time');
   const unit_price = form.watch('unit_price');
-  const discounts = form.watch('discount');
-
-  useEffect(() => {
-    if (!discounts?.length || !unit_price) return;
-
-    const calculatedValues = discounts.map((item: any) => {
-      const result = { ...item };
-
-      if (item.quantity && item.discount) {
-        result.price = evaluateWithPrecision(
-          `${unit_price || 0} * ${item.quantity} * ${item.discount} / 100`,
-        );
-      } else if (item.quantity && item.price && !item.discount) {
-        result.discount = evaluateWithPrecision(
-          `${item.price} / ${item.quantity} / ${unit_price} * 100`,
-        );
-      }
-
-      return result;
-    });
-
-    if (JSON.stringify(calculatedValues) !== JSON.stringify(discounts)) {
-      form.setValue('discount', calculatedValues);
-    }
-  }, [unit_price, discounts, form]);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -581,8 +656,9 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 {
                                   name: 'discount',
                                   type: 'number',
-                                  min: 1,
+                                  min: 0.01,
                                   max: 100,
+                                  step: 0.01,
                                   placeholder: t('form.discountPercent'),
                                   suffix: '%',
                                 },
@@ -590,51 +666,53 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   name: 'price',
                                   placeholder: t('form.discount_price'),
                                   type: 'number',
+                                  min: 0,
+                                  step: 0.01,
                                   formatInput: (value) => unitConversion('centsToDollars', value),
                                   formatOutput: (value) => unitConversion('dollarsToCents', value),
                                 },
                               ]}
                               value={field.value}
-                              onChange={(newValues) => {
+                              onChange={(
+                                newValues: (API.SubscribeDiscount & { price?: number })[],
+                              ) => {
                                 const oldValues = field.value || [];
-                                const { unit_price } = form.getValues();
+                                let lastChangedField: string | undefined;
+                                let changedIndex: number | undefined;
 
-                                const calculatedValues = newValues.map((newItem, index) => {
-                                  const oldItem = oldValues[index] || {};
+                                for (
+                                  let i = 0;
+                                  i < Math.max(newValues.length, oldValues.length);
+                                  i++
+                                ) {
+                                  const newItem = newValues[i] || {};
+                                  const oldItem = oldValues[i] || {};
 
-                                  const result = { ...newItem };
-
-                                  const quantityChanged = newItem.quantity !== oldItem.quantity;
-                                  const discountChanged = newItem.discount !== oldItem.discount;
-                                  const priceChanged = newItem.price !== oldItem.price;
-
-                                  if (
-                                    (quantityChanged || discountChanged) &&
-                                    !priceChanged &&
-                                    newItem.quantity &&
-                                    newItem.discount
-                                  ) {
-                                    result.price = evaluateWithPrecision(
-                                      `${unit_price || 0} * ${newItem.quantity} * ${newItem.discount} / 100`,
-                                    );
+                                  if ((newItem as any).quantity !== (oldItem as any).quantity) {
+                                    lastChangedField = 'quantity';
+                                    changedIndex = i;
+                                    break;
                                   }
-
-                                  if (
-                                    priceChanged &&
-                                    !discountChanged &&
-                                    newItem.price &&
-                                    newItem.quantity &&
-                                    unit_price
-                                  ) {
-                                    result.discount = evaluateWithPrecision(
-                                      `${newItem.price} / ${newItem.quantity} / ${unit_price} * 100`,
-                                    );
+                                  if ((newItem as any).discount !== (oldItem as any).discount) {
+                                    lastChangedField = 'discount';
+                                    changedIndex = i;
+                                    break;
                                   }
-
-                                  return result;
-                                });
-
-                                form.setValue(field.name, calculatedValues);
+                                  if ((newItem as any).price !== (oldItem as any).price) {
+                                    lastChangedField = 'price';
+                                    changedIndex = i;
+                                    break;
+                                  }
+                                }
+                                form.setValue(field.name, newValues, { shouldDirty: true });
+                                if (newValues?.length > 0) {
+                                  debouncedCalculateDiscount(
+                                    newValues,
+                                    field.name,
+                                    lastChangedField,
+                                    changedIndex,
+                                  );
+                                }
                               }}
                             />
                           </FormControl>
