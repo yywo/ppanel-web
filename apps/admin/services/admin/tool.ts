@@ -17,3 +17,11 @@ export async function restartSystem(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+
+/** Get Version GET /v1/admin/tool/version */
+export async function getVersion(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.VersionResponse }>('/v1/admin/tool/version', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}

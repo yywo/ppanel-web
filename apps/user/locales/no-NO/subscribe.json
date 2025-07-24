@@ -14,7 +14,8 @@
     "fee": "Gebyr",
     "price": "Pris",
     "productDiscount": "Produkt rabatt",
-    "total": "Totalpris"
+    "total": "Totalpris",
+    "gift": "Gavefradrag"
   },
   "buy": "Kjøp",
   "buyNow": "Kjøp Nå",

@@ -14,7 +14,8 @@
     "fee": "Käsittelymaksu",
     "price": "Hinta",
     "productDiscount": "Tuotealennus",
-    "total": "Kokonaishinta"
+    "total": "Kokonaishinta",
+    "gift": "Lahjavähennys"
   },
   "buy": "Osta",
   "buyNow": "Osta nyt",

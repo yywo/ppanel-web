@@ -14,7 +14,8 @@
     "fee": "Bearbeitungsgebühr",
     "price": "Preis",
     "productDiscount": "Produktrabatt",
-    "total": "Gesamtpreis"
+    "total": "Gesamtpreis",
+    "gift": "Geschenkabzug"
   },
   "buy": "Kaufen",
   "buyNow": "Jetzt kaufen",

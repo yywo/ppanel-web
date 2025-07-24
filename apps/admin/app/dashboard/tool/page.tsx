@@ -1,6 +1,6 @@
 'use client';
 
-import { getSystemLog, restartSystem } from '@/services/admin/tool';
+import { getSystemLog, getVersion, restartSystem } from '@/services/admin/tool';
 import { useQuery } from '@tanstack/react-query';
 import {
   Accordion,
@@ -18,6 +18,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@workspace/ui/components/alert-dialog';
+import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
   Card,
@@ -28,8 +29,10 @@ import {
 } from '@workspace/ui/components/card';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import { Icon } from '@workspace/ui/custom-components/icon';
+import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import packageJson from '../../../../../package.json';
 
 const getLogLevelColor = (level: string) => {
   const colorMap: { [key: string]: string } = {
@@ -56,6 +59,91 @@ export default function Page() {
 
   const [openRestart, setOpenRestart] = useState(false);
   const [isRestarting, setIsRestarting] = useState(false);
+
+  const { data: latestReleases } = useQuery({
+    queryKey: ['getLatestReleases'],
+    queryFn: async () => {
+      try {
+        const [webResponse, serverResponse] = await Promise.all([
+          fetch('https://api.github.com/repos/perfect-panel/ppanel-web/releases/latest'),
+          fetch('https://api.github.com/repos/perfect-panel/server/releases/latest'),
+        ]);
+
+        const webData = webResponse.ok ? await webResponse.json() : null;
+        const serverData = serverResponse.ok ? await serverResponse.json() : null;
+
+        return {
+          web: webData
+            ? {
+                version: webData.tag_name,
+                url: webData.html_url,
+                publishedAt: webData.published_at,
+              }
+            : null,
+          server: serverData
+            ? {
+                version: serverData.tag_name,
+                url: serverData.html_url,
+                publishedAt: serverData.published_at,
+              }
+            : null,
+        };
+      } catch (error) {
+        console.error('Failed to fetch latest releases:', error);
+        return { web: null, server: null };
+      }
+    },
+    staleTime: 60 * 60 * 1000,
+    retry: 1,
+    retryDelay: 10000,
+  });
+
+  // 检查是否有新版本
+  const hasNewVersion =
+    latestReleases?.web && packageJson.version !== latestReleases.web.version.replace(/^v/, '');
+
+  const { data: systemInfo } = useQuery({
+    queryKey: ['getVersion'],
+    queryFn: async () => {
+      const { data } = await getVersion();
+
+      const versionString = data.data?.version || '';
+      const releaseVersionRegex = /^[Vv]?\d+\.\d+\.\d+$/;
+      const timeMatch = versionString.match(/\(([^)]+)\)/);
+      const timeInBrackets = timeMatch ? timeMatch[1] : '';
+
+      const versionWithoutTime = versionString.replace(/\([^)]*\)/, '').trim();
+      const isDevelopment = !releaseVersionRegex.test(versionWithoutTime);
+
+      let baseVersion = versionWithoutTime;
+      let versionSuffix = '';
+      let lastUpdated = '';
+
+      if (isDevelopment && versionWithoutTime.includes('-')) {
+        const parts = versionWithoutTime.split('-');
+        baseVersion = parts[0] || versionWithoutTime;
+        versionSuffix = parts.slice(1).join('-');
+      }
+
+      lastUpdated = formatDate(new Date(timeInBrackets || Date.now())) || '';
+
+      const displayVersion =
+        baseVersion.startsWith('V') || baseVersion.startsWith('v')
+          ? baseVersion
+          : `V${baseVersion}`;
+
+      return {
+        isRelease: !isDevelopment,
+        version: displayVersion,
+        lastUpdated,
+      };
+    },
+  });
+
+  const hasServerNewVersion =
+    latestReleases?.server &&
+    systemInfo &&
+    systemInfo.version.replace(/^V/, '') !== latestReleases.server.version.replace(/^v/, '');
 
   return (
     <Card className='border-none'>
@@ -110,15 +198,90 @@ export default function Page() {
         </div>
       </CardHeader>
       <CardContent>
-        <div className='space-y-6'>
-          {/* <div className='flex items-center justify-between'>
-            <div className='text-lg font-semibold'>
-              {t('currentVersion')} <span>V1.0.0</span>
+        <div className='space-y-4'>
+          {/* 版本信息紧凑显示 */}
+          <div className='flex flex-col space-y-2 sm:flex-row sm:space-x-3 sm:space-y-0'>
+            {/* 用户端/管理端版本 */}
+            <div className='bg-muted/30 flex flex-1 items-center justify-between rounded-md p-2'>
+              <div className='flex items-center'>
+                <Icon icon='mdi:web' className='mr-2 h-4 w-4 text-green-600' />
+                <div className='flex items-center space-x-2'>
+                  <span className='text-xs font-medium'>{t('webVersion')}</span>
+                  <Badge variant='default' className='px-1.5 py-0.5 text-xs'>
+                    V{packageJson.version}
+                  </Badge>
+                  {hasNewVersion && (
+                    <Badge variant='destructive' className='animate-pulse px-1.5 py-0.5 text-xs'>
+                      {t('newVersionAvailable')}
+                    </Badge>
+                  )}
+                </div>
+              </div>
+              {hasNewVersion && (
+                <Button
+                  variant='outline'
+                  size='sm'
+                  className='h-6 px-2 text-xs'
+                  onClick={() =>
+                    window.open(
+                      latestReleases?.web?.url ||
+                        'https://github.com/perfect-panel/ppanel-web/releases',
+                      '_blank',
+                    )
+                  }
+                >
+                  <Icon icon='mdi:open-in-new' className='mr-1 h-3 w-3' />
+                  {t('viewNewVersion')}
+                </Button>
+              )}
             </div>
-            <div className='text-muted-foreground text-sm'>
-              {t('lastUpdated')} <span>2024-12-16 12:00:00</span>
+
+            {/* 服务端版本 */}
+            <div className='bg-muted/30 flex flex-1 items-center justify-between rounded-md p-2'>
+              <div className='flex items-center'>
+                <Icon icon='mdi:server' className='mr-2 h-4 w-4 text-blue-600' />
+                <div className='flex items-center space-x-2'>
+                  <span className='text-xs font-medium'>{t('serverVersion')}</span>
+                  <Badge
+                    variant={!systemInfo?.isRelease ? 'destructive' : 'default'}
+                    className='px-1.5 py-0.5 text-xs'
+                  >
+                    {systemInfo?.version || 'V1.0.0'}
+                    {!systemInfo?.isRelease && (
+                      <span className='ml-1'>{t('developmentVersion')}</span>
+                    )}
+                  </Badge>
+                  {hasServerNewVersion && (
+                    <Badge variant='destructive' className='animate-pulse px-1.5 py-0.5 text-xs'>
+                      {t('newVersionAvailable')}
+                    </Badge>
+                  )}
+                </div>
+              </div>
+              <div className='flex items-center space-x-2'>
+                {hasServerNewVersion && (
+                  <Button
+                    variant='outline'
+                    size='sm'
+                    className='h-6 px-2 text-xs'
+                    onClick={() =>
+                      window.open(
+                        latestReleases?.server?.url ||
+                          'https://github.com/perfect-panel/server/releases',
+                        '_blank',
+                      )
+                    }
+                  >
+                    <Icon icon='mdi:open-in-new' className='mr-1 h-3 w-3' />
+                    {t('viewNewVersion')}
+                  </Button>
+                )}
+                <div className='text-muted-foreground hidden text-right text-xs sm:block'>
+                  <div className='font-mono'>{systemInfo?.lastUpdated || '--'}</div>
+                </div>
+              </div>
             </div>
-          </div> */}
+          </div>
           <Card className='overflow-hidden'>
             <CardHeader className='bg-secondary py-1'>
               <div className='flex items-center justify-between'>
@@ -148,19 +311,15 @@ export default function Page() {
                           </div>
                         </AccordionTrigger>
                         <AccordionContent className='px-2'>
-                          {
-                            // 直接渲染 key: value
-
-                            Object.entries(log).map(([key, value]) => (
-                              <div
-                                key={key}
-                                className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'
-                              >
-                                <span className='font-medium'>{key}:</span>
-                                <span className='break-all'>{value as string}</span>
-                              </div>
-                            ))
-                          }
+                          {Object.entries(log).map(([key, value]) => (
+                            <div
+                              key={key}
+                              className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'
+                            >
+                              <span className='font-medium'>{key}:</span>
+                              <span className='break-all'>{value as string}</span>
+                            </div>
+                          ))}
                           {/* <div className='grid grid-cols-1 gap-2 text-xs sm:grid-cols-2 sm:text-sm'>
                             <div className='font-medium'>{t('ip')}:</div>
                             <div>{log.ip}</div>

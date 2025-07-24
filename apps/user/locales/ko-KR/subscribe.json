@@ -14,7 +14,8 @@
     "fee": "수수료",
     "price": "가격",
     "productDiscount": "상품 할인",
-    "total": "총액"
+    "total": "총액",
+    "gift": "선물 차감"
   },
   "buy": "구매",
   "buyNow": "지금 구매",

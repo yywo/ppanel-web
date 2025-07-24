@@ -1,17 +1,36 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.1.1](https://github.com/perfect-panel/ppanel-web/compare/v1.1.0...v1.1.1) (2025-07-20)
+## [1.1.3](https://github.com/perfect-panel/ppanel-web/compare/v1.1.2...v1.1.3) (2025-07-24)
 
 
 ### 🐛 Bug Fixes
 
-* **node-table**: Update translations for headers and no data display ([eec0b12](https://github.com/perfect-panel/ppanel-web/commit/eec0b12))
-* **rules**: Change rule type from 'auto' to 'default' and update ([3e290d7](https://github.com/perfect-panel/ppanel-web/commit/3e290d7))
-* **rules**: Update rule settings ([3304a55](https://github.com/perfect-panel/ppanel-web/commit/3304a55))
-* **subscribe-form**: Optimize discount calculation logic and debounce updates ([166e48f](https://github.com/perfect-panel/ppanel-web/commit/166e48f))
-* **tutorial**: Comment out unused getVersion function and simplify getVersionPath ([7cdc6bd](https://github.com/perfect-panel/ppanel-web/commit/7cdc6bd))
-* **tutorial**: Return latest version in case of fetch error ([1fb305e](https://github.com/perfect-panel/ppanel-web/commit/1fb305e))
+* **auth**: Implement user redirection to dashboard upon authentication ([f84f98c](https://github.com/perfect-panel/ppanel-web/commit/f84f98c))
+
+## [1.1.2](https://github.com/perfect-panel/ppanel-web/compare/v1.1.1...v1.1.2) (2025-07-24)
+
+
+### 🐛 Bug Fixes
+
+* **billing**: Add display for gift amount in subscription billing ([04af2f9](https://github.com/perfect-panel/ppanel-web/commit/04af2f9))
+* **order**: Update subscription cell to display name and quantity ([96eba17](https://github.com/perfect-panel/ppanel-web/commit/96eba17))
+* **tool**: Added API for obtaining version, updated version information display logic ([2675034](https://github.com/perfect-panel/ppanel-web/commit/2675034))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.1.1](https://github.com/perfect-panel/ppanel-web/compare/v1.1.0...v1.1.1) (2025-07-20)
+
+### 🐛 Bug Fixes
+
+- **node-table**: Update translations for headers and no data display ([eec0b12](https://github.com/perfect-panel/ppanel-web/commit/eec0b12))
+- **rules**: Change rule type from 'auto' to 'default' and update ([3e290d7](https://github.com/perfect-panel/ppanel-web/commit/3e290d7))
+- **rules**: Update rule settings ([3304a55](https://github.com/perfect-panel/ppanel-web/commit/3304a55))
+- **subscribe-form**: Optimize discount calculation logic and debounce updates ([166e48f](https://github.com/perfect-panel/ppanel-web/commit/166e48f))
+- **tutorial**: Comment out unused getVersion function and simplify getVersionPath ([7cdc6bd](https://github.com/perfect-panel/ppanel-web/commit/7cdc6bd))
+- **tutorial**: Return latest version in case of fetch error ([1fb305e](https://github.com/perfect-panel/ppanel-web/commit/1fb305e))
 
 <a name="readme-top"></a>
 

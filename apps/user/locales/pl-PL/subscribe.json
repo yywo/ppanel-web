@@ -14,7 +14,8 @@
     "fee": "Opłata manipulacyjna",
     "price": "Cena",
     "productDiscount": "Zniżka na produkt",
-    "total": "Suma"
+    "total": "Suma",
+    "gift": "Odliczenie prezentu"
   },
   "buy": "Kup",
   "buyNow": "Kup Teraz",

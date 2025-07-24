@@ -14,7 +14,8 @@
     "fee": "手数料",
     "price": "価格",
     "productDiscount": "商品割引",
-    "total": "合計"
+    "total": "合計",
+    "gift": "ギフト控除"
   },
   "buy": "購入",
   "buyNow": "今すぐ購入",

@@ -14,7 +14,8 @@
     "fee": "Fee",
     "price": "Price",
     "productDiscount": "Product Discount",
-    "total": "Total"
+    "total": "Total",
+    "gift": "gift Deduction"
   },
   "buy": "Buy",
   "buyNow": "Buy Now",
