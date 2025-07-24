@@ -1862,6 +1862,10 @@ declare namespace API {
     enable_reset_password_verify: boolean;
   };
 
+  type VersionResponse = {
+    version: string;
+  };
+
   type Vless = {
     port: number;
     flow: string;
