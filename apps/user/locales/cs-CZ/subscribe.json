@@ -14,7 +14,8 @@
     "fee": "Poplatek",
     "price": "Cena",
     "productDiscount": "Sleva na zboží",
-    "total": "Celková cena"
+    "total": "Celková cena",
+    "gift": "Odpočet dárku"
   },
   "buy": "Koupit",
   "buyNow": "Koupit nyní",

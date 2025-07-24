@@ -14,7 +14,8 @@
     "fee": "手续费",
     "price": "价格",
     "productDiscount": "商品折扣",
-    "total": "总价"
+    "total": "总价",
+    "gift": "赠金抵扣"
   },
   "buy": "购买",
   "buyNow": "立即购买",

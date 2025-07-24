@@ -14,7 +14,8 @@
     "fee": "Tarifa de servicio",
     "price": "Precio",
     "productDiscount": "Descuento de producto",
-    "total": "Precio total"
+    "total": "Precio total",
+    "gift": "Deducción de Regalo"
   },
   "buy": "Comprar",
   "buyNow": "Comprar ahora",

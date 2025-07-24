@@ -14,7 +14,8 @@
     "fee": "Kezelési díj",
     "price": "Ár",
     "productDiscount": "Termékkedvezmény",
-    "total": "Teljes ár"
+    "total": "Teljes ár",
+    "gift": "Ajándék levonás"
   },
   "buy": "vásárlás",
   "buyNow": "Vásárolja meg most",

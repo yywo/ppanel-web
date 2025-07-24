@@ -14,7 +14,8 @@
     "fee": "手續費",
     "price": "價格",
     "productDiscount": "商品折扣",
-    "total": "總價"
+    "total": "總價",
+    "gift": "贈金扣減"
   },
   "buy": "購買",
   "buyNow": "立即購買",

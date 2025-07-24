@@ -53,6 +53,12 @@ export function SubscribeBilling({ order }: Readonly<SubscribeBillingProps>) {
             <Display type='currency' value={order?.fee_amount} />
           </span>
         </li>
+        <li>
+          <span className='text-muted-foreground'>{t('billing.gift')}</span>
+          <span>
+            <Display type='currency' value={order?.gift_amount} />
+          </span>
+        </li>
       </ul>
       <Separator />
       <div className='flex items-center justify-between font-semibold'>

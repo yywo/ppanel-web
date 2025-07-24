@@ -14,7 +14,8 @@
     "fee": "İşlem Ücreti",
     "price": "Fiyat",
     "productDiscount": "Ürün İndirimi",
-    "total": "Toplam Fiyat"
+    "total": "Toplam Fiyat",
+    "gift": "Hediye Düşüm"
   },
   "buy": "satın al",
   "buyNow": "Şimdi Satın Al",
