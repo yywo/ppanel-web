@@ -1,4 +1,16 @@
 <a name="readme-top"></a>
+# Changelog
+
+## [1.1.2](https://github.com/perfect-panel/ppanel-web/compare/v1.1.1...v1.1.2) (2025-07-24)
+
+
+### 🐛 Bug Fixes
+
+* **billing**: Add display for gift amount in subscription billing ([04af2f9](https://github.com/perfect-panel/ppanel-web/commit/04af2f9))
+* **order**: Update subscription cell to display name and quantity ([96eba17](https://github.com/perfect-panel/ppanel-web/commit/96eba17))
+* **tool**: Added API for obtaining version, updated version information display logic ([2675034](https://github.com/perfect-panel/ppanel-web/commit/2675034))
+
+<a name="readme-top"></a>
 
 # Changelog
 
