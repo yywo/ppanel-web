@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.1.3](https://github.com/perfect-panel/ppanel-web/compare/v1.1.2...v1.1.3) (2025-07-24)
+
+
+### 🐛 Bug Fixes
+
+* **auth**: Implement user redirection to dashboard upon authentication ([f84f98c](https://github.com/perfect-panel/ppanel-web/commit/f84f98c))
+
 ## [1.1.2](https://github.com/perfect-panel/ppanel-web/compare/v1.1.1...v1.1.2) (2025-07-24)
 
 
