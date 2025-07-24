@@ -8,12 +8,21 @@ import LoginLottie from '@workspace/ui/lotties/login.json';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import EmailAuthForm from './email/auth-form';
 
 export default function Page() {
   const t = useTranslations('auth');
-  const { common } = useGlobalStore();
+  const { common, user } = useGlobalStore();
   const { site } = common;
+
+  const router = useRouter();
+  useEffect(() => {
+    if (user) {
+      router.replace('/dashboard');
+    }
+  }, [router, user]);
 
   return (
     <main className='bg-muted/50 flex h-full min-h-screen items-center'>
