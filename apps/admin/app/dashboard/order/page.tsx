@@ -57,8 +57,13 @@ export default function Page(props: any) {
         {
           accessorKey: 'subscribe_id',
           header: t('subscribe'),
-          cell: ({ row }) =>
-            subscribeList?.find((item) => item.id === row.getValue('subscribe_id'))?.name,
+          cell: ({ row }) => {
+            const name = subscribeList?.find(
+              (item) => item.id === row.getValue('subscribe_id'),
+            )?.name;
+            const quantity = row.original.quantity;
+            return name ? `${name} × ${quantity}` : '';
+          },
         },
         {
           accessorKey: 'amount',
