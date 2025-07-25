@@ -19,7 +19,7 @@ import { Separator } from '@workspace/ui/components/separator';
 import { LoaderCircle } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
-import { useCallback, useEffect, useState, useTransition } from 'react';
+import { useCallback, useEffect, useRef, useState, useTransition } from 'react';
 import { SubscribeBilling } from './billing';
 import { SubscribeDetail } from './detail';
 
@@ -40,16 +40,28 @@ export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
     user_subscribe_id: id,
   });
   const [loading, startTransition] = useTransition();
+  const lastSuccessOrderRef = useRef<any>(null);
 
   const { data: order } = useQuery({
     enabled: !!subscribe.id && open,
     queryKey: ['preCreateOrder', params],
     queryFn: async () => {
-      const { data } = await preCreateOrder({
-        ...params,
-        subscribe_id: subscribe.id,
-      } as API.PurchaseOrderRequest);
-      return data.data;
+      try {
+        const { data } = await preCreateOrder({
+          ...params,
+          subscribe_id: subscribe.id,
+        } as API.PurchaseOrderRequest);
+        const result = data.data;
+        // 请求成功时保存数据
+        if (result) {
+          lastSuccessOrderRef.current = result;
+        }
+        return result;
+      } catch (error) {
+        if (lastSuccessOrderRef.current) {
+          return lastSuccessOrderRef.current;
+        }
+      }
     },
   });
 

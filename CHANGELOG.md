@@ -1,6 +1,15 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.1.4](https://github.com/perfect-panel/ppanel-web/compare/v1.1.3...v1.1.4) (2025-07-25)
+
+
+### 🐛 Bug Fixes
+
+* **locales**: Simplify "show" label in subscription localization files ([d53a006](https://github.com/perfect-panel/ppanel-web/commit/d53a006))
+* **order**: Preserve last successful order on error during order creation ([2fb98be](https://github.com/perfect-panel/ppanel-web/commit/2fb98be))
+* **subscribe**: Filter out hidden items in subscription list display ([634be37](https://github.com/perfect-panel/ppanel-web/commit/634be37))
+
 ## [1.1.3](https://github.com/perfect-panel/ppanel-web/compare/v1.1.2...v1.1.3) (2025-07-24)
 
 
