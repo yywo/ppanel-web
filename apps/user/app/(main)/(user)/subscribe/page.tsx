@@ -57,7 +57,7 @@ export default function Page() {
         )}
         <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3'>
           {data
-            ?.filter((item) => item.show === false)
+            ?.filter((item) => item.show)
             ?.filter((item) => (group ? item.group_id === Number(group) : true))
             ?.map((item) => (
               <Card className='flex flex-col' key={item.id}>
