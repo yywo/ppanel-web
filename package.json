@@ -48,6 +48,7 @@
   },
   "prettier": "@workspace/prettier-config",
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.11.6",
     "@umijs/openapi": "^1.13.0",
     "@workspace/commitlint-config": "workspace:*",
     "@workspace/eslint-config": "workspace:*",
