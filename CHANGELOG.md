@@ -1,17 +1,16 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.2.0](https://github.com/perfect-panel/ppanel-web/compare/v1.1.5...v1.2.0) (2025-08-04)
 
-
 ### ♻ Code Refactoring
 
-* **view**: System and Auth Control ([b2b4a95](https://github.com/perfect-panel/ppanel-web/commit/b2b4a95))
-
+- **view**: System and Auth Control ([b2b4a95](https://github.com/perfect-panel/ppanel-web/commit/b2b4a95))
 
 ### ✨ Features
 
-* **netlify**: Add Netlify configuration for admin and user apps with Next.js plugin ([b4d4f59](https://github.com/perfect-panel/ppanel-web/commit/b4d4f59))
+- **netlify**: Add Netlify configuration for admin and user apps with Next.js plugin ([b4d4f59](https://github.com/perfect-panel/ppanel-web/commit/b4d4f59))
 
 <a name="readme-top"></a>
 

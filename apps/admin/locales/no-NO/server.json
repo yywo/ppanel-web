@@ -98,7 +98,7 @@
     "type": "Type",
     "updateSuccess": "Oppdatering vellykket",
     "updatedAt": "Oppdatert kl",
-    "userAccount": "Brukerkonto",
+    "user": "Bruker",
     "userDetail": "Brukerdetalj",
     "userId": "Bruker-ID"
   },

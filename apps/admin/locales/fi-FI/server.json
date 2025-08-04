@@ -98,7 +98,7 @@
     "type": "Tyyppi",
     "updateSuccess": "Päivitys onnistui",
     "updatedAt": "Päivitetty",
-    "userAccount": "Käyttäjätili",
+    "user": "Käyttäjä",
     "userDetail": "Käyttäjän tiedot",
     "userId": "Käyttäjän ID"
   },
