@@ -1,14 +1,149 @@
 {
-  "invite": {
-    "commissionFirstTimeOnly": "Komissio vain ensimmäisestä ostosta",
-    "commissionFirstTimeOnlyDescription": "Kun tämä on käytössä, komissio kertyy vain kutsujan ensimmäisestä maksusta; voit määrittää yksittäiset käyttäjät käyttäjähallinnassa",
-    "enableForcedInvite": "Ota pakollinen kutsu käyttöön",
-    "enableForcedInviteDescription": "Kun tämä on käytössä, vain kutsutut käyttäjät voivat rekisteröityä",
-    "inputPlaceholder": "Syötä",
-    "inviteCommissionPercentage": "Kutsukomission prosenttiosuus",
-    "inviteCommissionPercentageDescription": "Oletusarvoinen globaali komission jakosuhde; voit määrittää yksittäiset suhteet käyttäjähallinnassa",
-    "inviteSettings": "Kutsuasetukset",
+  "apple": {
+    "clientId": "Palvelun ID",
+    "clientIdDescription": "Apple-palvelutunnus, jonka voit hankkia Apple Developer Portalista",
+    "clientSecret": "Yksityinen avain",
+    "clientSecretDescription": "Yksityinen avain (.p8-tiedosto), jota käytetään todennukseen Applen kanssa",
+    "description": "Tunnista käyttäjät Apple-tileillä",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun otat tämän käyttöön, käyttäjät voivat kirjautua sisään Apple ID:llään",
+    "keyId": "Avain ID",
+    "keyIdDescription": "Yksityisen avaimen tunnus Apple Developer -portaalista",
+    "redirectUri": "Ohjaus-URL",
+    "redirectUriDescription": "Täytä API-osoite, johon ohjataan URL-osoite Apple-todennuksen onnistuneen läpäisemisen jälkeen. Älä käytä / lopussa.",
+    "teamId": "Tiimin tunnus",
+    "teamIdDescription": "Apple Developer -tiimin tunnus",
+    "title": "Apple-kirjautuminen"
+  },
+  "common": {
+    "cancel": "Peruuta",
+    "save": "Tallenna",
+    "saveFailed": "Tallennus epäonnistui",
     "saveSuccess": "Tallennus onnistui"
+  },
+  "communicationMethods": "Communication Methods",
+  "device": {
+    "blockVirtualMachine": "Estä virtuaalikone",
+    "blockVirtualMachineDescription": "Kun tämä on käytössä, laitteiden käyttö virtuaalikoneissa tai emulaattoreissa estetään",
+    "communicationKey": "Viestintäavain",
+    "communicationKeyDescription": "Viestintäavain käytetään turvalliseen viestintään laitteiden ja palvelimien välillä",
+    "description": "Tunnista käyttäjät laiteidentifioijilla",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun otat käyttöön, useita laiteidentifikaattoreita, kuten IMEI/IDFA/IDFV/AndroidID/Mac-osoite, tuetaan kirjautumiseen ja rekisteröitymiseen.",
+    "enableSecurity": "Ota käyttöön viestinnän salaus",
+    "enableSecurityDescription": "Kun tämä on käytössä, laitteiden ja palvelimien välinen viestintä salataan",
+    "showAds": "Näytä mainoksia",
+    "showAdsDescription": "Kun tämä on käytössä, mainoksia näytetään laitteilla",
+    "title": "Laitteen tunnistus"
+  },
+  "deviceAuthMethods": "Device Authentication Methods",
+  "email": {
+    "basicSettings": "Perusasetukset",
+    "description": "Tunnista käyttäjät sähköpostiosoitteilla",
+    "emailSuffixWhitelist": "Sähköpostin päätevalkoinen lista",
+    "emailSuffixWhitelistDescription": "Kun tämä on käytössä, vain listassa olevilla päätteillä varustetut sähköpostit voivat rekisteröityä",
+    "emailVerification": "Sähköpostin vahvistus",
+    "emailVerificationDescription": "Kun tämä on käytössä, käyttäjien on vahvistettava sähköpostinsa",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun tämä on otettu käyttöön, sähköpostirekisteröinti, kirjautuminen, liittäminen ja irrottaminen aktivoituvat.",
+    "expirationEmailTemplate": "Vanhentumisilmoituksen malli",
+    "expirationTemplate": "Vanhentumisilmoitus",
+    "inputPlaceholder": "Syötä arvo...",
+    "logs": "Lokit",
+    "logsDescription": "Näytä lähetettyjen sähköpostien historia ja niiden tila",
+    "maintenanceEmailTemplate": "Huoltoilmoituksen malli",
+    "maintenanceTemplate": "Huoltoilmoitus",
+    "sendFailure": "Testisähköpostin lähettäminen epäonnistui, tarkista asetukset.",
+    "sendSuccess": "Testisähköposti lähetetty onnistuneesti.",
+    "sendTestEmail": "Lähetä testisähköposti",
+    "sendTestEmailDescription": "Lähetä testisähköposti varmistaaksesi kokoonpanon.",
+    "senderAddress": "Lähettäjän osoite",
+    "senderAddressDescription": "Oletussähköpostiosoite, jota käytetään sähköpostien lähettämiseen.",
+    "smtpAccount": "SMTP-tili",
+    "smtpAccountDescription": "Sähköpostitili, jota käytetään todennukseen.",
+    "smtpEncryptionMethod": "SMTP-salausmenetelmä",
+    "smtpEncryptionMethodDescription": "Valitse, haluatko ottaa käyttöön SSL/TLS-salauksen.",
+    "smtpPassword": "SMTP-salasana",
+    "smtpPasswordDescription": "SMTP-tilin salasana.",
+    "smtpServerAddress": "SMTP-palvelimen osoite",
+    "smtpServerAddressDescription": "Määritä palvelimen osoite, jota käytetään sähköpostien lähettämiseen.",
+    "smtpServerPort": "SMTP-palvelimen portti",
+    "smtpServerPortDescription": "Määritä portti, jota käytetään yhteyden muodostamiseen SMTP-palvelimeen.",
+    "smtpSettings": "SMTP-asetukset",
+    "templateVariables": {
+      "code": {
+        "description": "6-numeroinen vahvistuskoodi",
+        "title": "Vahvistuskoodi"
+      },
+      "expire": {
+        "description": "Vahvistuskoodin voimassaoloaika (minuuteissa)",
+        "title": "Voimassaoloaika"
+      },
+      "expireDate": {
+        "description": "Palvelun vanhentumispäivämäärä, muistuttaa käyttäjiä palvelun vanhentuessa",
+        "title": "Vanhentumispäivämäärä"
+      },
+      "maintenanceDate": {
+        "description": "Järjestelmän huoltopäivämäärä, näyttää huollon aloituspäivämäärän",
+        "title": "Huoltopäivämäärä"
+      },
+      "maintenanceTime": {
+        "description": "Arvioitu huoltoaika, näyttää huoltoaikavälin tai keston",
+        "title": "Huoltoaika"
+      },
+      "siteLogo": {
+        "description": "Verkkosivuston logo-kuvan URL-osoite",
+        "title": "Sivuston logo"
+      },
+      "siteName": {
+        "description": "Nykyinen verkkosivuston nimi",
+        "title": "Sivuston nimi"
+      },
+      "title": "Sähköpostimallin muuttujat",
+      "type": {
+        "conditionalSyntax": "Tukee ehdollista syntaksia sisällön vaihtamiseksi tyypin mukaan",
+        "description": "Sähköpostityypin tunniste, 1 rekisteröintivahvistuskoodille, muut salasanan palautusvahvistuskoodille",
+        "title": "Sähköpostityyppi"
+      }
+    },
+    "title": "Sähköpostitunnistus",
+    "trafficExceedEmailTemplate": "Liikennerajoituksen ilmoituksen malli",
+    "trafficTemplate": "Liikennerajoitus",
+    "verifyEmailTemplate": "Vahvistussähköpostin malli",
+    "verifyTemplate": "Vahvistussähköposti",
+    "whitelistSuffixes": "Sallittujen luetteloiden päätteet",
+    "whitelistSuffixesDescription": "Käytetään sähköpostin vahvistamiseen rekisteröinnin aikana; yksi per rivi",
+    "whitelistSuffixesPlaceholder": "Syötä sähköpostin päätteet, yksi per rivi"
+  },
+  "facebook": {
+    "clientId": "Asiakas ID",
+    "clientIdDescription": "Facebook-sovelluksen tunnus Facebookin kehittäjäkonsolista",
+    "clientSecret": "Asiakassalasana",
+    "clientSecretDescription": "Facebook-sovelluksen salaisuus Facebookin kehittäjäkonsolista",
+    "description": "Tunnista käyttäjät Facebook-tileillä",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun otat tämän käyttöön, käyttäjät voivat kirjautua sisään Facebook-tilillään",
+    "title": "Facebook-kirjautuminen"
+  },
+  "github": {
+    "clientId": "GitHub-asiakastunnus",
+    "clientIdDescription": "Asiakkaan tunnus GitHub OAuth -sovelluksesi asetuksista",
+    "clientSecret": "GitHub-asiakassalasana",
+    "clientSecretDescription": "Asiakassalasana GitHub OAuth -sovelluksesi asetuksista",
+    "description": "Tunnista käyttäjät GitHub-tileillä",
+    "enable": "Ota käyttöön GitHub-autentikointi",
+    "enableDescription": "Salli käyttäjien kirjautua sisään GitHub-tileillään",
+    "title": "GitHub-kirjautuminen"
+  },
+  "google": {
+    "clientId": "Asiakas ID",
+    "clientIdDescription": "Google OAuth 2.0 -asiakastunnus Google Cloud Consolesta",
+    "clientSecret": "Asiakassalasana",
+    "clientSecretDescription": "Google OAuth 2.0 -asiakassalasana Google Cloud Consolesta",
+    "description": "Tunnista käyttäjät Google-tileillä",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun otat tämän käyttöön, käyttäjät voivat kirjautua sisään Google-tilillään",
+    "title": "Google-kirjautuminen"
   },
   "log": {
     "content": "Sisältö",
@@ -23,52 +158,49 @@
     "to": "Vastaanottaja",
     "updatedAt": "Päivitetty"
   },
-  "register": {
-    "day": "Päivä",
-    "hour": "Tunti",
-    "ipRegistrationLimit": "IP-rekisteröintiraja",
-    "ipRegistrationLimitDescription": "Kun tämä on käytössä, säännön vaatimukset täyttävät IP-osoitteet estetään rekisteröitymästä; huomaa, että IP-määritys voi aiheuttaa ongelmia CDN:ien tai etupään välityspalvelimien vuoksi",
-    "minute": "Minuutti",
-    "month": "Kuukausi",
-    "noLimit": "Ei rajoituksia",
-    "penaltyTime": "Rangaistusaika (minuuttia)",
-    "penaltyTimeDescription": "Käyttäjien on odotettava rangaistusajan päättymistä ennen uudelleenrekisteröitymistä",
-    "registerSettings": "Rekisteröintiasetukset",
-    "registrationLimitCount": "Rekisteröintirajamäärä",
-    "registrationLimitCountDescription": "Ota rangaistus käyttöön rekisteröintirajan saavuttamisen jälkeen",
-    "saveSuccess": "Tallennus onnistui",
-    "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
-    "stopNewUserRegistrationDescription": "Kun tämä on käytössä, kukaan ei voi rekisteröityä",
-    "trialDuration": "Kokeilujakson kesto",
-    "trialRegistration": "Kokeilurekisteröinti",
-    "trialRegistrationDescription": "Ota kokeilurekisteröinti käyttöön; muokkaa ensin kokeilupakettia ja kestoa",
-    "trialSubscribePlan": "Kokeilutilaus",
-    "trialSubscribePlanDescription": "Valitse kokeilutilaus",
-    "year": "Vuosi"
+  "phone": {
+    "accessLabel": "Pääsy",
+    "applyPlatform": "Hae alustaa",
+    "description": "Tunnista käyttäjät puhelinnumeroilla",
+    "enable": "Ota käyttöön",
+    "enableTip": "Kun otat tämän käyttöön, matkapuhelimen rekisteröinti-, kirjautumis-, sitomis- ja purkutoiminnot otetaan käyttöön",
+    "endpointLabel": "Päätepiste",
+    "logs": "Lokit",
+    "logsDescription": "Näytä lähetettyjen SMS-viestien historia ja niiden tila",
+    "phoneNumberLabel": "Puhelinnumero",
+    "placeholders": {
+      "template": "Vahvistuskoodisi on {code}, voimassa 5 minuuttia"
+    },
+    "platform": "SMS-alusta",
+    "platformConfigTip": "Täytä annettu {key} -määritys",
+    "platformTip": "Valitse SMS-alusta",
+    "secretLabel": "Salaisuus",
+    "sendFailed": "Lähetys epäonnistui",
+    "sendSuccess": "Lähetys onnistui",
+    "settings": "Asetukset",
+    "signNameLabel": "Allekirjoitusnimi",
+    "template": "SMS-malli",
+    "templateCodeLabel": "Mallikoodi",
+    "templateTip": "Ole hyvä ja täytä SMS-malli, pidä {code} keskellä, muuten SMS-toiminto ei toimi",
+    "testSms": "Lähetä testiviesti",
+    "testSmsPhone": "Syötä puhelinnumero",
+    "testSmsTip": "Lähetä testiviesti varmistaaksesi asetuksesi",
+    "title": "Puhelintunnistus",
+    "updateSuccess": "Päivitys onnistui",
+    "whitelistAreaCode": "Valkoisen listan aluekoodi",
+    "whitelistAreaCodeTip": "Syötä valkoisen listan aluekoodit, esim. 1, 852, 886, 888",
+    "whitelistValidation": "Valkoisen listan vahvistus",
+    "whitelistValidationTip": "Kun tämä on käytössä, vain valkoisen listan aluekoodit voivat lähettää SMS-viestejä"
   },
-  "verify": {
-    "inputPlaceholder": "Syötä",
-    "loginVerificationCode": "Kirjautumisen vahvistuskoodi",
-    "loginVerificationCodeDescription": "Ihmisen vahvistus kirjautumisen aikana",
-    "registrationVerificationCode": "Rekisteröinnin vahvistuskoodi",
-    "registrationVerificationCodeDescription": "Ihmisen vahvistus rekisteröinnin aikana",
-    "resetPasswordVerificationCode": "Salasanan palautuksen vahvistuskoodi",
-    "resetPasswordVerificationCodeDescription": "Ihmisen vahvistus salasanan palautuksen aikana",
-    "saveSuccess": "Tallennus onnistui",
-    "turnstileSecretDescription": "Turnstile-salaisavain, jonka Cloudflare on toimittanut",
-    "turnstileSiteKeyDescription": "Turnstile-sivuston avain, jonka Cloudflare on toimittanut",
-    "verifySettings": "Vahvistusasetukset"
-  },
-  "verify-code": {
-    "dailyLimit": "Päivittäinen raja",
-    "dailyLimitDescription": "Suurin määrä vahvistuskoodien lähettämistä päivässä",
-    "expireTime": "Voimassaoloaika",
-    "expireTimeDescription": "Vahvistuskoodin vanhenemisaika (sekunteina)",
-    "interval": "Lähetysväli",
-    "intervalDescription": "Minimi väli vahvistuskoodien lähettämisen välillä (sekunteina)",
-    "saveSuccess": "Tallennus onnistui",
-    "second": "sekuntia",
-    "times": "kertaa",
-    "verifyCodeSettings": "Vahvistuskoodin asetukset"
+  "socialAuthMethods": "Social Authentication Methods",
+  "telegram": {
+    "clientId": "Botti ID",
+    "clientIdDescription": "Telegram Botin ID, jonka saat @BotFatherilta",
+    "clientSecret": "Bottitunnus",
+    "clientSecretDescription": "Telegram-bottitunnus, jonka voit saada @BotFatherilta",
+    "description": "Tunnista käyttäjät Telegram-tileillä",
+    "enable": "Ota käyttöön",
+    "enableDescription": "Kun otat tämän käyttöön, matkapuhelimen rekisteröinti-, kirjautumis-, sitomis- ja purkutoiminnot otetaan käyttöön",
+    "title": "Telegram-kirjautuminen"
   }
 }

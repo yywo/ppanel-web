@@ -68,15 +68,15 @@ export default function SubscribeTable() {
       }}
       params={[
         {
-          key: 'search',
-        },
-        {
           key: 'group_id',
           placeholder: t('subscribeGroup'),
           options: groups?.map((item) => ({
             label: item.name,
             value: String(item.id),
           })),
+        },
+        {
+          key: 'search',
         },
       ]}
       request={async (pagination, filters) => {

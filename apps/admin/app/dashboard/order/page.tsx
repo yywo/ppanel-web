@@ -165,7 +165,6 @@ export default function Page(props: any) {
         },
       ]}
       params={[
-        { key: 'search' },
         {
           key: 'status',
           placeholder: t('status.0'),
@@ -182,6 +181,7 @@ export default function Page(props: any) {
             value: String(item.id),
           })),
         },
+        { key: 'search' },
       ].concat(
         props.userId
           ? []

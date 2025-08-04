@@ -139,7 +139,7 @@ export default function NodeTable() {
           accessorKey: 'status',
           header: t('status'),
           cell: ({ row }) => {
-            return <NodeStatusCell status={row.original?.status} />;
+            return <NodeStatusCell status={row.original?.status} node={row.original} />;
           },
         },
         {
@@ -184,15 +184,15 @@ export default function NodeTable() {
       ]}
       params={[
         {
-          key: 'search',
-        },
-        {
           key: 'group_id',
           placeholder: t('nodeGroup'),
           options: groups?.map((item) => ({
             label: item.name,
             value: String(item.id),
           })),
+        },
+        {
+          key: 'search',
         },
       ]}
       request={async (pagination, filter) => {

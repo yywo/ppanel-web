@@ -1,9 +1,5 @@
 export const AuthControl = [
   {
-    title: 'General',
-    url: '/dashboard/auth-control/general',
-  },
-  {
     title: 'Email',
     url: '/dashboard/auth-control/email',
   },
