@@ -90,7 +90,7 @@ export default function GroupForm<T extends Record<string, any>>({
                 name='name'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('group.form.name')}</FormLabel>
+                    <FormLabel>{t('groupForm.name')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         {...field}
@@ -108,7 +108,7 @@ export default function GroupForm<T extends Record<string, any>>({
                 name='description'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('group.form.description')}</FormLabel>
+                    <FormLabel>{t('groupForm.description')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         {...field}
@@ -132,11 +132,11 @@ export default function GroupForm<T extends Record<string, any>>({
               setOpen(false);
             }}
           >
-            {t('group.form.cancel')}
+            {t('groupForm.cancel')}
           </Button>
           <Button disabled={loading} onClick={form.handleSubmit(handleSubmit)}>
             {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}{' '}
-            {t('group.form.confirm')}
+            {t('groupForm.confirm')}
           </Button>
         </SheetFooter>
       </SheetContent>

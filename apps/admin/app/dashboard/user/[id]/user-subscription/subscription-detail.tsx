@@ -1,6 +1,7 @@
 'use client';
 
 import { Display } from '@/components/display';
+import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import {
   getUserSubscribeDevices,
@@ -64,6 +65,7 @@ export function SubscriptionDetail({
                     {
                       accessorKey: 'ip',
                       header: 'IP',
+                      cell: ({ row }) => <IpLink ip={row.getValue('ip')} />,
                     },
                     {
                       accessorKey: 'user_agent',
@@ -156,6 +158,7 @@ export function SubscriptionDetail({
                     {
                       accessorKey: 'ip',
                       header: 'IP',
+                      cell: ({ row }) => <IpLink ip={row.getValue('ip')} />,
                     },
                     {
                       accessorKey: 'online',

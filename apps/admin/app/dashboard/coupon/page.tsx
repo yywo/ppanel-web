@@ -65,15 +65,15 @@ export default function Page() {
       }}
       params={[
         {
-          key: 'search',
-        },
-        {
           key: 'subscribe',
           placeholder: t('subscribe'),
           options: data?.map((item) => ({
             label: item.name,
             value: String(item.id),
           })),
+        },
+        {
+          key: 'search',
         },
       ]}
       request={async (pagination, filters) => {

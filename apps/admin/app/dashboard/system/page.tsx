@@ -1,33 +1,62 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
-import { getTranslations } from 'next-intl/server';
-import Currency from './currency';
-import PrivacyPolicy from './privacy-policy';
-import Site from './site';
-import Tos from './tos';
+'use client';
 
-export default async function Page() {
-  const t = await getTranslations('system');
+import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
+import { useTranslations } from 'next-intl';
+import CurrencyForm from './basic-settings/currency-form';
+import PrivacyPolicyForm from './basic-settings/privacy-policy-form';
+import SiteForm from './basic-settings/site-form';
+import TosForm from './basic-settings/tos-form';
+import InviteForm from './user-security/invite-form';
+import RegisterForm from './user-security/register-form';
+import VerifyCodeForm from './user-security/verify-code-form';
+import VerifyForm from './user-security/verify-form';
+
+export default function Page() {
+  const t = useTranslations('system');
+
+  // 定义表单配置
+  const formSections = [
+    {
+      title: t('basicSettings'),
+      forms: [
+        { component: SiteForm },
+        { component: CurrencyForm },
+        { component: TosForm },
+        { component: PrivacyPolicyForm },
+      ],
+    },
+    {
+      title: t('userSecuritySettings'),
+      forms: [
+        { component: RegisterForm },
+        { component: InviteForm },
+        { component: VerifyForm },
+        { component: VerifyCodeForm },
+      ],
+    },
+  ];
 
   return (
-    <Tabs defaultValue='site'>
-      <TabsList className='h-full flex-wrap'>
-        <TabsTrigger value='site'>{t('tabs.site')}</TabsTrigger>
-        <TabsTrigger value='currency'>{t('tabs.currency')}</TabsTrigger>
-        <TabsTrigger value='tos'>{t('tabs.tos')}</TabsTrigger>
-        <TabsTrigger value='privacy-policy'>{t('privacy-policy.title')}</TabsTrigger>
-      </TabsList>
-      <TabsContent value='site'>
-        <Site />
-      </TabsContent>
-      <TabsContent value='currency'>
-        <Currency />
-      </TabsContent>
-      <TabsContent value='tos'>
-        <Tos />
-      </TabsContent>
-      <TabsContent value='privacy-policy'>
-        <PrivacyPolicy />
-      </TabsContent>
-    </Tabs>
+    <div className='space-y-8'>
+      {formSections.map((section, sectionIndex) => (
+        <div key={sectionIndex}>
+          <h2 className='mb-4 text-lg font-semibold'>{section.title}</h2>
+          <Table>
+            <TableBody>
+              {section.forms.map((form, formIndex) => {
+                const FormComponent = form.component;
+                return (
+                  <TableRow key={formIndex}>
+                    <TableCell>
+                      <FormComponent />
+                    </TableCell>
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </div>
+      ))}
+    </div>
   );
 }

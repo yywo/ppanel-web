@@ -81,9 +81,13 @@ export default function AnnouncementForm<T extends Record<string, any>>({
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
         </SheetHeader>
-        <ScrollArea className='-mx-6 h-[calc(100vh-48px-36px-36px-env(safe-area-inset-top))]'>
+        <ScrollArea className='-mx-6 h-[calc(100vh-48px-36px-36px-env(safe-area-inset-top))] px-6'>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-4 px-6 pt-4'>
+            <form
+              id='notice-form'
+              onSubmit={form.handleSubmit(handleSubmit)}
+              className='space-y-4 pt-4'
+            >
               <FormField
                 control={form.control}
                 name='title'

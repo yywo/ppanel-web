@@ -1,5 +1,6 @@
 'use client';
 
+import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import { getUserLoginLogs } from '@/services/admin/user';
 import { Badge } from '@workspace/ui/components/badge';
@@ -26,6 +27,7 @@ export default function UserLoginHistory() {
         {
           accessorKey: 'login_ip',
           header: t('loginIp'),
+          cell: ({ row }) => <IpLink ip={row.getValue('login_ip')} />,
         },
         {
           accessorKey: 'user_agent',

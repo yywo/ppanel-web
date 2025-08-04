@@ -44,6 +44,8 @@
     "entry": "./locales/en-US",
     "entryLocale": "en-US",
     "output": "./locales",
+    "saveImmediately": true,
+    "concurrency": 10,
     "outputLocales": [
       "cs-CZ",
       "de-DE",

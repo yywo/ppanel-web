@@ -47,15 +47,15 @@ export default function Page() {
       }}
       params={[
         {
-          key: 'search',
-        },
-        {
           key: 'status',
           placeholder: t('status'),
           options: [
             { label: t('enabled'), value: '1' },
             { label: t('disabled'), value: '0' },
           ],
+        },
+        {
+          key: 'search',
         },
       ]}
       request={async (pagination, filters) => {

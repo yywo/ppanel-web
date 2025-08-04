@@ -66,10 +66,6 @@ export function LogsTable({ type }: { type: 'email' | 'mobile' }) {
         },
       ]}
       params={[
-        // {
-        //   key: 'platform',
-        //   placeholder: t('platform'),
-        // },
         {
           key: 'to',
           placeholder: t('to'),

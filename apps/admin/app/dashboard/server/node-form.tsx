@@ -58,7 +58,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
   trigger,
   title,
 }: Readonly<NodeFormProps<T>>) {
-  const t = useTranslations('server.node');
+  const t = useTranslations('server');
+  const tf = useTranslations('server.nodeForm');
+  const trs = useTranslations('server.relayModeOptions');
+  const tsc = useTranslations('server.securityConfig');
 
   const [open, setOpen] = useState(false);
   const form = useForm({
@@ -123,7 +126,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='name'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.name')}</FormLabel>
+                      <FormLabel>{t('nodeForm.name')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           {...field}
@@ -141,10 +144,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='group_id'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.groupId')}</FormLabel>
+                      <FormLabel>{t('nodeForm.groupId')}</FormLabel>
                       <FormControl>
                         <Combobox<number, false>
-                          placeholder={t('form.selectNodeGroup')}
+                          placeholder={t('nodeForm.selectNodeGroup')}
                           {...field}
                           options={groups?.map((item) => ({
                             value: item.id,
@@ -166,10 +169,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='tags'
                   render={({ field }) => (
                     <FormItem className='col-span-3'>
-                      <FormLabel>{t('form.tags')}</FormLabel>
+                      <FormLabel>{t('nodeForm.tags')}</FormLabel>
                       <FormControl>
                         <TagInput
-                          placeholder={t('form.tagsPlaceholder')}
+                          placeholder={t('nodeForm.tagsPlaceholder')}
                           value={field.value || []}
                           onChange={(value) => form.setValue(field.name, value)}
                         />
@@ -183,7 +186,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='country'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.country')}</FormLabel>
+                      <FormLabel>{t('nodeForm.country')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           {...field}
@@ -201,7 +204,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='city'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.city')}</FormLabel>
+                      <FormLabel>{t('nodeForm.city')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           {...field}
@@ -221,7 +224,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='server_addr'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.serverAddr')}</FormLabel>
+                      <FormLabel>{t('nodeForm.serverAddr')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           {...field}
@@ -239,12 +242,12 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='speed_limit'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.speedLimit')}</FormLabel>
+                      <FormLabel>{t('nodeForm.speedLimit')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           type='number'
                           {...field}
-                          placeholder={t('form.speedLimitPlaceholder')}
+                          placeholder={t('nodeForm.speedLimitPlaceholder')}
                           formatInput={(value) => unitConversion('bitsToMb', value)}
                           formatOutput={(value) => unitConversion('mbToBits', value)}
                           onValueChange={(value) => {
@@ -262,7 +265,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   name='traffic_ratio'
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>{t('form.trafficRatio')}</FormLabel>
+                      <FormLabel>{t('nodeForm.trafficRatio')}</FormLabel>
                       <FormControl>
                         <EnhancedInput
                           {...field}
@@ -284,7 +287,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                 name='protocol'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('form.protocol')}</FormLabel>
+                    <FormLabel>{t('nodeForm.protocol')}</FormLabel>
                     <FormControl>
                       <Tabs
                         value={field.value}
@@ -316,7 +319,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     name='config.method'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('form.encryptionMethod')}</FormLabel>
+                        <FormLabel>{t('nodeForm.encryptionMethod')}</FormLabel>
                         <FormControl>
                           <Select
                             onValueChange={(value) => {
@@ -326,7 +329,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           >
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder={t('form.selectEncryptionMethod')} />
+                                <SelectValue placeholder={t('nodeForm.selectEncryptionMethod')} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
@@ -357,7 +360,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     name='config.port'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('form.port')}</FormLabel>
+                        <FormLabel>{t('nodeForm.port')}</FormLabel>
                         <FormControl>
                           <EnhancedInput
                             {...field}
@@ -385,7 +388,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                       name='config.server_key'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.serverKey')}</FormLabel>
+                          <FormLabel>{t('nodeForm.serverKey')}</FormLabel>
                           <FormControl>
                             <EnhancedInput
                               {...field}
@@ -414,7 +417,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                       name='config.port'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.port')}</FormLabel>
+                          <FormLabel>{t('nodeForm.port')}</FormLabel>
                           <FormControl>
                             <EnhancedInput
                               {...field}
@@ -438,7 +441,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                         name='config.flow'
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t('form.flow')}</FormLabel>
+                            <FormLabel>{t('nodeForm.flow')}</FormLabel>
                             <FormControl>
                               <Select
                                 value={field.value}
@@ -448,7 +451,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                               >
                                 <FormControl>
                                   <SelectTrigger>
-                                    <SelectValue placeholder={t('form.pleaseSelect')} />
+                                    <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
@@ -469,11 +472,11 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           name='config.obfs_password'
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>{t('form.obfsPassword')}</FormLabel>
+                              <FormLabel>{t('nodeForm.obfsPassword')}</FormLabel>
                               <FormControl>
                                 <EnhancedInput
                                   {...field}
-                                  placeholder={t('form.obfsPasswordPlaceholder')}
+                                  placeholder={t('nodeForm.obfsPasswordPlaceholder')}
                                   onValueChange={(value) => {
                                     form.setValue(field.name, value);
                                   }}
@@ -488,10 +491,10 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           name='config.hop_ports'
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>{t('form.hopPorts')}</FormLabel>
+                              <FormLabel>{t('nodeForm.hopPorts')}</FormLabel>
                               <FormControl>
                                 <EnhancedInput
-                                  placeholder={t('form.hopPortsPlaceholder')}
+                                  placeholder={t('nodeForm.hopPortsPlaceholder')}
                                   {...field}
                                   onValueChange={(value) => {
                                     form.setValue(field.name, value);
@@ -507,7 +510,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           name='config.hop_interval'
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>{t('form.hopInterval')}</FormLabel>
+                              <FormLabel>{t('nodeForm.hopInterval')}</FormLabel>
                               <FormControl>
                                 <EnhancedInput
                                   {...field}
@@ -531,7 +534,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           name='config.udp_relay_mode'
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>{t('form.udpRelayMode')}</FormLabel>
+                              <FormLabel>{t('nodeForm.udpRelayMode')}</FormLabel>
                               <FormControl>
                                 <Select
                                   value={field.value}
@@ -541,7 +544,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 >
                                   <FormControl>
                                     <SelectTrigger>
-                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                      <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
@@ -559,7 +562,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           name='config.congestion_controller'
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>{t('form.congestionController')}</FormLabel>
+                              <FormLabel>{t('nodeForm.congestionController')}</FormLabel>
                               <FormControl>
                                 <Select
                                   value={field.value}
@@ -569,7 +572,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 >
                                   <FormControl>
                                     <SelectTrigger>
-                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                      <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
@@ -589,7 +592,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             name='config.disable_sni'
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>{t('form.disableSni')}</FormLabel>
+                                <FormLabel>{t('nodeForm.disableSni')}</FormLabel>
                                 <FormControl>
                                   <div className='pt-2'>
                                     <Switch
@@ -609,7 +612,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                             name='config.reduce_rtt'
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>{t('form.reduceRtt')}</FormLabel>
+                                <FormLabel>{t('nodeForm.reduceRtt')}</FormLabel>
                                 <FormControl>
                                   <div className='pt-2'>
                                     <Switch
@@ -631,7 +634,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                   {['vmess', 'vless', 'trojan'].includes(protocol) && (
                     <Card>
                       <CardHeader className='flex flex-row items-center justify-between p-3'>
-                        <CardTitle>{t('form.transportConfig')}</CardTitle>
+                        <CardTitle>{t('nodeForm.transportConfig')}</CardTitle>
                         <FormField
                           control={form.control}
                           name='config.transport'
@@ -646,7 +649,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 >
                                   <FormControl>
                                     <SelectTrigger>
-                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                      <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
@@ -737,7 +740,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                     ['anytls', 'tuic', 'hysteria2'].includes(protocol)) && (
                     <Card>
                       <CardHeader className='flex flex-row items-center justify-between p-3'>
-                        <CardTitle>{t('form.securityConfig')}</CardTitle>
+                        <CardTitle>{t('nodeForm.securityConfig')}</CardTitle>
                         {['vmess', 'vless', 'trojan'].includes(protocol) && (
                           <FormField
                             control={form.control}
@@ -752,7 +755,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 >
                                   <FormControl>
                                     <SelectTrigger>
-                                      <SelectValue placeholder={t('form.pleaseSelect')} />
+                                      <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
@@ -802,7 +805,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 name='config.security_config.reality_server_addr'
                                 render={({ field }) => (
                                   <FormItem>
-                                    <FormLabel>{t('form.security_config.serverAddress')}</FormLabel>
+                                    <FormLabel>{t('securityConfig.serverAddress')}</FormLabel>
                                     <FormControl>
                                       <EnhancedInput
                                         {...field}
@@ -823,7 +826,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 name='config.security_config.reality_server_port'
                                 render={({ field }) => (
                                   <FormItem>
-                                    <FormLabel>{t('form.security_config.serverPort')}</FormLabel>
+                                    <FormLabel>{t('securityConfig.serverPort')}</FormLabel>
                                     <FormControl>
                                       <EnhancedInput
                                         {...field}
@@ -847,7 +850,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 name='config.security_config.reality_private_key'
                                 render={({ field }) => (
                                   <FormItem>
-                                    <FormLabel>{t('form.security_config.privateKey')}</FormLabel>
+                                    <FormLabel>{t('securityConfig.privateKey')}</FormLabel>
                                     <FormControl>
                                       <EnhancedInput
                                         {...field}
@@ -868,11 +871,11 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 name='config.security_config.reality_public_key'
                                 render={({ field }) => (
                                   <FormItem>
-                                    <FormLabel>{t('form.security_config.publicKey')}</FormLabel>
+                                    <FormLabel>{t('securityConfig.publicKey')}</FormLabel>
                                     <FormControl>
                                       <EnhancedInput
                                         {...field}
-                                        placeholder={t('form.security_config.publicKeyPlaceholder')}
+                                        placeholder={t('securityConfig.publicKeyPlaceholder')}
                                         onValueChange={(value) => {
                                           form.setValue(field.name, value);
                                         }}
@@ -887,11 +890,11 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 name='config.security_config.reality_short_id'
                                 render={({ field }) => (
                                   <FormItem>
-                                    <FormLabel>{t('form.security_config.shortId')}</FormLabel>
+                                    <FormLabel>{t('securityConfig.shortId')}</FormLabel>
                                     <FormControl>
                                       <EnhancedInput
                                         {...field}
-                                        placeholder={t('form.security_config.shortIdPlaceholder')}
+                                        placeholder={t('securityConfig.shortIdPlaceholder')}
                                         onValueChange={(value) => {
                                           form.setValue(field.name, value);
                                         }}
@@ -910,7 +913,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                               name='config.security_config.fingerprint'
                               render={({ field }) => (
                                 <FormItem>
-                                  <FormLabel>{t('form.security_config.fingerprint')}</FormLabel>
+                                  <FormLabel>{t('securityConfig.fingerprint')}</FormLabel>
                                   <Select
                                     value={field.value}
                                     onValueChange={(value) => {
@@ -919,7 +922,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                   >
                                     <FormControl>
                                       <SelectTrigger>
-                                        <SelectValue placeholder={t('form.pleaseSelect')} />
+                                        <SelectValue placeholder={t('nodeForm.pleaseSelect')} />
                                       </SelectTrigger>
                                     </FormControl>
                                     <SelectContent>
@@ -968,7 +971,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
 
               <Card>
                 <CardHeader className='flex flex-row items-center justify-between p-3'>
-                  <CardTitle>{t('form.relayMode')}</CardTitle>
+                  <CardTitle>{t('nodeForm.relayMode')}</CardTitle>
                   <FormField
                     control={form.control}
                     name='relay_mode'
@@ -983,17 +986,13 @@ export default function NodeForm<T extends { [x: string]: any }>({
                           >
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder={t('form.selectRelayMode')} />
+                                <SelectValue placeholder={t('nodeForm.selectRelayMode')} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value='none'>
-                                {t('form.relayModeOptions.none')}
-                              </SelectItem>
-                              <SelectItem value='all'>{t('form.relayModeOptions.all')}</SelectItem>
-                              <SelectItem value='random'>
-                                {t('form.relayModeOptions.random')}
-                              </SelectItem>
+                              <SelectItem value='none'>{t('relayModeOptions.none')}</SelectItem>
+                              <SelectItem value='all'>{t('relayModeOptions.all')}</SelectItem>
+                              <SelectItem value='random'>{t('relayModeOptions.random')}</SelectItem>
                             </SelectContent>
                           </Select>
                         </FormControl>
@@ -1015,7 +1014,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                 {
                                   name: 'host',
                                   type: 'text',
-                                  placeholder: t('form.relayHost'),
+                                  placeholder: t('nodeForm.relayHost'),
                                 },
                                 {
                                   name: 'port',
@@ -1023,12 +1022,12 @@ export default function NodeForm<T extends { [x: string]: any }>({
                                   step: 1,
                                   min: 1,
                                   max: 65535,
-                                  placeholder: t('form.relayPort'),
+                                  placeholder: t('nodeForm.relayPort'),
                                 },
                                 {
                                   name: 'prefix',
                                   type: 'text',
-                                  placeholder: t('form.relayPrefix'),
+                                  placeholder: t('nodeForm.relayPrefix'),
                                 },
                               ]}
                               value={field.value}
@@ -1055,7 +1054,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
               setOpen(false);
             }}
           >
-            {t('form.cancel')}
+            {t('node.cancel')}
           </Button>
           <Button
             disabled={loading}
@@ -1069,7 +1068,7 @@ export default function NodeForm<T extends { [x: string]: any }>({
             })}
           >
             {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}{' '}
-            {t('form.confirm')}
+            {t('node.confirm')}
           </Button>
         </SheetFooter>
       </SheetContent>

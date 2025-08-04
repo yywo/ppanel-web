@@ -1,37 +1,49 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.1.5](https://github.com/perfect-panel/ppanel-web/compare/v1.1.4...v1.1.5) (2025-07-26)
+# [1.2.0](https://github.com/perfect-panel/ppanel-web/compare/v1.1.5...v1.2.0) (2025-08-04)
 
+
+### ♻ Code Refactoring
+
+* **view**: System and Auth Control ([b2b4a95](https://github.com/perfect-panel/ppanel-web/commit/b2b4a95))
+
+
+### ✨ Features
+
+* **netlify**: Add Netlify configuration for admin and user apps with Next.js plugin ([b4d4f59](https://github.com/perfect-panel/ppanel-web/commit/b4d4f59))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.1.5](https://github.com/perfect-panel/ppanel-web/compare/v1.1.4...v1.1.5) (2025-07-26)
 
 ### 🐛 Bug Fixes
 
-* **subscribe**: Filter out items that are not marked as visible in subscription list ([32253e3](https://github.com/perfect-panel/ppanel-web/commit/32253e3))
+- **subscribe**: Filter out items that are not marked as visible in subscription list ([32253e3](https://github.com/perfect-panel/ppanel-web/commit/32253e3))
 
 ## [1.1.4](https://github.com/perfect-panel/ppanel-web/compare/v1.1.3...v1.1.4) (2025-07-25)
 
-
 ### 🐛 Bug Fixes
 
-* **locales**: Simplify "show" label in subscription localization files ([d53a006](https://github.com/perfect-panel/ppanel-web/commit/d53a006))
-* **order**: Preserve last successful order on error during order creation ([2fb98be](https://github.com/perfect-panel/ppanel-web/commit/2fb98be))
-* **subscribe**: Filter out hidden items in subscription list display ([634be37](https://github.com/perfect-panel/ppanel-web/commit/634be37))
+- **locales**: Simplify "show" label in subscription localization files ([d53a006](https://github.com/perfect-panel/ppanel-web/commit/d53a006))
+- **order**: Preserve last successful order on error during order creation ([2fb98be](https://github.com/perfect-panel/ppanel-web/commit/2fb98be))
+- **subscribe**: Filter out hidden items in subscription list display ([634be37](https://github.com/perfect-panel/ppanel-web/commit/634be37))
 
 ## [1.1.3](https://github.com/perfect-panel/ppanel-web/compare/v1.1.2...v1.1.3) (2025-07-24)
 
-
 ### 🐛 Bug Fixes
 
-* **auth**: Implement user redirection to dashboard upon authentication ([f84f98c](https://github.com/perfect-panel/ppanel-web/commit/f84f98c))
+- **auth**: Implement user redirection to dashboard upon authentication ([f84f98c](https://github.com/perfect-panel/ppanel-web/commit/f84f98c))
 
 ## [1.1.2](https://github.com/perfect-panel/ppanel-web/compare/v1.1.1...v1.1.2) (2025-07-24)
 
-
 ### 🐛 Bug Fixes
 
-* **billing**: Add display for gift amount in subscription billing ([04af2f9](https://github.com/perfect-panel/ppanel-web/commit/04af2f9))
-* **order**: Update subscription cell to display name and quantity ([96eba17](https://github.com/perfect-panel/ppanel-web/commit/96eba17))
-* **tool**: Added API for obtaining version, updated version information display logic ([2675034](https://github.com/perfect-panel/ppanel-web/commit/2675034))
+- **billing**: Add display for gift amount in subscription billing ([04af2f9](https://github.com/perfect-panel/ppanel-web/commit/04af2f9))
+- **order**: Update subscription cell to display name and quantity ([96eba17](https://github.com/perfect-panel/ppanel-web/commit/96eba17))
+- **tool**: Added API for obtaining version, updated version information display logic ([2675034](https://github.com/perfect-panel/ppanel-web/commit/2675034))
 
 <a name="readme-top"></a>
 
