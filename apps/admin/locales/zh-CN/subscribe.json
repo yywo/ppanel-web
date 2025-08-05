@@ -1,161 +1,89 @@
 {
-  "actions": "操作",
-  "app": {
-    "appDownloadURL": "应用下载链接",
-    "appIcon": "应用图标",
-    "appList": "应用列表",
-    "appName": "应用名称",
-    "backupDomains": "备用域名列表",
-    "backupDomainsDescription": "用于域名解析的备用域名列表，每行一个域名",
-    "batchDelete": "批量删除",
+  "actions": {
     "cancel": "取消",
-    "communicationKey": "通信密钥",
-    "communicationKeyDescription": "用于客户端通信的密钥",
-    "config": "配置",
-    "configApp": "应用配置",
-    "confirm": "确认",
-    "confirmDelete": "确认删除",
-    "create": "创建",
-    "createApp": "创建应用",
-    "createSuccess": "创建成功",
-    "defaultVersion": "默认",
     "delete": "删除",
-    "deleteWarning": "此操作无法撤销",
-    "describeDescription": "用于描述应用程序，显示在应用列表中",
-    "description": "描述",
-    "downloadLink": "下载链接",
     "edit": "编辑",
-    "editApp": "编辑应用",
-    "encryption": "加密方法",
-    "encryptionDescription": "选择用于客户端通信的加密方法。如果选择，客户端将使用此方法与服务器通信",
-    "nameDescription": "应用程序名称，显示在应用列表中",
-    "platform": "平台",
-    "selectApp": "选择应用",
-    "selectAppDescription": "选择要配置的应用，所有设置将应用于所选应用",
-    "startupPicture": "启动图片",
-    "startupPictureDescription": "启动图片，支持网络和本地图片。对于网络图片，请输入完整的图片URL",
-    "startupPicturePreview": "启动图片预览",
-    "startupPictureSkip": "启动图片跳过时间",
-    "startupPictureSkipDescription": "启动图片显示时间（秒），输入0表示不显示",
-    "subscriptionProtocol": "订阅协议",
-    "updateSuccess": "更新成功",
-    "version": "版本"
+    "save": "保存",
+    "saveTemplate": "保存模板"
   },
-  "cancel": "取消",
   "config": {
+    "description": "管理订阅系统的相关配置",
+    "restrictUserAgent": "用户代理限制",
+    "restrictUserAgentDescription": "根据用户代理启用访问限制",
     "singleSubscriptionMode": "单一订阅模式",
-    "singleSubscriptionModeDescription": "启用后，所有用户订阅将转换为余额",
+    "singleSubscriptionModeDescription": "限制用户只能拥有一个有效的订阅。现有订阅不受影响",
     "subscriptionDomain": "订阅域名",
-    "subscriptionDomainDescription": "用于订阅；留空则使用站点域名",
+    "subscriptionDomainDescription": "自定义订阅链接域名",
     "subscriptionDomainPlaceholder": "输入订阅域名，每行一个",
     "subscriptionPath": "订阅路径",
-    "subscriptionPathDescription": "用于订阅；修改后请务必重启系统以获得最佳性能",
-    "subscriptionPathPlaceholder": "输入",
-    "updateSuccess": "更新成功",
+    "subscriptionPathDescription": "自定义订阅端点路径（重启系统后性能更佳）",
+    "subscriptionPathPlaceholder": "输入订阅路径",
+    "title": "订阅配置",
+    "updateError": "更新失败",
+    "updateSuccess": "设置更新成功",
+    "userAgentWhitelist": "用户代理白名单",
+    "userAgentWhitelistDescription": "允许的用户代理用于订阅访问，每行一个。内置模板会自动包含在白名单中",
+    "userAgentWhitelistPlaceholder": "输入允许的用户代理，每行一个",
     "wildcardResolution": "通配符解析",
-    "wildcardResolutionDescription": "用于订阅"
+    "wildcardResolutionDescription": "启用订阅域名的通配符解析"
   },
-  "confirm": "确认",
-  "confirmDelete": "确定删除吗？",
-  "copy": "复制",
-  "copySuccess": "复制成功",
-  "create": "创建",
-  "createSubscribe": "新建订阅",
-  "createSuccess": "创建成功",
-  "delete": "删除",
-  "deleteSuccess": "删除成功",
-  "deleteWarning": "删除后数据无法恢复，请谨慎操作。",
-  "deviceLimit": "设备数/台",
-  "edit": "编辑",
-  "editSubscribe": "编辑订阅",
-  "form": {
-    "Day": "天",
-    "Hour": "时",
-    "Minute": "分",
-    "Month": "月",
-    "NoLimit": "无限制",
-    "Year": "年",
-    "annualReset": "按年重置",
-    "basic": "基础",
-    "cancel": "取消",
-    "confirm": "确认",
-    "deductionRatio": "自动/手动抵扣配置",
-    "deductionRatioDescription": "用于抵扣，默认采用自动计算算法。当手动填写比例时，系统将根据时间和流量的占比，以总和为100%进行按比例分配。",
-    "description": "描述",
-    "deviceLimit": "设备限制",
-    "discount": "折扣",
-    "discountDescription": "基于单价设置折扣",
-    "discountMonths": "月",
-    "discountPercent": "折扣比",
-    "discount_price": "折扣价格",
-    "duration": "时长（月）",
-    "groupId": "订阅组",
-    "inventory": "订阅限制",
-    "monthlyReset": "按月重置",
-    "name": "名称",
-    "noLimit": "无限制",
-    "noReset": "不重置",
-    "pricing": "定价",
-    "purchaseWithDiscount": "允许抵扣",
-    "purchaseWithDiscountDescription": "启用或禁用退订功能。激活后，系统将根据配置的规则和比例进行扣除处理，剩余价值将返回到余额中",
-    "quota": "限购数量",
-    "renewalReset": "续费重置",
-    "renewalResetDescription": "续费时重置周期",
-    "replacement": "重置价格（每次）",
-    "resetCycle": "重置周期",
-    "resetOn1st": "1号重置",
-    "selectResetCycle": "请选择重置周期",
-    "selectSubscribeGroup": "请选择订阅组",
-    "selectUnitTime": "请选择单位时间",
-    "server": "服务",
-    "serverGroup": "服务组",
-    "servers": "服务",
-    "speedLimit": "速度限制",
-    "traffic": "流量",
-    "unitPrice": "单价",
-    "unitTime": "单位时间"
+  "description": "配置订阅设置和客户端模板",
+  "messages": {
+    "noClients": "暂无客户端模板",
+    "noClientsDescription": "还没有配置任何客户端模板，请添加第一个模板开始使用。"
   },
-  "group": {
-    "actions": "操作",
-    "cancel": "取消",
-    "confirm": "确认",
-    "confirmDelete": "确定删除吗？",
-    "create": "创建",
-    "createSubscribeGroup": "新建订阅组",
-    "createSuccess": "创建成功",
-    "delete": "删除",
-    "deleteSuccess": "删除成功",
-    "deleteWarning": "删除后数据无法恢复，请谨慎操作。",
-    "description": "描述",
-    "edit": "编辑",
-    "editSubscribeGroup": "编辑订阅组",
-    "form": {
-      "cancel": "取消",
-      "confirm": "确认",
-      "description": "描述",
-      "name": "名称"
+  "protocol": {
+    "clients": {
+      "clash": {
+        "features": "生态丰富，规则完善，社区活跃"
+      },
+      "egern": {
+        "features": "现代化 iOS 客户端，性能优异"
+      },
+      "hiddify": {
+        "features": "全平台支持，协议全面，新手友好"
+      },
+      "loon": {
+        "features": "iOS 高级客户端，规则丰富，界面美观"
+      },
+      "netch": {
+        "features": "游戏专用代理客户端"
+      },
+      "quantumult": {
+        "features": "iOS 高级客户端，规则灵活，脚本丰富"
+      },
+      "shadowrocket": {
+        "features": "经典 iOS 客户端，配置灵活"
+      },
+      "singbox": {
+        "features": "最新内核，官方图形界面，多平台支持"
+      },
+      "stash": {
+        "features": "现代移动端界面，协议全面"
+      },
+      "surfboard": {
+        "features": "免费开源，持续更新，界面现代"
+      },
+      "surge": {
+        "features": "iOS/Mac 专业工具，功能强大"
+      },
+      "v2box": {
+        "features": "用户友好的 V2Ray 客户端"
+      },
+      "v2rayn": {
+        "features": "热门 Windows 客户端，功能丰富"
+      },
+      "v2rayng": {
+        "features": "热门 Android 客户端，轻量级"
+      }
     },
-    "name": "名称",
-    "title": "订阅组列表",
-    "updateSuccess": "更新成功",
-    "updatedAt": "更新时间"
+    "description": "管理代理客户端的订阅配置模板",
+    "features": "主要特点",
+    "platforms": "支持平台",
+    "subscribeTemplate": "订阅模板配置",
+    "templateContent": "模板内容",
+    "templatePlaceholder": "输入客户端配置模板...",
+    "title": "客户端订阅模板"
   },
-  "inventory": "订阅限制",
-  "name": "名称",
-  "quota": "限购/次",
-  "replacement": "重置价格/次",
-  "sell": "销售",
-  "show": "显示",
-  "sold": "订阅数量",
-  "subscribe": "订阅",
-  "subscribeGroup": "订阅组",
-  "tabs": {
-    "subscribe": "订阅",
-    "subscribeApp": "应用配置",
-    "subscribeConfig": "订阅配置",
-    "subscribeGroup": "订阅组"
-  },
-  "traffic": "流量",
-  "unitPrice": "单价",
-  "updateSuccess": "更新成功"
+  "title": "订阅管理"
 }

@@ -1,161 +1,89 @@
 {
-  "actions": "Hành động",
-  "app": {
-    "appDownloadURL": "URL Tải Ứng Dụng",
-    "appIcon": "Biểu Tượng Ứng Dụng",
-    "appList": "Danh sách ứng dụng",
-    "appName": "Tên Ứng Dụng",
-    "backupDomains": "Danh sách miền dự phòng",
-    "backupDomainsDescription": "Danh sách miền dự phòng cho việc phân giải miền, mỗi dòng một miền",
-    "batchDelete": "Xóa Hàng Loạt",
+  "actions": {
     "cancel": "Hủy",
-    "communicationKey": "Khóa Giao Tiếp",
-    "communicationKeyDescription": "Khóa được sử dụng cho giao tiếp với khách hàng",
-    "config": "Cấu hình",
-    "configApp": "Cấu hình ứng dụng",
-    "confirm": "Xác Nhận",
-    "confirmDelete": "Xác Nhận Xóa",
-    "create": "Tạo mới",
-    "createApp": "Tạo Ứng Dụng",
-    "createSuccess": "Tạo thành công",
-    "defaultVersion": "Mặc định",
     "delete": "Xóa",
-    "deleteWarning": "Hành động này không thể hoàn tác",
-    "describeDescription": "Dùng để mô tả ứng dụng, hiển thị trong danh sách ứng dụng",
-    "description": "Mô tả",
-    "downloadLink": "Liên kết tải về",
-    "edit": "Chỉnh Sửa",
-    "editApp": "Chỉnh Sửa Ứng Dụng",
-    "encryption": "Phương Pháp Mã Hóa",
-    "encryptionDescription": "Chọn phương pháp mã hóa cho giao tiếp với khách hàng. Nếu được chọn, khách hàng sẽ sử dụng phương pháp này để giao tiếp với máy chủ",
-    "nameDescription": "Tên ứng dụng, hiển thị trong danh sách ứng dụng",
-    "platform": "Nền Tảng",
-    "selectApp": "Chọn Ứng Dụng",
-    "selectAppDescription": "Chọn ứng dụng để cấu hình, tất cả các cài đặt sẽ áp dụng cho ứng dụng đã chọn",
-    "startupPicture": "Hình ảnh khởi động",
-    "startupPictureDescription": "Hình ảnh khởi động, hỗ trợ hình ảnh mạng và cục bộ. Đối với hình ảnh mạng, vui lòng nhập URL hình ảnh đầy đủ",
-    "startupPicturePreview": "Xem trước hình ảnh khởi động",
-    "startupPictureSkip": "Thời gian bỏ qua hình ảnh khởi động",
-    "startupPictureSkipDescription": "Thời gian hiển thị hình ảnh khởi động tính bằng giây, nhập 0 để không hiển thị",
-    "subscriptionProtocol": "Giao Thức Đăng Ký",
-    "updateSuccess": "Cập nhật thành công",
-    "version": "Phiên bản"
-  },
-  "cancel": "Hủy",
-  "config": {
-    "singleSubscriptionMode": "Chế Độ Đăng Ký Đơn",
-    "singleSubscriptionModeDescription": "Khi được kích hoạt, tất cả các đăng ký của người dùng sẽ được chuyển đổi thành số dư",
-    "subscriptionDomain": "Miền Đăng Ký",
-    "subscriptionDomainDescription": "Dùng cho đăng ký; để trống để sử dụng miền của trang",
-    "subscriptionDomainPlaceholder": "Nhập miền đăng ký, mỗi dòng một miền",
-    "subscriptionPath": "Đường Dẫn Đăng Ký",
-    "subscriptionPathDescription": "Dùng cho đăng ký; hãy chắc chắn khởi động lại hệ thống sau khi sửa đổi để có hiệu suất tối ưu",
-    "subscriptionPathPlaceholder": "Nhập",
-    "updateSuccess": "Cập nhật thành công",
-    "wildcardResolution": "Giải Quyết Ký Tự Đại Diện",
-    "wildcardResolutionDescription": "Dùng cho đăng ký"
-  },
-  "confirm": "Xác nhận",
-  "confirmDelete": "Bạn có chắc chắn muốn xóa không?",
-  "copy": "Sao chép",
-  "copySuccess": "Sao chép thành công",
-  "create": "Tạo",
-  "createSubscribe": "Tạo đăng ký mới",
-  "createSuccess": "Tạo thành công",
-  "delete": "xóa",
-  "deleteSuccess": "Xóa thành công",
-  "deleteWarning": "Sau khi xóa, dữ liệu không thể khôi phục, vui lòng thao tác cẩn thận.",
-  "deviceLimit": "Số lượng thiết bị",
-  "edit": "Chỉnh sửa",
-  "editSubscribe": "Chỉnh sửa đăng ký",
-  "form": {
-    "Day": "Ngày",
-    "Hour": "Giờ",
-    "Minute": "Phút",
-    "Month": "Tháng",
-    "NoLimit": "Không Giới Hạn",
-    "Year": "Năm",
-    "annualReset": "Đặt Lại Hàng Năm",
-    "basic": "Cơ Bản",
-    "cancel": "Hủy",
-    "confirm": "Xác nhận",
-    "deductionRatio": "Cấu Hình Khấu Trừ Tự Động/Thủ Công",
-    "deductionRatioDescription": "Được sử dụng cho khấu trừ. Mặc định, hệ thống áp dụng thuật toán tính toán tự động. Khi có tỷ lệ thủ công, hệ thống sẽ tính toán tỷ lệ dựa trên thời gian và lưu lượng, đảm bảo tổng bằng 100%.",
-    "description": "Mô tả",
-    "deviceLimit": "Giới hạn thiết bị",
-    "discount": "Giảm giá",
-    "discountDescription": "Thiết lập giảm giá dựa trên đơn giá",
-    "discountMonths": "tháng",
-    "discountPercent": "Phần trăm giảm giá",
-    "discount_price": "Giá sau giảm",
-    "duration": "Thời gian (tháng)",
-    "groupId": "Nhóm Đăng Ký",
-    "inventory": "Giới Hạn Đăng Ký",
-    "monthlyReset": "Đặt Lại Hàng Tháng",
-    "name": "Tên",
-    "noLimit": "Không giới hạn",
-    "noReset": "Không Đặt Lại",
-    "pricing": "Giá Cả",
-    "purchaseWithDiscount": "Cho Phép Khấu Trừ",
-    "purchaseWithDiscountDescription": "Bật hoặc tắt chức năng hủy đăng ký. Sau khi kích hoạt, hệ thống sẽ thực hiện xử lý khấu trừ theo các quy tắc và tỷ lệ đã cấu hình, và giá trị còn lại sẽ được trả về số dư",
-    "quota": "Số lượng mua giới hạn",
-    "renewalReset": "Đặt Lại Khi Gia Hạn",
-    "renewalResetDescription": "Đặt lại chu kỳ khi gia hạn",
-    "replacement": "Giá thay thế (mỗi lần)",
-    "resetCycle": "Chu Kỳ Đặt Lại",
-    "resetOn1st": "Đặt Lại vào Ngày 1",
-    "selectResetCycle": "Vui lòng chọn một chu kỳ đặt lại",
-    "selectSubscribeGroup": "Vui lòng chọn nhóm đăng ký",
-    "selectUnitTime": "Vui lòng chọn đơn vị thời gian",
-    "server": "Dịch vụ",
-    "serverGroup": "Nhóm dịch vụ",
-    "servers": "Máy Chủ",
-    "speedLimit": "Giới hạn tốc độ ",
-    "traffic": "Lưu lượng",
-    "unitPrice": "Đơn giá",
-    "unitTime": "Đơn vị thời gian"
-  },
-  "group": {
-    "actions": "Hành động",
-    "cancel": "Hủy bỏ",
-    "confirm": "Xác nhận",
-    "confirmDelete": "Bạn có chắc chắn muốn xóa không?",
-    "create": "Tạo mới",
-    "createSubscribeGroup": "Tạo nhóm đăng ký mới",
-    "createSuccess": "Tạo thành công",
-    "delete": "Xóa",
-    "deleteSuccess": "Xóa thành công",
-    "deleteWarning": "Dữ liệu không thể khôi phục sau khi xóa, hãy cẩn thận.",
-    "description": "Mô tả",
     "edit": "Chỉnh sửa",
-    "editSubscribeGroup": "Chỉnh sửa nhóm đăng ký",
-    "form": {
-      "cancel": "Hủy bỏ",
-      "confirm": "Xác nhận",
-      "description": "Mô tả",
-      "name": "Tên"
+    "save": "Lưu",
+    "saveTemplate": "Lưu Mẫu"
+  },
+  "config": {
+    "description": "Quản lý cài đặt hệ thống đăng ký",
+    "restrictUserAgent": "Hạn chế User-Agent",
+    "restrictUserAgentDescription": "Bật hạn chế truy cập dựa trên User-Agent",
+    "singleSubscriptionMode": "Chế Độ Đăng Ký Đơn",
+    "singleSubscriptionModeDescription": "Giới hạn người dùng chỉ có một đăng ký hoạt động. Các đăng ký hiện có không bị ảnh hưởng",
+    "subscriptionDomain": "Miền Đăng Ký",
+    "subscriptionDomainDescription": "Miền tùy chỉnh cho các liên kết đăng ký",
+    "subscriptionDomainPlaceholder": "Nhập miền đăng ký, mỗi miền một dòng",
+    "subscriptionPath": "Đường Dẫn Đăng Ký",
+    "subscriptionPathDescription": "Đường dẫn tùy chỉnh cho các điểm cuối đăng ký (hiệu suất tốt hơn sau khi khởi động lại hệ thống)",
+    "subscriptionPathPlaceholder": "Nhập đường dẫn đăng ký",
+    "title": "Cấu Hình Đăng Ký",
+    "updateError": "Cập nhật không thành công",
+    "updateSuccess": "Cài đặt đã được cập nhật thành công",
+    "userAgentWhitelist": "Danh sách trắng User-Agent",
+    "userAgentWhitelistDescription": "Các User-Agent được phép truy cập đăng ký, mỗi dòng một User-Agent. Các mẫu tích hợp sẽ tự động được bao gồm trong danh sách trắng",
+    "userAgentWhitelistPlaceholder": "Nhập User-Agent được phép, mỗi dòng một User-Agent",
+    "wildcardResolution": "Giải Quyết Wildcard",
+    "wildcardResolutionDescription": "Bật giải quyết miền wildcard cho các đăng ký"
+  },
+  "description": "Cấu hình cài đặt đăng ký và mẫu khách hàng",
+  "messages": {
+    "noClients": "Không Có Mẫu Khách Hàng",
+    "noClientsDescription": "Chưa có mẫu khách hàng nào được cấu hình. Thêm mẫu đầu tiên của bạn để bắt đầu."
+  },
+  "protocol": {
+    "clients": {
+      "clash": {
+        "features": "Hệ sinh thái lớn, quy tắc toàn diện, cộng đồng năng động"
+      },
+      "egern": {
+        "features": "Khách hàng iOS hiện đại, hiệu suất xuất sắc"
+      },
+      "hiddify": {
+        "features": "Đa nền tảng, giao thức toàn diện, thân thiện với người mới"
+      },
+      "loon": {
+        "features": "Khách hàng nâng cao cho iOS, quy tắc phong phú, giao diện đẹp"
+      },
+      "netch": {
+        "features": "Khách hàng proxy tập trung vào game"
+      },
+      "quantumult": {
+        "features": "Khách hàng nâng cao cho iOS, quy tắc linh hoạt, kịch bản phong phú"
+      },
+      "shadowrocket": {
+        "features": "Khách hàng iOS cổ điển, cấu hình linh hoạt"
+      },
+      "singbox": {
+        "features": "Nhân mới nhất, GUI chính thức, hỗ trợ đa nền tảng"
+      },
+      "stash": {
+        "features": "Giao diện di động hiện đại, giao thức toàn diện"
+      },
+      "surfboard": {
+        "features": "Miễn phí, phát triển tích cực, giao diện hiện đại"
+      },
+      "surge": {
+        "features": "Công cụ cao cấp cho iOS/Mac, tính năng mạnh mẽ"
+      },
+      "v2box": {
+        "features": "Khách hàng V2Ray thân thiện với người dùng"
+      },
+      "v2rayn": {
+        "features": "Khách hàng Windows phổ biến, nhiều tính năng"
+      },
+      "v2rayng": {
+        "features": "Khách hàng Android phổ biến, nhẹ"
+      }
     },
-    "name": "Tên",
-    "title": "Danh sách nhóm đăng ký",
-    "updateSuccess": "Cập nhật thành công",
-    "updatedAt": "Thời gian cập nhật"
+    "description": "Quản lý các mẫu cấu hình đăng ký cho khách hàng proxy",
+    "features": "Tính Năng Chính",
+    "platforms": "Nền Tảng",
+    "subscribeTemplate": "Cấu Hình Mẫu Đăng Ký",
+    "templateContent": "Nội Dung Mẫu",
+    "templatePlaceholder": "Nhập mẫu cấu hình khách hàng...",
+    "title": "Mẫu Đăng Ký Khách Hàng"
   },
-  "inventory": "Giới Hạn Đăng Ký",
-  "name": "Tên",
-  "quota": "Giới hạn mua/lần",
-  "replacement": "Đặt lại giá/lần",
-  "sell": "Bán hàng",
-  "show": "Hiển thị",
-  "sold": "Số lượng đăng ký",
-  "subscribe": "Đăng ký",
-  "subscribeGroup": "Nhóm đăng ký",
-  "tabs": {
-    "subscribe": "Đăng ký",
-    "subscribeApp": "Cấu Hình Ứng Dụng",
-    "subscribeConfig": "Cấu Hình Đăng Ký",
-    "subscribeGroup": "Nhóm đăng ký"
-  },
-  "traffic": "lưu lượng",
-  "unitPrice": "Đơn giá",
-  "updateSuccess": "Cập nhật thành công"
+  "title": "Quản Lý Đăng Ký"
 }

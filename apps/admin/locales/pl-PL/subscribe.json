@@ -1,161 +1,89 @@
 {
-  "actions": "działania",
-  "app": {
-    "appDownloadURL": "URL pobierania aplikacji",
-    "appIcon": "Ikona aplikacji",
-    "appList": "Lista aplikacji",
-    "appName": "Nazwa aplikacji",
-    "backupDomains": "Lista domen zapasowych",
-    "backupDomainsDescription": "Lista domen zapasowych do rozwiązywania domen, jedna domena na linię",
-    "batchDelete": "Usuń zbiorczo",
+  "actions": {
     "cancel": "Anuluj",
-    "communicationKey": "Klucz komunikacyjny",
-    "communicationKeyDescription": "Klucz używany do komunikacji z klientem",
-    "config": "Konfiguracja",
-    "configApp": "Konfiguracja aplikacji",
-    "confirm": "Potwierdź",
-    "confirmDelete": "Potwierdź usunięcie",
-    "create": "Utwórz",
-    "createApp": "Utwórz aplikację",
-    "createSuccess": "Utworzono pomyślnie",
-    "defaultVersion": "Domyślna",
     "delete": "Usuń",
-    "deleteWarning": "Tej operacji nie można cofnąć",
-    "describeDescription": "Służy do opisu aplikacji, wyświetlany na liście aplikacji",
-    "description": "Opis",
-    "downloadLink": "Link do pobrania",
     "edit": "Edytuj",
-    "editApp": "Edytuj aplikację",
-    "encryption": "Metoda szyfrowania",
-    "encryptionDescription": "Wybierz metodę szyfrowania dla komunikacji z klientem. Jeśli zostanie wybrana, klient będzie używał tej metody do komunikacji z serwerem",
-    "nameDescription": "Nazwa aplikacji, wyświetlana na liście aplikacji",
-    "platform": "Platforma",
-    "selectApp": "Wybierz aplikację",
-    "selectAppDescription": "Wybierz aplikację do skonfigurowania, wszystkie ustawienia będą dotyczyć wybranej aplikacji",
-    "startupPicture": "Obraz startowy",
-    "startupPictureDescription": "Obraz startowy, obsługuje obrazy sieciowe i lokalne. Dla obrazów sieciowych, proszę wprowadzić pełny URL obrazu",
-    "startupPicturePreview": "Podgląd obrazu startowego",
-    "startupPictureSkip": "Czas pominięcia obrazu startowego",
-    "startupPictureSkipDescription": "Czas wyświetlania obrazu startowego w sekundach, wprowadź 0, aby nie wyświetlać",
-    "subscriptionProtocol": "Protokół subskrypcji",
-    "updateSuccess": "Zaktualizowano pomyślnie",
-    "version": "Wersja"
+    "save": "Zapisz",
+    "saveTemplate": "Zapisz Szablon"
   },
-  "cancel": "Anuluj",
   "config": {
-    "singleSubscriptionMode": "Tryb pojedynczej subskrypcji",
-    "singleSubscriptionModeDescription": "Po włączeniu wszystkie subskrypcje użytkowników zostaną przekształcone na saldo",
-    "subscriptionDomain": "Domena subskrypcji",
-    "subscriptionDomainDescription": "Używane do subskrypcji; pozostaw puste, aby użyć domeny witryny",
-    "subscriptionDomainPlaceholder": "Wprowadź domenę subskrypcji, jedna na linię",
-    "subscriptionPath": "Ścieżka subskrypcji",
-    "subscriptionPathDescription": "Używane do subskrypcji; upewnij się, że zrestartujesz system po modyfikacji dla optymalnej wydajności",
-    "subscriptionPathPlaceholder": "Wprowadź",
-    "updateSuccess": "Zaktualizowano pomyślnie",
-    "wildcardResolution": "Rozwiązanie wieloznaczne",
-    "wildcardResolutionDescription": "Używane do subskrypcji"
+    "description": "Zarządzaj ustawieniami systemu subskrypcyjnego",
+    "restrictUserAgent": "Ograniczenie User-Agent",
+    "restrictUserAgentDescription": "Włącz ograniczenia dostępu na podstawie User-Agent",
+    "singleSubscriptionMode": "Tryb Pojedynczej Subskrypcji",
+    "singleSubscriptionModeDescription": "Przekształć wszystkie subskrypcje użytkowników w saldo konta",
+    "subscriptionDomain": "Domena Subskrypcyjna",
+    "subscriptionDomainDescription": "Niestandardowa domena dla linków subskrypcyjnych",
+    "subscriptionDomainPlaceholder": "Wprowadź domenę subskrypcyjną, jedna na linię",
+    "subscriptionPath": "Ścieżka Subskrypcyjna",
+    "subscriptionPathDescription": "Niestandardowa ścieżka dla punktów końcowych subskrypcji (lepsza wydajność po restarcie systemu)",
+    "subscriptionPathPlaceholder": "Wprowadź ścieżkę subskrypcyjną",
+    "title": "Konfiguracja Subskrypcji",
+    "updateError": "Aktualizacja nie powiodła się",
+    "updateSuccess": "Ustawienia zaktualizowane pomyślnie",
+    "userAgentWhitelist": "Biała lista User-Agent",
+    "userAgentWhitelistDescription": "Dozwolone User-Agents do dostępu subskrypcyjnego, jeden na linię. Wbudowane szablony są automatycznie dodawane do białej listy",
+    "userAgentWhitelistPlaceholder": "Wprowadź dozwolone User-Agents, jeden na linię",
+    "wildcardResolution": "Rozwiązywanie Dzikich Znaków",
+    "wildcardResolutionDescription": "Włącz rozwiązywanie dzikich znaków dla subskrypcji"
   },
-  "confirm": "Potwierdź",
-  "confirmDelete": "Czy na pewno chcesz usunąć?",
-  "copy": "Kopiuj",
-  "copySuccess": "Skopiowano pomyślnie",
-  "create": "Utwórz",
-  "createSubscribe": "Utwórz subskrypcję",
-  "createSuccess": "Utworzono pomyślnie",
-  "delete": "usuń",
-  "deleteSuccess": "Usunięto pomyślnie",
-  "deleteWarning": "Po usunięciu danych nie można ich odzyskać, proszę postępować ostrożnie.",
-  "deviceLimit": "Liczba urządzeń/szt.",
-  "edit": "edytuj",
-  "editSubscribe": "Edytuj subskrypcję",
-  "form": {
-    "Day": "Dzień",
-    "Hour": "Godzina",
-    "Minute": "Minuta",
-    "Month": "Miesiąc",
-    "NoLimit": "Bez ograniczeń",
-    "Year": "Rok",
-    "annualReset": "Roczny Reset",
-    "basic": "Podstawowy",
-    "cancel": "Anuluj",
-    "confirm": "Potwierdź",
-    "deductionRatio": "Automatyczna/Ręczna Konfiguracja Potrąceń",
-    "deductionRatioDescription": "Używane do potrąceń. Domyślnie system stosuje automatyczny algorytm obliczeniowy. Gdy podany jest ręczny współczynnik, system oblicza proporcje na podstawie czasu i ruchu, zapewniając, że suma wynosi 100%.",
-    "description": "Opis",
-    "deviceLimit": "Limit urządzeń",
-    "discount": "Zniżka",
-    "discountDescription": "Ustaw zniżkę na podstawie ceny jednostkowej",
-    "discountMonths": "miesiące",
-    "discountPercent": "Procent zniżki",
-    "discount_price": "Cena po zniżce",
-    "duration": "Czas trwania (miesiące)",
-    "groupId": "Grupa subskrypcyjna",
-    "inventory": "Limit subskrypcji",
-    "monthlyReset": "Miesięczny Reset",
-    "name": "Nazwa",
-    "noLimit": "Bez ograniczeń",
-    "noReset": "Brak Resetu",
-    "pricing": "Cennik",
-    "purchaseWithDiscount": "Zezwól na Potrącenie",
-    "purchaseWithDiscountDescription": "Włącz lub wyłącz funkcję rezygnacji z subskrypcji. Po aktywacji system przeprowadzi proces odliczenia zgodnie z skonfigurowanymi zasadami i proporcjami, a pozostała wartość zostanie zwrócona na saldo",
-    "quota": "Limit zakupu",
-    "renewalReset": "Reset przy Odnowieniu",
-    "renewalResetDescription": "Reset cyklu przy odnowieniu",
-    "replacement": "Cena wymiany (za każdym razem)",
-    "resetCycle": "Cykl Resetowania",
-    "resetOn1st": "Reset 1-go",
-    "selectResetCycle": "Proszę wybrać cykl resetowania",
-    "selectSubscribeGroup": "Wybierz grupę subskrypcji",
-    "selectUnitTime": "Proszę wybrać jednostkę czasu",
-    "server": "Serwer",
-    "serverGroup": "Grupa serwerów",
-    "servers": "Serwery",
-    "speedLimit": "Limit prędkości ",
-    "traffic": "Ruch",
-    "unitPrice": "Cena jednostkowa",
-    "unitTime": "Jednostka czasu"
+  "description": "Skonfiguruj ustawienia subskrypcji i szablony klientów",
+  "messages": {
+    "noClients": "Brak Szablonów Klientów",
+    "noClientsDescription": "Brak skonfigurowanych szablonów klientów. Dodaj swój pierwszy szablon, aby rozpocząć."
   },
-  "group": {
-    "actions": "Działania",
-    "cancel": "Anuluj",
-    "confirm": "Potwierdź",
-    "confirmDelete": "Czy na pewno chcesz usunąć?",
-    "create": "Utwórz",
-    "createSubscribeGroup": "Utwórz nową grupę subskrypcji",
-    "createSuccess": "Utworzono pomyślnie",
-    "delete": "Usuń",
-    "deleteSuccess": "Usunięto pomyślnie",
-    "deleteWarning": "Po usunięciu danych nie można ich odzyskać, proszę postępować ostrożnie.",
-    "description": "Opis",
-    "edit": "Edytuj",
-    "editSubscribeGroup": "Edytuj grupę subskrypcji",
-    "form": {
-      "cancel": "Anuluj",
-      "confirm": "Potwierdź",
-      "description": "Opis",
-      "name": "Nazwa"
+  "protocol": {
+    "clients": {
+      "clash": {
+        "features": "Duży ekosystem, kompleksowe zasady, aktywna społeczność"
+      },
+      "egern": {
+        "features": "Nowoczesny klient iOS, doskonała wydajność"
+      },
+      "hiddify": {
+        "features": "Wieloplatformowy, kompleksowe protokoły, przyjazny dla początkujących"
+      },
+      "loon": {
+        "features": "Zaawansowany klient iOS, bogate zasady, piękny interfejs"
+      },
+      "netch": {
+        "features": "Klient proxy skoncentrowany na grach"
+      },
+      "quantumult": {
+        "features": "Zaawansowany klient iOS, elastyczne zasady, bogate skrypty"
+      },
+      "shadowrocket": {
+        "features": "Klasyczny klient iOS, elastyczna konfiguracja"
+      },
+      "singbox": {
+        "features": "Najnowsze jądro, oficjalny interfejs GUI, wsparcie dla wielu platform"
+      },
+      "stash": {
+        "features": "Nowoczesny interfejs mobilny, kompleksowe protokoły"
+      },
+      "surfboard": {
+        "features": "Darmowy, aktywny rozwój, nowoczesny interfejs"
+      },
+      "surge": {
+        "features": "Premium narzędzie iOS/Mac, potężne funkcje"
+      },
+      "v2box": {
+        "features": "Przyjazny dla użytkownika klient V2Ray"
+      },
+      "v2rayn": {
+        "features": "Popularny klient Windows, bogaty w funkcje"
+      },
+      "v2rayng": {
+        "features": "Popularny klient Android, lekki"
+      }
     },
-    "name": "Nazwa",
-    "title": "Lista grup subskrypcji",
-    "updateSuccess": "Zaktualizowano pomyślnie",
-    "updatedAt": "Czas aktualizacji"
+    "description": "Zarządzaj szablonami konfiguracji subskrypcji dla klientów proxy",
+    "features": "Kluczowe Funkcje",
+    "platforms": "Platformy",
+    "subscribeTemplate": "Konfiguracja Szablonu Subskrypcji",
+    "templateContent": "Zawartość Szablonu",
+    "templatePlaceholder": "Wprowadź szablon konfiguracji klienta...",
+    "title": "Szablony Subskrypcji Klientów"
   },
-  "inventory": "Limit subskrypcji",
-  "name": "Nazwa",
-  "quota": "Limit zakupu/raz",
-  "replacement": "Zresetuj cenę/raz",
-  "sell": "Sprzedaż",
-  "show": "Pokaż",
-  "sold": "Liczba subskrypcji",
-  "subscribe": "Subskrybuj",
-  "subscribeGroup": "Subskrybuj grupę",
-  "tabs": {
-    "subscribe": "Subskrybuj",
-    "subscribeApp": "Konfiguracja aplikacji",
-    "subscribeConfig": "Konfiguracja subskrypcji",
-    "subscribeGroup": "Grupa subskrypcji"
-  },
-  "traffic": "ruch",
-  "unitPrice": "Cena jednostkowa",
-  "updateSuccess": "Aktualizacja zakończona pomyślnie"
+  "title": "Zarządzanie Subskrypcjami"
 }

@@ -44,7 +44,7 @@ export default function GroupForm<T extends Record<string, any>>({
   trigger,
   title,
 }: GroupFormProps<T>) {
-  const t = useTranslations('subscribe');
+  const t = useTranslations('product');
 
   const [open, setOpen] = useState(false);
   const form = useForm({

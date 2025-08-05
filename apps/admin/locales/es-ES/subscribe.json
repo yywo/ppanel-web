@@ -1,161 +1,89 @@
 {
-  "actions": "acciones",
-  "app": {
-    "appDownloadURL": "URL de Descarga de la App",
-    "appIcon": "Icono de la App",
-    "appList": "Lista de Aplicaciones",
-    "appName": "Nombre de la App",
-    "backupDomains": "Lista de Dominios de Respaldo",
-    "backupDomainsDescription": "Lista de dominios de respaldo para la resolución de dominios, un dominio por línea",
-    "batchDelete": "Eliminar en Lote",
+  "actions": {
     "cancel": "Cancelar",
-    "communicationKey": "Clave de comunicación",
-    "communicationKeyDescription": "Clave utilizada para la comunicación del cliente",
-    "config": "Configuración",
-    "configApp": "Configuración de la Aplicación",
-    "confirm": "Confirmar",
-    "confirmDelete": "Confirmar Eliminación",
-    "create": "Crear",
-    "createApp": "Crear App",
-    "createSuccess": "Creado con éxito",
-    "defaultVersion": "Versión Predeterminada",
     "delete": "Eliminar",
-    "deleteWarning": "Esta acción no se puede deshacer",
-    "describeDescription": "Se utiliza para describir la aplicación, se muestra en la lista de aplicaciones",
-    "description": "Descripción",
-    "downloadLink": "Enlace de Descarga",
     "edit": "Editar",
-    "editApp": "Editar App",
-    "encryption": "Método de encriptación",
-    "encryptionDescription": "Elija el método de encriptación para la comunicación del cliente. Si se selecciona, el cliente utilizará este método para comunicarse con el servidor",
-    "nameDescription": "Nombre de la aplicación, se muestra en la lista de aplicaciones",
-    "platform": "Plataforma",
-    "selectApp": "Seleccionar aplicación",
-    "selectAppDescription": "Seleccione la aplicación para configurar, todos los ajustes se aplicarán a la aplicación seleccionada",
-    "startupPicture": "Imagen de Inicio",
-    "startupPictureDescription": "Imagen de inicio, admite imágenes de red y locales. Para imágenes de red, ingrese la URL completa de la imagen",
-    "startupPicturePreview": "Vista Previa de la Imagen de Inicio",
-    "startupPictureSkip": "Tiempo de Salto de la Imagen de Inicio",
-    "startupPictureSkipDescription": "Tiempo de visualización de la imagen de inicio en segundos, ingrese 0 para no mostrar",
-    "subscriptionProtocol": "Protocolo de Suscripción",
-    "updateSuccess": "Actualizado con éxito",
-    "version": "Versión"
+    "save": "Guardar",
+    "saveTemplate": "Guardar Plantilla"
   },
-  "cancel": "Cancelar",
   "config": {
+    "description": "Gestionar la configuración del sistema de suscripciones",
+    "restrictUserAgent": "Restricción de User-Agent",
+    "restrictUserAgentDescription": "Habilitar restricciones de acceso basadas en User-Agent",
     "singleSubscriptionMode": "Modo de Suscripción Única",
-    "singleSubscriptionModeDescription": "Cuando está habilitado, todas las suscripciones de usuario se convertirán en saldo",
+    "singleSubscriptionModeDescription": "Limitar a los usuarios a una única suscripción activa. Las suscripciones existentes no se verán afectadas.",
     "subscriptionDomain": "Dominio de Suscripción",
-    "subscriptionDomainDescription": "Usado para suscripción; dejar en blanco para usar el dominio del sitio",
+    "subscriptionDomainDescription": "Dominio personalizado para enlaces de suscripción",
     "subscriptionDomainPlaceholder": "Ingrese el dominio de suscripción, uno por línea",
     "subscriptionPath": "Ruta de Suscripción",
-    "subscriptionPathDescription": "Usado para suscripción; asegúrese de reiniciar el sistema después de la modificación para un rendimiento óptimo",
-    "subscriptionPathPlaceholder": "Ingrese",
-    "updateSuccess": "Actualizado con éxito",
-    "wildcardResolution": "Resolución de Comodín",
-    "wildcardResolutionDescription": "Usado para suscripción"
+    "subscriptionPathDescription": "Ruta personalizada para los puntos finales de suscripción (mejor rendimiento después del reinicio del sistema)",
+    "subscriptionPathPlaceholder": "Ingrese la ruta de suscripción",
+    "title": "Configuración de Suscripciones",
+    "updateError": "Error al actualizar",
+    "updateSuccess": "Configuraciones actualizadas con éxito",
+    "userAgentWhitelist": "Lista Blanca de User-Agent",
+    "userAgentWhitelistDescription": "User-Agents permitidos para acceder a las suscripciones, uno por línea. Las plantillas integradas se incluyen automáticamente en la lista blanca",
+    "userAgentWhitelistPlaceholder": "Ingrese los User-Agents permitidos, uno por línea",
+    "wildcardResolution": "Resolución de Comodines",
+    "wildcardResolutionDescription": "Habilitar la resolución de dominio comodín para suscripciones"
   },
-  "confirm": "Confirmar",
-  "confirmDelete": "¿Estás seguro de que deseas eliminar?",
-  "copy": "Copiar",
-  "copySuccess": "Copiado con éxito",
-  "create": "Crear",
-  "createSubscribe": "Crear suscripción",
-  "createSuccess": "Creación exitosa",
-  "delete": "eliminar",
-  "deleteSuccess": "Eliminación exitosa",
-  "deleteWarning": "Después de eliminar, los datos no se podrán recuperar. Proceda con precaución.",
-  "deviceLimit": "Número de dispositivos/unidad",
-  "edit": "editar",
-  "editSubscribe": "Editar suscripción",
-  "form": {
-    "Day": "Día",
-    "Hour": "Hora",
-    "Minute": "Minuto",
-    "Month": "Mes",
-    "NoLimit": "Sin Límite",
-    "Year": "Año",
-    "annualReset": "Reinicio Anual",
-    "basic": "Básico",
-    "cancel": "Cancelar",
-    "confirm": "Confirmar",
-    "deductionRatio": "Configuración de Deducción Automática/Manual",
-    "deductionRatioDescription": "Utilizado para deducciones. Por defecto, el sistema adopta un algoritmo de cálculo automático. Cuando se proporciona un ratio manual, el sistema calcula proporciones basadas en el tiempo y el ratio de tráfico, asegurando que el total sea igual al 100%.",
-    "description": "Descripción",
-    "deviceLimit": "Límite de dispositivos",
-    "discount": "Descuento",
-    "discountDescription": "Descuento basado en el precio unitario",
-    "discountMonths": "Meses",
-    "discountPercent": "Porcentaje de descuento",
-    "discount_price": "Precio con descuento",
-    "duration": "Duración (meses)",
-    "groupId": "Grupo de Suscripción",
-    "inventory": "Límite de suscripción",
-    "monthlyReset": "Reinicio Mensual",
-    "name": "Nombre",
-    "noLimit": "Sin límite",
-    "noReset": "Sin Reinicio",
-    "pricing": "Precios",
-    "purchaseWithDiscount": "Permitir Deducción",
-    "purchaseWithDiscountDescription": "Habilitar o deshabilitar la funcionalidad de cancelación de suscripción. Después de la activación, el sistema realizará el procesamiento de deducción según las reglas y proporciones configuradas, y el valor restante se devolverá al saldo",
-    "quota": "Cantidad de compra limitada",
-    "renewalReset": "Reinicio por Renovación",
-    "renewalResetDescription": "Reiniciar ciclo al renovar",
-    "replacement": "Precio de reposición (cada vez)",
-    "resetCycle": "Ciclo de Reinicio",
-    "resetOn1st": "Reiniciar el día 1",
-    "selectResetCycle": "Por favor, seleccione un ciclo de reinicio",
-    "selectSubscribeGroup": "Por favor, seleccione un grupo de suscripción",
-    "selectUnitTime": "Por favor, seleccione la unidad de tiempo",
-    "server": "Servidor",
-    "serverGroup": "Grupo de servidores",
-    "servers": "Servidores",
-    "speedLimit": "Límite de velocidad ",
-    "traffic": "Tráfico",
-    "unitPrice": "Precio unitario",
-    "unitTime": "Unidad de tiempo"
+  "description": "Configurar ajustes de suscripción y plantillas de cliente",
+  "messages": {
+    "noClients": "No hay Plantillas de Cliente",
+    "noClientsDescription": "Aún no se han configurado plantillas de cliente. Agregue su primera plantilla para comenzar."
   },
-  "group": {
-    "actions": "Acciones",
-    "cancel": "Cancelar",
-    "confirm": "Confirmar",
-    "confirmDelete": "¿Confirmar eliminación?",
-    "create": "Crear",
-    "createSubscribeGroup": "Crear nuevo grupo de suscripción",
-    "createSuccess": "Creación exitosa",
-    "delete": "Eliminar",
-    "deleteSuccess": "Eliminación exitosa",
-    "deleteWarning": "Los datos no se pueden recuperar después de la eliminación, por favor opere con precaución.",
-    "description": "Descripción",
-    "edit": "Editar",
-    "editSubscribeGroup": "Editar grupo de suscripción",
-    "form": {
-      "cancel": "Cancelar",
-      "confirm": "Confirmar",
-      "description": "Descripción",
-      "name": "Nombre"
+  "protocol": {
+    "clients": {
+      "clash": {
+        "features": "Gran ecosistema, reglas completas, comunidad activa"
+      },
+      "egern": {
+        "features": "Cliente moderno para iOS, excelente rendimiento"
+      },
+      "hiddify": {
+        "features": "Multiplataforma, protocolos completos, fácil de usar"
+      },
+      "loon": {
+        "features": "Cliente avanzado para iOS, reglas ricas, interfaz hermosa"
+      },
+      "netch": {
+        "features": "Cliente proxy enfocado en juegos"
+      },
+      "quantumult": {
+        "features": "Cliente avanzado para iOS, reglas flexibles, scripts ricos"
+      },
+      "shadowrocket": {
+        "features": "Cliente clásico para iOS, configuración flexible"
+      },
+      "singbox": {
+        "features": "Último núcleo, GUI oficial, soporte multiplataforma"
+      },
+      "stash": {
+        "features": "Interfaz móvil moderna, protocolos completos"
+      },
+      "surfboard": {
+        "features": "Gratis, desarrollo activo, interfaz moderna"
+      },
+      "surge": {
+        "features": "Herramienta premium para iOS/Mac, características potentes"
+      },
+      "v2box": {
+        "features": "Cliente V2Ray fácil de usar"
+      },
+      "v2rayn": {
+        "features": "Cliente popular para Windows, rico en características"
+      },
+      "v2rayng": {
+        "features": "Cliente popular para Android, ligero"
+      }
     },
-    "name": "Nombre",
-    "title": "Lista de grupos de suscripción",
-    "updateSuccess": "Actualización exitosa",
-    "updatedAt": "Fecha de actualización"
+    "description": "Gestionar plantillas de configuración de suscripción para clientes proxy",
+    "features": "Características Clave",
+    "platforms": "Plataformas",
+    "subscribeTemplate": "Configuración de Plantilla de Suscripción",
+    "templateContent": "Contenido de la Plantilla",
+    "templatePlaceholder": "Ingrese la plantilla de configuración del cliente...",
+    "title": "Plantillas de Suscripción de Cliente"
   },
-  "inventory": "Límite de suscripción",
-  "name": "Nombre",
-  "quota": "Límite de compra/vez",
-  "replacement": "Restablecer precio/vez",
-  "sell": "Venta",
-  "show": "Mostrar",
-  "sold": "Conteo de Suscripciones",
-  "subscribe": "Suscribirse",
-  "subscribeGroup": "Suscribirse al grupo",
-  "tabs": {
-    "subscribe": "Suscribirse",
-    "subscribeApp": "Configuración de la aplicación",
-    "subscribeConfig": "Configuración de suscripción",
-    "subscribeGroup": "Grupo de suscripción"
-  },
-  "traffic": "tráfico",
-  "unitPrice": "Precio Unitario",
-  "updateSuccess": "Actualización exitosa"
+  "title": "Gestión de Suscripciones"
 }

@@ -22,7 +22,7 @@ import { toast } from 'sonner';
 import SubscribeForm from './subscribe-form';
 
 export default function SubscribeTable() {
-  const t = useTranslations('subscribe');
+  const t = useTranslations('product');
   const [loading, setLoading] = useState(false);
   const { data: groups } = useQuery({
     queryKey: ['getSubscribeGroupList', 'all'],

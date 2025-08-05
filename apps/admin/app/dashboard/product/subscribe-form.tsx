@@ -79,7 +79,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
   trigger,
   title,
 }: Readonly<SubscribeFormProps<T>>) {
-  const t = useTranslations('subscribe');
+  const t = useTranslations('product');
   const [open, setOpen] = useState(false);
   const updateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
