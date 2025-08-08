@@ -1,5 +1,6 @@
 'use client';
 
+import { createBatchSendEmailTask, getPreSendEmailCount } from '@/services/admin/marketing';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -33,49 +34,42 @@ import { Textarea } from '@workspace/ui/components/textarea';
 import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
+import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-const emailBroadcastSchema = z.object({
-  subject: z.string().min(1, 'Email subject cannot be empty'),
-  content: z.string().min(1, 'Email content cannot be empty'),
-  // Send settings
-  additional_emails: z
-    .string()
-    .optional()
-    .refine(
-      (value) => {
-        if (!value || value.trim() === '') return true;
-        const emails = value.split('\n').filter((email) => email.trim() !== '');
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emails.every((email) => emailRegex.test(email.trim()));
-      },
-      {
-        message: 'Please enter valid email addresses, one per line',
-      },
-    ),
-  // Send time settings
-  scheduled_time: z.string().optional(),
-  user_filters: z.object({
-    subscription_status: z.string().optional(),
-    registration_date_from: z.string().optional(),
-    registration_date_to: z.string().optional(),
-    user_groups: z.array(z.string()).default([]),
-  }),
-  rate_limit: z.object({
-    email_interval_seconds: z
-      .number()
-      .min(1, 'Email interval (seconds) cannot be less than 1')
-      .default(1),
-    daily_limit: z.number().min(1, 'Daily limit must be at least 1').default(1000),
-  }),
-});
-
-type EmailBroadcastFormData = z.infer<typeof emailBroadcastSchema>;
-
 export default function EmailBroadcastForm() {
+  const t = useTranslations('marketing');
+
+  // Define schema with internationalized error messages
+  const emailBroadcastSchema = z.object({
+    subject: z.string().min(1, t('subject') + ' ' + t('cannotBeEmpty')),
+    content: z.string().min(1, t('content') + ' ' + t('cannotBeEmpty')),
+    scope: z.string().default('all'),
+    register_start_time: z.string().optional(),
+    register_end_time: z.string().optional(),
+    additional: z
+      .string()
+      .optional()
+      .refine(
+        (value) => {
+          if (!value || value.trim() === '') return true;
+          const emails = value.split('\n').filter((email) => email.trim() !== '');
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emails.every((email) => emailRegex.test(email.trim()));
+        },
+        {
+          message: t('pleaseEnterValidEmailAddresses'),
+        },
+      ),
+    scheduled: z.string().optional(),
+    interval: z.number().min(0.1, t('emailIntervalMinimum')).optional(),
+    limit: z.number().min(1, t('dailyLimit')).optional(),
+  });
+
+  type EmailBroadcastFormData = z.infer<typeof emailBroadcastSchema>;
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [estimatedRecipients, setEstimatedRecipients] = useState<{
@@ -89,68 +83,71 @@ export default function EmailBroadcastForm() {
     defaultValues: {
       subject: '',
       content: '',
-      additional_emails: '',
-      scheduled_time: '',
-      user_filters: {
-        subscription_status: 'all',
-        registration_date_from: '',
-        registration_date_to: '',
-        user_groups: [],
-      },
-      rate_limit: {
-        email_interval_seconds: 1,
-        daily_limit: 1000,
-      },
+      scope: 'all',
+      register_start_time: '',
+      register_end_time: '',
+      additional: '',
+      scheduled: '',
+      interval: 1,
+      limit: 1000,
     },
   });
 
   // Calculate recipient count
-  const calculateRecipients = () => {
+  const calculateRecipients = async () => {
     const formData = form.getValues();
 
-    // Simulate user data statistics (should call API in real implementation)
-    let userCount = 0;
+    try {
+      // Call API to get actual recipient count
+      const scope = formData.scope || 'all';
 
-    const sendingScope = formData.user_filters.subscription_status;
-    if (sendingScope === 'skip') {
-      // Send only to additional emails
-      userCount = 0;
-    } else {
-      let baseCount = 1500;
+      // Convert dates to timestamps if they exist
+      let register_start_time: number = 0;
+      let register_end_time: number = 0;
 
-      if (sendingScope === 'active') {
-        baseCount = Math.floor(baseCount * 0.3); // 30% active subscription users
-      } else if (sendingScope === 'expired') {
-        baseCount = Math.floor(baseCount * 0.2); // 20% expired subscription users
-      } else if (sendingScope === 'none') {
-        baseCount = Math.floor(baseCount * 0.5); // 50% no subscription users
-      }
-      // If 'all' or empty, keep baseCount unchanged (all platform users)
-
-      // Date filter impact (simplified calculation)
-      if (
-        formData.user_filters.registration_date_from ||
-        formData.user_filters.registration_date_to
-      ) {
-        baseCount = Math.floor(baseCount * 0.7); // Estimate about 70% after date filtering
+      if (formData.register_start_time) {
+        register_start_time = Math.floor(new Date(formData.register_start_time).getTime());
       }
 
-      userCount = baseCount;
+      if (formData.register_end_time) {
+        register_end_time = Math.floor(new Date(formData.register_end_time).getTime());
+      }
+
+      const response = await getPreSendEmailCount({
+        scope,
+        register_start_time,
+        register_end_time,
+      });
+
+      const userCount = response.data?.data?.count || 0;
+
+      // Calculate additional email count
+      const additionalEmails = formData.additional || '';
+      const additionalCount = additionalEmails
+        .split('\n')
+        .filter((email: string) => email.trim() !== '').length;
+
+      const total = userCount + additionalCount;
+
+      setEstimatedRecipients({
+        users: userCount,
+        additional: additionalCount,
+        total,
+      });
+    } catch (error) {
+      console.error('Failed to get recipient count:', error);
+      // Set to 0 if API fails, don't use fallback simulation
+      const additionalEmails = formData.additional || '';
+      const additionalCount = additionalEmails
+        .split('\n')
+        .filter((email: string) => email.trim() !== '').length;
+
+      setEstimatedRecipients({
+        users: 0,
+        additional: additionalCount,
+        total: additionalCount,
+      });
     }
-
-    // Calculate additional email count
-    const additionalEmails = formData.additional_emails || '';
-    const additionalCount = additionalEmails
-      .split('\n')
-      .filter((email: string) => email.trim() !== '').length;
-
-    const total = userCount + additionalCount;
-
-    setEstimatedRecipients({
-      users: userCount,
-      additional: additionalCount,
-      total,
-    });
   };
 
   // Listen to form changes
@@ -158,42 +155,72 @@ export default function EmailBroadcastForm() {
 
   // Use useEffect to respond to form changes
   useEffect(() => {
-    calculateRecipients();
+    const debounceTimer = setTimeout(() => {
+      calculateRecipients();
+    }, 500); // Add debounce to avoid too frequent API calls
+
+    return () => clearTimeout(debounceTimer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    watchedValues.user_filters?.subscription_status,
-    watchedValues.user_filters?.registration_date_from,
-    watchedValues.user_filters?.registration_date_to,
-    watchedValues.additional_emails,
+    watchedValues.scope,
+    watchedValues.register_start_time,
+    watchedValues.register_end_time,
+    watchedValues.additional,
   ]);
 
   const onSubmit = async (data: EmailBroadcastFormData) => {
     setLoading(true);
     try {
       // Validate scheduled send time
-      if (data.scheduled_time && data.scheduled_time.trim() !== '') {
-        const scheduledDate = new Date(data.scheduled_time);
+      let scheduled: number | undefined;
+      if (data.scheduled && data.scheduled.trim() !== '') {
+        const scheduledDate = new Date(data.scheduled);
         const now = new Date();
         if (scheduledDate <= now) {
-          toast.error('Scheduled send time must be later than current time');
+          toast.error(t('scheduledSendTimeMustBeLater'));
           return;
         }
+        scheduled = Math.floor(scheduledDate.getTime());
       }
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log('Email broadcast data:', data);
+      let register_start_time: number = 0;
+      let register_end_time: number = 0;
 
-      if (!data.scheduled_time || data.scheduled_time.trim() === '') {
-        toast.success('Email sent successfully');
+      if (data.register_start_time) {
+        register_start_time = Math.floor(new Date(data.register_start_time).getTime());
+      }
+
+      if (data.register_end_time) {
+        register_end_time = Math.floor(new Date(data.register_end_time).getTime());
+      }
+
+      // Prepare API request data
+      const requestData: API.CreateBatchSendEmailTaskRequest = {
+        subject: data.subject,
+        content: data.content,
+        scope: data.scope,
+        register_start_time,
+        register_end_time,
+        additional: data.additional || undefined,
+        scheduled,
+        interval: data.interval ? data.interval * 1000 : undefined, // Convert seconds to milliseconds
+        limit: data.limit,
+      };
+
+      // Call API to create batch send email task
+      await createBatchSendEmailTask(requestData);
+
+      if (!data.scheduled || data.scheduled.trim() === '') {
+        toast.success(t('emailBroadcastTaskCreatedSuccessfully'));
       } else {
-        toast.success('Email added to scheduled send queue');
+        toast.success(t('emailAddedToScheduledQueue'));
       }
 
       form.reset();
       setOpen(false);
     } catch (error) {
-      toast.error('Send failed, please try again');
+      console.error('Email broadcast failed:', error);
+      toast.error(t('sendFailed'));
     } finally {
       setLoading(false);
     }
@@ -208,8 +235,10 @@ export default function EmailBroadcastForm() {
               <Icon icon='mdi:email-send' className='text-primary h-5 w-5' />
             </div>
             <div className='flex-1'>
-              <p className='font-medium'>Email Broadcast</p>
-              <p className='text-muted-foreground text-sm'>Create new email broadcast campaign</p>
+              <p className='font-medium'>{t('emailBroadcast')}</p>
+              <p className='text-muted-foreground text-sm'>
+                {t('createNewEmailBroadcastCampaign')}
+              </p>
             </div>
           </div>
           <Icon icon='mdi:chevron-right' className='size-6' />
@@ -217,7 +246,7 @@ export default function EmailBroadcastForm() {
       </SheetTrigger>
       <SheetContent className='w-[700px] max-w-full md:max-w-screen-lg'>
         <SheetHeader>
-          <SheetTitle>Create Email Broadcast</SheetTitle>
+          <SheetTitle>{t('createBroadcast')}</SheetTitle>
         </SheetHeader>
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))] px-6'>
           <Form {...form}>
@@ -228,8 +257,8 @@ export default function EmailBroadcastForm() {
             >
               <Tabs defaultValue='content' className='space-y-2'>
                 <TabsList className='grid w-full grid-cols-2'>
-                  <TabsTrigger value='content'>Email Content</TabsTrigger>
-                  <TabsTrigger value='settings'>Send Settings</TabsTrigger>
+                  <TabsTrigger value='content'>{t('content')}</TabsTrigger>
+                  <TabsTrigger value='settings'>{t('sendSettings')}</TabsTrigger>
                 </TabsList>
                 {/* Email Content Tab */}
                 <TabsContent value='content' className='space-y-2'>
@@ -238,9 +267,12 @@ export default function EmailBroadcastForm() {
                     name='subject'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Subject</FormLabel>
+                        <FormLabel>{t('subject')}</FormLabel>
                         <FormControl>
-                          <Input placeholder='Please enter email subject' {...field} />
+                          <Input
+                            placeholder={`${t('pleaseEnter')} ${t('subject').toLowerCase()}`}
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -252,7 +284,7 @@ export default function EmailBroadcastForm() {
                     name='content'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Content</FormLabel>
+                        <FormLabel>{t('content')}</FormLabel>
                         <FormControl>
                           <MarkdownEditor
                             value={field.value}
@@ -261,9 +293,7 @@ export default function EmailBroadcastForm() {
                             }}
                           />
                         </FormControl>
-                        <FormDescription>
-                          Use Markdown editor to write email content with preview functionality
-                        </FormDescription>
+                        <FormDescription>{t('useMarkdownEditor')}</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -276,32 +306,27 @@ export default function EmailBroadcastForm() {
                   <div className='grid grid-cols-2 items-center gap-4'>
                     <FormField
                       control={form.control}
-                      name='user_filters.subscription_status'
+                      name='scope'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Send Scope</FormLabel>
+                          <FormLabel>{t('sendScope')}</FormLabel>
                           <Select onValueChange={field.onChange} value={field.value || 'all'}>
                             <FormControl>
                               <SelectTrigger>
-                                <SelectValue placeholder='Select send scope' />
+                                <SelectValue placeholder={t('selectSendScope')} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value='all'>All platform users</SelectItem>
-                              <SelectItem value='active'>Active subscription users only</SelectItem>
+                              <SelectItem value='all'>{t('allUsers')}</SelectItem>
+                              <SelectItem value='active'>{t('subscribedUsersOnly')}</SelectItem>
                               <SelectItem value='expired'>
-                                Expired subscription users only
+                                {t('expiredSubscriptionUsersOnly')}
                               </SelectItem>
-                              <SelectItem value='none'>No subscription users only</SelectItem>
-                              <SelectItem value='skip'>
-                                Additional emails only (skip platform users)
-                              </SelectItem>
+                              <SelectItem value='none'>{t('noSubscriptionUsersOnly')}</SelectItem>
+                              <SelectItem value='skip'>{t('specificUsersOnly')}</SelectItem>
                             </SelectContent>
                           </Select>
-                          <FormDescription>
-                            Choose the user scope for email sending. Select &ldquo;Additional emails
-                            only&rdquo; to send only to the email addresses filled below
-                          </FormDescription>
+                          <FormDescription>{t('sendScopeDescription')}</FormDescription>
                         </FormItem>
                       )}
                     />
@@ -309,12 +334,12 @@ export default function EmailBroadcastForm() {
                     {/* Estimated recipients info */}
                     <div className='flex justify-end'>
                       <div className='border-l-primary bg-primary/10 border-l-4 px-4 py-3 text-sm'>
-                        <span className='text-muted-foreground'>Estimated recipients: </span>
+                        <span className='text-muted-foreground'>{t('estimatedRecipients')}: </span>
                         <span className='text-primary text-lg font-medium'>
                           {estimatedRecipients.total}
                         </span>
                         <span className='text-muted-foreground ml-2 text-xs'>
-                          (users: {estimatedRecipients.users}, additional:{' '}
+                          ({t('users')}: {estimatedRecipients.users}, {t('additional')}:{' '}
                           {estimatedRecipients.additional})
                         </span>
                       </div>
@@ -324,41 +349,37 @@ export default function EmailBroadcastForm() {
                   <div className='grid grid-cols-2 gap-4'>
                     <FormField
                       control={form.control}
-                      name='user_filters.registration_date_from'
+                      name='register_start_time'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Registration Start Date</FormLabel>
+                          <FormLabel>{t('registrationStartDate')}</FormLabel>
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
-                              disabled={form.watch('user_filters.subscription_status') === 'skip'}
+                              disabled={form.watch('scope') === 'skip'}
                               value={field.value}
                               onValueChange={field.onChange}
                             />
                           </FormControl>
-                          <FormDescription>
-                            Include users registered on or after this date
-                          </FormDescription>
+                          <FormDescription>{t('includeUsersRegisteredAfter')}</FormDescription>
                         </FormItem>
                       )}
                     />
                     <FormField
                       control={form.control}
-                      name='user_filters.registration_date_to'
+                      name='register_end_time'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Registration End Date</FormLabel>
+                          <FormLabel>{t('registrationEndDate')}</FormLabel>
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
-                              disabled={form.watch('user_filters.subscription_status') === 'skip'}
+                              disabled={form.watch('scope') === 'skip'}
                               value={field.value}
                               onValueChange={field.onChange}
                             />
                           </FormControl>
-                          <FormDescription>
-                            Include users registered on or before this date
-                          </FormDescription>
+                          <FormDescription>{t('includeUsersRegisteredBefore')}</FormDescription>
                         </FormItem>
                       )}
                     />
@@ -367,21 +388,18 @@ export default function EmailBroadcastForm() {
                   {/* Additional recipients */}
                   <FormField
                     control={form.control}
-                    name='additional_emails'
+                    name='additional'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Additional Recipient Emails</FormLabel>
+                        <FormLabel>{t('additionalRecipientEmails')}</FormLabel>
                         <FormControl>
                           <Textarea
-                            placeholder={`Please enter additional recipient emails, one per line, for example:\nexample1@domain.com\nexample2@domain.com\nexample3@domain.com`}
+                            placeholder={`${t('pleaseEnter')}${t('additionalRecipientEmails').toLowerCase()}，${t('onePerLine')}，for example:\nexample1@domain.com\nexample2@domain.com\nexample3@domain.com`}
                             className='min-h-[120px] font-mono text-sm'
                             {...field}
                           />
                         </FormControl>
-                        <FormDescription>
-                          These emails will receive the email additionally, not affected by the user
-                          filter conditions above
-                        </FormDescription>
+                        <FormDescription>{t('additionalRecipientsDescription')}</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -390,21 +408,19 @@ export default function EmailBroadcastForm() {
                   {/* Send time settings */}
                   <FormField
                     control={form.control}
-                    name='scheduled_time'
+                    name='scheduled'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Scheduled Send</FormLabel>
+                        <FormLabel>{t('scheduledSend')}</FormLabel>
                         <FormControl>
                           <EnhancedInput
                             type='datetime-local'
-                            placeholder='Leave empty for immediate send'
+                            placeholder={t('leaveEmptyForImmediateSend')}
                             value={field.value}
                             onValueChange={field.onChange}
                           />
                         </FormControl>
-                        <FormDescription>
-                          Select send time, leave empty for immediate send
-                        </FormDescription>
+                        <FormDescription>{t('selectSendTime')}</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -414,43 +430,42 @@ export default function EmailBroadcastForm() {
                   <div className='grid grid-cols-2 gap-4'>
                     <FormField
                       control={form.control}
-                      name='rate_limit.email_interval_seconds'
+                      name='interval'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email Interval (seconds)</FormLabel>
+                          <FormLabel>{t('emailInterval')}</FormLabel>
                           <FormControl>
                             <Input
                               type='number'
-                              min={0}
+                              min={1}
                               step={0.1}
                               placeholder='1'
                               {...field}
                               onChange={(e) => field.onChange(parseFloat(e.target.value) || 1)}
                             />
                           </FormControl>
-                          <FormDescription>Interval time between each email</FormDescription>
+                          <FormDescription>{t('intervalTimeBetweenEmails')}</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
                     <FormField
                       control={form.control}
-                      name='rate_limit.daily_limit'
+                      name='limit'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Daily Send Limit</FormLabel>
+                          <FormLabel>{t('dailySendLimit')}</FormLabel>
                           <FormControl>
                             <Input
                               type='number'
                               min={1}
+                              step={1}
                               placeholder='1000'
                               {...field}
                               onChange={(e) => field.onChange(parseInt(e.target.value) || 1000)}
                             />
                           </FormControl>
-                          <FormDescription>
-                            Maximum number of emails to send per day
-                          </FormDescription>
+                          <FormDescription>{t('maximumNumberPerDay')}</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -463,15 +478,15 @@ export default function EmailBroadcastForm() {
         </ScrollArea>
         <SheetFooter className='flex flex-row items-center justify-end gap-2 pt-3'>
           <Button variant='outline' onClick={() => setOpen(false)}>
-            Cancel
+            {t('cancel')}
           </Button>
           <Button type='submit' form='broadcast-form' disabled={loading}>
             {loading && <Icon icon='mdi:loading' className='mr-2 h-4 w-4 animate-spin' />}
             {loading
-              ? 'Processing...'
-              : !form.watch('scheduled_time') || form.watch('scheduled_time')?.trim() === ''
-                ? 'Send Now'
-                : 'Schedule Send'}
+              ? t('processing')
+              : !form.watch('scheduled') || form.watch('scheduled')?.trim() === ''
+                ? t('sendNow')
+                : t('scheduleSend')}
           </Button>
         </SheetFooter>
       </SheetContent>

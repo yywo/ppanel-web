@@ -155,6 +155,26 @@ declare namespace API {
     ids: number[];
   };
 
+  type BatchSendEmailTask = {
+    id: number;
+    subject: string;
+    content: string;
+    recipients: string;
+    scope: string;
+    register_start_time: number;
+    register_end_time: number;
+    additional: string;
+    scheduled: number;
+    interval: number;
+    limit: number;
+    status: number;
+    errors: string;
+    total: number;
+    current: number;
+    created_at: number;
+    updated_at: number;
+  };
+
   type CheckoutOrderRequest = {
     orderNo: string;
     returnUrl?: string;
@@ -218,6 +238,18 @@ declare namespace API {
     platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
     is_default: boolean;
     application_id: number;
+  };
+
+  type CreateBatchSendEmailTaskRequest = {
+    subject: string;
+    content: string;
+    scope: string;
+    register_start_time?: number;
+    register_end_time?: number;
+    additional?: string;
+    scheduled?: number;
+    interval?: number;
+    limit?: number;
   };
 
   type CreateCouponRequest = {
@@ -301,6 +333,18 @@ declare namespace API {
     rules: string;
     default: boolean;
     enable: boolean;
+  };
+
+  type CreateSubscribeApplicationRequest = {
+    name: string;
+    description?: string;
+    icon?: string;
+    user_agent: string;
+    is_default: boolean;
+    proxy_template: string;
+    template: string;
+    output_format: string;
+    download_link?: string;
   };
 
   type CreateSubscribeGroupRequest = {
@@ -409,6 +453,10 @@ declare namespace API {
   };
 
   type DeleteRuleGroupRequest = {
+    id: number;
+  };
+
+  type DeleteSubscribeApplicationRequest = {
     id: number;
   };
 
@@ -548,6 +596,36 @@ declare namespace API {
 
   type GetAvailablePaymentMethodsResponse = {
     list: PaymentMethod[];
+  };
+
+  type GetBatchSendEmailTaskListParams = {
+    page: number;
+    size: number;
+    scope?: string;
+    status?: number;
+  };
+
+  type GetBatchSendEmailTaskListRequest = {
+    page: number;
+    size: number;
+    scope?: string;
+    status?: number;
+  };
+
+  type GetBatchSendEmailTaskListResponse = {
+    total: number;
+    list: BatchSendEmailTask[];
+  };
+
+  type GetBatchSendEmailTaskStatusRequest = {
+    id: number;
+  };
+
+  type GetBatchSendEmailTaskStatusResponse = {
+    status: number;
+    current: number;
+    total: number;
+    errors: string;
   };
 
   type GetCouponListParams = {
@@ -709,9 +787,34 @@ declare namespace API {
     list: PaymentMethodDetail[];
   };
 
+  type GetPreSendEmailCountRequest = {
+    scope: string;
+    register_start_time?: number;
+    register_end_time?: number;
+  };
+
+  type GetPreSendEmailCountResponse = {
+    count: number;
+  };
+
   type GetRuleGroupResponse = {
     total: number;
     list: ServerRuleGroup[];
+  };
+
+  type GetSubscribeApplicationListParams = {
+    page: number;
+    size: number;
+  };
+
+  type GetSubscribeApplicationListRequest = {
+    page: number;
+    size: number;
+  };
+
+  type GetSubscribeApplicationListResponse = {
+    total: number;
+    list: SubscribeApplication[];
   };
 
   type GetSubscribeDetailsParams = {
@@ -1347,6 +1450,10 @@ declare namespace API {
     sort: number;
   };
 
+  type StopBatchSendEmailTaskRequest = {
+    id: number;
+  };
+
   type StripePayment = {
     method: string;
     client_secret: string;
@@ -1376,6 +1483,21 @@ declare namespace API {
     allow_deduction: boolean;
     reset_cycle: number;
     renewal_reset: boolean;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type SubscribeApplication = {
+    id: number;
+    name: string;
+    description?: string;
+    icon?: string;
+    user_agent: string;
+    is_default: boolean;
+    proxy_template: string;
+    template: string;
+    output_format: string;
+    download_link?: string;
     created_at: number;
     updated_at: number;
   };
@@ -1639,6 +1761,19 @@ declare namespace API {
     rules: string;
     default: boolean;
     enable: boolean;
+  };
+
+  type UpdateSubscribeApplicationRequest = {
+    id: number;
+    name: string;
+    description?: string;
+    icon?: string;
+    user_agent: string;
+    is_default: boolean;
+    proxy_template: string;
+    template: string;
+    output_format: string;
+    download_link?: string;
   };
 
   type UpdateSubscribeGroupRequest = {

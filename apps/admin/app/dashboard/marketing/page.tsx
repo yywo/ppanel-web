@@ -3,15 +3,15 @@
 import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/table';
 import { useTranslations } from 'next-intl';
 import EmailBroadcastForm from './email/broadcast-form';
-import BroadcastLogsTable from './email/logs-table';
+import EmailTaskManager from './email/task-manager';
 
 export default function MarketingPage() {
   const t = useTranslations('marketing');
 
   const formSections = [
     {
-      title: 'Email Marketing',
-      forms: [{ component: EmailBroadcastForm }, { component: BroadcastLogsTable }],
+      title: t('emailMarketing'),
+      forms: [{ component: EmailBroadcastForm }, { component: EmailTaskManager }],
     },
   ];
 
