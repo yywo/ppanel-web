@@ -1,17 +1,27 @@
 {
   "actions": {
+    "add": "添加",
+    "batchDelete": "批量刪除",
+    "batchDeleteSuccess": "成功刪除 {count} 個客戶端",
+    "batchDeleteWarning": "您確定要刪除選定的 {count} 個客戶端嗎？",
     "cancel": "取消",
+    "confirm": "確認",
+    "confirmDelete": "確認刪除",
+    "createSuccess": "創建成功",
     "delete": "刪除",
+    "deleteFailed": "刪除失敗",
+    "deleteSuccess": "刪除成功",
+    "deleteWarning": "此操作無法撤銷。您確定要刪除此客戶端嗎？",
     "edit": "編輯",
     "save": "保存",
-    "saveTemplate": "保存模板"
+    "saveFailed": "保存失敗",
+    "update": "更新",
+    "updateSuccess": "更新成功"
   },
   "config": {
     "description": "管理訂閱系統設置",
-    "restrictUserAgent": "用戶代理限制",
-    "restrictUserAgentDescription": "根據用戶代理啟用訪問限制",
     "singleSubscriptionMode": "單一訂閱模式",
-    "singleSubscriptionModeDescription": "將所有用戶訂閱轉換為賬戶餘額",
+    "singleSubscriptionModeDescription": "限制用戶只能有一個有效的訂閱。現有訂閱不受影響",
     "subscriptionDomain": "訂閱域名",
     "subscriptionDomainDescription": "訂閱鏈接的自定義域名",
     "subscriptionDomainPlaceholder": "輸入訂閱域名，每行一個",
@@ -21,69 +31,69 @@
     "title": "訂閱配置",
     "updateError": "更新失敗",
     "updateSuccess": "設置更新成功",
-    "userAgentWhitelist": "用戶代理白名單",
-    "userAgentWhitelistDescription": "訂閱訪問的允許用戶代理，每行一個。內置模板會自動包含在白名單中",
-    "userAgentWhitelistPlaceholder": "輸入允許的用戶代理，每行一個",
+    "userAgentLimit": "{userAgent} 限制",
+    "userAgentLimitDescription": "根據 {userAgent} 啟用訪問限制",
+    "userAgentList": "{userAgent} 白名單",
+    "userAgentListDescription": "允許的 {userAgent} 用於訂閱訪問，每行一個。配置的應用程序 {userAgent} 將自動包含",
+    "userAgentListPlaceholder": "輸入允許的 {userAgent}，每行一個",
     "wildcardResolution": "通配符解析",
     "wildcardResolutionDescription": "啟用訂閱的通配符域名解析"
   },
-  "description": "配置訂閱設置和客戶端模板",
-  "messages": {
-    "noClients": "沒有客戶端模板",
-    "noClientsDescription": "尚未配置客戶端模板。添加您的第一個模板以開始。"
+  "form": {
+    "addTitle": "添加客戶端",
+    "descriptions": {
+      "description": "詳細的客戶端描述",
+      "downloadLink": "平台下載 URL",
+      "icon": "圖標 URL 或 base64 編碼",
+      "name": "客戶端顯示名稱",
+      "outputFormat": "訂閱配置文件格式",
+      "proxyTemplate": "訂閱鏈接模板，支持變量：",
+      "template": "訂閱配置模板，支持各種變量",
+      "userAgentPrefix": "用於區分不同客戶端的客戶端標識符"
+    },
+    "editTitle": "編輯客戶端",
+    "fields": {
+      "description": "描述",
+      "icon": "圖標",
+      "name": "名稱",
+      "outputFormat": "輸出格式",
+      "proxyTemplate": "訂閱鏈接",
+      "template": "配置模板"
+    },
+    "tabs": {
+      "basic": "基本信息",
+      "download": "下載",
+      "template": "模板"
+    },
+    "validation": {
+      "nameRequired": "客戶端名稱是必需的",
+      "userAgentRequiredSuffix": "是必需的"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "純文本",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "龐大的生態系統，全面的規則，活躍的社區"
-      },
-      "egern": {
-        "features": "現代iOS客戶端，卓越的性能"
-      },
-      "hiddify": {
-        "features": "多平台，全面的協議，適合初學者"
-      },
-      "loon": {
-        "features": "iOS高級客戶端，豐富的規則，美觀的界面"
-      },
-      "netch": {
-        "features": "以遊戲為重點的代理客戶端"
-      },
-      "quantumult": {
-        "features": "iOS高級客戶端，靈活的規則，豐富的腳本"
-      },
-      "shadowrocket": {
-        "features": "經典iOS客戶端，靈活的配置"
-      },
-      "singbox": {
-        "features": "最新內核，官方GUI，多平台支持"
-      },
-      "stash": {
-        "features": "現代移動UI，全面的協議"
-      },
-      "surfboard": {
-        "features": "免費，活躍開發，現代界面"
-      },
-      "surge": {
-        "features": "高級iOS/Mac工具，強大的功能"
-      },
-      "v2box": {
-        "features": "用戶友好的V2Ray客戶端"
-      },
-      "v2rayn": {
-        "features": "流行的Windows客戶端，功能豐富"
-      },
-      "v2rayng": {
-        "features": "流行的Android客戶端，輕量級"
-      }
-    },
-    "description": "管理代理客戶端的訂閱配置模板",
-    "features": "主要特點",
-    "platforms": "平台",
-    "subscribeTemplate": "訂閱模板配置",
-    "templateContent": "模板內容",
-    "templatePlaceholder": "輸入客戶端配置模板...",
-    "title": "客戶端訂閱模板"
+    "title": "客戶端管理"
   },
-  "title": "訂閱管理"
+  "table": {
+    "columns": {
+      "default": "默認",
+      "description": "描述",
+      "name": "客戶端名稱",
+      "outputFormat": "輸出格式",
+      "supportedPlatforms": "支持的平台"
+    }
+  }
 }

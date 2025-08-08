@@ -1,17 +1,27 @@
 {
   "actions": {
+    "add": "Ajouter",
+    "batchDelete": "Suppression par lot",
+    "batchDeleteSuccess": "Suppression de {count} clients réussie",
+    "batchDeleteWarning": "Êtes-vous sûr de vouloir supprimer les {count} clients sélectionnés ?",
     "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "confirmDelete": "Confirmer la suppression",
+    "createSuccess": "Créé avec succès",
     "delete": "Supprimer",
+    "deleteFailed": "Échec de la suppression",
+    "deleteSuccess": "Supprimé avec succès",
+    "deleteWarning": "Cette opération ne peut pas être annulée. Êtes-vous sûr de vouloir supprimer ce client ?",
     "edit": "Modifier",
     "save": "Enregistrer",
-    "saveTemplate": "Enregistrer le modèle"
+    "saveFailed": "Échec de l'enregistrement",
+    "update": "Mettre à jour",
+    "updateSuccess": "Mis à jour avec succès"
   },
   "config": {
     "description": "Gérer les paramètres du système d'abonnement",
-    "restrictUserAgent": "Restriction de l'User-Agent",
-    "restrictUserAgentDescription": "Activer les restrictions d'accès basées sur l'User-Agent",
     "singleSubscriptionMode": "Mode d'abonnement unique",
-    "singleSubscriptionModeDescription": "Limiter les utilisateurs à une seule souscription active. Les souscriptions existantes ne sont pas affectées",
+    "singleSubscriptionModeDescription": "Limiter les utilisateurs à un abonnement actif. Les abonnements existants ne sont pas affectés",
     "subscriptionDomain": "Domaine d'abonnement",
     "subscriptionDomainDescription": "Domaine personnalisé pour les liens d'abonnement",
     "subscriptionDomainPlaceholder": "Entrez le domaine d'abonnement, un par ligne",
@@ -21,69 +31,69 @@
     "title": "Configuration de l'abonnement",
     "updateError": "Échec de la mise à jour",
     "updateSuccess": "Paramètres mis à jour avec succès",
-    "userAgentWhitelist": "Liste blanche des User-Agents",
-    "userAgentWhitelistDescription": "User-Agents autorisés pour l'accès à la souscription, un par ligne. Les modèles intégrés sont automatiquement inclus dans la liste blanche",
-    "userAgentWhitelistPlaceholder": "Entrez les User-Agents autorisés, un par ligne",
+    "userAgentLimit": "Restriction de {userAgent}",
+    "userAgentLimitDescription": "Activer les restrictions d'accès basées sur {userAgent}",
+    "userAgentList": "Liste blanche {userAgent}",
+    "userAgentListDescription": "{userAgent} autorisés pour l'accès à l'abonnement, un par ligne. L'application configurée {userAgent} sera automatiquement incluse",
+    "userAgentListPlaceholder": "Entrez les {userAgent} autorisés, un par ligne",
     "wildcardResolution": "Résolution de wildcard",
     "wildcardResolutionDescription": "Activer la résolution de domaine wildcard pour les abonnements"
   },
-  "description": "Configurer les paramètres d'abonnement et les modèles de client",
-  "messages": {
-    "noClients": "Aucun modèle de client",
-    "noClientsDescription": "Aucun modèle de client configuré pour le moment. Ajoutez votre premier modèle pour commencer."
+  "form": {
+    "addTitle": "Ajouter un client",
+    "descriptions": {
+      "description": "Description détaillée du client",
+      "downloadLink": "URL de téléchargement de la plateforme",
+      "icon": "URL de l'icône ou encodage base64",
+      "name": "Nom d'affichage du client",
+      "outputFormat": "Format du fichier de configuration d'abonnement",
+      "proxyTemplate": "Modèle de lien d'abonnement, prend en charge les variables : ",
+      "template": "Modèle de configuration d'abonnement, prend en charge diverses variables",
+      "userAgentPrefix": "Identifiant du client pour distinguer les différents clients."
+    },
+    "editTitle": "Modifier un client",
+    "fields": {
+      "description": "Description",
+      "icon": "Icône",
+      "name": "Nom",
+      "outputFormat": "Format de sortie",
+      "proxyTemplate": "Lien d'abonnement",
+      "template": "Modèle de configuration"
+    },
+    "tabs": {
+      "basic": "Informations de base",
+      "download": "Téléchargements",
+      "template": "Modèles"
+    },
+    "validation": {
+      "nameRequired": "Le nom du client est requis",
+      "userAgentRequiredSuffix": "est requis"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Texte brut",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Écosystème vaste, règles complètes, communauté active"
-      },
-      "egern": {
-        "features": "Client iOS moderne, excellente performance"
-      },
-      "hiddify": {
-        "features": "Multi-plateforme, protocoles complets, convivial pour les débutants"
-      },
-      "loon": {
-        "features": "Client avancé iOS, règles riches, interface magnifique"
-      },
-      "netch": {
-        "features": "Client proxy axé sur le jeu"
-      },
-      "quantumult": {
-        "features": "Client avancé iOS, règles flexibles, scripts riches"
-      },
-      "shadowrocket": {
-        "features": "Client classique iOS, configuration flexible"
-      },
-      "singbox": {
-        "features": "Noyau le plus récent, interface graphique officielle, support multi-plateforme"
-      },
-      "stash": {
-        "features": "Interface mobile moderne, protocoles complets"
-      },
-      "surfboard": {
-        "features": "Gratuit, développement actif, interface moderne"
-      },
-      "surge": {
-        "features": "Outil premium iOS/Mac, fonctionnalités puissantes"
-      },
-      "v2box": {
-        "features": "Client V2Ray convivial"
-      },
-      "v2rayn": {
-        "features": "Client Windows populaire, riche en fonctionnalités"
-      },
-      "v2rayng": {
-        "features": "Client Android populaire, léger"
-      }
-    },
-    "description": "Gérer les modèles de configuration d'abonnement pour les clients proxy",
-    "features": "Fonctionnalités clés",
-    "platforms": "Plateformes",
-    "subscribeTemplate": "Configuration du modèle d'abonnement",
-    "templateContent": "Contenu du modèle",
-    "templatePlaceholder": "Entrez le modèle de configuration du client...",
-    "title": "Modèles d'abonnement des clients"
+    "title": "Gestion des clients"
   },
-  "title": "Gestion des abonnements"
+  "table": {
+    "columns": {
+      "default": "Par défaut",
+      "description": "Description",
+      "name": "Nom du client",
+      "outputFormat": "Format de sortie",
+      "supportedPlatforms": "Plateformes prises en charge"
+    }
+  }
 }

@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Adaugă",
+    "batchDelete": "Ștergere în masă",
+    "batchDeleteSuccess": "Ștergerea a {count} clienți a fost realizată cu succes",
+    "batchDeleteWarning": "Ești sigur că vrei să ștergi cei {count} clienți selectați?",
     "cancel": "Anulează",
+    "confirm": "Confirmă",
+    "confirmDelete": "Confirmă ștergerea",
+    "createSuccess": "Creat cu succes",
     "delete": "Șterge",
+    "deleteFailed": "Ștergerea a eșuat",
+    "deleteSuccess": "Șters cu succes",
+    "deleteWarning": "Această operațiune nu poate fi anulată. Ești sigur că vrei să ștergi acest client?",
     "edit": "Editează",
     "save": "Salvează",
-    "saveTemplate": "Salvează Șablon"
+    "saveFailed": "Salvarea a eșuat",
+    "update": "Actualizează",
+    "updateSuccess": "Actualizat cu succes"
   },
   "config": {
     "description": "Gestionează setările sistemului de abonamente",
-    "restrictUserAgent": "Restricție User-Agent",
-    "restrictUserAgentDescription": "Activează restricții de acces bazate pe User-Agent",
-    "singleSubscriptionMode": "Mod Abonament Unic",
-    "singleSubscriptionModeDescription": "Limitează utilizatorii la o singură subscripție activă. Subscripțiile existente nu sunt afectate",
-    "subscriptionDomain": "Domeniu Abonament",
+    "singleSubscriptionMode": "Mod de Abonament Unic",
+    "singleSubscriptionModeDescription": "Limitează utilizatorii la un singur abonament activ. Abonamentele existente nu sunt afectate",
+    "subscriptionDomain": "Domeniu de Abonament",
     "subscriptionDomainDescription": "Domeniu personalizat pentru linkurile de abonament",
     "subscriptionDomainPlaceholder": "Introdu domeniul de abonament, câte unul pe linie",
-    "subscriptionPath": "Cale Abonament",
+    "subscriptionPath": "Cale de Abonament",
     "subscriptionPathDescription": "Cale personalizată pentru punctele finale de abonament (performanță mai bună după repornirea sistemului)",
     "subscriptionPathPlaceholder": "Introdu calea de abonament",
     "title": "Configurare Abonament",
     "updateError": "Actualizarea a eșuat",
     "updateSuccess": "Setările au fost actualizate cu succes",
-    "userAgentWhitelist": "Lista albă User-Agent",
-    "userAgentWhitelistDescription": "User-Agent-uri permise pentru accesul la subscripție, câte unul pe linie. Șabloanele încorporate sunt incluse automat în lista albă",
-    "userAgentWhitelistPlaceholder": "Introdu User-Agent-uri permise, câte unul pe linie",
+    "userAgentLimit": "Restricție {userAgent}",
+    "userAgentLimitDescription": "Activați restricțiile de acces bazate pe {userAgent}",
+    "userAgentList": "Lista albă {userAgent}",
+    "userAgentListDescription": "{userAgent} permise pentru accesul la abonament, câte unul pe linie. Aplicația configurată {userAgent} va fi inclusă automat",
+    "userAgentListPlaceholder": "Introduceți {userAgent} permise, câte unul pe linie",
     "wildcardResolution": "Rezolvare Wildcard",
     "wildcardResolutionDescription": "Activează rezolvarea domeniului wildcard pentru abonamente"
   },
-  "description": "Configurează setările de abonament și șabloanele clientului",
-  "messages": {
-    "noClients": "Niciun Șablon Client",
-    "noClientsDescription": "Nu sunt configurate încă șabloane pentru clienți. Adaugă primul tău șablon pentru a începe."
+  "form": {
+    "addTitle": "Adaugă Client",
+    "descriptions": {
+      "description": "Descriere detaliată a clientului",
+      "downloadLink": "URL-ul de descărcare al platformei",
+      "icon": "URL-ul iconiței sau codificare base64",
+      "name": "Numele de afișare al clientului",
+      "outputFormat": "Formatul fișierului de configurare a abonamentului",
+      "proxyTemplate": "Șablonul linkului de abonament, suportă variabile: ",
+      "template": "Șablonul de configurare a abonamentului, suportă diverse variabile",
+      "userAgentPrefix": "Identificatorul clientului pentru a distinge diferite clienți"
+    },
+    "editTitle": "Editează Client",
+    "fields": {
+      "description": "Descriere",
+      "icon": "Iconiță",
+      "name": "Nume",
+      "outputFormat": "Format de Ieșire",
+      "proxyTemplate": "Link de Abonament",
+      "template": "Șablon Config"
+    },
+    "tabs": {
+      "basic": "Informații de Bază",
+      "download": "Descărcări",
+      "template": "Șabloane"
+    },
+    "validation": {
+      "nameRequired": "Numele clientului este necesar",
+      "userAgentRequiredSuffix": "este necesar"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Text Simplu",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Ecosistem mare, reguli cuprinzătoare, comunitate activă"
-      },
-      "egern": {
-        "features": "Client modern pentru iOS, performanță excelentă"
-      },
-      "hiddify": {
-        "features": "Multi-platformă, protocoale cuprinzătoare, prietenos pentru începători"
-      },
-      "loon": {
-        "features": "Client avansat pentru iOS, reguli bogate, interfață frumoasă"
-      },
-      "netch": {
-        "features": "Client proxy axat pe gaming"
-      },
-      "quantumult": {
-        "features": "Client avansat pentru iOS, reguli flexibile, scripturi bogate"
-      },
-      "shadowrocket": {
-        "features": "Client clasic pentru iOS, configurare flexibilă"
-      },
-      "singbox": {
-        "features": "Kernelul cel mai recent, GUI oficial, suport multi-platformă"
-      },
-      "stash": {
-        "features": "UI modern pentru mobil, protocoale cuprinzătoare"
-      },
-      "surfboard": {
-        "features": "Gratuit, dezvoltare activă, interfață modernă"
-      },
-      "surge": {
-        "features": "Instrument premium pentru iOS/Mac, caracteristici puternice"
-      },
-      "v2box": {
-        "features": "Client V2Ray prietenos cu utilizatorul"
-      },
-      "v2rayn": {
-        "features": "Client popular pentru Windows, bogat în caracteristici"
-      },
-      "v2rayng": {
-        "features": "Client popular pentru Android, ușor"
-      }
-    },
-    "description": "Gestionează șabloanele de configurare a abonamentului pentru clienții proxy",
-    "features": "Caracteristici Cheie",
-    "platforms": "Platforme",
-    "subscribeTemplate": "Configurare Șablon Abonament",
-    "templateContent": "Conținut Șablon",
-    "templatePlaceholder": "Introdu șablonul de configurare a clientului...",
-    "title": "Șabloane de Abonament pentru Clienți"
+    "title": "Gestionarea Clienților"
   },
-  "title": "Gestionarea Abonamentelor"
+  "table": {
+    "columns": {
+      "default": "Implicit",
+      "description": "Descriere",
+      "name": "Numele Clientului",
+      "outputFormat": "Format de Ieșire",
+      "supportedPlatforms": "Platforme Suportate"
+    }
+  }
 }

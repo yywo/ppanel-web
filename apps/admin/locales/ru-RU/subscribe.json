@@ -1,89 +1,99 @@
 {
   "actions": {
-    "cancel": "Отменить",
+    "add": "Добавить",
+    "batchDelete": "Пакетное удаление",
+    "batchDeleteSuccess": "Успешно удалено {count} клиентов",
+    "batchDeleteWarning": "Вы уверены, что хотите удалить выбранные {count} клиентов?",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "confirmDelete": "Подтвердить удаление",
+    "createSuccess": "Успешно создано",
     "delete": "Удалить",
+    "deleteFailed": "Ошибка удаления",
+    "deleteSuccess": "Успешно удалено",
+    "deleteWarning": "Это действие нельзя отменить. Вы уверены, что хотите удалить этого клиента?",
     "edit": "Редактировать",
     "save": "Сохранить",
-    "saveTemplate": "Сохранить Шаблон"
+    "saveFailed": "Ошибка сохранения",
+    "update": "Обновить",
+    "updateSuccess": "Успешно обновлено"
   },
   "config": {
     "description": "Управление настройками системы подписки",
-    "restrictUserAgent": "Ограничение User-Agent",
-    "restrictUserAgentDescription": "Включить ограничения доступа на основе User-Agent",
-    "singleSubscriptionMode": "Режим Единой Подписки",
+    "singleSubscriptionMode": "Режим единственной подписки",
     "singleSubscriptionModeDescription": "Ограничить пользователей одной активной подпиской. Существующие подписки не затрагиваются",
-    "subscriptionDomain": "Домен Подписки",
+    "subscriptionDomain": "Домен подписки",
     "subscriptionDomainDescription": "Пользовательский домен для ссылок на подписку",
     "subscriptionDomainPlaceholder": "Введите домен подписки, по одному на строку",
-    "subscriptionPath": "Путь Подписки",
+    "subscriptionPath": "Путь подписки",
     "subscriptionPathDescription": "Пользовательский путь для конечных точек подписки (лучшее выполнение после перезапуска системы)",
     "subscriptionPathPlaceholder": "Введите путь подписки",
-    "title": "Настройки Подписки",
+    "title": "Настройки подписки",
     "updateError": "Ошибка обновления",
     "updateSuccess": "Настройки успешно обновлены",
-    "userAgentWhitelist": "Белый список User-Agent",
-    "userAgentWhitelistDescription": "Разрешенные User-Agent для доступа к подписке, по одному на строку. Встроенные шаблоны автоматически включаются в белый список",
-    "userAgentWhitelistPlaceholder": "Введите разрешенные User-Agent, по одному на строку",
-    "wildcardResolution": "Разрешение Подстановочных Знаков",
-    "wildcardResolutionDescription": "Включить разрешение подстановочных доменов для подписок"
+    "userAgentLimit": "Ограничение {userAgent}",
+    "userAgentLimitDescription": "Включить ограничения доступа на основе {userAgent}",
+    "userAgentList": "Белый список {userAgent}",
+    "userAgentListDescription": "Разрешенные {userAgent} для доступа по подписке, по одному на строку. Настроенное приложение {userAgent} будет автоматически включено",
+    "userAgentListPlaceholder": "Введите разрешенные {userAgent}, по одному на строку",
+    "wildcardResolution": "Разрешение подстановочных знаков",
+    "wildcardResolutionDescription": "Включить разрешение доменов с подстановочными знаками для подписок"
   },
-  "description": "Настройка параметров подписки и шаблонов клиентов",
-  "messages": {
-    "noClients": "Нет Шаблонов Клиентов",
-    "noClientsDescription": "Шаблоны клиентов еще не настроены. Добавьте свой первый шаблон, чтобы начать."
+  "form": {
+    "addTitle": "Добавить клиента",
+    "descriptions": {
+      "description": "Подробное описание клиента",
+      "downloadLink": "URL загрузки платформы",
+      "icon": "URL иконки или кодировка base64",
+      "name": "Отображаемое имя клиента",
+      "outputFormat": "Формат файла конфигурации подписки",
+      "proxyTemplate": "Шаблон ссылки на подписку, поддерживает переменные: ",
+      "template": "Шаблон конфигурации подписки, поддерживает различные переменные",
+      "userAgentPrefix": "Идентификатор клиента для различения различных клиентов"
+    },
+    "editTitle": "Редактировать клиента",
+    "fields": {
+      "description": "Описание",
+      "icon": "Иконка",
+      "name": "Имя",
+      "outputFormat": "Формат вывода",
+      "proxyTemplate": "Ссылка на подписку",
+      "template": "Шаблон конфигурации"
+    },
+    "tabs": {
+      "basic": "Основная информация",
+      "download": "Загрузки",
+      "template": "Шаблоны"
+    },
+    "validation": {
+      "nameRequired": "Имя клиента обязательно",
+      "userAgentRequiredSuffix": "обязательно"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Обычный текст",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Большая экосистема, обширные правила, активное сообщество"
-      },
-      "egern": {
-        "features": "Современный клиент для iOS, отличная производительность"
-      },
-      "hiddify": {
-        "features": "Мультиплатформенный, обширные протоколы, дружелюбный к новичкам"
-      },
-      "loon": {
-        "features": "Расширенный клиент для iOS, богатые правила, красивый интерфейс"
-      },
-      "netch": {
-        "features": "Прокси-клиент, ориентированный на игры"
-      },
-      "quantumult": {
-        "features": "Расширенный клиент для iOS, гибкие правила, богатые скрипты"
-      },
-      "shadowrocket": {
-        "features": "Классический клиент для iOS, гибкая конфигурация"
-      },
-      "singbox": {
-        "features": "Последнее ядро, официальный GUI, поддержка нескольких платформ"
-      },
-      "stash": {
-        "features": "Современный мобильный интерфейс, обширные протоколы"
-      },
-      "surfboard": {
-        "features": "Бесплатный, активная разработка, современный интерфейс"
-      },
-      "surge": {
-        "features": "Премиум инструмент для iOS/Mac, мощные функции"
-      },
-      "v2box": {
-        "features": "Удобный клиент V2Ray"
-      },
-      "v2rayn": {
-        "features": "Популярный клиент для Windows, богатый функциями"
-      },
-      "v2rayng": {
-        "features": "Популярный клиент для Android, легковесный"
-      }
-    },
-    "description": "Управление шаблонами конфигурации подписки для прокси-клиентов",
-    "features": "Ключевые Особенности",
-    "platforms": "Платформы",
-    "subscribeTemplate": "Конфигурация Шаблона Подписки",
-    "templateContent": "Содержимое Шаблона",
-    "templatePlaceholder": "Введите шаблон конфигурации клиента...",
-    "title": "Шаблоны Подписки Клиентов"
+    "title": "Управление клиентами"
   },
-  "title": "Управление Подписками"
+  "table": {
+    "columns": {
+      "default": "По умолчанию",
+      "description": "Описание",
+      "name": "Имя клиента",
+      "outputFormat": "Формат вывода",
+      "supportedPlatforms": "Поддерживаемые платформы"
+    }
+  }
 }

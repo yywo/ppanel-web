@@ -1,16 +1,26 @@
 {
   "actions": {
+    "add": "追加",
+    "batchDelete": "一括削除",
+    "batchDeleteSuccess": "{count} 件のクライアントを正常に削除しました",
+    "batchDeleteWarning": "選択した {count} 件のクライアントを削除してもよろしいですか？",
     "cancel": "キャンセル",
+    "confirm": "確認",
+    "confirmDelete": "削除を確認",
+    "createSuccess": "正常に作成されました",
     "delete": "削除",
+    "deleteFailed": "削除に失敗しました",
+    "deleteSuccess": "正常に削除されました",
+    "deleteWarning": "この操作は元に戻せません。本当にこのクライアントを削除してもよろしいですか？",
     "edit": "編集",
     "save": "保存",
-    "saveTemplate": "テンプレートを保存"
+    "saveFailed": "保存に失敗しました",
+    "update": "更新",
+    "updateSuccess": "正常に更新されました"
   },
   "config": {
-    "description": "サブスクリプションシステムの設定を管理",
-    "restrictUserAgent": "ユーザーエージェント制限",
-    "restrictUserAgentDescription": "ユーザーエージェントに基づくアクセス制限を有効にします",
-    "singleSubscriptionMode": "単一サブスクリプションモード",
+    "description": "サブスクリプションシステムの設定を管理します",
+    "singleSubscriptionMode": "シングルサブスクリプションモード",
     "singleSubscriptionModeDescription": "ユーザーを1つのアクティブなサブスクリプションに制限します。既存のサブスクリプションには影響しません",
     "subscriptionDomain": "サブスクリプションドメイン",
     "subscriptionDomainDescription": "サブスクリプションリンク用のカスタムドメイン",
@@ -21,69 +31,69 @@
     "title": "サブスクリプション設定",
     "updateError": "更新に失敗しました",
     "updateSuccess": "設定が正常に更新されました",
-    "userAgentWhitelist": "ユーザーエージェントホワイトリスト",
-    "userAgentWhitelistDescription": "サブスクリプションアクセスのために許可されたユーザーエージェント。1行につき1つ。組み込みテンプレートは自動的にホワイトリストに含まれます",
-    "userAgentWhitelistPlaceholder": "許可されたユーザーエージェントを入力してください。1行につき1つ",
+    "userAgentLimit": "{userAgent} 制限",
+    "userAgentLimitDescription": "{userAgent} に基づくアクセス制限を有効にする",
+    "userAgentList": "{userAgent} ホワイトリスト",
+    "userAgentListDescription": "サブスクリプションアクセスのために許可された {userAgent}、1行ごとに1つ。設定されたアプリケーションの {userAgent} は自動的に含まれます",
+    "userAgentListPlaceholder": "許可された {userAgent} を入力してください、1行ごとに",
     "wildcardResolution": "ワイルドカード解決",
-    "wildcardResolutionDescription": "サブスクリプション用のワイルドカードドメイン解決を有効にする"
+    "wildcardResolutionDescription": "サブスクリプション用のワイルドカードドメイン解決を有効にします"
   },
-  "description": "サブスクリプション設定とクライアントテンプレートを構成",
-  "messages": {
-    "noClients": "クライアントテンプレートがありません",
-    "noClientsDescription": "まだクライアントテンプレートが設定されていません。最初のテンプレートを追加して始めましょう。"
+  "form": {
+    "addTitle": "クライアントを追加",
+    "descriptions": {
+      "description": "詳細なクライアント説明",
+      "downloadLink": "プラットフォームダウンロードURL",
+      "icon": "アイコンのURLまたはbase64エンコーディング",
+      "name": "クライアントの表示名",
+      "outputFormat": "サブスクリプション設定ファイル形式",
+      "proxyTemplate": "サブスクリプションリンクテンプレート、変数をサポートします：",
+      "template": "サブスクリプション設定テンプレート、さまざまな変数をサポートします",
+      "userAgentPrefix": "異なるクライアントを区別するためのクライアント識別子"
+    },
+    "editTitle": "クライアントを編集",
+    "fields": {
+      "description": "説明",
+      "icon": "アイコン",
+      "name": "名前",
+      "outputFormat": "出力形式",
+      "proxyTemplate": "サブスクリプションリンク",
+      "template": "設定テンプレート"
+    },
+    "tabs": {
+      "basic": "基本情報",
+      "download": "ダウンロード",
+      "template": "テンプレート"
+    },
+    "validation": {
+      "nameRequired": "クライアント名は必須です",
+      "userAgentRequiredSuffix": "は必須です"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "プレーンテキスト",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "大規模なエコシステム、包括的なルール、活発なコミュニティ"
-      },
-      "egern": {
-        "features": "モダンなiOSクライアント、優れたパフォーマンス"
-      },
-      "hiddify": {
-        "features": "マルチプラットフォーム、包括的なプロトコル、初心者に優しい"
-      },
-      "loon": {
-        "features": "iOSの高度なクライアント、豊富なルール、美しいインターフェース"
-      },
-      "netch": {
-        "features": "ゲーム向けプロキシクライアント"
-      },
-      "quantumult": {
-        "features": "iOSの高度なクライアント、柔軟なルール、豊富なスクリプト"
-      },
-      "shadowrocket": {
-        "features": "クラシックなiOSクライアント、柔軟な設定"
-      },
-      "singbox": {
-        "features": "最新のカーネル、公式GUI、マルチプラットフォームサポート"
-      },
-      "stash": {
-        "features": "モダンなモバイルUI、包括的なプロトコル"
-      },
-      "surfboard": {
-        "features": "無料、アクティブな開発、モダンなインターフェース"
-      },
-      "surge": {
-        "features": "プレミアムiOS/Macツール、強力な機能"
-      },
-      "v2box": {
-        "features": "ユーザーフレンドリーなV2Rayクライアント"
-      },
-      "v2rayn": {
-        "features": "人気のWindowsクライアント、機能豊富"
-      },
-      "v2rayng": {
-        "features": "人気のAndroidクライアント、軽量"
-      }
-    },
-    "description": "プロキシクライアントのサブスクリプション設定テンプレートを管理",
-    "features": "主な機能",
-    "platforms": "プラットフォーム",
-    "subscribeTemplate": "サブスクリプションテンプレート設定",
-    "templateContent": "テンプレート内容",
-    "templatePlaceholder": "クライアント設定テンプレートを入力してください...",
-    "title": "クライアントサブスクリプションテンプレート"
+    "title": "クライアント管理"
   },
-  "title": "サブスクリプション管理"
+  "table": {
+    "columns": {
+      "default": "デフォルト",
+      "description": "説明",
+      "name": "クライアント名",
+      "outputFormat": "出力形式",
+      "supportedPlatforms": "サポートされているプラットフォーム"
+    }
+  }
 }

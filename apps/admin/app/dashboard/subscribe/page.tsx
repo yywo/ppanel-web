@@ -17,7 +17,6 @@ export default function SubscribePage() {
         </CardContent>
       </Card>
 
-      <h2 className='text-lg font-semibold'>{t('protocol.title')}</h2>
       <ProtocolForm />
     </div>
   );

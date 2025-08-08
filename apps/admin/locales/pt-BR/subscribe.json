@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Adicionar",
+    "batchDelete": "Excluir em Lote",
+    "batchDeleteSuccess": "Clientes excluídos com sucesso: {count}",
+    "batchDeleteWarning": "Você tem certeza de que deseja excluir os {count} clientes selecionados?",
     "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "confirmDelete": "Confirmar Exclusão",
+    "createSuccess": "Criado com sucesso",
     "delete": "Excluir",
+    "deleteFailed": "Falha ao excluir",
+    "deleteSuccess": "Excluído com sucesso",
+    "deleteWarning": "Esta operação não pode ser desfeita. Você tem certeza de que deseja excluir este cliente?",
     "edit": "Editar",
     "save": "Salvar",
-    "saveTemplate": "Salvar Modelo"
+    "saveFailed": "Falha ao salvar",
+    "update": "Atualizar",
+    "updateSuccess": "Atualizado com sucesso"
   },
   "config": {
     "description": "Gerenciar configurações do sistema de assinatura",
-    "restrictUserAgent": "Restrição de User-Agent",
-    "restrictUserAgentDescription": "Ativar restrições de acesso com base no User-Agent",
     "singleSubscriptionMode": "Modo de Assinatura Única",
     "singleSubscriptionModeDescription": "Limitar usuários a uma assinatura ativa. Assinaturas existentes não são afetadas",
-    "subscriptionDomain": "Domínio de Assinatura",
+    "subscriptionDomain": "Domínio da Assinatura",
     "subscriptionDomainDescription": "Domínio personalizado para links de assinatura",
-    "subscriptionDomainPlaceholder": "Digite o domínio de assinatura, um por linha",
-    "subscriptionPath": "Caminho de Assinatura",
+    "subscriptionDomainPlaceholder": "Insira o domínio da assinatura, um por linha",
+    "subscriptionPath": "Caminho da Assinatura",
     "subscriptionPathDescription": "Caminho personalizado para endpoints de assinatura (melhor desempenho após reinício do sistema)",
-    "subscriptionPathPlaceholder": "Digite o caminho de assinatura",
+    "subscriptionPathPlaceholder": "Insira o caminho da assinatura",
     "title": "Configuração de Assinatura",
     "updateError": "Falha na atualização",
     "updateSuccess": "Configurações atualizadas com sucesso",
-    "userAgentWhitelist": "Lista Branca de User-Agent",
-    "userAgentWhitelistDescription": "User-Agents permitidos para acesso à assinatura, um por linha. Modelos embutidos são automaticamente incluídos na lista branca",
-    "userAgentWhitelistPlaceholder": "Insira os User-Agents permitidos, um por linha",
-    "wildcardResolution": "Resolução de Curinga",
-    "wildcardResolutionDescription": "Ativar resolução de domínio curinga para assinaturas"
+    "userAgentLimit": "Limitação de {userAgent}",
+    "userAgentLimitDescription": "Ativar restrições de acesso com base em {userAgent}",
+    "userAgentList": "Lista de {userAgent} Permitidos",
+    "userAgentListDescription": "{userAgent} permitidos para acesso à assinatura, um por linha. O {userAgent} do aplicativo configurado será incluído automaticamente",
+    "userAgentListPlaceholder": "Digite {userAgent} permitidos, um por linha",
+    "wildcardResolution": "Resolução de Coringa",
+    "wildcardResolutionDescription": "Habilitar resolução de domínio coringa para assinaturas"
   },
-  "description": "Configurar configurações de assinatura e modelos de cliente",
-  "messages": {
-    "noClients": "Sem Modelos de Cliente",
-    "noClientsDescription": "Nenhum modelo de cliente configurado ainda. Adicione seu primeiro modelo para começar."
+  "form": {
+    "addTitle": "Adicionar Cliente",
+    "descriptions": {
+      "description": "Descrição detalhada do cliente",
+      "downloadLink": "URL de download da plataforma",
+      "icon": "URL do ícone ou codificação base64",
+      "name": "Nome de exibição do cliente",
+      "outputFormat": "Formato do arquivo de configuração da assinatura",
+      "proxyTemplate": "Modelo de link de assinatura, suporta variáveis: ",
+      "template": "Modelo de configuração de assinatura, suporta várias variáveis",
+      "userAgentPrefix": "Identificador do cliente para distinguir diferentes clientes"
+    },
+    "editTitle": "Editar Cliente",
+    "fields": {
+      "description": "Descrição",
+      "icon": "Ícone",
+      "name": "Nome",
+      "outputFormat": "Formato de Saída",
+      "proxyTemplate": "Link de Assinatura",
+      "template": "Modelo de Configuração"
+    },
+    "tabs": {
+      "basic": "Informações Básicas",
+      "download": "Downloads",
+      "template": "Modelos"
+    },
+    "validation": {
+      "nameRequired": "O nome do cliente é obrigatório",
+      "userAgentRequiredSuffix": "é obrigatório"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Texto Simples",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Grande ecossistema, regras abrangentes, comunidade ativa"
-      },
-      "egern": {
-        "features": "Cliente moderno para iOS, excelente desempenho"
-      },
-      "hiddify": {
-        "features": "Multiplataforma, protocolos abrangentes, amigável para iniciantes"
-      },
-      "loon": {
-        "features": "Cliente avançado para iOS, regras ricas, interface bonita"
-      },
-      "netch": {
-        "features": "Cliente proxy focado em jogos"
-      },
-      "quantumult": {
-        "features": "Cliente avançado para iOS, regras flexíveis, scripts ricos"
-      },
-      "shadowrocket": {
-        "features": "Cliente clássico para iOS, configuração flexível"
-      },
-      "singbox": {
-        "features": "Kernel mais recente, GUI oficial, suporte multiplataforma"
-      },
-      "stash": {
-        "features": "Interface móvel moderna, protocolos abrangentes"
-      },
-      "surfboard": {
-        "features": "Gratuito, desenvolvimento ativo, interface moderna"
-      },
-      "surge": {
-        "features": "Ferramenta premium para iOS/Mac, recursos poderosos"
-      },
-      "v2box": {
-        "features": "Cliente V2Ray amigável ao usuário"
-      },
-      "v2rayn": {
-        "features": "Cliente popular para Windows, rico em recursos"
-      },
-      "v2rayng": {
-        "features": "Cliente popular para Android, leve"
-      }
-    },
-    "description": "Gerenciar modelos de configuração de assinatura para clientes proxy",
-    "features": "Principais Recursos",
-    "platforms": "Plataformas",
-    "subscribeTemplate": "Configuração de Modelo de Assinatura",
-    "templateContent": "Conteúdo do Modelo",
-    "templatePlaceholder": "Digite o modelo de configuração do cliente...",
-    "title": "Modelos de Assinatura de Cliente"
+    "title": "Gerenciamento de Clientes"
   },
-  "title": "Gerenciamento de Assinaturas"
+  "table": {
+    "columns": {
+      "default": "Padrão",
+      "description": "Descrição",
+      "name": "Nome do Cliente",
+      "outputFormat": "Formato de Saída",
+      "supportedPlatforms": "Plataformas Suportadas"
+    }
+  }
 }

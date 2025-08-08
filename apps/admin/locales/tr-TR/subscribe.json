@@ -1,15 +1,25 @@
 {
   "actions": {
+    "add": "Ekle",
+    "batchDelete": "Toplu Sil",
+    "batchDeleteSuccess": "{count} müşterinin başarıyla silindi",
+    "batchDeleteWarning": "Seçilen {count} müşteriyi silmek istediğinize emin misiniz?",
     "cancel": "İptal",
+    "confirm": "Onayla",
+    "confirmDelete": "Silme İşlemini Onayla",
+    "createSuccess": "Başarıyla oluşturuldu",
     "delete": "Sil",
+    "deleteFailed": "Silme işlemi başarısız",
+    "deleteSuccess": "Başarıyla silindi",
+    "deleteWarning": "Bu işlem geri alınamaz. Bu müşteriyi silmek istediğinize emin misiniz?",
     "edit": "Düzenle",
     "save": "Kaydet",
-    "saveTemplate": "Şablonu Kaydet"
+    "saveFailed": "Kaydetme işlemi başarısız",
+    "update": "Güncelle",
+    "updateSuccess": "Başarıyla güncellendi"
   },
   "config": {
     "description": "Abonelik sistemi ayarlarını yönetin",
-    "restrictUserAgent": "Kullanıcı Aracısı Kısıtlaması",
-    "restrictUserAgentDescription": "Kullanıcı Aracısına dayalı erişim kısıtlamalarını etkinleştir",
     "singleSubscriptionMode": "Tek Abonelik Modu",
     "singleSubscriptionModeDescription": "Kullanıcıları bir aktif abonelikle sınırlayın. Mevcut abonelikler etkilenmez",
     "subscriptionDomain": "Abonelik Alanı",
@@ -19,71 +29,71 @@
     "subscriptionPathDescription": "Abonelik uç noktaları için özel yol (sistem yeniden başlatıldığında daha iyi performans)",
     "subscriptionPathPlaceholder": "Abonelik yolunu girin",
     "title": "Abonelik Yapılandırması",
-    "updateError": "Güncelleme başarısız oldu",
+    "updateError": "Güncelleme başarısız",
     "updateSuccess": "Ayarlar başarıyla güncellendi",
-    "userAgentWhitelist": "Kullanıcı Aracısı Beyaz Listesi",
-    "userAgentWhitelistDescription": "Abonelik erişimi için izin verilen Kullanıcı Aracıları, her biri bir satıra. Yerleşik şablonlar otomatik olarak beyaz listeye dahil edilir",
-    "userAgentWhitelistPlaceholder": "İzin verilen Kullanıcı Aracılarını girin, her biri bir satıra",
-    "wildcardResolution": "Wildcard Çözümü",
-    "wildcardResolutionDescription": "Abonelikler için wildcard alan çözümlemesini etkinleştir"
+    "userAgentLimit": "{userAgent} Kısıtlaması",
+    "userAgentLimitDescription": "{userAgent}'ye dayalı erişim kısıtlamalarını etkinleştir",
+    "userAgentList": "{userAgent} Beyaz Liste",
+    "userAgentListDescription": "Abonelik erişimi için izin verilen {userAgent}, her biri bir satırda. Yapılandırılmış uygulama {userAgent} otomatik olarak dahil edilecektir",
+    "userAgentListPlaceholder": "İzin verilen {userAgent}'yi girin, her biri bir satırda",
+    "wildcardResolution": "Joker Karakter Çözümü",
+    "wildcardResolutionDescription": "Abonelikler için joker alan çözümünü etkinleştir"
   },
-  "description": "Abonelik ayarlarını ve istemci şablonlarını yapılandırın",
-  "messages": {
-    "noClients": "İstemci Şablonu Yok",
-    "noClientsDescription": "Henüz yapılandırılmış istemci şablonu yok. Başlamak için ilk şablonunuzu ekleyin."
+  "form": {
+    "addTitle": "Müşteri Ekle",
+    "descriptions": {
+      "description": "Detaylı müşteri açıklaması",
+      "downloadLink": "platform indirme URL'si",
+      "icon": "Simge URL'si veya base64 kodlaması",
+      "name": "Müşteri görüntüleme adı",
+      "outputFormat": "Abonelik yapılandırma dosyası formatı",
+      "proxyTemplate": "Abonelik bağlantısı şablonu, değişkenleri destekler: ",
+      "template": "Abonelik yapılandırma şablonu, çeşitli değişkenleri destekler",
+      "userAgentPrefix": "Farklı istemcileri ayırt etmek için istemci tanımlayıcısı"
+    },
+    "editTitle": "Müşteri Düzenle",
+    "fields": {
+      "description": "Açıklama",
+      "icon": "Simge",
+      "name": "İsim",
+      "outputFormat": "Çıktı Formatı",
+      "proxyTemplate": "Abonelik Bağlantısı",
+      "template": "Yapılandırma Şablonu"
+    },
+    "tabs": {
+      "basic": "Temel Bilgiler",
+      "download": "İndirmeler",
+      "template": "Şablonlar"
+    },
+    "validation": {
+      "nameRequired": "Müşteri adı gereklidir",
+      "userAgentRequiredSuffix": "gereklidir"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Düz Metin",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Geniş ekosistem, kapsamlı kurallar, aktif topluluk"
-      },
-      "egern": {
-        "features": "Modern iOS istemcisi, mükemmel performans"
-      },
-      "hiddify": {
-        "features": "Çoklu platform, kapsamlı protokoller, başlangıç dostu"
-      },
-      "loon": {
-        "features": "iOS gelişmiş istemcisi, zengin kurallar, güzel arayüz"
-      },
-      "netch": {
-        "features": "Oyun odaklı proxy istemcisi"
-      },
-      "quantumult": {
-        "features": "iOS gelişmiş istemcisi, esnek kurallar, zengin betikler"
-      },
-      "shadowrocket": {
-        "features": "Klasik iOS istemcisi, esnek yapılandırma"
-      },
-      "singbox": {
-        "features": "En son çekirdek, resmi GUI, çoklu platform desteği"
-      },
-      "stash": {
-        "features": "Modern mobil arayüz, kapsamlı protokoller"
-      },
-      "surfboard": {
-        "features": "Ücretsiz, aktif geliştirme, modern arayüz"
-      },
-      "surge": {
-        "features": "Premium iOS/Mac aracı, güçlü özellikler"
-      },
-      "v2box": {
-        "features": "Kullanıcı dostu V2Ray istemcisi"
-      },
-      "v2rayn": {
-        "features": "Popüler Windows istemcisi, özellik zengini"
-      },
-      "v2rayng": {
-        "features": "Popüler Android istemcisi, hafif"
-      }
-    },
-    "description": "Proxy istemcileri için abonelik yapılandırma şablonlarını yönetin",
-    "features": "Ana Özellikler",
-    "platforms": "Platformlar",
-    "subscribeTemplate": "Abonelik Şablonu Yapılandırması",
-    "templateContent": "Şablon İçeriği",
-    "templatePlaceholder": "İstemci yapılandırma şablonunu girin...",
-    "title": "İstemci Abonelik Şablonları"
+    "title": "İstemci Yönetimi"
   },
-  "title": "Abonelik Yönetimi"
+  "table": {
+    "columns": {
+      "default": "Varsayılan",
+      "description": "Açıklama",
+      "name": "Müşteri Adı",
+      "outputFormat": "Çıktı Formatı",
+      "supportedPlatforms": "Desteklenen Platformlar"
+    }
+  }
 }

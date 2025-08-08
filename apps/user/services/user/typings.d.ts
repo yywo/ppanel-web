@@ -868,6 +868,8 @@ declare namespace API {
     subscribe_path: string;
     subscribe_domain: string;
     pan_domain: boolean;
+    user_agent_limit: boolean;
+    user_agent_list: string;
   };
 
   type SubscribeDiscount = {

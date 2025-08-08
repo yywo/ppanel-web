@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Thêm",
+    "batchDelete": "Xóa hàng loạt",
+    "batchDeleteSuccess": "Đã xóa thành công {count} khách hàng",
+    "batchDeleteWarning": "Bạn có chắc chắn muốn xóa {count} khách hàng đã chọn không?",
     "cancel": "Hủy",
+    "confirm": "Xác nhận",
+    "confirmDelete": "Xác nhận xóa",
+    "createSuccess": "Tạo thành công",
     "delete": "Xóa",
+    "deleteFailed": "Xóa không thành công",
+    "deleteSuccess": "Đã xóa thành công",
+    "deleteWarning": "Hành động này không thể hoàn tác. Bạn có chắc chắn muốn xóa khách hàng này không?",
     "edit": "Chỉnh sửa",
     "save": "Lưu",
-    "saveTemplate": "Lưu Mẫu"
+    "saveFailed": "Lưu không thành công",
+    "update": "Cập nhật",
+    "updateSuccess": "Đã cập nhật thành công"
   },
   "config": {
     "description": "Quản lý cài đặt hệ thống đăng ký",
-    "restrictUserAgent": "Hạn chế User-Agent",
-    "restrictUserAgentDescription": "Bật hạn chế truy cập dựa trên User-Agent",
-    "singleSubscriptionMode": "Chế Độ Đăng Ký Đơn",
-    "singleSubscriptionModeDescription": "Giới hạn người dùng chỉ có một đăng ký hoạt động. Các đăng ký hiện có không bị ảnh hưởng",
-    "subscriptionDomain": "Miền Đăng Ký",
+    "singleSubscriptionMode": "Chế độ Đăng ký Đơn",
+    "singleSubscriptionModeDescription": "Giới hạn người dùng chỉ một đăng ký hoạt động. Các đăng ký hiện có không bị ảnh hưởng",
+    "subscriptionDomain": "Miền Đăng ký",
     "subscriptionDomainDescription": "Miền tùy chỉnh cho các liên kết đăng ký",
     "subscriptionDomainPlaceholder": "Nhập miền đăng ký, mỗi miền một dòng",
-    "subscriptionPath": "Đường Dẫn Đăng Ký",
+    "subscriptionPath": "Đường dẫn Đăng ký",
     "subscriptionPathDescription": "Đường dẫn tùy chỉnh cho các điểm cuối đăng ký (hiệu suất tốt hơn sau khi khởi động lại hệ thống)",
     "subscriptionPathPlaceholder": "Nhập đường dẫn đăng ký",
-    "title": "Cấu Hình Đăng Ký",
+    "title": "Cấu hình Đăng ký",
     "updateError": "Cập nhật không thành công",
     "updateSuccess": "Cài đặt đã được cập nhật thành công",
-    "userAgentWhitelist": "Danh sách trắng User-Agent",
-    "userAgentWhitelistDescription": "Các User-Agent được phép truy cập đăng ký, mỗi dòng một User-Agent. Các mẫu tích hợp sẽ tự động được bao gồm trong danh sách trắng",
-    "userAgentWhitelistPlaceholder": "Nhập User-Agent được phép, mỗi dòng một User-Agent",
-    "wildcardResolution": "Giải Quyết Wildcard",
-    "wildcardResolutionDescription": "Bật giải quyết miền wildcard cho các đăng ký"
+    "userAgentLimit": "Giới hạn {userAgent}",
+    "userAgentLimitDescription": "Bật hạn chế truy cập dựa trên {userAgent}",
+    "userAgentList": "Danh sách trắng {userAgent}",
+    "userAgentListDescription": "Các {userAgent} được phép truy cập đăng ký, mỗi cái một dòng. Ứng dụng đã cấu hình {userAgent} sẽ được tự động bao gồm",
+    "userAgentListPlaceholder": "Nhập {userAgent} được phép, mỗi cái một dòng",
+    "wildcardResolution": "Giải quyết Wildcard",
+    "wildcardResolutionDescription": "Kích hoạt giải quyết miền wildcard cho các đăng ký"
   },
-  "description": "Cấu hình cài đặt đăng ký và mẫu khách hàng",
-  "messages": {
-    "noClients": "Không Có Mẫu Khách Hàng",
-    "noClientsDescription": "Chưa có mẫu khách hàng nào được cấu hình. Thêm mẫu đầu tiên của bạn để bắt đầu."
+  "form": {
+    "addTitle": "Thêm Khách hàng",
+    "descriptions": {
+      "description": "Mô tả chi tiết về khách hàng",
+      "downloadLink": "URL tải xuống nền tảng",
+      "icon": "URL biểu tượng hoặc mã hóa base64",
+      "name": "Tên hiển thị của khách hàng",
+      "outputFormat": "Định dạng tệp cấu hình đăng ký",
+      "proxyTemplate": "Mẫu liên kết đăng ký, hỗ trợ các biến: ",
+      "template": "Mẫu cấu hình đăng ký, hỗ trợ nhiều biến khác nhau",
+      "userAgentPrefix": "Định danh khách hàng để phân biệt các khách hàng khác nhau."
+    },
+    "editTitle": "Chỉnh sửa Khách hàng",
+    "fields": {
+      "description": "Mô tả",
+      "icon": "Biểu tượng",
+      "name": "Tên",
+      "outputFormat": "Định dạng Đầu ra",
+      "proxyTemplate": "Liên kết Đăng ký",
+      "template": "Mẫu Cấu hình"
+    },
+    "tabs": {
+      "basic": "Thông tin Cơ bản",
+      "download": "Tải xuống",
+      "template": "Mẫu"
+    },
+    "validation": {
+      "nameRequired": "Tên khách hàng là bắt buộc",
+      "userAgentRequiredSuffix": "là bắt buộc"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Văn bản thuần",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Hệ sinh thái lớn, quy tắc toàn diện, cộng đồng năng động"
-      },
-      "egern": {
-        "features": "Khách hàng iOS hiện đại, hiệu suất xuất sắc"
-      },
-      "hiddify": {
-        "features": "Đa nền tảng, giao thức toàn diện, thân thiện với người mới"
-      },
-      "loon": {
-        "features": "Khách hàng nâng cao cho iOS, quy tắc phong phú, giao diện đẹp"
-      },
-      "netch": {
-        "features": "Khách hàng proxy tập trung vào game"
-      },
-      "quantumult": {
-        "features": "Khách hàng nâng cao cho iOS, quy tắc linh hoạt, kịch bản phong phú"
-      },
-      "shadowrocket": {
-        "features": "Khách hàng iOS cổ điển, cấu hình linh hoạt"
-      },
-      "singbox": {
-        "features": "Nhân mới nhất, GUI chính thức, hỗ trợ đa nền tảng"
-      },
-      "stash": {
-        "features": "Giao diện di động hiện đại, giao thức toàn diện"
-      },
-      "surfboard": {
-        "features": "Miễn phí, phát triển tích cực, giao diện hiện đại"
-      },
-      "surge": {
-        "features": "Công cụ cao cấp cho iOS/Mac, tính năng mạnh mẽ"
-      },
-      "v2box": {
-        "features": "Khách hàng V2Ray thân thiện với người dùng"
-      },
-      "v2rayn": {
-        "features": "Khách hàng Windows phổ biến, nhiều tính năng"
-      },
-      "v2rayng": {
-        "features": "Khách hàng Android phổ biến, nhẹ"
-      }
-    },
-    "description": "Quản lý các mẫu cấu hình đăng ký cho khách hàng proxy",
-    "features": "Tính Năng Chính",
-    "platforms": "Nền Tảng",
-    "subscribeTemplate": "Cấu Hình Mẫu Đăng Ký",
-    "templateContent": "Nội Dung Mẫu",
-    "templatePlaceholder": "Nhập mẫu cấu hình khách hàng...",
-    "title": "Mẫu Đăng Ký Khách Hàng"
+    "title": "Quản lý Khách hàng"
   },
-  "title": "Quản Lý Đăng Ký"
+  "table": {
+    "columns": {
+      "default": "Mặc định",
+      "description": "Mô tả",
+      "name": "Tên Khách hàng",
+      "outputFormat": "Định dạng Đầu ra",
+      "supportedPlatforms": "Nền tảng Hỗ trợ"
+    }
+  }
 }

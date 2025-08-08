@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "जोड़ें",
+    "batchDelete": "बैच हटाएं",
+    "batchDeleteSuccess": "सफलता से {count} क्लाइंट हटाए गए",
+    "batchDeleteWarning": "क्या आप सुनिश्चित हैं कि आप चयनित {count} क्लाइंट को हटाना चाहते हैं?",
     "cancel": "रद्द करें",
+    "confirm": "पुष्टि करें",
+    "confirmDelete": "हटाने की पुष्टि करें",
+    "createSuccess": "सफलता से बनाया गया",
     "delete": "हटाएं",
+    "deleteFailed": "हटाना विफल",
+    "deleteSuccess": "सफलता से हटाया गया",
+    "deleteWarning": "यह क्रिया पूर्ववत नहीं की जा सकती। क्या आप सुनिश्चित हैं कि आप इस क्लाइंट को हटाना चाहते हैं?",
     "edit": "संपादित करें",
     "save": "सहेजें",
-    "saveTemplate": "टेम्पलेट सहेजें"
+    "saveFailed": "सहेजना विफल",
+    "update": "अपडेट करें",
+    "updateSuccess": "सफलता से अपडेट किया गया"
   },
   "config": {
     "description": "सदस्यता प्रणाली सेटिंग्स प्रबंधित करें",
-    "restrictUserAgent": "यूजर-एजेंट प्रतिबंध",
-    "restrictUserAgentDescription": "यूजर-एजेंट के आधार पर पहुंच प्रतिबंध सक्षम करें",
     "singleSubscriptionMode": "एकल सदस्यता मोड",
-    "singleSubscriptionModeDescription": "उपयोगकर्ताओं को एक सक्रिय सदस्यता तक सीमित करें। मौजूदा सदस्यताओं पर कोई प्रभाव नहीं",
+    "singleSubscriptionModeDescription": "उपयोगकर्ताओं को एक सक्रिय सदस्यता तक सीमित करें। मौजूदा सदस्यताएँ अप्रभावित रहेंगी",
     "subscriptionDomain": "सदस्यता डोमेन",
     "subscriptionDomainDescription": "सदस्यता लिंक के लिए कस्टम डोमेन",
     "subscriptionDomainPlaceholder": "सदस्यता डोमेन दर्ज करें, एक प्रति पंक्ति",
     "subscriptionPath": "सदस्यता पथ",
-    "subscriptionPathDescription": "सदस्यता अंत बिंदुओं के लिए कस्टम पथ (सिस्टम पुनरारंभ के बाद बेहतर प्रदर्शन)",
+    "subscriptionPathDescription": "सदस्यता एंडपॉइंट्स के लिए कस्टम पथ (सिस्टम पुनरारंभ के बाद बेहतर प्रदर्शन)",
     "subscriptionPathPlaceholder": "सदस्यता पथ दर्ज करें",
     "title": "सदस्यता कॉन्फ़िगरेशन",
     "updateError": "अपडेट विफल",
     "updateSuccess": "सेटिंग्स सफलतापूर्वक अपडेट की गईं",
-    "userAgentWhitelist": "यूजर-एजेंट श्वेतसूची",
-    "userAgentWhitelistDescription": "सदस्यता पहुंच के लिए अनुमत यूजर-एजेंट, प्रत्येक पंक्ति में एक। अंतर्निहित टेम्पलेट स्वचालित रूप से श्वेतसूची में शामिल होते हैं",
-    "userAgentWhitelistPlaceholder": "अनुमत यूजर-एजेंट दर्ज करें, प्रत्येक पंक्ति में एक",
+    "userAgentLimit": "{userAgent} प्रतिबंध",
+    "userAgentLimitDescription": "{userAgent} के आधार पर पहुंच प्रतिबंध सक्षम करें",
+    "userAgentList": "{userAgent} श्वेतसूची",
+    "userAgentListDescription": "सदस्यता पहुंच के लिए अनुमत {userAgent}, प्रत्येक पंक्ति में एक। कॉन्फ़िगर की गई एप्लिकेशन {userAgent} स्वचालित रूप से शामिल की जाएगी",
+    "userAgentListPlaceholder": "अनुमत {userAgent} दर्ज करें, प्रत्येक पंक्ति में एक",
     "wildcardResolution": "वाइल्डकार्ड समाधान",
     "wildcardResolutionDescription": "सदस्यताओं के लिए वाइल्डकार्ड डोमेन समाधान सक्षम करें"
   },
-  "description": "सदस्यता सेटिंग्स और क्लाइंट टेम्पलेट्स कॉन्फ़िगर करें",
-  "messages": {
-    "noClients": "कोई क्लाइंट टेम्पलेट नहीं",
-    "noClientsDescription": "अभी तक कोई क्लाइंट टेम्पलेट कॉन्फ़िगर नहीं किया गया है। शुरू करने के लिए अपना पहला टेम्पलेट जोड़ें।"
+  "form": {
+    "addTitle": "क्लाइंट जोड़ें",
+    "descriptions": {
+      "description": "विस्तृत क्लाइंट विवरण",
+      "downloadLink": "प्लेटफ़ॉर्म डाउनलोड URL",
+      "icon": "आइकन URL या बेस64 एन्कोडिंग",
+      "name": "क्लाइंट प्रदर्शन नाम",
+      "outputFormat": "सदस्यता कॉन्फ़िगरेशन फ़ाइल प्रारूप",
+      "proxyTemplate": "सदस्यता लिंक टेम्पलेट, वेरिएबल का समर्थन करता है: ",
+      "template": "सदस्यता कॉन्फ़िगरेशन टेम्पलेट, विभिन्न वेरिएबल का समर्थन करता है",
+      "userAgentPrefix": "विभिन्न क्लाइंट्स को अलग करने के लिए क्लाइंट पहचानकर्ता"
+    },
+    "editTitle": "क्लाइंट संपादित करें",
+    "fields": {
+      "description": "विवरण",
+      "icon": "आइकन",
+      "name": "नाम",
+      "outputFormat": "आउटपुट प्रारूप",
+      "proxyTemplate": "सदस्यता लिंक",
+      "template": "कॉन्फ़िग टेम्पलेट"
+    },
+    "tabs": {
+      "basic": "बुनियादी जानकारी",
+      "download": "डाउनलोड",
+      "template": "टेम्पलेट"
+    },
+    "validation": {
+      "nameRequired": "क्लाइंट नाम आवश्यक है",
+      "userAgentRequiredSuffix": "आवश्यक है"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "सादा पाठ",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "बड़ा पारिस्थितिकी तंत्र, व्यापक नियम, सक्रिय समुदाय"
-      },
-      "egern": {
-        "features": "आधुनिक iOS क्लाइंट, उत्कृष्ट प्रदर्शन"
-      },
-      "hiddify": {
-        "features": "बहु-प्लेटफ़ॉर्म, व्यापक प्रोटोकॉल, शुरुआती के लिए अनुकूल"
-      },
-      "loon": {
-        "features": "iOS उन्नत क्लाइंट, समृद्ध नियम, सुंदर इंटरफ़ेस"
-      },
-      "netch": {
-        "features": "गेमिंग-केंद्रित प्रॉक्सी क्लाइंट"
-      },
-      "quantumult": {
-        "features": "iOS उन्नत क्लाइंट, लचीले नियम, समृद्ध स्क्रिप्ट"
-      },
-      "shadowrocket": {
-        "features": "क्लासिक iOS क्लाइंट, लचीली कॉन्फ़िगरेशन"
-      },
-      "singbox": {
-        "features": "नवीनतम कर्नेल, आधिकारिक GUI, बहु-प्लेटफ़ॉर्म समर्थन"
-      },
-      "stash": {
-        "features": "आधुनिक मोबाइल UI, व्यापक प्रोटोकॉल"
-      },
-      "surfboard": {
-        "features": "मुफ्त, सक्रिय विकास, आधुनिक इंटरफ़ेस"
-      },
-      "surge": {
-        "features": "प्रीमियम iOS/Mac उपकरण, शक्तिशाली विशेषताएँ"
-      },
-      "v2box": {
-        "features": "उपयोगकर्ता-अनुकूल V2Ray क्लाइंट"
-      },
-      "v2rayn": {
-        "features": "लोकप्रिय Windows क्लाइंट, विशेषताओं से भरपूर"
-      },
-      "v2rayng": {
-        "features": "लोकप्रिय Android क्लाइंट, हल्का"
-      }
-    },
-    "description": "प्रॉक्सी क्लाइंट्स के लिए सदस्यता कॉन्फ़िगरेशन टेम्पलेट्स प्रबंधित करें",
-    "features": "मुख्य विशेषताएँ",
-    "platforms": "प्लेटफ़ॉर्म",
-    "subscribeTemplate": "सदस्यता टेम्पलेट कॉन्फ़िगरेशन",
-    "templateContent": "टेम्पलेट सामग्री",
-    "templatePlaceholder": "क्लाइंट कॉन्फ़िगरेशन टेम्पलेट दर्ज करें...",
-    "title": "क्लाइंट सदस्यता टेम्पलेट्स"
+    "title": "क्लाइंट प्रबंधन"
   },
-  "title": "सदस्यता प्रबंधन"
+  "table": {
+    "columns": {
+      "default": "डिफ़ॉल्ट",
+      "description": "विवरण",
+      "name": "क्लाइंट नाम",
+      "outputFormat": "आउटपुट प्रारूप",
+      "supportedPlatforms": "समर्थित प्लेटफ़ॉर्म"
+    }
+  }
 }

@@ -1,15 +1,25 @@
 {
   "actions": {
+    "add": "افزودن",
+    "batchDelete": "حذف گروهی",
+    "batchDeleteSuccess": "با موفقیت {count} مشتری حذف شد",
+    "batchDeleteWarning": "آیا مطمئن هستید که می‌خواهید {count} مشتری انتخاب شده را حذف کنید؟",
     "cancel": "لغو",
+    "confirm": "تأیید",
+    "confirmDelete": "تأیید حذف",
+    "createSuccess": "با موفقیت ایجاد شد",
     "delete": "حذف",
+    "deleteFailed": "حذف ناموفق بود",
+    "deleteSuccess": "با موفقیت حذف شد",
+    "deleteWarning": "این عملیات قابل بازگشت نیست. آیا مطمئن هستید که می‌خواهید این مشتری را حذف کنید؟",
     "edit": "ویرایش",
     "save": "ذخیره",
-    "saveTemplate": "ذخیره الگو"
+    "saveFailed": "ذخیره ناموفق بود",
+    "update": "به‌روزرسانی",
+    "updateSuccess": "با موفقیت به‌روزرسانی شد"
   },
   "config": {
     "description": "مدیریت تنظیمات سیستم اشتراک",
-    "restrictUserAgent": "محدودیت User-Agent",
-    "restrictUserAgentDescription": "فعال‌سازی محدودیت‌های دسترسی بر اساس User-Agent",
     "singleSubscriptionMode": "حالت اشتراک تک",
     "singleSubscriptionModeDescription": "محدود کردن کاربران به یک اشتراک فعال. اشتراک‌های موجود تحت تأثیر قرار نمی‌گیرند",
     "subscriptionDomain": "دامنه اشتراک",
@@ -21,69 +31,69 @@
     "title": "پیکربندی اشتراک",
     "updateError": "به‌روزرسانی ناموفق بود",
     "updateSuccess": "تنظیمات با موفقیت به‌روزرسانی شد",
-    "userAgentWhitelist": "فهرست سفید User-Agent",
-    "userAgentWhitelistDescription": "User-Agent های مجاز برای دسترسی به اشتراک، هر کدام در یک خط. الگوهای داخلی به‌طور خودکار در فهرست سفید گنجانده می‌شوند",
-    "userAgentWhitelistPlaceholder": "User-Agent های مجاز را وارد کنید، هر کدام در یک خط",
-    "wildcardResolution": "حل دامنه‌های wildcard",
+    "userAgentLimit": "محدودیت {userAgent}",
+    "userAgentLimitDescription": "فعال‌سازی محدودیت‌های دسترسی بر اساس {userAgent}",
+    "userAgentList": "لیست سفید {userAgent}",
+    "userAgentListDescription": "{userAgent} های مجاز برای دسترسی به اشتراک، هر کدام در یک خط. {userAgent} های پیکربندی شده به‌طور خودکار شامل خواهند شد",
+    "userAgentListPlaceholder": "{userAgent} های مجاز را وارد کنید، هر کدام در یک خط",
+    "wildcardResolution": "حل wildcard",
     "wildcardResolutionDescription": "فعال‌سازی حل دامنه wildcard برای اشتراک‌ها"
   },
-  "description": "تنظیمات اشتراک و الگوهای مشتری را پیکربندی کنید",
-  "messages": {
-    "noClients": "هیچ الگوی مشتری وجود ندارد",
-    "noClientsDescription": "هنوز هیچ الگوی مشتری پیکربندی نشده است. اولین الگوی خود را برای شروع اضافه کنید."
+  "form": {
+    "addTitle": "افزودن مشتری",
+    "descriptions": {
+      "description": "توضیحات دقیق مشتری",
+      "downloadLink": "آدرس دانلود پلتفرم",
+      "icon": "آدرس URL آیکون یا کدگذاری base64",
+      "name": "نام نمایشی مشتری",
+      "outputFormat": "فرمت فایل پیکربندی اشتراک",
+      "proxyTemplate": "الگوی لینک اشتراک، از متغیرها پشتیبانی می‌کند: ",
+      "template": "الگوی پیکربندی اشتراک، از متغیرهای مختلف پشتیبانی می‌کند",
+      "userAgentPrefix": "شناسه مشتری برای تمایز بین مشتریان مختلف"
+    },
+    "editTitle": "ویرایش مشتری",
+    "fields": {
+      "description": "توضیحات",
+      "icon": "آیکون",
+      "name": "نام",
+      "outputFormat": "فرمت خروجی",
+      "proxyTemplate": "لینک اشتراک",
+      "template": "الگوی پیکربندی"
+    },
+    "tabs": {
+      "basic": "اطلاعات پایه",
+      "download": "دانلودها",
+      "template": "الگوها"
+    },
+    "validation": {
+      "nameRequired": "نام مشتری الزامی است",
+      "userAgentRequiredSuffix": "الزامی است"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "متن ساده",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "اندروید",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "لینوکس",
+    "mac": "macOS",
+    "windows": "ویندوز"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "اکوسیستم بزرگ، قوانین جامع، جامعه فعال"
-      },
-      "egern": {
-        "features": "مشتری مدرن iOS، عملکرد عالی"
-      },
-      "hiddify": {
-        "features": "چندپلتفرمی، پروتکل‌های جامع، مناسب برای مبتدیان"
-      },
-      "loon": {
-        "features": "مشتری پیشرفته iOS، قوانین غنی، رابط زیبا"
-      },
-      "netch": {
-        "features": "مشتری پروکسی متمرکز بر بازی"
-      },
-      "quantumult": {
-        "features": "مشتری پیشرفته iOS، قوانین انعطاف‌پذیر، اسکریپت‌های غنی"
-      },
-      "shadowrocket": {
-        "features": "مشتری کلاسیک iOS، پیکربندی انعطاف‌پذیر"
-      },
-      "singbox": {
-        "features": "هسته جدید، رابط کاربری رسمی، پشتیبانی چندپلتفرمی"
-      },
-      "stash": {
-        "features": "رابط کاربری مدرن موبایل، پروتکل‌های جامع"
-      },
-      "surfboard": {
-        "features": "رایگان، توسعه فعال، رابط مدرن"
-      },
-      "surge": {
-        "features": "ابزار پریمیوم iOS/Mac، ویژگی‌های قدرتمند"
-      },
-      "v2box": {
-        "features": "مشتری کاربرپسند V2Ray"
-      },
-      "v2rayn": {
-        "features": "مشتری محبوب ویندوز، پر از ویژگی"
-      },
-      "v2rayng": {
-        "features": "مشتری محبوب اندروید، سبک"
-      }
-    },
-    "description": "مدیریت الگوهای پیکربندی اشتراک برای مشتریان پروکسی",
-    "features": "ویژگی‌های کلیدی",
-    "platforms": "پلتفرم‌ها",
-    "subscribeTemplate": "پیکربندی الگوی اشتراک",
-    "templateContent": "محتوای الگو",
-    "templatePlaceholder": "الگوی پیکربندی مشتری را وارد کنید...",
-    "title": "الگوهای اشتراک مشتری"
+    "title": "مدیریت مشتری"
   },
-  "title": "مدیریت اشتراک"
+  "table": {
+    "columns": {
+      "default": "پیش‌فرض",
+      "description": "توضیحات",
+      "name": "نام مشتری",
+      "outputFormat": "فرمت خروجی",
+      "supportedPlatforms": "پلتفرم‌های پشتیبانی شده"
+    }
+  }
 }

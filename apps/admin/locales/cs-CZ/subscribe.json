@@ -1,17 +1,27 @@
 {
   "actions": {
+    "add": "Přidat",
+    "batchDelete": "Hromadné mazání",
+    "batchDeleteSuccess": "Úspěšně smazáno {count} klientů",
+    "batchDeleteWarning": "Opravdu chcete smazat vybrané {count} klienty?",
     "cancel": "Zrušit",
+    "confirm": "Potvrdit",
+    "confirmDelete": "Potvrdit mazání",
+    "createSuccess": "Úspěšně vytvořeno",
     "delete": "Smazat",
+    "deleteFailed": "Mazání selhalo",
+    "deleteSuccess": "Úspěšně smazáno",
+    "deleteWarning": "Tuto operaci nelze vrátit zpět. Opravdu chcete smazat tohoto klienta?",
     "edit": "Upravit",
     "save": "Uložit",
-    "saveTemplate": "Uložit šablonu"
+    "saveFailed": "Uložení selhalo",
+    "update": "Aktualizovat",
+    "updateSuccess": "Úspěšně aktualizováno"
   },
   "config": {
     "description": "Spravujte nastavení systému předplatného",
-    "restrictUserAgent": "Omezení User-Agent",
-    "restrictUserAgentDescription": "Povolit omezení přístupu na základě User-Agent",
     "singleSubscriptionMode": "Režim jednoho předplatného",
-    "singleSubscriptionModeDescription": "Převeďte všechna uživatelská předplatná na zůstatek účtu",
+    "singleSubscriptionModeDescription": "Omezit uživatele na jedno aktivní předplatné. Stávající předplatná nejsou ovlivněna",
     "subscriptionDomain": "Doména předplatného",
     "subscriptionDomainDescription": "Vlastní doména pro odkazy na předplatné",
     "subscriptionDomainPlaceholder": "Zadejte doménu předplatného, jednu na řádek",
@@ -21,69 +31,69 @@
     "title": "Konfigurace předplatného",
     "updateError": "Aktualizace selhala",
     "updateSuccess": "Nastavení bylo úspěšně aktualizováno",
-    "userAgentWhitelist": "Whitelist User-Agent",
-    "userAgentWhitelistDescription": "Povolené User-Agenty pro přístup k předplatnému, jeden na řádek. Vestavěné šablony jsou automaticky zahrnuty do whitelistu",
-    "userAgentWhitelistPlaceholder": "Zadejte povolené User-Agenty, jeden na řádek",
+    "userAgentLimit": "Omezení {userAgent}",
+    "userAgentLimitDescription": "Povolit omezení přístupu na základě {userAgent}",
+    "userAgentList": "Whitelist {userAgent}",
+    "userAgentListDescription": "Povolené {userAgent} pro přístup k odběru, jeden na řádek. Konfigurovaná aplikace {userAgent} bude automaticky zahrnuta",
+    "userAgentListPlaceholder": "Zadejte povolené {userAgent}, jeden na řádek",
     "wildcardResolution": "Řešení zástupných znaků",
     "wildcardResolutionDescription": "Povolit řešení domén se zástupnými znaky pro předplatná"
   },
-  "description": "Nastavte nastavení předplatného a šablony klientů",
-  "messages": {
-    "noClients": "Žádné šablony klientů",
-    "noClientsDescription": "Žádné šablony klientů zatím nejsou nakonfigurovány. Přidejte svou první šablonu a začněte."
+  "form": {
+    "addTitle": "Přidat klienta",
+    "descriptions": {
+      "description": "Podrobný popis klienta",
+      "downloadLink": "URL pro stažení platformy",
+      "icon": "URL ikony nebo base64 kódování",
+      "name": "Zobrazovaný název klienta",
+      "outputFormat": "Formát konfiguračního souboru předplatného",
+      "proxyTemplate": "Šablona odkazu na předplatné, podporuje proměnné: {{variables}}",
+      "template": "Šablona konfigurace předplatného, podporuje různé proměnné",
+      "userAgentPrefix": "Identifikátor klienta pro rozlišení různých klientů."
+    },
+    "editTitle": "Upravit klienta",
+    "fields": {
+      "description": "Popis",
+      "icon": "Ikona",
+      "name": "Název",
+      "outputFormat": "Výstupní formát",
+      "proxyTemplate": "Odkaz na předplatné",
+      "template": "Konfigurační šablona"
+    },
+    "tabs": {
+      "basic": "Základní informace",
+      "download": "Stažení",
+      "template": "Šablony"
+    },
+    "validation": {
+      "nameRequired": "Název klienta je povinný",
+      "userAgentRequiredSuffix": "je povinný"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Prostý text",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Velký ekosystém, komplexní pravidla, aktivní komunita"
-      },
-      "egern": {
-        "features": "Moderní klient pro iOS, vynikající výkon"
-      },
-      "hiddify": {
-        "features": "Víceplatformní, komplexní protokoly, přívětivé pro začátečníky"
-      },
-      "loon": {
-        "features": "Pokročilý klient pro iOS, bohatá pravidla, krásné rozhraní"
-      },
-      "netch": {
-        "features": "Proxy klient zaměřený na hry"
-      },
-      "quantumult": {
-        "features": "Pokročilý klient pro iOS, flexibilní pravidla, bohaté skripty"
-      },
-      "shadowrocket": {
-        "features": "Klasický klient pro iOS, flexibilní konfigurace"
-      },
-      "singbox": {
-        "features": "Nejnovější jádro, oficiální GUI, podpora více platforem"
-      },
-      "stash": {
-        "features": "Moderní mobilní UI, komplexní protokoly"
-      },
-      "surfboard": {
-        "features": "Zdarma, aktivní vývoj, moderní rozhraní"
-      },
-      "surge": {
-        "features": "Prémiový nástroj pro iOS/Mac, silné funkce"
-      },
-      "v2box": {
-        "features": "Uživatelsky přívětivý klient V2Ray"
-      },
-      "v2rayn": {
-        "features": "Populární klient pro Windows, bohatý na funkce"
-      },
-      "v2rayng": {
-        "features": "Populární klient pro Android, lehký"
-      }
-    },
-    "description": "Spravujte šablony konfigurace předplatného pro proxy klienty",
-    "features": "Klíčové vlastnosti",
-    "platforms": "Platformy",
-    "subscribeTemplate": "Konfigurace šablony předplatného",
-    "templateContent": "Obsah šablony",
-    "templatePlaceholder": "Zadejte šablonu konfigurace klienta...",
-    "title": "Šablony předplatného klienta"
+    "title": "Správa klientů"
   },
-  "title": "Správa předplatného"
+  "table": {
+    "columns": {
+      "default": "Výchozí",
+      "description": "Popis",
+      "name": "Název klienta",
+      "outputFormat": "Výstupní formát",
+      "supportedPlatforms": "Podporované platformy"
+    }
+  }
 }

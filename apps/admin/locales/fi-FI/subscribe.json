@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Lisää",
+    "batchDelete": "Ryhmän poistaminen",
+    "batchDeleteSuccess": "Poistettiin onnistuneesti {count} asiakasta",
+    "batchDeleteWarning": "Oletko varma, että haluat poistaa valitut {count} asiakasta?",
     "cancel": "Peruuta",
+    "confirm": "Vahvista",
+    "confirmDelete": "Vahvista poisto",
+    "createSuccess": "Luotiin onnistuneesti",
     "delete": "Poista",
+    "deleteFailed": "Poisto epäonnistui",
+    "deleteSuccess": "Poistettu onnistuneesti",
+    "deleteWarning": "Tätä toimintoa ei voi peruuttaa. Oletko varma, että haluat poistaa tämän asiakkaan?",
     "edit": "Muokkaa",
     "save": "Tallenna",
-    "saveTemplate": "Tallenna Malli"
+    "saveFailed": "Tallennus epäonnistui",
+    "update": "Päivitä",
+    "updateSuccess": "Päivitys onnistui"
   },
   "config": {
     "description": "Hallitse tilausjärjestelmän asetuksia",
-    "restrictUserAgent": "Käyttäjä-agentin rajoitus",
-    "restrictUserAgentDescription": "Ota käyttöön pääsyn rajoitukset käyttäjä-agentin perusteella",
-    "singleSubscriptionMode": "Yksittäinen Tilausmode",
-    "singleSubscriptionModeDescription": "Muunna kaikki käyttäjien tilaukset tilitaseeksi",
-    "subscriptionDomain": "Tilauksen Verkkotunnus",
+    "singleSubscriptionMode": "Yksittäinen tilausmoodi",
+    "singleSubscriptionModeDescription": "Rajoita käyttäjät yhteen aktiiviseen tilaukseen. Olemassa olevat tilaukset eivät vaikuta",
+    "subscriptionDomain": "Tilauksen verkkotunnus",
     "subscriptionDomainDescription": "Mukautettu verkkotunnus tilauslinkeille",
     "subscriptionDomainPlaceholder": "Syötä tilauksen verkkotunnus, yksi per rivi",
-    "subscriptionPath": "Tilauksen Polku",
+    "subscriptionPath": "Tilauksen polku",
     "subscriptionPathDescription": "Mukautettu polku tilauspisteille (parempi suorituskyky järjestelmän uudelleenkäynnistyksen jälkeen)",
     "subscriptionPathPlaceholder": "Syötä tilauksen polku",
-    "title": "Tilauksen Konfigurointi",
+    "title": "Tilauksen asetukset",
     "updateError": "Päivitys epäonnistui",
     "updateSuccess": "Asetukset päivitettiin onnistuneesti",
-    "userAgentWhitelist": "Käyttäjä-agentin valkoinen lista",
-    "userAgentWhitelistDescription": "Sallitut käyttäjä-agentit tilauspääsyyn, yksi per rivi. Oletusmallit sisältyvät automaattisesti valkoiseen listaan",
-    "userAgentWhitelistPlaceholder": "Syötä sallitut käyttäjä-agentit, yksi per rivi",
-    "wildcardResolution": "Wildcard Ratkaisu",
+    "userAgentLimit": "{userAgent} Rajoitus",
+    "userAgentLimitDescription": "Ota käyttöön pääsyn rajoitukset perustuen {userAgent}",
+    "userAgentList": "{userAgent} Valkoinen lista",
+    "userAgentListDescription": "Sallitut {userAgent} tilauspääsyyn, yksi per rivi. Määritetty sovellus {userAgent} lisätään automaattisesti",
+    "userAgentListPlaceholder": "Syötä sallitut {userAgent}, yksi per rivi",
+    "wildcardResolution": "Wildcard-ratkaisu",
     "wildcardResolutionDescription": "Ota käyttöön wildcard-verkkotunnuksen ratkaisu tilauksille"
   },
-  "description": "Määritä tilausasetukset ja asiakasmallit",
-  "messages": {
-    "noClients": "Ei Asiakasmalleja",
-    "noClientsDescription": "Asiakasmalleja ei ole vielä määritetty. Lisää ensimmäinen mallisi aloittaaksesi."
+  "form": {
+    "addTitle": "Lisää asiakas",
+    "descriptions": {
+      "description": "Yksityiskohtainen asiakaskuvaus",
+      "downloadLink": "alustalataus-URL",
+      "icon": "Ikonin URL-osoite tai base64-koodaus",
+      "name": "Asiakkaan näyttönimi",
+      "outputFormat": "Tilauksen asetustiedoston muoto",
+      "proxyTemplate": "Tilauksen linkkimalli, tukee muuttujia: ",
+      "template": "Tilauksen asetusmalli, tukee erilaisia muuttujia",
+      "userAgentPrefix": "Asiakasidentifikaattori eri asiakkaiden erottamiseksi"
+    },
+    "editTitle": "Muokkaa asiakasta",
+    "fields": {
+      "description": "Kuvaus",
+      "icon": "Ikoni",
+      "name": "Nimi",
+      "outputFormat": "Tulostusmuoto",
+      "proxyTemplate": "Tilauksen linkki",
+      "template": "Asetusmalli"
+    },
+    "tabs": {
+      "basic": "Perustiedot",
+      "download": "Lataukset",
+      "template": "Mallit"
+    },
+    "validation": {
+      "nameRequired": "Asiakkaan nimi on pakollinen",
+      "userAgentRequiredSuffix": "on pakollinen"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Plain Text",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Laaja ekosysteemi, kattavat säännöt, aktiivinen yhteisö"
-      },
-      "egern": {
-        "features": "Moderni iOS asiakas, erinomainen suorituskyky"
-      },
-      "hiddify": {
-        "features": "Monialustainen, kattavat protokollat, aloittelijaystävällinen"
-      },
-      "loon": {
-        "features": "iOS edistynyt asiakas, runsaat säännöt, kaunis käyttöliittymä"
-      },
-      "netch": {
-        "features": "Pelaamiseen keskittyvä proxy-asiakas"
-      },
-      "quantumult": {
-        "features": "iOS edistynyt asiakas, joustavat säännöt, runsaat skriptit"
-      },
-      "shadowrocket": {
-        "features": "Klassinen iOS asiakas, joustava konfigurointi"
-      },
-      "singbox": {
-        "features": "Uusin ydin, virallinen GUI, monialustatuki"
-      },
-      "stash": {
-        "features": "Moderni mobiili UI, kattavat protokollat"
-      },
-      "surfboard": {
-        "features": "Ilmainen, aktiivinen kehitys, moderni käyttöliittymä"
-      },
-      "surge": {
-        "features": "Premium iOS/Mac työkalu, tehokkaat ominaisuudet"
-      },
-      "v2box": {
-        "features": "Käyttäjäystävällinen V2Ray asiakas"
-      },
-      "v2rayn": {
-        "features": "Suosittu Windows asiakas, ominaisuusrikas"
-      },
-      "v2rayng": {
-        "features": "Suosittu Android asiakas, kevyt"
-      }
-    },
-    "description": "Hallitse tilauskonfiguraatiomalleja proxy-asiakkaille",
-    "features": "Keskeiset Ominaisuudet",
-    "platforms": "Alustat",
-    "subscribeTemplate": "Tilauksen Mallin Konfigurointi",
-    "templateContent": "Malli Sisältö",
-    "templatePlaceholder": "Syötä asiakaskonfiguraatiomalli...",
-    "title": "Asiakkaan Tilausmallit"
+    "title": "Asiakashallinta"
   },
-  "title": "Tilauksen Hallinta"
+  "table": {
+    "columns": {
+      "default": "Oletus",
+      "description": "Kuvaus",
+      "name": "Asiakkaan nimi",
+      "outputFormat": "Tulostusmuoto",
+      "supportedPlatforms": "Tuetut alustat"
+    }
+  }
 }

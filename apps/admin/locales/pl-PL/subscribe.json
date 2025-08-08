@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Dodaj",
+    "batchDelete": "Usunięcie zbiorcze",
+    "batchDeleteSuccess": "Pomyślnie usunięto {count} klientów",
+    "batchDeleteWarning": "Czy na pewno chcesz usunąć wybranych {count} klientów?",
     "cancel": "Anuluj",
+    "confirm": "Potwierdź",
+    "confirmDelete": "Potwierdź usunięcie",
+    "createSuccess": "Utworzono pomyślnie",
     "delete": "Usuń",
+    "deleteFailed": "Usunięcie nie powiodło się",
+    "deleteSuccess": "Pomyślnie usunięto",
+    "deleteWarning": "Ta operacja nie może być cofnięta. Czy na pewno chcesz usunąć tego klienta?",
     "edit": "Edytuj",
     "save": "Zapisz",
-    "saveTemplate": "Zapisz Szablon"
+    "saveFailed": "Zapis nie powiódł się",
+    "update": "Aktualizuj",
+    "updateSuccess": "Pomyślnie zaktualizowano"
   },
   "config": {
     "description": "Zarządzaj ustawieniami systemu subskrypcyjnego",
-    "restrictUserAgent": "Ograniczenie User-Agent",
-    "restrictUserAgentDescription": "Włącz ograniczenia dostępu na podstawie User-Agent",
-    "singleSubscriptionMode": "Tryb Pojedynczej Subskrypcji",
-    "singleSubscriptionModeDescription": "Przekształć wszystkie subskrypcje użytkowników w saldo konta",
-    "subscriptionDomain": "Domena Subskrypcyjna",
+    "singleSubscriptionMode": "Tryb pojedynczej subskrypcji",
+    "singleSubscriptionModeDescription": "Ogranicz użytkowników do jednej aktywnej subskrypcji. Istniejące subskrypcje pozostają bez zmian",
+    "subscriptionDomain": "Domena subskrypcyjna",
     "subscriptionDomainDescription": "Niestandardowa domena dla linków subskrypcyjnych",
     "subscriptionDomainPlaceholder": "Wprowadź domenę subskrypcyjną, jedna na linię",
-    "subscriptionPath": "Ścieżka Subskrypcyjna",
+    "subscriptionPath": "Ścieżka subskrypcyjna",
     "subscriptionPathDescription": "Niestandardowa ścieżka dla punktów końcowych subskrypcji (lepsza wydajność po restarcie systemu)",
     "subscriptionPathPlaceholder": "Wprowadź ścieżkę subskrypcyjną",
-    "title": "Konfiguracja Subskrypcji",
+    "title": "Konfiguracja subskrypcji",
     "updateError": "Aktualizacja nie powiodła się",
     "updateSuccess": "Ustawienia zaktualizowane pomyślnie",
-    "userAgentWhitelist": "Biała lista User-Agent",
-    "userAgentWhitelistDescription": "Dozwolone User-Agents do dostępu subskrypcyjnego, jeden na linię. Wbudowane szablony są automatycznie dodawane do białej listy",
-    "userAgentWhitelistPlaceholder": "Wprowadź dozwolone User-Agents, jeden na linię",
-    "wildcardResolution": "Rozwiązywanie Dzikich Znaków",
-    "wildcardResolutionDescription": "Włącz rozwiązywanie dzikich znaków dla subskrypcji"
+    "userAgentLimit": "Ograniczenie {userAgent}",
+    "userAgentLimitDescription": "Włącz ograniczenia dostępu na podstawie {userAgent}",
+    "userAgentList": "Biała lista {userAgent}",
+    "userAgentListDescription": "Dozwolone {userAgent} do dostępu subskrypcyjnego, jeden na linię. Skonfigurowana aplikacja {userAgent} zostanie automatycznie uwzględniona",
+    "userAgentListPlaceholder": "Wprowadź dozwolone {userAgent}, jeden na linię",
+    "wildcardResolution": "Rozwiązywanie symboli wieloznacznych",
+    "wildcardResolutionDescription": "Włącz rozwiązywanie domen wieloznacznych dla subskrypcji"
   },
-  "description": "Skonfiguruj ustawienia subskrypcji i szablony klientów",
-  "messages": {
-    "noClients": "Brak Szablonów Klientów",
-    "noClientsDescription": "Brak skonfigurowanych szablonów klientów. Dodaj swój pierwszy szablon, aby rozpocząć."
+  "form": {
+    "addTitle": "Dodaj klienta",
+    "descriptions": {
+      "description": "Szczegółowy opis klienta",
+      "downloadLink": "URL pobierania platformy",
+      "icon": "URL ikony lub kodowanie base64",
+      "name": "Nazwa wyświetlana klienta",
+      "outputFormat": "Format pliku konfiguracyjnego subskrypcji",
+      "proxyTemplate": "Szablon linku subskrypcyjnego, obsługuje zmienne: ",
+      "template": "Szablon konfiguracji subskrypcji, obsługuje różne zmienne",
+      "userAgentPrefix": "Identyfikator klienta do rozróżniania różnych klientów"
+    },
+    "editTitle": "Edytuj klienta",
+    "fields": {
+      "description": "Opis",
+      "icon": "Ikona",
+      "name": "Nazwa",
+      "outputFormat": "Format wyjściowy",
+      "proxyTemplate": "Link subskrypcyjny",
+      "template": "Szablon konfiguracji"
+    },
+    "tabs": {
+      "basic": "Podstawowe informacje",
+      "download": "Pobierania",
+      "template": "Szablony"
+    },
+    "validation": {
+      "nameRequired": "Nazwa klienta jest wymagana",
+      "userAgentRequiredSuffix": "jest wymagany"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Zwykły tekst",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Duży ekosystem, kompleksowe zasady, aktywna społeczność"
-      },
-      "egern": {
-        "features": "Nowoczesny klient iOS, doskonała wydajność"
-      },
-      "hiddify": {
-        "features": "Wieloplatformowy, kompleksowe protokoły, przyjazny dla początkujących"
-      },
-      "loon": {
-        "features": "Zaawansowany klient iOS, bogate zasady, piękny interfejs"
-      },
-      "netch": {
-        "features": "Klient proxy skoncentrowany na grach"
-      },
-      "quantumult": {
-        "features": "Zaawansowany klient iOS, elastyczne zasady, bogate skrypty"
-      },
-      "shadowrocket": {
-        "features": "Klasyczny klient iOS, elastyczna konfiguracja"
-      },
-      "singbox": {
-        "features": "Najnowsze jądro, oficjalny interfejs GUI, wsparcie dla wielu platform"
-      },
-      "stash": {
-        "features": "Nowoczesny interfejs mobilny, kompleksowe protokoły"
-      },
-      "surfboard": {
-        "features": "Darmowy, aktywny rozwój, nowoczesny interfejs"
-      },
-      "surge": {
-        "features": "Premium narzędzie iOS/Mac, potężne funkcje"
-      },
-      "v2box": {
-        "features": "Przyjazny dla użytkownika klient V2Ray"
-      },
-      "v2rayn": {
-        "features": "Popularny klient Windows, bogaty w funkcje"
-      },
-      "v2rayng": {
-        "features": "Popularny klient Android, lekki"
-      }
-    },
-    "description": "Zarządzaj szablonami konfiguracji subskrypcji dla klientów proxy",
-    "features": "Kluczowe Funkcje",
-    "platforms": "Platformy",
-    "subscribeTemplate": "Konfiguracja Szablonu Subskrypcji",
-    "templateContent": "Zawartość Szablonu",
-    "templatePlaceholder": "Wprowadź szablon konfiguracji klienta...",
-    "title": "Szablony Subskrypcji Klientów"
+    "title": "Zarządzanie klientami"
   },
-  "title": "Zarządzanie Subskrypcjami"
+  "table": {
+    "columns": {
+      "default": "Domyślny",
+      "description": "Opis",
+      "name": "Nazwa klienta",
+      "outputFormat": "Format wyjściowy",
+      "supportedPlatforms": "Obsługiwane platformy"
+    }
+  }
 }

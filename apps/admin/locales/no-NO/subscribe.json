@@ -1,15 +1,25 @@
 {
   "actions": {
+    "add": "Legg til",
+    "batchDelete": "Batch Slett",
+    "batchDeleteSuccess": "Slettet {count} klienter med suksess",
+    "batchDeleteWarning": "Er du sikker på at du vil slette de valgte {count} klientene?",
     "cancel": "Avbryt",
+    "confirm": "Bekreft",
+    "confirmDelete": "Bekreft sletting",
+    "createSuccess": "Opprettet med suksess",
     "delete": "Slett",
+    "deleteFailed": "Sletting feilet",
+    "deleteSuccess": "Slettet med suksess",
+    "deleteWarning": "Denne operasjonen kan ikke angres. Er du sikker på at du vil slette denne klienten?",
     "edit": "Rediger",
     "save": "Lagre",
-    "saveTemplate": "Lagre Mal"
+    "saveFailed": "Lagring feilet",
+    "update": "Oppdater",
+    "updateSuccess": "Oppdatert med suksess"
   },
   "config": {
     "description": "Administrer innstillinger for abonnementsystemet",
-    "restrictUserAgent": "Bruker-Agent Restriksjon",
-    "restrictUserAgentDescription": "Aktiver tilgangsrestriksjoner basert på Bruker-Agent",
     "singleSubscriptionMode": "Enkelt Abonnementsmodus",
     "singleSubscriptionModeDescription": "Begrens brukere til ett aktivt abonnement. Eksisterende abonnementer påvirkes ikke",
     "subscriptionDomain": "Abonnementsdomene",
@@ -20,70 +30,70 @@
     "subscriptionPathPlaceholder": "Skriv inn abonnementsbane",
     "title": "Abonnementsinnstillinger",
     "updateError": "Oppdatering feilet",
-    "updateSuccess": "Innstillinger oppdatert",
-    "userAgentWhitelist": "Bruker-Agent Hviteliste",
-    "userAgentWhitelistDescription": "Tillatte Bruker-Agenter for abonnementstilgang, én per linje. Innebygde maler inkluderes automatisk i hvitelisten",
-    "userAgentWhitelistPlaceholder": "Skriv inn tillatte Bruker-Agenter, én per linje",
-    "wildcardResolution": "Wildcard-oppløsning",
-    "wildcardResolutionDescription": "Aktiver wildcard-domeneoppløsning for abonnementer"
+    "updateSuccess": "Innstillinger oppdatert med suksess",
+    "userAgentLimit": "{userAgent} Begrensning",
+    "userAgentLimitDescription": "Aktiver tilgangsbegrensninger basert på {userAgent}",
+    "userAgentList": "{userAgent} Hvitliste",
+    "userAgentListDescription": "Tillatte {userAgent} for abonnementsadgang, én per linje. Konfigurert applikasjon {userAgent} vil bli automatisk inkludert",
+    "userAgentListPlaceholder": "Skriv inn tillatte {userAgent}, én per linje",
+    "wildcardResolution": "Wildcard Oppløsning",
+    "wildcardResolutionDescription": "Aktiver wildcard domeneoppløsning for abonnementer"
   },
-  "description": "Konfigurer abonnementsinnstillinger og klientmaler",
-  "messages": {
-    "noClients": "Ingen Klientmaler",
-    "noClientsDescription": "Ingen klientmaler er konfigurert ennå. Legg til din første mal for å komme i gang."
+  "form": {
+    "addTitle": "Legg til Klient",
+    "descriptions": {
+      "description": "Detaljert klientbeskrivelse",
+      "downloadLink": "Plattform nedlastings-URL",
+      "icon": "Ikon-URL eller base64-koding",
+      "name": "Klientens visningsnavn",
+      "outputFormat": "Format for abonnements konfigurasjonsfil",
+      "proxyTemplate": "Mal for abonnementslenke, støtter variabler: ",
+      "template": "Abonnements konfigurasjonsmal, støtter ulike variabler",
+      "userAgentPrefix": "Klientidentifikator for å skille mellom forskjellige klienter"
+    },
+    "editTitle": "Rediger Klient",
+    "fields": {
+      "description": "Beskrivelse",
+      "icon": "Ikon",
+      "name": "Navn",
+      "outputFormat": "Utdataformat",
+      "proxyTemplate": "Abonnementslenke",
+      "template": "Konfigurasjonsmal"
+    },
+    "tabs": {
+      "basic": "Grunnleggende Info",
+      "download": "Nedlastinger",
+      "template": "Maler"
+    },
+    "validation": {
+      "nameRequired": "Klientnavn er påkrevd",
+      "userAgentRequiredSuffix": "er påkrevd"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Ren Tekst",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Stort økosystem, omfattende regler, aktivt fellesskap"
-      },
-      "egern": {
-        "features": "Moderne iOS-klient, utmerket ytelse"
-      },
-      "hiddify": {
-        "features": "Flere plattformer, omfattende protokoller, nybegynnervennlig"
-      },
-      "loon": {
-        "features": "Avansert iOS-klient, rike regler, vakkert grensesnitt"
-      },
-      "netch": {
-        "features": "Spillfokusert proxy-klient"
-      },
-      "quantumult": {
-        "features": "Avansert iOS-klient, fleksible regler, rike skript"
-      },
-      "shadowrocket": {
-        "features": "Klassisk iOS-klient, fleksibel konfigurasjon"
-      },
-      "singbox": {
-        "features": "Nyeste kjerne, offisiell GUI, støtte for flere plattformer"
-      },
-      "stash": {
-        "features": "Moderne mobilgrensesnitt, omfattende protokoller"
-      },
-      "surfboard": {
-        "features": "Gratis, aktiv utvikling, moderne grensesnitt"
-      },
-      "surge": {
-        "features": "Premium iOS/Mac-verktøy, kraftige funksjoner"
-      },
-      "v2box": {
-        "features": "Brukervennlig V2Ray-klient"
-      },
-      "v2rayn": {
-        "features": "Populær Windows-klient, funksjonsrik"
-      },
-      "v2rayng": {
-        "features": "Populær Android-klient, lettvekts"
-      }
-    },
-    "description": "Administrer abonnementsmaler for proxy-klienter",
-    "features": "Nøkkelfunksjoner",
-    "platforms": "Plattformer",
-    "subscribeTemplate": "Abonnementsmal Konfigurasjon",
-    "templateContent": "Malinnhold",
-    "templatePlaceholder": "Skriv inn klientkonfigurasjonsmal...",
-    "title": "Klient Abonnementsmaler"
+    "title": "Klientadministrasjon"
   },
-  "title": "Abonnementsadministrasjon"
+  "table": {
+    "columns": {
+      "default": "Standard",
+      "description": "Beskrivelse",
+      "name": "Klientnavn",
+      "outputFormat": "Utdataformat",
+      "supportedPlatforms": "Støttede Plattformer"
+    }
+  }
 }

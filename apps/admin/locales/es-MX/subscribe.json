@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Agregar",
+    "batchDelete": "Eliminar en Lote",
+    "batchDeleteSuccess": "Se eliminaron exitosamente {count} clientes",
+    "batchDeleteWarning": "¿Está seguro de que desea eliminar los {count} clientes seleccionados?",
     "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "confirmDelete": "Confirmar Eliminación",
+    "createSuccess": "Creado exitosamente",
     "delete": "Eliminar",
+    "deleteFailed": "Error al eliminar",
+    "deleteSuccess": "Eliminado exitosamente",
+    "deleteWarning": "Esta operación no se puede deshacer. ¿Está seguro de que desea eliminar este cliente?",
     "edit": "Editar",
     "save": "Guardar",
-    "saveTemplate": "Guardar Plantilla"
+    "saveFailed": "Error al guardar",
+    "update": "Actualizar",
+    "updateSuccess": "Actualizado exitosamente"
   },
   "config": {
-    "description": "Gestionar la configuración del sistema de suscripciones",
-    "restrictUserAgent": "Restricción de User-Agent",
-    "restrictUserAgentDescription": "Habilitar restricciones de acceso basadas en User-Agent",
+    "description": "Gestionar la configuración del sistema de suscripción",
     "singleSubscriptionMode": "Modo de Suscripción Única",
     "singleSubscriptionModeDescription": "Limitar a los usuarios a una suscripción activa. Las suscripciones existentes no se ven afectadas",
     "subscriptionDomain": "Dominio de Suscripción",
     "subscriptionDomainDescription": "Dominio personalizado para enlaces de suscripción",
-    "subscriptionDomainPlaceholder": "Ingresa el dominio de suscripción, uno por línea",
+    "subscriptionDomainPlaceholder": "Ingrese el dominio de suscripción, uno por línea",
     "subscriptionPath": "Ruta de Suscripción",
     "subscriptionPathDescription": "Ruta personalizada para los puntos finales de suscripción (mejor rendimiento después del reinicio del sistema)",
-    "subscriptionPathPlaceholder": "Ingresa la ruta de suscripción",
+    "subscriptionPathPlaceholder": "Ingrese la ruta de suscripción",
     "title": "Configuración de Suscripción",
     "updateError": "Error al actualizar",
-    "updateSuccess": "Configuraciones actualizadas con éxito",
-    "userAgentWhitelist": "Lista blanca de User-Agent",
-    "userAgentWhitelistDescription": "User-Agents permitidos para acceso a la suscripción, uno por línea. Las plantillas integradas se incluyen automáticamente en la lista blanca",
-    "userAgentWhitelistPlaceholder": "Ingresa los User-Agents permitidos, uno por línea",
-    "wildcardResolution": "Resolución de Comodín",
-    "wildcardResolutionDescription": "Habilitar la resolución de dominio comodín para suscripciones"
+    "updateSuccess": "Configuraciones actualizadas exitosamente",
+    "userAgentLimit": "Restricción de {userAgent}",
+    "userAgentLimitDescription": "Habilitar restricciones de acceso basadas en {userAgent}",
+    "userAgentList": "Lista blanca de {userAgent}",
+    "userAgentListDescription": "{userAgent} permitidos para acceso a suscripciones, uno por línea. La aplicación configurada {userAgent} se incluirá automáticamente",
+    "userAgentListPlaceholder": "Ingresa {userAgent} permitidos, uno por línea",
+    "wildcardResolution": "Resolución de Comodines",
+    "wildcardResolutionDescription": "Habilitar resolución de dominio comodín para suscripciones"
   },
-  "description": "Configurar ajustes de suscripción y plantillas de cliente",
-  "messages": {
-    "noClients": "Sin Plantillas de Cliente",
-    "noClientsDescription": "Aún no hay plantillas de cliente configuradas. Agrega tu primera plantilla para comenzar."
+  "form": {
+    "addTitle": "Agregar Cliente",
+    "descriptions": {
+      "description": "Descripción detallada del cliente",
+      "downloadLink": "URL de descarga de la plataforma",
+      "icon": "URL del ícono o codificación base64",
+      "name": "Nombre para mostrar del cliente",
+      "outputFormat": "Formato del archivo de configuración de suscripción",
+      "proxyTemplate": "Plantilla de enlace de suscripción, soporta variables: ",
+      "template": "Plantilla de configuración de suscripción, soporta varias variables",
+      "userAgentPrefix": "Identificador del cliente para distinguir diferentes clientes"
+    },
+    "editTitle": "Editar Cliente",
+    "fields": {
+      "description": "Descripción",
+      "icon": "Ícono",
+      "name": "Nombre",
+      "outputFormat": "Formato de Salida",
+      "proxyTemplate": "Enlace de Suscripción",
+      "template": "Plantilla de Configuración"
+    },
+    "tabs": {
+      "basic": "Información Básica",
+      "download": "Descargas",
+      "template": "Plantillas"
+    },
+    "validation": {
+      "nameRequired": "El nombre del cliente es obligatorio",
+      "userAgentRequiredSuffix": "es obligatorio"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Texto Plano",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Gran ecosistema, reglas completas, comunidad activa"
-      },
-      "egern": {
-        "features": "Cliente moderno para iOS, excelente rendimiento"
-      },
-      "hiddify": {
-        "features": "Multiplataforma, protocolos completos, amigable para principiantes"
-      },
-      "loon": {
-        "features": "Cliente avanzado para iOS, reglas ricas, interfaz hermosa"
-      },
-      "netch": {
-        "features": "Cliente proxy enfocado en juegos"
-      },
-      "quantumult": {
-        "features": "Cliente avanzado para iOS, reglas flexibles, scripts ricos"
-      },
-      "shadowrocket": {
-        "features": "Cliente clásico para iOS, configuración flexible"
-      },
-      "singbox": {
-        "features": "Último núcleo, GUI oficial, soporte multiplataforma"
-      },
-      "stash": {
-        "features": "Interfaz móvil moderna, protocolos completos"
-      },
-      "surfboard": {
-        "features": "Gratis, desarrollo activo, interfaz moderna"
-      },
-      "surge": {
-        "features": "Herramienta premium para iOS/Mac, características poderosas"
-      },
-      "v2box": {
-        "features": "Cliente V2Ray fácil de usar"
-      },
-      "v2rayn": {
-        "features": "Cliente popular para Windows, rico en características"
-      },
-      "v2rayng": {
-        "features": "Cliente popular para Android, ligero"
-      }
-    },
-    "description": "Gestionar plantillas de configuración de suscripción para clientes proxy",
-    "features": "Características Clave",
-    "platforms": "Plataformas",
-    "subscribeTemplate": "Configuración de Plantilla de Suscripción",
-    "templateContent": "Contenido de la Plantilla",
-    "templatePlaceholder": "Ingresa la plantilla de configuración del cliente...",
-    "title": "Plantillas de Suscripción de Cliente"
+    "title": "Gestión de Clientes"
   },
-  "title": "Gestión de Suscripciones"
+  "table": {
+    "columns": {
+      "default": "Predeterminado",
+      "description": "Descripción",
+      "name": "Nombre del Cliente",
+      "outputFormat": "Formato de Salida",
+      "supportedPlatforms": "Plataformas Soportadas"
+    }
+  }
 }

@@ -38,8 +38,8 @@ const subscribeConfigSchema = z.object({
   pan_domain: z.boolean().optional(),
   subscribe_path: z.string().optional(),
   subscribe_domain: z.string().optional(),
-  restrict_user_agent: z.boolean().optional(),
-  user_agent_whitelist: z.string().optional(),
+  user_agent_limit: z.boolean().optional(),
+  user_agent_list: z.string().optional(),
 });
 
 type SubscribeConfigFormData = z.infer<typeof subscribeConfigSchema>;
@@ -65,8 +65,8 @@ export default function ConfigForm() {
       pan_domain: false,
       subscribe_path: '',
       subscribe_domain: '',
-      restrict_user_agent: false,
-      user_agent_whitelist: '',
+      user_agent_limit: false,
+      user_agent_list: '',
     },
   });
 
@@ -197,10 +197,10 @@ export default function ConfigForm() {
 
               <FormField
                 control={form.control}
-                name='restrict_user_agent'
+                name='user_agent_limit'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('config.restrictUserAgent')}</FormLabel>
+                    <FormLabel>{t('config.userAgentLimit', { userAgent: 'User-Agent' })}</FormLabel>
                     <FormControl>
                       <Switch
                         checked={field.value}
@@ -208,7 +208,9 @@ export default function ConfigForm() {
                         className='float-end !mt-0'
                       />
                     </FormControl>
-                    <FormDescription>{t('config.restrictUserAgentDescription')}</FormDescription>
+                    <FormDescription>
+                      {t('config.userAgentLimitDescription', { userAgent: 'User-Agent' })}
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -216,18 +218,24 @@ export default function ConfigForm() {
 
               <FormField
                 control={form.control}
-                name='user_agent_whitelist'
+                name='user_agent_list'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('config.userAgentWhitelist')}</FormLabel>
+                    <FormLabel>
+                      {t('config.userAgentList', {
+                        userAgent: 'User-Agent',
+                      })}
+                    </FormLabel>
                     <FormControl>
                       <Textarea
                         className='h-32'
-                        placeholder={`${t('config.userAgentWhitelistPlaceholder')}\nClashX\nClashForAndroid\nClash-verge`}
+                        placeholder={`${t('config.userAgentListPlaceholder', { userAgent: 'User-Agent' })}\nClashX\nClashForAndroid\nClash-verge`}
                         {...field}
                       />
                     </FormControl>
-                    <FormDescription>{t('config.userAgentWhitelistDescription')}</FormDescription>
+                    <FormDescription>
+                      {t('config.userAgentListDescription', { userAgent: 'User-Agent' })}
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}

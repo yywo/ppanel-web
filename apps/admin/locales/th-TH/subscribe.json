@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "เพิ่ม",
+    "batchDelete": "ลบแบบกลุ่ม",
+    "batchDeleteSuccess": "ลบลูกค้า {count} รายเรียบร้อยแล้ว",
+    "batchDeleteWarning": "คุณแน่ใจหรือว่าต้องการลบลูกค้า {count} รายที่เลือก?",
     "cancel": "ยกเลิก",
+    "confirm": "ยืนยัน",
+    "confirmDelete": "ยืนยันการลบ",
+    "createSuccess": "สร้างเรียบร้อยแล้ว",
     "delete": "ลบ",
+    "deleteFailed": "ลบไม่สำเร็จ",
+    "deleteSuccess": "ลบเรียบร้อยแล้ว",
+    "deleteWarning": "การดำเนินการนี้ไม่สามารถย้อนกลับได้ คุณแน่ใจหรือว่าต้องการลบลูกค้านี้?",
     "edit": "แก้ไข",
     "save": "บันทึก",
-    "saveTemplate": "บันทึกเทมเพลต"
+    "saveFailed": "บันทึกไม่สำเร็จ",
+    "update": "อัปเดต",
+    "updateSuccess": "อัปเดตเรียบร้อยแล้ว"
   },
   "config": {
     "description": "จัดการการตั้งค่าระบบการสมัครสมาชิก",
-    "restrictUserAgent": "การจำกัด User-Agent",
-    "restrictUserAgentDescription": "เปิดใช้งานการจำกัดการเข้าถึงตาม User-Agent",
     "singleSubscriptionMode": "โหมดการสมัครสมาชิกเดียว",
     "singleSubscriptionModeDescription": "จำกัดผู้ใช้ให้มีการสมัครสมาชิกที่ใช้งานอยู่เพียงหนึ่งรายการ การสมัครสมาชิกที่มีอยู่ไม่ถูกกระทบ",
     "subscriptionDomain": "โดเมนการสมัครสมาชิก",
     "subscriptionDomainDescription": "โดเมนที่กำหนดเองสำหรับลิงก์การสมัครสมาชิก",
-    "subscriptionDomainPlaceholder": "กรอกโดเมนการสมัครสมาชิก, หนึ่งต่อบรรทัด",
+    "subscriptionDomainPlaceholder": "กรอกโดเมนการสมัครสมาชิก หนึ่งรายการต่อบรรทัด",
     "subscriptionPath": "เส้นทางการสมัครสมาชิก",
-    "subscriptionPathDescription": "เส้นทางที่กำหนดเองสำหรับจุดสิ้นสุดการสมัครสมาชิก (ประสิทธิภาพดีขึ้นหลังจากการรีสตาร์ทระบบ)",
+    "subscriptionPathDescription": "เส้นทางที่กำหนดเองสำหรับจุดสิ้นสุดการสมัครสมาชิก (ประสิทธิภาพดีขึ้นหลังจากรีสตาร์ทระบบ)",
     "subscriptionPathPlaceholder": "กรอกเส้นทางการสมัครสมาชิก",
     "title": "การตั้งค่าการสมัครสมาชิก",
-    "updateError": "การอัปเดตล้มเหลว",
+    "updateError": "การอัปเดตไม่สำเร็จ",
     "updateSuccess": "อัปเดตการตั้งค่าเรียบร้อยแล้ว",
-    "userAgentWhitelist": "รายการอนุญาต User-Agent",
-    "userAgentWhitelistDescription": "User-Agent ที่อนุญาตสำหรับการเข้าถึงการสมัครสมาชิก หนึ่งรายการต่อบรรทัด เทมเพลตที่มีอยู่จะถูกเพิ่มโดยอัตโนมัติในรายการอนุญาต",
-    "userAgentWhitelistPlaceholder": "กรอก User-Agent ที่อนุญาต หนึ่งรายการต่อบรรทัด",
-    "wildcardResolution": "การแก้ไขโดเมนแบบไวลด์การ์ด",
-    "wildcardResolutionDescription": "เปิดใช้งานการแก้ไขโดเมนแบบไวลด์การ์ดสำหรับการสมัครสมาชิก"
+    "userAgentLimit": "ข้อจำกัด {userAgent}",
+    "userAgentLimitDescription": "เปิดใช้งานข้อจำกัดการเข้าถึงตาม {userAgent}",
+    "userAgentList": "รายการอนุญาต {userAgent}",
+    "userAgentListDescription": "อนุญาต {userAgent} สำหรับการเข้าถึงการสมัครสมาชิก รายการละบรรทัด แอปพลิเคชันที่กำหนด {userAgent} จะถูกเพิ่มโดยอัตโนมัติ",
+    "userAgentListPlaceholder": "กรอก {userAgent} ที่อนุญาต หนึ่งต่อบรรทัด",
+    "wildcardResolution": "การแก้ไข Wildcard",
+    "wildcardResolutionDescription": "เปิดใช้งานการแก้ไขโดเมน wildcard สำหรับการสมัครสมาชิก"
   },
-  "description": "กำหนดค่าการตั้งค่าการสมัครสมาชิกและเทมเพลตของลูกค้า",
-  "messages": {
-    "noClients": "ไม่มีเทมเพลตลูกค้า",
-    "noClientsDescription": "ยังไม่มีการกำหนดเทมเพลตลูกค้า เพิ่มเทมเพลตแรกของคุณเพื่อเริ่มต้น"
+  "form": {
+    "addTitle": "เพิ่มลูกค้า",
+    "descriptions": {
+      "description": "คำอธิบายรายละเอียดของลูกค้า",
+      "downloadLink": "ลิงก์ดาวน์โหลดแพลตฟอร์ม",
+      "icon": "URL ของไอคอนหรือการเข้ารหัส base64",
+      "name": "ชื่อที่แสดงของลูกค้า",
+      "outputFormat": "รูปแบบไฟล์การกำหนดค่าการสมัครสมาชิก",
+      "proxyTemplate": "เทมเพลตลิงก์การสมัครสมาชิก รองรับตัวแปร: ",
+      "template": "เทมเพลตการกำหนดค่าการสมัครสมาชิก รองรับตัวแปรต่างๆ",
+      "userAgentPrefix": "ตัวระบุของลูกค้าเพื่อแยกแยะลูกค้าที่แตกต่างกัน"
+    },
+    "editTitle": "แก้ไขลูกค้า",
+    "fields": {
+      "description": "คำอธิบาย",
+      "icon": "ไอคอน",
+      "name": "ชื่อ",
+      "outputFormat": "รูปแบบผลลัพธ์",
+      "proxyTemplate": "ลิงก์การสมัครสมาชิก",
+      "template": "เทมเพลตการกำหนดค่า"
+    },
+    "tabs": {
+      "basic": "ข้อมูลพื้นฐาน",
+      "download": "ดาวน์โหลด",
+      "template": "เทมเพลต"
+    },
+    "validation": {
+      "nameRequired": "ชื่อของลูกค้าจำเป็นต้องระบุ",
+      "userAgentRequiredSuffix": "จำเป็นต้องระบุ"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "ข้อความธรรมดา",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "ระบบนิเวศขนาดใหญ่, กฎที่ครอบคลุม, ชุมชนที่กระตือรือร้น"
-      },
-      "egern": {
-        "features": "ลูกค้า iOS ที่ทันสมัย, ประสิทธิภาพยอดเยี่ยม"
-      },
-      "hiddify": {
-        "features": "หลายแพลตฟอร์ม, โปรโตคอลที่ครอบคลุม, เหมาะสำหรับผู้เริ่มต้น"
-      },
-      "loon": {
-        "features": "ลูกค้าขั้นสูงสำหรับ iOS, กฎที่หลากหลาย, อินเทอร์เฟซที่สวยงาม"
-      },
-      "netch": {
-        "features": "ลูกค้าพร็อกซีที่มุ่งเน้นการเล่นเกม"
-      },
-      "quantumult": {
-        "features": "ลูกค้าขั้นสูงสำหรับ iOS, กฎที่ยืดหยุ่น, สคริปต์ที่หลากหลาย"
-      },
-      "shadowrocket": {
-        "features": "ลูกค้า iOS คลาสสิก, การกำหนดค่าที่ยืดหยุ่น"
-      },
-      "singbox": {
-        "features": "เคอร์เนลล่าสุด, GUI อย่างเป็นทางการ, รองรับหลายแพลตฟอร์ม"
-      },
-      "stash": {
-        "features": "UI มือถือที่ทันสมัย, โปรโตคอลที่ครอบคลุม"
-      },
-      "surfboard": {
-        "features": "ฟรี, การพัฒนาที่กระตือรือร้น, อินเทอร์เฟซที่ทันสมัย"
-      },
-      "surge": {
-        "features": "เครื่องมือ iOS/Mac ระดับพรีเมียม, คุณสมบัติที่ทรงพลัง"
-      },
-      "v2box": {
-        "features": "ลูกค้า V2Ray ที่ใช้งานง่าย"
-      },
-      "v2rayn": {
-        "features": "ลูกค้าที่ได้รับความนิยมสำหรับ Windows, ฟีเจอร์มากมาย"
-      },
-      "v2rayng": {
-        "features": "ลูกค้าที่ได้รับความนิยมสำหรับ Android, น้ำหนักเบา"
-      }
-    },
-    "description": "จัดการเทมเพลตการกำหนดค่าการสมัครสมาชิกสำหรับลูกค้าพร็อกซี",
-    "features": "คุณสมบัติหลัก",
-    "platforms": "แพลตฟอร์ม",
-    "subscribeTemplate": "การกำหนดค่าเทมเพลตการสมัครสมาชิก",
-    "templateContent": "เนื้อหาเทมเพลต",
-    "templatePlaceholder": "กรอกเทมเพลตการกำหนดค่าลูกค้า...",
-    "title": "เทมเพลตการสมัครสมาชิกของลูกค้า"
+    "title": "การจัดการลูกค้า"
   },
-  "title": "การจัดการการสมัครสมาชิก"
+  "table": {
+    "columns": {
+      "default": "ค่าเริ่มต้น",
+      "description": "คำอธิบาย",
+      "name": "ชื่อลูกค้า",
+      "outputFormat": "รูปแบบผลลัพธ์",
+      "supportedPlatforms": "แพลตฟอร์มที่รองรับ"
+    }
+  }
 }

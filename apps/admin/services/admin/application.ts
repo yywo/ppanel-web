@@ -1,5 +1,5 @@
 // @ts-ignore
-
+/* eslint-disable */
 import request from '@/utils/request';
 
 /** Create subscribe application POST /v1/admin/application/ */

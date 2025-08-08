@@ -1,16 +1,26 @@
 {
   "actions": {
-    "edit": "Edit",
-    "delete": "Delete",
-    "save": "Save",
+    "add": "Add",
+    "batchDelete": "Batch Delete",
+    "batchDeleteSuccess": "Successfully deleted {count} clients",
+    "batchDeleteWarning": "Are you sure you want to delete the selected {count} clients?",
     "cancel": "Cancel",
-    "saveTemplate": "Save Template"
+    "confirm": "Confirm",
+    "confirmDelete": "Confirm Delete",
+    "createSuccess": "Created successfully",
+    "delete": "Delete",
+    "deleteFailed": "Delete failed",
+    "deleteSuccess": "Deleted successfully",
+    "deleteWarning": "This operation cannot be undone. Are you sure you want to delete this client?",
+    "edit": "Edit",
+    "save": "Save",
+    "saveFailed": "Save failed",
+    "update": "Update",
+    "updateSuccess": "Updated successfully"
   },
   "config": {
     "title": "Subscription Configuration",
     "description": "Manage subscription system settings",
-    "restrictUserAgent": "User-Agent Restriction",
-    "restrictUserAgentDescription": "Enable access restrictions based on User-Agent",
     "singleSubscriptionMode": "Single Subscription Mode",
     "singleSubscriptionModeDescription": "Limit users to one active subscription. Existing subscriptions unaffected",
     "subscriptionDomain": "Subscription Domain",
@@ -21,69 +31,69 @@
     "subscriptionPathPlaceholder": "Enter subscription path",
     "updateError": "Update failed",
     "updateSuccess": "Settings updated successfully",
-    "userAgentWhitelist": "User-Agent Whitelist",
-    "userAgentWhitelistDescription": "Allowed User-Agents for subscription access, one per line. Built-in templates are automatically included in the whitelist",
-    "userAgentWhitelistPlaceholder": "Enter allowed User-Agents, one per line",
+    "userAgentLimit": "{userAgent} Restriction",
+    "userAgentLimitDescription": "Enable access restrictions based on {userAgent}",
+    "userAgentList": "{userAgent} Whitelist",
+    "userAgentListDescription": "Allowed {userAgent} for subscription access, one per line. Configured application {userAgent} will be automatically included",
+    "userAgentListPlaceholder": "Enter allowed {userAgent}, one per line",
     "wildcardResolution": "Wildcard Resolution",
     "wildcardResolutionDescription": "Enable wildcard domain resolution for subscriptions"
   },
-  "description": "Configure subscription settings and client templates",
-  "messages": {
-    "noClients": "No Client Templates",
-    "noClientsDescription": "No client templates configured yet. Add your first template to get started."
-  },
-  "protocol": {
-    "title": "Client Subscription Templates",
-    "description": "Manage subscription configuration templates for proxy clients",
-    "subscribeTemplate": "Subscription Template Configuration",
-    "templateContent": "Template Content",
-    "templatePlaceholder": "Enter client configuration template...",
-    "platforms": "Platforms",
-    "features": "Key Features",
-    "clients": {
-      "clash": {
-        "features": "Large ecosystem, comprehensive rules, active community"
-      },
-      "hiddify": {
-        "features": "Multi-platform, comprehensive protocols, beginner-friendly"
-      },
-      "singbox": {
-        "features": "Latest kernel, official GUI, multi-platform support"
-      },
-      "stash": {
-        "features": "Modern mobile UI, comprehensive protocols"
-      },
-      "surge": {
-        "features": "Premium iOS/Mac tool, powerful features"
-      },
-      "quantumult": {
-        "features": "iOS advanced client, flexible rules, rich scripts"
-      },
-      "shadowrocket": {
-        "features": "Classic iOS client, flexible configuration"
-      },
-      "surfboard": {
-        "features": "Free, active development, modern interface"
-      },
-      "v2box": {
-        "features": "User-friendly V2Ray client"
-      },
-      "v2rayn": {
-        "features": "Popular Windows client, feature-rich"
-      },
-      "v2rayng": {
-        "features": "Popular Android client, lightweight"
-      },
-      "netch": {
-        "features": "Gaming-focused proxy client"
-      },
-      "loon": {
-        "features": "iOS advanced client, rich rules, beautiful interface"
-      },
-      "egern": {
-        "features": "Modern iOS client, excellent performance"
-      }
+  "form": {
+    "addTitle": "Add Client",
+    "editTitle": "Edit Client",
+    "tabs": {
+      "basic": "Basic Info",
+      "template": "Templates",
+      "download": "Downloads"
+    },
+    "fields": {
+      "icon": "Icon",
+      "name": "Name",
+      "description": "Description",
+      "outputFormat": "Output Format",
+      "proxyTemplate": "Subscription Link",
+      "template": "Config Template"
+    },
+    "descriptions": {
+      "icon": "Icon URL or base64 encoding",
+      "name": "Client display name",
+      "userAgentPrefix": "Client identifier for distinguishing different clients",
+      "description": "Detailed client description",
+      "outputFormat": "Subscription configuration file format",
+      "proxyTemplate": "Subscription link template, supports variables: ",
+      "template": "Subscription configuration template, supports various variables",
+      "downloadLink": "platform download URL"
+    },
+    "validation": {
+      "nameRequired": "Client name is required",
+      "userAgentRequiredSuffix": "is required"
     }
   },
-  "title": "Subscription Management"
+  "outputFormats": {
+    "yaml": "YAML",
+    "json": "JSON",
+    "base64": "Base64",
+    "plain": "Plain Text"
+  },
+  "platforms": {
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "ios": "iOS",
+    "android": "Android",
+    "harmony": "HarmonyOS"
+  },
+  "protocol": {
+    "title": "Client Management"
+  },
+  "table": {
+    "columns": {
+      "default": "Default",
+      "name": "Client Name",
+      "description": "Description",
+      "outputFormat": "Output Format",
+      "supportedPlatforms": "Supported Platforms"
+    }
+  }
 }

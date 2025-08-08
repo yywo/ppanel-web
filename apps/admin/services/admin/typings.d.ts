@@ -344,7 +344,7 @@ declare namespace API {
     proxy_template: string;
     template: string;
     output_format: string;
-    download_link?: string;
+    download_link: DownloadLink;
   };
 
   type CreateSubscribeGroupRequest = {
@@ -493,6 +493,15 @@ declare namespace API {
     show: boolean;
     created_at: number;
     updated_at: number;
+  };
+
+  type DownloadLink = {
+    ios?: string;
+    android?: string;
+    windows?: string;
+    mac?: string;
+    linux?: string;
+    harmony?: string;
   };
 
   type EmailAuthticateConfig = {
@@ -1497,7 +1506,7 @@ declare namespace API {
     proxy_template: string;
     template: string;
     output_format: string;
-    download_link?: string;
+    download_link?: DownloadLink;
     created_at: number;
     updated_at: number;
   };
@@ -1507,6 +1516,8 @@ declare namespace API {
     subscribe_path: string;
     subscribe_domain: string;
     pan_domain: boolean;
+    user_agent_limit: boolean;
+    user_agent_list: string;
   };
 
   type SubscribeDiscount = {
@@ -1773,7 +1784,7 @@ declare namespace API {
     proxy_template: string;
     template: string;
     output_format: string;
-    download_link?: string;
+    download_link?: DownloadLink;
   };
 
   type UpdateSubscribeGroupRequest = {

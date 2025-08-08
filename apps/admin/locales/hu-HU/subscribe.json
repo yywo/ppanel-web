@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "Hozzáadás",
+    "batchDelete": "Tömeges törlés",
+    "batchDeleteSuccess": "Sikeresen törölt {count} ügyfelet",
+    "batchDeleteWarning": "Biztosan törölni szeretné a kiválasztott {count} ügyfelet?",
     "cancel": "Mégse",
+    "confirm": "Megerősít",
+    "confirmDelete": "Törlés megerősítése",
+    "createSuccess": "Sikeresen létrehozva",
     "delete": "Törlés",
+    "deleteFailed": "Törlés sikertelen",
+    "deleteSuccess": "Sikeresen törölve",
+    "deleteWarning": "Ez a művelet nem vonható vissza. Biztosan törölni szeretné ezt az ügyfelet?",
     "edit": "Szerkesztés",
     "save": "Mentés",
-    "saveTemplate": "Sablon mentése"
+    "saveFailed": "Mentés sikertelen",
+    "update": "Frissítés",
+    "updateSuccess": "Sikeresen frissítve"
   },
   "config": {
-    "description": "Az előfizetési rendszer beállításainak kezelése",
-    "restrictUserAgent": "Felhasználói ügynök korlátozás",
-    "restrictUserAgentDescription": "Hozzáférési korlátozások engedélyezése a felhasználói ügynök alapján",
+    "description": "Előfizetési rendszer beállításainak kezelése",
     "singleSubscriptionMode": "Egyszeri Előfizetési Mód",
-    "singleSubscriptionModeDescription": "A felhasználókat egy aktív előfizetésre korlátozza. A meglévő előfizetések nincsenek hatással",
+    "singleSubscriptionModeDescription": "Korlátozza a felhasználókat egy aktív előfizetésre. A meglévő előfizetések nem érintettek",
     "subscriptionDomain": "Előfizetési Domain",
     "subscriptionDomainDescription": "Egyedi domain az előfizetési linkekhez",
-    "subscriptionDomainPlaceholder": "Írja be az előfizetési domaint, soronként egyet",
+    "subscriptionDomainPlaceholder": "Adja meg az előfizetési domaint, soronként egyet",
     "subscriptionPath": "Előfizetési Útvonal",
     "subscriptionPathDescription": "Egyedi útvonal az előfizetési végpontokhoz (jobb teljesítmény a rendszer újraindítása után)",
-    "subscriptionPathPlaceholder": "Írja be az előfizetési útvonalat",
+    "subscriptionPathPlaceholder": "Adja meg az előfizetési útvonalat",
     "title": "Előfizetés Beállítások",
-    "updateError": "A frissítés meghiúsult",
-    "updateSuccess": "A beállítások sikeresen frissítve",
-    "userAgentWhitelist": "Felhasználói ügynök fehérlista",
-    "userAgentWhitelistDescription": "Engedélyezett felhasználói ügynökök az előfizetési hozzáféréshez, soronként egy. A beépített sablonok automatikusan bekerülnek a fehérlistába",
-    "userAgentWhitelistPlaceholder": "Írja be az engedélyezett felhasználói ügynököket, soronként egy",
+    "updateError": "Frissítés sikertelen",
+    "updateSuccess": "Beállítások sikeresen frissítve",
+    "userAgentLimit": "{userAgent} Korlátozás",
+    "userAgentLimitDescription": "Engedélyezze a hozzáférési korlátozásokat a(z) {userAgent} alapján",
+    "userAgentList": "{userAgent} Fehér lista",
+    "userAgentListDescription": "Engedélyezett {userAgent} az előfizetési hozzáféréshez, soronként egy. A konfigurált alkalmazás {userAgent} automatikusan belekerül",
+    "userAgentListPlaceholder": "Adja meg az engedélyezett {userAgent}-t, soronként egy",
     "wildcardResolution": "Wildcard Feloldás",
     "wildcardResolutionDescription": "Engedélyezze a wildcard domain feloldást az előfizetésekhez"
   },
-  "description": "Előfizetési beállítások és kliens sablonok konfigurálása",
-  "messages": {
-    "noClients": "Nincs Kliens Sablon",
-    "noClientsDescription": "Még nincs konfigurálva kliens sablon. Adja hozzá az első sablont a kezdéshez."
+  "form": {
+    "addTitle": "Ügyfél Hozzáadása",
+    "descriptions": {
+      "description": "Részletes ügyfél leírás",
+      "downloadLink": "platform letöltési URL",
+      "icon": "Ikon URL vagy base64 kódolás",
+      "name": "Ügyfél megjelenítési neve",
+      "outputFormat": "Előfizetési konfigurációs fájl formátum",
+      "proxyTemplate": "Előfizetési link sablon, támogatja a változókat: ",
+      "template": "Előfizetési konfigurációs sablon, támogatja a különböző változókat",
+      "userAgentPrefix": "Kliens azonosító a különböző kliensek megkülönböztetésére."
+    },
+    "editTitle": "Ügyfél Szerkesztése",
+    "fields": {
+      "description": "Leírás",
+      "icon": "Ikon",
+      "name": "Név",
+      "outputFormat": "Kimeneti Formátum",
+      "proxyTemplate": "Előfizetési Link",
+      "template": "Beállítási Sablon"
+    },
+    "tabs": {
+      "basic": "Alap Információk",
+      "download": "Letöltések",
+      "template": "Sablonok"
+    },
+    "validation": {
+      "nameRequired": "Az ügyfél neve kötelező",
+      "userAgentRequiredSuffix": "kötelező"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "Egyszerű Szöveg",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "Nagy ökoszisztéma, átfogó szabályok, aktív közösség"
-      },
-      "egern": {
-        "features": "Modern iOS kliens, kiváló teljesítmény"
-      },
-      "hiddify": {
-        "features": "Többplatformos, átfogó protokollok, kezdőbarát"
-      },
-      "loon": {
-        "features": "iOS fejlett kliens, gazdag szabályok, szép felület"
-      },
-      "netch": {
-        "features": "Játékra fókuszáló proxy kliens"
-      },
-      "quantumult": {
-        "features": "iOS fejlett kliens, rugalmas szabályok, gazdag szkriptek"
-      },
-      "shadowrocket": {
-        "features": "Klasszikus iOS kliens, rugalmas konfiguráció"
-      },
-      "singbox": {
-        "features": "Legújabb kernel, hivatalos GUI, többplatformos támogatás"
-      },
-      "stash": {
-        "features": "Modern mobil UI, átfogó protokollok"
-      },
-      "surfboard": {
-        "features": "Ingyenes, aktív fejlesztés, modern felület"
-      },
-      "surge": {
-        "features": "Prémium iOS/Mac eszköz, erőteljes funkciók"
-      },
-      "v2box": {
-        "features": "Felhasználóbarát V2Ray kliens"
-      },
-      "v2rayn": {
-        "features": "Népszerű Windows kliens, funkciógazdag"
-      },
-      "v2rayng": {
-        "features": "Népszerű Android kliens, könnyű súlyú"
-      }
-    },
-    "description": "Az előfizetési konfigurációs sablonok kezelése proxy kliensek számára",
-    "features": "Főbb Jellemzők",
-    "platforms": "Platformok",
-    "subscribeTemplate": "Előfizetési Sablon Beállítása",
-    "templateContent": "Sablon Tartalom",
-    "templatePlaceholder": "Írja be a kliens konfigurációs sablont...",
-    "title": "Kliens Előfizetési Sablonok"
+    "title": "Klienskezelés"
   },
-  "title": "Előfizetés Kezelés"
+  "table": {
+    "columns": {
+      "default": "Alapértelmezett",
+      "description": "Leírás",
+      "name": "Ügyfél Neve",
+      "outputFormat": "Kimeneti Formátum",
+      "supportedPlatforms": "Támogatott Platformok"
+    }
+  }
 }

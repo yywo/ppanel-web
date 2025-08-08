@@ -1,89 +1,99 @@
 {
   "actions": {
+    "add": "添加",
+    "batchDelete": "批量删除",
+    "batchDeleteSuccess": "成功删除 {count} 个客户端",
+    "batchDeleteWarning": "您确定要删除选定的 {count} 个客户端吗？",
     "cancel": "取消",
+    "confirm": "确认",
+    "confirmDelete": "确认删除",
+    "createSuccess": "创建成功",
     "delete": "删除",
+    "deleteFailed": "删除失败",
+    "deleteSuccess": "删除成功",
+    "deleteWarning": "此操作无法撤销。您确定要删除此客户端吗？",
     "edit": "编辑",
     "save": "保存",
-    "saveTemplate": "保存模板"
+    "saveFailed": "保存失败",
+    "update": "更新",
+    "updateSuccess": "更新成功"
   },
   "config": {
-    "description": "管理订阅系统的相关配置",
-    "restrictUserAgent": "用户代理限制",
-    "restrictUserAgentDescription": "根据用户代理启用访问限制",
+    "description": "管理订阅系统设置",
     "singleSubscriptionMode": "单一订阅模式",
-    "singleSubscriptionModeDescription": "限制用户只能拥有一个有效的订阅。现有订阅不受影响",
+    "singleSubscriptionModeDescription": "限制用户只能有一个有效的订阅。现有订阅不受影响",
     "subscriptionDomain": "订阅域名",
-    "subscriptionDomainDescription": "自定义订阅链接域名",
+    "subscriptionDomainDescription": "订阅链接的自定义域名",
     "subscriptionDomainPlaceholder": "输入订阅域名，每行一个",
     "subscriptionPath": "订阅路径",
-    "subscriptionPathDescription": "自定义订阅端点路径（重启系统后性能更佳）",
+    "subscriptionPathDescription": "订阅端点的自定义路径（系统重启后性能更佳）",
     "subscriptionPathPlaceholder": "输入订阅路径",
     "title": "订阅配置",
     "updateError": "更新失败",
     "updateSuccess": "设置更新成功",
-    "userAgentWhitelist": "用户代理白名单",
-    "userAgentWhitelistDescription": "允许的用户代理用于订阅访问，每行一个。内置模板会自动包含在白名单中",
-    "userAgentWhitelistPlaceholder": "输入允许的用户代理，每行一个",
+    "userAgentLimit": "{userAgent} 限制",
+    "userAgentLimitDescription": "启用基于 {userAgent} 的访问限制",
+    "userAgentList": "{userAgent} 白名单",
+    "userAgentListDescription": "允许的 {userAgent} 用于订阅访问，每行一个。配置的应用程序 {userAgent} 将自动包含在内",
+    "userAgentListPlaceholder": "输入允许的 {userAgent}，每行一个",
     "wildcardResolution": "通配符解析",
-    "wildcardResolutionDescription": "启用订阅域名的通配符解析"
+    "wildcardResolutionDescription": "启用订阅的通配符域名解析"
   },
-  "description": "配置订阅设置和客户端模板",
-  "messages": {
-    "noClients": "暂无客户端模板",
-    "noClientsDescription": "还没有配置任何客户端模板，请添加第一个模板开始使用。"
+  "form": {
+    "addTitle": "添加客户端",
+    "descriptions": {
+      "description": "详细的客户端描述",
+      "downloadLink": "平台下载 URL",
+      "icon": "图标 URL 或 base64 编码",
+      "name": "客户端显示名称",
+      "outputFormat": "订阅配置文件格式",
+      "proxyTemplate": "订阅链接模板，支持变量：",
+      "template": "订阅配置模板，支持各种变量",
+      "userAgentPrefix": "用于区分不同客户端的客户端标识符"
+    },
+    "editTitle": "编辑客户端",
+    "fields": {
+      "description": "描述",
+      "icon": "图标",
+      "name": "名称",
+      "outputFormat": "输出格式",
+      "proxyTemplate": "订阅链接",
+      "template": "配置模板"
+    },
+    "tabs": {
+      "basic": "基本信息",
+      "download": "下载",
+      "template": "模板"
+    },
+    "validation": {
+      "nameRequired": "客户端名称是必需的",
+      "userAgentRequiredSuffix": "是必需的"
+    }
+  },
+  "outputFormats": {
+    "base64": "Base64",
+    "json": "JSON",
+    "plain": "纯文本",
+    "yaml": "YAML"
+  },
+  "platforms": {
+    "android": "Android",
+    "harmony": "HarmonyOS",
+    "ios": "iOS",
+    "linux": "Linux",
+    "mac": "macOS",
+    "windows": "Windows"
   },
   "protocol": {
-    "clients": {
-      "clash": {
-        "features": "生态丰富，规则完善，社区活跃"
-      },
-      "egern": {
-        "features": "现代化 iOS 客户端，性能优异"
-      },
-      "hiddify": {
-        "features": "全平台支持，协议全面，新手友好"
-      },
-      "loon": {
-        "features": "iOS 高级客户端，规则丰富，界面美观"
-      },
-      "netch": {
-        "features": "游戏专用代理客户端"
-      },
-      "quantumult": {
-        "features": "iOS 高级客户端，规则灵活，脚本丰富"
-      },
-      "shadowrocket": {
-        "features": "经典 iOS 客户端，配置灵活"
-      },
-      "singbox": {
-        "features": "最新内核，官方图形界面，多平台支持"
-      },
-      "stash": {
-        "features": "现代移动端界面，协议全面"
-      },
-      "surfboard": {
-        "features": "免费开源，持续更新，界面现代"
-      },
-      "surge": {
-        "features": "iOS/Mac 专业工具，功能强大"
-      },
-      "v2box": {
-        "features": "用户友好的 V2Ray 客户端"
-      },
-      "v2rayn": {
-        "features": "热门 Windows 客户端，功能丰富"
-      },
-      "v2rayng": {
-        "features": "热门 Android 客户端，轻量级"
-      }
-    },
-    "description": "管理代理客户端的订阅配置模板",
-    "features": "主要特点",
-    "platforms": "支持平台",
-    "subscribeTemplate": "订阅模板配置",
-    "templateContent": "模板内容",
-    "templatePlaceholder": "输入客户端配置模板...",
-    "title": "客户端订阅模板"
+    "title": "客户端管理"
   },
-  "title": "订阅管理"
+  "table": {
+    "columns": {
+      "default": "默认",
+      "description": "描述",
+      "name": "客户端名称",
+      "outputFormat": "输出格式",
+      "supportedPlatforms": "支持的平台"
+    }
+  }
 }
