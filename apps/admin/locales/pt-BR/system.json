@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "dia(s)",
-    "defaultSubscribe": "Assinatura Padrão",
-    "defaultSubscribeDescription": "Plano de assinatura padrão para novos usuários",
     "description": "Configure as configurações relacionadas ao registro de usuários",
+    "enableTrial": "Ativar Teste",
+    "enableTrialDescription": "Quando ativado, novos usuários receberão uma assinatura de teste ao se registrarem",
     "inputPlaceholder": "Por favor, insira",
     "ipRegistrationLimit": "Limite de Registro por IP",
     "ipRegistrationLimitDescription": "Limite o número de registros de um único endereço IP",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Parar Registro de Novos Usuários",
     "stopNewUserRegistrationDescription": "Quando ativado, o registro de novos usuários será desativado",
     "title": "Configurações de Registro",
-    "trialDay": "Dias de Teste",
-    "trialDayDescription": "Dias de teste dados a novos usuários no registro",
-    "trialFlow": "Tráfego de Teste",
-    "trialFlowDescription": "Tráfego de teste dado a novos usuários no registro"
+    "trialSubscribe": "Assinatura de Teste",
+    "trialSubscribeDescription": "Plano de assinatura de teste concedido a novos usuários ao se registrarem",
+    "trialTime": "Duração do Teste",
+    "trialTimeDescription": "Duração do teste concedida a novos usuários ao se registrarem (dias)"
   },
   "site": {
     "customData": "Dados Personalizados",

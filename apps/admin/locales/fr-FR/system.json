@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "jour(s)",
-    "defaultSubscribe": "Abonnement par défaut",
-    "defaultSubscribeDescription": "Plan d'abonnement par défaut pour les nouveaux utilisateurs",
     "description": "Configurer les paramètres liés à l'inscription des utilisateurs",
+    "enableTrial": "Activer l'essai",
+    "enableTrialDescription": "Lorsqu'il est activé, les nouveaux utilisateurs recevront un abonnement d'essai lors de leur inscription",
     "inputPlaceholder": "Veuillez entrer",
     "ipRegistrationLimit": "Limite d'inscription par IP",
     "ipRegistrationLimitDescription": "Limiter le nombre d'inscriptions à partir d'une seule adresse IP",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Arrêter l'inscription des nouveaux utilisateurs",
     "stopNewUserRegistrationDescription": "Lorsque cette option est activée, l'inscription des nouveaux utilisateurs sera désactivée",
     "title": "Paramètres d'inscription",
-    "trialDay": "Jours d'essai",
-    "trialDayDescription": "Jours d'essai accordés aux nouveaux utilisateurs lors de l'inscription",
-    "trialFlow": "Trafic d'essai",
-    "trialFlowDescription": "Trafic d'essai accordé aux nouveaux utilisateurs lors de l'inscription"
+    "trialSubscribe": "Abonnement d'essai",
+    "trialSubscribeDescription": "Plan d'abonnement d'essai accordé aux nouveaux utilisateurs lors de leur inscription",
+    "trialTime": "Durée de l'essai",
+    "trialTimeDescription": "Durée de l'essai accordée aux nouveaux utilisateurs lors de leur inscription (jours)"
   },
   "site": {
     "customData": "Données personnalisées",

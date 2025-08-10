@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "gün",
-    "defaultSubscribe": "Varsayılan Abonelik",
-    "defaultSubscribeDescription": "Yeni kullanıcılar için varsayılan abonelik planı",
     "description": "Kullanıcı kaydı ile ilgili ayarları yapılandırın",
+    "enableTrial": "Deneme Süresini Etkinleştir",
+    "enableTrialDescription": "Etkinleştirildiğinde, yeni kullanıcılar kaydolduğunda deneme aboneliği alacaklar",
     "inputPlaceholder": "Lütfen girin",
     "ipRegistrationLimit": "IP Kayıt Limiti",
     "ipRegistrationLimitDescription": "Tek bir IP adresinden yapılacak kayıt sayısını sınırlayın",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Yeni Kullanıcı Kayıtını Durdur",
     "stopNewUserRegistrationDescription": "Etkinleştirildiğinde, yeni kullanıcı kaydı devre dışı bırakılacaktır",
     "title": "Kayıt Ayarları",
-    "trialDay": "Deneme Günleri",
-    "trialDayDescription": "Yeni kullanıcılara kayıt sırasında verilen deneme günleri",
-    "trialFlow": "Deneme Trafiği",
-    "trialFlowDescription": "Yeni kullanıcılara kayıt sırasında verilen deneme trafiği"
+    "trialSubscribe": "Deneme Aboneliği",
+    "trialSubscribeDescription": "Yeni kullanıcılara kaydolduklarında verilen deneme abonelik planı",
+    "trialTime": "Deneme Süresi",
+    "trialTimeDescription": "Yeni kullanıcılara kaydolduklarında verilen deneme süresi (gün)"
   },
   "site": {
     "customData": "Özel Veri",

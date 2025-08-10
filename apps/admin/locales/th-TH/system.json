@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "วัน",
-    "defaultSubscribe": "การสมัครสมาชิกเริ่มต้น",
-    "defaultSubscribeDescription": "แผนการสมัครสมาชิกเริ่มต้นสำหรับผู้ใช้ใหม่",
     "description": "กำหนดการตั้งค่าที่เกี่ยวข้องกับการลงทะเบียนผู้ใช้",
+    "enableTrial": "เปิดใช้งานการทดลอง",
+    "enableTrialDescription": "เมื่อเปิดใช้งาน ผู้ใช้ใหม่จะได้รับการสมัครสมาชิกทดลองเมื่อทำการลงทะเบียน",
     "inputPlaceholder": "กรุณาใส่",
     "ipRegistrationLimit": "ขีดจำกัดการลงทะเบียน IP",
     "ipRegistrationLimitDescription": "จำกัดจำนวนการลงทะเบียนจากที่อยู่ IP เดียว",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "หยุดการลงทะเบียนผู้ใช้ใหม่",
     "stopNewUserRegistrationDescription": "เมื่อเปิดใช้งาน การลงทะเบียนผู้ใช้ใหม่จะถูกปิดใช้งาน",
     "title": "การตั้งค่าการลงทะเบียน",
-    "trialDay": "วันทดลองใช้",
-    "trialDayDescription": "วันทดลองใช้ที่มอบให้กับผู้ใช้ใหม่เมื่อสมัครสมาชิก",
-    "trialFlow": "การทดลองใช้",
-    "trialFlowDescription": "การทดลองใช้ที่มอบให้กับผู้ใช้ใหม่เมื่อสมัครสมาชิก"
+    "trialSubscribe": "การสมัครสมาชิกทดลอง",
+    "trialSubscribeDescription": "แผนการสมัครสมาชิกทดลองที่มอบให้กับผู้ใช้ใหม่เมื่อทำการลงทะเบียน",
+    "trialTime": "ระยะเวลาการทดลอง",
+    "trialTimeDescription": "ระยะเวลาการทดลองที่มอบให้กับผู้ใช้ใหม่เมื่อทำการลงทะเบียน (วัน)"
   },
   "site": {
     "customData": "ข้อมูลที่กำหนดเอง",

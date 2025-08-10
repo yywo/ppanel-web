@@ -35,12 +35,13 @@ import { z } from 'zod';
 
 const registerSchema = z.object({
   stop_register: z.boolean().optional(),
+  enable_trial: z.boolean().optional(),
+  trial_subscribe: z.number().optional(),
+  trial_time: z.number().optional(),
+  trial_time_unit: z.string().optional(),
   enable_ip_register_limit: z.boolean().optional(),
-  ip_register_limit_count: z.number().optional(),
-  ip_register_limit_expire_day: z.number().optional(),
-  trial_flow: z.number().optional(),
-  trial_day: z.number().optional(),
-  default_subscribe_id: z.number().optional(),
+  ip_register_limit: z.number().optional(),
+  ip_register_limit_duration: z.number().optional(),
 });
 
 type RegisterFormData = z.infer<typeof registerSchema>;
@@ -76,12 +77,13 @@ export default function RegisterConfig() {
     resolver: zodResolver(registerSchema),
     defaultValues: {
       stop_register: false,
+      enable_trial: false,
+      trial_subscribe: undefined,
+      trial_time: 0,
+      trial_time_unit: 'day',
       enable_ip_register_limit: false,
-      ip_register_limit_count: 1,
-      ip_register_limit_expire_day: 1,
-      trial_flow: 0,
-      trial_day: 0,
-      default_subscribe_id: undefined,
+      ip_register_limit: 1,
+      ip_register_limit_duration: 1,
     },
   });
 
@@ -173,7 +175,26 @@ export default function RegisterConfig() {
 
               <FormField
                 control={form.control}
-                name='ip_register_limit_count'
+                name='enable_trial'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('enableTrial')}</FormLabel>
+                    <FormControl>
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        className='float-end !mt-0'
+                      />
+                    </FormControl>
+                    <FormDescription>{t('enableTrialDescription')}</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name='ip_register_limit'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('registrationLimitCount')}</FormLabel>
@@ -194,7 +215,7 @@ export default function RegisterConfig() {
 
               <FormField
                 control={form.control}
-                name='ip_register_limit_expire_day'
+                name='ip_register_limit_duration'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('registrationLimitExpire')}</FormLabel>
@@ -216,32 +237,10 @@ export default function RegisterConfig() {
 
               <FormField
                 control={form.control}
-                name='trial_flow'
+                name='trial_time'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('trialFlow')}</FormLabel>
-                    <FormControl>
-                      <EnhancedInput
-                        placeholder={t('inputPlaceholder')}
-                        value={field.value}
-                        type='number'
-                        min={0}
-                        suffix='GB'
-                        onValueBlur={(value) => field.onChange(Number(value))}
-                      />
-                    </FormControl>
-                    <FormDescription>{t('trialFlowDescription')}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name='trial_day'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('trialDay')}</FormLabel>
+                    <FormLabel>{t('trialTime')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         placeholder={t('inputPlaceholder')}
@@ -252,7 +251,7 @@ export default function RegisterConfig() {
                         onValueBlur={(value) => field.onChange(Number(value))}
                       />
                     </FormControl>
-                    <FormDescription>{t('trialDayDescription')}</FormDescription>
+                    <FormDescription>{t('trialTimeDescription')}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -260,10 +259,10 @@ export default function RegisterConfig() {
 
               <FormField
                 control={form.control}
-                name='default_subscribe_id'
+                name='trial_subscribe'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('defaultSubscribe')}</FormLabel>
+                    <FormLabel>{t('trialSubscribe')}</FormLabel>
                     <FormControl>
                       <Combobox
                         placeholder={t('selectPlaceholder')}
@@ -281,7 +280,7 @@ export default function RegisterConfig() {
                         }
                       />
                     </FormControl>
-                    <FormDescription>{t('defaultSubscribeDescription')}</FormDescription>
+                    <FormDescription>{t('trialSubscribeDescription')}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}

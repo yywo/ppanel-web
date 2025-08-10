@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "Tag(e)",
-    "defaultSubscribe": "Standardabonnement",
-    "defaultSubscribeDescription": "Standardabonnement für neue Benutzer",
     "description": "Konfigurieren Sie die Einstellungen zur Benutzerregistrierung",
+    "enableTrial": "Testversion aktivieren",
+    "enableTrialDescription": "Wenn aktiviert, erhalten neue Benutzer bei der Registrierung ein Testabonnement",
     "inputPlaceholder": "Bitte eingeben",
     "ipRegistrationLimit": "IP-Registrierungsgrenze",
     "ipRegistrationLimitDescription": "Begrenzen Sie die Anzahl der Registrierungen von einer einzelnen IP-Adresse",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Neue Benutzerregistrierung stoppen",
     "stopNewUserRegistrationDescription": "Wenn aktiviert, wird die Registrierung neuer Benutzer deaktiviert",
     "title": "Registrierungseinstellungen",
-    "trialDay": "Testtage",
-    "trialDayDescription": "Testtage, die neuen Benutzern bei der Registrierung gewährt werden",
-    "trialFlow": "Testverkehr",
-    "trialFlowDescription": "Testverkehr, der neuen Benutzern bei der Registrierung gewährt wird"
+    "trialSubscribe": "Testabonnement",
+    "trialSubscribeDescription": "Testabonnement, das neuen Benutzern bei der Registrierung angeboten wird",
+    "trialTime": "Testdauer",
+    "trialTimeDescription": "Testdauer, die neuen Benutzern bei der Registrierung gewährt wird (Tage)"
   },
   "site": {
     "customData": "Benutzerdefinierte Daten",

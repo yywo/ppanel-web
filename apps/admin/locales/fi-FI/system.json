@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "päivä(ä)",
-    "defaultSubscribe": "Oletusliittymä",
-    "defaultSubscribeDescription": "Oletusliittymäsuunnitelma uusille käyttäjille",
     "description": "Määritä käyttäjien rekisteröintiin liittyvät asetukset",
+    "enableTrial": "Ota käyttöön kokeilu",
+    "enableTrialDescription": "Kun tämä on käytössä, uudet käyttäjät saavat kokeilutilauksen rekisteröitymisen yhteydessä",
     "inputPlaceholder": "Ole hyvä ja syötä",
     "ipRegistrationLimit": "IP-rekisteröintiraja",
     "ipRegistrationLimitDescription": "Rajoita rekisteröintien määrää yhdestä IP-osoitteesta",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Lopeta uusien käyttäjien rekisteröinti",
     "stopNewUserRegistrationDescription": "Kun tämä on käytössä, uusien käyttäjien rekisteröinti estetään",
     "title": "Rekisteröintiasetukset",
-    "trialDay": "Kokeilupäivät",
-    "trialDayDescription": "Kokeilupäivät uusille käyttäjille rekisteröitymisen yhteydessä",
-    "trialFlow": "Kokeiluliikenne",
-    "trialFlowDescription": "Kokeiluliikenne uusille käyttäjille rekisteröitymisen yhteydessä"
+    "trialSubscribe": "Kokeilutilaus",
+    "trialSubscribeDescription": "Uusille käyttäjille rekisteröitymisen yhteydessä annettu kokeilutilaus",
+    "trialTime": "Kokeiluaika",
+    "trialTimeDescription": "Uusille käyttäjille rekisteröitymisen yhteydessä annettu kokeiluaika (päivinä)"
   },
   "site": {
     "customData": "Mukautettu tieto",

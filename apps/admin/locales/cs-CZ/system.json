@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "den(dny)",
-    "defaultSubscribe": "Výchozí předplatné",
-    "defaultSubscribeDescription": "Výchozí plán předplatného pro nové uživatele",
     "description": "Nastavte související nastavení registrace uživatelů",
+    "enableTrial": "Povolit zkušební verzi",
+    "enableTrialDescription": "Pokud je povoleno, noví uživatelé obdrží zkušební předplatné při registraci",
     "inputPlaceholder": "Prosím zadejte",
     "ipRegistrationLimit": "Limit registrace podle IP",
     "ipRegistrationLimitDescription": "Omezení počtu registrací z jedné IP adresy",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Zastavit registraci nových uživatelů",
     "stopNewUserRegistrationDescription": "Pokud je povoleno, registrace nových uživatelů bude zakázána",
     "title": "Nastavení registrace",
-    "trialDay": "Zkušební dny",
-    "trialDayDescription": "Zkušební dny poskytnuté novým uživatelům při registraci",
-    "trialFlow": "Zkušební provoz",
-    "trialFlowDescription": "Zkušební provoz poskytnutý novým uživatelům při registraci"
+    "trialSubscribe": "Zkušební předplatné",
+    "trialSubscribeDescription": "Zkušební předplatný plán poskytnutý novým uživatelům při registraci",
+    "trialTime": "Doba zkušební verze",
+    "trialTimeDescription": "Doba zkušební verze poskytnutá novým uživatelům při registraci (dny)"
   },
   "site": {
     "customData": "Vlastní data",

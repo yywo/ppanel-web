@@ -39,9 +39,9 @@
   },
   "register": {
     "day": "dzień/dni",
-    "defaultSubscribe": "Domyślna subskrypcja",
-    "defaultSubscribeDescription": "Domyślny plan subskrypcyjny dla nowych użytkowników",
     "description": "Skonfiguruj ustawienia związane z rejestracją użytkowników",
+    "enableTrial": "Włącz próbę",
+    "enableTrialDescription": "Po włączeniu nowi użytkownicy otrzymają subskrypcję próbną po rejestracji",
     "inputPlaceholder": "Proszę wprowadzić",
     "ipRegistrationLimit": "Limit rejestracji IP",
     "ipRegistrationLimitDescription": "Ogranicz liczbę rejestracji z jednego adresu IP",
@@ -55,10 +55,10 @@
     "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
     "stopNewUserRegistrationDescription": "Po włączeniu rejestracja nowych użytkowników będzie wyłączona",
     "title": "Ustawienia rejestracji",
-    "trialDay": "Dni próbne",
-    "trialDayDescription": "Dni próbne przyznawane nowym użytkownikom po rejestracji",
-    "trialFlow": "Ruch próbny",
-    "trialFlowDescription": "Ruch próbny przyznawany nowym użytkownikom po rejestracji"
+    "trialSubscribe": "Subskrypcja próbna",
+    "trialSubscribeDescription": "Plan subskrypcyjny próbny przyznawany nowym użytkownikom po rejestracji",
+    "trialTime": "Czas trwania próby",
+    "trialTimeDescription": "Czas trwania próby przyznawany nowym użytkownikom po rejestracji (dni)"
   },
   "site": {
     "customData": "Dane niestandardowe",
