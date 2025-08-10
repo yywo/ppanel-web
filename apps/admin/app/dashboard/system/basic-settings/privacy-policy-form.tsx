@@ -32,7 +32,7 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 const privacyPolicySchema = z.object({
-  content: z.string().optional(),
+  privacy_policy: z.string().optional(),
 });
 
 type PrivacyPolicyFormData = z.infer<typeof privacyPolicySchema>;
@@ -54,14 +54,14 @@ export default function PrivacyPolicyConfig() {
   const form = useForm<PrivacyPolicyFormData>({
     resolver: zodResolver(privacyPolicySchema),
     defaultValues: {
-      content: '',
+      privacy_policy: '',
     },
   });
 
   useEffect(() => {
     if (data) {
       form.reset({
-        content: data.content || '',
+        privacy_policy: data.privacy_policy || '',
       });
     }
   }, [data, form]);
@@ -109,7 +109,7 @@ export default function PrivacyPolicyConfig() {
             >
               <FormField
                 control={form.control}
-                name='content'
+                name='privacy_policy'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('privacyPolicy.title')}</FormLabel>
