@@ -42,9 +42,13 @@
     "description": "تنظیمات مربوط به ثبت‌نام کاربران را پیکربندی کنید",
     "enableTrial": "فعال‌سازی دوره آزمایشی",
     "enableTrialDescription": "با فعال‌سازی این گزینه، کاربران جدید در زمان ثبت‌نام یک اشتراک آزمایشی دریافت خواهند کرد",
+    "hour": "ساعت(ها)",
     "inputPlaceholder": "لطفاً وارد کنید",
     "ipRegistrationLimit": "محدودیت ثبت‌نام IP",
     "ipRegistrationLimitDescription": "تعداد ثبت‌نام‌ها از یک آدرس IP را محدود کنید",
+    "minute": "دقیقه(ها)",
+    "month": "ماه(ها)",
+    "none": "هیچ",
     "registrationLimitCount": "تعداد محدودیت ثبت‌نام",
     "registrationLimitCountDescription": "تعداد ثبت‌نام‌های مجاز در هر IP در دوره محدودیت",
     "registrationLimitExpire": "دوره محدودیت",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "متوقف کردن ثبت‌نام کاربران جدید",
     "stopNewUserRegistrationDescription": "با فعال‌سازی، ثبت‌نام کاربران جدید غیرفعال خواهد شد",
     "title": "تنظیمات ثبت‌نام",
-    "trialSubscribe": "اشتراک آزمایشی",
-    "trialSubscribeDescription": "طرح اشتراک آزمایشی که به کاربران جدید در زمان ثبت‌نام داده می‌شود",
-    "trialTime": "مدت دوره آزمایشی",
-    "trialTimeDescription": "مدت زمان دوره آزمایشی که به کاربران جدید در زمان ثبت‌نام داده می‌شود (روز)"
+    "trialConfig": "پیکربندی آزمایشی",
+    "trialConfigDescription": "پیکربندی اشتراک آزمایشی، مدت و واحد زمانی برای کاربران جدید در زمان ثبت‌نام",
+    "year": "سال(ها)"
   },
   "site": {
     "customData": "داده‌های سفارشی",

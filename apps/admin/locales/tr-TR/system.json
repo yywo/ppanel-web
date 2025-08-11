@@ -42,9 +42,13 @@
     "description": "Kullanıcı kaydı ile ilgili ayarları yapılandırın",
     "enableTrial": "Deneme Süresini Etkinleştir",
     "enableTrialDescription": "Etkinleştirildiğinde, yeni kullanıcılar kaydolduğunda deneme aboneliği alacaklar",
+    "hour": "Saat(ler)",
     "inputPlaceholder": "Lütfen girin",
     "ipRegistrationLimit": "IP Kayıt Limiti",
     "ipRegistrationLimitDescription": "Tek bir IP adresinden yapılacak kayıt sayısını sınırlayın",
+    "minute": "Dakika(dakikalar)",
+    "month": "Ay(lar)",
+    "none": "Yok",
     "registrationLimitCount": "Kayıt Limiti Sayısı",
     "registrationLimitCountDescription": "Limit süresi içinde her IP için izin verilen kayıt sayısı",
     "registrationLimitExpire": "Limit Süresi",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Yeni Kullanıcı Kayıtını Durdur",
     "stopNewUserRegistrationDescription": "Etkinleştirildiğinde, yeni kullanıcı kaydı devre dışı bırakılacaktır",
     "title": "Kayıt Ayarları",
-    "trialSubscribe": "Deneme Aboneliği",
-    "trialSubscribeDescription": "Yeni kullanıcılara kaydolduklarında verilen deneme abonelik planı",
-    "trialTime": "Deneme Süresi",
-    "trialTimeDescription": "Yeni kullanıcılara kaydolduklarında verilen deneme süresi (gün)"
+    "trialConfig": "Deneme Yapılandırması",
+    "trialConfigDescription": "Yeni kullanıcılar için kayıt sırasında deneme aboneliğini, süresini ve zaman birimini yapılandırın",
+    "year": "Yıl(lar)"
   },
   "site": {
     "customData": "Özel Veri",

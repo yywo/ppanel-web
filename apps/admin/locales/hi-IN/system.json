@@ -42,9 +42,13 @@
     "description": "उपयोगकर्ता पंजीकरण से संबंधित सेटिंग्स को कॉन्फ़िगर करें",
     "enableTrial": "परीक्षण सक्षम करें",
     "enableTrialDescription": "जब सक्षम किया जाता है, नए उपयोगकर्ताओं को पंजीकरण के समय एक परीक्षण सदस्यता प्राप्त होगी",
+    "hour": "घंटा(ों)",
     "inputPlaceholder": "कृपया दर्ज करें",
     "ipRegistrationLimit": "आईपी पंजीकरण सीमा",
     "ipRegistrationLimitDescription": "एकल आईपी पते से पंजीकरण की संख्या को सीमित करें",
+    "minute": "मिनट(ों)",
+    "month": "महीना(ों)",
+    "none": "कोई नहीं",
     "registrationLimitCount": "पंजीकरण सीमा संख्या",
     "registrationLimitCountDescription": "सीमित अवधि के भीतर प्रति आईपी अनुमत पंजीकरण की संख्या",
     "registrationLimitExpire": "सीमा अवधि",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "नए उपयोगकर्ता पंजीकरण रोकें",
     "stopNewUserRegistrationDescription": "जब सक्षम किया जाता है, नए उपयोगकर्ता पंजीकरण अक्षम हो जाएगा",
     "title": "पंजीकरण सेटिंग्स",
-    "trialSubscribe": "परीक्षण सदस्यता",
-    "trialSubscribeDescription": "पंजीकरण के समय नए उपयोगकर्ताओं को दी गई परीक्षण सदस्यता योजना",
-    "trialTime": "परीक्षण अवधि",
-    "trialTimeDescription": "पंजीकरण के समय नए उपयोगकर्ताओं को दी गई परीक्षण अवधि (दिन)"
+    "trialConfig": "परीक्षण कॉन्फ़िगरेशन",
+    "trialConfigDescription": "नए उपयोगकर्ताओं के लिए पंजीकरण के समय परीक्षण सदस्यता, अवधि और समय इकाई कॉन्फ़िगर करें",
+    "year": "साल"
   },
   "site": {
     "customData": "कस्टम डेटा",

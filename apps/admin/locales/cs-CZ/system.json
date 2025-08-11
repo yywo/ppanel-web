@@ -42,9 +42,13 @@
     "description": "Nastavte související nastavení registrace uživatelů",
     "enableTrial": "Povolit zkušební verzi",
     "enableTrialDescription": "Pokud je povoleno, noví uživatelé obdrží zkušební předplatné při registraci",
+    "hour": "Hodina(y)",
     "inputPlaceholder": "Prosím zadejte",
     "ipRegistrationLimit": "Limit registrace podle IP",
     "ipRegistrationLimitDescription": "Omezení počtu registrací z jedné IP adresy",
+    "minute": "Minuta(y)",
+    "month": "Měsíc(e)",
+    "none": "Žádný",
     "registrationLimitCount": "Počet registrací v limitu",
     "registrationLimitCountDescription": "Počet registrací povolených na IP během limitního období",
     "registrationLimitExpire": "Limitní období",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Zastavit registraci nových uživatelů",
     "stopNewUserRegistrationDescription": "Pokud je povoleno, registrace nových uživatelů bude zakázána",
     "title": "Nastavení registrace",
-    "trialSubscribe": "Zkušební předplatné",
-    "trialSubscribeDescription": "Zkušební předplatný plán poskytnutý novým uživatelům při registraci",
-    "trialTime": "Doba zkušební verze",
-    "trialTimeDescription": "Doba zkušební verze poskytnutá novým uživatelům při registraci (dny)"
+    "trialConfig": "Nastavení zkušební verze",
+    "trialConfigDescription": "Nastavte zkušební předplatné, dobu trvání a časovou jednotku pro nové uživatele při registraci",
+    "year": "Rok(y)"
   },
   "site": {
     "customData": "Vlastní data",

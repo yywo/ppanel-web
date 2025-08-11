@@ -42,9 +42,13 @@
     "description": "Skonfiguruj ustawienia związane z rejestracją użytkowników",
     "enableTrial": "Włącz próbę",
     "enableTrialDescription": "Po włączeniu nowi użytkownicy otrzymają subskrypcję próbną po rejestracji",
+    "hour": "Godzina(y)",
     "inputPlaceholder": "Proszę wprowadzić",
     "ipRegistrationLimit": "Limit rejestracji IP",
     "ipRegistrationLimitDescription": "Ogranicz liczbę rejestracji z jednego adresu IP",
+    "minute": "Minuta(y)",
+    "month": "Miesiąc(e)",
+    "none": "Brak",
     "registrationLimitCount": "Liczba dozwolonych rejestracji",
     "registrationLimitCountDescription": "Liczba rejestracji dozwolona na IP w okresie limitu",
     "registrationLimitExpire": "Okres limitu",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Zatrzymaj rejestrację nowych użytkowników",
     "stopNewUserRegistrationDescription": "Po włączeniu rejestracja nowych użytkowników będzie wyłączona",
     "title": "Ustawienia rejestracji",
-    "trialSubscribe": "Subskrypcja próbna",
-    "trialSubscribeDescription": "Plan subskrypcyjny próbny przyznawany nowym użytkownikom po rejestracji",
-    "trialTime": "Czas trwania próby",
-    "trialTimeDescription": "Czas trwania próby przyznawany nowym użytkownikom po rejestracji (dni)"
+    "trialConfig": "Konfiguracja próbna",
+    "trialConfigDescription": "Skonfiguruj subskrypcję próbną, czas trwania i jednostkę czasu dla nowych użytkowników podczas rejestracji",
+    "year": "Rok(i)"
   },
   "site": {
     "customData": "Dane niestandardowe",

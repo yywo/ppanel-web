@@ -42,9 +42,13 @@
     "description": "Configure as configurações relacionadas ao registro de usuários",
     "enableTrial": "Ativar Teste",
     "enableTrialDescription": "Quando ativado, novos usuários receberão uma assinatura de teste ao se registrarem",
+    "hour": "Hora(s)",
     "inputPlaceholder": "Por favor, insira",
     "ipRegistrationLimit": "Limite de Registro por IP",
     "ipRegistrationLimitDescription": "Limite o número de registros de um único endereço IP",
+    "minute": "Minuto(s)",
+    "month": "Mês(es)",
+    "none": "Nenhum",
     "registrationLimitCount": "Contagem de Limite de Registro",
     "registrationLimitCountDescription": "Número de registros permitidos por IP dentro do período limite",
     "registrationLimitExpire": "Período de Limite",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Parar Registro de Novos Usuários",
     "stopNewUserRegistrationDescription": "Quando ativado, o registro de novos usuários será desativado",
     "title": "Configurações de Registro",
-    "trialSubscribe": "Assinatura de Teste",
-    "trialSubscribeDescription": "Plano de assinatura de teste concedido a novos usuários ao se registrarem",
-    "trialTime": "Duração do Teste",
-    "trialTimeDescription": "Duração do teste concedida a novos usuários ao se registrarem (dias)"
+    "trialConfig": "Configuração de Teste",
+    "trialConfigDescription": "Configurar assinatura de teste, duração e unidade de tempo para novos usuários durante o registro",
+    "year": "Ano(s)"
   },
   "site": {
     "customData": "Dados Personalizados",

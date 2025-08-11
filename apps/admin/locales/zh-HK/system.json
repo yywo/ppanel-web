@@ -42,9 +42,13 @@
     "description": "配置用戶註冊相關設置",
     "enableTrial": "啟用試用",
     "enableTrialDescription": "啟用後，新用戶在註冊時將獲得試用訂閱",
+    "hour": "小時",
     "inputPlaceholder": "請輸入",
     "ipRegistrationLimit": "IP註冊限制",
     "ipRegistrationLimitDescription": "限制單個IP地址的註冊數量",
+    "minute": "分鐘",
+    "month": "月",
+    "none": "無",
     "registrationLimitCount": "註冊限制數量",
     "registrationLimitCountDescription": "在限制期間內每個IP允許的註冊數量",
     "registrationLimitExpire": "限制期間",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "停止新用戶註冊",
     "stopNewUserRegistrationDescription": "啟用後，將禁用新用戶註冊",
     "title": "註冊設置",
-    "trialSubscribe": "試用訂閱",
-    "trialSubscribeDescription": "新用戶在註冊時獲得的試用訂閱計劃",
-    "trialTime": "試用期限",
-    "trialTimeDescription": "新用戶在註冊時獲得的試用期限（天）"
+    "trialConfig": "試用配置",
+    "trialConfigDescription": "為新用戶在註冊時配置試用訂閱、持續時間和時間單位",
+    "year": "年"
   },
   "site": {
     "customData": "自定義數據",

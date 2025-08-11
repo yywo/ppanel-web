@@ -42,9 +42,13 @@
     "description": "ユーザー登録に関連する設定を構成します",
     "enableTrial": "トライアルを有効にする",
     "enableTrialDescription": "有効にすると、新しいユーザーは登録時にトライアルサブスクリプションを受け取ります",
+    "hour": "時間",
     "inputPlaceholder": "入力してください",
     "ipRegistrationLimit": "IP登録制限",
     "ipRegistrationLimitDescription": "単一のIPアドレスからの登録数を制限します",
+    "minute": "分",
+    "month": "月",
+    "none": "なし",
     "registrationLimitCount": "登録制限数",
     "registrationLimitCountDescription": "制限期間内に許可される登録数",
     "registrationLimitExpire": "制限期間",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "新規ユーザー登録を停止",
     "stopNewUserRegistrationDescription": "有効にすると、新規ユーザー登録が無効になります",
     "title": "登録設定",
-    "trialSubscribe": "トライアルサブスクリプション",
-    "trialSubscribeDescription": "新しいユーザーが登録時に受け取るトライアルサブスクリプションプラン",
-    "trialTime": "トライアル期間",
-    "trialTimeDescription": "新しいユーザーが登録時に受け取るトライアル期間（日数）"
+    "trialConfig": "トライアル設定",
+    "trialConfigDescription": "新規ユーザーの登録時にトライアルサブスクリプション、期間、および時間単位を設定します",
+    "year": "年"
   },
   "site": {
     "customData": "カスタムデータ",

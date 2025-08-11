@@ -42,9 +42,13 @@
     "description": "กำหนดการตั้งค่าที่เกี่ยวข้องกับการลงทะเบียนผู้ใช้",
     "enableTrial": "เปิดใช้งานการทดลอง",
     "enableTrialDescription": "เมื่อเปิดใช้งาน ผู้ใช้ใหม่จะได้รับการสมัครสมาชิกทดลองเมื่อทำการลงทะเบียน",
+    "hour": "ชั่วโมง",
     "inputPlaceholder": "กรุณาใส่",
     "ipRegistrationLimit": "ขีดจำกัดการลงทะเบียน IP",
     "ipRegistrationLimitDescription": "จำกัดจำนวนการลงทะเบียนจากที่อยู่ IP เดียว",
+    "minute": "นาที",
+    "month": "เดือน",
+    "none": "ไม่มี",
     "registrationLimitCount": "จำนวนการลงทะเบียนที่จำกัด",
     "registrationLimitCountDescription": "จำนวนการลงทะเบียนที่อนุญาตต่อ IP ภายในระยะเวลาที่กำหนด",
     "registrationLimitExpire": "ระยะเวลาที่จำกัด",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "หยุดการลงทะเบียนผู้ใช้ใหม่",
     "stopNewUserRegistrationDescription": "เมื่อเปิดใช้งาน การลงทะเบียนผู้ใช้ใหม่จะถูกปิดใช้งาน",
     "title": "การตั้งค่าการลงทะเบียน",
-    "trialSubscribe": "การสมัครสมาชิกทดลอง",
-    "trialSubscribeDescription": "แผนการสมัครสมาชิกทดลองที่มอบให้กับผู้ใช้ใหม่เมื่อทำการลงทะเบียน",
-    "trialTime": "ระยะเวลาการทดลอง",
-    "trialTimeDescription": "ระยะเวลาการทดลองที่มอบให้กับผู้ใช้ใหม่เมื่อทำการลงทะเบียน (วัน)"
+    "trialConfig": "การตั้งค่าการทดลอง",
+    "trialConfigDescription": "กำหนดการสมัครสมาชิกทดลอง ระยะเวลา และหน่วยเวลา สำหรับผู้ใช้ใหม่เมื่อทำการลงทะเบียน",
+    "year": "ปี"
   },
   "site": {
     "customData": "ข้อมูลที่กำหนดเอง",
