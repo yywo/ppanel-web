@@ -479,9 +479,10 @@ export function ProtocolForm() {
                                 <SelectValue placeholder='Select ...' />
                               </SelectTrigger>
                               <SelectContent>
+                                <SelectItem value='base64'>{t('outputFormats.base64')}</SelectItem>
                                 <SelectItem value='yaml'>{t('outputFormats.yaml')}</SelectItem>
                                 <SelectItem value='json'>{t('outputFormats.json')}</SelectItem>
-                                <SelectItem value='base64'>{t('outputFormats.base64')}</SelectItem>
+                                <SelectItem value='conf'>{t('outputFormats.conf')}</SelectItem>
                                 <SelectItem value='plain'>{t('outputFormats.plain')}</SelectItem>
                               </SelectContent>
                             </Select>

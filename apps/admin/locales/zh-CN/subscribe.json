@@ -74,7 +74,8 @@
     "base64": "Base64",
     "json": "JSON",
     "plain": "纯文本",
-    "yaml": "YAML"
+    "yaml": "YAML",
+    "conf": "配置文件"
   },
   "platforms": {
     "android": "Android",

@@ -74,7 +74,8 @@
     "yaml": "YAML",
     "json": "JSON",
     "base64": "Base64",
-    "plain": "Plain Text"
+    "plain": "Plain Text",
+    "conf": "Config File"
   },
   "platforms": {
     "windows": "Windows",
