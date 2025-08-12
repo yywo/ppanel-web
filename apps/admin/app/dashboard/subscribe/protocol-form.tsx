@@ -519,6 +519,93 @@ export function ProtocolForm() {
                           <FormLabel>{t('form.fields.template')}</FormLabel>
                           <FormControl>
                             <GoTemplateEditor
+                              schema={{
+                                SiteName: { type: 'string', description: 'Site name' },
+                                SubscribeName: { type: 'string', description: 'Subscribe name' },
+                                Nodes: {
+                                  type: 'array',
+                                  description: 'Array of proxy nodes',
+                                  items: {
+                                    type: 'object',
+                                    properties: {
+                                      Name: { type: 'string', description: 'Node name' },
+                                      Host: { type: 'string', description: 'Server host' },
+                                      Port: { type: 'number', description: 'Server port' },
+                                      Type: { type: 'string', description: 'Proxy type' },
+                                      Tags: {
+                                        type: 'array',
+                                        description: 'Node tags',
+                                        items: { type: 'string' },
+                                      },
+                                      SNI: {
+                                        type: 'string',
+                                        description: 'Server Name Indication',
+                                      },
+                                      AllowInsecure: {
+                                        type: 'boolean',
+                                        description: 'Allow insecure connections',
+                                      },
+                                      Fingerprint: {
+                                        type: 'string',
+                                        description: 'Client fingerprint',
+                                      },
+                                      RealityServerAddr: {
+                                        type: 'string',
+                                        description: 'Reality server address',
+                                      },
+                                      RealityServerPort: {
+                                        type: 'number',
+                                        description: 'Reality server port',
+                                      },
+                                      RealityPrivateKey: {
+                                        type: 'string',
+                                        description: 'Reality private key',
+                                      },
+                                      RealityPublicKey: {
+                                        type: 'string',
+                                        description: 'Reality public key',
+                                      },
+                                      RealityShortId: {
+                                        type: 'string',
+                                        description: 'Reality short ID',
+                                      },
+                                      Network: { type: 'string', description: 'Network protocol' },
+                                      Path: { type: 'string', description: 'HTTP path' },
+                                      ServiceName: {
+                                        type: 'string',
+                                        description: 'gRPC service name',
+                                      },
+                                      Method: { type: 'string', description: 'Encryption method' },
+                                      ServerKey: { type: 'string', description: 'Server key' },
+                                      Flow: { type: 'string', description: 'Flow control' },
+                                      HopPorts: { type: 'string', description: 'Hop ports list' },
+                                      HopInterval: {
+                                        type: 'number',
+                                        description: 'Hop interval in seconds',
+                                      },
+                                      ObfsPassword: {
+                                        type: 'string',
+                                        description: 'Obfuscation password',
+                                      },
+                                    },
+                                  },
+                                },
+                                UserInfo: {
+                                  type: 'object',
+                                  description: 'User information',
+                                  properties: {
+                                    Password: { type: 'string', description: 'User password' },
+                                    ExpiredAt: { type: 'string', description: 'Expiration date' },
+                                    Download: { type: 'number', description: 'Downloaded bytes' },
+                                    Upload: { type: 'number', description: 'Uploaded bytes' },
+                                    Traffic: { type: 'number', description: 'Total traffic bytes' },
+                                    SubscribeURL: {
+                                      type: 'string',
+                                      description: 'Subscription URL',
+                                    },
+                                  },
+                                },
+                              }}
                               enableSprig
                               value={field.value || ''}
                               onChange={(value) => field.onChange(value)}

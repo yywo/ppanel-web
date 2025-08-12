@@ -17,6 +17,7 @@ export interface MonacoEditorProps {
   placeholder?: string;
   render?: (value?: string) => React.ReactNode;
   onMount?: OnMount;
+  beforeMount?: (monaco: Monaco) => void;
   language?: string;
   className?: string;
 }
@@ -39,6 +40,7 @@ export function MonacoEditor({
   placeholder = 'Start typing...',
   render,
   onMount,
+  beforeMount,
   language = 'markdown',
   className,
 }: MonacoEditorProps) {
@@ -154,6 +156,9 @@ export function MonacoEditor({
                       'editor.background': '#00000000',
                     },
                   });
+                  if (beforeMount) {
+                    beforeMount(monaco);
+                  }
                 }}
               />
               {!internalValue?.trim() && placeholder && (
