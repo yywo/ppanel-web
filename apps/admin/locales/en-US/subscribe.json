@@ -52,8 +52,8 @@
       "name": "Name",
       "description": "Description",
       "outputFormat": "Output Format",
-      "proxyTemplate": "Subscription Link",
-      "template": "Config Template"
+      "schema": "URL Schema",
+      "template": "Subscription File Template"
     },
     "descriptions": {
       "icon": "Icon URL or base64 encoding",
@@ -61,8 +61,8 @@
       "userAgentPrefix": "Client identifier for distinguishing different clients",
       "description": "Detailed client description",
       "outputFormat": "Subscription configuration file format",
-      "proxyTemplate": "Subscription link template, supports variables: ",
-      "template": "Subscription configuration template, supports various variables",
+      "schema": "URL Schema template, supports variables: '{url}' subscription URL, '{name}' site name",
+      "template": "Subscription file template, supports various variables",
       "downloadLink": "platform download URL"
     },
     "validation": {

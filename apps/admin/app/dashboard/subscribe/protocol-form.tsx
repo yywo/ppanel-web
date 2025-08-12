@@ -46,6 +46,7 @@ import {
   TooltipTrigger,
 } from '@workspace/ui/components/tooltip';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
+import { GoTemplateEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { UploadImage } from '@workspace/ui/custom-components/upload-image';
@@ -63,7 +64,7 @@ const createClientFormSchema = (t: any) =>
     description: z.string().optional(),
     icon: z.string().optional(),
     user_agent: z.string().min(1, `User-Agent ${t('form.validation.userAgentRequiredSuffix')}`),
-    proxy_template: z.string().default(''),
+    schema: z.string().default(''),
     template: z.string().default(''),
     output_format: z.string().default(''),
     download_link: z.object({
@@ -94,7 +95,7 @@ export function ProtocolForm() {
       description: '',
       icon: '',
       user_agent: '',
-      proxy_template: '',
+      schema: '',
       template: '',
       output_format: '',
       download_link: {
@@ -230,7 +231,7 @@ export function ProtocolForm() {
       description: '',
       icon: '',
       user_agent: '',
-      proxy_template: '',
+      schema: '',
       template: '',
       output_format: '',
       download_link: {
@@ -252,7 +253,7 @@ export function ProtocolForm() {
       description: client.description || '',
       icon: client.icon || '',
       user_agent: client.user_agent,
-      proxy_template: client.proxy_template || '',
+      schema: client.proxy_template || '',
       template: client.template || '',
       output_format: client.output_format || '',
       download_link: {
@@ -301,6 +302,7 @@ export function ProtocolForm() {
       if (editingClient) {
         await updateSubscribeApplication({
           ...data,
+          proxy_template: data.schema || '',
           is_default: editingClient.is_default,
           id: editingClient.id,
         });
@@ -308,6 +310,7 @@ export function ProtocolForm() {
       } else {
         await createSubscribeApplication({
           ...data,
+          proxy_template: data.schema || '',
           is_default: false,
         });
         toast.success(t('actions.createSuccess'));
@@ -491,20 +494,17 @@ export function ProtocolForm() {
 
                     <FormField
                       control={form.control}
-                      name='proxy_template'
+                      name='schema'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.fields.proxyTemplate')}</FormLabel>
+                          <FormLabel>{t('form.fields.schema')}</FormLabel>
                           <FormControl>
                             <Input
                               placeholder='clash://install-config?url={url}&name={name}'
                               {...field}
                             />
                           </FormControl>
-                          <FormDescription>
-                            {t('form.descriptions.proxyTemplate')}
-                            {`{url} {name}`}
-                          </FormDescription>
+                          <FormDescription>{t('form.descriptions.schema')}</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -517,10 +517,10 @@ export function ProtocolForm() {
                         <FormItem>
                           <FormLabel>{t('form.fields.template')}</FormLabel>
                           <FormControl>
-                            <Textarea
-                              placeholder='proxies:\n  - name: {name}\n    type: {type}\n    server: {server}\n    port: {port}'
-                              className='min-h-[120px] font-mono text-sm'
-                              {...field}
+                            <GoTemplateEditor
+                              enableSprig
+                              value={field.value || ''}
+                              onChange={(value) => field.onChange(value)}
                             />
                           </FormControl>
                           <FormDescription>{t('form.descriptions.template')}</FormDescription>

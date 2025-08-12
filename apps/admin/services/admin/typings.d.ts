@@ -339,6 +339,7 @@ declare namespace API {
     name: string;
     description?: string;
     icon?: string;
+    scheme?: string;
     user_agent: string;
     is_default: boolean;
     proxy_template: string;
@@ -1501,6 +1502,7 @@ declare namespace API {
     name: string;
     description?: string;
     icon?: string;
+    scheme?: string;
     user_agent: string;
     is_default: boolean;
     proxy_template: string;
@@ -1779,6 +1781,7 @@ declare namespace API {
     name: string;
     description?: string;
     icon?: string;
+    scheme?: string;
     user_agent: string;
     is_default: boolean;
     proxy_template: string;

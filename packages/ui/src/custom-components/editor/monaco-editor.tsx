@@ -5,6 +5,7 @@ import { Button } from '@workspace/ui/components/button';
 import { cn } from '@workspace/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { EyeIcon, EyeOff, FullscreenIcon, MinimizeIcon } from 'lucide-react';
+import DraculaTheme from 'monaco-themes/themes/Dracula.json' with { type: 'json' };
 import { useEffect, useRef, useState } from 'react';
 
 export interface MonacoEditorProps {
@@ -145,10 +146,11 @@ export function MonacoEditor({
                 theme='transparentTheme'
                 beforeMount={(monaco: Monaco) => {
                   monaco.editor.defineTheme('transparentTheme', {
-                    base: 'vs-dark',
-                    inherit: true,
-                    rules: [],
+                    base: DraculaTheme.base as 'vs' | 'vs-dark' | 'hc-black',
+                    inherit: DraculaTheme.inherit,
+                    rules: DraculaTheme.rules,
                     colors: {
+                      ...DraculaTheme.colors,
                       'editor.background': '#00000000',
                     },
                   });
