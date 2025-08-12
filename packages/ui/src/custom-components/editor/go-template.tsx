@@ -708,12 +708,14 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
       tokenizer: {
         root: [
           [/\{\{\/\*/, 'comment', '@comment'],
+          [/\{\{-/, 'template-tag', '@template'],
           [/\{\{/, 'template-tag', '@template'],
           [/./, 'text'],
         ],
 
         template: [
           [/\/\*/, 'comment', '@comment'],
+          [/-\}\}/, 'template-tag', '@pop'],
           [/\}\}/, 'template-tag', '@pop'],
           [/"([^"\\]|\\.)*$/, 'string.invalid'],
           [/"/, 'string', '@string'],
@@ -756,8 +758,14 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
               endColumn: position.column,
             });
 
-            const lastOpenBrace = textUntilPosition.lastIndexOf('{{');
-            const lastCloseBrace = textUntilPosition.lastIndexOf('}}');
+            const lastOpenBrace = Math.max(
+              textUntilPosition.lastIndexOf('{{'),
+              textUntilPosition.lastIndexOf('{{-'),
+            );
+            const lastCloseBrace = Math.max(
+              textUntilPosition.lastIndexOf('}}'),
+              textUntilPosition.lastIndexOf('-}}'),
+            );
             const insideTemplate = lastOpenBrace > lastCloseBrace && lastOpenBrace !== -1;
 
             if (!insideTemplate) {
@@ -768,8 +776,10 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
             const currentPosition = model.getOffsetAt(position);
             const textBeforePosition = fullText.substring(0, currentPosition);
 
-            const rangeMatches = [...textBeforePosition.matchAll(/\{\{\s*range\s+([^}]+)\s*\}\}/g)];
-            const endMatches = [...textBeforePosition.matchAll(/\{\{\s*end\s*\}\}/g)];
+            const rangeMatches = [
+              ...textBeforePosition.matchAll(/\{\{-?\s*range\s+([^}]+)\s*-?\}\}/g),
+            ];
+            const endMatches = [...textBeforePosition.matchAll(/\{\{-?\s*end\s*-?\}\}/g)];
 
             let activeRangeField: string | null = null;
             let rangeVariable: string | null = null;
@@ -832,7 +842,11 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
             }
 
             const wordStart = textUntilPosition.lastIndexOf(' ') + 1;
-            const templateStart = textUntilPosition.lastIndexOf('{{') + 2;
+            const templateStartNormal = textUntilPosition.lastIndexOf('{{');
+            const templateStartTrim = textUntilPosition.lastIndexOf('{{-');
+            const templateStart =
+              Math.max(templateStartNormal, templateStartTrim) +
+              (templateStartTrim > templateStartNormal ? 3 : 2);
             const actualStart = Math.max(wordStart, templateStart);
             const currentWord = textUntilPosition.substring(actualStart).trim();
 
