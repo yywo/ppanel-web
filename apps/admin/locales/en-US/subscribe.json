@@ -75,7 +75,7 @@
     "json": "JSON",
     "base64": "Base64",
     "plain": "Plain Text",
-    "conf": "Config File"
+    "conf": "CONF"
   },
   "platforms": {
     "windows": "Windows",
