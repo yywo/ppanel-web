@@ -141,6 +141,7 @@ export function EnhancedInput({
       {renderPrefix()}
       <Input
         step={0.01}
+        autoComplete='off'
         {...props}
         value={value}
         className='block rounded-none border-none'
