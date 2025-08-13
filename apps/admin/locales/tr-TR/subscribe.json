@@ -2,7 +2,7 @@
   "actions": {
     "add": "Ekle",
     "batchDelete": "Toplu Sil",
-    "batchDeleteSuccess": "{count} müşterinin başarıyla silindi",
+    "batchDeleteSuccess": "{count} müşteri başarıyla silindi",
     "batchDeleteWarning": "Seçilen {count} müşteriyi silmek istediğinize emin misiniz?",
     "cancel": "İptal",
     "confirm": "Onayla",
@@ -32,10 +32,10 @@
     "updateError": "Güncelleme başarısız",
     "updateSuccess": "Ayarlar başarıyla güncellendi",
     "userAgentLimit": "{userAgent} Kısıtlaması",
-    "userAgentLimitDescription": "{userAgent}'ye dayalı erişim kısıtlamalarını etkinleştir",
-    "userAgentList": "{userAgent} Beyaz Liste",
-    "userAgentListDescription": "Abonelik erişimi için izin verilen {userAgent}, her biri bir satırda. Yapılandırılmış uygulama {userAgent} otomatik olarak dahil edilecektir",
-    "userAgentListPlaceholder": "İzin verilen {userAgent}'yi girin, her biri bir satırda",
+    "userAgentLimitDescription": "{userAgent} bazında erişim kısıtlamalarını etkinleştir",
+    "userAgentList": "{userAgent} Beyaz Listesi",
+    "userAgentListDescription": "Abonelik erişimi için izin verilen {userAgent}, her satıra bir tane. Yapılandırılan uygulama {userAgent} otomatik olarak dahil edilecektir",
+    "userAgentListPlaceholder": "İzin verilen {userAgent} girin, her satıra bir tane",
     "wildcardResolution": "Joker Karakter Çözümü",
     "wildcardResolutionDescription": "Abonelikler için joker alan çözümünü etkinleştir"
   },
@@ -47,9 +47,30 @@
       "icon": "Simge URL'si veya base64 kodlaması",
       "name": "Müşteri görüntüleme adı",
       "outputFormat": "Abonelik yapılandırma dosyası formatı",
-      "proxyTemplate": "Abonelik bağlantısı şablonu, değişkenleri destekler: ",
-      "template": "Abonelik yapılandırma şablonu, çeşitli değişkenleri destekler",
-      "userAgentPrefix": "Farklı istemcileri ayırt etmek için istemci tanımlayıcısı"
+      "schema": {
+        "base64Encoding": "Base64 kodlaması",
+        "functions": "Fonksiyonları destekler:",
+        "jsonStringify": "JSON nesnesini dizeye dönüştür",
+        "nameVariable": "site adı",
+        "title": "URL Şeması şablonu",
+        "urlEncoding": "URL kodlaması",
+        "urlVariable": "abonelik URL'si",
+        "variables": "Değişkenleri destekler:"
+      },
+      "template": {
+        "description": "Abonelik yapılandırma dosyalarını oluşturmak için Go şablon söz dizimini kullanın",
+        "functions": "Şablon fonksiyonları:",
+        "if": "koşullu ifadeler",
+        "nodes": "proxy düğüm listesi",
+        "range": "dizileri yinele",
+        "siteName": "site adı",
+        "sprig": "Sprig fonksiyon kütüphanesi (dize işleme, tarihler vb.)",
+        "subscribeName": "abonelik adı",
+        "title": "Go Şablon Söz Dizimi",
+        "userInfo": "kullanıcı bilgisi (trafik, son tarih vb.)",
+        "variables": "Mevcut değişkenler:"
+      },
+      "userAgentPrefix": "Farklı müşterileri ayırt etmek için müşteri tanımlayıcısı"
     },
     "editTitle": "Müşteri Düzenle",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Simge",
       "name": "İsim",
       "outputFormat": "Çıktı Formatı",
-      "proxyTemplate": "Abonelik Bağlantısı",
-      "template": "Yapılandırma Şablonu"
+      "schema": "URL Şeması",
+      "template": "Abonelik Dosyası Şablonu"
     },
     "tabs": {
       "basic": "Temel Bilgiler",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Düz Metin",
     "yaml": "YAML"
@@ -85,7 +107,7 @@
     "windows": "Windows"
   },
   "protocol": {
-    "title": "İstemci Yönetimi"
+    "title": "Müşteri Yönetimi"
   },
   "table": {
     "columns": {

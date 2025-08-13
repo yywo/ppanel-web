@@ -21,23 +21,23 @@
   "config": {
     "description": "จัดการการตั้งค่าระบบการสมัครสมาชิก",
     "singleSubscriptionMode": "โหมดการสมัครสมาชิกเดียว",
-    "singleSubscriptionModeDescription": "จำกัดผู้ใช้ให้มีการสมัครสมาชิกที่ใช้งานอยู่เพียงหนึ่งรายการ การสมัครสมาชิกที่มีอยู่ไม่ถูกกระทบ",
+    "singleSubscriptionModeDescription": "จำกัดผู้ใช้ให้มีการสมัครสมาชิกที่ใช้งานอยู่เพียงหนึ่งรายการ การสมัครสมาชิกที่มีอยู่จะไม่ถูกกระทบ",
     "subscriptionDomain": "โดเมนการสมัครสมาชิก",
     "subscriptionDomainDescription": "โดเมนที่กำหนดเองสำหรับลิงก์การสมัครสมาชิก",
-    "subscriptionDomainPlaceholder": "กรอกโดเมนการสมัครสมาชิก หนึ่งรายการต่อบรรทัด",
+    "subscriptionDomainPlaceholder": "กรอกโดเมนการสมัครสมาชิก, หนึ่งต่อบรรทัด",
     "subscriptionPath": "เส้นทางการสมัครสมาชิก",
     "subscriptionPathDescription": "เส้นทางที่กำหนดเองสำหรับจุดสิ้นสุดการสมัครสมาชิก (ประสิทธิภาพดีขึ้นหลังจากรีสตาร์ทระบบ)",
     "subscriptionPathPlaceholder": "กรอกเส้นทางการสมัครสมาชิก",
     "title": "การตั้งค่าการสมัครสมาชิก",
     "updateError": "การอัปเดตไม่สำเร็จ",
-    "updateSuccess": "อัปเดตการตั้งค่าเรียบร้อยแล้ว",
+    "updateSuccess": "การตั้งค่าอัปเดตเรียบร้อยแล้ว",
     "userAgentLimit": "ข้อจำกัด {userAgent}",
     "userAgentLimitDescription": "เปิดใช้งานข้อจำกัดการเข้าถึงตาม {userAgent}",
     "userAgentList": "รายการอนุญาต {userAgent}",
-    "userAgentListDescription": "อนุญาต {userAgent} สำหรับการเข้าถึงการสมัครสมาชิก รายการละบรรทัด แอปพลิเคชันที่กำหนด {userAgent} จะถูกเพิ่มโดยอัตโนมัติ",
-    "userAgentListPlaceholder": "กรอก {userAgent} ที่อนุญาต หนึ่งต่อบรรทัด",
-    "wildcardResolution": "การแก้ไข Wildcard",
-    "wildcardResolutionDescription": "เปิดใช้งานการแก้ไขโดเมน wildcard สำหรับการสมัครสมาชิก"
+    "userAgentListDescription": "อนุญาต {userAgent} สำหรับการเข้าถึงการสมัครสมาชิก, หนึ่งต่อบรรทัด. แอปพลิเคชันที่กำหนด {userAgent} จะถูกเพิ่มโดยอัตโนมัติ",
+    "userAgentListPlaceholder": "กรอก {userAgent} ที่อนุญาต, หนึ่งต่อบรรทัด",
+    "wildcardResolution": "การแก้ไขไวลด์การ์ด",
+    "wildcardResolutionDescription": "เปิดใช้งานการแก้ไขโดเมนไวลด์การ์ดสำหรับการสมัครสมาชิก"
   },
   "form": {
     "addTitle": "เพิ่มลูกค้า",
@@ -47,9 +47,30 @@
       "icon": "URL ของไอคอนหรือการเข้ารหัส base64",
       "name": "ชื่อที่แสดงของลูกค้า",
       "outputFormat": "รูปแบบไฟล์การกำหนดค่าการสมัครสมาชิก",
-      "proxyTemplate": "เทมเพลตลิงก์การสมัครสมาชิก รองรับตัวแปร: ",
-      "template": "เทมเพลตการกำหนดค่าการสมัครสมาชิก รองรับตัวแปรต่างๆ",
-      "userAgentPrefix": "ตัวระบุของลูกค้าเพื่อแยกแยะลูกค้าที่แตกต่างกัน"
+      "schema": {
+        "base64Encoding": "การเข้ารหัส Base64",
+        "functions": "รองรับฟังก์ชัน:",
+        "jsonStringify": "วัตถุ JSON เป็นสตริง",
+        "nameVariable": "ชื่อไซต์",
+        "title": "เทมเพลตสคีม่า URL",
+        "urlEncoding": "การเข้ารหัส URL",
+        "urlVariable": "URL การสมัครสมาชิก",
+        "variables": "รองรับตัวแปร:"
+      },
+      "template": {
+        "description": "ใช้ไวยากรณ์เทมเพลต Go เพื่อสร้างไฟล์การกำหนดค่าการสมัครสมาชิก",
+        "functions": "ฟังก์ชันเทมเพลต:",
+        "if": "คำสั่งเงื่อนไข",
+        "nodes": "รายการโหนดพร็อกซี",
+        "range": "วนซ้ำในอาร์เรย์",
+        "siteName": "ชื่อไซต์",
+        "sprig": "ห้องสมุดฟังก์ชัน Sprig (การประมวลผลสตริง, วันที่, ฯลฯ)",
+        "subscribeName": "ชื่อการสมัครสมาชิก",
+        "title": "ไวยากรณ์เทมเพลต Go",
+        "userInfo": "ข้อมูลผู้ใช้ (การใช้งาน, วันหมดอายุ, ฯลฯ)",
+        "variables": "ตัวแปรที่มีอยู่:"
+      },
+      "userAgentPrefix": "ตัวระบุลูกค้าเพื่อแยกแยะลูกค้าที่แตกต่างกัน"
     },
     "editTitle": "แก้ไขลูกค้า",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "ไอคอน",
       "name": "ชื่อ",
       "outputFormat": "รูปแบบผลลัพธ์",
-      "proxyTemplate": "ลิงก์การสมัครสมาชิก",
-      "template": "เทมเพลตการกำหนดค่า"
+      "schema": "สคีม่า URL",
+      "template": "เทมเพลตไฟล์การสมัครสมาชิก"
     },
     "tabs": {
       "basic": "ข้อมูลพื้นฐาน",
@@ -66,12 +87,13 @@
       "template": "เทมเพลต"
     },
     "validation": {
-      "nameRequired": "ชื่อของลูกค้าจำเป็นต้องระบุ",
+      "nameRequired": "ต้องระบุชื่อของลูกค้า",
       "userAgentRequiredSuffix": "จำเป็นต้องระบุ"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "ข้อความธรรมดา",
     "yaml": "YAML"

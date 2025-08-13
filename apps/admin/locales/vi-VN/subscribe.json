@@ -31,13 +31,13 @@
     "title": "Cấu hình Đăng ký",
     "updateError": "Cập nhật không thành công",
     "updateSuccess": "Cài đặt đã được cập nhật thành công",
-    "userAgentLimit": "Giới hạn {userAgent}",
-    "userAgentLimitDescription": "Bật hạn chế truy cập dựa trên {userAgent}",
+    "userAgentLimit": "Hạn chế {userAgent}",
+    "userAgentLimitDescription": "Kích hoạt hạn chế truy cập dựa trên {userAgent}",
     "userAgentList": "Danh sách trắng {userAgent}",
-    "userAgentListDescription": "Các {userAgent} được phép truy cập đăng ký, mỗi cái một dòng. Ứng dụng đã cấu hình {userAgent} sẽ được tự động bao gồm",
-    "userAgentListPlaceholder": "Nhập {userAgent} được phép, mỗi cái một dòng",
-    "wildcardResolution": "Giải quyết Wildcard",
-    "wildcardResolutionDescription": "Kích hoạt giải quyết miền wildcard cho các đăng ký"
+    "userAgentListDescription": "Cho phép {userAgent} truy cập đăng ký, mỗi dòng một {userAgent}. Ứng dụng đã cấu hình {userAgent} sẽ được tự động bao gồm",
+    "userAgentListPlaceholder": "Nhập {userAgent} được phép, mỗi dòng một",
+    "wildcardResolution": "Giải quyết ký tự đại diện",
+    "wildcardResolutionDescription": "Kích hoạt giải quyết miền ký tự đại diện cho các đăng ký"
   },
   "form": {
     "addTitle": "Thêm Khách hàng",
@@ -47,9 +47,30 @@
       "icon": "URL biểu tượng hoặc mã hóa base64",
       "name": "Tên hiển thị của khách hàng",
       "outputFormat": "Định dạng tệp cấu hình đăng ký",
-      "proxyTemplate": "Mẫu liên kết đăng ký, hỗ trợ các biến: ",
-      "template": "Mẫu cấu hình đăng ký, hỗ trợ nhiều biến khác nhau",
-      "userAgentPrefix": "Định danh khách hàng để phân biệt các khách hàng khác nhau."
+      "schema": {
+        "base64Encoding": "Mã hóa Base64",
+        "functions": "Hỗ trợ các hàm:",
+        "jsonStringify": "Chuyển đổi đối tượng JSON thành chuỗi",
+        "nameVariable": "tên trang",
+        "title": "Mô hình URL",
+        "urlEncoding": "Mã hóa URL",
+        "urlVariable": "URL đăng ký",
+        "variables": "Hỗ trợ các biến:"
+      },
+      "template": {
+        "description": "Sử dụng cú pháp mẫu Go để tạo các tệp cấu hình đăng ký",
+        "functions": "Các hàm mẫu:",
+        "if": "câu lệnh điều kiện",
+        "nodes": "danh sách các nút proxy",
+        "range": "lặp qua các mảng",
+        "siteName": "tên trang",
+        "sprig": "Thư viện hàm Sprig (xử lý chuỗi, ngày tháng, v.v.)",
+        "subscribeName": "tên đăng ký",
+        "title": "Cú pháp Mẫu Go",
+        "userInfo": "thông tin người dùng (lưu lượng, hết hạn, v.v.)",
+        "variables": "Các biến có sẵn:"
+      },
+      "userAgentPrefix": "Định danh khách hàng để phân biệt các khách hàng khác nhau"
     },
     "editTitle": "Chỉnh sửa Khách hàng",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Biểu tượng",
       "name": "Tên",
       "outputFormat": "Định dạng Đầu ra",
-      "proxyTemplate": "Liên kết Đăng ký",
-      "template": "Mẫu Cấu hình"
+      "schema": "Mô hình URL",
+      "template": "Mẫu Tệp Đăng ký"
     },
     "tabs": {
       "basic": "Thông tin Cơ bản",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Văn bản thuần",
     "yaml": "YAML"

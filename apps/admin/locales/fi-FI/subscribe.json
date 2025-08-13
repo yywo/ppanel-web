@@ -43,13 +43,34 @@
     "addTitle": "Lisää asiakas",
     "descriptions": {
       "description": "Yksityiskohtainen asiakaskuvaus",
-      "downloadLink": "alustalataus-URL",
-      "icon": "Ikonin URL-osoite tai base64-koodaus",
+      "downloadLink": "alustan lataus-URL",
+      "icon": "Ikonin URL tai base64-koodaus",
       "name": "Asiakkaan näyttönimi",
-      "outputFormat": "Tilauksen asetustiedoston muoto",
-      "proxyTemplate": "Tilauksen linkkimalli, tukee muuttujia: ",
-      "template": "Tilauksen asetusmalli, tukee erilaisia muuttujia",
-      "userAgentPrefix": "Asiakasidentifikaattori eri asiakkaiden erottamiseksi"
+      "outputFormat": "Tilauksen konfiguraatiotiedoston muoto",
+      "schema": {
+        "base64Encoding": "Base64-koodaus",
+        "functions": "Tukee toimintoja:",
+        "jsonStringify": "JSON-objekti merkkijonoksi",
+        "nameVariable": "sivuston nimi",
+        "title": "URL-mallin malli",
+        "urlEncoding": "URL-koodaus",
+        "urlVariable": "tilaus-URL",
+        "variables": "Tukee muuttujia:"
+      },
+      "template": {
+        "description": "Käytä Go-mallin syntaksia luodaksesi tilauksen konfiguraatiotiedostoja",
+        "functions": "Mallitoiminnot:",
+        "if": "ehdolliset lauseet",
+        "nodes": "proxy-solmujen lista",
+        "range": "iteroi taulukoita",
+        "siteName": "sivuston nimi",
+        "sprig": "Sprig-toimintokirjasto (merkkijonojen käsittely, päivämäärät jne.)",
+        "subscribeName": "tilauksen nimi",
+        "title": "Go-mallin syntaksi",
+        "userInfo": "käyttäjätiedot (liikenne, vanheneminen jne.)",
+        "variables": "Saatavilla olevat muuttujat:"
+      },
+      "userAgentPrefix": "Asiakkaan tunniste erottamaan eri asiakkaita"
     },
     "editTitle": "Muokkaa asiakasta",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Ikoni",
       "name": "Nimi",
       "outputFormat": "Tulostusmuoto",
-      "proxyTemplate": "Tilauksen linkki",
-      "template": "Asetusmalli"
+      "schema": "URL-malli",
+      "template": "Tilauksen tiedostomalli"
     },
     "tabs": {
       "basic": "Perustiedot",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Plain Text",
     "yaml": "YAML"

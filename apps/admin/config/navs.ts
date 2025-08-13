@@ -22,11 +22,7 @@ export const navs = [
         url: '/dashboard/payment',
         icon: 'flat-color-icons:currency-exchange',
       },
-      {
-        title: 'Subscribe Config',
-        url: '/dashboard/subscribe',
-        icon: 'flat-color-icons:ruler',
-      },
+
       {
         title: 'ADS Config',
         url: '/dashboard/ads',
@@ -42,6 +38,11 @@ export const navs = [
   {
     title: 'Server',
     items: [
+      {
+        title: 'Subscribe Config',
+        url: '/dashboard/subscribe',
+        icon: 'flat-color-icons:ruler',
+      },
       {
         title: 'Server Management',
         url: '/dashboard/server',

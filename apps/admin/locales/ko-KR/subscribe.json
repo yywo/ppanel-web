@@ -23,18 +23,18 @@
     "singleSubscriptionMode": "단일 구독 모드",
     "singleSubscriptionModeDescription": "사용자를 하나의 활성 구독으로 제한합니다. 기존 구독에는 영향을 미치지 않습니다",
     "subscriptionDomain": "구독 도메인",
-    "subscriptionDomainDescription": "구독 링크를 위한 사용자 지정 도메인",
+    "subscriptionDomainDescription": "구독 링크를 위한 사용자 정의 도메인",
     "subscriptionDomainPlaceholder": "구독 도메인을 입력하세요, 한 줄에 하나씩",
     "subscriptionPath": "구독 경로",
-    "subscriptionPathDescription": "구독 엔드포인트를 위한 사용자 지정 경로 (시스템 재시작 후 성능 향상)",
+    "subscriptionPathDescription": "구독 엔드포인트를 위한 사용자 정의 경로 (시스템 재시작 후 성능 향상)",
     "subscriptionPathPlaceholder": "구독 경로를 입력하세요",
     "title": "구독 설정",
     "updateError": "업데이트 실패",
     "updateSuccess": "설정이 성공적으로 업데이트되었습니다",
     "userAgentLimit": "{userAgent} 제한",
-    "userAgentLimitDescription": "{userAgent} 기반의 접근 제한 활성화",
+    "userAgentLimitDescription": "{userAgent}에 기반한 접근 제한을 활성화합니다",
     "userAgentList": "{userAgent} 허용 목록",
-    "userAgentListDescription": "구독 접근을 위한 허용된 {userAgent}, 한 줄에 하나씩 입력. 구성된 애플리케이션 {userAgent}는 자동으로 포함됩니다.",
+    "userAgentListDescription": "구독 접근을 위한 허용된 {userAgent}, 한 줄에 하나씩. 구성된 애플리케이션 {userAgent}는 자동으로 포함됩니다",
     "userAgentListPlaceholder": "허용된 {userAgent}를 입력하세요, 한 줄에 하나씩",
     "wildcardResolution": "와일드카드 해상도",
     "wildcardResolutionDescription": "구독을 위한 와일드카드 도메인 해상도를 활성화합니다"
@@ -47,8 +47,29 @@
       "icon": "아이콘 URL 또는 base64 인코딩",
       "name": "클라이언트 표시 이름",
       "outputFormat": "구독 구성 파일 형식",
-      "proxyTemplate": "구독 링크 템플릿, 변수 지원: ",
-      "template": "구독 구성 템플릿, 다양한 변수 지원",
+      "schema": {
+        "base64Encoding": "Base64 인코딩",
+        "functions": "함수를 지원합니다:",
+        "jsonStringify": "JSON 객체를 문자열로 변환",
+        "nameVariable": "사이트 이름",
+        "title": "URL 스키마 템플릿",
+        "urlEncoding": "URL 인코딩",
+        "urlVariable": "구독 URL",
+        "variables": "변수를 지원합니다:"
+      },
+      "template": {
+        "description": "구독 구성 파일 생성을 위한 Go 템플릿 구문 사용",
+        "functions": "템플릿 함수:",
+        "if": "조건문",
+        "nodes": "프록시 노드 목록",
+        "range": "배열 반복",
+        "siteName": "사이트 이름",
+        "sprig": "Sprig 함수 라이브러리 (문자열 처리, 날짜 등)",
+        "subscribeName": "구독 이름",
+        "title": "Go 템플릿 구문",
+        "userInfo": "사용자 정보 (트래픽, 만료 등)",
+        "variables": "사용 가능한 변수:"
+      },
       "userAgentPrefix": "다양한 클라이언트를 구별하기 위한 클라이언트 식별자"
     },
     "editTitle": "클라이언트 편집",
@@ -57,8 +78,8 @@
       "icon": "아이콘",
       "name": "이름",
       "outputFormat": "출력 형식",
-      "proxyTemplate": "구독 링크",
-      "template": "구성 템플릿"
+      "schema": "URL 스키마",
+      "template": "구독 파일 템플릿"
     },
     "tabs": {
       "basic": "기본 정보",
@@ -67,11 +88,12 @@
     },
     "validation": {
       "nameRequired": "클라이언트 이름은 필수입니다",
-      "userAgentRequiredSuffix": "는 필수입니다"
+      "userAgentRequiredSuffix": "필수입니다"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "일반 텍스트",
     "yaml": "YAML"

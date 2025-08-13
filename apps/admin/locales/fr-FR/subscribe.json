@@ -31,11 +31,11 @@
     "title": "Configuration de l'abonnement",
     "updateError": "Échec de la mise à jour",
     "updateSuccess": "Paramètres mis à jour avec succès",
-    "userAgentLimit": "Restriction de {userAgent}",
+    "userAgentLimit": "Restriction {userAgent}",
     "userAgentLimitDescription": "Activer les restrictions d'accès basées sur {userAgent}",
     "userAgentList": "Liste blanche {userAgent}",
-    "userAgentListDescription": "{userAgent} autorisés pour l'accès à l'abonnement, un par ligne. L'application configurée {userAgent} sera automatiquement incluse",
-    "userAgentListPlaceholder": "Entrez les {userAgent} autorisés, un par ligne",
+    "userAgentListDescription": "Autorisé {userAgent} pour l'accès à l'abonnement, un par ligne. L'application configurée {userAgent} sera automatiquement incluse",
+    "userAgentListPlaceholder": "Entrez {userAgent} autorisés, un par ligne",
     "wildcardResolution": "Résolution de wildcard",
     "wildcardResolutionDescription": "Activer la résolution de domaine wildcard pour les abonnements"
   },
@@ -47,9 +47,30 @@
       "icon": "URL de l'icône ou encodage base64",
       "name": "Nom d'affichage du client",
       "outputFormat": "Format du fichier de configuration d'abonnement",
-      "proxyTemplate": "Modèle de lien d'abonnement, prend en charge les variables : ",
-      "template": "Modèle de configuration d'abonnement, prend en charge diverses variables",
-      "userAgentPrefix": "Identifiant du client pour distinguer les différents clients."
+      "schema": {
+        "base64Encoding": "Encodage Base64",
+        "functions": "Prend en charge les fonctions :",
+        "jsonStringify": "Objet JSON en chaîne",
+        "nameVariable": "nom du site",
+        "title": "Modèle de schéma d'URL",
+        "urlEncoding": "Encodage d'URL",
+        "urlVariable": "URL d'abonnement",
+        "variables": "Prend en charge les variables :"
+      },
+      "template": {
+        "description": "Utilisez la syntaxe de modèle Go pour générer des fichiers de configuration d'abonnement",
+        "functions": "Fonctions de modèle :",
+        "if": "instructions conditionnelles",
+        "nodes": "liste des nœuds proxy",
+        "range": "itérer des tableaux",
+        "siteName": "nom du site",
+        "sprig": "Bibliothèque de fonctions Sprig (traitement de chaînes, dates, etc.)",
+        "subscribeName": "nom de l'abonnement",
+        "title": "Syntaxe de modèle Go",
+        "userInfo": "informations utilisateur (trafic, expiration, etc.)",
+        "variables": "Variables disponibles :"
+      },
+      "userAgentPrefix": "Identifiant du client pour distinguer différents clients"
     },
     "editTitle": "Modifier un client",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Icône",
       "name": "Nom",
       "outputFormat": "Format de sortie",
-      "proxyTemplate": "Lien d'abonnement",
-      "template": "Modèle de configuration"
+      "schema": "Schéma d'URL",
+      "template": "Modèle de fichier d'abonnement"
     },
     "tabs": {
       "basic": "Informations de base",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Texte brut",
     "yaml": "YAML"

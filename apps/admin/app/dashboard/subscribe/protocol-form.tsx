@@ -248,23 +248,7 @@ export function ProtocolForm() {
 
   const handleEdit = (client: API.SubscribeApplication) => {
     setEditingClient(client);
-    form.reset({
-      name: client.name,
-      description: client.description || '',
-      icon: client.icon || '',
-      user_agent: client.user_agent,
-      schema: client.proxy_template || '',
-      template: client.template || '',
-      output_format: client.output_format || '',
-      download_link: {
-        windows: '',
-        mac: '',
-        linux: '',
-        ios: '',
-        android: '',
-        harmony: '',
-      },
-    });
+    form.reset(client);
     setOpen(true);
   };
 
@@ -302,7 +286,7 @@ export function ProtocolForm() {
       if (editingClient) {
         await updateSubscribeApplication({
           ...data,
-          proxy_template: data.schema || '',
+          proxy_template: '',
           is_default: editingClient.is_default,
           id: editingClient.id,
         });
@@ -310,7 +294,7 @@ export function ProtocolForm() {
       } else {
         await createSubscribeApplication({
           ...data,
-          proxy_template: data.schema || '',
+          proxy_template: '',
           is_default: false,
         });
         toast.success(t('actions.createSuccess'));
@@ -498,14 +482,82 @@ export function ProtocolForm() {
                       name='schema'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.fields.schema')}</FormLabel>
+                          <FormLabel className='flex items-center gap-2'>
+                            {t('form.fields.schema')}
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                  }}
+                                >
+                                  <Icon
+                                    icon='mdi:help-circle-outline'
+                                    className='text-muted-foreground h-4 w-4'
+                                  />
+                                </TooltipTrigger>
+                                <TooltipContent
+                                  side='right'
+                                  className='bg-secondary text-secondary-foreground max-w-md'
+                                >
+                                  <div className='space-y-2 text-sm'>
+                                    <div className='font-medium'>
+                                      {t('form.descriptions.schema.title')}
+                                    </div>
+
+                                    <div>
+                                      <div className='font-medium'>
+                                        {t('form.descriptions.schema.variables')}
+                                      </div>
+                                      <ul className='ml-2 list-disc space-y-1 text-xs'>
+                                        <li>
+                                          <code className='rounded px-1'>{'${url}'}</code> -{' '}
+                                          {t('form.descriptions.schema.urlVariable')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>{'${name}'}</code> -{' '}
+                                          {t('form.descriptions.schema.nameVariable')}
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                    <div>
+                                      <div className='font-medium'>
+                                        {t('form.descriptions.schema.functions')}
+                                      </div>
+                                      <ul className='ml-2 list-disc space-y-1 text-xs'>
+                                        <li>
+                                          <code className='rounded px-1'>
+                                            {'${encodeURIComponent(...)}'}
+                                          </code>{' '}
+                                          - {t('form.descriptions.schema.urlEncoding')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>
+                                            {'${window.btoa(...)}'}
+                                          </code>{' '}
+                                          - {t('form.descriptions.schema.base64Encoding')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>
+                                            {'${JSON.stringify(...)}'}
+                                          </code>{' '}
+                                          - {t('form.descriptions.schema.jsonStringify')}
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder='clash://install-config?url={url}&name={name}'
+                              placeholder='clash://install-config?url=${url}&name=${name}'
                               {...field}
                             />
                           </FormControl>
-                          <FormDescription>{t('form.descriptions.schema')}</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}
@@ -516,7 +568,82 @@ export function ProtocolForm() {
                       name='template'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.fields.template')}</FormLabel>
+                          <FormLabel className='flex items-center gap-2'>
+                            {t('form.fields.template')}
+                            <TooltipProvider>
+                              <Tooltip>
+                                <TooltipTrigger
+                                  onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                  }}
+                                >
+                                  <Icon
+                                    icon='mdi:help-circle-outline'
+                                    className='text-muted-foreground h-4 w-4'
+                                  />
+                                </TooltipTrigger>
+                                <TooltipContent
+                                  side='right'
+                                  className='bg-secondary text-secondary-foreground max-w-md'
+                                >
+                                  <div className='space-y-2 text-sm'>
+                                    <div className='font-medium'>
+                                      {t('form.descriptions.template.title')}
+                                    </div>
+
+                                    <div>
+                                      <div className='font-medium'>
+                                        {t('form.descriptions.template.variables')}
+                                      </div>
+                                      <ul className='ml-2 list-disc space-y-1 text-xs'>
+                                        <li>
+                                          <code className='rounded px-1'>.SiteName</code> -{' '}
+                                          {t('form.descriptions.template.siteName')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>.SubscribeName</code> -{' '}
+                                          {t('form.descriptions.template.subscribeName')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>.Nodes</code> -{' '}
+                                          {t('form.descriptions.template.nodes')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>.UserInfo</code> -{' '}
+                                          {t('form.descriptions.template.userInfo')}
+                                        </li>
+                                      </ul>
+                                    </div>
+
+                                    <div>
+                                      <div className='font-medium'>
+                                        {t('form.descriptions.template.functions')}
+                                      </div>
+                                      <ul className='ml-2 list-disc space-y-1 text-xs'>
+                                        <li>
+                                          <code className='rounded px-1'>
+                                            {'{{range .Nodes}}...{{end}}'}
+                                          </code>{' '}
+                                          - {t('form.descriptions.template.range')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>
+                                            {'{{if .condition}}...{{end}}'}
+                                          </code>{' '}
+                                          - {t('form.descriptions.template.if')}
+                                        </li>
+                                        <li>
+                                          <code className='rounded px-1'>{'{{sprig_func}}'}</code> -{' '}
+                                          {t('form.descriptions.template.sprig')}
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          </FormLabel>
                           <FormControl>
                             <GoTemplateEditor
                               schema={{
@@ -611,7 +738,6 @@ export function ProtocolForm() {
                               onChange={(value) => field.onChange(value)}
                             />
                           </FormControl>
-                          <FormDescription>{t('form.descriptions.template')}</FormDescription>
                           <FormMessage />
                         </FormItem>
                       )}

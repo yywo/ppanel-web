@@ -5,7 +5,7 @@
     "batchDeleteSuccess": "Sikeresen törölt {count} ügyfelet",
     "batchDeleteWarning": "Biztosan törölni szeretné a kiválasztott {count} ügyfelet?",
     "cancel": "Mégse",
-    "confirm": "Megerősít",
+    "confirm": "Megerősítés",
     "confirmDelete": "Törlés megerősítése",
     "createSuccess": "Sikeresen létrehozva",
     "delete": "Törlés",
@@ -32,12 +32,12 @@
     "updateError": "Frissítés sikertelen",
     "updateSuccess": "Beállítások sikeresen frissítve",
     "userAgentLimit": "{userAgent} Korlátozás",
-    "userAgentLimitDescription": "Engedélyezze a hozzáférési korlátozásokat a(z) {userAgent} alapján",
-    "userAgentList": "{userAgent} Fehér lista",
-    "userAgentListDescription": "Engedélyezett {userAgent} az előfizetési hozzáféréshez, soronként egy. A konfigurált alkalmazás {userAgent} automatikusan belekerül",
-    "userAgentListPlaceholder": "Adja meg az engedélyezett {userAgent}-t, soronként egy",
-    "wildcardResolution": "Wildcard Feloldás",
-    "wildcardResolutionDescription": "Engedélyezze a wildcard domain feloldást az előfizetésekhez"
+    "userAgentLimitDescription": "Engedélyezze a hozzáférési korlátozásokat a {userAgent} alapján",
+    "userAgentList": "{userAgent} Fehérlista",
+    "userAgentListDescription": "Engedélyezett {userAgent} az előfizetési hozzáféréshez, soronként egyet. A konfigurált alkalmazás {userAgent} automatikusan belekerül",
+    "userAgentListPlaceholder": "Adja meg az engedélyezett {userAgent} értékeket, soronként egyet",
+    "wildcardResolution": "Joker karakterek feloldása",
+    "wildcardResolutionDescription": "Engedélyezze a joker karakterek domain feloldását az előfizetésekhez"
   },
   "form": {
     "addTitle": "Ügyfél Hozzáadása",
@@ -47,9 +47,30 @@
       "icon": "Ikon URL vagy base64 kódolás",
       "name": "Ügyfél megjelenítési neve",
       "outputFormat": "Előfizetési konfigurációs fájl formátum",
-      "proxyTemplate": "Előfizetési link sablon, támogatja a változókat: ",
-      "template": "Előfizetési konfigurációs sablon, támogatja a különböző változókat",
-      "userAgentPrefix": "Kliens azonosító a különböző kliensek megkülönböztetésére."
+      "schema": {
+        "base64Encoding": "Base64 kódolás",
+        "functions": "Támogatott funkciók:",
+        "jsonStringify": "JSON objektum stringgé alakítása",
+        "nameVariable": "webhely neve",
+        "title": "URL Sémák sablon",
+        "urlEncoding": "URL kódolás",
+        "urlVariable": "előfizetési URL",
+        "variables": "Támogatott változók:"
+      },
+      "template": {
+        "description": "Használja a Go sablon szintaxist az előfizetési konfigurációs fájlok generálásához",
+        "functions": "Sablon funkciók:",
+        "if": "feltételes állítások",
+        "nodes": "proxy csomópontok listája",
+        "range": "tömbök iterálása",
+        "siteName": "webhely neve",
+        "sprig": "Sprig funkció könyvtár (string feldolgozás, dátumok, stb.)",
+        "subscribeName": "előfizetés neve",
+        "title": "Go Sablon Szintaxis",
+        "userInfo": "felhasználói információ (forgalom, lejárat, stb.)",
+        "variables": "Elérhető változók:"
+      },
+      "userAgentPrefix": "Ügyfél azonosító a különböző ügyfelek megkülönböztetésére"
     },
     "editTitle": "Ügyfél Szerkesztése",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Ikon",
       "name": "Név",
       "outputFormat": "Kimeneti Formátum",
-      "proxyTemplate": "Előfizetési Link",
-      "template": "Beállítási Sablon"
+      "schema": "URL Sémák",
+      "template": "Előfizetési Fájl Sablon"
     },
     "tabs": {
       "basic": "Alap Információk",
@@ -66,12 +87,13 @@
       "template": "Sablonok"
     },
     "validation": {
-      "nameRequired": "Az ügyfél neve kötelező",
-      "userAgentRequiredSuffix": "kötelező"
+      "nameRequired": "Ügyfél név megadása kötelező",
+      "userAgentRequiredSuffix": "megadása kötelező"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Egyszerű Szöveg",
     "yaml": "YAML"
@@ -85,7 +107,7 @@
     "windows": "Windows"
   },
   "protocol": {
-    "title": "Klienskezelés"
+    "title": "Ügyfélkezelés"
   },
   "table": {
     "columns": {

@@ -32,10 +32,10 @@
     "updateError": "Actualizarea a eșuat",
     "updateSuccess": "Setările au fost actualizate cu succes",
     "userAgentLimit": "Restricție {userAgent}",
-    "userAgentLimitDescription": "Activați restricțiile de acces bazate pe {userAgent}",
-    "userAgentList": "Lista albă {userAgent}",
-    "userAgentListDescription": "{userAgent} permise pentru accesul la abonament, câte unul pe linie. Aplicația configurată {userAgent} va fi inclusă automat",
-    "userAgentListPlaceholder": "Introduceți {userAgent} permise, câte unul pe linie",
+    "userAgentLimitDescription": "Activează restricții de acces bazate pe {userAgent}",
+    "userAgentList": "Listă albă {userAgent}",
+    "userAgentListDescription": "Permise {userAgent} pentru accesul la abonament, câte unul pe linie. Aplicația configurată {userAgent} va fi inclusă automat",
+    "userAgentListPlaceholder": "Introdu {userAgent} permise, câte unul pe linie",
     "wildcardResolution": "Rezolvare Wildcard",
     "wildcardResolutionDescription": "Activează rezolvarea domeniului wildcard pentru abonamente"
   },
@@ -43,13 +43,34 @@
     "addTitle": "Adaugă Client",
     "descriptions": {
       "description": "Descriere detaliată a clientului",
-      "downloadLink": "URL-ul de descărcare al platformei",
-      "icon": "URL-ul iconiței sau codificare base64",
+      "downloadLink": "URL descărcare platformă",
+      "icon": "URL iconiță sau codare base64",
       "name": "Numele de afișare al clientului",
       "outputFormat": "Formatul fișierului de configurare a abonamentului",
-      "proxyTemplate": "Șablonul linkului de abonament, suportă variabile: ",
-      "template": "Șablonul de configurare a abonamentului, suportă diverse variabile",
-      "userAgentPrefix": "Identificatorul clientului pentru a distinge diferite clienți"
+      "schema": {
+        "base64Encoding": "Codificare Base64",
+        "functions": "Suportă funcții:",
+        "jsonStringify": "Obiect JSON în string",
+        "nameVariable": "numele site-ului",
+        "title": "Șablon Schema URL",
+        "urlEncoding": "Codificare URL",
+        "urlVariable": "URL-ul abonamentului",
+        "variables": "Suportă variabile:"
+      },
+      "template": {
+        "description": "Folosește sintaxa șablon Go pentru a genera fișiere de configurare a abonamentului",
+        "functions": "Funcții de șablon:",
+        "if": "declarații condiționale",
+        "nodes": "lista nodurilor proxy",
+        "range": "iterează prin array-uri",
+        "siteName": "numele site-ului",
+        "sprig": "biblioteca de funcții Sprig (procesare stringuri, date, etc.)",
+        "subscribeName": "numele abonamentului",
+        "title": "Sintaxă Șablon Go",
+        "userInfo": "informații utilizator (trafic, expirare, etc.)",
+        "variables": "Variabile disponibile:"
+      },
+      "userAgentPrefix": "Identificatorul clientului pentru a distinge diferiți clienți"
     },
     "editTitle": "Editează Client",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Iconiță",
       "name": "Nume",
       "outputFormat": "Format de Ieșire",
-      "proxyTemplate": "Link de Abonament",
-      "template": "Șablon Config"
+      "schema": "Schema URL",
+      "template": "Șablon Fișier Abonament"
     },
     "tabs": {
       "basic": "Informații de Bază",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Text Simplu",
     "yaml": "YAML"

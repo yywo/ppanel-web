@@ -61,8 +61,29 @@
       "userAgentPrefix": "Client identifier for distinguishing different clients",
       "description": "Detailed client description",
       "outputFormat": "Subscription configuration file format",
-      "schema": "URL Schema template, supports variables: '{url}' subscription URL, '{name}' site name",
-      "template": "Subscription file template, supports various variables",
+      "schema": {
+        "title": "URL Schema template",
+        "variables": "Supports variables:",
+        "urlVariable": "subscription URL",
+        "nameVariable": "site name",
+        "functions": "Supports functions:",
+        "urlEncoding": "URL encoding",
+        "base64Encoding": "Base64 encoding",
+        "jsonStringify": "JSON object to string"
+      },
+      "template": {
+        "title": "Go Template Syntax",
+        "description": "Use Go template syntax to generate subscription configuration files",
+        "variables": "Available variables:",
+        "siteName": "site name",
+        "subscribeName": "subscription name",
+        "nodes": "proxy nodes list",
+        "userInfo": "user info (traffic, expiry, etc.)",
+        "functions": "Template functions:",
+        "range": "iterate arrays",
+        "if": "conditional statements",
+        "sprig": "Sprig function library (string processing, dates, etc.)"
+      },
       "downloadLink": "platform download URL"
     },
     "validation": {

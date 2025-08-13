@@ -33,10 +33,10 @@
     "updateSuccess": "Configuraciones actualizadas exitosamente",
     "userAgentLimit": "Restricción de {userAgent}",
     "userAgentLimitDescription": "Habilitar restricciones de acceso basadas en {userAgent}",
-    "userAgentList": "Lista blanca de {userAgent}",
-    "userAgentListDescription": "{userAgent} permitidos para acceso a suscripciones, uno por línea. La aplicación configurada {userAgent} se incluirá automáticamente",
-    "userAgentListPlaceholder": "Ingresa {userAgent} permitidos, uno por línea",
-    "wildcardResolution": "Resolución de Comodines",
+    "userAgentList": "Lista Blanca de {userAgent}",
+    "userAgentListDescription": "Permitir {userAgent} para acceso a suscripción, uno por línea. La aplicación configurada {userAgent} se incluirá automáticamente",
+    "userAgentListPlaceholder": "Ingrese {userAgent} permitidos, uno por línea",
+    "wildcardResolution": "Resolución de Comodín",
     "wildcardResolutionDescription": "Habilitar resolución de dominio comodín para suscripciones"
   },
   "form": {
@@ -47,8 +47,29 @@
       "icon": "URL del ícono o codificación base64",
       "name": "Nombre para mostrar del cliente",
       "outputFormat": "Formato del archivo de configuración de suscripción",
-      "proxyTemplate": "Plantilla de enlace de suscripción, soporta variables: ",
-      "template": "Plantilla de configuración de suscripción, soporta varias variables",
+      "schema": {
+        "base64Encoding": "Codificación Base64",
+        "functions": "Soporta funciones:",
+        "jsonStringify": "Objeto JSON a cadena",
+        "nameVariable": "nombre del sitio",
+        "title": "Plantilla de Esquema de URL",
+        "urlEncoding": "Codificación de URL",
+        "urlVariable": "URL de suscripción",
+        "variables": "Soporta variables:"
+      },
+      "template": {
+        "description": "Usar sintaxis de plantilla Go para generar archivos de configuración de suscripción",
+        "functions": "Funciones de plantilla:",
+        "if": "declaraciones condicionales",
+        "nodes": "lista de nodos proxy",
+        "range": "iterar arreglos",
+        "siteName": "nombre del sitio",
+        "sprig": "Biblioteca de funciones Sprig (procesamiento de cadenas, fechas, etc.)",
+        "subscribeName": "nombre de la suscripción",
+        "title": "Sintaxis de Plantilla Go",
+        "userInfo": "información del usuario (tráfico, expiración, etc.)",
+        "variables": "Variables disponibles:"
+      },
       "userAgentPrefix": "Identificador del cliente para distinguir diferentes clientes"
     },
     "editTitle": "Editar Cliente",
@@ -57,8 +78,8 @@
       "icon": "Ícono",
       "name": "Nombre",
       "outputFormat": "Formato de Salida",
-      "proxyTemplate": "Enlace de Suscripción",
-      "template": "Plantilla de Configuración"
+      "schema": "Esquema de URL",
+      "template": "Plantilla de Archivo de Suscripción"
     },
     "tabs": {
       "basic": "Información Básica",
@@ -66,12 +87,13 @@
       "template": "Plantillas"
     },
     "validation": {
-      "nameRequired": "El nombre del cliente es obligatorio",
-      "userAgentRequiredSuffix": "es obligatorio"
+      "nameRequired": "Se requiere el nombre del cliente",
+      "userAgentRequiredSuffix": "es requerido"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Texto Plano",
     "yaml": "YAML"

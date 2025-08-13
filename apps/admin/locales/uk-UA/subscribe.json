@@ -33,9 +33,9 @@
     "updateSuccess": "Налаштування успішно оновлено",
     "userAgentLimit": "Обмеження {userAgent}",
     "userAgentLimitDescription": "Увімкнути обмеження доступу на основі {userAgent}",
-    "userAgentList": "Список дозволених {userAgent}",
-    "userAgentListDescription": "Дозволені {userAgent} для доступу до підписки, по одному на рядок. Налаштований додаток {userAgent} буде автоматично включено",
-    "userAgentListPlaceholder": "Введіть дозволені {userAgent}, по одному на рядок",
+    "userAgentList": "Білий список {userAgent}",
+    "userAgentListDescription": "Дозволені {userAgent} для доступу до підписки, по одному в рядку. Налаштована програма {userAgent} буде автоматично включена",
+    "userAgentListPlaceholder": "Введіть дозволені {userAgent}, по одному в рядку",
     "wildcardResolution": "Розв'язання підстановочних знаків",
     "wildcardResolutionDescription": "Увімкнути розв'язання доменів з підстановочними знаками для підписок"
   },
@@ -44,11 +44,32 @@
     "descriptions": {
       "description": "Детальний опис клієнта",
       "downloadLink": "URL для завантаження платформи",
-      "icon": "URL іконки або кодування base64",
+      "icon": "URL іконки або base64 кодування",
       "name": "Відображуване ім'я клієнта",
       "outputFormat": "Формат файлу конфігурації підписки",
-      "proxyTemplate": "Шаблон посилання на підписку, підтримує змінні: ",
-      "template": "Шаблон конфігурації підписки, підтримує різні змінні",
+      "schema": {
+        "base64Encoding": "Base64 кодування",
+        "functions": "Підтримує функції:",
+        "jsonStringify": "JSON об'єкт в рядок",
+        "nameVariable": "ім'я сайту",
+        "title": "Шаблон URL-схеми",
+        "urlEncoding": "URL кодування",
+        "urlVariable": "URL підписки",
+        "variables": "Підтримує змінні:"
+      },
+      "template": {
+        "description": "Використовуйте синтаксис шаблону Go для генерації файлів конфігурації підписки",
+        "functions": "Функції шаблону:",
+        "if": "умовні оператори",
+        "nodes": "список проксі-нод",
+        "range": "ітерація масивів",
+        "siteName": "ім'я сайту",
+        "sprig": "Бібліотека функцій Sprig (обробка рядків, дати тощо)",
+        "subscribeName": "ім'я підписки",
+        "title": "Синтаксис шаблону Go",
+        "userInfo": "інформація про користувача (трафік, термін дії тощо)",
+        "variables": "Доступні змінні:"
+      },
       "userAgentPrefix": "Ідентифікатор клієнта для розрізнення різних клієнтів"
     },
     "editTitle": "Редагувати клієнта",
@@ -57,8 +78,8 @@
       "icon": "Іконка",
       "name": "Ім'я",
       "outputFormat": "Формат виходу",
-      "proxyTemplate": "Посилання на підписку",
-      "template": "Шаблон конфігурації"
+      "schema": "URL-схема",
+      "template": "Шаблон файлу підписки"
     },
     "tabs": {
       "basic": "Основна інформація",
@@ -66,12 +87,13 @@
       "template": "Шаблони"
     },
     "validation": {
-      "nameRequired": "Ім'я клієнта є обов'язковим",
-      "userAgentRequiredSuffix": "є обов'язковим"
+      "nameRequired": "Ім'я клієнта обов'язкове",
+      "userAgentRequiredSuffix": "обов'язкове"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Текстовий формат",
     "yaml": "YAML"

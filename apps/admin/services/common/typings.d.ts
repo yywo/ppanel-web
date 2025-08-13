@@ -213,6 +213,15 @@ declare namespace API {
     updated_at: number;
   };
 
+  type DownloadLink = {
+    ios?: string;
+    android?: string;
+    windows?: string;
+    mac?: string;
+    linux?: string;
+    harmony?: string;
+  };
+
   type EmailAuthticateConfig = {
     enable: boolean;
     enable_verify: boolean;
@@ -282,6 +291,11 @@ declare namespace API {
     node: number;
     country: number;
     protocol: string[];
+  };
+
+  type GetSubscribeApplicationListResponse = {
+    total: number;
+    list: SubscribeApplication[];
   };
 
   type GetTosResponse = {
@@ -761,6 +775,22 @@ declare namespace API {
     allow_deduction: boolean;
     reset_cycle: number;
     renewal_reset: boolean;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type SubscribeApplication = {
+    id: number;
+    name: string;
+    description?: string;
+    icon?: string;
+    scheme?: string;
+    user_agent: string;
+    is_default: boolean;
+    proxy_template: string;
+    template: string;
+    output_format: string;
+    download_link?: DownloadLink;
     created_at: number;
     updated_at: number;
   };

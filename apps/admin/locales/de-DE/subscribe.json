@@ -2,7 +2,7 @@
   "actions": {
     "add": "Hinzufügen",
     "batchDelete": "Massenlöschung",
-    "batchDeleteSuccess": "{count} Clients erfolgreich gelöscht",
+    "batchDeleteSuccess": "Erfolgreich {count} Clients gelöscht",
     "batchDeleteWarning": "Sind Sie sicher, dass Sie die ausgewählten {count} Clients löschen möchten?",
     "cancel": "Abbrechen",
     "confirm": "Bestätigen",
@@ -11,7 +11,7 @@
     "delete": "Löschen",
     "deleteFailed": "Löschen fehlgeschlagen",
     "deleteSuccess": "Erfolgreich gelöscht",
-    "deleteWarning": "Dieser Vorgang kann nicht rückgängig gemacht werden. Sind Sie sicher, dass Sie diesen Client löschen möchten?",
+    "deleteWarning": "Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher, dass Sie diesen Client löschen möchten?",
     "edit": "Bearbeiten",
     "save": "Speichern",
     "saveFailed": "Speichern fehlgeschlagen",
@@ -22,22 +22,22 @@
     "description": "Verwalten Sie die Systemeinstellungen für Abonnements",
     "singleSubscriptionMode": "Einzelnes Abonnement",
     "singleSubscriptionModeDescription": "Benutzer auf ein aktives Abonnement beschränken. Bestehende Abonnements bleiben unberührt",
-    "subscriptionDomain": "Abonnementdomäne",
-    "subscriptionDomainDescription": "Benutzerdefinierte Domäne für Abonnementlinks",
-    "subscriptionDomainPlaceholder": "Geben Sie die Abonnementdomäne ein, eine pro Zeile",
-    "subscriptionPath": "Abonnementpfad",
-    "subscriptionPathDescription": "Benutzerdefinierter Pfad für Abonnementendpunkte (bessere Leistung nach Systemneustart)",
-    "subscriptionPathPlaceholder": "Geben Sie den Abonnementpfad ein",
+    "subscriptionDomain": "Abonnement-Domain",
+    "subscriptionDomainDescription": "Benutzerdefinierte Domain für Abonnement-Links",
+    "subscriptionDomainPlaceholder": "Geben Sie die Abonnement-Domain ein, eine pro Zeile",
+    "subscriptionPath": "Abonnement-Pfad",
+    "subscriptionPathDescription": "Benutzerdefinierter Pfad für Abonnement-Endpunkte (bessere Leistung nach Systemneustart)",
+    "subscriptionPathPlaceholder": "Geben Sie den Abonnement-Pfad ein",
     "title": "Abonnementkonfiguration",
     "updateError": "Aktualisierung fehlgeschlagen",
     "updateSuccess": "Einstellungen erfolgreich aktualisiert",
     "userAgentLimit": "{userAgent} Einschränkung",
-    "userAgentLimitDescription": "Zugriffsrestriktionen basierend auf {userAgent} aktivieren",
+    "userAgentLimitDescription": "Zugriffsbeschränkungen basierend auf {userAgent} aktivieren",
     "userAgentList": "{userAgent} Whitelist",
-    "userAgentListDescription": "Erlaubte {userAgent} für den Abonnementzugang, jeweils eine pro Zeile. Konfigurierte Anwendung {userAgent} wird automatisch hinzugefügt",
-    "userAgentListPlaceholder": "Erlaubte {userAgent} eingeben, jeweils eine pro Zeile",
+    "userAgentListDescription": "Erlaubte {userAgent} für den Abonnementzugriff, eine pro Zeile. Konfigurierte Anwendung {userAgent} wird automatisch hinzugefügt",
+    "userAgentListPlaceholder": "Geben Sie erlaubte {userAgent} ein, eine pro Zeile",
     "wildcardResolution": "Wildcard-Auflösung",
-    "wildcardResolutionDescription": "Aktivieren Sie die Wildcard-Domänenauflösung für Abonnements"
+    "wildcardResolutionDescription": "Aktivieren Sie die Wildcard-Domainauflösung für Abonnements"
   },
   "form": {
     "addTitle": "Client hinzufügen",
@@ -47,8 +47,29 @@
       "icon": "Icon-URL oder Base64-Codierung",
       "name": "Anzeigename des Clients",
       "outputFormat": "Format der Abonnementkonfigurationsdatei",
-      "proxyTemplate": "Vorlage für den Abonnementlink, unterstützt Variablen: ",
-      "template": "Abonnementkonfigurationsvorlage, unterstützt verschiedene Variablen",
+      "schema": {
+        "base64Encoding": "Base64-Codierung",
+        "functions": "Unterstützt Funktionen:",
+        "jsonStringify": "JSON-Objekt in String",
+        "nameVariable": "Seitenname",
+        "title": "URL-Schema-Vorlage",
+        "urlEncoding": "URL-Codierung",
+        "urlVariable": "Abonnement-URL",
+        "variables": "Unterstützt Variablen:"
+      },
+      "template": {
+        "description": "Verwenden Sie die Go-Template-Syntax zur Erstellung von Abonnementkonfigurationsdateien",
+        "functions": "Template-Funktionen:",
+        "if": "Bedingte Anweisungen",
+        "nodes": "Proxy-Knotenliste",
+        "range": "Arrays durchlaufen",
+        "siteName": "Seitenname",
+        "sprig": "Sprig-Funktionsbibliothek (Stringverarbeitung, Daten usw.)",
+        "subscribeName": "Abonnementname",
+        "title": "Go-Template-Syntax",
+        "userInfo": "Benutzerinformationen (Verkehr, Ablaufdatum usw.)",
+        "variables": "Verfügbare Variablen:"
+      },
       "userAgentPrefix": "Client-Identifikator zur Unterscheidung verschiedener Clients"
     },
     "editTitle": "Client bearbeiten",
@@ -57,8 +78,8 @@
       "icon": "Icon",
       "name": "Name",
       "outputFormat": "Ausgabeformat",
-      "proxyTemplate": "Abonnementlink",
-      "template": "Konfigurationsvorlage"
+      "schema": "URL-Schema",
+      "template": "Abonnementdateivorlage"
     },
     "tabs": {
       "basic": "Basisinformationen",
@@ -72,8 +93,9 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
-    "plain": "Plain Text",
+    "plain": "Reiner Text",
     "yaml": "YAML"
   },
   "platforms": {
@@ -85,7 +107,7 @@
     "windows": "Windows"
   },
   "protocol": {
-    "title": "Client-Verwaltung"
+    "title": "Client-Management"
   },
   "table": {
     "columns": {

@@ -1,13 +1,13 @@
 {
   "actions": {
     "add": "Dodaj",
-    "batchDelete": "Usunięcie zbiorcze",
+    "batchDelete": "Usuwanie zbiorcze",
     "batchDeleteSuccess": "Pomyślnie usunięto {count} klientów",
     "batchDeleteWarning": "Czy na pewno chcesz usunąć wybranych {count} klientów?",
     "cancel": "Anuluj",
     "confirm": "Potwierdź",
     "confirmDelete": "Potwierdź usunięcie",
-    "createSuccess": "Utworzono pomyślnie",
+    "createSuccess": "Pomyślnie utworzono",
     "delete": "Usuń",
     "deleteFailed": "Usunięcie nie powiodło się",
     "deleteSuccess": "Pomyślnie usunięto",
@@ -34,8 +34,8 @@
     "userAgentLimit": "Ograniczenie {userAgent}",
     "userAgentLimitDescription": "Włącz ograniczenia dostępu na podstawie {userAgent}",
     "userAgentList": "Biała lista {userAgent}",
-    "userAgentListDescription": "Dozwolone {userAgent} do dostępu subskrypcyjnego, jeden na linię. Skonfigurowana aplikacja {userAgent} zostanie automatycznie uwzględniona",
-    "userAgentListPlaceholder": "Wprowadź dozwolone {userAgent}, jeden na linię",
+    "userAgentListDescription": "Dozwolone {userAgent} do dostępu do subskrypcji, jedna na linię. Skonfigurowana aplikacja {userAgent} zostanie automatycznie uwzględniona",
+    "userAgentListPlaceholder": "Wprowadź dozwolone {userAgent}, jedna na linię",
     "wildcardResolution": "Rozwiązywanie symboli wieloznacznych",
     "wildcardResolutionDescription": "Włącz rozwiązywanie domen wieloznacznych dla subskrypcji"
   },
@@ -47,8 +47,29 @@
       "icon": "URL ikony lub kodowanie base64",
       "name": "Nazwa wyświetlana klienta",
       "outputFormat": "Format pliku konfiguracyjnego subskrypcji",
-      "proxyTemplate": "Szablon linku subskrypcyjnego, obsługuje zmienne: ",
-      "template": "Szablon konfiguracji subskrypcji, obsługuje różne zmienne",
+      "schema": {
+        "base64Encoding": "Kodowanie Base64",
+        "functions": "Obsługuje funkcje:",
+        "jsonStringify": "Obiekt JSON na string",
+        "nameVariable": "nazwa witryny",
+        "title": "Szablon schematu URL",
+        "urlEncoding": "Kodowanie URL",
+        "urlVariable": "adres URL subskrypcji",
+        "variables": "Obsługuje zmienne:"
+      },
+      "template": {
+        "description": "Użyj składni szablonu Go do generowania plików konfiguracyjnych subskrypcji",
+        "functions": "Funkcje szablonu:",
+        "if": "instrukcje warunkowe",
+        "nodes": "lista węzłów proxy",
+        "range": "iteruj po tablicach",
+        "siteName": "nazwa witryny",
+        "sprig": "Biblioteka funkcji Sprig (przetwarzanie ciągów, daty itp.)",
+        "subscribeName": "nazwa subskrypcji",
+        "title": "Składnia szablonu Go",
+        "userInfo": "informacje o użytkowniku (ruch, wygaśnięcie itp.)",
+        "variables": "Dostępne zmienne:"
+      },
       "userAgentPrefix": "Identyfikator klienta do rozróżniania różnych klientów"
     },
     "editTitle": "Edytuj klienta",
@@ -57,23 +78,24 @@
       "icon": "Ikona",
       "name": "Nazwa",
       "outputFormat": "Format wyjściowy",
-      "proxyTemplate": "Link subskrypcyjny",
-      "template": "Szablon konfiguracji"
+      "schema": "Schemat URL",
+      "template": "Szablon pliku subskrypcyjnego"
     },
     "tabs": {
       "basic": "Podstawowe informacje",
-      "download": "Pobierania",
+      "download": "Pobrania",
       "template": "Szablony"
     },
     "validation": {
       "nameRequired": "Nazwa klienta jest wymagana",
-      "userAgentRequiredSuffix": "jest wymagany"
+      "userAgentRequiredSuffix": "jest wymagana"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
-    "plain": "Zwykły tekst",
+    "plain": "Tekst zwykły",
     "yaml": "YAML"
   },
   "platforms": {

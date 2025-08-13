@@ -31,24 +31,45 @@
     "title": "Abonnementsinnstillinger",
     "updateError": "Oppdatering feilet",
     "updateSuccess": "Innstillinger oppdatert med suksess",
-    "userAgentLimit": "{userAgent} Begrensning",
-    "userAgentLimitDescription": "Aktiver tilgangsbegrensninger basert på {userAgent}",
-    "userAgentList": "{userAgent} Hvitliste",
-    "userAgentListDescription": "Tillatte {userAgent} for abonnementsadgang, én per linje. Konfigurert applikasjon {userAgent} vil bli automatisk inkludert",
-    "userAgentListPlaceholder": "Skriv inn tillatte {userAgent}, én per linje",
-    "wildcardResolution": "Wildcard Oppløsning",
-    "wildcardResolutionDescription": "Aktiver wildcard domeneoppløsning for abonnementer"
+    "userAgentLimit": "{userAgent} Restriksjon",
+    "userAgentLimitDescription": "Aktiver tilgangsrestriksjoner basert på {userAgent}",
+    "userAgentList": "{userAgent} Hviteliste",
+    "userAgentListDescription": "Tillatte {userAgent} for abonnements tilgang, ett per linje. Konfigurert applikasjon {userAgent} vil bli automatisk inkludert",
+    "userAgentListPlaceholder": "Skriv inn tillatte {userAgent}, ett per linje",
+    "wildcardResolution": "Wildcard-oppløsning",
+    "wildcardResolutionDescription": "Aktiver wildcard-domeneoppløsning for abonnementer"
   },
   "form": {
     "addTitle": "Legg til Klient",
     "descriptions": {
       "description": "Detaljert klientbeskrivelse",
-      "downloadLink": "Plattform nedlastings-URL",
+      "downloadLink": "plattforms nedlastings-URL",
       "icon": "Ikon-URL eller base64-koding",
       "name": "Klientens visningsnavn",
-      "outputFormat": "Format for abonnements konfigurasjonsfil",
-      "proxyTemplate": "Mal for abonnementslenke, støtter variabler: ",
-      "template": "Abonnements konfigurasjonsmal, støtter ulike variabler",
+      "outputFormat": "Format for abonnementskonfigurasjonsfil",
+      "schema": {
+        "base64Encoding": "Base64-koding",
+        "functions": "Støtter funksjoner:",
+        "jsonStringify": "JSON-objekt til streng",
+        "nameVariable": "nettstedsnavn",
+        "title": "URL-skjema mal",
+        "urlEncoding": "URL-koding",
+        "urlVariable": "abonnements-URL",
+        "variables": "Støtter variabler:"
+      },
+      "template": {
+        "description": "Bruk Go mal-syntaks for å generere abonnementskonfigurasjonsfiler",
+        "functions": "Malfunksjoner:",
+        "if": "betingede setninger",
+        "nodes": "proxy-nodeliste",
+        "range": "iterere over lister",
+        "siteName": "nettstedsnavn",
+        "sprig": "Sprig funksjonsbibliotek (strengbehandling, datoer, osv.)",
+        "subscribeName": "abonnementsnavn",
+        "title": "Go Mal-syntaks",
+        "userInfo": "brukerinformasjon (trafikk, utløp, osv.)",
+        "variables": "Tilgjengelige variabler:"
+      },
       "userAgentPrefix": "Klientidentifikator for å skille mellom forskjellige klienter"
     },
     "editTitle": "Rediger Klient",
@@ -57,13 +78,13 @@
       "icon": "Ikon",
       "name": "Navn",
       "outputFormat": "Utdataformat",
-      "proxyTemplate": "Abonnementslenke",
-      "template": "Konfigurasjonsmal"
+      "schema": "URL-skjema",
+      "template": "Abonnementsfilmal"
     },
     "tabs": {
       "basic": "Grunnleggende Info",
       "download": "Nedlastinger",
-      "template": "Maler"
+      "template": "Mal"
     },
     "validation": {
       "nameRequired": "Klientnavn er påkrevd",
@@ -72,8 +93,9 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
-    "plain": "Ren Tekst",
+    "plain": "Ren tekst",
     "yaml": "YAML"
   },
   "platforms": {
@@ -93,7 +115,7 @@
       "description": "Beskrivelse",
       "name": "Klientnavn",
       "outputFormat": "Utdataformat",
-      "supportedPlatforms": "Støttede Plattformer"
+      "supportedPlatforms": "Støttede plattformer"
     }
   }
 }

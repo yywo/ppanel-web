@@ -47,8 +47,29 @@
       "icon": "图标 URL 或 base64 编码",
       "name": "客户端显示名称",
       "outputFormat": "订阅配置文件格式",
-      "schema": "URL Schema 模板，支持变量：'{url}' 订阅地址，'{name}' 站点名称",
-      "template": "订阅文件模板，支持各种变量",
+      "schema": {
+        "title": "URL Schema 模板",
+        "variables": "支持变量：",
+        "urlVariable": "订阅地址",
+        "nameVariable": "站点名称",
+        "functions": "支持函数：",
+        "urlEncoding": "URL编码",
+        "base64Encoding": "Base64编码",
+        "jsonStringify": "JSON对象转字符串"
+      },
+      "template": {
+        "title": "Go模板语法",
+        "description": "使用Go模板语法生成订阅配置文件",
+        "variables": "可用变量：",
+        "siteName": "站点名称",
+        "subscribeName": "订阅名称",
+        "nodes": "代理节点列表",
+        "userInfo": "用户信息(流量、到期时间等)",
+        "functions": "模板函数：",
+        "range": "遍历数组",
+        "if": "条件判断",
+        "sprig": "Sprig函数库(字符串处理、日期等)"
+      },
       "userAgentPrefix": "用于区分不同客户端的客户端标识符"
     },
     "editTitle": "编辑客户端",

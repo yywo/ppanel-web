@@ -1,7 +1,7 @@
 {
   "actions": {
-    "add": "افزودن",
-    "batchDelete": "حذف گروهی",
+    "add": "اضافه کردن",
+    "batchDelete": "حذف دسته‌ای",
     "batchDeleteSuccess": "با موفقیت {count} مشتری حذف شد",
     "batchDeleteWarning": "آیا مطمئن هستید که می‌خواهید {count} مشتری انتخاب شده را حذف کنید؟",
     "cancel": "لغو",
@@ -20,7 +20,7 @@
   },
   "config": {
     "description": "مدیریت تنظیمات سیستم اشتراک",
-    "singleSubscriptionMode": "حالت اشتراک تک",
+    "singleSubscriptionMode": "حالت اشتراک تکی",
     "singleSubscriptionModeDescription": "محدود کردن کاربران به یک اشتراک فعال. اشتراک‌های موجود تحت تأثیر قرار نمی‌گیرند",
     "subscriptionDomain": "دامنه اشتراک",
     "subscriptionDomainDescription": "دامنه سفارشی برای لینک‌های اشتراک",
@@ -31,25 +31,46 @@
     "title": "پیکربندی اشتراک",
     "updateError": "به‌روزرسانی ناموفق بود",
     "updateSuccess": "تنظیمات با موفقیت به‌روزرسانی شد",
-    "userAgentLimit": "محدودیت {userAgent}",
+    "userAgentLimit": "{userAgent} محدودیت",
     "userAgentLimitDescription": "فعال‌سازی محدودیت‌های دسترسی بر اساس {userAgent}",
-    "userAgentList": "لیست سفید {userAgent}",
-    "userAgentListDescription": "{userAgent} های مجاز برای دسترسی به اشتراک، هر کدام در یک خط. {userAgent} های پیکربندی شده به‌طور خودکار شامل خواهند شد",
-    "userAgentListPlaceholder": "{userAgent} های مجاز را وارد کنید، هر کدام در یک خط",
+    "userAgentList": "{userAgent} لیست سفید",
+    "userAgentListDescription": "اجازه دسترسی {userAgent} برای اشتراک، هر کدام در یک خط. برنامه پیکربندی شده {userAgent} به‌طور خودکار شامل خواهد شد",
+    "userAgentListPlaceholder": "اجازه {userAgent} را وارد کنید، هر کدام در یک خط",
     "wildcardResolution": "حل wildcard",
     "wildcardResolutionDescription": "فعال‌سازی حل دامنه wildcard برای اشتراک‌ها"
   },
   "form": {
-    "addTitle": "افزودن مشتری",
+    "addTitle": "اضافه کردن مشتری",
     "descriptions": {
       "description": "توضیحات دقیق مشتری",
-      "downloadLink": "آدرس دانلود پلتفرم",
-      "icon": "آدرس URL آیکون یا کدگذاری base64",
+      "downloadLink": "URL دانلود پلتفرم",
+      "icon": "URL آیکون یا کدگذاری base64",
       "name": "نام نمایشی مشتری",
       "outputFormat": "فرمت فایل پیکربندی اشتراک",
-      "proxyTemplate": "الگوی لینک اشتراک، از متغیرها پشتیبانی می‌کند: ",
-      "template": "الگوی پیکربندی اشتراک، از متغیرهای مختلف پشتیبانی می‌کند",
-      "userAgentPrefix": "شناسه مشتری برای تمایز بین مشتریان مختلف"
+      "schema": {
+        "base64Encoding": "کدگذاری Base64",
+        "functions": "توابع پشتیبانی شده:",
+        "jsonStringify": "شی JSON به رشته",
+        "nameVariable": "نام سایت",
+        "title": "قالب طرح URL",
+        "urlEncoding": "کدگذاری URL",
+        "urlVariable": "URL اشتراک",
+        "variables": "متغیرهای پشتیبانی شده:"
+      },
+      "template": {
+        "description": "استفاده از نحو قالب Go برای تولید فایل‌های پیکربندی اشتراک",
+        "functions": "توابع قالب:",
+        "if": "عبارات شرطی",
+        "nodes": "لیست گره‌های پروکسی",
+        "range": "تکرار آرایه‌ها",
+        "siteName": "نام سایت",
+        "sprig": "کتابخانه توابع Sprig (پردازش رشته، تاریخ‌ها و غیره)",
+        "subscribeName": "نام اشتراک",
+        "title": "نحو قالب Go",
+        "userInfo": "اطلاعات کاربر (ترافیک، انقضا و غیره)",
+        "variables": "متغیرهای موجود:"
+      },
+      "userAgentPrefix": "شناسایی مشتری برای تمایز مشتریان مختلف"
     },
     "editTitle": "ویرایش مشتری",
     "fields": {
@@ -57,13 +78,13 @@
       "icon": "آیکون",
       "name": "نام",
       "outputFormat": "فرمت خروجی",
-      "proxyTemplate": "لینک اشتراک",
-      "template": "الگوی پیکربندی"
+      "schema": "طرح URL",
+      "template": "قالب فایل اشتراک"
     },
     "tabs": {
       "basic": "اطلاعات پایه",
       "download": "دانلودها",
-      "template": "الگوها"
+      "template": "قالب‌ها"
     },
     "validation": {
       "nameRequired": "نام مشتری الزامی است",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "متن ساده",
     "yaml": "YAML"

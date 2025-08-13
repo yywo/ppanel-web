@@ -20,7 +20,7 @@
   },
   "config": {
     "description": "サブスクリプションシステムの設定を管理します",
-    "singleSubscriptionMode": "シングルサブスクリプションモード",
+    "singleSubscriptionMode": "単一サブスクリプションモード",
     "singleSubscriptionModeDescription": "ユーザーを1つのアクティブなサブスクリプションに制限します。既存のサブスクリプションには影響しません",
     "subscriptionDomain": "サブスクリプションドメイン",
     "subscriptionDomainDescription": "サブスクリプションリンク用のカスタムドメイン",
@@ -32,10 +32,10 @@
     "updateError": "更新に失敗しました",
     "updateSuccess": "設定が正常に更新されました",
     "userAgentLimit": "{userAgent} 制限",
-    "userAgentLimitDescription": "{userAgent} に基づくアクセス制限を有効にする",
+    "userAgentLimitDescription": "{userAgent} に基づくアクセス制限を有効にします",
     "userAgentList": "{userAgent} ホワイトリスト",
-    "userAgentListDescription": "サブスクリプションアクセスのために許可された {userAgent}、1行ごとに1つ。設定されたアプリケーションの {userAgent} は自動的に含まれます",
-    "userAgentListPlaceholder": "許可された {userAgent} を入力してください、1行ごとに",
+    "userAgentListDescription": "サブスクリプションアクセスを許可された {userAgent}（1行につき1つ）。構成されたアプリケーション {userAgent} は自動的に含まれます",
+    "userAgentListPlaceholder": "許可された {userAgent} を入力してください（1行につき1つ）",
     "wildcardResolution": "ワイルドカード解決",
     "wildcardResolutionDescription": "サブスクリプション用のワイルドカードドメイン解決を有効にします"
   },
@@ -47,8 +47,29 @@
       "icon": "アイコンのURLまたはbase64エンコーディング",
       "name": "クライアントの表示名",
       "outputFormat": "サブスクリプション設定ファイル形式",
-      "proxyTemplate": "サブスクリプションリンクテンプレート、変数をサポートします：",
-      "template": "サブスクリプション設定テンプレート、さまざまな変数をサポートします",
+      "schema": {
+        "base64Encoding": "Base64エンコーディング",
+        "functions": "関数をサポートしています：",
+        "jsonStringify": "JSONオブジェクトを文字列に変換",
+        "nameVariable": "サイト名",
+        "title": "URLスキーマテンプレート",
+        "urlEncoding": "URLエンコーディング",
+        "urlVariable": "サブスクリプションURL",
+        "variables": "変数をサポートしています："
+      },
+      "template": {
+        "description": "Goテンプレート構文を使用してサブスクリプション設定ファイルを生成します",
+        "functions": "テンプレート関数：",
+        "if": "条件文",
+        "nodes": "プロキシノードリスト",
+        "range": "配列を反復処理",
+        "siteName": "サイト名",
+        "sprig": "Sprig関数ライブラリ（文字列処理、日付など）",
+        "subscribeName": "サブスクリプション名",
+        "title": "Goテンプレート構文",
+        "userInfo": "ユーザー情報（トラフィック、有効期限など）",
+        "variables": "利用可能な変数："
+      },
       "userAgentPrefix": "異なるクライアントを区別するためのクライアント識別子"
     },
     "editTitle": "クライアントを編集",
@@ -57,8 +78,8 @@
       "icon": "アイコン",
       "name": "名前",
       "outputFormat": "出力形式",
-      "proxyTemplate": "サブスクリプションリンク",
-      "template": "設定テンプレート"
+      "schema": "URLスキーマ",
+      "template": "サブスクリプションファイルテンプレート"
     },
     "tabs": {
       "basic": "基本情報",
@@ -72,6 +93,7 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "プレーンテキスト",
     "yaml": "YAML"

@@ -2,7 +2,7 @@
   "actions": {
     "add": "Agregar",
     "batchDelete": "Eliminar en lote",
-    "batchDeleteSuccess": "Se eliminaron con éxito {count} clientes",
+    "batchDeleteSuccess": "Se eliminaron correctamente {count} clientes",
     "batchDeleteWarning": "¿Está seguro de que desea eliminar los {count} clientes seleccionados?",
     "cancel": "Cancelar",
     "confirm": "Confirmar",
@@ -34,7 +34,7 @@
     "userAgentLimit": "Restricción de {userAgent}",
     "userAgentLimitDescription": "Habilitar restricciones de acceso basadas en {userAgent}",
     "userAgentList": "Lista blanca de {userAgent}",
-    "userAgentListDescription": "{userAgent} permitidos para acceso a la suscripción, uno por línea. La aplicación configurada {userAgent} se incluirá automáticamente",
+    "userAgentListDescription": "Permitir {userAgent} para acceso a suscripción, uno por línea. La aplicación configurada {userAgent} se incluirá automáticamente",
     "userAgentListPlaceholder": "Ingrese {userAgent} permitidos, uno por línea",
     "wildcardResolution": "Resolución de comodines",
     "wildcardResolutionDescription": "Habilitar resolución de dominio comodín para suscripciones"
@@ -47,9 +47,30 @@
       "icon": "URL del ícono o codificación base64",
       "name": "Nombre para mostrar del cliente",
       "outputFormat": "Formato del archivo de configuración de suscripción",
-      "proxyTemplate": "Plantilla de enlace de suscripción, admite variables: ",
-      "template": "Plantilla de configuración de suscripción, admite varias variables",
-      "userAgentPrefix": "Identificador del cliente para distinguir diferentes clientes."
+      "schema": {
+        "base64Encoding": "Codificación Base64",
+        "functions": "Soporta funciones:",
+        "jsonStringify": "Objeto JSON a cadena",
+        "nameVariable": "nombre del sitio",
+        "title": "Plantilla de esquema de URL",
+        "urlEncoding": "Codificación de URL",
+        "urlVariable": "URL de suscripción",
+        "variables": "Soporta variables:"
+      },
+      "template": {
+        "description": "Utilizar la sintaxis de plantilla Go para generar archivos de configuración de suscripción",
+        "functions": "Funciones de plantilla:",
+        "if": "declaraciones condicionales",
+        "nodes": "lista de nodos proxy",
+        "range": "iterar arreglos",
+        "siteName": "nombre del sitio",
+        "sprig": "Biblioteca de funciones Sprig (procesamiento de cadenas, fechas, etc.)",
+        "subscribeName": "nombre de la suscripción",
+        "title": "Sintaxis de Plantilla Go",
+        "userInfo": "información del usuario (tráfico, expiración, etc.)",
+        "variables": "Variables disponibles:"
+      },
+      "userAgentPrefix": "Identificador del cliente para distinguir diferentes clientes"
     },
     "editTitle": "Editar Cliente",
     "fields": {
@@ -57,8 +78,8 @@
       "icon": "Ícono",
       "name": "Nombre",
       "outputFormat": "Formato de Salida",
-      "proxyTemplate": "Enlace de Suscripción",
-      "template": "Plantilla de Configuración"
+      "schema": "Esquema de URL",
+      "template": "Plantilla de Archivo de Suscripción"
     },
     "tabs": {
       "basic": "Información Básica",
@@ -66,12 +87,13 @@
       "template": "Plantillas"
     },
     "validation": {
-      "nameRequired": "El nombre del cliente es obligatorio",
-      "userAgentRequiredSuffix": "es obligatorio"
+      "nameRequired": "Se requiere el nombre del cliente",
+      "userAgentRequiredSuffix": "es requerido"
     }
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "Texto Plano",
     "yaml": "YAML"
