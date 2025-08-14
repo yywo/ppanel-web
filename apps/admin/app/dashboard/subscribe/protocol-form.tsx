@@ -669,7 +669,7 @@ export function ProtocolForm() {
                                     type: 'object',
                                     properties: {
                                       Name: { type: 'string', description: 'Node name' },
-                                      Host: { type: 'string', description: 'Server host' },
+                                      Server: { type: 'string', description: 'Server host' },
                                       Port: { type: 'number', description: 'Server port' },
                                       Type: { type: 'string', description: 'Proxy type' },
                                       Tags: {
@@ -677,17 +677,23 @@ export function ProtocolForm() {
                                         description: 'Node tags',
                                         items: { type: 'string' },
                                       },
+                                      // Security Options
+                                      Security: {
+                                        type: 'string',
+                                        description: 'Security protocol',
+                                      },
                                       SNI: {
                                         type: 'string',
-                                        description: 'Server Name Indication',
+                                        description: 'Server Name Indication for TLS',
                                       },
                                       AllowInsecure: {
                                         type: 'boolean',
-                                        description: 'Allow insecure connections',
+                                        description:
+                                          'Allow insecure connections (skip certificate verification)',
                                       },
                                       Fingerprint: {
                                         type: 'string',
-                                        description: 'Client fingerprint',
+                                        description: 'Client fingerprint for TLS connections',
                                       },
                                       RealityServerAddr: {
                                         type: 'string',
@@ -699,33 +705,70 @@ export function ProtocolForm() {
                                       },
                                       RealityPrivateKey: {
                                         type: 'string',
-                                        description: 'Reality private key',
+                                        description: 'Reality private key for authentication',
                                       },
                                       RealityPublicKey: {
                                         type: 'string',
-                                        description: 'Reality public key',
+                                        description: 'Reality public key for authentication',
                                       },
                                       RealityShortId: {
                                         type: 'string',
-                                        description: 'Reality short ID',
+                                        description: 'Reality short ID for authentication',
                                       },
-                                      Network: { type: 'string', description: 'Network protocol' },
-                                      Path: { type: 'string', description: 'HTTP path' },
+                                      // Transport Options
+                                      Transport: {
+                                        type: 'string',
+                                        description: 'Transport protocol (e.g., ws, http, grpc)',
+                                      },
+                                      Host: {
+                                        type: 'string',
+                                        description: 'For WebSocket/HTTP/HTTPS',
+                                      },
+                                      Path: { type: 'string', description: 'For HTTP/HTTPS' },
                                       ServiceName: {
                                         type: 'string',
-                                        description: 'gRPC service name',
+                                        description: 'For gRPC',
                                       },
+                                      // Shadowsocks Options
                                       Method: { type: 'string', description: 'Encryption method' },
-                                      ServerKey: { type: 'string', description: 'Server key' },
-                                      Flow: { type: 'string', description: 'Flow control' },
-                                      HopPorts: { type: 'string', description: 'Hop ports list' },
+                                      ServerKey: {
+                                        type: 'string',
+                                        description: 'For Shadowsocks 2022',
+                                      },
+                                      // Vmess/Vless/Trojan Options
+                                      Flow: {
+                                        type: 'string',
+                                        description: 'Flow for Vmess/Vless/Trojan',
+                                      },
+                                      // Hysteria2 Options
+                                      HopPorts: {
+                                        type: 'string',
+                                        description: 'Comma-separated list of hop ports',
+                                      },
                                       HopInterval: {
                                         type: 'number',
-                                        description: 'Hop interval in seconds',
+                                        description: 'Interval for hop ports in seconds',
                                       },
                                       ObfsPassword: {
                                         type: 'string',
-                                        description: 'Obfuscation password',
+                                        description: 'Obfuscation password for Hysteria2',
+                                      },
+                                      // Tuic Options
+                                      DisableSNI: {
+                                        type: 'boolean',
+                                        description: 'Disable SNI',
+                                      },
+                                      ReduceRtt: {
+                                        type: 'boolean',
+                                        description: 'Reduce RTT',
+                                      },
+                                      UDPRelayMode: {
+                                        type: 'string',
+                                        description: 'UDP relay mode (e.g., "full", "partial")',
+                                      },
+                                      CongestionController: {
+                                        type: 'string',
+                                        description: 'Congestion controller (e.g., "cubic", "bbr")',
                                       },
                                     },
                                   },
