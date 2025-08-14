@@ -117,5 +117,16 @@
       "outputFormat": "Formát výstupu",
       "supportedPlatforms": "Podporované platformy"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekódování selhalo: Obsah není platný formát Base64",
+      "decodedContent": "Dekódovaný obsah",
+      "originalContent": "Původní obsah (Base64)"
+    },
+    "failed": "Náhled selhal",
+    "loading": "Načítání...",
+    "preview": "Náhled",
+    "title": "Náhled šablony"
   }
 }

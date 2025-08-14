@@ -117,5 +117,16 @@
       "outputFormat": "Kimeneti Formátum",
       "supportedPlatforms": "Támogatott Platformok"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekódolás sikertelen: A tartalom nem érvényes Base64 formátum",
+      "decodedContent": "Dekódolt Tartalom",
+      "originalContent": "Eredeti Tartalom (Base64)"
+    },
+    "failed": "Az előnézet nem sikerült",
+    "loading": "Betöltés...",
+    "preview": "Előnézet",
+    "title": "Sablon Előnézet"
   }
 }

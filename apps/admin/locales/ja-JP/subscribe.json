@@ -117,5 +117,16 @@
       "outputFormat": "出力形式",
       "supportedPlatforms": "サポートされているプラットフォーム"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "デコードに失敗しました：コンテンツが有効なBase64形式ではありません",
+      "decodedContent": "デコードされたコンテンツ",
+      "originalContent": "オリジナルコンテンツ（Base64）"
+    },
+    "failed": "プレビューに失敗しました",
+    "loading": "読み込み中...",
+    "preview": "プレビュー",
+    "title": "テンプレートプレビュー"
   }
 }

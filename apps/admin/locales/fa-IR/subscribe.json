@@ -117,5 +117,16 @@
       "outputFormat": "فرمت خروجی",
       "supportedPlatforms": "پلتفرم‌های پشتیبانی شده"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "خطا در رمزگشایی: محتوا فرمت Base64 معتبر نیست",
+      "decodedContent": "محتوای رمزگشایی شده",
+      "originalContent": "محتوای اصلی (Base64)"
+    },
+    "failed": "پیش‌نمایش ناموفق بود",
+    "loading": "در حال بارگذاری...",
+    "preview": "پیش‌نمایش",
+    "title": "پیش‌نمایش الگو"
   }
 }

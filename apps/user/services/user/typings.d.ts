@@ -275,11 +275,6 @@ declare namespace API {
     methods: UserAuthMethod[];
   };
 
-  type GetSubscribeApplicationListResponse = {
-    total: number;
-    list: SubscribeApplication[];
-  };
-
   type GetSubscribeLogParams = {
     page: number;
     size: number;
@@ -873,22 +868,6 @@ declare namespace API {
     allow_deduction: boolean;
     reset_cycle: number;
     renewal_reset: boolean;
-    created_at: number;
-    updated_at: number;
-  };
-
-  type SubscribeApplication = {
-    id: number;
-    name: string;
-    description?: string;
-    icon?: string;
-    scheme?: string;
-    user_agent: string;
-    is_default: boolean;
-    proxy_template: string;
-    template: string;
-    output_format: string;
-    download_link?: DownloadLink;
     created_at: number;
     updated_at: number;
   };

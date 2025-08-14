@@ -117,5 +117,16 @@
       "outputFormat": "출력 형식",
       "supportedPlatforms": "지원되는 플랫폼"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "디코드 실패: 콘텐츠가 유효한 Base64 형식이 아닙니다",
+      "decodedContent": "디코딩된 콘텐츠",
+      "originalContent": "원본 콘텐츠 (Base64)"
+    },
+    "failed": "미리보기가 실패했습니다",
+    "loading": "로딩 중...",
+    "preview": "미리보기",
+    "title": "템플릿 미리보기"
   }
 }

@@ -117,5 +117,16 @@
       "outputFormat": "Format de Ieșire",
       "supportedPlatforms": "Platforme Suportate"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Decodarea a eșuat: Conținutul nu este un format Base64 valid",
+      "decodedContent": "Conținut Decodat",
+      "originalContent": "Conținut Original (Base64)"
+    },
+    "failed": "Previzualizarea a eșuat",
+    "loading": "Se încarcă...",
+    "preview": "Previzualizare",
+    "title": "Previzualizare Șablon"
   }
 }

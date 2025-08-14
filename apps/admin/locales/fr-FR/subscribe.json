@@ -117,5 +117,16 @@
       "outputFormat": "Format de sortie",
       "supportedPlatforms": "Plateformes prises en charge"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Échec du décodage : le contenu n'est pas au format Base64 valide",
+      "decodedContent": "Contenu décodé",
+      "originalContent": "Contenu original (Base64)"
+    },
+    "failed": "Échec de l'aperçu",
+    "loading": "Chargement...",
+    "preview": "Aperçu",
+    "title": "Aperçu du modèle"
   }
 }

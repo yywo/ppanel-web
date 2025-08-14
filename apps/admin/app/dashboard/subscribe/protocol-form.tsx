@@ -56,8 +56,8 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import { TemplatePreview } from './template-preview';
 
-// 表单验证规则 - 基于 API.CreateSubscribeApplicationRequest
 const createClientFormSchema = (t: any) =>
   z.object({
     name: z.string().min(1, t('form.validation.nameRequired')),
@@ -83,6 +83,8 @@ export function ProtocolForm() {
   const t = useTranslations('subscribe');
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewApplicationId, setPreviewApplicationId] = useState<number | null>(null);
   const [editingClient, setEditingClient] = useState<API.SubscribeApplication | null>(null);
   const tableRef = useRef<ProTableActions>(null);
 
@@ -136,6 +138,7 @@ export function ProtocolForm() {
           onCheckedChange={async (checked) => {
             await updateSubscribeApplication({
               ...row.original,
+              proxy_template: '',
               is_default: checked,
             });
             tableRef.current?.refresh();
@@ -294,7 +297,6 @@ export function ProtocolForm() {
       } else {
         await createSubscribeApplication({
           ...data,
-          proxy_template: '',
           is_default: false,
         });
         toast.success(t('actions.createSuccess'));
@@ -310,6 +312,11 @@ export function ProtocolForm() {
     }
   };
 
+  const handlePreview = (application: API.SubscribeApplication) => {
+    setPreviewApplicationId(application.id);
+    setPreviewOpen(true);
+  };
+
   return (
     <>
       <ProTable<API.SubscribeApplication, Record<string, unknown>>
@@ -322,6 +329,11 @@ export function ProtocolForm() {
         }}
         actions={{
           render: (row) => [
+            <TemplatePreview
+              key='preview'
+              applicationId={row.id}
+              output_format={row.output_format}
+            />,
             <Button
               key='edit'
               onClick={() => handleEdit(row as unknown as API.SubscribeApplication)}
@@ -606,7 +618,7 @@ export function ProtocolForm() {
                                           {t('form.descriptions.template.subscribeName')}
                                         </li>
                                         <li>
-                                          <code className='rounded px-1'>.Nodes</code> -{' '}
+                                          <code className='rounded px-1'>.Proxies</code> -{' '}
                                           {t('form.descriptions.template.nodes')}
                                         </li>
                                         <li>
@@ -623,7 +635,7 @@ export function ProtocolForm() {
                                       <ul className='ml-2 list-disc space-y-1 text-xs'>
                                         <li>
                                           <code className='rounded px-1'>
-                                            {'{{range .Nodes}}...{{end}}'}
+                                            {'{{range .Proxies}}...{{end}}'}
                                           </code>{' '}
                                           - {t('form.descriptions.template.range')}
                                         </li>
@@ -646,10 +658,11 @@ export function ProtocolForm() {
                           </FormLabel>
                           <FormControl>
                             <GoTemplateEditor
+                              showLineNumbers
                               schema={{
                                 SiteName: { type: 'string', description: 'Site name' },
                                 SubscribeName: { type: 'string', description: 'Subscribe name' },
-                                Nodes: {
+                                Proxies: {
                                   type: 'array',
                                   description: 'Array of proxy nodes',
                                   items: {

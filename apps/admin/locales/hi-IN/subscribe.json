@@ -117,5 +117,16 @@
       "outputFormat": "आउटपुट प्रारूप",
       "supportedPlatforms": "समर्थित प्लेटफ़ॉर्म"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "डिकोड विफल: सामग्री मान्य Base64 प्रारूप नहीं है",
+      "decodedContent": "डिकोड की गई सामग्री",
+      "originalContent": "मूल सामग्री (Base64)"
+    },
+    "failed": "पूर्वावलोकन विफल",
+    "loading": "लोड हो रहा है...",
+    "preview": "पूर्वावलोकन",
+    "title": "टेम्पलेट पूर्वावलोकन"
   }
 }

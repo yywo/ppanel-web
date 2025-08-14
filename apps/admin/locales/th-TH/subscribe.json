@@ -117,5 +117,16 @@
       "outputFormat": "รูปแบบผลลัพธ์",
       "supportedPlatforms": "แพลตฟอร์มที่รองรับ"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "การถอดรหัสล้มเหลว: เนื้อหาไม่ใช่รูปแบบ Base64 ที่ถูกต้อง",
+      "decodedContent": "เนื้อหาที่ถอดรหัสแล้ว",
+      "originalContent": "เนื้อหาต้นฉบับ (Base64)"
+    },
+    "failed": "การดูตัวอย่างล้มเหลว",
+    "loading": "กำลังโหลด...",
+    "preview": "ดูตัวอย่าง",
+    "title": "ตัวอย่างแม่แบบ"
   }
 }

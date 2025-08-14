@@ -293,9 +293,9 @@ declare namespace API {
     protocol: string[];
   };
 
-  type GetSubscribeApplicationListResponse = {
+  type GetSubscribeClientResponse = {
     total: number;
-    list: SubscribeApplication[];
+    list: SubscribeClient[];
   };
 
   type GetTosResponse = {
@@ -779,20 +779,14 @@ declare namespace API {
     updated_at: number;
   };
 
-  type SubscribeApplication = {
+  type SubscribeClient = {
     id: number;
     name: string;
     description?: string;
     icon?: string;
     scheme?: string;
-    user_agent: string;
     is_default: boolean;
-    proxy_template: string;
-    template: string;
-    output_format: string;
     download_link?: DownloadLink;
-    created_at: number;
-    updated_at: number;
   };
 
   type SubscribeConfig = {

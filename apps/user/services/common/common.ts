@@ -1,5 +1,5 @@
 // @ts-ignore
-
+/* eslint-disable */
 import request from '@/utils/request';
 
 /** Get Ads GET /v1/common/ads */
@@ -45,13 +45,10 @@ export async function checkVerificationCode(
 
 /** Get Client GET /v1/common/client */
 export async function getClient(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetSubscribeApplicationListResponse }>(
-    '/v1/common/client',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.GetSubscribeClientResponse }>('/v1/common/client', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Get verification code POST /v1/common/send_code */

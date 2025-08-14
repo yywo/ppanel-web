@@ -342,7 +342,6 @@ declare namespace API {
     scheme?: string;
     user_agent: string;
     is_default: boolean;
-    proxy_template: string;
     template: string;
     output_format: string;
     download_link: DownloadLink;
@@ -1213,6 +1212,19 @@ declare namespace API {
     orderNo: string;
   };
 
+  type PreviewSubscribeTemplateParams = {
+    id: number;
+  };
+
+  type PreviewSubscribeTemplateRequest = {
+    id: number;
+  };
+
+  type PreviewSubscribeTemplateResponse = {
+    /** 预览的模板内容 */
+    template: string;
+  };
+
   type PrivacyPolicyConfig = {
     privacy_policy: string;
   };
@@ -1505,7 +1517,6 @@ declare namespace API {
     scheme?: string;
     user_agent: string;
     is_default: boolean;
-    proxy_template: string;
     template: string;
     output_format: string;
     download_link?: DownloadLink;

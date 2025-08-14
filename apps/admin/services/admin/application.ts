@@ -17,6 +17,24 @@ export async function createSubscribeApplication(
   });
 }
 
+/** Preview Template GET /v1/admin/application/preview */
+export async function previewSubscribeTemplate(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.PreviewSubscribeTemplateParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.PreviewSubscribeTemplateResponse }>(
+    '/v1/admin/application/preview',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
 /** Update subscribe application PUT /v1/admin/application/subscribe_application */
 export async function updateSubscribeApplication(
   body: API.UpdateSubscribeApplicationRequest,

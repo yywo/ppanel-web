@@ -117,5 +117,16 @@
       "outputFormat": "Format wyjściowy",
       "supportedPlatforms": "Obsługiwane platformy"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekodowanie nie powiodło się: Zawartość nie jest w prawidłowym formacie Base64",
+      "decodedContent": "Zdekodowana zawartość",
+      "originalContent": "Oryginalna zawartość (Base64)"
+    },
+    "failed": "Nie udało się załadować podglądu",
+    "loading": "Ładowanie...",
+    "preview": "Podgląd",
+    "title": "Podgląd szablonu"
   }
 }

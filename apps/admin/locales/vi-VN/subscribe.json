@@ -117,5 +117,16 @@
       "outputFormat": "Định dạng Đầu ra",
       "supportedPlatforms": "Nền tảng Hỗ trợ"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Giải mã không thành công: Nội dung không phải định dạng Base64 hợp lệ",
+      "decodedContent": "Nội dung đã giải mã",
+      "originalContent": "Nội dung gốc (Base64)"
+    },
+    "failed": "Xem trước không thành công",
+    "loading": "Đang tải...",
+    "preview": "Xem trước",
+    "title": "Xem trước mẫu"
   }
 }

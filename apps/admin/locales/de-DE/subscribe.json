@@ -117,5 +117,16 @@
       "outputFormat": "Ausgabeformat",
       "supportedPlatforms": "Unterstützte Plattformen"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekodierung fehlgeschlagen: Inhalt ist kein gültiges Base64-Format",
+      "decodedContent": "Dekodierter Inhalt",
+      "originalContent": "Ursprünglicher Inhalt (Base64)"
+    },
+    "failed": "Vorschau fehlgeschlagen",
+    "loading": "Wird geladen...",
+    "preview": "Vorschau",
+    "title": "Vorlagenvorschau"
   }
 }

@@ -117,5 +117,16 @@
       "outputFormat": "Utdataformat",
       "supportedPlatforms": "Støttede plattformer"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekoding feilet: Innholdet er ikke i gyldig Base64-format",
+      "decodedContent": "Dekodet innhold",
+      "originalContent": "Opprinnelig innhold (Base64)"
+    },
+    "failed": "Forhåndsvisning feilet",
+    "loading": "Laster...",
+    "preview": "Forhåndsvisning",
+    "title": "Malemal"
   }
 }

@@ -117,5 +117,16 @@
       "outputFormat": "输出格式",
       "supportedPlatforms": "支持的平台"
     }
+  },
+  "templatePreview": {
+    "title": "模板预览",
+    "preview": "预览",
+    "loading": "加载中...",
+    "failed": "预览失败",
+    "base64": {
+      "originalContent": "原始内容 (Base64)",
+      "decodedContent": "解码后内容",
+      "decodeError": "解码失败：内容不是有效的Base64格式"
+    }
   }
 }

@@ -66,6 +66,7 @@ const REGEX_PATTERNS = {
   FIELD_PATH: /^(\.\w+(?:\.\w+)*)$/,
   NESTED_DOT: /(\.\w+(?:\.\w+)*)\./,
   NESTED_VAR: /(\$\w+\.\w+(?:\.\w+)*)\.$/,
+  VAR_DOT: /(\$\w+)\.$/,
   NESTED_GENERAL: /([\w.]+)\.$/,
   WORD_WITH_SPACES: /(\s*)(\S*)$/,
   LEADING_SPACES: /^(\s+)/,
@@ -694,6 +695,33 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
           });
         }
       });
+    } else if (
+      isSchemaProperty(currentSchema) &&
+      currentSchema.type === 'array' &&
+      currentSchema.items &&
+      currentSchema.items.type === 'object' &&
+      currentSchema.items.properties
+    ) {
+      Object.keys(currentSchema.items.properties).forEach((key) => {
+        const prop = currentSchema.items!.properties![key];
+        if (isSchemaProperty(prop)) {
+          items.push({
+            label: key,
+            kind: COMPLETION_KINDS.PROPERTY,
+            insertText: key,
+            documentation: `${prop.description || key} (${prop.type}) - from array item`,
+            sortText: `${SORT_PREFIXES.NESTED}${key}`,
+          });
+        } else {
+          items.push({
+            label: key,
+            kind: COMPLETION_KINDS.PROPERTY,
+            insertText: key,
+            documentation: `Field: ${key} - from array item`,
+            sortText: `${SORT_PREFIXES.NESTED}${key}`,
+          });
+        }
+      });
     }
 
     return items;
@@ -848,24 +876,67 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
               Math.max(templateStartNormal, templateStartTrim) +
               (templateStartTrim > templateStartNormal ? 3 : 2);
             const actualStart = Math.max(wordStart, templateStart);
-            const currentWord = textUntilPosition.substring(actualStart).trim();
+            const currentWord = textUntilPosition.substring(actualStart);
+            const currentWordTrimmed = currentWord.trim();
 
-            let dotMatches = currentWord.match(REGEX_PATTERNS.NESTED_DOT);
+            let dotMatches = currentWordTrimmed.match(REGEX_PATTERNS.NESTED_DOT);
             if (!dotMatches) {
               const beforeCursor = textUntilPosition.substring(Math.max(templateStart, 0));
               dotMatches =
                 beforeCursor.match(REGEX_PATTERNS.NESTED_DOT) ||
                 beforeCursor.match(REGEX_PATTERNS.NESTED_VAR) ||
+                beforeCursor.match(REGEX_PATTERNS.VAR_DOT) ||
                 beforeCursor.match(REGEX_PATTERNS.NESTED_GENERAL);
             }
-            const isNestedField = dotMatches && textUntilPosition.endsWith('.') && schema;
 
-            const justTypedDot = currentWord.endsWith('.') || textUntilPosition.endsWith('.');
+            const varDotMatch = textUntilPosition.match(REGEX_PATTERNS.VAR_DOT);
+            const isVarDot =
+              varDotMatch &&
+              textUntilPosition.endsWith('.') &&
+              schema &&
+              activeRangeField &&
+              rangeVariable;
+
+            const isNestedField =
+              (dotMatches && textUntilPosition.endsWith('.') && schema) || isVarDot;
+
+            const justTypedDot =
+              currentWordTrimmed.endsWith('.') || textUntilPosition.endsWith('.');
             const justTypedSpace = textUntilPosition.endsWith(' ');
-            const wordForFiltering = justTypedDot ? currentWord.slice(0, -1) : currentWord;
+            let wordForFiltering = currentWordTrimmed;
+            if (justTypedDot) {
+              wordForFiltering = currentWordTrimmed.slice(0, -1);
+            }
 
-            if (isNestedField && schema && dotMatches) {
-              const fieldPath = dotMatches[1];
+            if ((justTypedDot && activeRangeField) || isVarDot) {
+              console.log('Go Template Debug:', {
+                justTypedDot,
+                isVarDot,
+                varDotMatch,
+                activeRangeField,
+                rangeVariable,
+                currentWord,
+                currentWordTrimmed,
+                wordForFiltering,
+                textUntilPosition,
+                allCompletionsCount: allCompletions.length,
+              });
+            }
+
+            if (isNestedField && schema) {
+              let fieldPath = '';
+
+              if (isVarDot && varDotMatch) {
+                // 处理变量后跟点的情况 ($n.)
+                const variableName = varDotMatch[1];
+                if (variableName === rangeVariable && activeRangeField) {
+                  // 使用activeRangeField作为字段路径
+                  fieldPath = activeRangeField;
+                }
+              } else if (dotMatches && dotMatches[1]) {
+                fieldPath = dotMatches[1];
+              }
+
               if (fieldPath) {
                 const nestedCompletions = getNestedFieldCompletions(
                   schema,
@@ -889,24 +960,43 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
               );
             };
 
-            const isRangeContextItem = (item: CompletionItem): boolean => {
-              return (
-                isVariableOrFieldItem(item) ||
-                item.sortText?.startsWith(SORT_PREFIXES.ROOT_IN_RANGE)
-              );
-            };
-
             const filteredCompletions = allCompletions.filter((item) => {
               if (isNestedField) {
                 return item.sortText?.startsWith(SORT_PREFIXES.NESTED);
               }
 
+              if (justTypedDot && activeRangeField) {
+                return (
+                  item.label.startsWith('.') ||
+                  item.label.startsWith('$') ||
+                  item.sortText?.startsWith(SORT_PREFIXES.RANGE_VAR) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.VAR_FIELD) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.CURRENT) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.ROOT_FIELD) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.ROOT_IN_RANGE)
+                );
+              }
+
               if (justTypedDot) {
-                return activeRangeField ? isRangeContextItem(item) : isVariableOrFieldItem(item);
+                return isVariableOrFieldItem(item);
               }
 
               if (justTypedSpace) {
                 return true;
+              }
+
+              if (
+                activeRangeField &&
+                (item.sortText?.startsWith(SORT_PREFIXES.RANGE_VAR) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.VAR_FIELD) ||
+                  item.sortText?.startsWith(SORT_PREFIXES.CURRENT))
+              ) {
+                if (!wordForFiltering) {
+                  return true;
+                }
+                const label = item.label.toLowerCase();
+                const word = wordForFiltering.toLowerCase();
+                return label.includes(word) || label.startsWith(word) || word === '';
               }
 
               if (!wordForFiltering) {
@@ -1006,18 +1096,11 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
                   const wordMatch = templateContent.match(REGEX_PATTERNS.WORD_WITH_SPACES);
                   if (wordMatch) {
                     const [, leadingSpaces, currentWordInTemplate] = wordMatch;
-                    if (leadingSpaces && currentWordInTemplate) {
+                    if (currentWordInTemplate) {
                       startColumn =
                         templateStart + templateContent.length - currentWordInTemplate.length;
-                    } else {
-                      const spaceMatch = templateContent.match(REGEX_PATTERNS.LEADING_SPACES);
-                      if (
-                        spaceMatch &&
-                        spaceMatch[1] &&
-                        templateContent.trim() === currentWordInTemplate
-                      ) {
-                        startColumn = templateStart + spaceMatch[1].length;
-                      }
+                    } else if (leadingSpaces) {
+                      startColumn = position.column;
                     }
                   }
                 }

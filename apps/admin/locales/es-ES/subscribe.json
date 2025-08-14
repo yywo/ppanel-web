@@ -117,5 +117,16 @@
       "outputFormat": "Formato de Salida",
       "supportedPlatforms": "Plataformas Soportadas"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Error de decodificación: El contenido no es un formato Base64 válido",
+      "decodedContent": "Contenido decodificado",
+      "originalContent": "Contenido original (Base64)"
+    },
+    "failed": "La vista previa ha fallado",
+    "loading": "Cargando...",
+    "preview": "Vista previa",
+    "title": "Vista previa de la plantilla"
   }
 }

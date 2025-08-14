@@ -117,5 +117,16 @@
       "outputFormat": "Output Format",
       "supportedPlatforms": "Supported Platforms"
     }
+  },
+  "templatePreview": {
+    "title": "Template Preview",
+    "preview": "Preview",
+    "loading": "Loading...",
+    "failed": "Preview failed",
+    "base64": {
+      "originalContent": "Original Content (Base64)",
+      "decodedContent": "Decoded Content",
+      "decodeError": "Decode failed: Content is not valid Base64 format"
+    }
   }
 }

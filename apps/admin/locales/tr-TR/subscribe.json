@@ -117,5 +117,16 @@
       "outputFormat": "Çıktı Formatı",
       "supportedPlatforms": "Desteklenen Platformlar"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Çözme başarısız oldu: İçerik geçerli bir Base64 formatında değil",
+      "decodedContent": "Çözülmüş İçerik",
+      "originalContent": "Orijinal İçerik (Base64)"
+    },
+    "failed": "Önizleme başarısız oldu",
+    "loading": "Yükleniyor...",
+    "preview": "Önizleme",
+    "title": "Şablon Önizlemesi"
   }
 }

@@ -117,5 +117,16 @@
       "outputFormat": "Tulostusmuoto",
       "supportedPlatforms": "Tuetut alustat"
     }
+  },
+  "templatePreview": {
+    "base64": {
+      "decodeError": "Dekoodaus epäonnistui: Sisältö ei ole voimassa olevaa Base64-muotoa",
+      "decodedContent": "Dekoodattu sisältö",
+      "originalContent": "Alkuperäinen sisältö (Base64)"
+    },
+    "failed": "Esikatselu epäonnistui",
+    "loading": "Ladataan...",
+    "preview": "Esikatselu",
+    "title": "Mallin esikatselu"
   }
 }
