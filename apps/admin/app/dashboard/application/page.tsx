@@ -17,7 +17,7 @@ import ConfigForm from './config';
 import SubscribeAppForm from './form';
 
 export default function SubscribeApp() {
-  const t = useTranslations('subscribe.app');
+  const t = useTranslations('product.app');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
 

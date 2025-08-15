@@ -5,6 +5,7 @@ import { Button } from '@workspace/ui/components/button';
 import { cn } from '@workspace/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { EyeIcon, EyeOff, FullscreenIcon, MinimizeIcon } from 'lucide-react';
+import DraculaTheme from 'monaco-themes/themes/Dracula.json' with { type: 'json' };
 import { useEffect, useRef, useState } from 'react';
 
 export interface MonacoEditorProps {
@@ -16,8 +17,10 @@ export interface MonacoEditorProps {
   placeholder?: string;
   render?: (value?: string) => React.ReactNode;
   onMount?: OnMount;
+  beforeMount?: (monaco: Monaco) => void;
   language?: string;
   className?: string;
+  showLineNumbers?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,8 +41,10 @@ export function MonacoEditor({
   placeholder = 'Start typing...',
   render,
   onMount,
+  beforeMount,
   language = 'markdown',
   className,
+  showLineNumbers = false,
 }: MonacoEditorProps) {
   const [internalValue, setInternalValue] = useState<string | undefined>(propValue);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -130,7 +135,7 @@ export function MonacoEditor({
                   formatOnPaste: true,
                   formatOnType: true,
                   glyphMargin: false,
-                  lineNumbers: 'off',
+                  lineNumbers: showLineNumbers ? 'on' : 'off',
                   minimap: { enabled: false },
                   overviewRulerLanes: 0,
                   renderLineHighlight: 'none',
@@ -145,13 +150,17 @@ export function MonacoEditor({
                 theme='transparentTheme'
                 beforeMount={(monaco: Monaco) => {
                   monaco.editor.defineTheme('transparentTheme', {
-                    base: 'vs-dark',
-                    inherit: true,
-                    rules: [],
+                    base: DraculaTheme.base as 'vs' | 'vs-dark' | 'hc-black',
+                    inherit: DraculaTheme.inherit,
+                    rules: DraculaTheme.rules,
                     colors: {
+                      ...DraculaTheme.colors,
                       'editor.background': '#00000000',
                     },
                   });
+                  if (beforeMount) {
+                    beforeMount(monaco);
+                  }
                 }}
               />
               {!internalValue?.trim() && placeholder && (

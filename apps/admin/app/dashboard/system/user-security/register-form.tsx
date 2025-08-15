@@ -35,12 +35,13 @@ import { z } from 'zod';
 
 const registerSchema = z.object({
   stop_register: z.boolean().optional(),
+  enable_trial: z.boolean().optional(),
+  trial_subscribe: z.number().optional(),
+  trial_time: z.number().optional(),
+  trial_time_unit: z.string().optional(),
   enable_ip_register_limit: z.boolean().optional(),
-  ip_register_limit_count: z.number().optional(),
-  ip_register_limit_expire_day: z.number().optional(),
-  trial_flow: z.number().optional(),
-  trial_day: z.number().optional(),
-  default_subscribe_id: z.number().optional(),
+  ip_register_limit: z.number().optional(),
+  ip_register_limit_duration: z.number().optional(),
 });
 
 type RegisterFormData = z.infer<typeof registerSchema>;
@@ -76,12 +77,13 @@ export default function RegisterConfig() {
     resolver: zodResolver(registerSchema),
     defaultValues: {
       stop_register: false,
+      enable_trial: false,
+      trial_subscribe: undefined,
+      trial_time: 0,
+      trial_time_unit: 'day',
       enable_ip_register_limit: false,
-      ip_register_limit_count: 1,
-      ip_register_limit_expire_day: 1,
-      trial_flow: 0,
-      trial_day: 0,
-      default_subscribe_id: undefined,
+      ip_register_limit: 1,
+      ip_register_limit_duration: 1,
     },
   });
 
@@ -165,127 +167,152 @@ export default function RegisterConfig() {
                       />
                     </FormControl>
                     <FormDescription>{t('ipRegistrationLimitDescription')}</FormDescription>
-
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name='ip_register_limit_count'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('registrationLimitCount')}</FormLabel>
-                    <FormControl>
-                      <EnhancedInput
-                        placeholder={t('inputPlaceholder')}
-                        value={field.value}
-                        type='number'
-                        min={1}
-                        onValueBlur={(value) => field.onChange(Number(value))}
-                      />
-                    </FormControl>
-                    <FormDescription>{t('registrationLimitCountDescription')}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              {form.watch('enable_ip_register_limit') && (
+                <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+                  <FormField
+                    control={form.control}
+                    name='ip_register_limit'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t('registrationLimitCount')}</FormLabel>
+                        <FormControl>
+                          <EnhancedInput
+                            placeholder={t('inputPlaceholder')}
+                            value={field.value}
+                            type='number'
+                            min={1}
+                            onValueBlur={(value) => field.onChange(Number(value))}
+                          />
+                        </FormControl>
+                        <FormDescription>{t('registrationLimitCountDescription')}</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
 
-              <FormField
-                control={form.control}
-                name='ip_register_limit_expire_day'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('registrationLimitExpire')}</FormLabel>
-                    <FormControl>
-                      <EnhancedInput
-                        placeholder={t('inputPlaceholder')}
-                        value={field.value}
-                        type='number'
-                        min={1}
-                        suffix={t('day')}
-                        onValueBlur={(value) => field.onChange(Number(value))}
-                      />
-                    </FormControl>
-                    <FormDescription>{t('registrationLimitExpireDescription')}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name='trial_flow'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('trialFlow')}</FormLabel>
-                    <FormControl>
-                      <EnhancedInput
-                        placeholder={t('inputPlaceholder')}
-                        value={field.value}
-                        type='number'
-                        min={0}
-                        suffix='GB'
-                        onValueBlur={(value) => field.onChange(Number(value))}
-                      />
-                    </FormControl>
-                    <FormDescription>{t('trialFlowDescription')}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                  <FormField
+                    control={form.control}
+                    name='ip_register_limit_duration'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t('registrationLimitExpire')}</FormLabel>
+                        <FormControl>
+                          <EnhancedInput
+                            placeholder={t('inputPlaceholder')}
+                            value={field.value}
+                            type='number'
+                            min={1}
+                            suffix={t('minute')}
+                            onValueBlur={(value) => field.onChange(Number(value))}
+                          />
+                        </FormControl>
+                        <FormDescription>{t('registrationLimitExpireDescription')}</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              )}
 
               <FormField
                 control={form.control}
-                name='trial_day'
+                name='enable_trial'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('trialDay')}</FormLabel>
+                    <FormLabel>{t('enableTrial')}</FormLabel>
                     <FormControl>
-                      <EnhancedInput
-                        placeholder={t('inputPlaceholder')}
-                        value={field.value}
-                        type='number'
-                        min={0}
-                        suffix={t('day')}
-                        onValueBlur={(value) => field.onChange(Number(value))}
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        className='float-end !mt-0'
                       />
                     </FormControl>
-                    <FormDescription>{t('trialDayDescription')}</FormDescription>
+                    <FormDescription>{t('enableTrialDescription')}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name='default_subscribe_id'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('defaultSubscribe')}</FormLabel>
-                    <FormControl>
-                      <Combobox
-                        placeholder={t('selectPlaceholder')}
-                        value={field.value}
-                        onChange={(value: number) => {
-                          if (value) {
-                            field.onChange(value);
-                          }
-                        }}
-                        options={
-                          subscribe?.map((item) => ({
-                            label: item.name,
-                            value: item.id,
-                          })) || []
-                        }
-                      />
-                    </FormControl>
-                    <FormDescription>{t('defaultSubscribeDescription')}</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              {form.watch('enable_trial') && (
+                <>
+                  <FormField
+                    control={form.control}
+                    name='trial_time'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t('trialConfig')}</FormLabel>
+                        <FormControl>
+                          <div className='flex gap-2'>
+                            <EnhancedInput
+                              placeholder={t('inputPlaceholder')}
+                              value={field.value}
+                              type='number'
+                              min={0}
+                              onValueBlur={(value) => field.onChange(Number(value))}
+                              className='flex-1'
+                              prefix={
+                                <FormField
+                                  control={form.control}
+                                  name='trial_subscribe'
+                                  render={({ field }) => (
+                                    <Combobox
+                                      placeholder={t('selectPlaceholder')}
+                                      value={field.value}
+                                      onChange={(value: number) => {
+                                        if (value) {
+                                          field.onChange(value);
+                                        }
+                                      }}
+                                      options={
+                                        subscribe?.map((item) => ({
+                                          label: item.name,
+                                          value: item.id,
+                                        })) || []
+                                      }
+                                      className='bg-secondary w-32 rounded-r-none'
+                                    />
+                                  )}
+                                />
+                              }
+                              suffix={
+                                <FormField
+                                  control={form.control}
+                                  name='trial_time_unit'
+                                  render={({ field: unitField }) => (
+                                    <Combobox
+                                      placeholder={t('selectPlaceholder')}
+                                      value={unitField.value}
+                                      onChange={(value: string) => {
+                                        unitField.onChange(value);
+                                      }}
+                                      options={[
+                                        { label: t('none'), value: 'None' },
+                                        { label: t('year'), value: 'Year' },
+                                        { label: t('month'), value: 'Month' },
+                                        { label: t('day'), value: 'Day' },
+                                        { label: t('hour'), value: 'Hour' },
+                                        { label: t('minute'), value: 'Minute' },
+                                      ]}
+                                      className='bg-secondary w-32 rounded-l-none'
+                                    />
+                                  )}
+                                />
+                              }
+                            />
+                          </div>
+                        </FormControl>
+                        <FormDescription>{t('trialConfigDescription')}</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </>
+              )}
             </form>
           </Form>
         </ScrollArea>

@@ -1,42 +1,3 @@
-export const AuthControl = [
-  {
-    title: 'Email',
-    url: '/dashboard/auth-control/email',
-  },
-  {
-    title: 'Phone Number',
-    url: '/dashboard/auth-control/phone',
-  },
-  {
-    title: 'Telegram',
-    url: '/dashboard/auth-control/telegram',
-  },
-  {
-    title: 'Apple',
-    url: '/dashboard/auth-control/apple',
-  },
-  {
-    title: 'Google',
-    url: '/dashboard/auth-control/google',
-  },
-  {
-    title: 'Facebook',
-    url: '/dashboard/auth-control/facebook',
-  },
-  // {
-  //   title: 'Twitter',
-  //   url: '/dashboard/auth-control/twitter',
-  // },
-  {
-    title: 'GitHub',
-    url: '/dashboard/auth-control/github',
-  },
-  {
-    title: 'Device',
-    url: '/dashboard/auth-control/device',
-  },
-];
-
 export const navs = [
   {
     title: 'Dashboard',
@@ -44,7 +5,7 @@ export const navs = [
     icon: 'flat-color-icons:globe',
   },
   {
-    title: 'Settings',
+    title: 'System Management',
     items: [
       {
         title: 'System Config',
@@ -55,17 +16,22 @@ export const navs = [
         title: 'Auth Control',
         url: '/dashboard/auth-control',
         icon: 'flat-color-icons:lock-portrait',
-        items: AuthControl,
       },
+      {
+        title: 'Payment Config',
+        url: '/dashboard/payment',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+
       {
         title: 'ADS Config',
         url: '/dashboard/ads',
         icon: 'flat-color-icons:electrical-sensor',
       },
       {
-        title: 'Payment Config',
-        url: '/dashboard/payment',
-        icon: 'flat-color-icons:currency-exchange',
+        title: 'System Tool',
+        url: '/dashboard/tool',
+        icon: 'flat-color-icons:info',
       },
     ],
   },
@@ -73,24 +39,24 @@ export const navs = [
     title: 'Server',
     items: [
       {
+        title: 'Subscribe Config',
+        url: '/dashboard/subscribe',
+        icon: 'flat-color-icons:ruler',
+      },
+      {
         title: 'Server Management',
         url: '/dashboard/server',
         icon: 'flat-color-icons:data-protection',
       },
       {
+        title: 'Product Management',
+        url: '/dashboard/product',
+        icon: 'flat-color-icons:shop',
+      },
+      {
         title: 'Application Management',
         url: '/dashboard/application',
         icon: 'flat-color-icons:touchscreen-smartphone',
-      },
-      {
-        title: 'Rule Management',
-        url: '/dashboard/rules',
-        icon: 'flat-color-icons:ruler',
-      },
-      {
-        title: 'Subscribe Management',
-        url: '/dashboard/subscribe',
-        icon: 'flat-color-icons:shop',
       },
     ],
   },
@@ -124,6 +90,11 @@ export const navs = [
         ],
       },
       {
+        title: 'Marketing Management',
+        url: '/dashboard/marketing',
+        icon: 'flat-color-icons:bullish',
+      },
+      {
         title: 'Announcement Management',
         url: '/dashboard/announcement',
         icon: 'flat-color-icons:advertising',
@@ -139,11 +110,6 @@ export const navs = [
         icon: 'flat-color-icons:document',
       },
     ],
-  },
-  {
-    title: 'System Tool',
-    url: '/dashboard/tool',
-    icon: 'flat-color-icons:info',
   },
 ];
 

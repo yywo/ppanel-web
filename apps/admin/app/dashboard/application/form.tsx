@@ -80,7 +80,7 @@ interface FormProps<T> {
 export default function SubscribeAppForm<
   T extends API.CreateApplicationRequest | API.UpdateApplicationRequest,
 >({ trigger, title, loading, initialValues, onSubmit }: FormProps<T>) {
-  const t = useTranslations('subscribe.app');
+  const t = useTranslations('product.app');
   const [open, setOpen] = useState(false);
 
   type FormSchema = z.infer<typeof formSchema>;

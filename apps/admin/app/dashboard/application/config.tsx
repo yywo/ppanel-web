@@ -51,7 +51,7 @@ const formSchema = z.object({
 type FormSchema = z.infer<typeof formSchema>;
 
 export default function ConfigForm() {
-  const t = useTranslations('subscribe.app');
+  const t = useTranslations('product.app');
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 

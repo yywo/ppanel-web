@@ -31,7 +31,7 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 const tosSchema = z.object({
-  content: z.string().optional(),
+  tos_content: z.string().optional(),
 });
 
 type TosFormData = z.infer<typeof tosSchema>;
@@ -53,14 +53,14 @@ export default function TosConfig() {
   const form = useForm<TosFormData>({
     resolver: zodResolver(tosSchema),
     defaultValues: {
-      content: '',
+      tos_content: '',
     },
   });
 
   useEffect(() => {
     if (data) {
       form.reset({
-        content: data.content || '',
+        tos_content: data.tos_content || '',
       });
     }
   }, [data, form]);
@@ -104,7 +104,7 @@ export default function TosConfig() {
             <form id='tos-form' onSubmit={form.handleSubmit(onSubmit)} className='space-y-2 pt-4'>
               <FormField
                 control={form.control}
-                name='content'
+                name='tos_content'
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{t('tos.title')}</FormLabel>

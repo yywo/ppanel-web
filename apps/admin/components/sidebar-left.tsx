@@ -25,42 +25,46 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
   const pathname = usePathname();
   return (
     <Sidebar className='border-r-0' collapsible='icon' {...props}>
-      <SidebarHeader>
+      <SidebarHeader className='p-2'>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size='lg' asChild>
+            <SidebarMenuButton size='sm' asChild className='h-10'>
               <Link href='/'>
-                <div className='flex aspect-square size-8 items-center justify-center rounded-lg'>
+                <div className='flex aspect-square size-6 items-center justify-center rounded-lg'>
                   <Image
                     src={site.site_logo || '/favicon.svg'}
                     alt='logo'
-                    width={48}
-                    height={48}
+                    width={24}
+                    height={24}
                     className='size-full'
                     unoptimized
                   />
                 </div>
                 <div className='grid flex-1 text-left text-sm leading-tight'>
-                  <span className='truncate font-semibold'>{site.site_name}</span>
-                  <span className='truncate text-xs'>{site.site_desc}</span>
+                  <span className='truncate text-xs font-semibold'>{site.site_name}</span>
+                  <span className='truncate text-xs opacity-70'>{site.site_desc}</span>
                 </div>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className='py-2'>
         <SidebarMenu>
           {navs.map((nav) => (
-            <SidebarGroup key={nav.title}>
-              {nav.items && <SidebarGroupLabel>{t(nav.title)}</SidebarGroupLabel>}
+            <SidebarGroup key={nav.title} className='py-1'>
+              {nav.items && (
+                <SidebarGroupLabel className='py-1 text-xs'>{t(nav.title)}</SidebarGroupLabel>
+              )}
               <SidebarGroupContent>
                 <SidebarMenu>
                   {(nav.items || [nav]).map((item) => (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton
                         asChild
+                        size='sm'
                         tooltip={t(item.title)}
+                        className='h-8'
                         isActive={
                           item.url === '/dashboard'
                             ? pathname === item.url
@@ -68,8 +72,8 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                         }
                       >
                         <Link href={item.url}>
-                          {item.icon && <Icon icon={item.icon} />}
-                          <span>{t(item.title)}</span>
+                          {item.icon && <Icon icon={item.icon} className='size-4' />}
+                          <span className='text-sm'>{t(item.title)}</span>
                         </Link>
                       </SidebarMenuButton>
                     </SidebarMenuItem>

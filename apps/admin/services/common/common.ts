@@ -43,6 +43,14 @@ export async function checkVerificationCode(
   );
 }
 
+/** Get Client GET /v1/common/client */
+export async function getClient(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetSubscribeClientResponse }>('/v1/common/client', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** Get verification code POST /v1/common/send_code */
 export async function sendEmailCode(body: API.SendCodeRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.SendCodeResponse }>('/v1/common/send_code', {

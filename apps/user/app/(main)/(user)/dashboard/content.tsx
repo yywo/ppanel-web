@@ -5,8 +5,7 @@ import Renewal from '@/components/subscribe/renewal';
 import ResetTraffic from '@/components/subscribe/reset-traffic';
 import Unsubscribe from '@/components/subscribe/unsubscribe';
 import useGlobalStore from '@/config/use-global';
-import { getStat } from '@/services/common/common';
-import { queryApplicationConfig } from '@/services/user/subscribe';
+import { getClient, getStat } from '@/services/common/common';
 import { queryUserSubscribe, resetUserSubscribeToken } from '@/services/user/user';
 import { getPlatform } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
@@ -43,9 +42,9 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import Subscribe from '../subscribe/page';
 
-const platforms: (keyof API.ApplicationPlatform)[] = [
+const platforms: (keyof API.DownloadLink)[] = [
   'windows',
-  'macos',
+  'mac',
   'linux',
   'ios',
   'android',
@@ -70,13 +69,15 @@ export default function Content() {
     },
   });
   const { data: applications } = useQuery({
-    queryKey: ['queryApplicationConfig'],
+    queryKey: ['getClient'],
     queryFn: async () => {
-      const { data } = await queryApplicationConfig();
-      return data.data?.applications || [];
+      const { data } = await getClient();
+      return data.data?.list || [];
     },
   });
-  const [platform, setPlatform] = useState<keyof API.ApplicationPlatform>(getPlatform());
+  const [platform, setPlatform] = useState<keyof API.DownloadLink>(
+    getPlatform() === 'macos' ? 'mac' : (getPlatform() as keyof API.DownloadLink),
+  );
 
   const { data } = useQuery({
     queryKey: ['getStat'],
@@ -123,7 +124,7 @@ export default function Content() {
           <div className='flex flex-wrap justify-between gap-4'>
             <Tabs
               value={platform}
-              onValueChange={(value) => setPlatform(value as keyof API.ApplicationPlatform)}
+              onValueChange={(value) => setPlatform(value as keyof API.DownloadLink)}
               className='w-full max-w-full md:w-auto'
             >
               <TabsList className='flex *:flex-auto'>
@@ -133,7 +134,7 @@ export default function Content() {
                       icon={`${
                         {
                           windows: 'mdi:microsoft-windows',
-                          macos: 'uil:apple',
+                          mac: 'uil:apple',
                           linux: 'uil:linux',
                           ios: 'simple-icons:ios',
                           android: 'uil:android',
@@ -324,19 +325,18 @@ export default function Content() {
                           <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
                             {applications
                               ?.filter((application) => {
-                                const platformApps = application.platform?.[platform];
-                                return platformApps && platformApps.length > 0;
+                                // 检查当前平台是否有下载链接或者有 scheme
+                                if (!application.download_link && !application.scheme) return false;
+                                return (
+                                  !!application.download_link?.[platform] || !!application.scheme
+                                );
                               })
                               .map((application) => {
-                                const platformApps = application.platform?.[platform];
-                                const app =
-                                  platformApps?.find((item) => item.is_default) ||
-                                  platformApps?.[0];
-                                if (!app) return null;
+                                const downloadUrl = application.download_link?.[platform];
 
                                 const handleCopy = (text: string, result: boolean) => {
                                   if (result) {
-                                    const href = getAppSubLink(application.subscribe_type, url);
+                                    const href = getAppSubLink(url, application.scheme);
                                     const showSuccessMessage = () => {
                                       toast.success(
                                         <>
@@ -379,23 +379,32 @@ export default function Content() {
                                       />
                                     )}
                                     <div className='flex'>
-                                      <Button
-                                        size='sm'
-                                        variant='secondary'
-                                        className='rounded-r-none px-1.5'
-                                        asChild
-                                      >
-                                        <Link href={app.url}>{t('download')}</Link>
-                                      </Button>
-
-                                      <CopyToClipboard
-                                        text={getAppSubLink(application.subscribe_type, url) || url}
-                                        onCopy={handleCopy}
-                                      >
-                                        <Button size='sm' className='rounded-l-none p-2'>
-                                          {t('import')}
+                                      {downloadUrl && (
+                                        <Button
+                                          size='sm'
+                                          variant='secondary'
+                                          className={
+                                            application.scheme ? 'rounded-r-none px-1.5' : 'px-1.5'
+                                          }
+                                          asChild
+                                        >
+                                          <Link href={downloadUrl}>{t('download')}</Link>
                                         </Button>
-                                      </CopyToClipboard>
+                                      )}
+
+                                      {application.scheme && (
+                                        <CopyToClipboard
+                                          text={getAppSubLink(url, application.scheme)}
+                                          onCopy={handleCopy}
+                                        >
+                                          <Button
+                                            size='sm'
+                                            className={downloadUrl ? 'rounded-l-none p-2' : 'p-2'}
+                                          >
+                                            {t('import')}
+                                          </Button>
+                                        </CopyToClipboard>
+                                      )}
                                     </div>
                                   </div>
                                 );

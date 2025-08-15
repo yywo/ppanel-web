@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "nap(napok)",
-    "defaultSubscribe": "Alapértelmezett előfizetés",
-    "defaultSubscribeDescription": "Alapértelmezett előfizetési terv új felhasználók számára",
     "description": "Felhasználói regisztrációval kapcsolatos beállítások konfigurálása",
+    "enableTrial": "Próbaverzió engedélyezése",
+    "enableTrialDescription": "Ha engedélyezve van, az új felhasználók próbaelőfizetést kapnak a regisztráció során",
+    "hour": "Óra(ák)",
     "inputPlaceholder": "Kérjük, adja meg",
     "ipRegistrationLimit": "IP regisztrációs korlát",
     "ipRegistrationLimitDescription": "Korlátozza a regisztrációk számát egyetlen IP címről",
+    "minute": "Perc(ek)",
+    "month": "Hónap(ok)",
+    "none": "Nincs",
     "registrationLimitCount": "Regisztrációs korlát száma",
     "registrationLimitCountDescription": "A megengedett regisztrációk száma IP-nként a korlátozási időszakon belül",
     "registrationLimitExpire": "Korlátozási időszak",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Új felhasználói regisztráció leállítása",
     "stopNewUserRegistrationDescription": "Ha engedélyezve van, az új felhasználói regisztráció le lesz tiltva",
     "title": "Regisztrációs beállítások",
-    "trialDay": "Próbák napjai",
-    "trialDayDescription": "Próbás napok, amelyeket új felhasználóknak adunk regisztrációkor",
-    "trialFlow": "Próbaforgalom",
-    "trialFlowDescription": "Próbaforgalom, amelyet új felhasználóknak adunk regisztrációkor"
+    "trialConfig": "Próbaverzió beállítás",
+    "trialConfigDescription": "Próbás előfizetés konfigurálása, időtartam és időegység új felhasználók számára a regisztráció során",
+    "year": "Év(ek)"
   },
   "site": {
     "customData": "Egyedi adatok",

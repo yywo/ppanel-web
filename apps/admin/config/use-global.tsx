@@ -57,6 +57,8 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       subscribe_path: '',
       subscribe_domain: '',
       pan_domain: false,
+      user_agent_limit: false,
+      user_agent_list: '',
     },
     verify_code: {
       verify_code_expire_time: 5,

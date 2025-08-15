@@ -98,7 +98,7 @@
     "type": "Type",
     "updateSuccess": "Mise à jour réussie",
     "updatedAt": "Date de mise à jour",
-    "userAccount": "Compte utilisateur",
+    "user": "Utilisateur",
     "userDetail": "Détails de l'utilisateur",
     "userId": "ID de l'utilisateur"
   },

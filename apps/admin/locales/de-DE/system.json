@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "Tag(e)",
-    "defaultSubscribe": "Standardabonnement",
-    "defaultSubscribeDescription": "Standardabonnement für neue Benutzer",
     "description": "Konfigurieren Sie die Einstellungen zur Benutzerregistrierung",
+    "enableTrial": "Testversion aktivieren",
+    "enableTrialDescription": "Wenn aktiviert, erhalten neue Benutzer bei der Registrierung ein Testabonnement",
+    "hour": "Stunde(n)",
     "inputPlaceholder": "Bitte eingeben",
     "ipRegistrationLimit": "IP-Registrierungsgrenze",
     "ipRegistrationLimitDescription": "Begrenzen Sie die Anzahl der Registrierungen von einer einzelnen IP-Adresse",
+    "minute": "Minute(n)",
+    "month": "Monat(e)",
+    "none": "Keine",
     "registrationLimitCount": "Registrierungsgrenze",
     "registrationLimitCountDescription": "Anzahl der Registrierungen, die pro IP innerhalb des Begrenzungszeitraums erlaubt sind",
     "registrationLimitExpire": "Begrenzungszeitraum",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Neue Benutzerregistrierung stoppen",
     "stopNewUserRegistrationDescription": "Wenn aktiviert, wird die Registrierung neuer Benutzer deaktiviert",
     "title": "Registrierungseinstellungen",
-    "trialDay": "Testtage",
-    "trialDayDescription": "Testtage, die neuen Benutzern bei der Registrierung gewährt werden",
-    "trialFlow": "Testverkehr",
-    "trialFlowDescription": "Testverkehr, der neuen Benutzern bei der Registrierung gewährt wird"
+    "trialConfig": "Testkonfiguration",
+    "trialConfigDescription": "Konfigurieren Sie das Testabonnement, die Dauer und die Zeiteinheit für neue Benutzer bei der Registrierung",
+    "year": "Jahr(e)"
   },
   "site": {
     "customData": "Benutzerdefinierte Daten",

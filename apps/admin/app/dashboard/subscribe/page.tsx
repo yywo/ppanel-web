@@ -1,30 +1,23 @@
-import { getTranslations } from 'next-intl/server';
+'use client';
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
+import { Card, CardContent } from '@workspace/ui/components/card';
+import { useTranslations } from 'next-intl';
+import ConfigForm from './config-form';
+import { ProtocolForm } from './protocol-form';
 
-import GroupTable from './group/table';
-import SubscribeConfig from './subscribe-config';
-import SubscribeTable from './subscribe-table';
-
-export default async function Page() {
-  const t = await getTranslations('subscribe');
+export default function SubscribePage() {
+  const t = useTranslations('subscribe');
 
   return (
-    <Tabs defaultValue='subscribe'>
-      <TabsList>
-        <TabsTrigger value='subscribe'>{t('tabs.subscribe')}</TabsTrigger>
-        <TabsTrigger value='group'>{t('tabs.subscribeGroup')}</TabsTrigger>
-        <TabsTrigger value='config'>{t('tabs.subscribeConfig')}</TabsTrigger>
-      </TabsList>
-      <TabsContent value='subscribe'>
-        <SubscribeTable />
-      </TabsContent>
-      <TabsContent value='group'>
-        <GroupTable />
-      </TabsContent>
-      <TabsContent value='config'>
-        <SubscribeConfig />
-      </TabsContent>
-    </Tabs>
+    <div className='space-y-4'>
+      <h2 className='text-lg font-semibold'>{t('config.title')}</h2>
+      <Card>
+        <CardContent className='p-4'>
+          <ConfigForm />
+        </CardContent>
+      </Card>
+
+      <ProtocolForm />
+    </div>
   );
 }

@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "일",
-    "defaultSubscribe": "기본 구독",
-    "defaultSubscribeDescription": "신규 사용자를 위한 기본 구독 계획",
     "description": "사용자 등록 관련 설정 구성",
+    "enableTrial": "체험판 활성화",
+    "enableTrialDescription": "활성화하면 신규 사용자가 등록 시 체험 구독을 받게 됩니다.",
+    "hour": "시간",
     "inputPlaceholder": "입력해 주세요",
     "ipRegistrationLimit": "IP 등록 제한",
     "ipRegistrationLimitDescription": "단일 IP 주소에서의 등록 수 제한",
+    "minute": "분",
+    "month": "개월",
+    "none": "없음",
     "registrationLimitCount": "등록 제한 수",
     "registrationLimitCountDescription": "제한 기간 내 허용되는 등록 수",
     "registrationLimitExpire": "제한 기간",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "신규 사용자 등록 중지",
     "stopNewUserRegistrationDescription": "활성화 시, 신규 사용자 등록이 비활성화됩니다.",
     "title": "등록 설정",
-    "trialDay": "체험 일수",
-    "trialDayDescription": "신규 사용자 등록 시 제공되는 체험 일수",
-    "trialFlow": "체험 트래픽",
-    "trialFlowDescription": "신규 사용자 등록 시 제공되는 체험 트래픽"
+    "trialConfig": "체험 구성",
+    "trialConfigDescription": "등록 시 신규 사용자를 위한 체험 구독, 기간 및 시간 단위를 설정합니다.",
+    "year": "년"
   },
   "site": {
     "customData": "사용자 정의 데이터",

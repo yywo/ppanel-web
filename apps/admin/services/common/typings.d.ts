@@ -213,6 +213,15 @@ declare namespace API {
     updated_at: number;
   };
 
+  type DownloadLink = {
+    ios?: string;
+    android?: string;
+    windows?: string;
+    mac?: string;
+    linux?: string;
+    harmony?: string;
+  };
+
   type EmailAuthticateConfig = {
     enable: boolean;
     enable_verify: boolean;
@@ -282,6 +291,11 @@ declare namespace API {
     node: number;
     country: number;
     protocol: string[];
+  };
+
+  type GetSubscribeClientResponse = {
+    total: number;
+    list: SubscribeClient[];
   };
 
   type GetTosResponse = {
@@ -765,11 +779,23 @@ declare namespace API {
     updated_at: number;
   };
 
+  type SubscribeClient = {
+    id: number;
+    name: string;
+    description?: string;
+    icon?: string;
+    scheme?: string;
+    is_default: boolean;
+    download_link?: DownloadLink;
+  };
+
   type SubscribeConfig = {
     single_model: boolean;
     subscribe_path: string;
     subscribe_domain: string;
     pan_domain: boolean;
+    user_agent_limit: boolean;
+    user_agent_list: string;
   };
 
   type SubscribeDiscount = {

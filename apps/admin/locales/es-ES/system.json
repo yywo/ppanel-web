@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "día(s)",
-    "defaultSubscribe": "Suscripción Predeterminada",
-    "defaultSubscribeDescription": "Plan de suscripción predeterminado para nuevos usuarios",
     "description": "Configurar ajustes relacionados con el registro de usuarios",
+    "enableTrial": "Habilitar Prueba",
+    "enableTrialDescription": "Cuando está habilitado, los nuevos usuarios recibirán una suscripción de prueba al registrarse",
+    "hour": "Hora(s)",
     "inputPlaceholder": "Por favor ingrese",
     "ipRegistrationLimit": "Límite de Registro por IP",
     "ipRegistrationLimitDescription": "Limitar el número de registros desde una sola dirección IP",
+    "minute": "Minuto(s)",
+    "month": "Mes(es)",
+    "none": "Ninguno",
     "registrationLimitCount": "Conteo de Límite de Registro",
     "registrationLimitCountDescription": "Número de registros permitidos por IP dentro del período límite",
     "registrationLimitExpire": "Período de Límite",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Detener Registro de Nuevos Usuarios",
     "stopNewUserRegistrationDescription": "Cuando está habilitado, el registro de nuevos usuarios estará deshabilitado",
     "title": "Configuración de Registro",
-    "trialDay": "Días de Prueba",
-    "trialDayDescription": "Días de prueba otorgados a nuevos usuarios al registrarse",
-    "trialFlow": "Tráfico de Prueba",
-    "trialFlowDescription": "Tráfico de prueba otorgado a nuevos usuarios al registrarse"
+    "trialConfig": "Configuración de Prueba",
+    "trialConfigDescription": "Configurar la suscripción de prueba, duración y unidad de tiempo para nuevos usuarios al registrarse",
+    "year": "Año(s)"
   },
   "site": {
     "customData": "Datos Personalizados",

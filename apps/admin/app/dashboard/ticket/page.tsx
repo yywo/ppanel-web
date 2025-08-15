@@ -172,7 +172,7 @@ export default function Page() {
             <DrawerDescription>{ticket?.description}</DrawerDescription>
           </DrawerHeader>
           <ScrollArea className='h-full overflow-hidden' ref={scrollRef}>
-            <div className='flex h-screen flex-col gap-4 p-4'>
+            <div className='flex h-full flex-col gap-4 p-4'>
               {ticket?.follow?.map((item) => (
                 <div
                   key={item.id}

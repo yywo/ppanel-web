@@ -10,7 +10,7 @@ export interface GlobalStore {
   setUser: (user?: API.User) => void;
   getUserInfo: () => Promise<void>;
   getUserSubscribe: (uuid: string, type?: string) => string[];
-  getAppSubLink: (type: string, url: string) => string;
+  getAppSubLink: (url: string, schema?: string) => string;
 }
 
 export const useGlobalStore = create<GlobalStore>((set, get) => ({
@@ -63,6 +63,8 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       subscribe_path: '',
       subscribe_domain: '',
       pan_domain: false,
+      user_agent_limit: false,
+      user_agent_list: '',
     },
     verify_code: {
       verify_code_expire_time: 5,
@@ -105,45 +107,48 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       }
     });
   },
-  getAppSubLink: (type: string, url: string) => {
+  getAppSubLink: (url: string, schema?: string) => {
     const name = get().common?.site?.site_name || '';
-    switch (type) {
-      case 'Clash':
-        return `clash://install-config?url=${url}&name=${name}`;
-      case 'Hiddify':
-        return `hiddify://import/${url}#${name}`;
-      case 'Loon':
-        return `loon://import?sub=${encodeURIComponent(url)}`;
-      case 'NekoBox':
-        return `sn://subscription?url=${url}&name=${name}`;
-      case 'NekoRay':
-        return `sn://subscription?url=${url}&name=${name}`;
-      // case 'Netch':
-      //   return ``;
-      case 'Quantumult X':
-        return `quantumult-x://add-resource?remote-resource=${encodeURIComponent(
-          JSON.stringify({
-            server_remote: [`${url}, tag=${name}`],
-          }),
-        )}`;
-      case 'Shadowrocket':
-        return `shadowrocket://add/sub://${window.btoa(url)}?remark=${encodeURIComponent(name)}`;
-      case 'Singbox':
-        return `sing-box://import-remote-profile?url=${encodeURIComponent(url)}#${name}`;
-      case 'Surfboard':
-        return `surfboard:///install-config?url=${encodeURIComponent(url)}`;
-      case 'Surge':
-        return `surge:///install-config?url=${encodeURIComponent(url)}`;
-      case 'V2box':
-        return `v2box://install-sub?url=${encodeURIComponent(url)}&name=${name}`;
-      // case 'V2rayN':
-      //   return `v2rayn://install-sub?url=${encodeURIComponent(url)}&name=${name}`;
-      case 'V2rayNg':
-        return `v2rayng://install-sub?url=${encodeURIComponent(url)}#${name}`;
-      case 'Stash':
-        return `stash://install-config?url=${encodeURIComponent(url)}&name=${name}`;
-      default:
-        return '';
+
+    if (!schema) return url;
+    try {
+      let result = schema;
+
+      result = result.replace(/\${url}/g, url);
+      result = result.replace(/\${name}/g, name);
+
+      result = result.replace(/\${encodeURIComponent\(([^)]+)\)}/g, (match, expr) => {
+        if (expr === 'url') return encodeURIComponent(url);
+        if (expr === 'name') return encodeURIComponent(name);
+        return match;
+      });
+
+      result = result.replace(/\${window\.btoa\(([^)]+)\)}/g, (match, expr) => {
+        const btoa = typeof window !== 'undefined' ? window.btoa : (str: string) => str;
+        if (expr === 'url') return btoa(url);
+        if (expr === 'name') return btoa(name);
+        return match;
+      });
+
+      result = result.replace(/\${JSON\.stringify\(([^}]+)\)}/g, (match, expr) => {
+        try {
+          const processedExpr = expr.replace(/url/g, `"${url}"`).replace(/name/g, `"${name}"`);
+
+          if (processedExpr.includes('server_remote')) {
+            const serverRemoteValue = `${url}, tag=${name}`;
+            return JSON.stringify({ server_remote: [serverRemoteValue] });
+          }
+
+          const result = eval(`(${processedExpr})`);
+          return JSON.stringify(result);
+        } catch {
+          return match;
+        }
+      });
+
+      return result;
+    } catch (error) {
+      return url;
     }
   },
 }));

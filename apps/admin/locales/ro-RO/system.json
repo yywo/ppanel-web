@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "zi(le)",
-    "defaultSubscribe": "Abonament Implicit",
-    "defaultSubscribeDescription": "Plan de abonament implicit pentru utilizatorii noi",
     "description": "Configurează setările legate de înregistrarea utilizatorilor",
+    "enableTrial": "Activare Trial",
+    "enableTrialDescription": "Când este activat, utilizatorii noi vor primi un abonament de probă la înregistrare",
+    "hour": "Oră(i)",
     "inputPlaceholder": "Te rugăm să introduci",
     "ipRegistrationLimit": "Limită de Înregistrare IP",
     "ipRegistrationLimitDescription": "Limitează numărul de înregistrări dintr-o singură adresă IP",
+    "minute": "Minut(e)",
+    "month": "Lună(i)",
+    "none": "Niciunul",
     "registrationLimitCount": "Număr Limită de Înregistrări",
     "registrationLimitCountDescription": "Numărul de înregistrări permise pe IP în perioada limitată",
     "registrationLimitExpire": "Perioada Limitată",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Oprește Înregistrarea Utilizatorilor Noi",
     "stopNewUserRegistrationDescription": "Când este activat, înregistrarea utilizatorilor noi va fi dezactivată",
     "title": "Setări de Înregistrare",
-    "trialDay": "Zile de Probă",
-    "trialDayDescription": "Zile de probă oferite utilizatorilor noi la înregistrare",
-    "trialFlow": "Trafic de Probă",
-    "trialFlowDescription": "Trafic de probă oferit utilizatorilor noi la înregistrare"
+    "trialConfig": "Configurare Trial",
+    "trialConfigDescription": "Configurează abonamentul de probă, durata și unitatea de timp pentru utilizatorii noi la înregistrare",
+    "year": "An(i)"
   },
   "site": {
     "customData": "Date personalizate",

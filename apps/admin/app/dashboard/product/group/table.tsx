@@ -17,7 +17,7 @@ import { toast } from 'sonner';
 import GroupForm from './form';
 
 const GroupTable = () => {
-  const t = useTranslations('subscribe');
+  const t = useTranslations('product');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
 

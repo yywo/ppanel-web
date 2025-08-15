@@ -214,6 +214,15 @@ declare namespace API {
     updated_at: number;
   };
 
+  type DownloadLink = {
+    ios?: string;
+    android?: string;
+    windows?: string;
+    mac?: string;
+    linux?: string;
+    harmony?: string;
+  };
+
   type EmailAuthticateConfig = {
     enable: boolean;
     enable_verify: boolean;
@@ -868,6 +877,8 @@ declare namespace API {
     subscribe_path: string;
     subscribe_domain: string;
     pan_domain: boolean;
+    user_agent_limit: boolean;
+    user_agent_list: string;
   };
 
   type SubscribeDiscount = {

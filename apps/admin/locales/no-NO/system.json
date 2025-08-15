@@ -39,12 +39,16 @@
   },
   "register": {
     "day": "dag(er)",
-    "defaultSubscribe": "Standard abonnement",
-    "defaultSubscribeDescription": "Standard abonnementsplan for nye brukere",
     "description": "Konfigurer innstillinger relatert til brukerregistrering",
+    "enableTrial": "Aktiver prøveperiode",
+    "enableTrialDescription": "Når aktivert, vil nye brukere motta et prøveabonnement ved registrering",
+    "hour": "Time(r)",
     "inputPlaceholder": "Vennligst skriv inn",
     "ipRegistrationLimit": "IP Registreringsgrense",
     "ipRegistrationLimitDescription": "Begrens antall registreringer fra en enkelt IP-adresse",
+    "minute": "Minutt(er)",
+    "month": "Måned(er)",
+    "none": "Ingen",
     "registrationLimitCount": "Registreringsgrense antall",
     "registrationLimitCountDescription": "Antall registreringer tillatt per IP innenfor begrensningsperioden",
     "registrationLimitExpire": "Begrensningsperiode",
@@ -55,10 +59,9 @@
     "stopNewUserRegistration": "Stopp registrering av nye brukere",
     "stopNewUserRegistrationDescription": "Når aktivert, vil registrering av nye brukere bli deaktivert",
     "title": "Registreringsinnstillinger",
-    "trialDay": "Prøvedager",
-    "trialDayDescription": "Prøvedager gitt til nye brukere ved registrering",
-    "trialFlow": "Prøveperiode trafikk",
-    "trialFlowDescription": "Prøveperiode trafikk gitt til nye brukere ved registrering"
+    "trialConfig": "Prøveinnstillinger",
+    "trialConfigDescription": "Konfigurer prøveabonnement, varighet og tidsenhet for nye brukere ved registrering",
+    "year": "År"
   },
   "site": {
     "customData": "Egendata",
