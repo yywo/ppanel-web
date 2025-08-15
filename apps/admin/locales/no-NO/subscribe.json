@@ -47,7 +47,7 @@
       "icon": "Ikon-URL eller base64-koding",
       "name": "Klientens visningsnavn",
       "outputFormat": "Format for abonnementskonfigurasjonsfil",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64-koding",
         "functions": "Støtter funksjoner:",
         "jsonStringify": "JSON-objekt til streng",
@@ -78,7 +78,7 @@
       "icon": "Ikon",
       "name": "Navn",
       "outputFormat": "Utdataformat",
-      "schema": "URL-skjema",
+      "scheme": "URL-skjema",
       "template": "Abonnementsfilmal"
     },
     "tabs": {

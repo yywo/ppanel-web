@@ -52,7 +52,7 @@
       "name": "Name",
       "description": "Description",
       "outputFormat": "Output Format",
-      "schema": "URL Schema",
+      "scheme": "URL Scheme",
       "template": "Subscription File Template"
     },
     "descriptions": {
@@ -61,8 +61,8 @@
       "userAgentPrefix": "Client identifier for distinguishing different clients",
       "description": "Detailed client description",
       "outputFormat": "Subscription configuration file format",
-      "schema": {
-        "title": "URL Schema template",
+      "scheme": {
+        "title": "URL Scheme template",
         "variables": "Supports variables:",
         "urlVariable": "subscription URL",
         "nameVariable": "site name",

@@ -47,15 +47,15 @@
       "icon": "圖標 URL 或 base64 編碼",
       "name": "客戶端顯示名稱",
       "outputFormat": "訂閱配置文件格式",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64 編碼",
-        "functions": "支持的函數：",
-        "jsonStringify": "將 JSON 對象轉換為字符串",
+        "functions": "支持功能：",
+        "jsonStringify": "JSON 物件轉字串",
         "nameVariable": "網站名稱",
-        "title": "URL 模式模板",
-        "urlEncoding": "URL 編碼",
-        "urlVariable": "訂閱 URL",
-        "variables": "支持的變量："
+        "title": "網址方案範本",
+        "urlEncoding": "網址編碼",
+        "urlVariable": "訂閱網址",
+        "variables": "支持變數："
       },
       "template": {
         "description": "使用 Go 模板語法生成訂閱配置文件",
@@ -78,7 +78,7 @@
       "icon": "圖標",
       "name": "名稱",
       "outputFormat": "輸出格式",
-      "schema": "URL 模式",
+      "scheme": "網址方案",
       "template": "訂閱文件模板"
     },
     "tabs": {

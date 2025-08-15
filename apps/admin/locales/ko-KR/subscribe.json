@@ -47,12 +47,12 @@
       "icon": "아이콘 URL 또는 base64 인코딩",
       "name": "클라이언트 표시 이름",
       "outputFormat": "구독 구성 파일 형식",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64 인코딩",
-        "functions": "함수를 지원합니다:",
+        "functions": "기능을 지원합니다:",
         "jsonStringify": "JSON 객체를 문자열로 변환",
         "nameVariable": "사이트 이름",
-        "title": "URL 스키마 템플릿",
+        "title": "URL 스킴 템플릿",
         "urlEncoding": "URL 인코딩",
         "urlVariable": "구독 URL",
         "variables": "변수를 지원합니다:"
@@ -78,7 +78,7 @@
       "icon": "아이콘",
       "name": "이름",
       "outputFormat": "출력 형식",
-      "schema": "URL 스키마",
+      "scheme": "URL 스킴",
       "template": "구독 파일 템플릿"
     },
     "tabs": {

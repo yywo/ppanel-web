@@ -47,14 +47,14 @@
       "icon": "URL ikony nebo base64 kódování",
       "name": "Název zobrazení klienta",
       "outputFormat": "Formát konfiguračního souboru předplatného",
-      "schema": {
-        "base64Encoding": "Base64 kódování",
+      "scheme": {
+        "base64Encoding": "Kódování Base64",
         "functions": "Podporuje funkce:",
         "jsonStringify": "JSON objekt na řetězec",
         "nameVariable": "název webu",
         "title": "Šablona URL schématu",
-        "urlEncoding": "URL kódování",
-        "urlVariable": "URL předplatného",
+        "urlEncoding": "Kódování URL",
+        "urlVariable": "URL pro odběr",
         "variables": "Podporuje proměnné:"
       },
       "template": {
@@ -78,7 +78,7 @@
       "icon": "Ikona",
       "name": "Název",
       "outputFormat": "Formát výstupu",
-      "schema": "URL schéma",
+      "scheme": "URL schéma",
       "template": "Šablona souboru předplatného"
     },
     "tabs": {

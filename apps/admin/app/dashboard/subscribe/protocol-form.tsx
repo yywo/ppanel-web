@@ -64,7 +64,7 @@ const createClientFormSchema = (t: any) =>
     description: z.string().optional(),
     icon: z.string().optional(),
     user_agent: z.string().min(1, `User-Agent ${t('form.validation.userAgentRequiredSuffix')}`),
-    schema: z.string().default(''),
+    scheme: z.string().default(''),
     template: z.string().default(''),
     output_format: z.string().default(''),
     download_link: z.object({
@@ -97,7 +97,7 @@ export function ProtocolForm() {
       description: '',
       icon: '',
       user_agent: '',
-      schema: '',
+      scheme: '',
       template: '',
       output_format: '',
       download_link: {
@@ -234,7 +234,7 @@ export function ProtocolForm() {
       description: '',
       icon: '',
       user_agent: '',
-      schema: '',
+      scheme: '',
       template: '',
       output_format: '',
       download_link: {
@@ -491,11 +491,11 @@ export function ProtocolForm() {
 
                     <FormField
                       control={form.control}
-                      name='schema'
+                      name='scheme'
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className='flex items-center gap-2'>
-                            {t('form.fields.schema')}
+                            {t('form.fields.scheme')}
                             <TooltipProvider>
                               <Tooltip>
                                 <TooltipTrigger
@@ -515,47 +515,47 @@ export function ProtocolForm() {
                                 >
                                   <div className='space-y-2 text-sm'>
                                     <div className='font-medium'>
-                                      {t('form.descriptions.schema.title')}
+                                      {t('form.descriptions.scheme.title')}
                                     </div>
 
                                     <div>
                                       <div className='font-medium'>
-                                        {t('form.descriptions.schema.variables')}
+                                        {t('form.descriptions.scheme.variables')}
                                       </div>
                                       <ul className='ml-2 list-disc space-y-1 text-xs'>
                                         <li>
                                           <code className='rounded px-1'>{'${url}'}</code> -{' '}
-                                          {t('form.descriptions.schema.urlVariable')}
+                                          {t('form.descriptions.scheme.urlVariable')}
                                         </li>
                                         <li>
                                           <code className='rounded px-1'>{'${name}'}</code> -{' '}
-                                          {t('form.descriptions.schema.nameVariable')}
+                                          {t('form.descriptions.scheme.nameVariable')}
                                         </li>
                                       </ul>
                                     </div>
 
                                     <div>
                                       <div className='font-medium'>
-                                        {t('form.descriptions.schema.functions')}
+                                        {t('form.descriptions.scheme.functions')}
                                       </div>
                                       <ul className='ml-2 list-disc space-y-1 text-xs'>
                                         <li>
                                           <code className='rounded px-1'>
                                             {'${encodeURIComponent(...)}'}
                                           </code>{' '}
-                                          - {t('form.descriptions.schema.urlEncoding')}
+                                          - {t('form.descriptions.scheme.urlEncoding')}
                                         </li>
                                         <li>
                                           <code className='rounded px-1'>
                                             {'${window.btoa(...)}'}
                                           </code>{' '}
-                                          - {t('form.descriptions.schema.base64Encoding')}
+                                          - {t('form.descriptions.scheme.base64Encoding')}
                                         </li>
                                         <li>
                                           <code className='rounded px-1'>
                                             {'${JSON.stringify(...)}'}
                                           </code>{' '}
-                                          - {t('form.descriptions.schema.jsonStringify')}
+                                          - {t('form.descriptions.scheme.jsonStringify')}
                                         </li>
                                       </ul>
                                     </div>

@@ -47,14 +47,14 @@
       "icon": "URL iconiță sau codare base64",
       "name": "Numele de afișare al clientului",
       "outputFormat": "Formatul fișierului de configurare a abonamentului",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Codificare Base64",
         "functions": "Suportă funcții:",
-        "jsonStringify": "Obiect JSON în string",
+        "jsonStringify": "Obiect JSON în șir",
         "nameVariable": "numele site-ului",
         "title": "Șablon Schema URL",
         "urlEncoding": "Codificare URL",
-        "urlVariable": "URL-ul abonamentului",
+        "urlVariable": "URL-ul de abonare",
         "variables": "Suportă variabile:"
       },
       "template": {
@@ -78,7 +78,7 @@
       "icon": "Iconiță",
       "name": "Nume",
       "outputFormat": "Format de Ieșire",
-      "schema": "Schema URL",
+      "scheme": "Schema URL",
       "template": "Șablon Fișier Abonament"
     },
     "tabs": {

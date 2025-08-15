@@ -47,12 +47,12 @@
       "icon": "URL del ícono o codificación base64",
       "name": "Nombre para mostrar del cliente",
       "outputFormat": "Formato del archivo de configuración de suscripción",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Codificación Base64",
         "functions": "Soporta funciones:",
         "jsonStringify": "Objeto JSON a cadena",
         "nameVariable": "nombre del sitio",
-        "title": "Plantilla de Esquema de URL",
+        "title": "Plantilla de esquema de URL",
         "urlEncoding": "Codificación de URL",
         "urlVariable": "URL de suscripción",
         "variables": "Soporta variables:"
@@ -78,7 +78,7 @@
       "icon": "Ícono",
       "name": "Nombre",
       "outputFormat": "Formato de Salida",
-      "schema": "Esquema de URL",
+      "scheme": "Esquema de URL",
       "template": "Plantilla de Archivo de Suscripción"
     },
     "tabs": {

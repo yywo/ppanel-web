@@ -47,15 +47,15 @@
       "icon": "URL آیکون یا کدگذاری base64",
       "name": "نام نمایشی مشتری",
       "outputFormat": "فرمت فایل پیکربندی اشتراک",
-      "schema": {
+      "scheme": {
         "base64Encoding": "کدگذاری Base64",
-        "functions": "توابع پشتیبانی شده:",
+        "functions": "توابع را پشتیبانی می‌کند:",
         "jsonStringify": "شی JSON به رشته",
         "nameVariable": "نام سایت",
-        "title": "قالب طرح URL",
+        "title": "الگوی طرح URL",
         "urlEncoding": "کدگذاری URL",
         "urlVariable": "URL اشتراک",
-        "variables": "متغیرهای پشتیبانی شده:"
+        "variables": "متغیرها را پشتیبانی می‌کند:"
       },
       "template": {
         "description": "استفاده از نحو قالب Go برای تولید فایل‌های پیکربندی اشتراک",
@@ -78,7 +78,7 @@
       "icon": "آیکون",
       "name": "نام",
       "outputFormat": "فرمت خروجی",
-      "schema": "طرح URL",
+      "scheme": "طرح URL",
       "template": "قالب فایل اشتراک"
     },
     "tabs": {

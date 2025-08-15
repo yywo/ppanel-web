@@ -47,15 +47,15 @@
       "icon": "アイコンのURLまたはbase64エンコーディング",
       "name": "クライアントの表示名",
       "outputFormat": "サブスクリプション設定ファイル形式",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64エンコーディング",
-        "functions": "関数をサポートしています：",
-        "jsonStringify": "JSONオブジェクトを文字列に変換",
+        "functions": "サポートされている関数：",
+        "jsonStringify": "JSONオブジェクトを文字列に",
         "nameVariable": "サイト名",
-        "title": "URLスキーマテンプレート",
+        "title": "URLスキームテンプレート",
         "urlEncoding": "URLエンコーディング",
         "urlVariable": "サブスクリプションURL",
-        "variables": "変数をサポートしています："
+        "variables": "サポートされている変数："
       },
       "template": {
         "description": "Goテンプレート構文を使用してサブスクリプション設定ファイルを生成します",
@@ -78,7 +78,7 @@
       "icon": "アイコン",
       "name": "名前",
       "outputFormat": "出力形式",
-      "schema": "URLスキーマ",
+      "scheme": "URLスキーム",
       "template": "サブスクリプションファイルテンプレート"
     },
     "tabs": {

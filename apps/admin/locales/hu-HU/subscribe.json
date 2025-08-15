@@ -47,12 +47,12 @@
       "icon": "Ikon URL vagy base64 kódolás",
       "name": "Ügyfél megjelenítési neve",
       "outputFormat": "Előfizetési konfigurációs fájl formátum",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64 kódolás",
         "functions": "Támogatott funkciók:",
         "jsonStringify": "JSON objektum stringgé alakítása",
         "nameVariable": "webhely neve",
-        "title": "URL Sémák sablon",
+        "title": "URL séma sablon",
         "urlEncoding": "URL kódolás",
         "urlVariable": "előfizetési URL",
         "variables": "Támogatott változók:"
@@ -78,7 +78,7 @@
       "icon": "Ikon",
       "name": "Név",
       "outputFormat": "Kimeneti Formátum",
-      "schema": "URL Sémák",
+      "scheme": "URL séma",
       "template": "Előfizetési Fájl Sablon"
     },
     "tabs": {

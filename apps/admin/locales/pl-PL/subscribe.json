@@ -47,10 +47,10 @@
       "icon": "URL ikony lub kodowanie base64",
       "name": "Nazwa wyświetlana klienta",
       "outputFormat": "Format pliku konfiguracyjnego subskrypcji",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Kodowanie Base64",
         "functions": "Obsługuje funkcje:",
-        "jsonStringify": "Obiekt JSON na string",
+        "jsonStringify": "Obiekt JSON na ciąg",
         "nameVariable": "nazwa witryny",
         "title": "Szablon schematu URL",
         "urlEncoding": "Kodowanie URL",
@@ -78,7 +78,7 @@
       "icon": "Ikona",
       "name": "Nazwa",
       "outputFormat": "Format wyjściowy",
-      "schema": "Schemat URL",
+      "scheme": "Schemat URL",
       "template": "Szablon pliku subskrypcyjnego"
     },
     "tabs": {

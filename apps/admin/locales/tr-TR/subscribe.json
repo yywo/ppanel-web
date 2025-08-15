@@ -47,10 +47,10 @@
       "icon": "Simge URL'si veya base64 kodlaması",
       "name": "Müşteri görüntüleme adı",
       "outputFormat": "Abonelik yapılandırma dosyası formatı",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64 kodlaması",
         "functions": "Fonksiyonları destekler:",
-        "jsonStringify": "JSON nesnesini dizeye dönüştür",
+        "jsonStringify": "JSON nesnesini dizeye çevir",
         "nameVariable": "site adı",
         "title": "URL Şeması şablonu",
         "urlEncoding": "URL kodlaması",
@@ -78,7 +78,7 @@
       "icon": "Simge",
       "name": "İsim",
       "outputFormat": "Çıktı Formatı",
-      "schema": "URL Şeması",
+      "scheme": "URL Şeması",
       "template": "Abonelik Dosyası Şablonu"
     },
     "tabs": {

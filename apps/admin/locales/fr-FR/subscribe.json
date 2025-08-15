@@ -47,7 +47,7 @@
       "icon": "URL de l'icône ou encodage base64",
       "name": "Nom d'affichage du client",
       "outputFormat": "Format du fichier de configuration d'abonnement",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Encodage Base64",
         "functions": "Prend en charge les fonctions :",
         "jsonStringify": "Objet JSON en chaîne",
@@ -78,7 +78,7 @@
       "icon": "Icône",
       "name": "Nom",
       "outputFormat": "Format de sortie",
-      "schema": "Schéma d'URL",
+      "scheme": "Schéma d'URL",
       "template": "Modèle de fichier d'abonnement"
     },
     "tabs": {

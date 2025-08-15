@@ -47,28 +47,28 @@
       "icon": "图标 URL 或 base64 编码",
       "name": "客户端显示名称",
       "outputFormat": "订阅配置文件格式",
-      "schema": {
-        "title": "URL Schema 模板",
-        "variables": "支持变量：",
-        "urlVariable": "订阅地址",
-        "nameVariable": "站点名称",
-        "functions": "支持函数：",
-        "urlEncoding": "URL编码",
+      "scheme": {
         "base64Encoding": "Base64编码",
-        "jsonStringify": "JSON对象转字符串"
+        "functions": "支持功能：",
+        "jsonStringify": "JSON对象转字符串",
+        "nameVariable": "站点名称",
+        "title": "URL方案模板",
+        "urlEncoding": "URL编码",
+        "urlVariable": "订阅URL",
+        "variables": "支持变量："
       },
       "template": {
-        "title": "Go模板语法",
         "description": "使用Go模板语法生成订阅配置文件",
-        "variables": "可用变量：",
-        "siteName": "站点名称",
-        "subscribeName": "订阅名称",
-        "nodes": "代理节点列表",
-        "userInfo": "用户信息(流量、到期时间等)",
         "functions": "模板函数：",
-        "range": "遍历数组",
         "if": "条件判断",
-        "sprig": "Sprig函数库(字符串处理、日期等)"
+        "nodes": "代理节点列表",
+        "range": "遍历数组",
+        "siteName": "站点名称",
+        "sprig": "Sprig函数库(字符串处理、日期等)",
+        "subscribeName": "订阅名称",
+        "title": "Go模板语法",
+        "userInfo": "用户信息(流量、到期时间等)",
+        "variables": "可用变量："
       },
       "userAgentPrefix": "用于区分不同客户端的客户端标识符"
     },
@@ -78,7 +78,7 @@
       "icon": "图标",
       "name": "名称",
       "outputFormat": "输出格式",
-      "schema": "URL Schema",
+      "scheme": "URL方案",
       "template": "订阅文件模板"
     },
     "tabs": {
@@ -93,10 +93,10 @@
   },
   "outputFormats": {
     "base64": "Base64",
+    "conf": "CONF",
     "json": "JSON",
     "plain": "纯文本",
-    "yaml": "YAML",
-    "conf": "CONF"
+    "yaml": "YAML"
   },
   "platforms": {
     "android": "Android",
@@ -119,14 +119,14 @@
     }
   },
   "templatePreview": {
-    "title": "模板预览",
-    "preview": "预览",
-    "loading": "加载中...",
-    "failed": "预览失败",
     "base64": {
-      "originalContent": "原始内容 (Base64)",
+      "decodeError": "解码失败：内容不是有效的Base64格式",
       "decodedContent": "解码后内容",
-      "decodeError": "解码失败：内容不是有效的Base64格式"
-    }
+      "originalContent": "原始内容 (Base64)"
+    },
+    "failed": "预览失败",
+    "loading": "加载中...",
+    "preview": "预览",
+    "title": "模板预览"
   }
 }

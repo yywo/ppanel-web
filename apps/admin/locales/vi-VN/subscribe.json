@@ -47,12 +47,12 @@
       "icon": "URL biểu tượng hoặc mã hóa base64",
       "name": "Tên hiển thị của khách hàng",
       "outputFormat": "Định dạng tệp cấu hình đăng ký",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Mã hóa Base64",
         "functions": "Hỗ trợ các hàm:",
-        "jsonStringify": "Chuyển đổi đối tượng JSON thành chuỗi",
+        "jsonStringify": "Đối tượng JSON thành chuỗi",
         "nameVariable": "tên trang",
-        "title": "Mô hình URL",
+        "title": "Mẫu mô hình URL",
         "urlEncoding": "Mã hóa URL",
         "urlVariable": "URL đăng ký",
         "variables": "Hỗ trợ các biến:"
@@ -78,7 +78,7 @@
       "icon": "Biểu tượng",
       "name": "Tên",
       "outputFormat": "Định dạng Đầu ra",
-      "schema": "Mô hình URL",
+      "scheme": "Mô hình URL",
       "template": "Mẫu Tệp Đăng ký"
     },
     "tabs": {

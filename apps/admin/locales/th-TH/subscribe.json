@@ -47,12 +47,12 @@
       "icon": "URL ของไอคอนหรือการเข้ารหัส base64",
       "name": "ชื่อที่แสดงของลูกค้า",
       "outputFormat": "รูปแบบไฟล์การกำหนดค่าการสมัครสมาชิก",
-      "schema": {
+      "scheme": {
         "base64Encoding": "การเข้ารหัส Base64",
         "functions": "รองรับฟังก์ชัน:",
         "jsonStringify": "วัตถุ JSON เป็นสตริง",
-        "nameVariable": "ชื่อไซต์",
-        "title": "เทมเพลตสคีม่า URL",
+        "nameVariable": "ชื่อเว็บไซต์",
+        "title": "แม่แบบรูปแบบ URL",
         "urlEncoding": "การเข้ารหัส URL",
         "urlVariable": "URL การสมัครสมาชิก",
         "variables": "รองรับตัวแปร:"
@@ -78,7 +78,7 @@
       "icon": "ไอคอน",
       "name": "ชื่อ",
       "outputFormat": "รูปแบบผลลัพธ์",
-      "schema": "สคีม่า URL",
+      "scheme": "รูปแบบ URL",
       "template": "เทมเพลตไฟล์การสมัครสมาชิก"
     },
     "tabs": {

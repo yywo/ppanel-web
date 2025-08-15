@@ -47,12 +47,12 @@
       "icon": "Ikonin URL tai base64-koodaus",
       "name": "Asiakkaan näyttönimi",
       "outputFormat": "Tilauksen konfiguraatiotiedoston muoto",
-      "schema": {
+      "scheme": {
         "base64Encoding": "Base64-koodaus",
         "functions": "Tukee toimintoja:",
         "jsonStringify": "JSON-objekti merkkijonoksi",
         "nameVariable": "sivuston nimi",
-        "title": "URL-mallin malli",
+        "title": "URL-skeeman malli",
         "urlEncoding": "URL-koodaus",
         "urlVariable": "tilaus-URL",
         "variables": "Tukee muuttujia:"
@@ -78,7 +78,7 @@
       "icon": "Ikoni",
       "name": "Nimi",
       "outputFormat": "Tulostusmuoto",
-      "schema": "URL-malli",
+      "scheme": "URL-skeema",
       "template": "Tilauksen tiedostomalli"
     },
     "tabs": {

@@ -47,13 +47,13 @@
       "icon": "URL іконки або base64 кодування",
       "name": "Відображуване ім'я клієнта",
       "outputFormat": "Формат файлу конфігурації підписки",
-      "schema": {
-        "base64Encoding": "Base64 кодування",
+      "scheme": {
+        "base64Encoding": "Кодування Base64",
         "functions": "Підтримує функції:",
         "jsonStringify": "JSON об'єкт в рядок",
-        "nameVariable": "ім'я сайту",
+        "nameVariable": "назва сайту",
         "title": "Шаблон URL-схеми",
-        "urlEncoding": "URL кодування",
+        "urlEncoding": "Кодування URL",
         "urlVariable": "URL підписки",
         "variables": "Підтримує змінні:"
       },
@@ -78,7 +78,7 @@
       "icon": "Іконка",
       "name": "Ім'я",
       "outputFormat": "Формат виходу",
-      "schema": "URL-схема",
+      "scheme": "URL-схема",
       "template": "Шаблон файлу підписки"
     },
     "tabs": {
