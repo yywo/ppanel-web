@@ -170,21 +170,12 @@ export function ProtocolForm() {
       ),
     },
     {
-      accessorKey: 'description',
-      header: t('table.columns.description'),
+      accessorKey: 'user_agent',
+      header: 'User-Agent',
       cell: ({ row }) => (
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <div className='text-muted-foreground max-w-[200px] truncate text-sm'>
-                {row.original.description}
-              </div>
-            </TooltipTrigger>
-            <TooltipContent className='max-w-xs'>
-              <p>{row.original.description}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <div className='text-muted-foreground max-w-[150px] truncate font-mono text-sm'>
+          {row.original.user_agent}
+        </div>
       ),
     },
     {
@@ -217,12 +208,21 @@ export function ProtocolForm() {
       },
     },
     {
-      accessorKey: 'user_agent',
-      header: 'User-Agent',
+      accessorKey: 'description',
+      header: t('table.columns.description'),
       cell: ({ row }) => (
-        <div className='text-muted-foreground max-w-[150px] truncate font-mono text-sm'>
-          {row.original.user_agent}
-        </div>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <div className='text-muted-foreground max-w-[200px] truncate text-sm'>
+                {row.original.description}
+              </div>
+            </TooltipTrigger>
+            <TooltipContent className='max-w-xs'>
+              <p>{row.original.description}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       ),
     },
   ];
@@ -310,11 +310,6 @@ export function ProtocolForm() {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handlePreview = (application: API.SubscribeApplication) => {
-    setPreviewApplicationId(application.id);
-    setPreviewOpen(true);
   };
 
   return (
