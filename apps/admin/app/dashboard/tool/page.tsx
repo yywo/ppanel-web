@@ -98,7 +98,6 @@ export default function Page() {
     retryDelay: 10000,
   });
 
-  // 检查是否有新版本
   const hasNewVersion =
     latestReleases?.web && packageJson.version !== latestReleases.web.version.replace(/^v/, '');
 
@@ -108,21 +107,25 @@ export default function Page() {
       const { data } = await getVersion();
 
       const versionString = data.data?.version || '';
-      const releaseVersionRegex = /^[Vv]?\d+\.\d+\.\d+$/;
+      const releaseVersionRegex = /^[Vv]?\d+\.\d+\.\d+(-[a-zA-Z]+(\.\d+)?)?$/;
       const timeMatch = versionString.match(/\(([^)]+)\)/);
       const timeInBrackets = timeMatch ? timeMatch[1] : '';
 
       const versionWithoutTime = versionString.replace(/\([^)]*\)/, '').trim();
-      const isDevelopment = !releaseVersionRegex.test(versionWithoutTime);
+
+      const isDevelopment =
+        versionWithoutTime.includes('-dev') ||
+        versionWithoutTime.includes('-debug') ||
+        versionWithoutTime.includes('-nightly') ||
+        versionWithoutTime.includes('dev') ||
+        !releaseVersionRegex.test(versionWithoutTime);
 
       let baseVersion = versionWithoutTime;
-      let versionSuffix = '';
       let lastUpdated = '';
 
       if (isDevelopment && versionWithoutTime.includes('-')) {
         const parts = versionWithoutTime.split('-');
         baseVersion = parts[0] || versionWithoutTime;
-        versionSuffix = parts.slice(1).join('-');
       }
 
       lastUpdated = formatDate(new Date(timeInBrackets || Date.now())) || '';
@@ -199,9 +202,7 @@ export default function Page() {
       </CardHeader>
       <CardContent>
         <div className='space-y-4'>
-          {/* 版本信息紧凑显示 */}
           <div className='flex flex-col space-y-2 sm:flex-row sm:space-x-3 sm:space-y-0'>
-            {/* 用户端/管理端版本 */}
             <div className='bg-muted/30 flex flex-1 items-center justify-between rounded-md p-2'>
               <div className='flex items-center'>
                 <Icon icon='mdi:web' className='mr-2 h-4 w-4 text-green-600' />
@@ -236,7 +237,6 @@ export default function Page() {
               )}
             </div>
 
-            {/* 服务端版本 */}
             <div className='bg-muted/30 flex flex-1 items-center justify-between rounded-md p-2'>
               <div className='flex items-center'>
                 <Icon icon='mdi:server' className='mr-2 h-4 w-4 text-blue-600' />
