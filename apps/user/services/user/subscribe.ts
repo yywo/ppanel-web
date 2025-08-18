@@ -2,17 +2,6 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
-/** Get application config GET /v1/public/subscribe/application/config */
-export async function queryApplicationConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.ApplicationResponse }>(
-    '/v1/public/subscribe/application/config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
-}
-
 /** Get subscribe group list GET /v1/public/subscribe/group/list */
 export async function querySubscribeGroupList(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.QuerySubscribeGroupListResponse }>(

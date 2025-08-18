@@ -1,39 +1,37 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 # [1.3.0](https://github.com/perfect-panel/ppanel-web/compare/v1.2.0...v1.3.0) (2025-08-15)
 
-
 ### ♻ Code Refactoring
 
-* Refactoring and adding multiple features ([65c9b9f](https://github.com/perfect-panel/ppanel-web/commit/65c9b9f))
-
+- Refactoring and adding multiple features ([65c9b9f](https://github.com/perfect-panel/ppanel-web/commit/65c9b9f))
 
 ### ✨ Features
 
-* **api**: Add getClient API endpoint to retrieve subscription applications ([7a279e6](https://github.com/perfect-panel/ppanel-web/commit/7a279e6))
-* **marketing**: Add marketing management features and localization updates ([ea08de0](https://github.com/perfect-panel/ppanel-web/commit/ea08de0))
-* **protocol**: Add template preview functionality with localization support ([0448d21](https://github.com/perfect-panel/ppanel-web/commit/0448d21))
-* **subscribe**: Update subscription management localization and add new fields ([1d9b0a4](https://github.com/perfect-panel/ppanel-web/commit/1d9b0a4))
-
+- **api**: Add getClient API endpoint to retrieve subscription applications ([7a279e6](https://github.com/perfect-panel/ppanel-web/commit/7a279e6))
+- **marketing**: Add marketing management features and localization updates ([ea08de0](https://github.com/perfect-panel/ppanel-web/commit/ea08de0))
+- **protocol**: Add template preview functionality with localization support ([0448d21](https://github.com/perfect-panel/ppanel-web/commit/0448d21))
+- **subscribe**: Update subscription management localization and add new fields ([1d9b0a4](https://github.com/perfect-panel/ppanel-web/commit/1d9b0a4))
 
 ### 🐛 Bug Fixes
 
-* **bun**: Update bun.lockb to reflect dependency changes ([bbcd018](https://github.com/perfect-panel/ppanel-web/commit/bbcd018))
-* **editor**: Add Go template editor component and update related schemas ([9d9c3cd](https://github.com/perfect-panel/ppanel-web/commit/9d9c3cd))
-* **editor**: Enhance Go Template Editor to support trimmed template tags and improve range/end matching ([641ed5e](https://github.com/perfect-panel/ppanel-web/commit/641ed5e))
-* **editor**: Enhance Go Template Editor with schema support and improved completion ([5b21d8a](https://github.com/perfect-panel/ppanel-web/commit/5b21d8a))
-* **enhaced-input**: Disable autocomplete for EnhancedInput component ([f190c68](https://github.com/perfect-panel/ppanel-web/commit/f190c68))
-* **global**: Add user agent limit settings to subscription configuration ([822416d](https://github.com/perfect-panel/ppanel-web/commit/822416d))
-* **locales**: Update 'conf' output format to use uppercase 'CONF' ([fce9119](https://github.com/perfect-panel/ppanel-web/commit/fce9119))
-* **locales**: Update "userAccount" label to "user" in multiple localization files ([48415e9](https://github.com/perfect-panel/ppanel-web/commit/48415e9))
-* **protocol-form**: Swap 'description' and 'user_agent' columns for improved clarity in the table ([72a4106](https://github.com/perfect-panel/ppanel-web/commit/72a4106))
-* **protocol-form**: Update protocol options descriptions for clarity and add new security and transport options ([e5d4deb](https://github.com/perfect-panel/ppanel-web/commit/e5d4deb))
-* **protocol**: Add 'conf' output format option and update translations ([292efdf](https://github.com/perfect-panel/ppanel-web/commit/292efdf))
-* **protpcp-form**: Rename 'schema' to 'scheme' for consistency across the application ([6ab2ba9](https://github.com/perfect-panel/ppanel-web/commit/6ab2ba9))
-* **register**: Update localization files to include trial subscription settings and descriptions ([33daa1f](https://github.com/perfect-panel/ppanel-web/commit/33daa1f))
-* **system**: Add time unit translations for user registration settings in multiple languages ([296a6c1](https://github.com/perfect-panel/ppanel-web/commit/296a6c1))
-* Update privacy policy and terms of service schemas to use correct field names ([0e6ba5b](https://github.com/perfect-panel/ppanel-web/commit/0e6ba5b))
+- **bun**: Update bun.lockb to reflect dependency changes ([bbcd018](https://github.com/perfect-panel/ppanel-web/commit/bbcd018))
+- **editor**: Add Go template editor component and update related schemas ([9d9c3cd](https://github.com/perfect-panel/ppanel-web/commit/9d9c3cd))
+- **editor**: Enhance Go Template Editor to support trimmed template tags and improve range/end matching ([641ed5e](https://github.com/perfect-panel/ppanel-web/commit/641ed5e))
+- **editor**: Enhance Go Template Editor with schema support and improved completion ([5b21d8a](https://github.com/perfect-panel/ppanel-web/commit/5b21d8a))
+- **enhaced-input**: Disable autocomplete for EnhancedInput component ([f190c68](https://github.com/perfect-panel/ppanel-web/commit/f190c68))
+- **global**: Add user agent limit settings to subscription configuration ([822416d](https://github.com/perfect-panel/ppanel-web/commit/822416d))
+- **locales**: Update 'conf' output format to use uppercase 'CONF' ([fce9119](https://github.com/perfect-panel/ppanel-web/commit/fce9119))
+- **locales**: Update "userAccount" label to "user" in multiple localization files ([48415e9](https://github.com/perfect-panel/ppanel-web/commit/48415e9))
+- **protocol-form**: Swap 'description' and 'user_agent' columns for improved clarity in the table ([72a4106](https://github.com/perfect-panel/ppanel-web/commit/72a4106))
+- **protocol-form**: Update protocol options descriptions for clarity and add new security and transport options ([e5d4deb](https://github.com/perfect-panel/ppanel-web/commit/e5d4deb))
+- **protocol**: Add 'conf' output format option and update translations ([292efdf](https://github.com/perfect-panel/ppanel-web/commit/292efdf))
+- **protpcp-form**: Rename 'schema' to 'scheme' for consistency across the application ([6ab2ba9](https://github.com/perfect-panel/ppanel-web/commit/6ab2ba9))
+- **register**: Update localization files to include trial subscription settings and descriptions ([33daa1f](https://github.com/perfect-panel/ppanel-web/commit/33daa1f))
+- **system**: Add time unit translations for user registration settings in multiple languages ([296a6c1](https://github.com/perfect-panel/ppanel-web/commit/296a6c1))
+- Update privacy policy and terms of service schemas to use correct field names ([0e6ba5b](https://github.com/perfect-panel/ppanel-web/commit/0e6ba5b))
 
 <a name="readme-top"></a>
 

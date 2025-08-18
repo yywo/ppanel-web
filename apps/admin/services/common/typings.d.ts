@@ -47,15 +47,6 @@ declare namespace API {
     subscribe_type: string;
   };
 
-  type ApplicationConfig = {
-    app_id: number;
-    encryption_key: string;
-    encryption_method: string;
-    domains: string[];
-    startup_picture: string;
-    startup_picture_skip_time: number;
-  };
-
   type ApplicationPlatform = {
     ios?: ApplicationVersion[];
     macos?: ApplicationVersion[];
@@ -263,11 +254,6 @@ declare namespace API {
 
   type GetAdsResponse = {
     list: Ads[];
-  };
-
-  type GetAppcationResponse = {
-    config: ApplicationConfig;
-    applications: ApplicationResponseInfo[];
   };
 
   type GetAvailablePaymentMethodsResponse = {

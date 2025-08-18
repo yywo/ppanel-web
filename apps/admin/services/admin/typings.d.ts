@@ -41,15 +41,6 @@ declare namespace API {
     subscribe_type: string;
   };
 
-  type ApplicationConfig = {
-    app_id: number;
-    encryption_key: string;
-    encryption_method: string;
-    domains: string[];
-    startup_picture: string;
-    startup_picture_skip_time: number;
-  };
-
   type ApplicationPlatform = {
     ios?: ApplicationVersion[];
     macos?: ApplicationVersion[];
@@ -221,23 +212,6 @@ declare namespace API {
   type CreateAnnouncementRequest = {
     title: string;
     content: string;
-  };
-
-  type CreateApplicationRequest = {
-    icon: string;
-    name: string;
-    description: string;
-    subscribe_type: string;
-    platform: ApplicationPlatform;
-  };
-
-  type CreateApplicationVersionRequest = {
-    url: string;
-    version: string;
-    description: string;
-    platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
-    is_default: boolean;
-    application_id: number;
   };
 
   type CreateBatchSendEmailTaskRequest = {
@@ -421,14 +395,6 @@ declare namespace API {
   };
 
   type DeleteAnnouncementRequest = {
-    id: number;
-  };
-
-  type DeleteApplicationRequest = {
-    id: number;
-  };
-
-  type DeleteApplicationVersionRequest = {
     id: number;
   };
 
@@ -1682,25 +1648,6 @@ declare namespace API {
     popup: boolean;
   };
 
-  type UpdateApplicationRequest = {
-    id: number;
-    icon: string;
-    name: string;
-    description: string;
-    subscribe_type: string;
-    platform: ApplicationPlatform;
-  };
-
-  type UpdateApplicationVersionRequest = {
-    id: number;
-    url: string;
-    version: string;
-    description: string;
-    platform: 'windows' | 'mac' | 'linux' | 'android' | 'ios' | 'harmony';
-    is_default: boolean;
-    application_id: number;
-  };
-
   type UpdateAuthMethodConfigRequest = {
     id: number;
     method: string;
@@ -1795,7 +1742,6 @@ declare namespace API {
     scheme?: string;
     user_agent: string;
     is_default: boolean;
-    proxy_template: string;
     template: string;
     output_format: string;
     download_link?: DownloadLink;

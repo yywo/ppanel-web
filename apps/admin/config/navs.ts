@@ -53,11 +53,6 @@ export const navs = [
         url: '/dashboard/product',
         icon: 'flat-color-icons:shop',
       },
-      {
-        title: 'Application Management',
-        url: '/dashboard/application',
-        icon: 'flat-color-icons:touchscreen-smartphone',
-      },
     ],
   },
   {

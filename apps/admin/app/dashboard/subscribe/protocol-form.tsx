@@ -138,7 +138,6 @@ export function ProtocolForm() {
           onCheckedChange={async (checked) => {
             await updateSubscribeApplication({
               ...row.original,
-              proxy_template: '',
               is_default: checked,
             });
             tableRef.current?.refresh();
@@ -289,7 +288,6 @@ export function ProtocolForm() {
       if (editingClient) {
         await updateSubscribeApplication({
           ...data,
-          proxy_template: '',
           is_default: editingClient.is_default,
           id: editingClient.id,
         });

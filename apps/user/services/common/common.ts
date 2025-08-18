@@ -1,5 +1,5 @@
 // @ts-ignore
-/* eslint-disable */
+
 import request from '@/utils/request';
 
 /** Get Ads GET /v1/common/ads */
@@ -13,14 +13,6 @@ export async function getAds(
     params: {
       ...params,
     },
-    ...(options || {}),
-  });
-}
-
-/** Get Tos Content GET /v1/common/application */
-export async function getApplication(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetAppcationResponse }>('/v1/common/application', {
-    method: 'GET',
     ...(options || {}),
   });
 }
