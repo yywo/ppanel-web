@@ -652,23 +652,15 @@ declare namespace API {
   type GetMessageLogListParams = {
     page: number;
     size: number;
-    type: string;
-    platform?: string;
-    to?: string;
-    subject?: string;
-    content?: string;
-    status?: number;
+    type: number;
+    search?: string;
   };
 
   type GetMessageLogListRequest = {
     page: number;
     size: number;
-    type: string;
-    platform?: string;
-    to?: string;
-    subject?: string;
-    content?: string;
-    status?: number;
+    type: number;
+    search?: string;
   };
 
   type GetMessageLogListResponse = {
@@ -968,6 +960,23 @@ declare namespace API {
     user_id: number;
   };
 
+  type GetUserSubscribeResetTrafficLogsParams = {
+    page: number;
+    size: number;
+    user_subscribe_id: number;
+  };
+
+  type GetUserSubscribeResetTrafficLogsRequest = {
+    page: number;
+    size: number;
+    user_subscribe_id: number;
+  };
+
+  type GetUserSubscribeResetTrafficLogsResponse = {
+    list: ResetSubscribeTrafficLog[];
+    total: number;
+  };
+
   type GetUserSubscribeTrafficLogsParams = {
     page: number;
     size: number;
@@ -1015,14 +1024,13 @@ declare namespace API {
 
   type MessageLog = {
     id: number;
-    type: string;
+    type: number;
     platform: string;
     to: string;
     subject: string;
-    content: string;
+    content: Record<string, any>;
     status: number;
     created_at: number;
-    updated_at: number;
   };
 
   type MobileAuthenticateConfig = {
@@ -1306,6 +1314,14 @@ declare namespace API {
 
   type RenewalOrderResponse = {
     order_no: string;
+  };
+
+  type ResetSubscribeTrafficLog = {
+    id: number;
+    type: number;
+    user_subscribe_id: number;
+    order_no?: string;
+    reset_at: number;
   };
 
   type ResetTrafficOrderRequest = {

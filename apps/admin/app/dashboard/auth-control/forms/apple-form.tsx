@@ -61,6 +61,7 @@ export default function AppleForm() {
 
       return data.data;
     },
+    enabled: open,
   });
 
   const form = useForm<AppleFormData>({

@@ -1,27 +1,41 @@
 {
-  "ADS Config": "ADS配置",
+  "ADS Config": "广告配置",
   "Announcement Management": "公告管理",
-  "Application Management": "应用管理",
+
   "Auth Control": "认证控制",
+  "Balance": "余额变动",
+  "Commerce": "商务",
+  "Commission": "佣金记录",
   "Coupon Management": "优惠券管理",
   "Dashboard": "仪表盘",
+
   "Document Management": "文档管理",
-  "Finance": "财务",
+
+  "Email": "邮件日志",
+  "Gift": "赠送记录",
+  "Login": "登录日志",
+  "Logs & Analytics": "日志与分析",
+  "Maintenance": "运维",
   "Marketing Management": "营销管理",
+  "Node Management": "节点管理",
   "Order Management": "订单管理",
   "Payment Config": "支付配置",
-  "Product Management": "产品管理",
-  "Protocol Management": "协议管理",
-  "Rule Management": "规则管理",
-  "Server": "服务",
+  "Product Management": "商品管理",
+
+  "Register": "注册日志",
+  "Reset Subscribe": "重置订阅",
+  "SMS": "短信日志",
   "Server Management": "服务管理",
-  "Settings": "设置",
+  "Server Traffic": "服务流量",
+  "Subscribe": "订阅日志",
   "Subscribe Config": "订阅配置",
+  "Subscribe Traffic": "订阅流量",
+  "System": "系统",
   "System Config": "系统配置",
-  "System Management": "系统管理",
   "System Tool": "系统工具",
+
   "Ticket Management": "工单管理",
-  "User": "用户",
   "User Detail": "用户详情",
-  "User Management": "用户管理"
+  "User Management": "用户管理",
+  "Users & Support": "用户与支持"
 }

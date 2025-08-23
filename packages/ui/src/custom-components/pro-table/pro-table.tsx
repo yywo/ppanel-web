@@ -30,6 +30,7 @@ import { ColumnToggle } from '@workspace/ui/custom-components/pro-table/column-t
 import { Pagination } from '@workspace/ui/custom-components/pro-table/pagination';
 import { SortableRow } from '@workspace/ui/custom-components/pro-table/sortable-row';
 import { ProTableWrapper } from '@workspace/ui/custom-components/pro-table/wrapper';
+import { cn } from '@workspace/ui/lib/utils.js';
 import { useSize } from 'ahooks';
 import { GripVertical, ListRestart, Loader, RefreshCcw } from 'lucide-react';
 import React, { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';
@@ -258,7 +259,10 @@ export function ProTable<
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <TableHead key={header.id} className={getTableHeaderClass(header.column.id)}>
+                    <TableHead
+                      key={header.id}
+                      className={cn('!z-auto', getTableHeaderClass(header.column.id))}
+                    >
                       <ColumnHeader
                         header={header}
                         text={{

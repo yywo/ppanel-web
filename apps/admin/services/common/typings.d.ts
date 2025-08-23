@@ -327,14 +327,13 @@ declare namespace API {
 
   type MessageLog = {
     id: number;
-    type: string;
+    type: number;
     platform: string;
     to: string;
     subject: string;
-    content: string;
+    content: Record<string, any>;
     status: number;
     created_at: number;
-    updated_at: number;
   };
 
   type MobileAuthenticateConfig = {
@@ -616,6 +615,14 @@ declare namespace API {
     password: string;
     code?: string;
     cf_token?: string;
+  };
+
+  type ResetSubscribeTrafficLog = {
+    id: number;
+    type: number;
+    user_subscribe_id: number;
+    order_no?: string;
+    reset_at: number;
   };
 
   type ResetTrafficOrderRequest = {

@@ -1,5 +1,5 @@
 // @ts-ignore
-
+/* eslint-disable */
 import request from '@/utils/request';
 
 /** Get Ads GET /v1/common/ads */

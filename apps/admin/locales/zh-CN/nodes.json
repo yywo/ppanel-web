@@ -1,0 +1,38 @@
+{
+  "cancel": "取消",
+  "confirm": "确定",
+  "confirmDeleteDesc": "此操作不可撤销。",
+  "confirmDeleteTitle": "删除该节点？",
+  "copied": "复制成功",
+  "copy": "复制",
+  "create": "新建",
+  "created": "创建成功",
+  "delete": "删除",
+  "deleted": "删除成功",
+  "drawerCreateTitle": "新建节点",
+  "drawerEditTitle": "编辑节点",
+  "edit": "编辑",
+  "enabled": "是否启用",
+  "enabled_off": "未启用",
+  "enabled_on": "已启用",
+  "errors": {
+    "nameRequired": "请输入名称",
+    "serverRequired": "请选择服务器",
+    "serverAddrRequired": "请输入入口地址",
+    "protocolRequired": "请选择协议",
+    "portRange": "端口范围 1–65535"
+  },
+  "name": "名称",
+  "pageTitle": "节点管理",
+  "port": "端口",
+  "protocol": "协议类型",
+  "select_protocol": "搜索协议…",
+  "select_server": "搜索服务器…",
+  "server": "服务器",
+  "server_addr": "入口地址",
+  "server_addr_port": "服务器地址:端口",
+  "tags": "标签",
+
+  "tags_placeholder": "输入后回车添加",
+  "updated": "更新成功"
+}

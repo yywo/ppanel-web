@@ -53,6 +53,7 @@ export default function TelegramForm() {
 
       return data.data;
     },
+    enabled: open,
   });
 
   const form = useForm<TelegramFormData>({

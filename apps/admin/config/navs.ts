@@ -4,86 +4,33 @@ export const navs = [
     url: '/dashboard',
     icon: 'flat-color-icons:globe',
   },
-  {
-    title: 'System Management',
-    items: [
-      {
-        title: 'System Config',
-        url: '/dashboard/system',
-        icon: 'flat-color-icons:services',
-      },
-      {
-        title: 'Auth Control',
-        url: '/dashboard/auth-control',
-        icon: 'flat-color-icons:lock-portrait',
-      },
-      {
-        title: 'Payment Config',
-        url: '/dashboard/payment',
-        icon: 'flat-color-icons:currency-exchange',
-      },
 
-      {
-        title: 'ADS Config',
-        url: '/dashboard/ads',
-        icon: 'flat-color-icons:electrical-sensor',
-      },
-      {
-        title: 'System Tool',
-        url: '/dashboard/tool',
-        icon: 'flat-color-icons:info',
-      },
-    ],
-  },
   {
-    title: 'Server',
+    title: 'Maintenance',
+    icon: 'flat-color-icons:data-protection',
     items: [
-      {
-        title: 'Subscribe Config',
-        url: '/dashboard/subscribe',
-        icon: 'flat-color-icons:ruler',
-      },
       {
         title: 'Server Management',
         url: '/dashboard/server',
         icon: 'flat-color-icons:data-protection',
       },
       {
-        title: 'Product Management',
-        url: '/dashboard/product',
-        icon: 'flat-color-icons:shop',
+        title: 'Server Management',
+        url: '/dashboard/servers',
+        icon: 'flat-color-icons:data-protection',
       },
+      { title: 'Node Management', url: '/dashboard/nodes', icon: 'flat-color-icons:mind-map' },
+      { title: 'Subscribe Config', url: '/dashboard/subscribe', icon: 'flat-color-icons:ruler' },
+      { title: 'Product Management', url: '/dashboard/product', icon: 'flat-color-icons:shop' },
     ],
   },
+
   {
-    title: 'Finance',
+    title: 'Commerce',
+    icon: 'flat-color-icons:sales-performance',
     items: [
-      {
-        title: 'Order Management',
-        url: '/dashboard/order',
-        icon: 'flat-color-icons:todo-list',
-      },
-      {
-        title: 'Coupon Management',
-        url: '/dashboard/coupon',
-        icon: 'flat-color-icons:bookmark',
-      },
-    ],
-  },
-  {
-    title: 'User',
-    items: [
-      {
-        title: 'User Management',
-        url: '/dashboard/user',
-        icon: 'flat-color-icons:conference-call',
-        items: [
-          {
-            title: 'User Detail',
-            url: '/dashboard/user/:id',
-          },
-        ],
-      },
+      { title: 'Order Management', url: '/dashboard/order', icon: 'flat-color-icons:todo-list' },
+      { title: 'Coupon Management', url: '/dashboard/coupon', icon: 'flat-color-icons:bookmark' },
       {
         title: 'Marketing Management',
         url: '/dashboard/marketing',
@@ -93,6 +40,19 @@ export const navs = [
         title: 'Announcement Management',
         url: '/dashboard/announcement',
         icon: 'flat-color-icons:advertising',
+      },
+    ],
+  },
+
+  {
+    title: 'Users & Support',
+    icon: 'flat-color-icons:collaboration',
+    items: [
+      {
+        title: 'User Management',
+        url: '/dashboard/user',
+        icon: 'flat-color-icons:conference-call',
+        items: [{ title: 'User Detail', url: '/dashboard/user/:id' }],
       },
       {
         title: 'Ticket Management',
@@ -106,6 +66,61 @@ export const navs = [
       },
     ],
   },
+
+  {
+    title: 'System',
+    icon: 'flat-color-icons:services',
+    items: [
+      { title: 'System Config', url: '/dashboard/system', icon: 'flat-color-icons:services' },
+      {
+        title: 'Auth Control',
+        url: '/dashboard/auth-control',
+        icon: 'flat-color-icons:lock-portrait',
+      },
+      {
+        title: 'Payment Config',
+        url: '/dashboard/payment',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      { title: 'ADS Config', url: '/dashboard/ads', icon: 'flat-color-icons:electrical-sensor' },
+      { title: 'System Tool', url: '/dashboard/tool', icon: 'flat-color-icons:info' },
+    ],
+  },
+
+  // 日志与分析
+  {
+    title: 'Logs & Analytics',
+    icon: 'flat-color-icons:statistics',
+    items: [
+      { title: 'Login', url: '/dashboard/log/login', icon: 'flat-color-icons:unlock' },
+      { title: 'Register', url: '/dashboard/log/register', icon: 'flat-color-icons:contacts' },
+      { title: 'Email', url: '/dashboard/log/email', icon: 'flat-color-icons:feedback' },
+      { title: 'SMS', url: '/dashboard/log/sms', icon: 'flat-color-icons:sms' },
+      { title: 'Subscribe', url: '/dashboard/log/subscribe', icon: 'flat-color-icons:workflow' },
+      {
+        title: 'Reset Subscribe',
+        url: '/dashboard/log/reset-subscribe',
+        icon: 'flat-color-icons:refresh',
+      },
+      {
+        title: 'Subscribe Traffic',
+        url: '/dashboard/log/subscribe-traffic',
+        icon: 'flat-color-icons:statistics',
+      },
+      {
+        title: 'Server Traffic',
+        url: '/dashboard/log/server-traffic',
+        icon: 'flat-color-icons:statistics',
+      },
+      {
+        title: 'Balance',
+        url: '/dashboard/log/balance',
+        icon: 'flat-color-icons:sales-performance',
+      },
+      { title: 'Commission', url: '/dashboard/log/commission', icon: 'flat-color-icons:debt' },
+      { title: 'Gift', url: '/dashboard/log/gift', icon: 'flat-color-icons:donate' },
+    ],
+  },
 ];
 
 export function findNavByUrl(url: string) {
@@ -114,7 +129,6 @@ export function findNavByUrl(url: string) {
     const regex = new RegExp(`^${regexPattern}$`);
     return regex.test(path);
   }
-
   function findNav(items: any[], url: string, path: any[] = []): any[] {
     for (const item of items) {
       if (item.url === url || (item.url && matchDynamicRoute(item.url, url))) {
@@ -122,13 +136,10 @@ export function findNavByUrl(url: string) {
       }
       if (item.items) {
         const result = findNav(item.items, url, [...path, item]);
-        if (result.length) {
-          return result;
-        }
+        if (result.length) return result;
       }
     }
     return [];
   }
-
   return findNav(navs, url);
 }

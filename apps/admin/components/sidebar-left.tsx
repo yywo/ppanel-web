@@ -1,28 +1,137 @@
 'use client';
 import { navs } from '@/config/navs';
 import useGlobalStore from '@/config/use-global';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from '@workspace/ui/components/sidebar';
 import { Icon } from '@workspace/ui/custom-components/icon';
+import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import React, { useState } from 'react';
+
+type Nav = (typeof navs)[number];
+
+function hasChildren(obj: any): obj is { items: any[] } {
+  return obj && Array.isArray((obj as any).items) && (obj as any).items.length > 0;
+}
 
 export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { common } = useGlobalStore();
   const { site } = common;
   const t = useTranslations('menu');
   const pathname = usePathname();
+  const { state, isMobile } = useSidebar();
+
+  const firstGroupTitle = (navs as typeof navs).find((n) => hasChildren(n))?.title ?? '';
+
+  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
+    const groups: Record<string, boolean> = {};
+    (navs as typeof navs).forEach((nav) => {
+      if (hasChildren(nav)) groups[nav.title] = nav.title === firstGroupTitle;
+    });
+    return groups;
+  });
+
+  const handleToggleGroup = (title: string) => {
+    setOpenGroups((prev) => {
+      const currentlyOpen = !!prev[title];
+      const next: Record<string, boolean> = {};
+      (navs as typeof navs).forEach((nav) => {
+        if (hasChildren(nav)) next[nav.title] = false;
+      });
+      next[title] = !currentlyOpen;
+      return next;
+    });
+  };
+
+  const isActiveUrl = (url: string) =>
+    url === '/dashboard' ? pathname === url : pathname.startsWith(url);
+
+  const isGroupActive = (nav: Nav) =>
+    (hasChildren(nav) && nav.items.some((i: any) => isActiveUrl(i.url))) ||
+    ('url' in nav && nav.url ? isActiveUrl(nav.url as string) : false);
+
+  const renderCollapsedFlyout = (nav: Nav) => {
+    const ParentButton = (
+      <SidebarMenuButton
+        size='sm'
+        className='h-8 justify-center'
+        isActive={false}
+        aria-label={t(nav.title)}
+      >
+        {'url' in nav && nav.url ? (
+          <Link href={nav.url as string}>
+            {'icon' in nav && (nav as any).icon ? (
+              <Icon icon={(nav as any).icon} className='size-4' />
+            ) : null}
+          </Link>
+        ) : (
+          <>
+            {'icon' in nav && (nav as any).icon ? (
+              <Icon icon={(nav as any).icon} className='size-4' />
+            ) : null}
+          </>
+        )}
+      </SidebarMenuButton>
+    );
+
+    if (!hasChildren(nav)) return ParentButton;
+
+    return (
+      <HoverCard openDelay={40} closeDelay={200}>
+        <HoverCardTrigger asChild>{ParentButton}</HoverCardTrigger>
+        <HoverCardContent
+          side='right'
+          align='start'
+          sideOffset={10}
+          className='z-[9999] w-64 p-0'
+          avoidCollisions
+          collisionPadding={8}
+        >
+          <div className='flex items-center gap-2 border-b px-3 py-2'>
+            {'icon' in nav && (nav as any).icon ? (
+              <Icon icon={(nav as any).icon} className='size-4' />
+            ) : null}
+            <span className='text-muted-foreground truncate text-xs font-medium'>
+              {t(nav.title)}
+            </span>
+          </div>
+
+          <ul className='p-1'>
+            {nav.items.map((item: any) => (
+              <li key={item.title}>
+                <Link
+                  href={item.url}
+                  className={[
+                    'flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm',
+                    isActiveUrl(item.url)
+                      ? 'bg-accent text-accent-foreground'
+                      : 'hover:bg-accent/60',
+                  ].join(' ')}
+                >
+                  {item.icon && <Icon icon={item.icon} className='size-4' />}
+                  <span className='truncate'>{t(item.title)}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </HoverCardContent>
+      </HoverCard>
+    );
+  };
+
   return (
     <Sidebar className='border-r-0' collapsible='icon' {...props}>
       <SidebarHeader className='p-2'>
@@ -49,39 +158,105 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+
       <SidebarContent className='py-2'>
         <SidebarMenu>
-          {navs.map((nav) => (
-            <SidebarGroup key={nav.title} className='py-1'>
-              {nav.items && (
-                <SidebarGroupLabel className='py-1 text-xs'>{t(nav.title)}</SidebarGroupLabel>
-              )}
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {(nav.items || [nav]).map((item) => (
-                    <SidebarMenuItem key={item.title}>
+          {!isMobile && state === 'collapsed'
+            ? (navs as typeof navs).map((nav) => (
+                <SidebarMenuItem key={nav.title} className='mx-auto'>
+                  {renderCollapsedFlyout(nav)}
+                </SidebarMenuItem>
+              ))
+            : (navs as typeof navs).map((nav) => {
+                if (hasChildren(nav)) {
+                  const isOpen = openGroups[nav.title] ?? false;
+                  return (
+                    <SidebarGroup key={nav.title} className={cn('py-1')}>
                       <SidebarMenuButton
-                        asChild
                         size='sm'
-                        tooltip={t(item.title)}
-                        className='h-8'
-                        isActive={
-                          item.url === '/dashboard'
-                            ? pathname === item.url
-                            : pathname.startsWith(item.url)
-                        }
+                        className={cn('mb-2 flex h-8 w-full items-center justify-between', {
+                          'bg-accent': isOpen,
+                        })}
+                        onClick={() => handleToggleGroup(nav.title)}
+                        tabIndex={0}
+                        style={{ fontWeight: 500 }}
+                        // isActive={isGroupActive(nav)}
                       >
-                        <Link href={item.url}>
-                          {item.icon && <Icon icon={item.icon} className='size-4' />}
-                          <span className='text-sm'>{t(item.title)}</span>
-                        </Link>
+                        <span className='flex min-w-0 items-center gap-2'>
+                          {'icon' in nav && (nav as any).icon ? (
+                            <Icon icon={(nav as any).icon} className='size-4 shrink-0' />
+                          ) : null}
+                          <span className='truncate text-sm'>{t(nav.title)}</span>
+                        </span>
+                        <Icon
+                          icon='lucide:chevron-down'
+                          className={`ml-2 size-4 transition-transform ${isOpen ? '' : '-rotate-90'}`}
+                        />
                       </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          ))}
+                      {isOpen && (
+                        <SidebarGroupContent className='px-4'>
+                          <SidebarMenu>
+                            {nav.items.map((item: any) => (
+                              <SidebarMenuItem key={item.title}>
+                                <SidebarMenuButton
+                                  asChild
+                                  size='sm'
+                                  className='h-8'
+                                  tooltip={t(item.title)}
+                                  isActive={isActiveUrl(item.url)}
+                                >
+                                  <Link href={item.url}>
+                                    {item.icon && <Icon icon={item.icon} className='size-4' />}
+                                    <span className='text-sm'>{t(item.title)}</span>
+                                  </Link>
+                                </SidebarMenuButton>
+                              </SidebarMenuItem>
+                            ))}
+                          </SidebarMenu>
+                        </SidebarGroupContent>
+                      )}
+                    </SidebarGroup>
+                  );
+                }
+
+                return (
+                  <SidebarGroup key={nav.title} className='py-1'>
+                    <SidebarGroupContent>
+                      <SidebarMenu>
+                        <SidebarMenuItem>
+                          <SidebarMenuButton
+                            asChild={'url' in nav && !!(nav as any).url}
+                            size='sm'
+                            className='h-8'
+                            tooltip={t(nav.title)}
+                            isActive={
+                              'url' in nav && (nav as any).url
+                                ? isActiveUrl((nav as any).url)
+                                : false
+                            }
+                          >
+                            {'url' in nav && (nav as any).url ? (
+                              <Link href={(nav as any).url}>
+                                {'icon' in nav && (nav as any).icon ? (
+                                  <Icon icon={(nav as any).icon} className='size-4' />
+                                ) : null}
+                                <span className='text-sm'>{t(nav.title)}</span>
+                              </Link>
+                            ) : (
+                              <>
+                                {'icon' in nav && (nav as any).icon ? (
+                                  <Icon icon={(nav as any).icon} className='size-4' />
+                                ) : null}
+                                <span className='text-sm'>{t(nav.title)}</span>
+                              </>
+                            )}
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      </SidebarMenu>
+                    </SidebarGroupContent>
+                  </SidebarGroup>
+                );
+              })}
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>

@@ -18,6 +18,8 @@ export default getRequestConfig(async () => {
     'ads': (await import(`./${locale}/ads.json`)).default,
     'payment': (await import(`./${locale}/payment.json`)).default,
     'server': (await import(`./${locale}/server.json`)).default,
+    'servers': (await import(`./${locale}/servers.json`)).default,
+    'nodes': (await import(`./${locale}/nodes.json`)).default,
     'product': (await import(`./${locale}/product.json`)).default,
     'order': (await import(`./${locale}/order.json`)).default,
     'coupon': (await import(`./${locale}/coupon.json`)).default,

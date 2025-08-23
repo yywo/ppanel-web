@@ -53,6 +53,7 @@ export default function GithubForm() {
 
       return data.data;
     },
+    enabled: open,
   });
 
   const form = useForm<GithubFormData>({
