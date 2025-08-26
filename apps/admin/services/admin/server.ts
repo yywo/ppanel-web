@@ -2,10 +2,13 @@
 /* eslint-disable */
 import request from '@/utils/request';
 
-/** Update node PUT /v1/admin/server/ */
-export async function updateNode(body: API.UpdateNodeRequest, options?: { [key: string]: any }) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/', {
-    method: 'PUT',
+/** Create Server POST /v1/admin/server/create */
+export async function createServer(
+  body: API.CreateServerRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/create', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -14,9 +17,61 @@ export async function updateNode(body: API.UpdateNodeRequest, options?: { [key: 
   });
 }
 
-/** Create node POST /v1/admin/server/ */
+/** Delete Server POST /v1/admin/server/delete */
+export async function deleteServer(
+  body: API.DeleteServerRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/delete', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Filter Server List GET /v1/admin/server/list */
+export async function filterServerList(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.FilterServerListParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.FilterServerListResponse }>('/v1/admin/server/list', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
+    ...(options || {}),
+  });
+}
+
+/** Check if there is any server or node to migrate GET /v1/admin/server/migrate/has */
+export async function hasMigrateSeverNode(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.HasMigrateSeverNodeResponse }>(
+    '/v1/admin/server/migrate/has',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
+/** Migrate server and node data to new database POST /v1/admin/server/migrate/run */
+export async function migrateServerNode(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.MigrateServerNodeResponse }>(
+    '/v1/admin/server/migrate/run',
+    {
+      method: 'POST',
+      ...(options || {}),
+    },
+  );
+}
+
+/** Create Node POST /v1/admin/server/node/create */
 export async function createNode(body: API.CreateNodeRequest, options?: { [key: string]: any }) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/', {
+  return request<API.Response & { data?: any }>('/v1/admin/server/node/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -26,10 +81,10 @@ export async function createNode(body: API.CreateNodeRequest, options?: { [key: 
   });
 }
 
-/** Delete node DELETE /v1/admin/server/ */
+/** Delete Node POST /v1/admin/server/node/delete */
 export async function deleteNode(body: API.DeleteNodeRequest, options?: { [key: string]: any }) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/', {
-    method: 'DELETE',
+  return request<API.Response & { data?: any }>('/v1/admin/server/node/delete', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -38,57 +93,30 @@ export async function deleteNode(body: API.DeleteNodeRequest, options?: { [key: 
   });
 }
 
-/** Batch delete node DELETE /v1/admin/server/batch */
-export async function batchDeleteNode(
-  body: API.BatchDeleteNodeRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/batch', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Get node detail GET /v1/admin/server/detail */
-export async function getNodeDetail(
+/** Filter Node List GET /v1/admin/server/node/list */
+export async function filterNodeList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.GetNodeDetailParams,
+  params: API.FilterNodeListParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: API.Server }>('/v1/admin/server/detail', {
-    method: 'GET',
-    params: {
-      ...params,
+  return request<API.Response & { data?: API.FilterNodeListResponse }>(
+    '/v1/admin/server/node/list',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
     },
-    ...(options || {}),
-  });
+  );
 }
 
-/** Update node group PUT /v1/admin/server/group */
-export async function updateNodeGroup(
-  body: API.UpdateNodeGroupRequest,
+/** Toggle Node Status POST /v1/admin/server/node/status/toggle */
+export async function toggleNodeStatus(
+  body: API.ToggleNodeStatusRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/group', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Create node group POST /v1/admin/server/group */
-export async function createNodeGroup(
-  body: API.CreateNodeGroupRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/group', {
+  return request<API.Response & { data?: any }>('/v1/admin/server/node/status/toggle', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -98,13 +126,10 @@ export async function createNodeGroup(
   });
 }
 
-/** Delete node group DELETE /v1/admin/server/group */
-export async function deleteNodeGroup(
-  body: API.DeleteNodeGroupRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/group', {
-    method: 'DELETE',
+/** Update Node POST /v1/admin/server/node/update */
+export async function updateNode(body: API.UpdateNodeRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/node/update', {
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -113,68 +138,30 @@ export async function deleteNodeGroup(
   });
 }
 
-/** Batch delete node group DELETE /v1/admin/server/group/batch */
-export async function batchDeleteNodeGroup(
-  body: API.BatchDeleteNodeGroupRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/group/batch', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Get node group list GET /v1/admin/server/group/list */
-export async function getNodeGroupList(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetNodeGroupListResponse }>(
-    '/v1/admin/server/group/list',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
-}
-
-/** Get node list GET /v1/admin/server/list */
-export async function getNodeList(
+/** Get Server Protocols GET /v1/admin/server/protocols */
+export async function getServerProtocols(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.GetNodeListParams,
+  params: API.GetServerProtocolsParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: API.GetNodeServerListResponse }>('/v1/admin/server/list', {
-    method: 'GET',
-    params: {
-      ...params,
+  return request<API.Response & { data?: API.GetServerProtocolsResponse }>(
+    '/v1/admin/server/protocols',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
     },
-    ...(options || {}),
-  });
+  );
 }
 
-/** Update rule group PUT /v1/admin/server/rule_group */
-export async function updateRuleGroup(
-  body: API.UpdateRuleGroupRequest,
+/** Update Server POST /v1/admin/server/update */
+export async function updateServer(
+  body: API.UpdateServerRequest,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Create rule group POST /v1/admin/server/rule_group */
-export async function createRuleGroup(
-  body: API.CreateRuleGroupRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
+  return request<API.Response & { data?: any }>('/v1/admin/server/update', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -182,53 +169,4 @@ export async function createRuleGroup(
     data: body,
     ...(options || {}),
   });
-}
-
-/** Delete rule group DELETE /v1/admin/server/rule_group */
-export async function deleteRuleGroup(
-  body: API.DeleteRuleGroupRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/rule_group', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Get rule group list GET /v1/admin/server/rule_group_list */
-export async function getRuleGroupList(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetRuleGroupResponse }>(
-    '/v1/admin/server/rule_group_list',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
-}
-
-/** Node sort  POST /v1/admin/server/sort */
-export async function nodeSort(body: API.NodeSortRequest, options?: { [key: string]: any }) {
-  return request<API.Response & { data?: any }>('/v1/admin/server/sort', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
-/** Get node tag list GET /v1/admin/server/tag/list */
-export async function getNodeTagList(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetNodeTagListResponse }>(
-    '/v1/admin/server/tag/list',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
 }

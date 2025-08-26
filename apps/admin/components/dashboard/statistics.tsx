@@ -82,19 +82,19 @@ export default function Statistics() {
             title: t('onlineIPCount'),
             value: ServerTotal?.online_user_ips || 0,
             icon: 'uil:users-alt',
-            href: '/dashboard/server',
+            href: '/dashboard/servers',
           },
           {
             title: t('onlineNodeCount'),
             value: ServerTotal?.online_servers || 0,
             icon: 'uil:server-network',
-            href: '/dashboard/server',
+            href: '/dashboard/servers',
           },
           {
             title: t('offlineNodeCount'),
             value: ServerTotal?.offline_servers || 0,
             icon: 'uil:server-network-alt',
-            href: '/dashboard/server',
+            href: '/dashboard/servers',
           },
           {
             title: t('pendingTickets'),

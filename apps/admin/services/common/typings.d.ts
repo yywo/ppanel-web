@@ -124,6 +124,15 @@ declare namespace API {
     enabled: boolean;
   };
 
+  type BalanceLog = {
+    type: number;
+    user_id: number;
+    amount: number;
+    order_id?: number;
+    balance: number;
+    timestamp: number;
+  };
+
   type CheckoutOrderRequest = {
     orderNo: string;
     returnUrl?: string;
@@ -164,6 +173,14 @@ declare namespace API {
 
   type CloseOrderRequest = {
     orderNo: string;
+  };
+
+  type CommissionLog = {
+    type: number;
+    user_id: number;
+    amount: number;
+    order_no: string;
+    created_at: number;
   };
 
   type Coupon = {
@@ -354,14 +371,6 @@ declare namespace API {
     prefix: string;
   };
 
-  type NodeStatus = {
-    online: Record<string, any>;
-    cpu: number;
-    mem: number;
-    disk: number;
-    updated_at: number;
-  };
-
   type OAthLoginRequest = {
     /** google, facebook, apple, telegram, github etc. */
     method: string;
@@ -376,11 +385,6 @@ declare namespace API {
 
   type OAuthLoginResponse = {
     redirect: string;
-  };
-
-  type OnlineUser = {
-    uid: number;
-    ip: string;
   };
 
   type Order = {
@@ -670,27 +674,6 @@ declare namespace API {
     telephone_area_code: string;
   };
 
-  type Server = {
-    id: number;
-    tags: string[];
-    country: string;
-    city: string;
-    name: string;
-    server_addr: string;
-    relay_mode: string;
-    relay_node: NodeRelay[];
-    speed_limit: number;
-    traffic_ratio: number;
-    group_id: number;
-    protocol: string;
-    config: Record<string, any>;
-    enable: boolean;
-    created_at: number;
-    updated_at: number;
-    status: NodeStatus;
-    sort: number;
-  };
-
   type ServerGroup = {
     id: number;
     name: string;
@@ -759,8 +742,8 @@ declare namespace API {
     device_limit: number;
     quota: number;
     group_id: number;
-    server_group: number[];
-    server: number[];
+    nodes: number[];
+    node_tags: string[];
     show: boolean;
     sell: boolean;
     sort: number;
@@ -936,16 +919,6 @@ declare namespace API {
     auth_type: string;
     auth_identifier: string;
     verified: boolean;
-  };
-
-  type UserBalanceLog = {
-    id: number;
-    user_id: number;
-    amount: number;
-    type: number;
-    order_id: number;
-    balance: number;
-    created_at: number;
   };
 
   type UserDevice = {

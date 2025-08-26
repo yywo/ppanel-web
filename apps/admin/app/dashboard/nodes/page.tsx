@@ -1,124 +1,50 @@
 'use client';
 
 import { ProTable, ProTableActions } from '@/components/pro-table';
+import {
+  createNode,
+  deleteNode,
+  filterNodeList,
+  filterServerList,
+  toggleNodeStatus,
+  updateNode,
+} from '@/services/admin/server';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { useTranslations } from 'next-intl';
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'sonner';
-import NodeForm, { type NodeFormValues } from './node-form';
-
-type NodeItem = NodeFormValues & { id: number; enabled: boolean; sort: number };
-
-let mock: NodeItem[] = [
-  {
-    id: 1,
-    enabled: false,
-    name: 'Node A',
-    server_id: 101,
-    protocol: 'shadowsocks',
-    server_addr: 'jp-1.example.com',
-    port: 443,
-    tags: ['hk', 'premium'],
-    sort: 1,
-  },
-  {
-    id: 2,
-    enabled: true,
-    name: 'Node B',
-    server_id: 102,
-    protocol: 'vless',
-    server_addr: 'hk-edge.example.com',
-    port: 8443,
-    tags: ['jp'],
-    sort: 2,
-  },
-];
-
-const list = async () => ({ list: mock, total: mock.length });
-const create = async (v: NodeFormValues) => {
-  mock.push({
-    id: Date.now(),
-    enabled: false,
-    sort: 0,
-    ...v,
-  });
-  return true;
-};
-const update = async (id: number, v: NodeFormValues) => {
-  mock = mock.map((x) => (x.id === id ? { ...x, ...v } : x));
-  return true;
-};
-const remove = async (id: number) => {
-  mock = mock.filter((x) => x.id !== id);
-  return true;
-};
-const setState = async (id: number, en: boolean) => {
-  mock = mock.map((x) => (x.id === id ? { ...x, enabled: en } : x));
-  return true;
-};
-
-type ProtocolName = 'shadowsocks' | 'vmess' | 'vless' | 'trojan' | 'hysteria2' | 'tuic' | 'anytls';
-type ServerProtocolItem = { protocol: ProtocolName; enabled: boolean; config?: { port?: number } };
-type ServerRow = { id: number; name: string; server_addr: string; protocols: ServerProtocolItem[] };
-
-async function getServerListMock(): Promise<{ data: { list: ServerRow[] } }> {
-  return {
-    data: {
-      list: [
-        {
-          id: 101,
-          name: 'Tokyo-1',
-          server_addr: 'jp-1.example.com',
-          protocols: [
-            { protocol: 'shadowsocks', enabled: true, config: { port: 443 } },
-            { protocol: 'vless', enabled: true, config: { port: 8443 } },
-          ],
-        },
-        {
-          id: 102,
-          name: 'HK-Edge',
-          server_addr: 'hk-edge.example.com',
-          protocols: [
-            { protocol: 'vmess', enabled: true, config: { port: 443 } },
-            { protocol: 'vless', enabled: true, config: { port: 443 } },
-          ],
-        },
-      ],
-    },
-  };
-}
+import NodeForm from './node-form';
 
 export default function NodesPage() {
   const t = useTranslations('nodes');
   const ref = useRef<ProTableActions>(null);
   const [loading, setLoading] = useState(false);
 
-  const { data: serversResp } = useQuery({
-    queryKey: ['getServerListMock'],
-    queryFn: getServerListMock,
+  const { data: servers = [] } = useQuery({
+    queryKey: ['filterServerListAll', { page: 1, size: 1000 }],
+    queryFn: async () => {
+      const { data } = await filterServerList({ page: 1, size: 1000 });
+      return data?.data?.list || [];
+    },
   });
-  const servers: ServerRow[] = serversResp?.data?.list ?? [];
-  const serverMap = useMemo(() => {
-    const m = new Map<number, ServerRow>();
-    servers.forEach((s) => m.set(s.id, s));
-    return m;
-  }, [servers]);
 
-  const getServerName = (id?: number) => (id ? (serverMap.get(id)?.name ?? `#${id}`) : '—');
-  const getServerOriginAddr = (id?: number) => (id ? (serverMap.get(id)?.server_addr ?? '—') : '—');
+  const getServerName = (id?: number) =>
+    id ? (servers.find((s) => s.id === id)?.name ?? `#${id}`) : '—';
+  const getServerOriginAddr = (id?: number) =>
+    id ? (servers.find((s) => s.id === id)?.address ?? '—') : '—';
   const getProtocolOriginPort = (id?: number, proto?: string) => {
     if (!id || !proto) return '—';
-    const hit = serverMap.get(id)?.protocols?.find((p) => p.protocol === proto);
-    const p = hit?.config?.port;
+    const hit = servers.find((s) => s.id === id)?.protocols?.find((p) => (p as any).type === proto);
+    const p = (hit as any)?.port as number | undefined;
     return typeof p === 'number' ? String(p) : '—';
   };
 
   return (
-    <ProTable<NodeItem, { search: string }>
+    <ProTable<API.Node, { search: string }>
       action={ref}
       header={{
         title: t('pageTitle'),
@@ -129,11 +55,25 @@ export default function NodesPage() {
             loading={loading}
             onSubmit={async (values) => {
               setLoading(true);
-              await create(values);
-              toast.success(t('created'));
-              ref.current?.refresh();
-              setLoading(false);
-              return true;
+              try {
+                const body: API.CreateNodeRequest = {
+                  name: values.name,
+                  server_id: Number(values.server_id!),
+                  protocol: values.protocol,
+                  address: values.address,
+                  port: Number(values.port!),
+                  tags: values.tags || [],
+                  enabled: false,
+                };
+                await createNode(body);
+                toast.success(t('created'));
+                ref.current?.refresh();
+                setLoading(false);
+                return true;
+              } catch (e) {
+                setLoading(false);
+                return false;
+              }
             }}
           />
         ),
@@ -146,7 +86,7 @@ export default function NodesPage() {
             <Switch
               checked={row.original.enabled}
               onCheckedChange={async (v) => {
-                await setState(row.original.id, v);
+                await toggleNodeStatus({ id: row.original.id, enable: v });
                 toast.success(v ? t('enabled_on') : t('enabled_off'));
                 ref.current?.refresh();
               }}
@@ -156,13 +96,9 @@ export default function NodesPage() {
         { accessorKey: 'name', header: t('name') },
 
         {
-          id: 'server_addr_port',
-          header: t('server_addr_port'),
-          cell: ({ row }) => (
-            <Badge variant='outline'>
-              {(row.original.server_addr || '—') + ':' + (row.original.port ?? '—')}
-            </Badge>
-          ),
+          id: 'address_port',
+          header: `${t('address')}:${t('port')}`,
+          cell: ({ row }) => (row.original.address || '—') + ':' + (row.original.port ?? '—'),
         },
 
         {
@@ -174,7 +110,7 @@ export default function NodesPage() {
                 {getServerName(row.original.server_id)} ·{' '}
                 {getServerOriginAddr(row.original.server_id)}
               </Badge>
-              <Badge>
+              <Badge variant='outline'>
                 {row.original.protocol || '—'} ·{' '}
                 {getProtocolOriginPort(row.original.server_id, row.original.protocol)}
               </Badge>
@@ -198,24 +134,15 @@ export default function NodesPage() {
         },
       ]}
       params={[{ key: 'search' }]}
-      request={async (_pagination, filter) => {
-        const { list: items } = await list();
-        const kw = (filter?.search || '').toLowerCase().trim();
-        const filtered = kw
-          ? items.filter((i) =>
-              [
-                i.name,
-                getServerName(i.server_id),
-                getServerOriginAddr(i.server_id),
-                `${i.server_addr}:${i.port ?? ''}`,
-                `${i.protocol}:${getProtocolOriginPort(i.server_id, i.protocol)}`,
-                ...(i.tags || []),
-              ]
-                .filter(Boolean)
-                .some((v) => String(v).toLowerCase().includes(kw)),
-            )
-          : items;
-        return { list: filtered, total: filtered.length };
+      request={async (pagination, filter) => {
+        const { data } = await filterNodeList({
+          page: pagination.page,
+          size: pagination.size,
+          search: filter?.search || undefined,
+        });
+        const list = (data?.data?.list || []) as API.Node[];
+        const total = Number(data?.data?.total || list.length);
+        return { list, total };
       }}
       actions={{
         render: (row) => [
@@ -224,14 +151,36 @@ export default function NodesPage() {
             trigger={t('edit')}
             title={t('drawerEditTitle')}
             loading={loading}
-            initialValues={row}
+            initialValues={{
+              name: row.name,
+              server_id: row.server_id,
+              protocol: row.protocol as any,
+              address: row.address as any,
+              port: row.port as any,
+              tags: (row.tags as any) || [],
+            }}
             onSubmit={async (values) => {
               setLoading(true);
-              await update(row.id, values);
-              toast.success(t('updated'));
-              ref.current?.refresh();
-              setLoading(false);
-              return true;
+              try {
+                const body: API.UpdateNodeRequest = {
+                  id: row.id,
+                  name: values.name,
+                  server_id: Number(values.server_id!),
+                  protocol: values.protocol,
+                  address: values.address,
+                  port: Number(values.port!),
+                  tags: values.tags || [],
+                  enabled: row.enabled,
+                } as any;
+                await updateNode(body);
+                toast.success(t('updated'));
+                ref.current?.refresh();
+                setLoading(false);
+                return true;
+              } catch (e) {
+                setLoading(false);
+                return false;
+              }
             }}
           />,
           <ConfirmButton
@@ -240,7 +189,7 @@ export default function NodesPage() {
             title={t('confirmDeleteTitle')}
             description={t('confirmDeleteDesc')}
             onConfirm={async () => {
-              await remove(row.id);
+              await deleteNode({ id: row.id } as any);
               toast.success(t('deleted'));
               ref.current?.refresh();
             }}
@@ -251,8 +200,16 @@ export default function NodesPage() {
             key='copy'
             variant='outline'
             onClick={async () => {
-              const { id, enabled, ...rest } = row;
-              await create(rest);
+              const { id, enabled, created_at, updated_at, ...rest } = row as any;
+              await createNode({
+                name: rest.name,
+                server_id: rest.server_id,
+                protocol: rest.protocol,
+                address: rest.address,
+                port: rest.port,
+                tags: rest.tags || [],
+                enabled: false,
+              } as any);
               toast.success(t('copied'));
               ref.current?.refresh();
             }}
@@ -268,6 +225,7 @@ export default function NodesPage() {
               title={t('confirmDeleteTitle')}
               description={t('confirmDeleteDesc')}
               onConfirm={async () => {
+                await Promise.all(rows.map((r) => deleteNode({ id: r.id } as any)));
                 toast.success(t('deleted'));
                 ref.current?.refresh();
               }}
@@ -276,33 +234,6 @@ export default function NodesPage() {
             />,
           ];
         },
-      }}
-      onSort={async (source, target, items) => {
-        const sourceIndex = items.findIndex((item) => String(item.id) === source);
-        const targetIndex = items.findIndex((item) => String(item.id) === target);
-
-        const originalSorts = items.map((item) => item.sort);
-
-        const [movedItem] = items.splice(sourceIndex, 1);
-        items.splice(targetIndex, 0, movedItem!);
-
-        const updatedItems = items.map((item, index) => {
-          const originalSort = originalSorts[index];
-          const newSort = originalSort !== undefined ? originalSort : item.sort;
-          return { ...item, sort: newSort };
-        });
-
-        const changedItems = updatedItems.filter((item, index) => {
-          return item.sort !== items[index]?.sort;
-        });
-
-        if (changedItems.length > 0) {
-          // nodeSort({
-          //   sort: changedItems.map((item) => ({ id: item.id, sort: item.sort })),
-          // });
-        }
-
-        return updatedItems;
       }}
     />
   );

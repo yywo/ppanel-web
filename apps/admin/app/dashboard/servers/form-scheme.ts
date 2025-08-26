@@ -10,179 +10,223 @@ export const protocols = [
   'anytls',
 ] as const;
 
+// Global label map for display; fallback to raw value if missing
+export const LABELS = {
+  // transport
+  'tcp': 'TCP',
+  'websocket': 'WebSocket',
+  'http2': 'HTTP/2',
+  'httpupgrade': 'HTTP Upgrade',
+  'grpc': 'gRPC',
+  'xtls-rprx-vision': 'XTLS-RPRX-Vision',
+  // security
+  'none': 'NONE',
+  'tls': 'TLS',
+  'reality': 'Reality',
+  // fingerprint
+  'chrome': 'Chrome',
+  'firefox': 'Firefox',
+  'safari': 'Safari',
+  'ios': 'IOS',
+  'android': 'Android',
+  'edge': 'edge',
+  '360': '360',
+  'qq': 'QQ',
+} as const;
+
+// Flat arrays for enum-like sets
+export const SS_CIPHERS = [
+  'aes-128-gcm',
+  'aes-192-gcm',
+  'aes-256-gcm',
+  'chacha20-ietf-poly1305',
+  '2022-blake3-aes-128-gcm',
+  '2022-blake3-aes-256-gcm',
+  '2022-blake3-chacha20-poly1305',
+] as const;
+
+export const TRANSPORTS = {
+  vmess: ['tcp', 'websocket', 'grpc', 'httpupgrade'] as const,
+  vless: ['tcp', 'websocket', 'grpc', 'httpupgrade', 'http2'] as const,
+  trojan: ['tcp', 'websocket', 'grpc'] as const,
+} as const;
+
+export const SECURITY = {
+  vmess: ['none', 'tls'] as const,
+  vless: ['none', 'tls', 'reality'] as const,
+  trojan: ['tls'] as const,
+  hysteria2: ['tls'] as const,
+} as const;
+
+export const FLOWS = {
+  vless: ['none', 'xtls-rprx-vision'] as const,
+} as const;
+
+export const TUIC_UDP_RELAY_MODES = ['native', 'quic', 'none'] as const;
+export const TUIC_CONGESTION = ['bbr', 'cubic', 'new_reno'] as const;
+export const FINGERPRINTS = [
+  'chrome',
+  'firefox',
+  'safari',
+  'ios',
+  'android',
+  'edge',
+  '360',
+  'qq',
+] as const;
+
+export function getLabel(value: string): string {
+  return (LABELS as Record<string, string>)[value] ?? value;
+}
+
 const nullableString = z.string().nullish();
-const portScheme = z.number().max(65535).nullish();
+const nullableBool = z.boolean().nullish();
+const nullablePort = z.number().int().min(0).max(65535).nullish();
 
-const securityConfigScheme = z
-  .object({
-    sni: nullableString,
-    allow_insecure: z.boolean().nullable().default(false),
-    fingerprint: nullableString,
-    reality_private_key: nullableString,
-    reality_public_key: nullableString,
-    reality_short_id: nullableString,
-    reality_server_addr: nullableString,
-    reality_server_port: portScheme,
-  })
-  .nullish();
-
-const transportConfigScheme = z
-  .object({
-    path: nullableString,
-    host: nullableString,
-    service_name: nullableString,
-  })
-  .nullish();
-
-const shadowsocksScheme = z.object({
-  method: z.string(),
-  port: portScheme,
+const ss = z.object({
+  type: z.literal('shadowsocks'),
+  host: nullableString,
+  port: nullablePort,
+  cipher: z.enum(SS_CIPHERS as any).nullish(),
   server_key: nullableString,
 });
 
-const vmessScheme = z.object({
-  port: portScheme,
-  transport: z.string(),
-  transport_config: transportConfigScheme,
-  security: z.string(),
-  security_config: securityConfigScheme,
+const vmess = z.object({
+  type: z.literal('vmess'),
+  host: nullableString,
+  port: nullablePort,
+  transport: z.enum(TRANSPORTS.vmess as any).nullish(),
+  security: z.enum(SECURITY.vmess as any).nullish(),
+  path: nullableString,
+  service_name: nullableString,
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
 });
 
-const vlessScheme = z.object({
-  port: portScheme,
-  transport: z.string(),
-  transport_config: transportConfigScheme,
-  security: z.string(),
-  security_config: securityConfigScheme,
-  flow: nullableString,
+const vless = z.object({
+  type: z.literal('vless'),
+  host: nullableString,
+  port: nullablePort,
+  transport: z.enum(TRANSPORTS.vless as any).nullish(),
+  security: z.enum(SECURITY.vless as any).nullish(),
+  path: nullableString,
+  service_name: nullableString,
+  flow: z.enum(FLOWS.vless as any).nullish(),
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
+  reality_server_addr: nullableString,
+  reality_server_port: nullablePort,
+  reality_private_key: nullableString,
+  reality_public_key: nullableString,
+  reality_short_id: nullableString,
 });
 
-const trojanScheme = z.object({
-  port: portScheme,
-  transport: z.string(),
-  transport_config: transportConfigScheme,
-  security: z.string(),
-  security_config: securityConfigScheme,
+const trojan = z.object({
+  type: z.literal('trojan'),
+  host: nullableString,
+  port: nullablePort,
+  transport: z.enum(TRANSPORTS.trojan as any).nullish(),
+  security: z.enum(SECURITY.trojan as any).nullish(),
+  path: nullableString,
+  service_name: nullableString,
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
 });
 
-const hysteria2Scheme = z.object({
-  port: portScheme,
+const hysteria2 = z.object({
+  type: z.literal('hysteria2'),
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
-  security: z.string(),
-  security_config: securityConfigScheme,
+  host: nullableString,
+  port: nullablePort,
+  security: z.enum(SECURITY.hysteria2 as any).nullish(),
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
 });
 
-const tuicScheme = z.object({
-  port: portScheme,
-  disable_sni: z.boolean().default(false),
-  reduce_rtt: z.boolean().default(false),
-  udp_relay_mode: z.string().default('native'),
-  congestion_controller: z.string().default('bbr'),
-  security_config: securityConfigScheme,
+const tuic = z.object({
+  type: z.literal('tuic'),
+  host: nullableString,
+  port: nullablePort,
+  disable_sni: z.boolean().nullish(),
+  reduce_rtt: z.boolean().nullish(),
+  udp_relay_mode: z.enum(TUIC_UDP_RELAY_MODES as any).nullish(),
+  congestion_controller: z.enum(TUIC_CONGESTION as any).nullish(),
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
 });
 
-const anytlsScheme = z.object({
-  port: portScheme,
-  security_config: securityConfigScheme,
+const anytls = z.object({
+  type: z.literal('anytls'),
+  host: nullableString,
+  port: nullablePort,
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
 });
 
-export const protocolConfigScheme = z.discriminatedUnion('protocol', [
-  z.object({
-    protocol: z.literal('shadowsocks'),
-    enabled: z.boolean().default(false),
-    config: shadowsocksScheme,
-  }),
-  z.object({
-    protocol: z.literal('vmess'),
-    enabled: z.boolean().default(false),
-    config: vmessScheme,
-  }),
-  z.object({
-    protocol: z.literal('vless'),
-    enabled: z.boolean().default(false),
-    config: vlessScheme,
-  }),
-  z.object({
-    protocol: z.literal('trojan'),
-    enabled: z.boolean().default(false),
-    config: trojanScheme,
-  }),
-  z.object({
-    protocol: z.literal('hysteria2'),
-    enabled: z.boolean().default(false),
-    config: hysteria2Scheme,
-  }),
-  z.object({
-    protocol: z.literal('tuic'),
-    enabled: z.boolean().default(false),
-    config: tuicScheme,
-  }),
-  z.object({
-    protocol: z.literal('anytls'),
-    enabled: z.boolean().default(false),
-    config: anytlsScheme,
-  }),
+export const protocolApiScheme = z.discriminatedUnion('type', [
+  ss,
+  vmess,
+  vless,
+  trojan,
+  hysteria2,
+  tuic,
+  anytls,
 ]);
 
 export const formScheme = z.object({
-  name: z.string(),
-  server_addr: z.string(),
+  name: z.string().min(1),
+  address: z.string().min(1),
   country: z.string().optional(),
   city: z.string().optional(),
-  protocols: z.array(protocolConfigScheme).min(1),
+  ratio: z.number().default(1),
+  protocols: z.array(protocolApiScheme),
 });
 
-export function getProtocolDefaultConfig(proto: (typeof protocols)[number]) {
+export type ProtocolType = (typeof protocols)[number];
+
+export function getProtocolDefaultConfig(proto: ProtocolType) {
   switch (proto) {
     case 'shadowsocks':
-      return { method: 'chacha20-ietf-poly1305', port: null, server_key: null };
+      return {
+        type: 'shadowsocks',
+        port: null,
+        cipher: 'chacha20-ietf-poly1305',
+        server_key: null,
+      } as any;
     case 'vmess':
-      return {
-        port: null,
-        transport: 'tcp',
-        transport_config: null,
-        security: 'none',
-        security_config: null,
-      };
+      return { type: 'vmess', port: null, transport: 'tcp', security: 'none' } as any;
     case 'vless':
-      return {
-        port: null,
-        transport: 'tcp',
-        transport_config: null,
-        security: 'none',
-        security_config: null,
-        flow: null,
-      };
+      return { type: 'vless', port: null, transport: 'tcp', security: 'none', flow: 'none' } as any;
     case 'trojan':
-      return {
-        port: null,
-        transport: 'tcp',
-        transport_config: null,
-        security: 'tls',
-        security_config: {},
-      };
+      return { type: 'trojan', port: null, transport: 'tcp', security: 'tls' } as any;
     case 'hysteria2':
       return {
+        type: 'hysteria2',
         port: null,
         hop_ports: null,
         hop_interval: null,
         obfs_password: null,
         security: 'tls',
-        security_config: {},
-      };
+      } as any;
     case 'tuic':
       return {
+        type: 'tuic',
         port: null,
         disable_sni: false,
         reduce_rtt: false,
         udp_relay_mode: 'native',
         congestion_controller: 'bbr',
-        security_config: {},
-      };
+      } as any;
     case 'anytls':
-      return { port: null, security_config: {} };
+      return { type: 'anytls', port: null } as any;
     default:
       return {} as any;
   }

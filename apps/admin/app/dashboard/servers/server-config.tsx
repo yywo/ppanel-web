@@ -188,7 +188,7 @@ export default function ServerConfig() {
         <div className='flex cursor-pointer items-center justify-between'>
           <div className='flex items-center gap-3'>
             <div className='bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg'>
-              <Icon icon='mdi:server-cog' className='text-primary h-5 w-5' />
+              <Icon icon='mdi:resistor-nodes' className='text-primary h-5 w-5' />
             </div>
             <div className='flex-1'>
               <p className='font-medium'>{t('config.title')}</p>
@@ -274,6 +274,7 @@ export default function ServerConfig() {
                       <EnhancedInput
                         type='number'
                         min={0}
+                        suffix='S'
                         step={0.1}
                         value={field.value as any}
                         onValueChange={field.onChange}

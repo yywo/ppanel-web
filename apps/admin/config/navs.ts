@@ -11,11 +11,6 @@ export const navs = [
     items: [
       {
         title: 'Server Management',
-        url: '/dashboard/server',
-        icon: 'flat-color-icons:data-protection',
-      },
-      {
-        title: 'Server Management',
         url: '/dashboard/servers',
         icon: 'flat-color-icons:data-protection',
       },

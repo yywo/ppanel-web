@@ -1,6 +1,6 @@
 'use client';
 
-import { getNodeGroupList, getNodeList } from '@/services/admin/server';
+import { filterNodeList } from '@/services/admin/server';
 import { getSubscribeGroupList } from '@/services/admin/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@workspace/ui/components/accordion';
+import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Checkbox } from '@workspace/ui/components/checkbox';
 import {
@@ -103,7 +104,11 @@ export default function SubscribeForm<T extends Record<string, any>>({
     traffic: z.number().optional().default(0),
     quota: z.number().optional().default(0),
     group_id: z.number().optional().nullish(),
-    server_group: z.array(z.number()).optional().default([]),
+    // Use tags as group identifiers; accept string (tag) or number (legacy id)
+    server_group: z
+      .array(z.union([z.number(), z.string()]) as any)
+      .optional()
+      .default([]),
     server: z.array(z.number()).optional().default([]),
     deduction_ratio: z.number().optional().default(0),
     allow_deduction: z.boolean().optional().default(false),
@@ -237,27 +242,22 @@ export default function SubscribeForm<T extends Record<string, any>>({
     },
   });
 
-  const { data: server } = useQuery({
-    queryKey: ['getNodeList', 'all'],
+  const { data: nodes } = useQuery({
+    queryKey: ['filterNodeListAll'],
     queryFn: async () => {
-      const { data } = await getNodeList({
-        page: 1,
-        size: 9999,
-      });
-      return data.data?.list;
+      const { data } = await filterNodeList({ page: 1, size: 9999 });
+      return (data.data?.list || []) as API.Node[];
     },
   });
-
-  const { data: server_groups } = useQuery({
-    queryKey: ['getNodeGroupList'],
-    queryFn: async () => {
-      const { data } = await getNodeGroupList();
-      return (data.data?.list || []) as API.ServerGroup[];
-    },
-  });
+  const tagGroups = Array.from(
+    new Set(
+      ((nodes as API.Node[]) || [])
+        .flatMap((n) => (Array.isArray(n.tags) ? n.tags : []))
+        .filter(Boolean),
+    ),
+  ) as string[];
 
   const unit_time = form.watch('unit_time');
-  const unit_price = form.watch('unit_price');
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -290,7 +290,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                   </TabsTrigger>
                   <TabsTrigger value='servers' className='flex items-center gap-2'>
                     <Server className='h-4 w-4' />
-                    {t('form.servers')}
+                    {t('form.nodes')}
                   </TabsTrigger>
                 </TabsList>
 
@@ -798,50 +798,56 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       name='server_group'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.serverGroup')}</FormLabel>
+                          <FormLabel>{t('form.nodeGroup')}</FormLabel>
                           <FormControl>
                             <Accordion type='single' collapsible className='w-full'>
-                              {server_groups?.map((group: API.ServerGroup) => {
+                              {tagGroups.map((tag) => {
                                 const value = field.value || [];
-
+                                // Use a synthetic ID for tag grouping selection by name
+                                const tagId = tag;
                                 return (
-                                  <AccordionItem key={group.id} value={String(group.id)}>
+                                  <AccordionItem key={tag} value={String(tag)}>
                                     <AccordionTrigger>
                                       <div className='flex items-center gap-2'>
                                         <Checkbox
-                                          checked={value.includes(group.id!)}
+                                          checked={value.includes(tagId as any)}
                                           onCheckedChange={(checked) => {
                                             return checked
-                                              ? form.setValue(field.name, [...value, group.id])
+                                              ? form.setValue(field.name, [...value, tagId] as any)
                                               : form.setValue(
                                                   field.name,
-                                                  value.filter(
-                                                    (value: number) => value !== group.id,
-                                                  ),
+                                                  value.filter((v: any) => v !== tagId),
                                                 );
                                           }}
                                         />
-                                        <Label>{group.name}</Label>
+                                        <Label>{tag}</Label>
                                       </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                      <ul className='list-disc [&>li]:mt-2'>
-                                        {server
-                                          ?.filter(
-                                            (server: API.Server) => server.group_id === group.id,
-                                          )
-                                          ?.map((node: API.Server) => {
-                                            return (
-                                              <li
-                                                key={node.id}
-                                                className='flex items-center justify-between *:flex-1'
-                                              >
-                                                <span>{node.name}</span>
-                                                <span>{node.server_addr}</span>
-                                                <span className='text-right'>{node.protocol}</span>
-                                              </li>
-                                            );
-                                          })}
+                                      <ul className='space-y-1'>
+                                        {(nodes as API.Node[])
+                                          ?.filter((n) => (n.tags || []).includes(tag))
+                                          ?.map((node) => (
+                                            <li
+                                              key={node.id}
+                                              className='flex items-center justify-between gap-3'
+                                            >
+                                              <span className='font-medium'>{node.name}</span>
+                                              <span className='text-muted-foreground'>
+                                                {node.address}:{node.port ?? '—'}
+                                              </span>
+                                              <span className='font-mono text-xs uppercase'>
+                                                {node.protocol || '—'}
+                                              </span>
+                                              <span className='flex flex-wrap justify-end gap-1'>
+                                                {(node.tags || []).map((tg) => (
+                                                  <Badge key={tg} variant='outline'>
+                                                    {tg}
+                                                  </Badge>
+                                                ))}
+                                              </span>
+                                            </li>
+                                          ))}
                                       </ul>
                                     </AccordionContent>
                                   </AccordionItem>
@@ -859,12 +865,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       name='server'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.server')}</FormLabel>
+                          <FormLabel>{t('form.node')}</FormLabel>
                           <FormControl>
                             <div className='flex flex-col gap-2'>
-                              {server
-                                ?.filter((item: API.Server) => !item.group_id)
-                                ?.map((item: API.Server) => {
+                              {(nodes as API.Node[])
+                                ?.filter((item) => (item.tags || []).length === 0)
+                                ?.map((item) => {
                                   const value = field.value || [];
 
                                   return (
@@ -880,10 +886,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                               );
                                         }}
                                       />
-                                      <Label className='flex w-full items-center justify-between *:flex-1'>
+                                      <Label className='flex w-full items-center justify-between gap-3'>
                                         <span>{item.name}</span>
-                                        <span>{item.server_addr}</span>
-                                        <span className='text-right'>{item.protocol}</span>
+                                        <span>
+                                          {item.address}:{item.port}
+                                        </span>
+                                        <span>{item.protocol}</span>
                                       </Label>
                                     </div>
                                   );

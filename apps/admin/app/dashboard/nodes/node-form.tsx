@@ -1,11 +1,13 @@
 'use client';
 
+import { filterServerList } from '@/services/admin/server';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -38,82 +40,40 @@ export type ProtocolName =
   | 'tuic'
   | 'anytls';
 
-type ServerProtocolItem = {
-  protocol: ProtocolName;
-  enabled: boolean;
-  config?: { port?: number } & Record<string, unknown>;
-};
-
-type ServerRow = {
-  id: number;
-  name: string;
-  server_addr: string;
-  protocols: ServerProtocolItem[];
-};
+type ServerRow = API.Server;
 
 export type NodeFormValues = {
   name: string;
   server_id?: number;
   protocol: ProtocolName | '';
-  server_addr: string;
-  port?: number;
+  address: string;
+  port: number;
   tags: string[];
 };
 
-async function getServerListMock(): Promise<{ data: { list: ServerRow[] } }> {
-  return {
-    data: {
-      list: [
-        {
-          id: 101,
-          name: 'Tokyo-1',
-          server_addr: 'jp-1.example.com',
-          protocols: [
-            { protocol: 'shadowsocks', enabled: true, config: { port: 443 } },
-            { protocol: 'vless', enabled: true, config: { port: 8443 } },
-            { protocol: 'trojan', enabled: false, config: { port: 443 } },
-          ],
-        },
-        {
-          id: 102,
-          name: 'HK-Edge',
-          server_addr: 'hk-edge.example.com',
-          protocols: [
-            { protocol: 'vmess', enabled: true, config: { port: 443 } },
-            { protocol: 'vless', enabled: true, config: { port: 443 } },
-            { protocol: 'hysteria2', enabled: true, config: { port: 60000 } },
-          ],
-        },
-        {
-          id: 103,
-          name: 'AnyTLS Lab',
-          server_addr: 'lab.example.com',
-          protocols: [
-            { protocol: 'anytls', enabled: true, config: { port: 443 } },
-            { protocol: 'tuic', enabled: false, config: { port: 4443 } },
-          ],
-        },
-      ],
-    },
-  };
+async function getServers(): Promise<ServerRow[]> {
+  const { data } = await filterServerList({ page: 1, size: 1000 });
+  return (data?.data?.list || []) as ServerRow[];
 }
 
-const buildSchema = (t: ReturnType<typeof useTranslations>) =>
-  z
-    .object({
-      name: z.string().min(1, t('errors.nameRequired')),
-      server_id: z.number({ invalid_type_error: t('errors.serverRequired') }).optional(),
-      protocol: z.string().min(1, t('errors.protocolRequired')),
-      server_addr: z.string().min(1, t('errors.serverAddrRequired')),
-      port: z
-        .number()
-        .int()
-        .min(1, t('errors.portRange'))
-        .max(65535, t('errors.portRange'))
-        .optional(),
-      tags: z.array(z.string()),
-    })
-    .refine((v) => !!v.server_id, { path: ['server_id'], message: t('errors.serverRequired') });
+const buildScheme = (t: ReturnType<typeof useTranslations>) =>
+  z.object({
+    name: z.string().trim().min(1, t('errors.nameRequired')),
+    server_id: z.coerce
+      .number({ invalid_type_error: t('errors.serverRequired') })
+      .int()
+      .gt(0, t('errors.serverRequired')),
+    protocol: z.custom<ProtocolName>((v) => typeof v === 'string' && v.length > 0, {
+      message: t('errors.protocolRequired'),
+    }),
+    address: z.string().trim().min(1, t('errors.serverAddrRequired')),
+    port: z.coerce
+      .number({ invalid_type_error: t('errors.portRange') })
+      .int()
+      .min(1, t('errors.portRange'))
+      .max(65535, t('errors.portRange')),
+    tags: z.array(z.string()).default([]),
+  });
 
 export default function NodeForm(props: {
   trigger: string;
@@ -124,16 +84,16 @@ export default function NodeForm(props: {
 }) {
   const { trigger, title, loading, initialValues, onSubmit } = props;
   const t = useTranslations('nodes');
-  const schema = useMemo(() => buildSchema(t), [t]);
+  const Scheme = useMemo(() => buildScheme(t), [t]);
 
   const form = useForm<NodeFormValues>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(Scheme),
     defaultValues: {
       name: '',
       server_id: undefined,
       protocol: '',
-      server_addr: '',
-      port: undefined,
+      address: '',
+      port: 0,
       tags: [],
       ...initialValues,
     },
@@ -141,22 +101,19 @@ export default function NodeForm(props: {
 
   const serverId = form.watch('server_id');
 
-  const { data } = useQuery({ queryKey: ['getServerListMock'], queryFn: getServerListMock });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const servers: ServerRow[] = data?.data?.list ?? [];
+  const { data } = useQuery({ queryKey: ['filterServerListAll'], queryFn: getServers });
+  const servers: ServerRow[] = data as ServerRow[];
 
-  const currentServer = useMemo(() => servers.find((s) => s.id === serverId), [servers, serverId]);
+  const currentServer = useMemo(() => servers?.find((s) => s.id === serverId), [servers, serverId]);
 
-  const availableProtocols = useMemo(
-    () =>
-      (currentServer?.protocols || [])
-        .filter((p) => p.enabled)
-        .map((p) => ({
-          protocol: p.protocol,
-          port: p.config?.port,
-        })),
-    [currentServer],
-  );
+  const availableProtocols = useMemo(() => {
+    return (currentServer?.protocols || [])
+      .map((p) => ({
+        protocol: (p as any).type as ProtocolName,
+        port: (p as any).port as number | undefined,
+      }))
+      .filter((p) => !!p.protocol);
+  }, [currentServer]);
 
   useEffect(() => {
     if (initialValues) {
@@ -164,8 +121,8 @@ export default function NodeForm(props: {
         name: '',
         server_id: undefined,
         protocol: '',
-        server_addr: '',
-        port: undefined,
+        address: '',
+        port: 0,
         tags: [],
         ...initialValues,
       });
@@ -178,26 +135,33 @@ export default function NodeForm(props: {
     form.setValue('server_id', id);
 
     const sel = servers.find((s) => s.id === id);
-    if (!form.getValues('server_addr') && sel?.server_addr) {
-      form.setValue('server_addr', sel.server_addr);
+    const dirty = form.formState.dirtyFields as Record<string, any>;
+    if (!dirty.name) {
+      form.setValue('name', (sel?.name as string) || '', { shouldDirty: false });
     }
-    const allowed = (sel?.protocols || []).filter((p) => p.enabled).map((p) => p.protocol);
+    if (!dirty.address) {
+      form.setValue('address', (sel?.address as string) || '', { shouldDirty: false });
+    }
+    const allowed = (sel?.protocols || [])
+      .map((p) => (p as any).type as ProtocolName)
+      .filter(Boolean);
     if (!allowed.includes(form.getValues('protocol') as ProtocolName)) {
       form.setValue('protocol', '' as any);
     }
+    // Do not auto-fill port here; handled in handleProtocolChange
   }
 
   function handleProtocolChange(nextProto?: ProtocolName | null) {
     const p = (nextProto || '') as ProtocolName | '';
     form.setValue('protocol', p);
     if (!p || !currentServer) return;
-    const curPort = Number(form.getValues('port') || 0);
-    if (!curPort) {
-      const hit = currentServer.protocols.find((x) => x.protocol === p);
-      const port = hit?.config?.port;
-      if (typeof port === 'number' && port > 0) {
-        form.setValue('port', port);
-      }
+    const dirty = form.formState.dirtyFields as Record<string, any>;
+    if (!dirty.port) {
+      const hit = (currentServer.protocols as any[]).find((x) => (x as any).type === p);
+      const port = (hit as any)?.port as number | undefined;
+      form.setValue('port', typeof port === 'number' && port > 0 ? port : 0, {
+        shouldDirty: false,
+      });
     }
   }
 
@@ -222,40 +186,6 @@ export default function NodeForm(props: {
             <form className='grid grid-cols-1 gap-4'>
               <FormField
                 control={form.control}
-                name='name'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('name')}</FormLabel>
-                    <FormControl>
-                      <EnhancedInput
-                        {...field}
-                        onValueChange={(v) => form.setValue(field.name, v as string)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name='tags'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('tags')}</FormLabel>
-                    <FormControl>
-                      <TagInput
-                        placeholder={t('tags_placeholder')}
-                        value={field.value || []}
-                        onChange={(v) => form.setValue(field.name, v)}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
                 name='server_id'
                 render={({ field }) => (
                   <FormItem>
@@ -266,7 +196,7 @@ export default function NodeForm(props: {
                         value={field.value}
                         options={servers.map((s) => ({
                           value: s.id,
-                          label: `${s.name} (${s.server_addr})`,
+                          label: `${s.name} (${(s.address as any) || ''})`,
                         }))}
                         onChange={(v) => handleServerChange(v)}
                       />
@@ -287,9 +217,25 @@ export default function NodeForm(props: {
                         value={field.value}
                         options={availableProtocols.map((p) => ({
                           value: p.protocol,
-                          label: `${p.protocol} (${p.port})`,
+                          label: `${p.protocol}${p.port ? ` (${p.port})` : ''}`,
                         }))}
                         onChange={(v) => handleProtocolChange((v as ProtocolName) || null)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='name'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('name')}</FormLabel>
+                    <FormControl>
+                      <EnhancedInput
+                        {...field}
+                        onValueChange={(v) => form.setValue(field.name, v as string)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -299,10 +245,10 @@ export default function NodeForm(props: {
 
               <FormField
                 control={form.control}
-                name='server_addr'
+                name='address'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t('server_addr')}</FormLabel>
+                    <FormLabel>{t('address')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
                         {...field}
@@ -326,10 +272,28 @@ export default function NodeForm(props: {
                         type='number'
                         min={1}
                         max={65535}
-                        placeholder='1 - 65535'
+                        placeholder='1-65535'
                         onValueChange={(v) => form.setValue(field.name, Number(v))}
                       />
                     </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='tags'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('tags')}</FormLabel>
+                    <FormControl>
+                      <TagInput
+                        placeholder={t('tags_placeholder')}
+                        value={field.value || []}
+                        onChange={(v) => form.setValue(field.name, v)}
+                      />
+                    </FormControl>
+                    <FormDescription>{t('tags_description')}</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
