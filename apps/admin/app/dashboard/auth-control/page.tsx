@@ -4,12 +4,10 @@ import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/
 import { useTranslations } from 'next-intl';
 import AppleForm from './forms/apple-form';
 import DeviceForm from './forms/device-form';
-import EmailLogsTable from './forms/email-logs-table';
 import EmailSettingsForm from './forms/email-settings-form';
 import FacebookForm from './forms/facebook-form';
 import GithubForm from './forms/github-form';
 import GoogleForm from './forms/google-form';
-import PhoneLogsTable from './forms/phone-logs-table';
 import PhoneSettingsForm from './forms/phone-settings-form';
 import TelegramForm from './forms/telegram-form';
 
@@ -22,9 +20,8 @@ export default function Page() {
       title: t('communicationMethods'),
       forms: [
         { component: EmailSettingsForm },
-        { component: EmailLogsTable },
         { component: PhoneSettingsForm },
-        { component: PhoneLogsTable },
+        // Removed EmailLogsTable and PhoneLogsTable modules
       ],
     },
     {

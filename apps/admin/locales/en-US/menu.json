@@ -17,6 +17,8 @@
   "Logs & Analytics": "Logs & Analytics",
   "Maintenance": "Maintenance",
   "Marketing Management": "Marketing Management",
+  "Message": "Message",
+  "Mobile": "SMS",
   "Node Management": "Node Management",
   "Order Management": "Order Management",
   "Payment Config": "Payment Config",
@@ -24,7 +26,6 @@
 
   "Register": "Register",
   "Reset Subscribe": "Reset Subscribe",
-  "SMS": "SMS",
   "Server Management": "Server Management",
   "Server Traffic": "Server Traffic",
   "Subscribe": "Subscribe",
@@ -35,6 +36,7 @@
   "System Tool": "System Tool",
 
   "Ticket Management": "Ticket Management",
+  "Traffic Details": "Traffic Details",
   "User Detail": "User Detail",
   "User Management": "User Management",
   "Users & Support": "Users & Support"

@@ -11,7 +11,7 @@ interface IpLinkProps {
 }
 
 export function IpLink({ ip, children, className = '', target = '_blank' }: IpLinkProps) {
-  const url = `https://ip.sb/ip/${ip}`;
+  const url = `https://ipinfo.io/${ip}`;
 
   return (
     <a

@@ -56,12 +56,36 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
     });
   };
 
-  const isActiveUrl = (url: string) =>
-    url === '/dashboard' ? pathname === url : pathname.startsWith(url);
+  const normalize = (p: string) => (p.endsWith('/') && p !== '/' ? p.replace(/\/+$/, '') : p);
+  const isActiveUrl = (url: string) => {
+    const path = normalize(pathname);
+    const target = normalize(url);
+    if (target === '/dashboard') return path === target;
+    if (path === target) return true;
+    // Only treat as active if next char is a path boundary '/'
+    return path.startsWith(target + '/');
+  };
 
   const isGroupActive = (nav: Nav) =>
     (hasChildren(nav) && nav.items.some((i: any) => isActiveUrl(i.url))) ||
     ('url' in nav && nav.url ? isActiveUrl(nav.url as string) : false);
+
+  // Auto-open the group containing the active route whenever pathname changes
+  React.useEffect(() => {
+    setOpenGroups((prev) => {
+      const next: Record<string, boolean> = {};
+      (navs as typeof navs).forEach((nav) => {
+        if (hasChildren(nav)) next[nav.title] = isGroupActive(nav);
+      });
+      // If no active group detected, keep previously opened or default to first
+      if (!Object.values(next).some(Boolean)) {
+        (navs as typeof navs).forEach((nav) => {
+          if (hasChildren(nav)) next[nav.title] = prev[nav.title] ?? nav.title === firstGroupTitle;
+        });
+      }
+      return next;
+    });
+  }, [pathname]);
 
   const renderCollapsedFlyout = (nav: Nav) => {
     const ParentButton = (
@@ -170,17 +194,19 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
             : (navs as typeof navs).map((nav) => {
                 if (hasChildren(nav)) {
                   const isOpen = openGroups[nav.title] ?? false;
+                  const groupActive = isGroupActive(nav);
                   return (
                     <SidebarGroup key={nav.title} className={cn('py-1')}>
                       <SidebarMenuButton
                         size='sm'
                         className={cn('mb-2 flex h-8 w-full items-center justify-between', {
-                          'bg-accent': isOpen,
+                          'bg-accent text-accent-foreground': isOpen || groupActive,
+                          'hover:bg-accent/60': !isOpen && !groupActive,
                         })}
                         onClick={() => handleToggleGroup(nav.title)}
                         tabIndex={0}
                         style={{ fontWeight: 500 }}
-                        // isActive={isGroupActive(nav)}
+                        isActive={groupActive}
                       >
                         <span className='flex min-w-0 items-center gap-2'>
                           {'icon' in nav && (nav as any).icon ? (

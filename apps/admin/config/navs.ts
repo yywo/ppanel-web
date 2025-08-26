@@ -90,7 +90,7 @@ export const navs = [
       { title: 'Login', url: '/dashboard/log/login', icon: 'flat-color-icons:unlock' },
       { title: 'Register', url: '/dashboard/log/register', icon: 'flat-color-icons:contacts' },
       { title: 'Email', url: '/dashboard/log/email', icon: 'flat-color-icons:feedback' },
-      { title: 'SMS', url: '/dashboard/log/sms', icon: 'flat-color-icons:sms' },
+      { title: 'Mobile', url: '/dashboard/log/mobile', icon: 'flat-color-icons:sms' },
       { title: 'Subscribe', url: '/dashboard/log/subscribe', icon: 'flat-color-icons:workflow' },
       {
         title: 'Reset Subscribe',
@@ -106,6 +106,11 @@ export const navs = [
         title: 'Server Traffic',
         url: '/dashboard/log/server-traffic',
         icon: 'flat-color-icons:statistics',
+      },
+      {
+        title: 'Traffic Details',
+        url: '/dashboard/log/traffic-details',
+        icon: 'flat-color-icons:combo-chart',
       },
       {
         title: 'Balance',

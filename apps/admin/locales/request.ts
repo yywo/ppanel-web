@@ -30,6 +30,7 @@ export default getRequestConfig(async () => {
     'index': (await import(`./${locale}/index.json`)).default,
     'subscribe': (await import(`./${locale}/subscribe.json`)).default,
     'marketing': (await import(`./${locale}/marketing.json`)).default,
+    'log': (await import(`./${locale}/log.json`)).default,
   };
 
   return {

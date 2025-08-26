@@ -17,6 +17,8 @@
   "Logs & Analytics": "日志与分析",
   "Maintenance": "运维",
   "Marketing Management": "营销管理",
+  "Message": "消息日志",
+  "Mobile": "短信日志",
   "Node Management": "节点管理",
   "Order Management": "订单管理",
   "Payment Config": "支付配置",
@@ -24,9 +26,8 @@
 
   "Register": "注册日志",
   "Reset Subscribe": "重置订阅",
-  "SMS": "短信日志",
-  "Server Management": "服务管理",
-  "Server Traffic": "服务流量",
+  "Server Management": "服务器管理",
+  "Server Traffic": "服务器流量",
   "Subscribe": "订阅日志",
   "Subscribe Config": "订阅配置",
   "Subscribe Traffic": "订阅流量",
@@ -35,6 +36,7 @@
   "System Tool": "系统工具",
 
   "Ticket Management": "工单管理",
+  "Traffic Details": "流量明细",
   "User Detail": "用户详情",
   "User Management": "用户管理",
   "Users & Support": "用户与支持"

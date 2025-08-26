@@ -51,8 +51,6 @@
     "enable": "启用",
     "enableDescription": "启用后，将启用电子邮件注册、登录、绑定和解绑功能",
     "inputPlaceholder": "输入值...",
-    "logs": "邮件日志",
-    "logsDescription": "查看已发送电子邮件的历史记录及其状态",
     "sendFailure": "测试邮件发送失败，请检查配置。",
     "sendSuccess": "测试邮件发送成功。",
     "sendTestEmail": "发送测试邮件",
@@ -145,19 +143,7 @@
     "enable": "启用",
     "enableDescription": "启用后，用户可以使用他们的 Google 帐户登录"
   },
-  "log": {
-    "emailLog": "邮件日志",
-    "mobileLog": "短信日志",
-    "platform": "平台",
-    "to": "接收人",
-    "subject": "主题",
-    "content": "内容",
-    "status": "状态",
-    "sendSuccess": "发送成功",
-    "sendFailed": "发送失败",
-    "createdAt": "创建时间",
-    "updatedAt": "更新时间"
-  },
+
   "phone": {
     "title": "手机登录",
     "description": "使用手机号码进行身份验证",
@@ -188,9 +174,7 @@
     "sendSuccess": "发送成功",
     "sendFailed": "发送失败",
     "updateSuccess": "更新成功",
-    "settings": "设置",
-    "logs": "短信日志",
-    "logsDescription": "查看已发送短信的历史记录及其状态"
+    "settings": "设置"
   },
   "socialAuthMethods": "社交认证方式",
   "telegram": {
