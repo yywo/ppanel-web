@@ -56,7 +56,7 @@ async function getServers(): Promise<ServerRow[]> {
   return (data?.data?.list || []) as ServerRow[];
 }
 
-const buildScheme = (t: ReturnType<typeof useTranslations>) =>
+const buildSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
     name: z.string().trim().min(1, t('errors.nameRequired')),
     server_id: z.coerce
@@ -84,7 +84,7 @@ export default function NodeForm(props: {
 }) {
   const { trigger, title, loading, initialValues, onSubmit } = props;
   const t = useTranslations('nodes');
-  const Scheme = useMemo(() => buildScheme(t), [t]);
+  const Scheme = useMemo(() => buildSchema(t), [t]);
 
   const form = useForm<NodeFormValues>({
     resolver: zodResolver(Scheme),

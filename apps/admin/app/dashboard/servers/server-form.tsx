@@ -38,7 +38,7 @@ import { toast } from 'sonner';
 import {
   FINGERPRINTS,
   FLOWS,
-  formScheme,
+  formSchema,
   getLabel,
   getProtocolDefaultConfig,
   LABELS,
@@ -48,7 +48,7 @@ import {
   TRANSPORTS,
   TUIC_CONGESTION,
   TUIC_UDP_RELAY_MODES,
-} from './form-scheme';
+} from './form-schema';
 
 interface ServerFormProps<T> {
   onSubmit: (data: T) => Promise<boolean> | boolean;
@@ -97,7 +97,7 @@ export default function ServerForm<T extends { [x: string]: any }>({
     [],
   );
 
-  const form = useForm<any>({ resolver: zodResolver(formScheme), defaultValues });
+  const form = useForm<any>({ resolver: zodResolver(formSchema), defaultValues });
   const { control } = form;
   const { fields, append, remove } = useFieldArray({ control, name: 'protocols' });
 
