@@ -63,8 +63,8 @@ const defaultValues = {
   traffic: 0,
   quota: 0,
   discount: [],
-  server_group: [],
-  server: [],
+  node_tags: [],
+  nodes: [],
   unit_time: 'Month',
   deduction_ratio: 0,
   purchase_with_discount: false,
@@ -105,11 +105,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
     quota: z.number().optional().default(0),
     group_id: z.number().optional().nullish(),
     // Use tags as group identifiers; accept string (tag) or number (legacy id)
-    server_group: z
-      .array(z.union([z.number(), z.string()]) as any)
-      .optional()
-      .default([]),
-    server: z.array(z.number()).optional().default([]),
+    node_tags: z.array(z.string()).optional().default([]),
+    nodes: z.array(z.number()).optional().default([]),
     deduction_ratio: z.number().optional().default(0),
     allow_deduction: z.boolean().optional().default(false),
     reset_cycle: z.number().optional().default(0),
@@ -795,7 +792,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                   <div className='space-y-6'>
                     <FormField
                       control={form.control}
-                      name='server_group'
+                      name='node_tags'
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>{t('form.nodeGroup')}</FormLabel>
@@ -862,7 +859,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
 
                     <FormField
                       control={form.control}
-                      name='server'
+                      name='nodes'
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>{t('form.node')}</FormLabel>
