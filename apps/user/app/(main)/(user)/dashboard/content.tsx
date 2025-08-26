@@ -325,7 +325,6 @@ export default function Content() {
                           <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
                             {applications
                               ?.filter((application) => {
-                                // 检查当前平台是否有下载链接或者有 scheme
                                 if (!application.download_link && !application.scheme) return false;
                                 return (
                                   !!application.download_link?.[platform] || !!application.scheme

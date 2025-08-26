@@ -10,7 +10,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@workspace/ui/components/accordion';
-import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Checkbox } from '@workspace/ui/components/checkbox';
 import {
@@ -829,20 +828,11 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                               key={node.id}
                                               className='flex items-center justify-between gap-3'
                                             >
-                                              <span className='font-medium'>{node.name}</span>
-                                              <span className='text-muted-foreground'>
-                                                {node.address}:{node.port ?? '—'}
+                                              <span>{node.name}</span>
+                                              <span>
+                                                {node.address}:{node.port}
                                               </span>
-                                              <span className='font-mono text-xs uppercase'>
-                                                {node.protocol || '—'}
-                                              </span>
-                                              <span className='flex flex-wrap justify-end gap-1'>
-                                                {(node.tags || []).map((tg) => (
-                                                  <Badge key={tg} variant='outline'>
-                                                    {tg}
-                                                  </Badge>
-                                                ))}
-                                              </span>
+                                              <span>{node.protocol}</span>
                                             </li>
                                           ))}
                                       </ul>
