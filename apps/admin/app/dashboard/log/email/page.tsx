@@ -32,7 +32,7 @@ export default function EmailLogPage() {
         { accessorKey: 'status', header: t('column.status') },
         {
           accessorKey: 'created_at',
-          header: t('column.createdAt'),
+          header: t('column.time'),
           cell: ({ row }) => formatDate(row.original.created_at),
         },
       ]}

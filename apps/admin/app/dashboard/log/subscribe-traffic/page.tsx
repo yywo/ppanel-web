@@ -3,7 +3,7 @@
 import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { ProTable } from '@/components/pro-table';
 import { filterUserSubscribeTrafficLog } from '@/services/admin/log';
-import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 
 export default function SubscribeTrafficLogPage() {
@@ -36,7 +36,6 @@ export default function SubscribeTrafficLogPage() {
         {
           accessorKey: 'date',
           header: t('column.date'),
-          cell: ({ row }) => formatDate(new Date(row.original.date)),
         },
       ]}
       params={[

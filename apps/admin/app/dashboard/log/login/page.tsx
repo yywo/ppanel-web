@@ -36,9 +36,9 @@ export default function LoginLogPage() {
           ),
         },
         {
-          accessorKey: 'login_time',
+          accessorKey: 'timestamp',
           header: t('column.time'),
-          cell: ({ row }) => formatDate(row.original.login_time),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

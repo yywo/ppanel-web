@@ -21,9 +21,9 @@ export default function CommissionLogPage() {
         { accessorKey: 'order_no', header: t('column.orderNo') },
         { accessorKey: 'type', header: t('column.type') },
         {
-          accessorKey: 'created_at',
-          header: t('column.createdAt'),
-          cell: ({ row }) => formatDate(row.original.created_at),
+          accessorKey: 'timestamp',
+          header: t('column.time'),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

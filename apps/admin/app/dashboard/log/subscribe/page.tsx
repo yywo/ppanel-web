@@ -27,9 +27,9 @@ export default function SubscribeLogPage() {
         },
         { accessorKey: 'user_agent', header: t('column.userAgent') },
         {
-          accessorKey: 'subscribed_at',
+          accessorKey: 'timestamp',
           header: t('column.time'),
-          cell: ({ row }) => formatDate(row.original.subscribed_at),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

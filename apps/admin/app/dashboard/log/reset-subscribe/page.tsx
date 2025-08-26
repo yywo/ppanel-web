@@ -21,9 +21,9 @@ export default function ResetSubscribeLogPage() {
         { accessorKey: 'type', header: t('column.type') },
         { accessorKey: 'order_no', header: t('column.orderNo') },
         {
-          accessorKey: 'reset_at',
-          header: t('column.resetAt'),
-          cell: ({ row }) => formatDate(row.original.reset_at),
+          accessorKey: 'timestamp',
+          header: t('column.time'),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

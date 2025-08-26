@@ -27,9 +27,9 @@ export default function RegisterLogPage() {
         },
         { accessorKey: 'user_agent', header: t('column.userAgent') },
         {
-          accessorKey: 'register_time',
+          accessorKey: 'timestamp',
           header: t('column.time'),
-          cell: ({ row }) => formatDate(row.original.register_time),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

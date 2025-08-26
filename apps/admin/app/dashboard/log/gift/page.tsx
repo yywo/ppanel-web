@@ -23,9 +23,9 @@ export default function GiftLogPage() {
         { accessorKey: 'balance', header: t('column.balance') },
         { accessorKey: 'remark', header: t('column.remark') },
         {
-          accessorKey: 'created_at',
-          header: t('column.createdAt'),
-          cell: ({ row }) => formatDate(row.original.created_at),
+          accessorKey: 'timestamp',
+          header: t('column.time'),
+          cell: ({ row }) => formatDate(row.original.timestamp),
         },
       ]}
       params={[

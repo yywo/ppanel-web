@@ -187,7 +187,7 @@ declare namespace API {
     user_id: number;
     amount: number;
     order_no: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type Coupon = {
@@ -1251,7 +1251,7 @@ declare namespace API {
     amount: number;
     balance: number;
     remark?: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type HasMigrateSeverNodeResponse = {
@@ -1282,7 +1282,7 @@ declare namespace API {
     login_ip: string;
     user_agent: string;
     success: boolean;
-    login_time: number;
+    timestamp: number;
   };
 
   type LogResponse = {
@@ -1608,7 +1608,7 @@ declare namespace API {
     identifier: string;
     register_ip: string;
     user_agent: string;
-    register_time: number;
+    timestamp: number;
   };
 
   type RenewalOrderRequest = {
@@ -1627,7 +1627,7 @@ declare namespace API {
     user_id: number;
     user_subscribe_id: number;
     order_no?: string;
-    reset_at: number;
+    timestamp: number;
   };
 
   type ResetSubscribeTrafficLog = {
@@ -1635,7 +1635,7 @@ declare namespace API {
     type: number;
     user_subscribe_id: number;
     order_no?: string;
-    reset_at: number;
+    timestamp: number;
   };
 
   type ResetTrafficOrderRequest = {
@@ -1901,7 +1901,7 @@ declare namespace API {
     user_agent: string;
     client_ip: string;
     user_subscribe_id: number;
-    subscribed_at: number;
+    timestamp: number;
   };
 
   type SubscribeSortRequest = {
@@ -2239,7 +2239,7 @@ declare namespace API {
     login_ip: string;
     user_agent: string;
     success: boolean;
-    created_at: number;
+    timestamp: number;
   };
 
   type UserStatistics = {
@@ -2301,7 +2301,7 @@ declare namespace API {
     token: string;
     ip: string;
     user_agent: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type UserSubscribeTrafficLog = {

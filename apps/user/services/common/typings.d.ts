@@ -180,7 +180,7 @@ declare namespace API {
     user_id: number;
     amount: number;
     order_no: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type Coupon = {
@@ -626,7 +626,7 @@ declare namespace API {
     type: number;
     user_subscribe_id: number;
     order_no?: string;
-    reset_at: number;
+    timestamp: number;
   };
 
   type ResetTrafficOrderRequest = {
@@ -938,7 +938,7 @@ declare namespace API {
     login_ip: string;
     user_agent: string;
     success: boolean;
-    created_at: number;
+    timestamp: number;
   };
 
   type UserLoginRequest = {
@@ -981,7 +981,7 @@ declare namespace API {
     token: string;
     ip: string;
     user_agent: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type VeifyConfig = {

@@ -8,7 +8,7 @@ import { useTranslations } from 'next-intl';
 export default function TrafficDetailsPage() {
   const t = useTranslations('log');
   return (
-    <ProTable<any, { search?: string }>
+    <ProTable<API.TrafficLogDetails, { search?: string }>
       header={{ title: t('title.trafficDetails') }}
       columns={[
         { accessorKey: 'server_id', header: t('column.serverId') },
