@@ -47,7 +47,6 @@ export const navs = [
         title: 'User Management',
         url: '/dashboard/user',
         icon: 'flat-color-icons:conference-call',
-        items: [{ title: 'User Detail', url: '/dashboard/user/:id' }],
       },
       {
         title: 'Ticket Management',

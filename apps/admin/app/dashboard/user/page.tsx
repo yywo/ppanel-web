@@ -3,24 +3,51 @@
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import { getSubscribeList } from '@/services/admin/subscribe';
-import { createUser, deleteUser, getUserList, updateUserBasicInfo } from '@/services/admin/user';
+import {
+  createUser,
+  deleteUser,
+  getUserDetail,
+  getUserList,
+  updateUserBasicInfo,
+} from '@/services/admin/user';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@workspace/ui/components/dropdown-menu';
+import { ScrollArea } from '@workspace/ui/components/scroll-area';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@workspace/ui/components/sheet';
 import { Switch } from '@workspace/ui/components/switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { UserDetail } from './user-detail';
 import UserForm from './user-form';
+import { AuthMethodsForm } from './user-profile/auth-methods-form';
+import { BasicInfoForm } from './user-profile/basic-info-form';
+import { NotifySettingsForm } from './user-profile/notify-settings-form';
+import UserSubscription from './user-subscription';
 
 export default function Page() {
   const t = useTranslations('user');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
+  const sp = useSearchParams();
 
   const { data: subscribeList } = useQuery({
     queryKey: ['getSubscribeList', 'all'],
@@ -33,9 +60,17 @@ export default function Page() {
     },
   });
 
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    user_id: sp.get('user_id') || undefined,
+    subscribe_id: sp.get('subscribe_id') || undefined,
+    user_subscribe_id: sp.get('user_subscribe_id') || undefined,
+  };
+
   return (
     <ProTable<API.User, API.GetUserListParams>
       action={ref}
+      initialFilters={initialFilters}
       header={{
         title: t('userList'),
         toolbar: (
@@ -180,9 +215,8 @@ export default function Page() {
       actions={{
         render: (row) => {
           return [
-            <Button key='detail' asChild>
-              <Link href={`/dashboard/user/${row.id}`}>{t('edit')}</Link>
-            </Button>,
+            <ProfileSheet key='profile' userId={row.id} />,
+            <SubscriptionSheet key='subscription' userId={row.id} />,
             <ConfirmButton
               key='edit'
               trigger={<Button variant='destructive'>{t('delete')}</Button>}
@@ -196,9 +230,91 @@ export default function Page() {
               cancelText={t('cancel')}
               confirmText={t('confirm')}
             />,
+            <DropdownMenu key='more'>
+              <DropdownMenuTrigger asChild>
+                <Button variant='outline'>{t('more')}</Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align='end'>
+                <DropdownMenuItem asChild>
+                  <Link href={`/dashboard/log/login?user_id=${row.id}`}>{t('loginLogs')}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/dashboard/order?user_id=${row.id}`}>{t('orderList')}</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>,
           ];
         },
       }}
     />
+  );
+}
+
+function ProfileSheet({ userId }: { userId: number }) {
+  const t = useTranslations('user');
+  const [open, setOpen] = useState(false);
+  const { data: user, refetch } = useQuery({
+    enabled: open,
+    queryKey: ['user', userId],
+    queryFn: async () => {
+      const { data } = await getUserDetail({ id: userId });
+      return data.data as API.User;
+    },
+  });
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button variant='default'>{t('edit')}</Button>
+      </SheetTrigger>
+      <SheetContent side='right' className='w-[700px] max-w-full md:max-w-screen-lg'>
+        <SheetHeader>
+          <SheetTitle>
+            {t('userProfile')} · ID: {userId}
+          </SheetTitle>
+        </SheetHeader>
+        {user && (
+          <ScrollArea className='h-[calc(100dvh-140px)] p-2'>
+            <Tabs defaultValue='basic'>
+              <TabsList className='mb-3'>
+                <TabsTrigger value='basic'>{t('basicInfoTitle')}</TabsTrigger>
+                <TabsTrigger value='notify'>{t('notifySettingsTitle')}</TabsTrigger>
+                <TabsTrigger value='auth'>{t('authMethodsTitle')}</TabsTrigger>
+              </TabsList>
+              <TabsContent value='basic' className='mt-0'>
+                <BasicInfoForm user={user} refetch={refetch as any} />
+              </TabsContent>
+              <TabsContent value='notify' className='mt-0'>
+                <NotifySettingsForm user={user} refetch={refetch as any} />
+              </TabsContent>
+              <TabsContent value='auth' className='mt-0'>
+                <AuthMethodsForm user={user} refetch={refetch as any} />
+              </TabsContent>
+            </Tabs>
+          </ScrollArea>
+        )}
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+function SubscriptionSheet({ userId }: { userId: number }) {
+  const t = useTranslations('user');
+  const [open, setOpen] = useState(false);
+  return (
+    <Sheet open={open} onOpenChange={setOpen}>
+      <SheetTrigger asChild>
+        <Button variant='secondary'>订阅</Button>
+      </SheetTrigger>
+      <SheetContent side='right' className='w-[1000px] max-w-full md:max-w-screen-xl'>
+        <SheetHeader>
+          <SheetTitle>
+            {t('subscriptionList')} · ID: {userId}
+          </SheetTitle>
+        </SheetHeader>
+        <div className='mt-2'>
+          <UserSubscription userId={userId} />
+        </div>
+      </SheetContent>
+    </Sheet>
   );
 }

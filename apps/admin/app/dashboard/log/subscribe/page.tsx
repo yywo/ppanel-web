@@ -6,12 +6,20 @@ import { ProTable } from '@/components/pro-table';
 import { filterSubscribeLog } from '@/services/admin/log';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function SubscribeLogPage() {
   const t = useTranslations('log');
+  const sp = useSearchParams();
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    date: sp.get('date') || undefined,
+    user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
+  };
   return (
     <ProTable<API.SubscribeLog, { search?: string }>
       header={{ title: t('title.subscribe') }}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'user',

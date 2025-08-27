@@ -9,9 +9,16 @@ import {
   updateUserSubscribe,
 } from '@/services/admin/user';
 import { Button } from '@workspace/ui/components/button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@workspace/ui/components/dropdown-menu';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { SubscriptionDetail } from './subscription-detail';
@@ -139,12 +146,6 @@ export default function UserSubscription({ userId }: { userId: number }) {
                 return true;
               }}
             />,
-            <SubscriptionDetail
-              key='detail'
-              trigger={<Button variant='secondary'>{t('detail')}</Button>}
-              userId={userId}
-              subscriptionId={row.id}
-            />,
             <ConfirmButton
               key='delete'
               trigger={<Button variant='destructive'>{t('delete')}</Button>}
@@ -158,9 +159,64 @@ export default function UserSubscription({ userId }: { userId: number }) {
               cancelText={t('cancel')}
               confirmText={t('confirm')}
             />,
+            <RowMoreActions key='more' userId={userId} subId={row.id} />,
           ];
         },
       }}
     />
+  );
+}
+
+function RowMoreActions({ userId, subId }: { userId: number; subId: number }) {
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const t = useTranslations('user');
+  return (
+    <div className='inline-flex'>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant='outline'>{t('more')}</Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align='end'>
+          <DropdownMenuItem asChild>
+            <Link href={`/dashboard/log/subscribe?user_id=${userId}&user_subscribe_id=${subId}`}>
+              {t('subscriptionLogs')}
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link
+              href={`/dashboard/log/reset-subscribe?user_id=${userId}&user_subscribe_id=${subId}`}
+            >
+              {t('resetLogs')}
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link
+              href={`/dashboard/log/subscribe-traffic?user_id=${userId}&user_subscribe_id=${subId}`}
+            >
+              {t('trafficStats')}
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href={`/dashboard/log/traffic-details?user_id=${userId}&subscribe_id=${subId}`}>
+              {t('trafficDetails')}
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            onSelect={(e) => {
+              e.preventDefault();
+              triggerRef.current?.click();
+            }}
+          >
+            {t('onlineDevices')}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+
+      <SubscriptionDetail
+        trigger={<Button ref={triggerRef} className='hidden' />}
+        userId={userId}
+        subscriptionId={subId}
+      />
+    </div>
   );
 }

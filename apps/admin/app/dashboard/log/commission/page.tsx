@@ -5,12 +5,20 @@ import { ProTable } from '@/components/pro-table';
 import { filterCommissionLog } from '@/services/admin/log';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function CommissionLogPage() {
   const t = useTranslations('log');
+  const sp = useSearchParams();
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    date: sp.get('date') || undefined,
+    user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
+  };
   return (
     <ProTable<API.CommissionLog, { search?: string }>
       header={{ title: t('title.commission') }}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'user',

@@ -5,12 +5,19 @@ import { filterEmailLog } from '@/services/admin/log';
 import { Badge } from '@workspace/ui/components/badge';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function EmailLogPage() {
   const t = useTranslations('log');
+  const sp = useSearchParams();
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    date: sp.get('date') || undefined,
+  };
   return (
     <ProTable<API.MessageLog, { search?: string }>
       header={{ title: t('title.email') }}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'id',

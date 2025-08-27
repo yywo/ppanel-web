@@ -5,12 +5,22 @@ import { ProTable } from '@/components/pro-table';
 import { filterResetSubscribeLog } from '@/services/admin/log';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function ResetSubscribeLogPage() {
   const t = useTranslations('log');
+  const sp = useSearchParams();
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    date: sp.get('date') || undefined,
+    user_subscribe_id: sp.get('user_subscribe_id')
+      ? Number(sp.get('user_subscribe_id'))
+      : undefined,
+  };
   return (
     <ProTable<API.ResetSubscribeLog, { search?: string }>
       header={{ title: t('title.resetSubscribe') }}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'user',

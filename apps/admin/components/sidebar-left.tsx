@@ -34,26 +34,22 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
   const pathname = usePathname();
   const { state, isMobile } = useSidebar();
 
-  const firstGroupTitle = (navs as typeof navs).find((n) => hasChildren(n))?.title ?? '';
+  const logsGroupTitle = 'Logs & Analytics';
+  const systemGroupTitle = 'System';
 
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
     const groups: Record<string, boolean> = {};
     (navs as typeof navs).forEach((nav) => {
-      if (hasChildren(nav)) groups[nav.title] = nav.title === firstGroupTitle;
+      if (hasChildren(nav)) {
+        // Default: open all groups except Logs & Analytics and System
+        groups[nav.title] = nav.title !== logsGroupTitle && nav.title !== systemGroupTitle;
+      }
     });
     return groups;
   });
 
   const handleToggleGroup = (title: string) => {
-    setOpenGroups((prev) => {
-      const currentlyOpen = !!prev[title];
-      const next: Record<string, boolean> = {};
-      (navs as typeof navs).forEach((nav) => {
-        if (hasChildren(nav)) next[nav.title] = false;
-      });
-      next[title] = !currentlyOpen;
-      return next;
-    });
+    setOpenGroups((prev) => ({ ...prev, [title]: !prev[title] }));
   };
 
   const normalize = (p: string) => (p.endsWith('/') && p !== '/' ? p.replace(/\/+$/, '') : p);
@@ -70,19 +66,13 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
     (hasChildren(nav) && nav.items.some((i: any) => isActiveUrl(i.url))) ||
     ('url' in nav && nav.url ? isActiveUrl(nav.url as string) : false);
 
-  // Auto-open the group containing the active route whenever pathname changes
+  // Ensure the group containing the active route is open, without closing others
   React.useEffect(() => {
     setOpenGroups((prev) => {
-      const next: Record<string, boolean> = {};
+      const next: Record<string, boolean> = { ...prev };
       (navs as typeof navs).forEach((nav) => {
-        if (hasChildren(nav)) next[nav.title] = isGroupActive(nav);
+        if (hasChildren(nav) && isGroupActive(nav)) next[nav.title] = true;
       });
-      // If no active group detected, keep previously opened or default to first
-      if (!Object.values(next).some(Boolean)) {
-        (navs as typeof navs).forEach((nav) => {
-          if (hasChildren(nav)) next[nav.title] = prev[nav.title] ?? nav.title === firstGroupTitle;
-        });
-      }
       return next;
     });
   }, [pathname]);
@@ -199,14 +189,17 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     <SidebarGroup key={nav.title} className={cn('py-1')}>
                       <SidebarMenuButton
                         size='sm'
-                        className={cn('mb-2 flex h-8 w-full items-center justify-between', {
-                          'bg-accent text-accent-foreground': isOpen || groupActive,
-                          'hover:bg-accent/60': !isOpen && !groupActive,
-                        })}
+                        // className={cn('mb-2 flex h-8 w-full items-center justify-between', {
+                        //   'bg-accent text-accent-foreground': isOpen || groupActive,
+                        //   'hover:bg-accent/60': !isOpen && !groupActive,
+                        // })}
+                        className={cn(
+                          'hover:bg-accent/60 mb-2 flex h-8 w-full items-center justify-between',
+                        )}
                         onClick={() => handleToggleGroup(nav.title)}
                         tabIndex={0}
                         style={{ fontWeight: 500 }}
-                        isActive={groupActive}
+                        isActive={false}
                       >
                         <span className='flex min-w-0 items-center gap-2'>
                           {'icon' in nav && (nav as any).icon ? (

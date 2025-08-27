@@ -70,6 +70,7 @@ export interface ProTableProps<TData, TValue> {
     targetId: string | number | null,
     items: TData[],
   ) => Promise<TData[]>;
+  initialFilters?: Record<string, unknown>;
 }
 
 export interface ProTableActions {
@@ -90,9 +91,14 @@ export function ProTable<
   texts,
   empty,
   onSort,
+  initialFilters,
 }: ProTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(() =>
+    initialFilters
+      ? (Object.entries(initialFilters).map(([id, value]) => ({ id, value })) as ColumnFiltersState)
+      : [],
+  );
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
   const [data, setData] = useState<TData[]>([]);

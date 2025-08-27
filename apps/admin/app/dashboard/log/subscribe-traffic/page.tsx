@@ -5,12 +5,23 @@ import { ProTable } from '@/components/pro-table';
 import { filterUserSubscribeTrafficLog } from '@/services/admin/log';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 
 export default function SubscribeTrafficLogPage() {
   const t = useTranslations('log');
+  const sp = useSearchParams();
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    date: sp.get('date') || undefined,
+    user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
+    user_subscribe_id: sp.get('user_subscribe_id')
+      ? Number(sp.get('user_subscribe_id'))
+      : undefined,
+  };
   return (
     <ProTable<API.UserSubscribeTrafficLog, { search?: string }>
       header={{ title: t('title.subscribeTraffic') }}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'user',

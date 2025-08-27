@@ -25,7 +25,6 @@ import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
-import NextImage from 'next/legacy/image';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { UserDetail } from '../user/user-detail';
@@ -130,7 +129,7 @@ export default function Page() {
           render(row) {
             if (row.status !== 4) {
               return [
-                <Button key='reply' size='sm' onClick={() => setTicketId(row.id)}>
+                <Button key='reply' onClick={() => setTicketId(row.id)}>
                   {t('reply')}
                 </Button>,
                 <ConfirmButton
@@ -166,7 +165,7 @@ export default function Page() {
           if (!open) setTicketId(null);
         }}
       >
-        <DrawerContent className='container mx-auto h-screen'>
+        <DrawerContent className='container mx-auto h-screen *:select-text'>
           <DrawerHeader className='border-b text-left'>
             <DrawerTitle>{ticket?.title}</DrawerTitle>
             <DrawerDescription>{ticket?.description}</DrawerDescription>
@@ -193,7 +192,8 @@ export default function Page() {
                     >
                       {item.type === 1 && item.content}
                       {item.type === 2 && (
-                        <NextImage
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
                           src={item.content!}
                           width={300}
                           height={300}
