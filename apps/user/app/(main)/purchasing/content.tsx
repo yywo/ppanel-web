@@ -86,7 +86,7 @@ export default function Content({ subscription }: { subscription?: API.Subscribe
         console.log(error);
       }
     });
-  }, [params, router, subscription?.id]);
+  }, [params, router]);
 
   if (!subscription) {
     return <div className='p-6 text-center'>{t('subscriptionNotFound')}</div>;

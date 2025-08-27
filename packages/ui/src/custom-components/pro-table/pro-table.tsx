@@ -30,7 +30,7 @@ import { ColumnToggle } from '@workspace/ui/custom-components/pro-table/column-t
 import { Pagination } from '@workspace/ui/custom-components/pro-table/pagination';
 import { SortableRow } from '@workspace/ui/custom-components/pro-table/sortable-row';
 import { ProTableWrapper } from '@workspace/ui/custom-components/pro-table/wrapper';
-import { cn } from '@workspace/ui/lib/utils.js';
+import { cn } from '@workspace/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { GripVertical, ListRestart, Loader, RefreshCcw } from 'lucide-react';
 import React, { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';

@@ -27,6 +27,7 @@ export default function Certification({ platform, children }: CertificationProps
       .catch((error) => {
         router.replace('/auth');
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return children;

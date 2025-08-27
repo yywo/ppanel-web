@@ -8,7 +8,7 @@ interface SubscribeBillingProps {
   order?: Partial<
     API.OrderDetail & {
       unit_price: number;
-      unit_time: number;
+      unit_time: string;
       subscribe_discount: number;
     }
   >;

@@ -61,7 +61,7 @@ export default function Page() {
           </div>
         </CardContent>
       </Card>
-      <ProList<API.UserBalanceLog, Record<string, unknown>>
+      <ProList<API.BalanceLog, Record<string, unknown>>
         action={ref}
         request={async (pagination, filter) => {
           const response = await queryUserBalanceLog({ ...pagination, ...filter });
@@ -77,7 +77,7 @@ export default function Page() {
                 <ul className='grid grid-cols-2 gap-3 *:flex *:flex-col lg:grid-cols-4'>
                   <li className='font-semibold'>
                     <span className='text-muted-foreground'>{t('createdAt')}</span>
-                    <time>{formatDate(item.created_at)}</time>
+                    <time>{formatDate(item.timestamp)}</time>
                   </li>
                   <li className='font-semibold'>
                     <span className='text-muted-foreground'>{t('type.0')}</span>
