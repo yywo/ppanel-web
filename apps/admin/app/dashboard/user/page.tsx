@@ -236,10 +236,21 @@ export default function Page() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align='end'>
                 <DropdownMenuItem asChild>
+                  <Link href={`/dashboard/order?user_id=${row.id}`}>{t('orderList')}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link href={`/dashboard/log/login?user_id=${row.id}`}>{t('loginLogs')}</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href={`/dashboard/order?user_id=${row.id}`}>{t('orderList')}</Link>
+                  <Link href={`/dashboard/log/balance?user_id=${row.id}`}>{t('balanceLogs')}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/dashboard/log/commission?user_id=${row.id}`}>
+                    {t('commissionLogs')}
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href={`/dashboard/log/gift?user_id=${row.id}`}>{t('giftLogs')}</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>,
