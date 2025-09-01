@@ -30,6 +30,8 @@ const basicInfoSchema = z.object({
   gift_amount: z.number().optional(),
   refer_code: z.string().optional(),
   referer_id: z.number().optional(),
+  referral_percentage: z.number().optional(),
+  only_first_purchase: z.boolean().optional(),
   is_admin: z.boolean().optional(),
   password: z.string().optional(),
   enable: z.boolean(),
@@ -52,6 +54,8 @@ export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () =
       gift_amount: user.gift_amount,
       refer_code: user.refer_code,
       referer_id: user.referer_id,
+      referral_percentage: user.referral_percentage,
+      only_first_purchase: user.only_first_purchase,
       is_admin: user.is_admin,
       enable: user.enable,
     },
@@ -216,6 +220,41 @@ export function BasicInfoForm({ user, refetch }: { user: API.User; refetch: () =
                 )}
               />
             </div>
+
+            <FormField
+              control={form.control}
+              name='referral_percentage'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('referralPercentage')}</FormLabel>
+                  <FormControl>
+                    <EnhancedInput
+                      type='number'
+                      min={0}
+                      max={100}
+                      value={field.value}
+                      suffix='%'
+                      onValueChange={(value) => {
+                        form.setValue(field.name, value as number);
+                      }}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='only_first_purchase'
+              render={({ field }) => (
+                <FormItem className='flex items-center justify-between space-x-2'>
+                  <FormLabel>{t('onlyFirstPurchase')}</FormLabel>
+                  <FormControl>
+                    <Switch checked={field.value} onCheckedChange={field.onChange} />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name='avatar'

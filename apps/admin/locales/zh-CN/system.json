@@ -33,6 +33,16 @@
     "saveSuccess": "保存成功",
     "saveFailed": "保存失败"
   },
+  "logCleanup": {
+    "title": "日志清理设置",
+    "description": "配置系统日志自动清理规则和保留时间",
+    "autoClear": "启用自动清理",
+    "autoClearDescription": "启用后系统将自动清理过期的日志记录",
+    "clearDays": "保留天数",
+    "clearDaysDescription": "日志保留的天数，超过此时间的日志将被清理",
+    "clearDaysPlaceholder": "请输入保留天数"
+  },
+  "logSettings": "日志设置",
   "privacyPolicy": {
     "title": "隐私政策",
     "description": "编辑和管理隐私政策内容"

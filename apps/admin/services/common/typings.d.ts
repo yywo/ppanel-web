@@ -890,6 +890,8 @@ declare namespace API {
     avatar: string;
     balance: number;
     commission: number;
+    referral_percentage: number;
+    only_first_purchase: boolean;
     gift_amount: number;
     telegram: number;
     refer_code: string;

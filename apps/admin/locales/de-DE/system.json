@@ -33,6 +33,16 @@
     "saveSuccess": "Speichern erfolgreich",
     "title": "Einladungseinstellungen"
   },
+  "logCleanup": {
+    "autoClear": "Automatische Bereinigung aktivieren",
+    "autoClearDescription": "Wenn aktiviert, wird das System abgelaufene Protokolle automatisch löschen",
+    "clearDays": "Aufbewahrungstage",
+    "clearDaysDescription": "Anzahl der Tage, an denen Protokolle aufbewahrt werden; Protokolle, die älter sind als dies, werden gelöscht",
+    "clearDaysPlaceholder": "Geben Sie die Aufbewahrungstage ein",
+    "description": "Konfigurieren Sie automatische Protokollbereinigungsregeln und Aufbewahrungsfristen",
+    "title": "Protokollbereinigungseinstellungen"
+  },
+  "logSettings": "Protokolleinstellungen",
   "privacyPolicy": {
     "description": "Bearbeiten und verwalten Sie den Inhalt der Datenschutzrichtlinie",
     "title": "Datenschutzrichtlinie"

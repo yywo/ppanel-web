@@ -33,6 +33,16 @@
     "saveSuccess": "Guardado Exitoso",
     "title": "Configuración de Invitaciones"
   },
+  "logCleanup": {
+    "autoClear": "Habilitar limpieza automática",
+    "autoClearDescription": "Cuando está habilitado, el sistema eliminará automáticamente los registros de log expirados",
+    "clearDays": "Días de retención",
+    "clearDaysDescription": "Número de días para retener los registros; los registros más antiguos que esto serán eliminados",
+    "clearDaysPlaceholder": "Introduce los días de retención",
+    "description": "Configura las reglas de limpieza automática de registros y el período de retención",
+    "title": "Configuración de limpieza de registros"
+  },
+  "logSettings": "Configuración de registros",
   "privacyPolicy": {
     "description": "Editar y gestionar el contenido de la política de privacidad",
     "title": "Política de Privacidad"

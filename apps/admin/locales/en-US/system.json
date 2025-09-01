@@ -33,6 +33,16 @@
     "saveSuccess": "Save Successful",
     "saveFailed": "Save Failed"
   },
+  "logCleanup": {
+    "title": "Log Cleanup Settings",
+    "description": "Configure automatic log cleanup rules and retention period",
+    "autoClear": "Enable Auto Cleanup",
+    "autoClearDescription": "When enabled, the system will automatically clear expired log records",
+    "clearDays": "Retention Days",
+    "clearDaysDescription": "Number of days to retain logs; logs older than this will be cleaned up",
+    "clearDaysPlaceholder": "Enter retention days"
+  },
+  "logSettings": "Log Settings",
   "privacyPolicy": {
     "title": "Privacy Policy",
     "description": "Edit and manage privacy policy content"

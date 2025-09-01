@@ -33,6 +33,16 @@
     "saveSuccess": "Uložení úspěšné",
     "title": "Nastavení pozvánek"
   },
+  "logCleanup": {
+    "autoClear": "Povolit automatické čištění",
+    "autoClearDescription": "Pokud je povoleno, systém automaticky vymaže vypršené záznamy protokolů",
+    "clearDays": "Dny uchovávání",
+    "clearDaysDescription": "Počet dní pro uchovávání protokolů; protokoly starší než toto budou vyčištěny",
+    "clearDaysPlaceholder": "Zadejte dny uchovávání",
+    "description": "Nastavte pravidla automatického čištění protokolů a dobu uchovávání",
+    "title": "Nastavení čištění protokolů"
+  },
+  "logSettings": "Nastavení protokolů",
   "privacyPolicy": {
     "description": "Upravte a spravujte obsah zásad ochrany osobních údajů",
     "title": "Zásady ochrany osobních údajů"

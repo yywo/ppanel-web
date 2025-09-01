@@ -33,6 +33,16 @@
     "saveSuccess": "Enregistrement réussi",
     "title": "Paramètres d'invitation"
   },
+  "logCleanup": {
+    "autoClear": "Activer le nettoyage automatique",
+    "autoClearDescription": "Lorsque cette option est activée, le système supprimera automatiquement les enregistrements de journaux expirés",
+    "clearDays": "Jours de conservation",
+    "clearDaysDescription": "Nombre de jours pour conserver les journaux ; les journaux plus anciens seront supprimés",
+    "clearDaysPlaceholder": "Entrez le nombre de jours de conservation",
+    "description": "Configurer les règles de nettoyage automatique des journaux et la période de conservation",
+    "title": "Paramètres de nettoyage des journaux"
+  },
+  "logSettings": "Paramètres des journaux",
   "privacyPolicy": {
     "description": "Modifier et gérer le contenu de la politique de confidentialité",
     "title": "Politique de confidentialité"

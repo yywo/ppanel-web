@@ -6,6 +6,7 @@ import {
   deleteNode,
   filterNodeList,
   filterServerList,
+  resetSortWithNode,
   toggleNodeStatus,
   updateNode,
 } from '@/services/admin/server';
@@ -234,6 +235,35 @@ export default function NodesPage() {
             />,
           ];
         },
+      }}
+      onSort={async (source, target, items) => {
+        const sourceIndex = items.findIndex((item) => String(item.id) === source);
+        const targetIndex = items.findIndex((item) => String(item.id) === target);
+
+        const originalSorts = items.map((item) => item.sort);
+
+        const [movedItem] = items.splice(sourceIndex, 1);
+        items.splice(targetIndex, 0, movedItem!);
+
+        const updatedItems = items.map((item, index) => {
+          const originalSort = originalSorts[index];
+          const newSort = originalSort !== undefined ? originalSort : item.sort;
+          return { ...item, sort: newSort };
+        });
+
+        const changedItems = updatedItems.filter((item, index) => {
+          return item.sort !== items[index]?.sort;
+        });
+
+        if (changedItems.length > 0) {
+          resetSortWithNode({
+            sort: changedItems.map((item) => ({
+              id: item.id,
+              sort: item.sort,
+            })) as API.SortItem[],
+          });
+        }
+        return updatedItems;
       }}
     />
   );

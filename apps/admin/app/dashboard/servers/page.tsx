@@ -5,6 +5,7 @@ import {
   createServer,
   deleteServer,
   filterServerList,
+  resetSortWithServer,
   updateServer,
 } from '@/services/admin/server';
 import { Badge } from '@workspace/ui/components/badge';
@@ -195,13 +196,7 @@ export default function ServersPage() {
           {
             id: 'online_users',
             header: t('onlineUsers'),
-            cell: ({ row }) => (
-              <OnlineUsersCell
-                serverId={row.original.id}
-                status={row.original.status as API.ServerStatus}
-                t={t}
-              />
-            ),
+            cell: ({ row }) => <OnlineUsersCell status={row.original.status as API.ServerStatus} />,
           },
           {
             id: 'traffic_ratio',
@@ -287,6 +282,35 @@ export default function ServersPage() {
               {t('copy')}
             </Button>,
           ],
+        }}
+        onSort={async (source, target, items) => {
+          const sourceIndex = items.findIndex((item) => String(item.id) === source);
+          const targetIndex = items.findIndex((item) => String(item.id) === target);
+
+          const originalSorts = items.map((item) => item.sort);
+
+          const [movedItem] = items.splice(sourceIndex, 1);
+          items.splice(targetIndex, 0, movedItem!);
+
+          const updatedItems = items.map((item, index) => {
+            const originalSort = originalSorts[index];
+            const newSort = originalSort !== undefined ? originalSort : item.sort;
+            return { ...item, sort: newSort };
+          });
+
+          const changedItems = updatedItems.filter((item, index) => {
+            return item.sort !== items[index]?.sort;
+          });
+
+          if (changedItems.length > 0) {
+            resetSortWithServer({
+              sort: changedItems.map((item) => ({
+                id: item.id,
+                sort: item.sort,
+              })) as API.SortItem[],
+            });
+          }
+          return updatedItems;
         }}
       />
     </div>

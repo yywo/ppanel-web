@@ -155,6 +155,26 @@ export async function filterServerTrafficLog(
   );
 }
 
+/** Get log setting GET /v1/admin/log/setting */
+export async function getLogSetting(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.LogSetting }>('/v1/admin/log/setting', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** Update log setting POST /v1/admin/log/setting */
+export async function updateLogSetting(body: API.LogSetting, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/log/setting', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** Filter subscribe log GET /v1/admin/log/subscribe/list */
 export async function filterSubscribeLog(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)

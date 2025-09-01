@@ -33,6 +33,16 @@
     "saveSuccess": "Salvare cu Succes",
     "title": "Setări de Invitație"
   },
+  "logCleanup": {
+    "autoClear": "Activează curățarea automată",
+    "autoClearDescription": "Când este activat, sistemul va curăța automat înregistrările de jurnal expirate",
+    "clearDays": "Zile de păstrare",
+    "clearDaysDescription": "Numărul de zile pentru care se păstrează jurnalele; jurnalele mai vechi de atât vor fi curățate",
+    "clearDaysPlaceholder": "Introdu zilele de păstrare",
+    "description": "Configurează regulile de curățare automată a jurnalelor și perioada de păstrare",
+    "title": "Setări de curățare a jurnalelor"
+  },
+  "logSettings": "Setări jurnal",
   "privacyPolicy": {
     "description": "Editează și gestionează conținutul politicii de confidențialitate",
     "title": "Politica de Confidențialitate"

@@ -366,6 +366,8 @@ declare namespace API {
     password: string;
     product_id: number;
     duration: number;
+    referral_percentage: number;
+    only_first_purchase: boolean;
     referer_user: string;
     refer_code: string;
     balance: number;
@@ -1289,6 +1291,11 @@ declare namespace API {
     list: Record<string, any>;
   };
 
+  type LogSetting = {
+    auto_clear: boolean;
+    clear_days: number;
+  };
+
   type MessageLog = {
     id: number;
     type: number;
@@ -1321,6 +1328,7 @@ declare namespace API {
     server_id: number;
     protocol: string;
     enabled: boolean;
+    sort?: number;
     created_at: number;
     updated_at: number;
   };
@@ -1622,6 +1630,10 @@ declare namespace API {
     order_no: string;
   };
 
+  type ResetSortRequest = {
+    sort: SortItem[];
+  };
+
   type ResetSubscribeLog = {
     type: number;
     user_id: number;
@@ -1696,8 +1708,13 @@ declare namespace API {
     updated_at: number;
   };
 
+  type ServerOnlineIP = {
+    ip: string;
+    protocol: string;
+  };
+
   type ServerOnlineUser = {
-    ip: string[];
+    ip: ServerOnlineIP[];
     user_id: number;
     subscribe: string;
     subscribe_id: number;
@@ -1719,14 +1736,15 @@ declare namespace API {
   };
 
   type ServerStatus = {
-    online: ServerOnlineUser[];
     cpu: number;
     mem: number;
     disk: number;
+    protocol: string;
+    online: ServerOnlineUser[];
   };
 
   type ServerTotalDataResponse = {
-    online_user_ips: number;
+    online_users: number;
     online_servers: number;
     offline_servers: number;
     today_upload: number;
@@ -2161,6 +2179,8 @@ declare namespace API {
     avatar: string;
     balance: number;
     commission: number;
+    referral_percentage: number;
+    only_first_purchase: boolean;
     gift_amount: number;
     telegram: number;
     refer_code: string;
@@ -2191,6 +2211,8 @@ declare namespace API {
     avatar: string;
     balance: number;
     commission: number;
+    referral_percentage: number;
+    only_first_purchase: boolean;
     gift_amount: number;
     telegram: number;
     refer_code: string;

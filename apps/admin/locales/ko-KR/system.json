@@ -33,6 +33,16 @@
     "saveSuccess": "저장 성공",
     "title": "초대 설정"
   },
+  "logCleanup": {
+    "autoClear": "자동 정리 활성화",
+    "autoClearDescription": "활성화되면 시스템이 만료된 로그 기록을 자동으로 삭제합니다",
+    "clearDays": "보존 일수",
+    "clearDaysDescription": "로그를 보존할 일수; 이보다 오래된 로그는 삭제됩니다",
+    "clearDaysPlaceholder": "보존 일수를 입력하세요",
+    "description": "자동 로그 정리 규칙 및 보존 기간 구성",
+    "title": "로그 정리 설정"
+  },
+  "logSettings": "로그 설정",
   "privacyPolicy": {
     "description": "개인정보 처리방침 내용 편집 및 관리",
     "title": "개인정보 처리방침"

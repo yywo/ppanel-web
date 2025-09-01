@@ -3,7 +3,7 @@
 import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
-import { filterServerList } from '@/services/admin/server';
+import { getUserSubscribeById } from '@/services/admin/user';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import {
@@ -13,55 +13,85 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
-import type { useTranslations } from 'next-intl';
+import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-function mapOnlineUsers(online: API.ServerStatus['online'] = []): {
-  uid: string;
-  ips: string[];
-  subscribe?: string;
-  subscribe_id?: number;
-  traffic?: number;
-  expired_at?: number;
-}[] {
-  return (online || []).map((u) => ({
-    uid: String(u.user_id || ''),
-    ips: Array.isArray(u.ip) ? u.ip.map(String) : [],
-    subscribe: (u as any).subscribe,
-    subscribe_id: (u as any).subscribe_id,
-    traffic: (u as any).traffic,
-    expired_at: (u as any).expired_at,
-  }));
-}
-
-export default function OnlineUsersCell({
-  serverId,
-  status,
-  t,
+function UserSubscribeInfo({
+  subscribeId,
+  open,
+  type,
 }: {
-  serverId?: number;
-  status?: API.ServerStatus;
-  t: ReturnType<typeof useTranslations>;
+  subscribeId: number;
+  open: boolean;
+  type: 'account' | 'subscribeName' | 'subscribeId' | 'trafficUsage' | 'expireTime';
 }) {
-  const [open, setOpen] = useState(false);
-
-  const { data: latest } = useQuery({
-    queryKey: ['serverStatusById', serverId, open],
-    enabled: !!serverId && open,
+  const t = useTranslations('servers');
+  const { data } = useQuery({
+    enabled: subscribeId !== 0 && open,
+    queryKey: ['getUserSubscribeById', subscribeId],
     queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 1, search: String(serverId) });
-      const list = (data?.data?.list || []) as API.Server[];
-      return list[0]?.status as API.ServerStatus | undefined;
+      const { data } = await getUserSubscribeById({ id: subscribeId });
+      return data.data;
     },
   });
 
-  const rows = mapOnlineUsers((latest || status)?.online);
-  const count = rows.length;
+  if (!data) return <span className='text-muted-foreground'>--</span>;
+
+  switch (type) {
+    case 'account':
+      if (!data.user_id) return <span className='text-muted-foreground'>--</span>;
+      return <UserDetail id={data.user_id} />;
+
+    case 'subscribeName':
+      if (!data.subscribe?.name) return <span className='text-muted-foreground'>--</span>;
+      return <span className='text-sm'>{data.subscribe.name}</span>;
+
+    case 'subscribeId':
+      if (!data.id) return <span className='text-muted-foreground'>--</span>;
+      return <span className='font-mono text-sm'>{data.id}</span>;
+
+    case 'trafficUsage': {
+      const usedTraffic = data.upload + data.download;
+      const totalTraffic = data.traffic || 0;
+      return (
+        <div className='min-w-0 text-sm'>
+          <div className='break-words'>
+            {formatBytes(usedTraffic)} / {totalTraffic > 0 ? formatBytes(totalTraffic) : '无限制'}
+          </div>
+        </div>
+      );
+    }
+
+    case 'expireTime': {
+      if (!data.expire_time) return <span className='text-muted-foreground'>--</span>;
+      const isExpired = data.expire_time < Date.now() / 1000;
+      return (
+        <div className='flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-2'>
+          <span className='text-sm'>{formatDate(data.expire_time)}</span>
+          {isExpired && (
+            <Badge variant='destructive' className='w-fit px-1 py-0 text-xs'>
+              {t('expired')}
+            </Badge>
+          )}
+        </div>
+      );
+    }
+
+    default:
+      return <span className='text-muted-foreground'>--</span>;
+  }
+}
+
+export default function OnlineUsersCell({ status }: { status?: API.ServerStatus }) {
+  const t = useTranslations('servers');
+  const [open, setOpen] = useState(false);
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className='hover:text-foreground text-muted-foreground flex items-center gap-2 bg-transparent p-0 text-sm'>
-          <Badge variant='secondary'>{count}</Badge>
+          <Badge variant='secondary'>{status?.online.length}</Badge>
           <span>{t('onlineUsers')}</span>
         </button>
       </SheetTrigger>
@@ -70,36 +100,20 @@ export default function OnlineUsersCell({
           <SheetTitle>{t('onlineUsers')}</SheetTitle>
         </SheetHeader>
         <div className='-mx-6 h-[calc(100vh-48px-16px)] overflow-y-auto px-6 py-4 sm:h-[calc(100dvh-48px-16px-env(safe-area-inset-top))]'>
-          <ProTable<
-            {
-              uid: string;
-              ips: string[];
-              subscribe?: string;
-              subscribe_id?: number;
-              traffic?: number;
-              expired_at?: number;
-            },
-            Record<string, unknown>
-          >
+          <ProTable<API.ServerOnlineUser, Record<string, unknown>>
             header={{ hidden: true }}
             columns={[
               {
-                accessorKey: 'ips',
+                accessorKey: 'ip',
                 header: t('ipAddresses'),
                 cell: ({ row }) => {
-                  const ips = row.original.ips;
+                  const ips = row.original.ip;
                   return (
                     <div className='flex min-w-0 flex-col gap-1'>
-                      {ips.map((ip, i) => (
-                        <div
-                          key={`${row.original.uid}-${ip}`}
-                          className='whitespace-nowrap text-sm'
-                        >
-                          {i === 0 ? (
-                            <IpLink ip={ip} className='font-medium' />
-                          ) : (
-                            <IpLink ip={ip} className='text-muted-foreground' />
-                          )}
+                      {ips.map((item, i) => (
+                        <div className='whitespace-nowrap text-sm' key={i}>
+                          <Badge>{item.protocol}</Badge>
+                          <IpLink ip={item.ip} className='font-medium' />
                         </div>
                       ))}
                     </div>
@@ -109,51 +123,63 @@ export default function OnlineUsersCell({
               {
                 accessorKey: 'user',
                 header: t('user'),
-                cell: ({ row }) => <UserDetail id={Number(row.original.uid)} />,
+                cell: ({ row }) => (
+                  <UserSubscribeInfo
+                    subscribeId={Number(row.original.subscribe_id)}
+                    open={open}
+                    type='account'
+                  />
+                ),
               },
               {
                 accessorKey: 'subscription',
                 header: t('subscription'),
                 cell: ({ row }) => (
-                  <span className='text-sm'>{row.original.subscribe || '--'}</span>
+                  <UserSubscribeInfo
+                    subscribeId={Number(row.original.subscribe_id)}
+                    open={open}
+                    type='subscribeName'
+                  />
                 ),
               },
               {
                 accessorKey: 'subscribeId',
                 header: t('subscribeId'),
                 cell: ({ row }) => (
-                  <span className='font-mono text-sm'>{row.original.subscribe_id || '--'}</span>
+                  <UserSubscribeInfo
+                    subscribeId={Number(row.original.subscribe_id)}
+                    open={open}
+                    type='subscribeId'
+                  />
                 ),
               },
               {
                 accessorKey: 'traffic',
                 header: t('traffic'),
-                cell: ({ row }) => {
-                  const v = Number(row.original.traffic || 0);
-                  return <span className='text-sm'>{(v / 1024 ** 3).toFixed(2)} GB</span>;
-                },
+                cell: ({ row }) => (
+                  <UserSubscribeInfo
+                    subscribeId={Number(row.original.subscribe_id)}
+                    open={open}
+                    type='trafficUsage'
+                  />
+                ),
               },
               {
                 accessorKey: 'expireTime',
                 header: t('expireTime'),
-                cell: ({ row }) => {
-                  const ts = Number(row.original.expired_at || 0);
-                  if (!ts) return <span className='text-muted-foreground'>--</span>;
-                  const expired = ts < Date.now() / 1000;
-                  return (
-                    <div className='flex items-center gap-2'>
-                      <span className='text-sm'>{new Date(ts * 1000).toLocaleString()}</span>
-                      {expired && (
-                        <Badge variant='destructive' className='w-fit px-1 py-0 text-xs'>
-                          {t('expired')}
-                        </Badge>
-                      )}
-                    </div>
-                  );
-                },
+                cell: ({ row }) => (
+                  <UserSubscribeInfo
+                    subscribeId={Number(row.original.subscribe_id)}
+                    open={open}
+                    type='expireTime'
+                  />
+                ),
               },
             ]}
-            request={async () => ({ list: rows, total: rows.length })}
+            request={async () => ({
+              list: status?.online || [],
+              total: status?.online?.length || 0,
+            })}
           />
         </div>
       </SheetContent>
