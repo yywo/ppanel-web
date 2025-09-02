@@ -47,7 +47,7 @@ export default function EmailBroadcastForm() {
   const emailBroadcastSchema = z.object({
     subject: z.string().min(1, t('subject') + ' ' + t('cannotBeEmpty')),
     content: z.string().min(1, t('content') + ' ' + t('cannotBeEmpty')),
-    scope: z.string().default('all'),
+    scope: z.string(),
     register_start_time: z.string().optional(),
     register_end_time: z.string().optional(),
     additional: z

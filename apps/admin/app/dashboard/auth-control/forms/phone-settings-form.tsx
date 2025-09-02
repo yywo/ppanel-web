@@ -49,8 +49,8 @@ import { z } from 'zod';
 
 const phoneSettingsSchema = z.object({
   id: z.number(),
-  method: z.string().default('mobile'),
-  enabled: z.boolean().default(false),
+  method: z.string(),
+  enabled: z.boolean(),
   config: z
     .object({
       enable_whitelist: z.boolean().optional(),

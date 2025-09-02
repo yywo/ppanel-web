@@ -205,7 +205,7 @@ export function SubscriptionForm({ trigger, title, loading, initialData, onSubmi
                     <FormControl>
                       <DatePicker
                         placeholder={t('permanent')}
-                        value={field.value}
+                        value={field.value ?? undefined}
                         onChange={(value) => {
                           if (value === field.value) {
                             form.setValue(field.name, 0);

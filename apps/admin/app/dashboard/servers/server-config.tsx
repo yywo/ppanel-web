@@ -96,8 +96,8 @@ function getTimeRangeData(slots: API.TimePeriod[]) {
 
 const nodeConfigSchema = z.object({
   node_secret: z.string().optional(),
-  node_pull_interval: z.number().or(z.string().pipe(z.coerce.number())).optional(),
-  node_push_interval: z.number().or(z.string().pipe(z.coerce.number())).optional(),
+  node_pull_interval: z.number().optional(),
+  node_push_interval: z.number().optional(),
 });
 type NodeConfigFormData = z.infer<typeof nodeConfigSchema>;
 

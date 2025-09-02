@@ -42,38 +42,30 @@ export type ProtocolName =
 
 type ServerRow = API.Server;
 
-export type NodeFormValues = {
-  name: string;
-  server_id?: number;
-  protocol: ProtocolName | '';
-  address: string;
-  port: number;
-  tags: string[];
-};
+const buildSchema = (t: ReturnType<typeof useTranslations>) =>
+  z.object({
+    name: z.string().trim().min(1, t('errors.nameRequired')),
+    server_id: z
+      .number({ message: t('errors.serverRequired') })
+      .int()
+      .gt(0, t('errors.serverRequired'))
+      .optional(),
+    protocol: z.string().min(1, t('errors.protocolRequired')),
+    address: z.string().trim().min(1, t('errors.serverAddrRequired')),
+    port: z
+      .number({ message: t('errors.portRange') })
+      .int()
+      .min(1, t('errors.portRange'))
+      .max(65535, t('errors.portRange')),
+    tags: z.array(z.string()),
+  });
+
+export type NodeFormValues = z.infer<ReturnType<typeof buildSchema>>;
 
 async function getServers(): Promise<ServerRow[]> {
   const { data } = await filterServerList({ page: 1, size: 1000 });
   return (data?.data?.list || []) as ServerRow[];
 }
-
-const buildSchema = (t: ReturnType<typeof useTranslations>) =>
-  z.object({
-    name: z.string().trim().min(1, t('errors.nameRequired')),
-    server_id: z.coerce
-      .number({ invalid_type_error: t('errors.serverRequired') })
-      .int()
-      .gt(0, t('errors.serverRequired')),
-    protocol: z.custom<ProtocolName>((v) => typeof v === 'string' && v.length > 0, {
-      message: t('errors.protocolRequired'),
-    }),
-    address: z.string().trim().min(1, t('errors.serverAddrRequired')),
-    port: z.coerce
-      .number({ invalid_type_error: t('errors.portRange') })
-      .int()
-      .min(1, t('errors.portRange'))
-      .max(65535, t('errors.portRange')),
-    tags: z.array(z.string()).default([]),
-  });
 
 export default function NodeForm(props: {
   trigger: string;

@@ -14,7 +14,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   useEffect(() => {
     if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
+      const rect = ref.current?.getBoundingClientRect?.();
       setHeight(rect.height);
     }
   }, [ref]);

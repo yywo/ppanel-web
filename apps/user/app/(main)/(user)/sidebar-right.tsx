@@ -6,12 +6,6 @@ import useGlobalStore from '@/config/use-global';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@workspace/ui/components/card';
 import { Sidebar, SidebarContent } from '@workspace/ui/components/sidebar';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@workspace/ui/components/tooltip';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { isBrowser } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
@@ -54,25 +48,18 @@ export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>)
           <Card>
             <CardHeader className='flex flex-row items-center justify-between space-y-0 p-3 pb-2'>
               <CardTitle className='text-sm font-medium'>{t('inviteCode')}</CardTitle>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <CopyToClipboard
-                      text={`${isBrowser() && location?.origin}/auth?invite=${user?.refer_code}`}
-                      onCopy={(text, result) => {
-                        if (result) {
-                          toast.success(t('copySuccess'));
-                        }
-                      }}
-                    >
-                      <Button variant='ghost' className='size-5 p-0'>
-                        <Icon icon='mdi:content-copy' className='text-primary text-2xl' />
-                      </Button>
-                    </CopyToClipboard>
-                  </TooltipTrigger>
-                  <TooltipContent>{t('copyInviteLink')}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <CopyToClipboard
+                text={`${isBrowser() && location?.origin}/auth?invite=${user?.refer_code}`}
+                onCopy={(text, result) => {
+                  if (result) {
+                    toast.success(t('copySuccess'));
+                  }
+                }}
+              >
+                <Button variant='ghost' className='size-5 p-0'>
+                  <Icon icon='mdi:content-copy' className='text-primary text-2xl' />
+                </Button>
+              </CopyToClipboard>
             </CardHeader>
             <CardContent className='truncate p-3 font-bold'>{user?.refer_code}</CardContent>
           </Card>

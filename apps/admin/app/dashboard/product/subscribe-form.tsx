@@ -87,7 +87,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     name: z.string(),
     description: z.string().optional(),
     unit_price: z.number(),
-    unit_time: z.string().default('Month'),
+    unit_time: z.string(),
     replacement: z.number().optional(),
     discount: z
       .array(
@@ -97,22 +97,22 @@ export default function SubscribeForm<T extends Record<string, any>>({
         }),
       )
       .optional(),
-    inventory: z.number().optional().default(-1),
-    speed_limit: z.number().optional().default(0),
-    device_limit: z.number().optional().default(0),
-    traffic: z.number().optional().default(0),
-    quota: z.number().optional().default(0),
+    inventory: z.number().optional(),
+    speed_limit: z.number().optional(),
+    device_limit: z.number().optional(),
+    traffic: z.number().optional(),
+    quota: z.number().optional(),
     group_id: z.number().optional().nullish(),
     // Use tags as group identifiers; accept string (tag) or number (legacy id)
-    node_tags: z.array(z.string()).optional().default([]),
-    nodes: z.array(z.number()).optional().default([]),
-    deduction_ratio: z.number().optional().default(0),
-    allow_deduction: z.boolean().optional().default(false),
-    reset_cycle: z.number().optional().default(0),
-    renewal_reset: z.boolean().optional().default(false),
+    node_tags: z.array(z.string()).optional(),
+    nodes: z.array(z.number()).optional(),
+    deduction_ratio: z.number().optional(),
+    allow_deduction: z.boolean().optional(),
+    reset_cycle: z.number().optional(),
+    renewal_reset: z.boolean().optional(),
   });
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: assign(
       defaultValues,
@@ -204,7 +204,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
         });
 
         if (hasChanges) {
-          form.setValue(fieldName, calculatedValues, { shouldDirty: true });
+          form.setValue(fieldName as any, calculatedValues, { shouldDirty: true });
         }
       }, 300);
     },
@@ -321,6 +321,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               <Combobox<number, false>
                                 placeholder={t('form.selectSubscribeGroup')}
                                 {...field}
+                                value={field.value ?? undefined}
                                 onChange={(value) => {
                                   form.setValue(field.name, value || 0);
                                 }}
@@ -665,7 +666,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   min: 0,
                                   step: 0.01,
                                   formatInput: (value) => unitConversion('centsToDollars', value),
-                                  formatOutput: (value) => unitConversion('dollarsToCents', value),
+                                  formatOutput: (value) =>
+                                    unitConversion('dollarsToCents', value).toString(),
                                 },
                               ]}
                               value={field.value}
@@ -911,7 +913,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
               const keys = Object.keys(errors);
               for (const key of keys) {
                 const formattedKey = key.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
-                toast.error(`${t(`form.${formattedKey}`)} is ${errors[key]?.message}`);
+                const error = (errors as any)[key];
+                toast.error(`${t(`form.${formattedKey}`)} is ${error?.message}`);
                 return false;
               }
             })}

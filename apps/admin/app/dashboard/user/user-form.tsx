@@ -142,7 +142,7 @@ export default function UserForm<T extends Record<string, any>>({
                                     placeholder={t('areaCodePlaceholder')}
                                     value={field.value}
                                     onChange={(value) => {
-                                      form.setValue(field.name, value.phone);
+                                      form.setValue(field.name, value.phone as string);
                                     }}
                                   />
                                 </FormControl>

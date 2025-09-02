@@ -1,5 +1,6 @@
 'use client';
 
+import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { ProTable } from '@/components/pro-table';
 import { filterTrafficLogDetails } from '@/services/admin/log';
 import { formatBytes, formatDate } from '@workspace/ui/utils';
@@ -22,7 +23,11 @@ export default function TrafficDetailsPage() {
       initialFilters={initialFilters}
       columns={[
         { accessorKey: 'server_id', header: t('column.serverId') },
-        { accessorKey: 'user_id', header: t('column.userId') },
+        {
+          accessorKey: 'user_id',
+          header: t('column.userId'),
+          cell: ({ row }) => <UserDetail id={Number(row.original.user_id)} />,
+        },
         { accessorKey: 'subscribe_id', header: t('column.subscribeId') },
         {
           accessorKey: 'upload',

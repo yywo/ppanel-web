@@ -75,9 +75,9 @@ export default function PaymentForm<T>({
     icon: z.string().optional(),
     domain: z.string().optional(),
     config: z.any(),
-    fee_mode: z.coerce.number().min(0).max(2),
-    fee_percent: z.coerce.number().optional(),
-    fee_amount: z.coerce.number().optional(),
+    fee_mode: z.number().min(0).max(2),
+    fee_percent: z.number().optional(),
+    fee_amount: z.number().optional(),
     description: z.string().optional(),
   });
 
@@ -319,7 +319,7 @@ export default function PaymentForm<T>({
                           }}
                           defaultValue={field.value}
                           value={field.value}
-                          // @ts-expect-error
+                          // @ts-expect-error - disabled prop type mismatch with SelectTrigger component
                           disabled={isEdit && Boolean(initialValues?.platform)}
                         >
                           <FormControl>
