@@ -109,7 +109,6 @@ export function ProtocolForm() {
     },
   });
 
-  // API请求函数
   const request = async (
     pagination: { page: number; size: number },
     filter: Record<string, unknown>,
@@ -125,7 +124,6 @@ export function ProtocolForm() {
     };
   };
 
-  // 表格列定义
   const columns: ColumnDef<API.SubscribeApplication, any>[] = [
     {
       accessorKey: 'is_default',

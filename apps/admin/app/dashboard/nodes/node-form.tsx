@@ -62,11 +62,6 @@ const buildSchema = (t: ReturnType<typeof useTranslations>) =>
 
 export type NodeFormValues = z.infer<ReturnType<typeof buildSchema>>;
 
-async function getServers(): Promise<ServerRow[]> {
-  const { data } = await filterServerList({ page: 1, size: 1000 });
-  return (data?.data?.list || []) as ServerRow[];
-}
-
 export default function NodeForm(props: {
   trigger: string;
   title: string;
@@ -147,7 +142,6 @@ export default function NodeForm(props: {
     if (!allowed.includes(form.getValues('protocol') as ProtocolName)) {
       form.setValue('protocol', '' as any);
     }
-    // Do not auto-fill port here; handled in handleProtocolChange
   }
 
   function handleProtocolChange(nextProto?: ProtocolName | null) {
@@ -162,15 +156,6 @@ export default function NodeForm(props: {
         shouldDirty: false,
       });
     }
-  }
-
-  async function submit(values: NodeFormValues) {
-    const ok = await onSubmit(values);
-    if (ok) {
-      form.reset();
-      setOpen(false);
-    }
-    return ok;
   }
 
   return (
@@ -310,14 +295,11 @@ export default function NodeForm(props: {
           </Button>
           <Button
             disabled={loading}
-            onClick={form.handleSubmit(
-              async (vals) => submit(vals),
-              (errors) => {
-                const key = Object.keys(errors)[0] as keyof typeof errors;
-                if (key) toast.error(String(errors[key]?.message));
-                return false;
-              },
-            )}
+            onClick={form.handleSubmit(onSubmit, (errors) => {
+              const key = Object.keys(errors)[0] as keyof typeof errors;
+              if (key) toast.error(String(errors[key]?.message));
+              return false;
+            })}
           >
             {t('confirm')}
           </Button>

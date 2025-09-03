@@ -190,6 +190,8 @@ export const formSchema = z.object({
   protocols: z.array(protocolApiScheme),
 });
 
+export type ServerFormValues = z.infer<typeof formSchema>;
+
 export type ProtocolType = (typeof protocols)[number];
 
 export function getProtocolDefaultConfig(proto: ProtocolType) {
