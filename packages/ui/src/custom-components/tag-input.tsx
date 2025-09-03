@@ -19,19 +19,7 @@ export function TagInput({
   placeholder,
   separator = ',',
   className,
-  options = [
-    'test',
-    'example',
-    'demo',
-    'sample',
-    'react',
-    'javascript',
-    'typescript',
-    'nodejs',
-    'vue',
-    'angular',
-    'svelte',
-  ],
+  options = [],
 }: TagInputProps) {
   const [inputValue, setInputValue] = useState('');
   const [tags, setTags] = useState<string[]>(value);
