@@ -317,6 +317,23 @@ export default function ServersPage() {
               {t('copy')}
             </Button>,
           ],
+          batchRender(rows) {
+            return [
+              <ConfirmButton
+                key='delete'
+                trigger={<Button variant='destructive'>{t('delete')}</Button>}
+                title={t('confirmDeleteTitle')}
+                description={t('confirmDeleteDesc')}
+                onConfirm={async () => {
+                  await Promise.all(rows.map((r) => deleteServer({ id: r.id })));
+                  toast.success(t('deleted'));
+                  ref.current?.refresh();
+                }}
+                cancelText={t('cancel')}
+                confirmText={t('confirm')}
+              />,
+            ];
+          },
         }}
         onSort={async (source, target, items) => {
           const sourceIndex = items.findIndex((item) => String(item.id) === source);
