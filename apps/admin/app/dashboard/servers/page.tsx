@@ -114,7 +114,7 @@ export default function ServersPage() {
           title: t('pageTitle'),
           toolbar: (
             <div className='flex gap-2'>
-              {!hasMigrate && (
+              {hasMigrate && (
                 <Button variant='outline' onClick={handleMigrate} disabled={migrating}>
                   {migrating ? t('migrating') : t('migrate')}
                 </Button>

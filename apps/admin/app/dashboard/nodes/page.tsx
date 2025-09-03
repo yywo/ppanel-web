@@ -26,7 +26,7 @@ export default function NodesPage() {
   const [loading, setLoading] = useState(false);
 
   const { data: servers = [] } = useQuery({
-    queryKey: ['filterServerListAll', { page: 1, size: 1000 }],
+    queryKey: ['filterServerListAll'],
     queryFn: async () => {
       const { data } = await filterServerList({ page: 1, size: 1000 });
       return data?.data?.list || [];
@@ -103,7 +103,7 @@ export default function NodesPage() {
         },
 
         {
-          id: 'server_combined',
+          id: 'server_id',
           header: t('server'),
           cell: ({ row }) => (
             <div className='flex flex-wrap gap-2'>

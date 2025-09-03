@@ -94,7 +94,13 @@ export default function NodeForm(props: {
 
   const serverId = form.watch('server_id');
 
-  const { data } = useQuery({ queryKey: ['filterServerListAll'], queryFn: getServers });
+  const { data } = useQuery({
+    queryKey: ['filterServerListAll'],
+    queryFn: async () => {
+      const { data } = await filterServerList({ page: 1, size: 1000 });
+      return data?.data?.list || [];
+    },
+  });
   const servers: ServerRow[] = data as ServerRow[];
 
   const currentServer = useMemo(() => servers?.find((s) => s.id === serverId), [servers, serverId]);
