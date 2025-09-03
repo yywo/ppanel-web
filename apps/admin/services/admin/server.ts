@@ -141,6 +141,14 @@ export async function toggleNodeStatus(
   });
 }
 
+/** Query all node tags GET /v1/admin/server/node/tags */
+export async function queryNodeTag(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.QueryNodeTagResponse }>('/v1/admin/server/node/tags', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** Update Node POST /v1/admin/server/node/update */
 export async function updateNode(body: API.UpdateNodeRequest, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/server/node/update', {

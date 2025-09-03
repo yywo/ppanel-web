@@ -1,6 +1,6 @@
 'use client';
 
-import { filterServerList } from '@/services/admin/server';
+import { filterServerList, queryNodeTag } from '@/services/admin/server';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
@@ -97,6 +97,15 @@ export default function NodeForm(props: {
     },
   });
   const servers: ServerRow[] = data as ServerRow[];
+
+  const { data: tagsData } = useQuery({
+    queryKey: ['queryNodeTag'],
+    queryFn: async () => {
+      const { data } = await queryNodeTag();
+      return data?.data?.tags || [];
+    },
+  });
+  const existingTags: string[] = tagsData as string[];
 
   const currentServer = useMemo(() => servers?.find((s) => s.id === serverId), [servers, serverId]);
 
@@ -298,6 +307,7 @@ export default function NodeForm(props: {
                         placeholder={t('tags_placeholder')}
                         value={field.value || []}
                         onChange={(v) => form.setValue(field.name, v)}
+                        options={existingTags}
                       />
                     </FormControl>
                     <FormDescription>{t('tags_description')}</FormDescription>

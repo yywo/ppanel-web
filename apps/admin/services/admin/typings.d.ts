@@ -1551,6 +1551,10 @@ declare namespace API {
     list: Document[];
   };
 
+  type QueryNodeTagResponse = {
+    tags: string[];
+  };
+
   type QueryOrderDetailRequest = {
     order_no: string;
   };

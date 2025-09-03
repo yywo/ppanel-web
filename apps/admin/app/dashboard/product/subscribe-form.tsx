@@ -1,6 +1,6 @@
 'use client';
 
-import { filterNodeList } from '@/services/admin/server';
+import { filterNodeList, queryNodeTag } from '@/services/admin/server';
 import { getSubscribeGroupList } from '@/services/admin/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
@@ -245,13 +245,28 @@ export default function SubscribeForm<T extends Record<string, any>>({
       return (data.data?.list || []) as API.Node[];
     },
   });
-  const tagGroups = Array.from(
+
+  const { data: allTagsData } = useQuery({
+    queryKey: ['queryNodeTag'],
+    queryFn: async () => {
+      const { data } = await queryNodeTag();
+      return data?.data?.tags || [];
+    },
+  });
+
+  const nodeExtractedTags = Array.from(
     new Set(
       ((nodes as API.Node[]) || [])
         .flatMap((n) => (Array.isArray(n.tags) ? n.tags : []))
         .filter(Boolean),
     ),
   ) as string[];
+
+  const allAvailableTags = (allTagsData as string[]) || [];
+
+  const tagGroups = Array.from(new Set([...allAvailableTags, ...nodeExtractedTags])).filter(
+    Boolean,
+  );
 
   const unit_time = form.watch('unit_time');
 
@@ -271,7 +286,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
         </SheetHeader>
-        <ScrollArea className='h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))]'>
+        <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))] px-6'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className='pt-4'>
               <Tabs defaultValue='basic' className='w-full'>
@@ -801,8 +816,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
                             <Accordion type='single' collapsible className='w-full'>
                               {tagGroups.map((tag) => {
                                 const value = field.value || [];
-                                // Use a synthetic ID for tag grouping selection by name
                                 const tagId = tag;
+                                const nodesWithTag =
+                                  (nodes as API.Node[])?.filter((n) =>
+                                    (n.tags || []).includes(tag),
+                                  ) || [];
+
                                 return (
                                   <AccordionItem key={tag} value={String(tag)}>
                                     <AccordionTrigger>
@@ -818,7 +837,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                                 );
                                           }}
                                         />
-                                        <Label>{tag}</Label>
+                                        <Label>
+                                          {tag}
+                                          <span className='text-muted-foreground ml-2 text-xs'>
+                                            ({nodesWithTag.length})
+                                          </span>
+                                        </Label>
                                       </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
@@ -830,11 +854,13 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                               key={node.id}
                                               className='flex items-center justify-between gap-3'
                                             >
-                                              <span>{node.name}</span>
-                                              <span>
+                                              <span className='flex-1'>{node.name}</span>
+                                              <span className='flex-1'>
                                                 {node.address}:{node.port}
                                               </span>
-                                              <span>{node.protocol}</span>
+                                              <span className='flex-1 text-right'>
+                                                {node.protocol}
+                                              </span>
                                             </li>
                                           ))}
                                       </ul>
@@ -876,11 +902,11 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                         }}
                                       />
                                       <Label className='flex w-full items-center justify-between gap-3'>
-                                        <span>{item.name}</span>
-                                        <span>
+                                        <span className='flex-1'>{item.name}</span>
+                                        <span className='flex-1'>
                                           {item.address}:{item.port}
                                         </span>
-                                        <span>{item.protocol}</span>
+                                        <span className='flex-1 text-right'>{item.protocol}</span>
                                       </Label>
                                     </div>
                                   );
