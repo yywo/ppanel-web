@@ -5,9 +5,12 @@ import {
   createServer,
   deleteServer,
   filterServerList,
+  hasMigrateSeverNode,
+  migrateServerNode,
   resetSortWithServer,
   updateServer,
 } from '@/services/admin/server';
+import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Card, CardContent } from '@workspace/ui/components/card';
@@ -64,13 +67,39 @@ function RegionIpCell({
   );
 }
 
-// OnlineUsersCell is now a standalone component
-
 export default function ServersPage() {
   const t = useTranslations('servers');
 
   const [loading, setLoading] = useState(false);
+  const [migrating, setMigrating] = useState(false);
   const ref = useRef<ProTableActions>(null);
+
+  const { data: hasMigrate, refetch: refetchHasMigrate } = useQuery({
+    queryKey: ['hasMigrateSeverNode'],
+    queryFn: async () => {
+      const { data } = await hasMigrateSeverNode();
+      return data.data?.has_migrate;
+    },
+  });
+
+  const handleMigrate = async () => {
+    setMigrating(true);
+    try {
+      const { data } = await migrateServerNode();
+      const fail = data.data?.fail || 0;
+      if (fail > 0) {
+        toast.error(data.data?.message);
+      } else {
+        toast.success(t('migrated'));
+      }
+      refetchHasMigrate();
+      ref.current?.refresh();
+    } catch (error) {
+      toast.error(t('migrateFailed'));
+    } finally {
+      setMigrating(false);
+    }
+  };
 
   return (
     <div className='space-y-4'>
@@ -84,24 +113,31 @@ export default function ServersPage() {
         header={{
           title: t('pageTitle'),
           toolbar: (
-            <ServerForm
-              trigger={t('create')}
-              title={t('drawerCreateTitle')}
-              loading={loading}
-              onSubmit={async (values) => {
-                setLoading(true);
-                try {
-                  await createServer(values as unknown as API.CreateServerRequest);
-                  toast.success(t('created'));
-                  ref.current?.refresh();
-                  setLoading(false);
-                  return true;
-                } catch (e) {
-                  setLoading(false);
-                  return false;
-                }
-              }}
-            />
+            <div className='flex gap-2'>
+              {!hasMigrate && (
+                <Button variant='outline' onClick={handleMigrate} disabled={migrating}>
+                  {migrating ? t('migrating') : t('migrate')}
+                </Button>
+              )}
+              <ServerForm
+                trigger={t('create')}
+                title={t('drawerCreateTitle')}
+                loading={loading}
+                onSubmit={async (values) => {
+                  setLoading(true);
+                  try {
+                    await createServer(values as unknown as API.CreateServerRequest);
+                    toast.success(t('created'));
+                    ref.current?.refresh();
+                    setLoading(false);
+                    return true;
+                  } catch (e) {
+                    setLoading(false);
+                    return false;
+                  }
+                }}
+              />
+            </div>
           ),
         }}
         columns={[
@@ -156,17 +192,16 @@ export default function ServersPage() {
             id: 'status',
             header: t('status'),
             cell: ({ row }) => {
-              const s = (row.original.status ?? {}) as API.ServerStatus;
-              const on = !!(Array.isArray(s.online) && s.online.length > 0);
+              const offline = row.original.status.status === 'offline';
               return (
                 <div className='flex items-center gap-2'>
                   <span
                     className={cn(
                       'inline-block h-2.5 w-2.5 rounded-full',
-                      on ? 'bg-emerald-500' : 'bg-zinc-400',
+                      offline ? 'bg-zinc-400' : 'bg-emerald-500',
                     )}
                   />
-                  <span className='text-sm'>{on ? t('online') : t('offline')}</span>
+                  <span className='text-sm'>{offline ? t('offline') : t('online')}</span>
                 </div>
               );
             },

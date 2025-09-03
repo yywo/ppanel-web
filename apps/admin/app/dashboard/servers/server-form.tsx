@@ -33,7 +33,7 @@ import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
 import { useEffect, useMemo, useState } from 'react';
-import { useFieldArray, useForm, useWatch } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { toast } from 'sonner';
 import {
   FINGERPRINTS,
@@ -99,7 +99,6 @@ export default function ServerForm<T extends { [x: string]: any }>({
 
   const form = useForm<any>({ resolver: zodResolver(formSchema), defaultValues });
   const { control } = form;
-  const { fields, append, remove } = useFieldArray({ control, name: 'protocols' });
 
   const protocolsValues = useWatch({ control, name: 'protocols' });
 

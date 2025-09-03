@@ -1,6 +1,5 @@
 {
   "address": "Address",
-  "address": "Address",
   "address_placeholder": "Server address",
   "cancel": "Cancel",
   "city": "City",
@@ -57,6 +56,10 @@
   "id": "ID",
   "ipAddresses": "IP addresses",
   "memory": "Memory",
+  "migrate": "Migrate Data",
+  "migrateFailed": "Data migration failed",
+  "migrated": "Data migrated successfully",
+  "migrating": "Migrating...",
   "name": "Name",
   "noData": "No data",
   "notAvailable": "N/A",

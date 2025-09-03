@@ -1,6 +1,5 @@
 {
   "address": "地址",
-  "address": "地址",
   "address_placeholder": "服务器地址",
   "cancel": "取消",
   "city": "城市",
@@ -57,6 +56,10 @@
   "id": "编号",
   "ipAddresses": "IP 地址",
   "memory": "内存",
+  "migrate": "迁移数据",
+  "migrateFailed": "数据迁移失败",
+  "migrated": "数据迁移成功",
+  "migrating": "迁移中...",
   "name": "名称",
   "noData": "暂无数据",
   "notAvailable": "—",

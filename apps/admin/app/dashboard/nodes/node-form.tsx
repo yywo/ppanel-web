@@ -26,7 +26,7 @@ import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import TagInput from '@workspace/ui/custom-components/tag-input';
 import { useTranslations } from 'next-intl';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
@@ -77,6 +77,7 @@ export default function NodeForm(props: {
   const { trigger, title, loading, initialValues, onSubmit } = props;
   const t = useTranslations('nodes');
   const Scheme = useMemo(() => buildSchema(t), [t]);
+  const [open, setOpen] = useState(false);
 
   const form = useForm<NodeFormValues>({
     resolver: zodResolver(Scheme),
@@ -159,12 +160,15 @@ export default function NodeForm(props: {
 
   async function submit(values: NodeFormValues) {
     const ok = await onSubmit(values);
-    if (ok) form.reset();
+    if (ok) {
+      form.reset();
+      setOpen(false);
+    }
     return ok;
   }
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button onClick={() => form.reset()}>{trigger}</Button>
       </SheetTrigger>
@@ -295,7 +299,7 @@ export default function NodeForm(props: {
         </ScrollArea>
 
         <SheetFooter className='flex-row justify-end gap-2 pt-3'>
-          <Button variant='outline' disabled={loading}>
+          <Button variant='outline' disabled={loading} onClick={() => setOpen(false)}>
             {t('cancel')}
           </Button>
           <Button

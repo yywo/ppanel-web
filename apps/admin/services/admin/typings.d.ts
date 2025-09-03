@@ -1741,6 +1741,7 @@ declare namespace API {
     disk: number;
     protocol: string;
     online: ServerOnlineUser[];
+    status: string;
   };
 
   type ServerTotalDataResponse = {
