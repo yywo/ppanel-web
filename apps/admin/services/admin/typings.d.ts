@@ -325,6 +325,7 @@ declare namespace API {
 
   type CreateSubscribeRequest = {
     name: string;
+    language: string;
     description: string;
     unit_price: number;
     unit_time: string;
@@ -335,7 +336,6 @@ declare namespace API {
     speed_limit: number;
     device_limit: number;
     quota: number;
-    group_id: number;
     nodes: number[];
     node_tags: string[];
     show: boolean;
@@ -1045,14 +1045,14 @@ declare namespace API {
   type GetSubscribeListParams = {
     page: number;
     size: number;
-    group_id?: number;
+    language?: string;
     search?: string;
   };
 
   type GetSubscribeListRequest = {
     page: number;
     size: number;
-    group_id?: number;
+    language?: string;
     search?: string;
   };
 
@@ -1829,6 +1829,7 @@ declare namespace API {
   type Subscribe = {
     id: number;
     name: string;
+    language: string;
     description: string;
     unit_price: number;
     unit_time: string;
@@ -1839,7 +1840,6 @@ declare namespace API {
     speed_limit: number;
     device_limit: number;
     quota: number;
-    group_id: number;
     nodes: number[];
     node_tags: string[];
     show: boolean;
@@ -1893,6 +1893,7 @@ declare namespace API {
   type SubscribeItem = {
     id?: number;
     name?: string;
+    language?: string;
     description?: string;
     unit_price?: number;
     unit_time?: string;
@@ -1903,7 +1904,6 @@ declare namespace API {
     speed_limit?: number;
     device_limit?: number;
     quota?: number;
-    group_id?: number;
     nodes?: number[];
     node_tags?: string[];
     show?: boolean;
@@ -2145,6 +2145,7 @@ declare namespace API {
   type UpdateSubscribeRequest = {
     id: number;
     name: string;
+    language: string;
     description: string;
     unit_price: number;
     unit_time: string;
@@ -2155,7 +2156,6 @@ declare namespace API {
     speed_limit: number;
     device_limit: number;
     quota: number;
-    group_id: number;
     nodes: number[];
     node_tags: string[];
     show: boolean;

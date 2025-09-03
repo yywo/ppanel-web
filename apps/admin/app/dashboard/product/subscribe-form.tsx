@@ -1,7 +1,6 @@
 'use client';
 
 import { filterNodeList, queryNodeTag } from '@/services/admin/server';
-import { getSubscribeGroupList } from '@/services/admin/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -62,6 +61,7 @@ const defaultValues = {
   traffic: 0,
   quota: 0,
   discount: [],
+  language: '',
   node_tags: [],
   nodes: [],
   unit_time: 'Month',
@@ -102,8 +102,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     device_limit: z.number().optional(),
     traffic: z.number().optional(),
     quota: z.number().optional(),
-    group_id: z.number().optional().nullish(),
-    // Use tags as group identifiers; accept string (tag) or number (legacy id)
+    language: z.string().optional(),
     node_tags: z.array(z.string()).optional(),
     nodes: z.array(z.number()).optional(),
     deduction_ratio: z.number().optional(),
@@ -230,14 +229,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
     if (bool) setOpen(false);
   }
 
-  const { data: group } = useQuery({
-    queryKey: ['getSubscribeGroupList'],
-    queryFn: async () => {
-      const { data } = await getSubscribeGroupList();
-      return data.data?.list as API.SubscribeGroup[];
-    },
-  });
-
   const { data: nodes } = useQuery({
     queryKey: ['filterNodeListAll'],
     queryFn: async () => {
@@ -328,22 +319,20 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       />
                       <FormField
                         control={form.control}
-                        name='group_id'
+                        name='language'
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t('form.groupId')}</FormLabel>
+                            <FormLabel>
+                              {t('form.language')}
+                              <span className='text-muted-foreground ml-1 text-[0.8rem]'>
+                                {t('form.languageDescription')}
+                              </span>
+                            </FormLabel>
                             <FormControl>
-                              <Combobox<number, false>
-                                placeholder={t('form.selectSubscribeGroup')}
+                              <EnhancedInput
                                 {...field}
-                                value={field.value ?? undefined}
-                                onChange={(value) => {
-                                  form.setValue(field.name, value || 0);
-                                }}
-                                options={group?.map((item) => ({
-                                  label: item.name,
-                                  value: item.id,
-                                }))}
+                                placeholder={t('form.languagePlaceholder')}
+                                onValueChange={(v) => form.setValue(field.name, v as string)}
                               />
                             </FormControl>
                             <FormMessage />

@@ -731,6 +731,7 @@ declare namespace API {
   type Subscribe = {
     id: number;
     name: string;
+    language: string;
     description: string;
     unit_price: number;
     unit_time: string;
@@ -741,7 +742,6 @@ declare namespace API {
     speed_limit: number;
     device_limit: number;
     quota: number;
-    group_id: number;
     nodes: number[];
     node_tags: string[];
     show: boolean;

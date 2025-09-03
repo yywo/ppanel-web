@@ -191,14 +191,6 @@ export async function updateSubscribeConfig(
   });
 }
 
-/** Get subscribe type GET /v1/admin/system/subscribe_type */
-export async function getSubscribeType(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.SubscribeType }>('/v1/admin/system/subscribe_type', {
-    method: 'GET',
-    ...(options || {}),
-  });
-}
-
 /** Get Team of Service Config GET /v1/admin/system/tos_config */
 export async function getTosConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.TosConfig }>('/v1/admin/system/tos_config', {
