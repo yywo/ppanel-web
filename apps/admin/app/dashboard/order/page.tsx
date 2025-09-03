@@ -37,7 +37,7 @@ export default function Page() {
     queryFn: async () => {
       const { data } = await getSubscribeList({
         page: 1,
-        size: 9999,
+        size: 999999999,
       });
       return data.data?.list as API.SubscribeGroup[];
     },

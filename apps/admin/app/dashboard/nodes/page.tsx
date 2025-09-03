@@ -28,7 +28,7 @@ export default function NodesPage() {
   const { data: servers = [] } = useQuery({
     queryKey: ['filterServerListAll'],
     queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 1000 });
+      const { data } = await filterServerList({ page: 1, size: 999999999 });
       return data?.data?.list || [];
     },
   });

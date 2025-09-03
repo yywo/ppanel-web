@@ -92,7 +92,7 @@ export default function NodeForm(props: {
   const { data } = useQuery({
     queryKey: ['filterServerListAll'],
     queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 1000 });
+      const { data } = await filterServerList({ page: 1, size: 999999999 });
       return data?.data?.list || [];
     },
   });
@@ -130,17 +130,32 @@ export default function NodeForm(props: {
 
     const sel = servers.find((s) => s.id === id);
     const dirty = form.formState.dirtyFields as Record<string, any>;
+    const currentValues = form.getValues();
+
     if (!dirty.name) {
       form.setValue('name', (sel?.name as string) || '', { shouldDirty: false });
     }
-    if (!dirty.address) {
+
+    if (
+      !dirty.address &&
+      (!currentValues.address || currentValues.address === (sel?.address as string))
+    ) {
       form.setValue('address', (sel?.address as string) || '', { shouldDirty: false });
     }
+
     const allowed = (sel?.protocols || [])
       .map((p) => (p as any).type as ProtocolName)
       .filter(Boolean);
-    if (!allowed.includes(form.getValues('protocol') as ProtocolName)) {
-      form.setValue('protocol', '' as any);
+
+    const currentProtocol = form.getValues('protocol') as ProtocolName;
+
+    if (!allowed.includes(currentProtocol)) {
+      const firstProtocol = allowed[0] || '';
+      form.setValue('protocol', firstProtocol as any);
+
+      if (firstProtocol) {
+        handleProtocolChange(firstProtocol);
+      }
     }
   }
 
@@ -148,13 +163,18 @@ export default function NodeForm(props: {
     const p = (nextProto || '') as ProtocolName | '';
     form.setValue('protocol', p);
     if (!p || !currentServer) return;
+
     const dirty = form.formState.dirtyFields as Record<string, any>;
+    const currentValues = form.getValues();
+
     if (!dirty.port) {
       const hit = (currentServer.protocols as any[]).find((x) => (x as any).type === p);
       const port = (hit as any)?.port as number | undefined;
-      form.setValue('port', typeof port === 'number' && port > 0 ? port : 0, {
-        shouldDirty: false,
-      });
+      const newPort = typeof port === 'number' && port > 0 ? port : 0;
+
+      if (!currentValues.port || currentValues.port === 0 || currentValues.port === newPort) {
+        form.setValue('port', newPort, { shouldDirty: false });
+      }
     }
   }
 

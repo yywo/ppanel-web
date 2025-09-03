@@ -241,7 +241,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
   const { data: nodes } = useQuery({
     queryKey: ['filterNodeListAll'],
     queryFn: async () => {
-      const { data } = await filterNodeList({ page: 1, size: 9999 });
+      const { data } = await filterNodeList({ page: 1, size: 999999999 });
       return (data.data?.list || []) as API.Node[];
     },
   });
