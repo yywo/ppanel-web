@@ -64,7 +64,7 @@ const createClientFormSchema = (t: any) =>
     description: z.string().optional(),
     icon: z.string().optional(),
     user_agent: z.string().min(1, `User-Agent ${t('form.validation.userAgentRequiredSuffix')}`),
-    scheme: z.string(),
+    scheme: z.string().optional(),
     template: z.string(),
     output_format: z.string(),
     download_link: z.object({
