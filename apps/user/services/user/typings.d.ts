@@ -290,6 +290,14 @@ declare namespace API {
     total: number;
   };
 
+  type GetSubscriptionParams = {
+    language: string;
+  };
+
+  type GetSubscriptionRequest = {
+    language: string;
+  };
+
   type GetSubscriptionResponse = {
     list: Subscribe[];
   };

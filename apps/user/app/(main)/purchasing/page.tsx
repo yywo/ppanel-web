@@ -1,4 +1,5 @@
 import { getSubscription } from '@/services/user/portal';
+import { getLocale } from 'next-intl/server';
 import Content from './content';
 
 export default async function Page({
@@ -9,9 +10,15 @@ export default async function Page({
   }>;
 }) {
   const { id } = await searchParams;
-  const { data } = await getSubscription({
-    skipErrorHandler: true,
-  });
+  const locale = await getLocale();
+  const { data } = await getSubscription(
+    {
+      language: locale,
+    },
+    {
+      skipErrorHandler: true,
+    },
+  );
   const subscriptionList = data.data?.list || [];
   const subscription = subscriptionList.find((item) => item.id === Number(id));
 
