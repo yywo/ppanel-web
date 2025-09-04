@@ -194,7 +194,7 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                         //   'hover:bg-accent/60': !isOpen && !groupActive,
                         // })}
                         className={cn(
-                          'hover:bg-accent/60 mb-2 flex h-8 w-full items-center justify-between',
+                          'hover:bg-accent/60 hover:text-accent-foreground mb-2 flex h-8 w-full items-center justify-between',
                         )}
                         onClick={() => handleToggleGroup(nav.title)}
                         tabIndex={0}
