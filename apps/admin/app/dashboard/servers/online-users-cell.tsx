@@ -4,6 +4,7 @@ import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import { getUserSubscribeById } from '@/services/admin/user';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import {
@@ -13,7 +14,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
-import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -113,7 +114,7 @@ export default function OnlineUsersCell({ status }: { status?: API.ServerStatus 
                       {ips.map((item, i) => (
                         <div className='whitespace-nowrap text-sm' key={i}>
                           <Badge>{item.protocol}</Badge>
-                          <IpLink ip={item.ip} className='font-medium' />
+                          <IpLink ip={item.ip} className='ml-1 font-medium' />
                         </div>
                       ))}
                     </div>

@@ -3,6 +3,7 @@
 import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import { getUserSubscribeDevices, kickOfflineByUserDevice } from '@/services/admin/user';
+import { formatDate } from '@/utils/common';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -14,7 +15,6 @@ import {
 } from '@workspace/ui/components/sheet';
 import { Switch } from '@workspace/ui/components/switch';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { ReactNode, useState } from 'react';
 import { toast } from 'sonner';

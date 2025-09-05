@@ -27,20 +27,22 @@ import { UserStatisticsCard } from './user-statistics-card';
 export default function Statistics() {
   const t = useTranslations('index');
 
-  const { data: TicketTotal } = useQuery({
+  const { data: TicketTotal, isLoading: ticketLoading } = useQuery({
     queryKey: ['queryTicketWaitReply'],
     queryFn: async () => {
       const { data } = await queryTicketWaitReply();
       return data.data?.count;
     },
   });
-  const { data: ServerTotal } = useQuery({
+  const { data: ServerTotal, isLoading: serverLoading } = useQuery({
     queryKey: ['queryServerTotalData'],
     queryFn: async () => {
       const { data } = await queryServerTotalData();
       return data.data;
     },
   });
+
+  const isLoading = ticketLoading || serverLoading;
 
   const [dataType, setDataType] = useState<string | 'nodes' | 'users'>('nodes');
   const [timeFrame, setTimeFrame] = useState<string | 'today' | 'yesterday'>('today');
@@ -76,61 +78,75 @@ export default function Statistics() {
 
   return (
     <>
-      <div className='grid grid-cols-2 gap-2 md:grid-cols-4'>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5'>
         {[
           {
             title: t('onlineUsersCount'),
             value: ServerTotal?.online_users || 0,
+            subtitle: t('currentlyOnline'),
             icon: 'uil:users-alt',
             href: '/dashboard/servers',
+            color: 'text-blue-600 dark:text-blue-400',
+            iconBg: 'bg-blue-100 dark:bg-blue-900/30',
           },
           {
-            title: t('onlineNodeCount'),
-            value: ServerTotal?.online_servers || 0,
+            title: t('totalServers'),
+            value: (ServerTotal?.online_servers || 0) + (ServerTotal?.offline_servers || 0),
+            subtitle: `${t('online')} ${ServerTotal?.online_servers || 0} ${t('offline')} ${ServerTotal?.offline_servers || 0}`,
             icon: 'uil:server-network',
             href: '/dashboard/servers',
+            color: 'text-green-600 dark:text-green-400',
+            iconBg: 'bg-green-100 dark:bg-green-900/30',
           },
           {
-            title: t('offlineNodeCount'),
-            value: ServerTotal?.offline_servers || 0,
-            icon: 'uil:server-network-alt',
-            href: '/dashboard/servers',
+            title: t('todayTraffic'),
+            value: formatBytes(
+              (ServerTotal?.today_upload || 0) + (ServerTotal?.today_download || 0),
+            ),
+            subtitle: `↑${formatBytes(ServerTotal?.today_upload || 0)} ↓${formatBytes(ServerTotal?.today_download || 0)}`,
+            icon: 'uil:exchange-alt',
+            color: 'text-purple-600 dark:text-purple-400',
+            iconBg: 'bg-purple-100 dark:bg-purple-900/30',
+          },
+          {
+            title: t('monthTraffic'),
+            value: formatBytes(
+              (ServerTotal?.monthly_upload || 0) + (ServerTotal?.monthly_download || 0),
+            ),
+            subtitle: `↑${formatBytes(ServerTotal?.monthly_upload || 0)} ↓${formatBytes(ServerTotal?.monthly_download || 0)}`,
+            icon: 'uil:cloud-data-connection',
+            color: 'text-orange-600 dark:text-orange-400',
+            iconBg: 'bg-orange-100 dark:bg-orange-900/30',
           },
           {
             title: t('pendingTickets'),
             value: TicketTotal || 0,
+            subtitle: t('pending'),
             icon: 'uil:clipboard-notes',
             href: '/dashboard/ticket',
-          },
-          {
-            title: t('todayUploadTraffic'),
-            value: formatBytes(ServerTotal?.today_upload || 0),
-            icon: 'uil:arrow-up',
-          },
-          {
-            title: t('todayDownloadTraffic'),
-            value: formatBytes(ServerTotal?.today_download || 0),
-            icon: 'uil:arrow-down',
-          },
-          {
-            title: t('monthUploadTraffic'),
-            value: formatBytes(ServerTotal?.monthly_upload || 0),
-            icon: 'uil:cloud-upload',
-          },
-          {
-            title: t('monthDownloadTraffic'),
-            value: formatBytes(ServerTotal?.monthly_download || 0),
-            icon: 'uil:cloud-download',
+            color: 'text-red-600 dark:text-red-400',
+            iconBg: 'bg-red-100 dark:bg-red-900/30',
           },
         ].map((item, index) => (
-          <Link href={item.href || '#'} key={index}>
-            <Card className='cursor-pointer'>
-              <CardHeader className='p-4'>
-                <CardTitle>{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent className='flex justify-between p-4 text-xl'>
-                <Icon icon={item.icon} className='text-muted-foreground' />
-                <div className='text-xl font-bold tabular-nums leading-none'>{item.value}</div>
+          <Link
+            href={item.href || '#'}
+            key={index}
+            className={!item.href ? 'pointer-events-none' : ''}
+          >
+            <Card className={`group ${item.href ? 'cursor-pointer' : ''}`}>
+              <CardContent className='p-6'>
+                <div className='flex items-center justify-between'>
+                  <div className='flex-1'>
+                    <p className='text-muted-foreground mb-2 text-sm font-medium'>{item.title}</p>
+                    <div className={`text-2xl font-bold ${item.color} mb-1`}>{item.value}</div>
+                    <div className={`text-muted-foreground h-4 text-xs`}>{item.subtitle}</div>
+                  </div>
+                  <div
+                    className={`rounded-full p-3 ${item.iconBg} transition-transform duration-300 group-hover:scale-110`}
+                  >
+                    <Icon icon={item.icon} className={`h-6 w-6 ${item.color}`} />
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </Link>

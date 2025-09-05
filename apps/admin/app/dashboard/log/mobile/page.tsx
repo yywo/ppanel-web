@@ -2,8 +2,8 @@
 
 import { ProTable } from '@/components/pro-table';
 import { filterMobileLog } from '@/services/admin/log';
+import { formatDate } from '@/utils/common';
 import { Badge } from '@workspace/ui/components/badge';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 export default function MobileLogPage() {

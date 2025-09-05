@@ -192,8 +192,8 @@ export function UserStatisticsCard() {
                     tickMargin={10}
                     axisLine={false}
                     tickFormatter={(value) => {
-                      // value format: "YYYY-MM-DD"
-                      return new Date(value).toLocaleDateString(locale, {
+                      const [year, month, day] = value.split('-');
+                      return new Date(year, month - 1, day).toLocaleDateString(locale, {
                         month: 'short',
                         day: 'numeric',
                       });

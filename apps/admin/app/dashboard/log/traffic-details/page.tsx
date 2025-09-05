@@ -3,7 +3,8 @@
 import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { ProTable } from '@/components/pro-table';
 import { filterTrafficLogDetails } from '@/services/admin/log';
-import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { formatDate } from '@/utils/common';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 

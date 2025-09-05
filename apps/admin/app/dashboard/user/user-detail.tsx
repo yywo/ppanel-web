@@ -2,10 +2,11 @@
 
 import { Display } from '@/components/display';
 import { getUserDetail, getUserSubscribeById } from '@/services/admin/user';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
-import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 

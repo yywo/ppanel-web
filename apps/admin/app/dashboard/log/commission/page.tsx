@@ -3,7 +3,7 @@
 import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { ProTable } from '@/components/pro-table';
 import { filterCommissionLog } from '@/services/admin/log';
-import { formatDate } from '@workspace/ui/utils';
+import { formatDate } from '@/utils/common';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 

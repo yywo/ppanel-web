@@ -4,7 +4,7 @@ import { UserDetail } from '@/app/dashboard/user/user-detail';
 import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import { filterRegisterLog } from '@/services/admin/log';
-import { formatDate } from '@workspace/ui/utils';
+import { formatDate } from '@/utils/common';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 

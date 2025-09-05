@@ -10,6 +10,7 @@ import {
   getUserList,
   updateUserBasicInfo,
 } from '@/services/admin/user';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -30,7 +31,6 @@ import {
 import { Switch } from '@workspace/ui/components/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';

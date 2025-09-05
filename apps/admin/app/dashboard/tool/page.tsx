@@ -1,6 +1,7 @@
 'use client';
 
 import { getSystemLog, getVersion, restartSystem } from '@/services/admin/tool';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import {
   Accordion,
@@ -29,7 +30,6 @@ import {
 } from '@workspace/ui/components/card';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import { Icon } from '@workspace/ui/custom-components/icon';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import packageJson from '../../../../../package.json';

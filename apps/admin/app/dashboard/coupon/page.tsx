@@ -10,12 +10,12 @@ import {
   updateCoupon,
 } from '@/services/admin/coupon';
 import { getSubscribeList } from '@/services/admin/subscribe';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
