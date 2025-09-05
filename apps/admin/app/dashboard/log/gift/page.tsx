@@ -1,6 +1,8 @@
 'use client';
 
-import { UserDetail } from '@/app/dashboard/user/user-detail';
+import { UserDetail, UserSubscribeDetail } from '@/app/dashboard/user/user-detail';
+import { Display } from '@/components/display';
+import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterGiftLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
@@ -10,9 +12,12 @@ import { useSearchParams } from 'next/navigation';
 export default function GiftLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+
+  // 获取今日日期作为默认值
+  const today = new Date().toISOString().split('T')[0];
+
   const initialFilters = {
-    search: sp.get('search') || undefined,
-    date: sp.get('date') || undefined,
+    date: sp.get('date') || today,
     user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
   };
   return (
@@ -25,10 +30,28 @@ export default function GiftLogPage() {
           header: t('column.user'),
           cell: ({ row }) => <UserDetail id={Number(row.original.user_id)} />,
         },
-        { accessorKey: 'subscribe_id', header: t('column.subscribeId') },
-        { accessorKey: 'order_no', header: t('column.orderNo') },
-        { accessorKey: 'amount', header: t('column.amount') },
-        { accessorKey: 'balance', header: t('column.balance') },
+        {
+          accessorKey: 'subscribe_id',
+          header: t('column.subscribe'),
+          cell: ({ row }) => (
+            <UserSubscribeDetail id={Number(row.original.subscribe_id)} enabled hoverCard />
+          ),
+        },
+        {
+          accessorKey: 'order_no',
+          header: t('column.orderNo'),
+          cell: ({ row }) => <OrderLink orderId={row.original.order_no} />,
+        },
+        {
+          accessorKey: 'amount',
+          header: t('column.amount'),
+          cell: ({ row }) => <Display type='currency' value={row.original.amount} />,
+        },
+        {
+          accessorKey: 'balance',
+          header: t('column.balance'),
+          cell: ({ row }) => <Display type='currency' value={row.original.balance} />,
+        },
         { accessorKey: 'remark', header: t('column.remark') },
         {
           accessorKey: 'timestamp',
@@ -37,7 +60,6 @@ export default function GiftLogPage() {
         },
       ]}
       params={[
-        { key: 'search' },
         { key: 'date', type: 'date' },
         { key: 'user_id', placeholder: t('column.userId') },
       ]}
@@ -45,7 +67,6 @@ export default function GiftLogPage() {
         const { data } = await filterGiftLog({
           page: pagination.page,
           size: pagination.size,
-          search: filter?.search,
           date: (filter as any)?.date,
           user_id: (filter as any)?.user_id,
         });

@@ -15,9 +15,11 @@
     "platform": "Nền tảng",
     "remark": "Ghi chú",
     "resetAt": "Đặt lại vào",
+    "server": "Máy chủ",
     "serverId": "ID máy chủ",
     "status": "Trạng thái",
     "subject": "Chủ đề",
+    "subscribe": "Đăng ký",
     "subscribeId": "ID đăng ký",
     "success": "Thành công",
     "time": "Thời gian",
@@ -32,7 +34,9 @@
     "userId": "ID người dùng"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "Chi tiết",
   "failed": "Thất bại",
+  "pending": "Đang chờ",
   "placeholder": {
     "serverName": "Tên máy chủ",
     "toOrSubject": "Đến / Chủ đề",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID người dùng / Số đơn hàng / ID đăng ký",
     "userIdOrTokenOrIpOrUa": "ID người dùng / Mã thông báo / IP / UA"
   },
+  "sending": "Đang gửi",
+  "sent": "Đã gửi",
   "success": "Thành công",
   "title": {
     "balance": "Nhật ký Số dư",
@@ -56,5 +62,14 @@
     "subscribe": "Nhật ký Đăng ký",
     "subscribeTraffic": "Nhật ký Lưu lượng Đăng ký",
     "trafficDetails": "Chi tiết Lưu lượng"
-  }
+  },
+  "type": {
+    "1": "Nạp tiền",
+    "2": "Rút tiền",
+    "3": "Mua hàng",
+    "4": "Hoàn tiền",
+    "5": "Phần thưởng",
+    "6": "Hoa hồng"
+  },
+  "unknown": "Không xác định"
 }

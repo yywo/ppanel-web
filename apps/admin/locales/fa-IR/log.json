@@ -15,9 +15,11 @@
     "platform": "پلتفرم",
     "remark": "یادداشت",
     "resetAt": "تاریخ بازنشانی",
+    "server": "سرور",
     "serverId": "شناسه سرور",
     "status": "وضعیت",
     "subject": "موضوع",
+    "subscribe": "اشتراک",
     "subscribeId": "شناسه اشتراک",
     "success": "موفقیت",
     "time": "زمان",
@@ -32,7 +34,9 @@
     "userId": "شناسه کاربر"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "جزئیات",
   "failed": "ناموفق",
+  "pending": "در حال انتظار",
   "placeholder": {
     "serverName": "نام سرور",
     "toOrSubject": "به / موضوع",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "شناسه کاربر / شماره سفارش / شناسه اشتراک",
     "userIdOrTokenOrIpOrUa": "شناسه کاربر / توکن / آی‌پی / UA"
   },
+  "sending": "در حال ارسال",
+  "sent": "ارسال شده",
   "success": "موفقیت",
   "title": {
     "balance": "گزارش موجودی",
@@ -56,5 +62,14 @@
     "subscribe": "گزارش اشتراک",
     "subscribeTraffic": "گزارش ترافیک اشتراک",
     "trafficDetails": "جزئیات ترافیک"
-  }
+  },
+  "type": {
+    "1": "شارژ",
+    "2": "برداشت",
+    "3": "خرید",
+    "4": "بازگشت",
+    "5": "پاداش",
+    "6": "کمیسیون"
+  },
+  "unknown": "ناشناخته"
 }

@@ -15,9 +15,11 @@
     "platform": "Platforma",
     "remark": "Poznámka",
     "resetAt": "Resetováno",
+    "server": "Server",
     "serverId": "ID serveru",
     "status": "Stav",
     "subject": "Předmět",
+    "subscribe": "Přihlásit se",
     "subscribeId": "ID předplatného",
     "success": "Úspěch",
     "time": "Čas",
@@ -32,7 +34,9 @@
     "userId": "ID uživatele"
   },
   "datePlaceholder": "RRRR-MM-DD",
+  "detail": "Detail",
   "failed": "Neúspěšné",
+  "pending": "Čekající",
   "placeholder": {
     "serverName": "Název serveru",
     "toOrSubject": "Komu / Předmět",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID uživatele / Číslo objednávky / ID předplatného",
     "userIdOrTokenOrIpOrUa": "ID uživatele / Token / IP / UA"
   },
+  "sending": "Odesílání",
+  "sent": "Odesláno",
   "success": "Úspěch",
   "title": {
     "balance": "Protokol zůstatku",
@@ -56,5 +62,14 @@
     "subscribe": "Protokol předplatného",
     "subscribeTraffic": "Protokol provozu předplatného",
     "trafficDetails": "Podrobnosti o provozu"
-  }
+  },
+  "type": {
+    "1": "Dobití",
+    "2": "Výběr",
+    "3": "Nákup",
+    "4": "Vrácení",
+    "5": "Odměna",
+    "6": "Provize"
+  },
+  "unknown": "Neznámý"
 }

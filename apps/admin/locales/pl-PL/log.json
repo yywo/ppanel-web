@@ -15,9 +15,11 @@
     "platform": "Platforma",
     "remark": "Uwagi",
     "resetAt": "Zresetowano",
+    "server": "Serwer",
     "serverId": "ID Serwera",
     "status": "Status",
     "subject": "Temat",
+    "subscribe": "Subskrybuj",
     "subscribeId": "ID Subskrypcji",
     "success": "Sukces",
     "time": "Czas",
@@ -32,7 +34,9 @@
     "userId": "ID Użytkownika"
   },
   "datePlaceholder": "RRRR-MM-DD",
+  "detail": "Szczegóły",
   "failed": "Niepowodzenie",
+  "pending": "Oczekujące",
   "placeholder": {
     "serverName": "Nazwa Serwera",
     "toOrSubject": "Do / Temat",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID Użytkownika / Nr Zamówienia / ID Subskrypcji",
     "userIdOrTokenOrIpOrUa": "ID Użytkownika / Token / IP / UA"
   },
+  "sending": "Wysyłanie",
+  "sent": "Wysłane",
   "success": "Sukces",
   "title": {
     "balance": "Dziennik Salda",
@@ -56,5 +62,14 @@
     "subscribe": "Dziennik Subskrypcji",
     "subscribeTraffic": "Dziennik Ruchu Subskrypcyjnego",
     "trafficDetails": "Szczegóły Ruchu"
-  }
+  },
+  "type": {
+    "1": "Doładowanie",
+    "2": "Wypłata",
+    "3": "Zakup",
+    "4": "Zwrót",
+    "5": "Nagroda",
+    "6": "Prowizja"
+  },
+  "unknown": "Nieznane"
 }

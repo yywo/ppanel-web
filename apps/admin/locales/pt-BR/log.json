@@ -15,9 +15,11 @@
     "platform": "Plataforma",
     "remark": "Observação",
     "resetAt": "Reiniciado Em",
+    "server": "Servidor",
     "serverId": "ID do Servidor",
     "status": "Status",
     "subject": "Assunto",
+    "subscribe": "Inscrever-se",
     "subscribeId": "ID da Inscrição",
     "success": "Sucesso",
     "time": "Tempo",
@@ -32,7 +34,9 @@
     "userId": "ID do Usuário"
   },
   "datePlaceholder": "AAAA-MM-DD",
+  "detail": "Detalhe",
   "failed": "Falhou",
+  "pending": "Pendente",
   "placeholder": {
     "serverName": "Nome do Servidor",
     "toOrSubject": "Para / Assunto",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID do Usuário / Número do Pedido / ID da Inscrição",
     "userIdOrTokenOrIpOrUa": "ID do Usuário / Token / IP / UA"
   },
+  "sending": "Enviando",
+  "sent": "Enviado",
   "success": "Sucesso",
   "title": {
     "balance": "Registro de Saldo",
@@ -56,5 +62,14 @@
     "subscribe": "Registro de Inscrição",
     "subscribeTraffic": "Registro de Tráfego de Inscrição",
     "trafficDetails": "Detalhes do Tráfego"
-  }
+  },
+  "type": {
+    "1": "Recarga",
+    "2": "Retirada",
+    "3": "Compra",
+    "4": "Reembolso",
+    "5": "Recompensa",
+    "6": "Comissão"
+  },
+  "unknown": "Desconhecido"
 }

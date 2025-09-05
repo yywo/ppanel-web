@@ -15,9 +15,11 @@
     "platform": "Платформа",
     "remark": "Примечание",
     "resetAt": "Сброшено",
+    "server": "Сервер",
     "serverId": "ИД сервера",
     "status": "Статус",
     "subject": "Тема",
+    "subscribe": "Подписаться",
     "subscribeId": "ИД подписки",
     "success": "Успех",
     "time": "Время",
@@ -32,7 +34,9 @@
     "userId": "ИД пользователя"
   },
   "datePlaceholder": "ГГГГ-ММ-ДД",
+  "detail": "Детали",
   "failed": "Неудача",
+  "pending": "В ожидании",
   "placeholder": {
     "serverName": "Имя сервера",
     "toOrSubject": "Кому / Тема",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ИД пользователя / Номер заказа / ИД подписки",
     "userIdOrTokenOrIpOrUa": "ИД пользователя / Токен / IP / UA"
   },
+  "sending": "Отправка",
+  "sent": "Отправлено",
   "success": "Успех",
   "title": {
     "balance": "Журнал баланса",
@@ -56,5 +62,14 @@
     "subscribe": "Журнал подписки",
     "subscribeTraffic": "Журнал трафика подписки",
     "trafficDetails": "Детали трафика"
-  }
+  },
+  "type": {
+    "1": "Пополнение",
+    "2": "Вывод",
+    "3": "Покупка",
+    "4": "Возврат",
+    "5": "Награда",
+    "6": "Комиссия"
+  },
+  "unknown": "Неизвестно"
 }

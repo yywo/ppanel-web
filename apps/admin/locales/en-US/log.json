@@ -16,6 +16,8 @@
     "time": "Time",
     "userId": "User ID",
     "subscribeId": "Subscribe ID",
+    "subscribe": "Subscribe",
+    "server": "Server",
     "token": "Token",
     "amount": "Amount",
     "orderId": "Order ID",
@@ -32,7 +34,9 @@
     "identifier": "Identifier"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "Detail",
   "failed": "Failed",
+  "pending": "Pending",
   "placeholder": {
     "toOrSubject": "To / Subject",
     "userIdOrIpOrMethodOrUa": "User ID / IP / Method / UA",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "User ID / Order No. / Subscribe ID",
     "userIdOrOrderId": "User ID / Order ID"
   },
+  "sending": "Sending",
+  "sent": "Sent",
   "success": "Success",
   "title": {
     "email": "Email Log",
@@ -56,5 +62,14 @@
     "resetSubscribe": "Reset Subscribe Log",
     "subscribeTraffic": "Subscribe Traffic Log",
     "trafficDetails": "Traffic Details"
-  }
+  },
+  "type": {
+    "1": "Recharge",
+    "2": "Withdraw",
+    "3": "Purchase",
+    "4": "Refund",
+    "5": "Reward",
+    "6": "Commission"
+  },
+  "unknown": "Unknown"
 }

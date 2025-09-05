@@ -15,9 +15,11 @@
     "platform": "プラットフォーム",
     "remark": "備考",
     "resetAt": "リセット日時",
+    "server": "サーバー",
     "serverId": "サーバーID",
     "status": "ステータス",
     "subject": "件名",
+    "subscribe": "購読",
     "subscribeId": "サブスクリプションID",
     "success": "成功",
     "time": "時間",
@@ -32,7 +34,9 @@
     "userId": "ユーザーID"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "詳細",
   "failed": "失敗",
+  "pending": "保留中",
   "placeholder": {
     "serverName": "サーバー名",
     "toOrSubject": "宛先 / 件名",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ユーザーID / 注文番号 / サブスクリプションID",
     "userIdOrTokenOrIpOrUa": "ユーザーID / トークン / IP / UA"
   },
+  "sending": "送信中",
+  "sent": "送信済み",
   "success": "成功",
   "title": {
     "balance": "残高ログ",
@@ -56,5 +62,14 @@
     "subscribe": "サブスクリプションログ",
     "subscribeTraffic": "サブスクリプショントラフィックログ",
     "trafficDetails": "トラフィック詳細"
-  }
+  },
+  "type": {
+    "1": "チャージ",
+    "2": "引き出し",
+    "3": "購入",
+    "4": "返金",
+    "5": "報酬",
+    "6": "手数料"
+  },
+  "unknown": "不明"
 }

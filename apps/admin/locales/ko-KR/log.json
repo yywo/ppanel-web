@@ -15,9 +15,11 @@
     "platform": "플랫폼",
     "remark": "비고",
     "resetAt": "재설정일",
+    "server": "서버",
     "serverId": "서버 ID",
     "status": "상태",
     "subject": "제목",
+    "subscribe": "구독",
     "subscribeId": "구독 ID",
     "success": "성공",
     "time": "시간",
@@ -32,7 +34,9 @@
     "userId": "사용자 ID"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "상세",
   "failed": "실패",
+  "pending": "대기 중",
   "placeholder": {
     "serverName": "서버 이름",
     "toOrSubject": "받는 사람 / 제목",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "사용자 ID / 주문 번호 / 구독 ID",
     "userIdOrTokenOrIpOrUa": "사용자 ID / 토큰 / IP / UA"
   },
+  "sending": "전송 중",
+  "sent": "전송 완료",
   "success": "성공",
   "title": {
     "balance": "잔액 로그",
@@ -56,5 +62,14 @@
     "subscribe": "구독 로그",
     "subscribeTraffic": "구독 트래픽 로그",
     "trafficDetails": "트래픽 세부정보"
-  }
+  },
+  "type": {
+    "1": "충전",
+    "2": "출금",
+    "3": "구매",
+    "4": "환불",
+    "5": "보상",
+    "6": "수수료"
+  },
+  "unknown": "알 수 없음"
 }

@@ -15,9 +15,11 @@
     "platform": "Alusta",
     "remark": "Huomautus",
     "resetAt": "Nollattu",
+    "server": "Palvelin",
     "serverId": "Palvelimen ID",
     "status": "Tila",
     "subject": "Aihe",
+    "subscribe": "Tilaa",
     "subscribeId": "Tilauksen ID",
     "success": "Onnistui",
     "time": "Aika",
@@ -32,7 +34,9 @@
     "userId": "Käyttäjä ID"
   },
   "datePlaceholder": "VVVV-KK-PP",
+  "detail": "Yksityiskohta",
   "failed": "Epäonnistui",
+  "pending": "Odottaa",
   "placeholder": {
     "serverName": "Palvelimen nimi",
     "toOrSubject": "Vastaanottaja / Aihe",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "Käyttäjä ID / Tilauksen nro / Tilauksen ID",
     "userIdOrTokenOrIpOrUa": "Käyttäjä ID / Token / IP / UA"
   },
+  "sending": "Lähetetään",
+  "sent": "Lähetetty",
   "success": "Onnistui",
   "title": {
     "balance": "Saldo Lokit",
@@ -56,5 +62,14 @@
     "subscribe": "Tilauksen Lokit",
     "subscribeTraffic": "Tilauksen Liikenne Lokit",
     "trafficDetails": "Liikennetiedot"
-  }
+  },
+  "type": {
+    "1": "Lataus",
+    "2": "Nosto",
+    "3": "Osto",
+    "4": "Hyvitys",
+    "5": "Palkinto",
+    "6": "Komissio"
+  },
+  "unknown": "Tuntematon"
 }

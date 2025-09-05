@@ -1,34 +1,59 @@
 'use client';
 
-import { UserDetail } from '@/app/dashboard/user/user-detail';
+import { UserDetail, UserSubscribeDetail } from '@/app/dashboard/user/user-detail';
 import { ProTable } from '@/components/pro-table';
 import { filterUserSubscribeTrafficLog } from '@/services/admin/log';
+import { Button } from '@workspace/ui/components/button';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 export default function SubscribeTrafficLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+
+  // 获取今日日期作为默认值
+  const today = new Date().toISOString().split('T')[0];
+
   const initialFilters = {
-    search: sp.get('search') || undefined,
-    date: sp.get('date') || undefined,
+    date: sp.get('date') || today,
     user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
     user_subscribe_id: sp.get('user_subscribe_id')
       ? Number(sp.get('user_subscribe_id'))
       : undefined,
   };
   return (
-    <ProTable<API.UserSubscribeTrafficLog, { search?: string }>
+    <ProTable<
+      API.UserSubscribeTrafficLog,
+      { date?: string; user_id?: number; user_subscribe_id?: number }
+    >
       header={{ title: t('title.subscribeTraffic') }}
       initialFilters={initialFilters}
+      actions={{
+        render: (row) => [
+          <Button key='detail' asChild>
+            <Link
+              href={`/dashboard/log/traffic-details?date=${row.date}&user_id=${row.user_id}&subscribe_id=${row.subscribe_id}`}
+            >
+              {t('detail')}
+            </Link>
+          </Button>,
+        ],
+      }}
       columns={[
         {
           accessorKey: 'user',
           header: t('column.user'),
           cell: ({ row }) => <UserDetail id={Number(row.original.user_id)} />,
         },
-        { accessorKey: 'subscribe_id', header: t('column.subscribeId') },
+        {
+          accessorKey: 'subscribe_id',
+          header: t('column.subscribe'),
+          cell: ({ row }) => (
+            <UserSubscribeDetail id={Number(row.original.subscribe_id)} enabled hoverCard />
+          ),
+        },
         {
           accessorKey: 'upload',
           header: t('column.upload'),
@@ -50,7 +75,6 @@ export default function SubscribeTrafficLogPage() {
         },
       ]}
       params={[
-        { key: 'search' },
         { key: 'date', type: 'date' },
         { key: 'user_id', placeholder: t('column.userId') },
         { key: 'user_subscribe_id', placeholder: t('column.subscribeId') },
@@ -59,7 +83,6 @@ export default function SubscribeTrafficLogPage() {
         const { data } = await filterUserSubscribeTrafficLog({
           page: pagination.page,
           size: pagination.size,
-          search: filter?.search,
           date: (filter as any)?.date,
           user_id: (filter as any)?.user_id,
           user_subscribe_id: (filter as any)?.user_subscribe_id,

@@ -1,6 +1,7 @@
 'use client';
 
-import { UserDetail } from '@/app/dashboard/user/user-detail';
+import { UserDetail, UserSubscribeDetail } from '@/app/dashboard/user/user-detail';
+import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterResetSubscribeLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
@@ -10,15 +11,17 @@ import { useSearchParams } from 'next/navigation';
 export default function ResetSubscribeLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+
+  const today = new Date().toISOString().split('T')[0];
+
   const initialFilters = {
-    search: sp.get('search') || undefined,
-    date: sp.get('date') || undefined,
+    date: sp.get('date') || today,
     user_subscribe_id: sp.get('user_subscribe_id')
       ? Number(sp.get('user_subscribe_id'))
       : undefined,
   };
   return (
-    <ProTable<API.ResetSubscribeLog, { search?: string }>
+    <ProTable<API.ResetSubscribeLog, { date?: string; user_subscribe_id?: number }>
       header={{ title: t('title.resetSubscribe') }}
       initialFilters={initialFilters}
       columns={[
@@ -27,9 +30,19 @@ export default function ResetSubscribeLogPage() {
           header: t('column.user'),
           cell: ({ row }) => <UserDetail id={Number(row.original.user_id)} />,
         },
-        { accessorKey: 'user_subscribe_id', header: t('column.subscribeId') },
+        {
+          accessorKey: 'user_subscribe_id',
+          header: t('column.subscribeId'),
+          cell: ({ row }) => (
+            <UserSubscribeDetail id={Number(row.original.user_subscribe_id)} enabled hoverCard />
+          ),
+        },
         { accessorKey: 'type', header: t('column.type') },
-        { accessorKey: 'order_no', header: t('column.orderNo') },
+        {
+          accessorKey: 'order_no',
+          header: t('column.orderNo'),
+          cell: ({ row }) => <OrderLink orderId={row.original.order_no} />,
+        },
         {
           accessorKey: 'timestamp',
           header: t('column.time'),
@@ -37,7 +50,6 @@ export default function ResetSubscribeLogPage() {
         },
       ]}
       params={[
-        { key: 'search' },
         { key: 'date', type: 'date' },
         { key: 'user_subscribe_id', placeholder: t('column.subscribeId') },
       ]}
@@ -45,7 +57,6 @@ export default function ResetSubscribeLogPage() {
         const { data } = await filterResetSubscribeLog({
           page: pagination.page,
           size: pagination.size,
-          search: filter?.search,
           date: (filter as any)?.date,
           user_subscribe_id: (filter as any)?.user_subscribe_id,
         });

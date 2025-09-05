@@ -13,7 +13,6 @@ import { Button } from '@workspace/ui/components/button';
 import {
   Drawer,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -168,10 +167,22 @@ export default function Page() {
         <DrawerContent className='container mx-auto h-screen *:select-text'>
           <DrawerHeader className='border-b text-left'>
             <DrawerTitle>{ticket?.title}</DrawerTitle>
-            <DrawerDescription>{ticket?.description}</DrawerDescription>
           </DrawerHeader>
           <ScrollArea className='h-full overflow-hidden' ref={scrollRef}>
             <div className='flex h-full flex-col gap-4 p-4'>
+              {/* 显示工单描述作为第一条用户消息 */}
+              {ticket?.description && (
+                <div className='flex items-center gap-4'>
+                  <div className='flex flex-col gap-1'>
+                    <p className='text-muted-foreground text-sm'>{formatDate(ticket.created_at)}</p>
+                    <p className='bg-accent w-fit rounded-lg p-2 font-medium'>
+                      {ticket.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* 显示后续跟进消息 */}
               {ticket?.follow?.map((item) => (
                 <div
                   key={item.id}

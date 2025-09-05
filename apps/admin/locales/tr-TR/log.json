@@ -15,9 +15,11 @@
     "platform": "Platform",
     "remark": "Not",
     "resetAt": "Sıfırlama Tarihi",
+    "server": "Sunucu",
     "serverId": "Sunucu ID",
     "status": "Durum",
     "subject": "Konu",
+    "subscribe": "Abone Ol",
     "subscribeId": "Abone ID",
     "success": "Başarılı",
     "time": "Zaman",
@@ -32,7 +34,9 @@
     "userId": "Kullanıcı ID"
   },
   "datePlaceholder": "YYYY-AA-GG",
+  "detail": "Detay",
   "failed": "Başarısız",
+  "pending": "Beklemede",
   "placeholder": {
     "serverName": "Sunucu Adı",
     "toOrSubject": "Kime / Konu",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "Kullanıcı ID / Sipariş No. / Abone ID",
     "userIdOrTokenOrIpOrUa": "Kullanıcı ID / Token / IP / UA"
   },
+  "sending": "Gönderiliyor",
+  "sent": "Gönderildi",
   "success": "Başarılı",
   "title": {
     "balance": "Bakiye Kaydı",
@@ -56,5 +62,14 @@
     "subscribe": "Abone Kaydı",
     "subscribeTraffic": "Abone Trafik Kaydı",
     "trafficDetails": "Trafik Detayları"
-  }
+  },
+  "type": {
+    "1": "Yükleme",
+    "2": "Çekim",
+    "3": "Alım",
+    "4": "İade",
+    "5": "Ödül",
+    "6": "Komisyon"
+  },
+  "unknown": "Bilinmiyor"
 }

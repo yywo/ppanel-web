@@ -15,9 +15,11 @@
     "platform": "แพลตฟอร์ม",
     "remark": "หมายเหตุ",
     "resetAt": "รีเซ็ตเมื่อ",
+    "server": "เซิร์ฟเวอร์",
     "serverId": "รหัสเซิร์ฟเวอร์",
     "status": "สถานะ",
     "subject": "หัวข้อ",
+    "subscribe": "สมัครสมาชิก",
     "subscribeId": "รหัสการสมัคร",
     "success": "สำเร็จ",
     "time": "เวลา",
@@ -32,7 +34,9 @@
     "userId": "รหัสผู้ใช้"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "รายละเอียด",
   "failed": "ล้มเหลว",
+  "pending": "รอดำเนินการ",
   "placeholder": {
     "serverName": "ชื่อเซิร์ฟเวอร์",
     "toOrSubject": "ถึง / หัวข้อ",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "รหัสผู้ใช้ / หมายเลขคำสั่ง / รหัสการสมัคร",
     "userIdOrTokenOrIpOrUa": "รหัสผู้ใช้ / โทเค็น / IP / UA"
   },
+  "sending": "กำลังส่ง",
+  "sent": "ส่งแล้ว",
   "success": "สำเร็จ",
   "title": {
     "balance": "บันทึกยอดคงเหลือ",
@@ -56,5 +62,14 @@
     "subscribe": "บันทึกการสมัคร",
     "subscribeTraffic": "บันทึกการจราจรการสมัคร",
     "trafficDetails": "รายละเอียดการจราจร"
-  }
+  },
+  "type": {
+    "1": "เติมเงิน",
+    "2": "ถอนเงิน",
+    "3": "ซื้อ",
+    "4": "คืนเงิน",
+    "5": "รางวัล",
+    "6": "ค่าคอมมิชชั่น"
+  },
+  "unknown": "ไม่ทราบ"
 }

@@ -15,9 +15,11 @@
     "platform": "Plattform",
     "remark": "Bemerkung",
     "resetAt": "Zurückgesetzt Am",
+    "server": "Server",
     "serverId": "Server-ID",
     "status": "Status",
     "subject": "Betreff",
+    "subscribe": "Abonnieren",
     "subscribeId": "Abonnement-ID",
     "success": "Erfolg",
     "time": "Zeit",
@@ -32,7 +34,9 @@
     "userId": "Benutzer-ID"
   },
   "datePlaceholder": "JJJJ-MM-TT",
+  "detail": "Detail",
   "failed": "Fehlgeschlagen",
+  "pending": "Ausstehend",
   "placeholder": {
     "serverName": "Servername",
     "toOrSubject": "An / Betreff",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "Benutzer-ID / Bestell-Nr. / Abonnement-ID",
     "userIdOrTokenOrIpOrUa": "Benutzer-ID / Token / IP / UA"
   },
+  "sending": "Wird gesendet",
+  "sent": "Gesendet",
   "success": "Erfolg",
   "title": {
     "balance": "Guthabenprotokoll",
@@ -56,5 +62,14 @@
     "subscribe": "Abonnementprotokoll",
     "subscribeTraffic": "Abonnementverkehrsprotokoll",
     "trafficDetails": "Verkehrsdetails"
-  }
+  },
+  "type": {
+    "1": "Aufladen",
+    "2": "Abheben",
+    "3": "Kauf",
+    "4": "Rückerstattung",
+    "5": "Belohnung",
+    "6": "Provision"
+  },
+  "unknown": "Unbekannt"
 }

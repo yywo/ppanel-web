@@ -95,6 +95,7 @@
   "subscription": "订阅",
   "traffic": "流量",
   "traffic_ratio": "倍率",
+  "transport": "传输方式",
   "transport_title": "传输方式",
   "udp_relay_mode": "UDP 转发模式",
   "unitSecondsShort": "S",

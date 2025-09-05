@@ -15,9 +15,11 @@
     "platform": "Platform",
     "remark": "Megjegyzés",
     "resetAt": "Visszaállítva",
+    "server": "Szerver",
     "serverId": "Szerver azonosító",
     "status": "Állapot",
     "subject": "Tárgy",
+    "subscribe": "Feliratkozás",
     "subscribeId": "Előfizetési azonosító",
     "success": "Sikeres",
     "time": "Idő",
@@ -32,7 +34,9 @@
     "userId": "Felhasználói azonosító"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "Részletek",
   "failed": "Sikertelen",
+  "pending": "Függő",
   "placeholder": {
     "serverName": "Szerver neve",
     "toOrSubject": "Címzett / Tárgy",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "Felhasználói azonosító / Rendelés száma / Előfizetési azonosító",
     "userIdOrTokenOrIpOrUa": "Felhasználói azonosító / Token / IP / UA"
   },
+  "sending": "Küldés alatt",
+  "sent": "Küldve",
   "success": "Sikeres",
   "title": {
     "balance": "Egyenleg napló",
@@ -56,5 +62,14 @@
     "subscribe": "Előfizetési napló",
     "subscribeTraffic": "Előfizetési forgalom napló",
     "trafficDetails": "Forgalmi részletek"
-  }
+  },
+  "type": {
+    "1": "Újratöltés",
+    "2": "Kivét",
+    "3": "Vásárlás",
+    "4": "Visszatérítés",
+    "5": "Jutalom",
+    "6": "Jutalék"
+  },
+  "unknown": "Ismeretlen"
 }

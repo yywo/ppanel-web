@@ -15,9 +15,11 @@
     "platform": "Plateforme",
     "remark": "Remarque",
     "resetAt": "Réinitialisé le",
+    "server": "Serveur",
     "serverId": "ID de Serveur",
     "status": "Statut",
     "subject": "Sujet",
+    "subscribe": "S'abonner",
     "subscribeId": "ID d'Abonnement",
     "success": "Succès",
     "time": "Temps",
@@ -32,7 +34,9 @@
     "userId": "ID Utilisateur"
   },
   "datePlaceholder": "AAAA-MM-JJ",
+  "detail": "Détail",
   "failed": "Échoué",
+  "pending": "En attente",
   "placeholder": {
     "serverName": "Nom du Serveur",
     "toOrSubject": "À / Sujet",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID Utilisateur / Numéro de Commande / ID d'Abonnement",
     "userIdOrTokenOrIpOrUa": "ID Utilisateur / Jeton / IP / UA"
   },
+  "sending": "Envoi",
+  "sent": "Envoyé",
   "success": "Succès",
   "title": {
     "balance": "Journal des Soldes",
@@ -56,5 +62,14 @@
     "subscribe": "Journal des Abonnements",
     "subscribeTraffic": "Journal du Trafic d'Abonnement",
     "trafficDetails": "Détails du Trafic"
-  }
+  },
+  "type": {
+    "1": "Recharge",
+    "2": "Retrait",
+    "3": "Achat",
+    "4": "Remboursement",
+    "5": "Récompense",
+    "6": "Commission"
+  },
+  "unknown": "Inconnu"
 }

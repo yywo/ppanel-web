@@ -90,6 +90,7 @@ export default function NodeForm(props: {
   const serverId = form.watch('server_id');
 
   const { data } = useQuery({
+    enabled: open,
     queryKey: ['filterServerListAll'],
     queryFn: async () => {
       const { data } = await filterServerList({ page: 1, size: 999999999 });
@@ -99,6 +100,7 @@ export default function NodeForm(props: {
   const servers: ServerRow[] = data as ServerRow[];
 
   const { data: tagsData } = useQuery({
+    enabled: open,
     queryKey: ['queryNodeTag'],
     queryFn: async () => {
       const { data } = await queryNodeTag();

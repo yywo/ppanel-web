@@ -10,9 +10,12 @@ import { useSearchParams } from 'next/navigation';
 export default function EmailLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+
+  const today = new Date().toISOString().split('T')[0];
+
   const initialFilters = {
     search: sp.get('search') || undefined,
-    date: sp.get('date') || undefined,
+    date: sp.get('date') || today,
   };
   return (
     <ProTable<API.MessageLog, { search?: string }>
@@ -20,11 +23,10 @@ export default function EmailLogPage() {
       initialFilters={initialFilters}
       columns={[
         {
-          accessorKey: 'id',
-          header: t('column.id'),
-          cell: ({ row }) => <Badge>{row.getValue('id')}</Badge>,
+          accessorKey: 'platform',
+          header: t('column.platform'),
+          cell: ({ row }) => <Badge>{row.getValue('platform')}</Badge>,
         },
-        { accessorKey: 'platform', header: t('column.platform') },
         { accessorKey: 'to', header: t('column.to') },
         { accessorKey: 'subject', header: t('column.subject') },
         {
@@ -36,7 +38,29 @@ export default function EmailLogPage() {
             </pre>
           ),
         },
-        { accessorKey: 'status', header: t('column.status') },
+        {
+          accessorKey: 'status',
+          header: t('column.status'),
+          cell: ({ row }) => {
+            const status = row.original.status;
+            const getStatusVariant = (status: any) => {
+              if (status === 1) {
+                return 'default';
+              } else if (status === 0) {
+                return 'destructive';
+              }
+              return 'outline';
+            };
+
+            const getStatusText = (status: any) => {
+              if (status === 1) return t('sent');
+              if (status === 0) return t('failed');
+              return t('unknown');
+            };
+
+            return <Badge variant={getStatusVariant(status)}>{getStatusText(status)}</Badge>;
+          },
+        },
         {
           accessorKey: 'created_at',
           header: t('column.time'),

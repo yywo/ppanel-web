@@ -15,9 +15,11 @@
     "platform": "Plattform",
     "remark": "Merknad",
     "resetAt": "Tilbakestilt",
+    "server": "Server",
     "serverId": "Server-ID",
     "status": "Status",
     "subject": "Emne",
+    "subscribe": "Abonner",
     "subscribeId": "Abonnements-ID",
     "success": "Suksess",
     "time": "Tid",
@@ -32,7 +34,9 @@
     "userId": "Bruker-ID"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "Detalj",
   "failed": "Feilet",
+  "pending": "Venter",
   "placeholder": {
     "serverName": "Servernavn",
     "toOrSubject": "Til / Emne",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "Bruker-ID / Ordre nr. / Abonnements-ID",
     "userIdOrTokenOrIpOrUa": "Bruker-ID / Token / IP / UA"
   },
+  "sending": "Sender",
+  "sent": "Sendt",
   "success": "Suksess",
   "title": {
     "balance": "Saldi-logg",
@@ -56,5 +62,14 @@
     "subscribe": "Abonnementslogg",
     "subscribeTraffic": "Abonnements trafikklogg",
     "trafficDetails": "Trafikkdetaljer"
-  }
+  },
+  "type": {
+    "1": "Opplading",
+    "2": "Uttak",
+    "3": "Kjøp",
+    "4": "Refusjon",
+    "5": "Belønning",
+    "6": "Kommisjon"
+  },
+  "unknown": "Ukjent"
 }

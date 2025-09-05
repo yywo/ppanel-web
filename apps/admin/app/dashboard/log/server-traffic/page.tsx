@@ -2,24 +2,60 @@
 
 import { ProTable } from '@/components/pro-table';
 import { filterServerTrafficLog } from '@/services/admin/log';
+import { filterServerList } from '@/services/admin/server';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from '@workspace/ui/components/button';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
 export default function ServerTrafficLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+
+  const today = new Date().toISOString().split('T')[0];
+
+  const { data: servers = [] } = useQuery({
+    queryKey: ['filterServerListAll'],
+    queryFn: async () => {
+      const { data } = await filterServerList({ page: 1, size: 999999999 });
+      return data?.data?.list || [];
+    },
+  });
+
+  const getServerName = (id?: number) =>
+    id ? (servers.find((s) => s.id === id)?.name ?? `Server ${id}`) : 'Unknown';
+
   const initialFilters = {
-    search: sp.get('search') || undefined,
-    date: sp.get('date') || undefined,
+    date: sp.get('date') || today,
     server_id: sp.get('server_id') ? Number(sp.get('server_id')) : undefined,
   };
   return (
-    <ProTable<API.ServerTrafficLog, { search?: string }>
+    <ProTable<API.ServerTrafficLog, { date?: string; server_id?: number }>
       header={{ title: t('title.serverTraffic') }}
       initialFilters={initialFilters}
+      actions={{
+        render: (row) => [
+          <Button key='detail' asChild>
+            <Link
+              href={`/dashboard/log/traffic-details?date=${row.date}&server_id=${row.server_id}`}
+            >
+              {t('detail')}
+            </Link>
+          </Button>,
+        ],
+      }}
       columns={[
-        { accessorKey: 'server_id', header: t('column.serverId') },
+        {
+          accessorKey: 'server_id',
+          header: t('column.server'),
+          cell: ({ row }) => (
+            <span>
+              {getServerName(row.original.server_id)} ({row.original.server_id})
+            </span>
+          ),
+        },
         {
           accessorKey: 'upload',
           header: t('column.upload'),
@@ -38,7 +74,6 @@ export default function ServerTrafficLogPage() {
         { accessorKey: 'date', header: t('column.date') },
       ]}
       params={[
-        { key: 'search' },
         { key: 'date', type: 'date' },
         { key: 'server_id', placeholder: t('column.serverId') },
       ]}
@@ -46,7 +81,6 @@ export default function ServerTrafficLogPage() {
         const { data } = await filterServerTrafficLog({
           page: pagination.page,
           size: pagination.size,
-          search: filter?.search,
           date: (filter as any)?.date,
           server_id: (filter as any)?.server_id,
         });

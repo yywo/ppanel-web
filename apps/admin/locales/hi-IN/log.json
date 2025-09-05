@@ -15,9 +15,11 @@
     "platform": "प्लेटफ़ॉर्म",
     "remark": "टिप्पणी",
     "resetAt": "रीसेट तिथि",
+    "server": "सर्वर",
     "serverId": "सर्वर आईडी",
     "status": "स्थिति",
     "subject": "विषय",
+    "subscribe": "सदस्यता लें",
     "subscribeId": "सदस्यता आईडी",
     "success": "सफलता",
     "time": "समय",
@@ -32,7 +34,9 @@
     "userId": "उपयोगकर्ता आईडी"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "विवरण",
   "failed": "असफल",
+  "pending": "लंबित",
   "placeholder": {
     "serverName": "सर्वर नाम",
     "toOrSubject": "को / विषय",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "उपयोगकर्ता आईडी / आदेश संख्या / सदस्यता आईडी",
     "userIdOrTokenOrIpOrUa": "उपयोगकर्ता आईडी / टोकन / आईपी / यूए"
   },
+  "sending": "भेजना",
+  "sent": "भेजा गया",
   "success": "सफलता",
   "title": {
     "balance": "बैलेंस लॉग",
@@ -56,5 +62,14 @@
     "subscribe": "सदस्यता लॉग",
     "subscribeTraffic": "सदस्यता ट्रैफ़िक लॉग",
     "trafficDetails": "ट्रैफ़िक विवरण"
-  }
+  },
+  "type": {
+    "1": "रिचार्ज",
+    "2": "निकासी",
+    "3": "खरीद",
+    "4": "वापसी",
+    "5": "इनाम",
+    "6": "आयोग"
+  },
+  "unknown": "अज्ञात"
 }

@@ -15,9 +15,11 @@
     "platform": "Platformă",
     "remark": "Observație",
     "resetAt": "Resetat La",
+    "server": "Server",
     "serverId": "ID Server",
     "status": "Stare",
     "subject": "Subiect",
+    "subscribe": "Abonează-te",
     "subscribeId": "ID Abonament",
     "success": "Succes",
     "time": "Timp",
@@ -32,7 +34,9 @@
     "userId": "ID Utilizator"
   },
   "datePlaceholder": "AAAA-LL-ZZ",
+  "detail": "Detaliu",
   "failed": "Eșuat",
+  "pending": "În așteptare",
   "placeholder": {
     "serverName": "Numele Serverului",
     "toOrSubject": "Către / Subiect",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID Utilizator / Nr. Comandă / ID Abonament",
     "userIdOrTokenOrIpOrUa": "ID Utilizator / Token / IP / UA"
   },
+  "sending": "Trimitere",
+  "sent": "Trimis",
   "success": "Succes",
   "title": {
     "balance": "Jurnal Sold",
@@ -56,5 +62,14 @@
     "subscribe": "Jurnal Abonare",
     "subscribeTraffic": "Jurnal Trafic Abonament",
     "trafficDetails": "Detalii Trafic"
-  }
+  },
+  "type": {
+    "1": "Reîncărcare",
+    "2": "Retragere",
+    "3": "Achiziție",
+    "4": "Rambursare",
+    "5": "Recompensă",
+    "6": "Comision"
+  },
+  "unknown": "Necunoscut"
 }

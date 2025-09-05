@@ -15,9 +15,11 @@
     "platform": "Платформа",
     "remark": "Примітка",
     "resetAt": "Скинуто о",
+    "server": "Сервер",
     "serverId": "ID сервера",
     "status": "Статус",
     "subject": "Тема",
+    "subscribe": "Підписатися",
     "subscribeId": "ID підписки",
     "success": "Успішно",
     "time": "Час",
@@ -32,7 +34,9 @@
     "userId": "ID користувача"
   },
   "datePlaceholder": "YYYY-MM-DD",
+  "detail": "Деталі",
   "failed": "Не вдалося",
+  "pending": "В очікуванні",
   "placeholder": {
     "serverName": "Назва сервера",
     "toOrSubject": "Кому / Тема",
@@ -42,6 +46,8 @@
     "userIdOrOrderNoOrSubscribeId": "ID користувача / Номер замовлення / ID підписки",
     "userIdOrTokenOrIpOrUa": "ID користувача / Токен / IP / UA"
   },
+  "sending": "Відправка",
+  "sent": "Відправлено",
   "success": "Успішно",
   "title": {
     "balance": "Журнал балансу",
@@ -56,5 +62,14 @@
     "subscribe": "Журнал підписки",
     "subscribeTraffic": "Журнал трафіку підписки",
     "trafficDetails": "Деталі трафіку"
-  }
+  },
+  "type": {
+    "1": "Поповнення",
+    "2": "Виведення",
+    "3": "Покупка",
+    "4": "Повернення",
+    "5": "Нагорода",
+    "6": "Комісія"
+  },
+  "unknown": "Невідомо"
 }
