@@ -72,9 +72,12 @@
     "323": "Paiement",
     "324": "Remboursement",
     "325": "Récompense",
+    "326": "Ajustement Administrateur",
     "331": "Achat",
     "332": "Renouvellement",
     "333": "Remboursement",
+    "334": "Retrait",
+    "335": "Ajustement Administrateur",
     "341": "Augmenter",
     "342": "Réduire"
   },

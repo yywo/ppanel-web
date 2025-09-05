@@ -44,9 +44,9 @@ export default function BalanceLogPage() {
           cell: ({ row }) => <Display type='currency' value={row.original.amount} />,
         },
         {
-          accessorKey: 'order_id',
-          header: t('column.orderId'),
-          cell: ({ row }) => <OrderLink orderId={row.original.order_id} />,
+          accessorKey: 'order_no',
+          header: t('column.orderNo'),
+          cell: ({ row }) => <OrderLink orderId={row.original.order_no} />,
         },
         {
           accessorKey: 'balance',

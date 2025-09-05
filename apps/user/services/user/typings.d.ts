@@ -122,7 +122,7 @@ declare namespace API {
     type: number;
     user_id: number;
     amount: number;
-    order_id?: number;
+    order_no?: string;
     balance: number;
     timestamp: number;
   };
