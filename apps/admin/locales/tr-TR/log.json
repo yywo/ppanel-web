@@ -64,12 +64,19 @@
     "trafficDetails": "Trafik Detayları"
   },
   "type": {
-    "1": "Yükleme",
-    "2": "Çekim",
-    "3": "Alım",
-    "4": "İade",
-    "5": "Ödül",
-    "6": "Komisyon"
+    "231": "Otomatik sıfırlama",
+    "232": "Erken sıfırlama",
+    "233": "Ücretli sıfırlama",
+    "321": "Yükleme",
+    "322": "Çekim",
+    "323": "Ödeme",
+    "324": "İade",
+    "325": "Ödül",
+    "331": "Alım",
+    "332": "Yenileme",
+    "333": "İade",
+    "341": "Artış",
+    "342": "Azalış"
   },
   "unknown": "Bilinmiyor"
 }

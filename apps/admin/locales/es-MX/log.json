@@ -64,12 +64,19 @@
     "trafficDetails": "Detalles del Tráfico"
   },
   "type": {
-    "1": "Recarga",
-    "2": "Retiro",
-    "3": "Compra",
-    "4": "Reembolso",
-    "5": "Recompensa",
-    "6": "Comisión"
+    "231": "Restablecimiento automático",
+    "232": "Restablecimiento temprano",
+    "233": "Restablecimiento pagado",
+    "321": "Recarga",
+    "322": "Retiro",
+    "323": "Pago",
+    "324": "Reembolso",
+    "325": "Recompensa",
+    "331": "Compra",
+    "332": "Renovación",
+    "333": "Reembolso",
+    "341": "Aumento",
+    "342": "Reducción"
   },
   "unknown": "Desconocido"
 }

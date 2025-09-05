@@ -6,6 +6,7 @@ import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterGiftLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
+import { Badge } from '@workspace/ui/components/badge';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 
@@ -15,6 +16,14 @@ export default function GiftLogPage() {
 
   // 获取今日日期作为默认值
   const today = new Date().toISOString().split('T')[0];
+
+  const getGiftTypeText = (type: number) => {
+    const typeText = t(`type.${type}`);
+    if (typeText === `log.type.${type}`) {
+      return `${t('unknown')} (${type})`;
+    }
+    return typeText;
+  };
 
   const initialFilters = {
     date: sp.get('date') || today,
@@ -51,6 +60,11 @@ export default function GiftLogPage() {
           accessorKey: 'balance',
           header: t('column.balance'),
           cell: ({ row }) => <Display type='currency' value={row.original.balance} />,
+        },
+        {
+          accessorKey: 'type',
+          header: t('column.type'),
+          cell: ({ row }) => <Badge>{getGiftTypeText(row.original.type)}</Badge>,
         },
         { accessorKey: 'remark', header: t('column.remark') },
         {

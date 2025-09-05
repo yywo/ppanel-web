@@ -64,12 +64,19 @@
     "trafficDetails": "Chi tiết Lưu lượng"
   },
   "type": {
-    "1": "Nạp tiền",
-    "2": "Rút tiền",
-    "3": "Mua hàng",
-    "4": "Hoàn tiền",
-    "5": "Phần thưởng",
-    "6": "Hoa hồng"
+    "231": "Đặt lại Tự động",
+    "232": "Đặt lại Sớm",
+    "233": "Đặt lại Trả phí",
+    "321": "Nạp tiền",
+    "322": "Rút tiền",
+    "323": "Thanh toán",
+    "324": "Hoàn tiền",
+    "325": "Phần thưởng",
+    "331": "Mua hàng",
+    "332": "Gia hạn",
+    "333": "Hoàn tiền",
+    "341": "Tăng",
+    "342": "Giảm"
   },
   "unknown": "Không xác định"
 }

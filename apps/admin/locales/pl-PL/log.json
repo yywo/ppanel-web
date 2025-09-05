@@ -64,12 +64,19 @@
     "trafficDetails": "Szczegóły Ruchu"
   },
   "type": {
-    "1": "Doładowanie",
-    "2": "Wypłata",
-    "3": "Zakup",
-    "4": "Zwrót",
-    "5": "Nagroda",
-    "6": "Prowizja"
+    "231": "Automatyczne Resetowanie",
+    "232": "Przedwczesne Resetowanie",
+    "233": "Płatne Resetowanie",
+    "321": "Doładowanie",
+    "322": "Wypłata",
+    "323": "Płatność",
+    "324": "Zwrot",
+    "325": "Nagroda",
+    "331": "Zakup",
+    "332": "Odnowienie",
+    "333": "Zwrot",
+    "341": "Zwiększenie",
+    "342": "Zmniejszenie"
   },
   "unknown": "Nieznane"
 }

@@ -146,13 +146,15 @@ export function UserDetail({ id }: { id: number }) {
 
   if (!id) return '--';
 
+  const identifier =
+    data?.auth_methods.find((m) => m.auth_type === 'email')?.auth_identifier ||
+    data?.auth_methods[0]?.auth_identifier;
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <Button variant='link' className='p-0' asChild>
-          <Link href={`/dashboard/user?user_id=${id}`}>
-            {data?.auth_methods[0]?.auth_identifier || t('loading')}
-          </Link>
+          <Link href={`/dashboard/user?user_id=${id}`}>{identifier || t('loading')}</Link>
         </Button>
       </HoverCardTrigger>
       <HoverCardContent>

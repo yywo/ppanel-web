@@ -5,6 +5,7 @@ import { IpLink } from '@/components/ip-link';
 import { ProTable } from '@/components/pro-table';
 import { filterRegisterLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
+import { Badge } from '@workspace/ui/components/badge';
 import {
   Tooltip,
   TooltipContent,
@@ -36,10 +37,14 @@ export default function RegisterLogPage() {
         },
         {
           accessorKey: 'auth_method',
-          header: t('column.method'),
-          cell: ({ row }) => <span className='capitalize'>{row.original.auth_method}</span>,
+          header: t('column.identifier'),
+          cell: ({ row }) => (
+            <div className='flex items-center'>
+              <Badge className='capitalize'>{row.original.auth_method}</Badge>
+              <span className='ml-1 text-sm'>{row.original.identifier}</span>
+            </div>
+          ),
         },
-        { accessorKey: 'identifier', header: t('column.identifier') },
         {
           accessorKey: 'register_ip',
           header: t('column.ip'),

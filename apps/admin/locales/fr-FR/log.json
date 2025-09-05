@@ -64,12 +64,19 @@
     "trafficDetails": "Détails du Trafic"
   },
   "type": {
-    "1": "Recharge",
-    "2": "Retrait",
-    "3": "Achat",
-    "4": "Remboursement",
-    "5": "Récompense",
-    "6": "Commission"
+    "231": "Réinitialisation Automatique",
+    "232": "Réinitialisation Anticipée",
+    "233": "Réinitialisation Payée",
+    "321": "Recharge",
+    "322": "Retrait",
+    "323": "Paiement",
+    "324": "Remboursement",
+    "325": "Récompense",
+    "331": "Achat",
+    "332": "Renouvellement",
+    "333": "Remboursement",
+    "341": "Augmenter",
+    "342": "Réduire"
   },
   "unknown": "Inconnu"
 }

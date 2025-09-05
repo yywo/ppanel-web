@@ -6,6 +6,7 @@ import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterCommissionLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
+import { Badge } from '@workspace/ui/components/badge';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 
@@ -50,7 +51,7 @@ export default function CommissionLogPage() {
         {
           accessorKey: 'type',
           header: t('column.type'),
-          cell: ({ row }) => getCommissionTypeText(row.original.type),
+          cell: ({ row }) => <Badge>{getCommissionTypeText(row.original.type)}</Badge>,
         },
         {
           accessorKey: 'timestamp',

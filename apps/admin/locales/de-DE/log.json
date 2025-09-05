@@ -64,12 +64,19 @@
     "trafficDetails": "Verkehrsdetails"
   },
   "type": {
-    "1": "Aufladen",
-    "2": "Abheben",
-    "3": "Kauf",
-    "4": "Rückerstattung",
-    "5": "Belohnung",
-    "6": "Provision"
+    "231": "Automatisches Zurücksetzen",
+    "232": "Vorzeitiges Zurücksetzen",
+    "233": "Bezahltes Zurücksetzen",
+    "321": "Aufladen",
+    "322": "Abheben",
+    "323": "Zahlung",
+    "324": "Rückerstattung",
+    "325": "Belohnung",
+    "331": "Kauf",
+    "332": "Verlängerung",
+    "333": "Rückerstattung",
+    "341": "Erhöhen",
+    "342": "Reduzieren"
   },
   "unknown": "Unbekannt"
 }

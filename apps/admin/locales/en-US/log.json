@@ -64,12 +64,19 @@
     "trafficDetails": "Traffic Details"
   },
   "type": {
-    "1": "Recharge",
-    "2": "Withdraw",
-    "3": "Purchase",
-    "4": "Refund",
-    "5": "Reward",
-    "6": "Commission"
+    "231": "Auto Reset",
+    "232": "Advance Reset",
+    "233": "Paid Reset",
+    "321": "Recharge",
+    "322": "Withdraw",
+    "323": "Payment",
+    "324": "Refund",
+    "325": "Reward",
+    "331": "Purchase",
+    "332": "Renewal",
+    "333": "Refund",
+    "341": "Increase",
+    "342": "Reduce"
   },
   "unknown": "Unknown"
 }

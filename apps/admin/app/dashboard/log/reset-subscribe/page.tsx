@@ -5,6 +5,7 @@ import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterResetSubscribeLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
+import { Badge } from '@workspace/ui/components/badge';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 
@@ -13,6 +14,14 @@ export default function ResetSubscribeLogPage() {
   const sp = useSearchParams();
 
   const today = new Date().toISOString().split('T')[0];
+
+  const getResetSubscribeTypeText = (type: number) => {
+    const typeText = t(`type.${type}`);
+    if (typeText === `log.type.${type}`) {
+      return `${t('unknown')} (${type})`;
+    }
+    return typeText;
+  };
 
   const initialFilters = {
     date: sp.get('date') || today,
@@ -37,7 +46,11 @@ export default function ResetSubscribeLogPage() {
             <UserSubscribeDetail id={Number(row.original.user_subscribe_id)} enabled hoverCard />
           ),
         },
-        { accessorKey: 'type', header: t('column.type') },
+        {
+          accessorKey: 'type',
+          header: t('column.type'),
+          cell: ({ row }) => <Badge>{getResetSubscribeTypeText(row.original.type)}</Badge>,
+        },
         {
           accessorKey: 'order_no',
           header: t('column.orderNo'),

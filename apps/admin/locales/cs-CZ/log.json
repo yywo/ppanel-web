@@ -64,12 +64,19 @@
     "trafficDetails": "Podrobnosti o provozu"
   },
   "type": {
-    "1": "Dobití",
-    "2": "Výběr",
-    "3": "Nákup",
-    "4": "Vrácení",
-    "5": "Odměna",
-    "6": "Provize"
+    "231": "Automatické resetování",
+    "232": "Předčasné resetování",
+    "233": "Placené resetování",
+    "321": "Dobití",
+    "322": "Výběr",
+    "323": "Platba",
+    "324": "Vrácení",
+    "325": "Odměna",
+    "331": "Nákup",
+    "332": "Obnovení",
+    "333": "Vrácení",
+    "341": "Zvýšení",
+    "342": "Snížení"
   },
   "unknown": "Neznámý"
 }

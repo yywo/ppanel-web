@@ -6,6 +6,7 @@ import { OrderLink } from '@/components/order-link';
 import { ProTable } from '@/components/pro-table';
 import { filterBalanceLog } from '@/services/admin/log';
 import { formatDate } from '@/utils/common';
+import { Badge } from '@workspace/ui/components/badge';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 
@@ -55,7 +56,7 @@ export default function BalanceLogPage() {
         {
           accessorKey: 'type',
           header: t('column.type'),
-          cell: ({ row }) => getBalanceTypeText(row.original.type),
+          cell: ({ row }) => <Badge>{getBalanceTypeText(row.original.type)}</Badge>,
         },
         {
           accessorKey: 'timestamp',

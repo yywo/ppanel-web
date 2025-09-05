@@ -64,12 +64,19 @@
     "trafficDetails": "Detalii Trafic"
   },
   "type": {
-    "1": "Reîncărcare",
-    "2": "Retragere",
-    "3": "Achiziție",
-    "4": "Rambursare",
-    "5": "Recompensă",
-    "6": "Comision"
+    "231": "Resetare automată",
+    "232": "Resetare timpurie",
+    "233": "Resetare plătită",
+    "321": "Reîncărcare",
+    "322": "Retragere",
+    "323": "Plată",
+    "324": "Rambursare",
+    "325": "Recompensă",
+    "331": "Achiziție",
+    "332": "Reînnoire",
+    "333": "Rambursare",
+    "341": "Creștere",
+    "342": "Scădere"
   },
   "unknown": "Necunoscut"
 }

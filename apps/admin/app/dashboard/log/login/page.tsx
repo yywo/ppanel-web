@@ -33,13 +33,14 @@ export default function LoginLogPage() {
         {
           accessorKey: 'user',
           header: t('column.user'),
-          cell: ({ row }) => <UserDetail id={Number(row.original.user_id)} />,
+          cell: ({ row }) => (
+            <div>
+              <Badge className='capitalize'>{row.original.method}</Badge>{' '}
+              <UserDetail id={Number(row.original.user_id)} />
+            </div>
+          ),
         },
-        {
-          accessorKey: 'method',
-          header: t('column.method'),
-          cell: ({ row }) => <span className='capitalize'>{row.original.method}</span>,
-        },
+
         {
           accessorKey: 'login_ip',
           header: t('column.ip'),

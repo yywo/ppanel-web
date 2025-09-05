@@ -64,12 +64,19 @@
     "trafficDetails": "Liikennetiedot"
   },
   "type": {
-    "1": "Lataus",
-    "2": "Nosto",
-    "3": "Osto",
-    "4": "Hyvitys",
-    "5": "Palkinto",
-    "6": "Komissio"
+    "231": "Automaattinen nollaus",
+    "232": "Ennenaikainen nollaus",
+    "233": "Maksettu nollaus",
+    "321": "Lataus",
+    "322": "Nosto",
+    "323": "Maksu",
+    "324": "Hyvitys",
+    "325": "Palkinto",
+    "331": "Osto",
+    "332": "Uusiminen",
+    "333": "Hyvitys",
+    "341": "Lisäys",
+    "342": "Vähennys"
   },
   "unknown": "Tuntematon"
 }
