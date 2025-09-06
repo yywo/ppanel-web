@@ -23,6 +23,9 @@ export default function SubscribeLogPage() {
   const initialFilters = {
     date: sp.get('date') || today,
     user_id: sp.get('user_id') ? Number(sp.get('user_id')) : undefined,
+    user_subscribe_id: sp.get('user_subscribe_id')
+      ? Number(sp.get('user_subscribe_id'))
+      : undefined,
   };
   return (
     <ProTable<API.SubscribeLog, { date?: string; user_id?: number }>
@@ -74,6 +77,7 @@ export default function SubscribeLogPage() {
       params={[
         { key: 'date', type: 'date' },
         { key: 'user_id', placeholder: t('column.userId') },
+        { key: 'user_subscribe_id', placeholder: t('column.subscribeId') },
       ]}
       request={async (pagination, filter) => {
         const { data } = await filterSubscribeLog({
@@ -81,6 +85,7 @@ export default function SubscribeLogPage() {
           size: pagination.size,
           date: (filter as any)?.date,
           user_id: (filter as any)?.user_id,
+          user_subscribe_id: (filter as any)?.user_subscribe_id,
         });
         const list = (data?.data?.list || []) as any[];
         const total = Number(data?.data?.total || list.length);

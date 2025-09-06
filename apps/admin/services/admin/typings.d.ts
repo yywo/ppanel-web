@@ -703,6 +703,7 @@ declare namespace API {
     date?: string;
     search?: string;
     user_id?: number;
+    user_subscribe_id?: number;
   };
 
   type FilterSubscribeLogRequest = {
@@ -711,6 +712,7 @@ declare namespace API {
     date?: string;
     search?: string;
     user_id?: number;
+    user_subscribe_id?: number;
   };
 
   type FilterSubscribeLogResponse = {
