@@ -211,6 +211,16 @@ export function ProTable<
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pagination.pageIndex, pagination.pageSize, columnFilters]);
 
+  useEffect(() => {
+    if (initialFilters) {
+      const newFilters = Object.entries(initialFilters).map(([id, value]) => ({
+        id,
+        value,
+      })) as ColumnFiltersState;
+      setColumnFilters(newFilters);
+    }
+  }, [initialFilters]);
+
   const selectedRows = table.getSelectedRowModel().flatRows.map((row) => row.original);
   const selectedCount = selectedRows.length;
 

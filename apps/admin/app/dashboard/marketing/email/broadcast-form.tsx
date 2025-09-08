@@ -31,7 +31,7 @@ import {
 } from '@workspace/ui/components/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Textarea } from '@workspace/ui/components/textarea';
-import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
+import { HTMLEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
@@ -286,7 +286,7 @@ export default function EmailBroadcastForm() {
                       <FormItem>
                         <FormLabel>{t('content')}</FormLabel>
                         <FormControl>
-                          <MarkdownEditor
+                          <HTMLEditor
                             value={field.value}
                             onChange={(value) => {
                               form.setValue(field.name, value || '');

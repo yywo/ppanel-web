@@ -253,10 +253,7 @@ export default function EmailTaskManager() {
                                 <h4 className='text-muted-foreground mb-2 text-sm font-medium'>
                                   {t('content')}
                                 </h4>
-                                <div
-                                  className='prose prose-sm max-w-none'
-                                  dangerouslySetInnerHTML={{ __html: selectedTask.content }}
-                                />
+                                <div dangerouslySetInnerHTML={{ __html: selectedTask.content }} />
                               </div>
                               {selectedTask.additional && (
                                 <div>
@@ -278,10 +275,11 @@ export default function EmailTaskManager() {
                       onClick={() => refreshTaskStatus(row.id)}
                       disabled={refreshing[row.id]}
                     >
-                      {refreshing[row.id] && (
+                      {refreshing[row.id] ? (
                         <Icon icon='mdi:loading' className='mr-2 h-3 w-3 animate-spin' />
+                      ) : (
+                        <Icon icon='mdi:refresh' className='mr-2 h-3 w-3' />
                       )}
-                      <Icon icon='mdi:refresh' className='h-3 w-3' />
                     </Button>,
                     ...([0, 1].includes(row.status)
                       ? [

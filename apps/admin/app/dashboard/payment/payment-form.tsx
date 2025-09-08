@@ -155,7 +155,6 @@ export default function PaymentForm<T>({
         <ScrollArea className='-mx-6 h-[calc(100vh-48px-36px-36px-env(safe-area-inset-top))]'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-6 px-6 pt-4'>
-              {/* 基本信息分组 */}
               <div className='space-y-4'>
                 <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
                   <FormField
