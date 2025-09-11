@@ -85,3 +85,54 @@ export async function stopBatchSendEmailTask(
     ...(options || {}),
   });
 }
+
+/** Create a quota task POST /v1/admin/marketing/quota/create */
+export async function createQuotaTask(
+  body: API.CreateQuotaTaskRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/marketing/quota/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Query quota task list GET /v1/admin/marketing/quota/list */
+export async function queryQuotaTaskList(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.QueryQuotaTaskListParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.QueryQuotaTaskListResponse }>(
+    '/v1/admin/marketing/quota/list',
+    {
+      method: 'GET',
+      params: {
+        ...params,
+      },
+      ...(options || {}),
+    },
+  );
+}
+
+/** Query quota task pre-count POST /v1/admin/marketing/quota/pre-count */
+export async function queryQuotaTaskPreCount(
+  body: API.QueryQuotaTaskPreCountRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: API.QueryQuotaTaskPreCountResponse }>(
+    '/v1/admin/marketing/quota/pre-count',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: body,
+      ...(options || {}),
+    },
+  );
+}

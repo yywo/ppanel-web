@@ -4,6 +4,8 @@ import { Table, TableBody, TableCell, TableRow } from '@workspace/ui/components/
 import { useTranslations } from 'next-intl';
 import EmailBroadcastForm from './email/broadcast-form';
 import EmailTaskManager from './email/task-manager';
+import QuotaBroadcastForm from './quota/broadcast-form';
+import QuotaTaskManager from './quota/task-manager';
 
 export default function MarketingPage() {
   const t = useTranslations('marketing');
@@ -12,6 +14,10 @@ export default function MarketingPage() {
     {
       title: t('emailMarketing'),
       forms: [{ component: EmailBroadcastForm }, { component: EmailTaskManager }],
+    },
+    {
+      title: t('quotaService'),
+      forms: [{ component: QuotaBroadcastForm }, { component: QuotaTaskManager }],
     },
   ];
 

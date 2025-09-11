@@ -152,7 +152,7 @@ declare namespace API {
     subject: string;
     content: string;
     recipients: string;
-    scope: string;
+    scope: number;
     register_start_time: number;
     register_end_time: number;
     additional: string;
@@ -226,7 +226,7 @@ declare namespace API {
   type CreateBatchSendEmailTaskRequest = {
     subject: string;
     content: string;
-    scope: string;
+    scope: number;
     register_start_time?: number;
     register_end_time?: number;
     additional?: string;
@@ -294,6 +294,17 @@ declare namespace API {
     fee_percent?: number;
     fee_amount?: number;
     enable: boolean;
+  };
+
+  type CreateQuotaTaskRequest = {
+    subscribers: number[];
+    is_active: boolean;
+    start_time: number;
+    end_time: number;
+    reset_traffic: boolean;
+    days: number;
+    gift_type: number;
+    gift_value: number;
   };
 
   type CreateServerRequest = {
@@ -854,14 +865,14 @@ declare namespace API {
   type GetBatchSendEmailTaskListParams = {
     page: number;
     size: number;
-    scope?: string;
+    scope?: number;
     status?: number;
   };
 
   type GetBatchSendEmailTaskListRequest = {
     page: number;
     size: number;
-    scope?: string;
+    scope?: number;
     status?: number;
   };
 
@@ -995,7 +1006,7 @@ declare namespace API {
   };
 
   type GetPreSendEmailCountRequest = {
-    scope: string;
+    scope: number;
     register_start_time?: number;
     register_end_time?: number;
   };
@@ -1571,6 +1582,45 @@ declare namespace API {
     list: OrderDetail[];
   };
 
+  type QueryQuotaTaskListParams = {
+    page: number;
+    size: number;
+    status?: number;
+  };
+
+  type QueryQuotaTaskListRequest = {
+    page: number;
+    size: number;
+    status?: number;
+  };
+
+  type QueryQuotaTaskListResponse = {
+    total: number;
+    list: QuotaTask[];
+  };
+
+  type QueryQuotaTaskPreCountRequest = {
+    subscribers: number[];
+    is_active: boolean;
+    start_time: number;
+    end_time: number;
+  };
+
+  type QueryQuotaTaskPreCountResponse = {
+    count: number;
+  };
+
+  type QueryQuotaTaskStatusRequest = {
+    id: number;
+  };
+
+  type QueryQuotaTaskStatusResponse = {
+    status: number;
+    current: number;
+    total: number;
+    errors: string;
+  };
+
   type QuerySubscribeGroupListResponse = {
     list: SubscribeGroup[];
     total: number;
@@ -1594,6 +1644,26 @@ declare namespace API {
   type QueryUserAffiliateListResponse = {
     list: UserAffiliate[];
     total: number;
+  };
+
+  type QuotaTask = {
+    id: number;
+    subscribers: number[];
+    is_active: boolean;
+    start_time: number;
+    end_time: number;
+    reset_traffic: boolean;
+    days: number;
+    gift_type: number;
+    gift_value: number;
+    /** UserSubscribe IDs */
+    objects: number[];
+    status: number;
+    total: number;
+    current: number;
+    errors: string;
+    created_at: number;
+    updated_at: number;
   };
 
   type RechargeOrderRequest = {

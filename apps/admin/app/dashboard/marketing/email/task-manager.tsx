@@ -33,6 +33,7 @@ export default function EmailTaskManager() {
   const t = useTranslations('marketing');
   const [refreshing, setRefreshing] = useState<Record<number, boolean>>({});
   const [selectedTask, setSelectedTask] = useState<API.BatchSendEmailTask | null>(null);
+  const [open, setOpen] = useState(false);
 
   // Get task status
   const refreshTaskStatus = async (taskId: number) => {
@@ -86,7 +87,7 @@ export default function EmailTaskManager() {
   };
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <div className='flex cursor-pointer items-center justify-between transition-colors'>
           <div className='flex items-center gap-3'>
@@ -114,7 +115,6 @@ export default function EmailTaskManager() {
                 {
                   accessorKey: 'subject',
                   header: t('subject'),
-                  size: 200,
                   cell: ({ row }) => (
                     <div
                       className='max-w-[200px] truncate font-medium'
@@ -127,29 +127,28 @@ export default function EmailTaskManager() {
                 {
                   accessorKey: 'scope',
                   header: t('recipientType'),
-                  size: 120,
                   cell: ({ row }) => {
-                    const scope = row.getValue('scope') as string;
+                    const scope = row.original.scope;
                     const scopeLabels = {
-                      all: t('allUsers'),
-                      active: t('subscribedUsers'),
-                      expired: t('expiredUsers'),
-                      none: t('nonSubscribers'),
-                      skip: t('specificUsers'),
+                      1: t('allUsers'), // ScopeAll
+                      2: t('subscribedUsers'), // ScopeActive
+                      3: t('expiredUsers'), // ScopeExpired
+                      4: t('nonSubscribers'), // ScopeNone
+                      5: t('specificUsers'), // ScopeSkip
                     };
-                    return scopeLabels[scope as keyof typeof scopeLabels] || scope;
+                    return (
+                      scopeLabels[scope as keyof typeof scopeLabels] || `${t('scope')} ${scope}`
+                    );
                   },
                 },
                 {
                   accessorKey: 'status',
                   header: t('status'),
-                  size: 100,
                   cell: ({ row }) => getStatusBadge(row.getValue('status') as number),
                 },
                 {
                   accessorKey: 'progress',
                   header: t('progress'),
-                  size: 150,
                   cell: ({ row }) => {
                     const task = row.original as API.BatchSendEmailTask;
                     const progress = task.total > 0 ? (task.current / task.total) * 100 : 0;
@@ -172,21 +171,19 @@ export default function EmailTaskManager() {
                   },
                 },
                 {
-                  accessorKey: 'created_at',
-                  header: t('createdAt'),
-                  size: 150,
-                  cell: ({ row }) => {
-                    const createdAt = row.getValue('created_at') as number;
-                    return formatDate(createdAt);
-                  },
-                },
-                {
                   accessorKey: 'scheduled',
                   header: t('sendTime'),
-                  size: 150,
                   cell: ({ row }) => {
                     const scheduled = row.getValue('scheduled') as number;
                     return scheduled && scheduled > 0 ? formatDate(scheduled) : '--';
+                  },
+                },
+                {
+                  accessorKey: 'created_at',
+                  header: t('createdAt'),
+                  cell: ({ row }) => {
+                    const createdAt = row.getValue('created_at') as number;
+                    return formatDate(createdAt);
                   },
                 },
               ]}
@@ -215,11 +212,11 @@ export default function EmailTaskManager() {
                   key: 'scope',
                   placeholder: t('sendScope'),
                   options: [
-                    { label: t('allUsers'), value: 'all' },
-                    { label: t('subscribedUsers'), value: 'active' },
-                    { label: t('expiredUsers'), value: 'expired' },
-                    { label: t('nonSubscribers'), value: 'none' },
-                    { label: t('specificUsers'), value: 'skip' },
+                    { label: t('allUsers'), value: '1' },
+                    { label: t('subscribedUsers'), value: '2' },
+                    { label: t('expiredUsers'), value: '3' },
+                    { label: t('nonSubscribers'), value: '4' },
+                    { label: t('specificUsers'), value: '5' },
                   ],
                 },
               ]}
@@ -276,9 +273,9 @@ export default function EmailTaskManager() {
                       disabled={refreshing[row.id]}
                     >
                       {refreshing[row.id] ? (
-                        <Icon icon='mdi:loading' className='mr-2 h-3 w-3 animate-spin' />
+                        <Icon icon='mdi:loading' className='h-3 w-3 animate-spin' />
                       ) : (
-                        <Icon icon='mdi:refresh' className='mr-2 h-3 w-3' />
+                        <Icon icon='mdi:refresh' className='h-3 w-3' />
                       )}
                     </Button>,
                     ...([0, 1].includes(row.status)
