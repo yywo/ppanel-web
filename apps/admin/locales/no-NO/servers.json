@@ -62,6 +62,7 @@
   "migrateFailed": "Datamigrering mislyktes",
   "migrated": "Data migrert med suksess",
   "migrating": "Migrerer...",
+  "multiplex": "Multiplex",
   "name": "Navn",
   "noData": "Ingen data",
   "notAvailable": "Ikke tilgjengelig",

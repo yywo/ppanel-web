@@ -62,6 +62,7 @@
   "migrateFailed": "データの移行に失敗しました",
   "migrated": "データが正常に移行されました",
   "migrating": "移行中...",
+  "multiplex": "マルチプレックス",
   "name": "名前",
   "noData": "データなし",
   "notAvailable": "利用不可",

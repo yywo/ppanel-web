@@ -62,6 +62,7 @@
   "migrateFailed": "Migrarea datelor a eșuat",
   "migrated": "Datele au fost migrate cu succes",
   "migrating": "Se migrează...",
+  "multiplex": "Multiplex",
   "name": "Nume",
   "noData": "Fără date",
   "notAvailable": "N/A",

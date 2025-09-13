@@ -40,10 +40,6 @@ export const LABELS = {
   'mkcp': 'mKCP',
   'httpupgrade': 'HTTP Upgrade',
   'xhttp': 'XHTTP',
-  // vless flow
-  'xtls-rprx-direct': 'XTLS-RPRX-Direct',
-  'xtls-rprx-splice': 'XTLS-RPRX-Splice',
-  'xtls-rprx-vision': 'XTLS-RPRX-Vision',
   // security
   'none': 'NONE',
   'tls': 'TLS',
@@ -92,6 +88,8 @@ export const SECURITY = {
   vless: ['none', 'tls', 'reality'] as const,
   trojan: ['tls'] as const,
   hysteria2: ['tls'] as const,
+  tuic: ['tls'] as const,
+  anytls: ['tls'] as const,
   naive: ['none', 'tls'] as const,
   http: ['none', 'tls'] as const,
 } as const;
@@ -116,7 +114,8 @@ export const FINGERPRINTS = [
 export const multiplexLevels = ['off', 'low', 'middle', 'high'] as const;
 
 export function getLabel(value: string): string {
-  return (LABELS as Record<string, string>)[value] ?? value;
+  const label = (LABELS as Record<string, string>)[value];
+  return label ?? value.toUpperCase();
 }
 
 const nullableString = z.string().nullish();
@@ -183,7 +182,6 @@ const hysteria2 = z.object({
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
-  host: nullableString,
   port: nullablePort,
   security: z.enum(SECURITY.hysteria2 as any).nullish(),
   sni: nullableString,
@@ -199,9 +197,20 @@ const tuic = z.object({
   reduce_rtt: z.boolean().nullish(),
   udp_relay_mode: z.enum(TUIC_UDP_RELAY_MODES as any).nullish(),
   congestion_controller: z.enum(TUIC_CONGESTION as any).nullish(),
+  security: z.enum(SECURITY.tuic as any).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+});
+
+const anytls = z.object({
+  type: z.literal('anytls'),
+  port: nullablePort,
+  security: z.enum(SECURITY.anytls as any).nullish(),
+  sni: nullableString,
+  allow_insecure: nullableBool,
+  fingerprint: nullableString,
+  padding_scheme: nullableString,
 });
 
 const socks = z.object({
@@ -232,15 +241,6 @@ const meru = z.object({
   port: nullablePort,
   multiplex: z.enum(multiplexLevels).nullish(),
   transport: z.enum(TRANSPORTS.meru as any).nullish(),
-});
-
-const anytls = z.object({
-  type: z.literal('anytls'),
-  port: nullablePort,
-  sni: nullableString,
-  allow_insecure: nullableBool,
-  fingerprint: nullableString,
-  padding_scheme: nullableString,
 });
 
 export const protocolApiScheme = z.discriminatedUnion('type', [
@@ -304,6 +304,10 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         reduce_rtt: false,
         udp_relay_mode: 'native',
         congestion_controller: 'bbr',
+        security: 'tls',
+        sni: null,
+        allow_insecure: false,
+        fingerprint: 'chrome',
       } as any;
     case 'socks':
       return {
@@ -330,7 +334,15 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         transport: 'tcp',
       } as any;
     case 'anytls':
-      return { type: 'anytls', port: null, padding_scheme: null } as any;
+      return {
+        type: 'anytls',
+        port: null,
+        security: 'tls',
+        padding_scheme: null,
+        sni: null,
+        allow_insecure: false,
+        fingerprint: 'chrome',
+      } as any;
     default:
       return {} as any;
   }

@@ -62,6 +62,7 @@
   "migrateFailed": "数据迁移失败",
   "migrated": "数据迁移成功",
   "migrating": "迁移中...",
+  "multiplex": "多路复用",
   "name": "名称",
   "noData": "暂无数据",
   "notAvailable": "—",

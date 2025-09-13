@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@workspace/ui/components/accordion';
+import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -48,10 +49,6 @@ import {
   protocols as PROTOCOLS,
   ServerFormValues,
 } from './form-schema';
-
-function titleCase(s: string) {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
 
 function DynamicField({
   field,
@@ -196,6 +193,7 @@ function DynamicField({
               <FormControl>
                 <textarea
                   {...fieldProps}
+                  value={fieldProps.value ?? ''}
                   className='border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[80px] w-full rounded-md border px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'
                   placeholder={
                     field.placeholder
@@ -287,7 +285,7 @@ export default function ServerForm(props: {
   const { trigger, title, loading, initialValues, onSubmit } = props;
   const t = useTranslations('servers');
   const [open, setOpen] = useState(false);
-  const [protocolsEnabled, setProtocolsEnabled] = useState<string[]>([]);
+  const [accordionValue, setAccordionValue] = useState<string>();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -307,11 +305,6 @@ export default function ServerForm(props: {
 
   useEffect(() => {
     if (initialValues) {
-      const enabledProtocols = PROTOCOLS.filter((type) => {
-        const protocol = initialValues.protocols?.find((p) => p.type === type);
-        return protocol && protocol.port && Number(protocol.port) > 0;
-      });
-      setProtocolsEnabled(enabledProtocols);
       form.reset({
         name: '',
         address: '',
@@ -329,19 +322,11 @@ export default function ServerForm(props: {
   }, [initialValues]);
 
   async function handleSubmit(values: Record<string, any>) {
-    const filtered = (values?.protocols || [])
-      .filter((p: any, index: number) => {
-        const port = Number(p?.port);
-        const protocolType = PROTOCOLS[index];
-        return (
-          protocolType &&
-          protocolsEnabled.includes(protocolType) &&
-          Number.isFinite(port) &&
-          port > 0 &&
-          port <= 65535
-        );
-      })
-      .map((p: any) => ({ ...p, port: Number(p.port) }));
+    const filtered = (values?.protocols || []).filter((p: any, index: number) => {
+      const port = Number(p?.port);
+      const protocolType = PROTOCOLS[index];
+      return protocolType && p && Number.isFinite(port) && port > 0 && port <= 65535;
+    });
 
     if (filtered.length === 0) {
       toast.error(t('validation_failed'));
@@ -379,7 +364,6 @@ export default function ServerForm(props: {
                 ratio: 1,
                 protocols: full,
               });
-              setProtocolsEnabled([]);
             }
             setOpen(true);
           }}
@@ -481,72 +465,66 @@ export default function ServerForm(props: {
                   {t('protocol_configurations_desc')}
                 </p>
               </div>
-              <Accordion type='single' className='w-full space-y-3'>
+              <Accordion
+                type='single'
+                collapsible
+                className='w-full space-y-3'
+                value={accordionValue}
+                onValueChange={setAccordionValue}
+              >
                 {PROTOCOLS.map((type) => {
                   const i = Math.max(
                     0,
                     PROTOCOLS.findIndex((t) => t === type),
                   );
-                  const current = Array.isArray(protocolsValues) ? protocolsValues[i] || {} : {};
-                  const isEnabled = protocolsEnabled.includes(type);
+                  const current = (protocolsValues[i] || {}) as Record<string, any>;
+                  const isEnabled = current.port && Number(current.port) > 0;
                   const fields = PROTOCOL_FIELDS[type] || [];
-
                   return (
                     <AccordionItem key={type} value={type} className='mb-2 rounded-lg border'>
                       <AccordionTrigger className='px-4 py-3 hover:no-underline'>
                         <div className='flex w-full items-center justify-between'>
                           <div className='flex flex-col items-start'>
-                            <span className='font-medium'>{titleCase(type)}</span>
+                            <div className='flex items-center gap-2'>
+                              <span className='font-medium capitalize'>{type}</span>
+                            </div>
                             <span className='text-muted-foreground text-xs'>
                               {isEnabled ? t('enabled') : t('disabled')}
                             </span>
                           </div>
-                          <div className='flex items-center gap-3'>
-                            {isEnabled && (
-                              <div className='flex h-2 w-2 rounded-full bg-green-500'></div>
+                          <div className='mr-2 flex items-center gap-1'>
+                            {current.transport && (
+                              <Badge variant='secondary' className='text-xs'>
+                                {current.transport.toUpperCase()}
+                              </Badge>
                             )}
-                            <Switch
-                              className='mr-2'
-                              onClick={(e) => e.stopPropagation()}
-                              checked={isEnabled}
-                              onCheckedChange={(checked) => {
-                                if (checked) {
-                                  setProtocolsEnabled([...protocolsEnabled, type]);
-                                } else {
-                                  setProtocolsEnabled(protocolsEnabled.filter((p) => p !== type));
-                                }
-                              }}
-                            />
+                            {current.security && current.security !== 'none' && (
+                              <Badge variant='outline' className='text-xs'>
+                                {current.security.toUpperCase()}
+                              </Badge>
+                            )}
+
+                            {current.port && <Badge className='text-xs'>{current.port}</Badge>}
                           </div>
                         </div>
                       </AccordionTrigger>
-                      {isEnabled && (
-                        <AccordionContent className='px-4 pb-4 pt-0'>
-                          <div className='-mx-4 space-y-4 rounded-b-lg border-t px-4 pt-4'>
-                            {renderGroupCard('basic', fields, 'basic', control, i, current, t)}
-                            {renderGroupCard('plugin', fields, 'plugin', control, i, current, t)}
-                            {renderGroupCard(
-                              'transport',
-                              fields,
-                              'transport',
-                              control,
-                              i,
-                              current,
-                              t,
-                            )}
-                            {renderGroupCard(
-                              'security',
-                              fields,
-                              'security',
-                              control,
-                              i,
-                              current,
-                              t,
-                            )}
-                            {renderGroupCard('reality', fields, 'reality', control, i, current, t)}
-                          </div>
-                        </AccordionContent>
-                      )}
+                      <AccordionContent className='px-4 pb-4 pt-0'>
+                        <div className='-mx-4 space-y-4 rounded-b-lg border-t px-4 pt-4'>
+                          {renderGroupCard('basic', fields, 'basic', control, i, current, t)}
+                          {renderGroupCard('plugin', fields, 'plugin', control, i, current, t)}
+                          {renderGroupCard(
+                            'transport',
+                            fields,
+                            'transport',
+                            control,
+                            i,
+                            current,
+                            t,
+                          )}
+                          {renderGroupCard('security', fields, 'security', control, i, current, t)}
+                          {renderGroupCard('reality', fields, 'reality', control, i, current, t)}
+                        </div>
+                      </AccordionContent>
                     </AccordionItem>
                   );
                 })}

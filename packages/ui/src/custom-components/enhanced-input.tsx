@@ -99,7 +99,6 @@ export function EnhancedInput<T = string>({
         return;
       }
 
-      // 确保0值显示为空
       if (value === '0') {
         setValue('');
         onValueBlur?.(processValue(0));

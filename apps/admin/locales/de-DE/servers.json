@@ -62,6 +62,7 @@
   "migrateFailed": "Datenmigration fehlgeschlagen",
   "migrated": "Daten erfolgreich migriert",
   "migrating": "Wird migriert...",
+  "multiplex": "Multiplex",
   "name": "Name",
   "noData": "Keine Daten",
   "notAvailable": "Nicht verfügbar",
