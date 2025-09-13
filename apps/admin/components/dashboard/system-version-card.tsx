@@ -28,93 +28,99 @@ export default function SystemVersionCard() {
   const [openRestart, setOpenRestart] = useState(false);
   const [isRestarting, setIsRestarting] = useState(false);
 
-  const { data: latestReleases } = useQuery({
-    queryKey: ['getLatestReleases'],
+  const { data: versionInfo } = useQuery({
+    queryKey: ['getVersionInfo'],
     queryFn: async () => {
       try {
-        const [webResponse, serverResponse] = await Promise.all([
-          fetch('https://api.github.com/repos/perfect-panel/ppanel-web/releases/latest'),
-          fetch('https://api.github.com/repos/perfect-panel/server/releases/latest'),
+        const [webResponse, serverResponse, systemResponse] = await Promise.all([
+          fetch(
+            'https://data.jsdelivr.com/v1/packages/gh/perfect-panel/ppanel-web/resolved?specifier=latest',
+          ),
+          fetch(
+            'https://data.jsdelivr.com/v1/packages/gh/perfect-panel/server/resolved?specifier=latest',
+          ),
+          getVersion(),
         ]);
 
         const webData = webResponse.ok ? await webResponse.json() : null;
         const serverData = serverResponse.ok ? await serverResponse.json() : null;
+        const systemData = systemResponse.data.data;
 
-        return {
+        const rawVersion = (systemData?.version || '').replace(' Develop', '').trim();
+        const timeMatch = rawVersion.match(/\(([^)]+)\)/);
+        const timestamp = timeMatch ? timeMatch[1] : '';
+        const versionWithoutTime = rawVersion.replace(/\([^)]*\)/, '').trim();
+
+        const isDevelopment = !/^[Vv]?\d+\.\d+\.\d+(-[a-zA-Z]+(\.\d+)?)?$/.test(versionWithoutTime);
+
+        let displayVersion = versionWithoutTime;
+        if (
+          !isDevelopment &&
+          !versionWithoutTime.startsWith('V') &&
+          !versionWithoutTime.startsWith('v')
+        ) {
+          displayVersion = `V${versionWithoutTime}`;
+        }
+        const lastUpdated = formatDate(new Date(timestamp || Date.now())) || '';
+
+        const systemInfo = {
+          isRelease: !isDevelopment,
+          version: displayVersion,
+          lastUpdated,
+        };
+
+        const latestReleases = {
           web: webData
             ? {
-                version: webData.tag_name,
-                url: webData.html_url,
-                publishedAt: webData.published_at,
+                version: webData.version,
+                url: `https://github.com/perfect-panel/ppanel-web/releases/tag/${webData.version}`,
               }
             : null,
           server: serverData
             ? {
-                version: serverData.tag_name,
-                url: serverData.html_url,
-                publishedAt: serverData.published_at,
+                version: serverData.version,
+                url: `https://github.com/perfect-panel/server/releases/tag/${serverData.version}`,
               }
             : null,
         };
+
+        const hasNewVersion =
+          latestReleases.web &&
+          packageJson.version !== latestReleases.web.version.replace(/^v/, '');
+
+        const hasServerNewVersion =
+          latestReleases.server &&
+          systemInfo.version &&
+          systemInfo.version.replace(/^V/, '') !== latestReleases.server.version.replace(/^v/, '');
+
+        return {
+          systemInfo,
+          latestReleases,
+          hasNewVersion,
+          hasServerNewVersion,
+        };
       } catch (error) {
-        console.error('Failed to fetch latest releases:', error);
-        return { web: null, server: null };
+        console.error('Failed to fetch version info:', error);
+        return {
+          systemInfo: { isRelease: true, version: 'V1.0.0', lastUpdated: '' },
+          latestReleases: { web: null, server: null },
+          hasNewVersion: false,
+          hasServerNewVersion: false,
+        };
       }
     },
-    staleTime: 60 * 60 * 1000,
+    staleTime: 0,
     retry: 1,
     retryDelay: 10000,
-  });
-
-  const hasNewVersion =
-    latestReleases?.web && packageJson.version !== latestReleases.web.version.replace(/^v/, '');
-
-  const { data: systemInfo } = useQuery({
-    queryKey: ['getVersion'],
-    queryFn: async () => {
-      const { data } = await getVersion();
-
-      const versionString = (data.data?.version || '').replace(' Develop', '').trim();
-      const releaseVersionRegex = /^[Vv]?\d+\.\d+\.\d+(-[a-zA-Z]+(\.\d+)?)?$/;
-      const timeMatch = versionString.match(/\(([^)]+)\)/);
-      const timeInBrackets = timeMatch ? timeMatch[1] : '';
-
-      const versionWithoutTime = versionString.replace(/\([^)]*\)/, '').trim();
-
-      const isDevelopment =
-        versionWithoutTime.includes('-dev') ||
-        versionWithoutTime.includes('-debug') ||
-        versionWithoutTime.includes('-nightly') ||
-        versionWithoutTime.includes('dev') ||
-        !releaseVersionRegex.test(versionWithoutTime);
-
-      let baseVersion = versionWithoutTime;
-      let lastUpdated = '';
-
-      if (isDevelopment && versionWithoutTime.includes('-')) {
-        const parts = versionWithoutTime.split('-');
-        baseVersion = parts[0] || versionWithoutTime;
-      }
-
-      lastUpdated = formatDate(new Date(timeInBrackets || Date.now())) || '';
-
-      const displayVersion =
-        baseVersion.startsWith('V') || baseVersion.startsWith('v')
-          ? baseVersion
-          : `V${baseVersion}`;
-
-      return {
-        isRelease: !isDevelopment,
-        version: displayVersion,
-        lastUpdated,
-      };
+    initialData: {
+      systemInfo: { isRelease: true, version: 'V1.0.0', lastUpdated: '' },
+      latestReleases: { web: null, server: null },
+      hasNewVersion: false,
+      hasServerNewVersion: false,
     },
   });
 
-  const hasServerNewVersion =
-    latestReleases?.server &&
-    systemInfo &&
-    systemInfo.version.replace(/^V/, '') !== latestReleases.server.version.replace(/^v/, '');
+  const { systemInfo, latestReleases, hasNewVersion, hasServerNewVersion } = versionInfo;
 
   return (
     <Card className='p-3'>

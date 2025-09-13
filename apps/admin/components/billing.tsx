@@ -21,12 +21,12 @@ async function getBillingURL() {
       'https://api.github.com/repos/perfect-panel/ppanel-assets/commits',
     );
     const json = await response.json();
-    const version = json[0]?.sha;
-    const url = new URL('https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets');
+    const version = json[0]?.sha || 'latest';
+    const url = new URL('https://cdn.jsdmirror.com/gh/perfect-panel/ppanel-assets');
     url.pathname += `@${version}/billing/index.json`;
     return url.toString();
   } catch (error) {
-    return 'https://cdn.jsdelivr.net/gh/perfect-panel/ppanel-assets/billing/index.json';
+    return 'https://cdn.jsdmirror.com/gh/perfect-panel/ppanel-assets/billing/index.json';
   }
 }
 
