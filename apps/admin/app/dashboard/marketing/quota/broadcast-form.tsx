@@ -46,9 +46,9 @@ export default function QuotaBroadcastForm() {
     start_time: z.string().optional(),
     end_time: z.string().optional(),
     reset_traffic: z.boolean(),
-    days: z.number().min(1, t('days') + ' ' + t('cannotBeEmpty')),
+    days: z.number().optional(),
     gift_type: z.number(),
-    gift_value: z.number().min(0, t('giftValue') + ' ' + t('mustBeGreaterThanOrEqualToZero')),
+    gift_value: z.number().optional(),
   });
 
   type QuotaBroadcastFormData = z.infer<typeof quotaBroadcastSchema>;
@@ -160,9 +160,9 @@ export default function QuotaBroadcastForm() {
         start_time,
         end_time,
         reset_traffic: data.reset_traffic,
-        days: data.days,
+        days: data.days || 0,
         gift_type: data.gift_type,
-        gift_value: data.gift_value,
+        gift_value: data.gift_value || 0,
       });
 
       toast.success(t('quotaTaskCreatedSuccessfully'));
