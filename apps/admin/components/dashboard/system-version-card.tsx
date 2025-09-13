@@ -174,8 +174,8 @@ export default function SystemVersionCard() {
               >
                 <Badge variant='destructive' className='animate-pulse px-2 py-0.5 text-xs'>
                   {t('newVersionAvailable')}
+                  <Icon icon='mdi:open-in-new' />
                 </Badge>
-                <Icon icon='mdi:open-in-new' className='h-3 w-3' />
               </Link>
             )}
           </div>
@@ -200,8 +200,8 @@ export default function SystemVersionCard() {
               >
                 <Badge variant='destructive' className='animate-pulse px-2 py-0.5 text-xs'>
                   {t('newVersionAvailable')}
+                  <Icon icon='mdi:open-in-new' />
                 </Badge>
-                <Icon icon='mdi:open-in-new' className='h-3 w-3' />
               </Link>
             )}
           </div>
