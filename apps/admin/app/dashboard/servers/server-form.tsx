@@ -68,7 +68,6 @@ function DynamicField({
 }) {
   const fieldName = `protocols.${protocolIndex}.${field.name}` as const;
 
-  // 检查字段是否应该显示
   if (field.condition && !field.condition(protocolData, {})) {
     return null;
   }
@@ -131,7 +130,6 @@ function DynamicField({
       );
 
     case 'select':
-      // 如果选项只有一个，直接隐藏该字段
       if (!field.options || field.options.length <= 1) {
         return null;
       }
@@ -259,7 +257,6 @@ function renderGroupCard(
   const groupFields = fields.filter((field) => field.group === group);
   if (groupFields.length === 0) return null;
 
-  // 检查是否有字段需要显示
   const visibleFields = groupFields.filter(
     (field) => !field.condition || field.condition(protocolData, {}),
   );

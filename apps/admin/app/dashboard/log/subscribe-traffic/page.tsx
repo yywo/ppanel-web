@@ -13,7 +13,6 @@ export default function SubscribeTrafficLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
 
-  // 获取今日日期作为默认值
   const today = new Date().toISOString().split('T')[0];
 
   const initialFilters = {

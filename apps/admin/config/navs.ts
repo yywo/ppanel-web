@@ -81,7 +81,6 @@ export const navs = [
     ],
   },
 
-  // 日志与分析
   {
     title: 'Logs & Analytics',
     icon: 'flat-color-icons:statistics',

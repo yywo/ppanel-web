@@ -14,7 +14,6 @@ export const protocols = [
   'meru',
 ] as const;
 
-// 字段配置类型
 export type FieldConfig = {
   name: string;
   type: 'input' | 'select' | 'switch' | 'number' | 'textarea';
@@ -337,7 +336,6 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
   }
 }
 
-// 协议字段配置
 export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
   shadowsocks: [
     {

@@ -14,15 +14,10 @@ import TelegramForm from './forms/telegram-form';
 export default function Page() {
   const t = useTranslations('auth-control');
 
-  // 定义表单配置
   const formSections = [
     {
       title: t('communicationMethods'),
-      forms: [
-        { component: EmailSettingsForm },
-        { component: PhoneSettingsForm },
-        // Removed EmailLogsTable and PhoneLogsTable modules
-      ],
+      forms: [{ component: EmailSettingsForm }, { component: PhoneSettingsForm }],
     },
     {
       title: t('socialAuthMethods'),
