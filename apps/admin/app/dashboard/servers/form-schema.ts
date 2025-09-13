@@ -390,7 +390,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
         }
       },
       group: 'plugin',
-      condition: (p) => p.plugin !== 'none',
+      condition: (p) => ['obfs', 'v2ray-plugin'].includes(p.plugin),
     },
   ],
   vmess: [
