@@ -73,13 +73,13 @@ export default function SystemVersionCard() {
           web: webData
             ? {
                 version: webData.version,
-                url: `https://github.com/perfect-panel/ppanel-web/releases/tag/${webData.version}`,
+                url: `https://github.com/perfect-panel/ppanel-web/releases/tag/v${webData.version}`,
               }
             : null,
           server: serverData
             ? {
                 version: serverData.version,
-                url: `https://github.com/perfect-panel/server/releases/tag/${serverData.version}`,
+                url: `https://github.com/perfect-panel/server/releases/tag/v${serverData.version}`,
               }
             : null,
         };
