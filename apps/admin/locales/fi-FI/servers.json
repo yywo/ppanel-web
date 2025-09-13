@@ -1,6 +1,7 @@
 {
   "address": "Osoite",
   "address_placeholder": "Palvelimen osoite",
+  "bandwidth_placeholder": "Syötä kaistanleveys, jätä tyhjäksi BBR:lle",
   "basic": "Perusasetukset",
   "cancel": "Peruuta",
   "city": "Kaupunki",
@@ -43,6 +44,7 @@
   "disable_sni": "Poista SNI käytöstä",
   "disabled": "Poissa käytöstä",
   "disk": "Levy",
+  "down_mbps": "Latauskaistanleveys",
   "drawerCreateTitle": "Luo palvelin",
   "drawerEditTitle": "Muokkaa palvelinta",
   "edit": "Muokkaa",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP-väylätila",
   "unitSecondsShort": "S",
   "unlimited": "Rajoittamaton",
+  "up_mbps": "Lähetyskaistanleveys",
   "updated": "Päivitetty onnistuneesti",
   "user": "Käyttäjä",
   "validation_failed": "Vahvistus epäonnistui. Tarkista lomake."

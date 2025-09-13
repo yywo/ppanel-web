@@ -1,6 +1,7 @@
 {
   "address": "Địa chỉ",
   "address_placeholder": "Địa chỉ máy chủ",
+  "bandwidth_placeholder": "Nhập băng thông, để trống cho BBR",
   "basic": "Cấu Hình Cơ Bản",
   "cancel": "Hủy",
   "city": "Thành phố",
@@ -43,6 +44,7 @@
   "disable_sni": "Vô hiệu hóa SNI",
   "disabled": "Đã Vô Hiệu Hóa",
   "disk": "Ổ đĩa",
+  "down_mbps": "Băng thông tải xuống",
   "drawerCreateTitle": "Tạo Máy chủ",
   "drawerEditTitle": "Chỉnh sửa Máy chủ",
   "edit": "Chỉnh sửa",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Chế độ chuyển tiếp UDP",
   "unitSecondsShort": "S",
   "unlimited": "Không giới hạn",
+  "up_mbps": "Băng thông tải lên",
   "updated": "Cập nhật thành công",
   "user": "Người dùng",
   "validation_failed": "Xác thực không thành công. Vui lòng kiểm tra biểu mẫu."

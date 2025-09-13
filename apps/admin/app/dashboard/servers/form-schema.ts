@@ -25,6 +25,7 @@ export type FieldConfig = {
   max?: number;
   step?: number;
   suffix?: string;
+  password?: number;
   condition?: (protocol: any, values: any) => boolean;
   group?: 'basic' | 'transport' | 'security' | 'reality' | 'plugin';
   gridSpan?: 1 | 2;
@@ -187,6 +188,8 @@ const hysteria2 = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  up_mbps: z.number().nullish(),
+  down_mbps: z.number().nullish(),
 });
 
 const tuic = z.object({
@@ -295,6 +298,8 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         hop_interval: null,
         obfs_password: null,
         security: 'tls',
+        up_mbps: null,
+        down_mbps: null,
       } as any;
     case 'tuic':
       return {
@@ -371,6 +376,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'server_key',
       type: 'input',
       label: 'server_key',
+      password: 32,
       group: 'basic',
       condition: (p) =>
         [
@@ -678,13 +684,6 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       group: 'basic',
     },
     {
-      name: 'obfs_password',
-      type: 'input',
-      label: 'obfs_password',
-      placeholder: (t) => t('obfs_password_placeholder'),
-      group: 'basic',
-    },
-    {
       name: 'hop_ports',
       type: 'input',
       label: 'hop_ports',
@@ -695,8 +694,35 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'hop_interval',
       type: 'number',
       label: 'hop_interval',
+      placeholder: 'e.g. 300',
       min: 0,
       suffix: 'S',
+      group: 'basic',
+    },
+    {
+      name: 'obfs_password',
+      type: 'input',
+      label: 'obfs_password',
+      placeholder: (t) => t('obfs_password_placeholder'),
+      password: 16,
+      group: 'basic',
+    },
+    {
+      name: 'up_mbps',
+      type: 'number',
+      label: 'up_mbps',
+      min: 0,
+      placeholder: (t) => t('bandwidth_placeholder'),
+      suffix: 'Mbps',
+      group: 'basic',
+    },
+    {
+      name: 'down_mbps',
+      type: 'number',
+      label: 'down_mbps',
+      min: 0,
+      placeholder: (t) => t('bandwidth_placeholder'),
+      suffix: 'Mbps',
       group: 'basic',
     },
     { name: 'sni', type: 'input', label: 'security_sni', group: 'security' },

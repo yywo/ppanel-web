@@ -1,6 +1,7 @@
 {
   "address": "Adresse",
   "address_placeholder": "Serveradresse",
+  "bandwidth_placeholder": "Geben Sie die Bandbreite ein, lassen Sie das Feld leer für BBR",
   "basic": "Grundkonfiguration",
   "cancel": "Abbrechen",
   "city": "Stadt",
@@ -43,6 +44,7 @@
   "disable_sni": "SNI deaktivieren",
   "disabled": "Deaktiviert",
   "disk": "Festplatte",
+  "down_mbps": "Download-Bandbreite",
   "drawerCreateTitle": "Server erstellen",
   "drawerEditTitle": "Server bearbeiten",
   "edit": "Bearbeiten",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP-Relay-Modus",
   "unitSecondsShort": "S",
   "unlimited": "Unbegrenzt",
+  "up_mbps": "Upload-Bandbreite",
   "updated": "Erfolgreich aktualisiert",
   "user": "Benutzer",
   "validation_failed": "Validierung fehlgeschlagen. Bitte überprüfen Sie das Formular."

@@ -1,6 +1,7 @@
 {
   "address": "Адрес",
   "address_placeholder": "Адрес сервера",
+  "bandwidth_placeholder": "Введите пропускную способность, оставьте пустым для BBR",
   "basic": "Базовая конфигурация",
   "cancel": "Отмена",
   "city": "Город",
@@ -43,6 +44,7 @@
   "disable_sni": "Отключить SNI",
   "disabled": "Отключено",
   "disk": "Диск",
+  "down_mbps": "Скорость загрузки",
   "drawerCreateTitle": "Создать сервер",
   "drawerEditTitle": "Редактировать сервер",
   "edit": "Редактировать",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Режим UDP ретрансляции",
   "unitSecondsShort": "С",
   "unlimited": "Неограниченно",
+  "up_mbps": "Скорость выгрузки",
   "updated": "Успешно обновлено",
   "user": "Пользователь",
   "validation_failed": "Ошибка валидации. Пожалуйста, проверьте форму."

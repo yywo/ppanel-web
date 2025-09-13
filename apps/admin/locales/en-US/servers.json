@@ -1,6 +1,7 @@
 {
   "address": "Address",
   "address_placeholder": "Server address",
+  "bandwidth_placeholder": "Enter bandwidth, leave empty for BBR",
   "basic": "Basic Configuration",
   "cancel": "Cancel",
   "city": "City",
@@ -43,6 +44,7 @@
   "disable_sni": "Disable SNI",
   "disabled": "Disabled",
   "disk": "Disk",
+  "down_mbps": "Download Bandwidth",
   "drawerCreateTitle": "Create Server",
   "drawerEditTitle": "Edit Server",
   "edit": "Edit",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP relay mode",
   "unitSecondsShort": "S",
   "unlimited": "Unlimited",
+  "up_mbps": "Upload Bandwidth",
   "updated": "Updated successfully",
   "user": "User",
   "validation_failed": "Validation failed. Please check the form."

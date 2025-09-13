@@ -1,6 +1,7 @@
 {
   "address": "Endereço",
   "address_placeholder": "Endereço do servidor",
+  "bandwidth_placeholder": "Insira a largura de banda, deixe em branco para BBR",
   "basic": "Configuração Básica",
   "cancel": "Cancelar",
   "city": "Cidade",
@@ -43,6 +44,7 @@
   "disable_sni": "Desativar SNI",
   "disabled": "Desativado",
   "disk": "Disco",
+  "down_mbps": "Largura de Banda de Download",
   "drawerCreateTitle": "Criar Servidor",
   "drawerEditTitle": "Editar Servidor",
   "edit": "Editar",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Modo de retransmissão UDP",
   "unitSecondsShort": "S",
   "unlimited": "Ilimitado",
+  "up_mbps": "Largura de Banda de Upload",
   "updated": "Atualizado com sucesso",
   "user": "Usuário",
   "validation_failed": "Validação falhou. Por favor, verifique o formulário."

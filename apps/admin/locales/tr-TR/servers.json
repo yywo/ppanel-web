@@ -1,6 +1,7 @@
 {
   "address": "Adres",
   "address_placeholder": "Sunucu adresi",
+  "bandwidth_placeholder": "Bant genişliğini girin, BBR için boş bırakın",
   "basic": "Temel Yapılandırma",
   "cancel": "İptal",
   "city": "Şehir",
@@ -43,6 +44,7 @@
   "disable_sni": "SNI'yi devre dışı bırak",
   "disabled": "Devre Dışı",
   "disk": "Disk",
+  "down_mbps": "İndirme Bant Genişliği",
   "drawerCreateTitle": "Sunucu Oluştur",
   "drawerEditTitle": "Sunucuyu Düzenle",
   "edit": "Düzenle",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP iletim modu",
   "unitSecondsShort": "S",
   "unlimited": "Sınırsız",
+  "up_mbps": "Yükleme Bant Genişliği",
   "updated": "Başarıyla güncellendi",
   "user": "Kullanıcı",
   "validation_failed": "Doğrulama başarısız. Lütfen formu kontrol edin."

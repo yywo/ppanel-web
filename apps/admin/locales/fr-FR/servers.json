@@ -1,6 +1,7 @@
 {
   "address": "Adresse",
   "address_placeholder": "Adresse du serveur",
+  "bandwidth_placeholder": "Entrez la bande passante, laissez vide pour BBR",
   "basic": "Configuration de base",
   "cancel": "Annuler",
   "city": "Ville",
@@ -43,6 +44,7 @@
   "disable_sni": "Désactiver SNI",
   "disabled": "Désactivé",
   "disk": "Disque",
+  "down_mbps": "Bande passante de téléchargement",
   "drawerCreateTitle": "Créer un serveur",
   "drawerEditTitle": "Modifier le serveur",
   "edit": "Modifier",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Mode de relais UDP",
   "unitSecondsShort": "S",
   "unlimited": "Illimité",
+  "up_mbps": "Bande passante de téléversement",
   "updated": "Mis à jour avec succès",
   "user": "Utilisateur",
   "validation_failed": "Échec de la validation. Veuillez vérifier le formulaire."

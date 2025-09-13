@@ -1,6 +1,7 @@
 {
   "address": "Cím",
   "address_placeholder": "Szerver cím",
+  "bandwidth_placeholder": "Adja meg a sávszélességet, hagyja üresen a BBR-hez",
   "basic": "Alapértelmezett Beállítások",
   "cancel": "Mégse",
   "city": "Város",
@@ -43,6 +44,7 @@
   "disable_sni": "SNI letiltása",
   "disabled": "Letiltva",
   "disk": "Lemez",
+  "down_mbps": "Letöltési sávszélesség",
   "drawerCreateTitle": "Szerver létrehozása",
   "drawerEditTitle": "Szerver szerkesztése",
   "edit": "Szerkesztés",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP átjáró mód",
   "unitSecondsShort": "S",
   "unlimited": "Korlátlan",
+  "up_mbps": "Feltöltési sávszélesség",
   "updated": "Sikeresen frissítve",
   "user": "Felhasználó",
   "validation_failed": "Érvényesítés sikertelen. Kérjük, ellenőrizze a űrlapot."

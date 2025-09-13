@@ -1,6 +1,7 @@
 {
   "address": "Adresse",
   "address_placeholder": "Serveradresse",
+  "bandwidth_placeholder": "Skriv inn båndbredde, la stå tomt for BBR",
   "basic": "Grunnleggende Konfigurasjon",
   "cancel": "Avbryt",
   "city": "By",
@@ -43,6 +44,7 @@
   "disable_sni": "Deaktiver SNI",
   "disabled": "Deaktivert",
   "disk": "Disk",
+  "down_mbps": "Nedlastingsbåndbredde",
   "drawerCreateTitle": "Opprett server",
   "drawerEditTitle": "Rediger server",
   "edit": "Rediger",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP relémodus",
   "unitSecondsShort": "S",
   "unlimited": "Ubegrenset",
+  "up_mbps": "Opplastingsbåndbredde",
   "updated": "Oppdatert vellykket",
   "user": "Bruker",
   "validation_failed": "Validering feilet. Vennligst sjekk skjemaet."

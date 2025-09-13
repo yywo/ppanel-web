@@ -1,6 +1,7 @@
 {
   "address": "地址",
   "address_placeholder": "服务器地址",
+  "bandwidth_placeholder": "请输入带宽，留空则使用BBR",
   "basic": "基础配置",
   "cancel": "取消",
   "city": "城市",
@@ -43,6 +44,7 @@
   "disable_sni": "禁用 SNI",
   "disabled": "禁用",
   "disk": "磁盘",
+  "down_mbps": "下行带宽",
   "drawerCreateTitle": "新建服务器",
   "drawerEditTitle": "编辑服务器",
   "edit": "编辑",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP 转发模式",
   "unitSecondsShort": "S",
   "unlimited": "不限",
+  "up_mbps": "上行带宽",
   "updated": "更新成功",
   "user": "用户",
   "validation_failed": "校验失败，请检查表单。"

@@ -1,6 +1,7 @@
 {
   "address": "アドレス",
   "address_placeholder": "サーバーアドレス",
+  "bandwidth_placeholder": "帯域幅を入力してください。BBRの場合は空白のままにしてください。",
   "basic": "基本設定",
   "cancel": "キャンセル",
   "city": "都市",
@@ -43,6 +44,7 @@
   "disable_sni": "SNIを無効にする",
   "disabled": "無効",
   "disk": "ディスク",
+  "down_mbps": "ダウンロード帯域幅",
   "drawerCreateTitle": "サーバーを作成",
   "drawerEditTitle": "サーバーを編集",
   "edit": "編集",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDPリレーモード",
   "unitSecondsShort": "秒",
   "unlimited": "無制限",
+  "up_mbps": "アップロード帯域幅",
   "updated": "更新に成功しました",
   "user": "ユーザー",
   "validation_failed": "検証に失敗しました。フォームを確認してください。"

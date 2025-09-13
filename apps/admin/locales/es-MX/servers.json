@@ -1,6 +1,7 @@
 {
   "address": "Dirección",
   "address_placeholder": "Dirección del servidor",
+  "bandwidth_placeholder": "Ingresa el ancho de banda, deja vacío para BBR",
   "basic": "Configuración Básica",
   "cancel": "Cancelar",
   "city": "Ciudad",
@@ -43,6 +44,7 @@
   "disable_sni": "Deshabilitar SNI",
   "disabled": "Deshabilitado",
   "disk": "Disco",
+  "down_mbps": "Ancho de banda de descarga",
   "drawerCreateTitle": "Crear Servidor",
   "drawerEditTitle": "Editar Servidor",
   "edit": "Editar",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Modo de retransmisión UDP",
   "unitSecondsShort": "S",
   "unlimited": "Ilimitado",
+  "up_mbps": "Ancho de banda de carga",
   "updated": "Actualizado con éxito",
   "user": "Usuario",
   "validation_failed": "La validación falló. Por favor verifica el formulario."

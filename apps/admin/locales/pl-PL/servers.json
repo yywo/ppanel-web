@@ -1,6 +1,7 @@
 {
   "address": "Adres",
   "address_placeholder": "Adres serwera",
+  "bandwidth_placeholder": "Wprowadź przepustowość, pozostaw puste dla BBR",
   "basic": "Podstawowa konfiguracja",
   "cancel": "Anuluj",
   "city": "Miasto",
@@ -43,6 +44,7 @@
   "disable_sni": "Wyłącz SNI",
   "disabled": "Wyłączone",
   "disk": "Dysk",
+  "down_mbps": "Przepustowość pobierania",
   "drawerCreateTitle": "Utwórz serwer",
   "drawerEditTitle": "Edytuj serwer",
   "edit": "Edytuj",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Tryb przekazywania UDP",
   "unitSecondsShort": "S",
   "unlimited": "Nieograniczone",
+  "up_mbps": "Przepustowość wysyłania",
   "updated": "Zaktualizowano pomyślnie",
   "user": "Użytkownik",
   "validation_failed": "Walidacja nie powiodła się. Proszę sprawdzić formularz."

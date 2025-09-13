@@ -1,6 +1,7 @@
 {
   "address": "पता",
   "address_placeholder": "सर्वर का पता",
+  "bandwidth_placeholder": "बैंडविड्थ दर्ज करें, BBR के लिए खाली छोड़ें",
   "basic": "बुनियादी कॉन्फ़िगरेशन",
   "cancel": "रद्द करें",
   "city": "शहर",
@@ -43,6 +44,7 @@
   "disable_sni": "SNI अक्षम करें",
   "disabled": "अक्षम",
   "disk": "डिस्क",
+  "down_mbps": "डाउनलोड बैंडविड्थ",
   "drawerCreateTitle": "सर्वर बनाएं",
   "drawerEditTitle": "सर्वर संपादित करें",
   "edit": "संपादित करें",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP रिले मोड",
   "unitSecondsShort": "सेकंड",
   "unlimited": "असीमित",
+  "up_mbps": "अपलोड बैंडविड्थ",
   "updated": "सफलता से अपडेट किया गया",
   "user": "उपयोगकर्ता",
   "validation_failed": "मान्यता विफल। कृपया फॉर्म की जांच करें।"

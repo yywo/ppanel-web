@@ -37,6 +37,7 @@ import { Switch } from '@workspace/ui/components/switch';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
+import { uid } from 'radash';
 import { useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -85,6 +86,7 @@ function DynamicField({
               <FormControl>
                 <EnhancedInput
                   {...fieldProps}
+                  type='text'
                   placeholder={
                     field.placeholder
                       ? typeof field.placeholder === 'function'
@@ -93,6 +95,23 @@ function DynamicField({
                       : undefined
                   }
                   onValueChange={(v) => fieldProps.onChange(v)}
+                  suffix={
+                    field.password ? (
+                      <Button
+                        type='button'
+                        variant='ghost'
+                        onClick={() => {
+                          const length = field.password || 16;
+                          const result = uid(length).toLowerCase();
+                          fieldProps.onChange(result);
+                        }}
+                      >
+                        <Icon icon='mdi:refresh' className='h-4 w-4' />
+                      </Button>
+                    ) : (
+                      field.suffix
+                    )
+                  }
                 />
               </FormControl>
               <FormMessage />
@@ -116,7 +135,13 @@ function DynamicField({
                   max={field.max}
                   step={field.step || 1}
                   suffix={field.suffix}
-                  placeholder={field.placeholder as string}
+                  placeholder={
+                    field.placeholder
+                      ? typeof field.placeholder === 'function'
+                        ? field.placeholder(t, protocolData)
+                        : field.placeholder
+                      : undefined
+                  }
                   onValueChange={(v) => fieldProps.onChange(v)}
                 />
               </FormControl>
@@ -371,7 +396,7 @@ export default function ServerForm(props: {
           {trigger}
         </Button>
       </SheetTrigger>
-      <SheetContent className='w-[580px] max-w-full md:max-w-screen-md'>
+      <SheetContent className='w-[700px] max-w-full md:max-w-screen-md'>
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
         </SheetHeader>

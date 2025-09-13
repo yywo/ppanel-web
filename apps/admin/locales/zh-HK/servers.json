@@ -1,6 +1,7 @@
 {
   "address": "地址",
   "address_placeholder": "伺服器地址",
+  "bandwidth_placeholder": "輸入帶寬，留空以使用BBR",
   "basic": "基本配置",
   "cancel": "取消",
   "city": "城市",
@@ -43,6 +44,7 @@
   "disable_sni": "禁用 SNI",
   "disabled": "已禁用",
   "disk": "磁碟",
+  "down_mbps": "下載帶寬",
   "drawerCreateTitle": "創建伺服器",
   "drawerEditTitle": "編輯伺服器",
   "edit": "編輯",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP 中繼模式",
   "unitSecondsShort": "秒",
   "unlimited": "無限制",
+  "up_mbps": "上傳帶寬",
   "updated": "更新成功",
   "user": "用戶",
   "validation_failed": "驗證失敗。請檢查表單。"

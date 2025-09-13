@@ -1,6 +1,7 @@
 {
   "address": "Adresa",
   "address_placeholder": "Adresa serveru",
+  "bandwidth_placeholder": "Zadejte šířku pásma, nechte prázdné pro BBR",
   "basic": "Základní konfigurace",
   "cancel": "Zrušit",
   "city": "Město",
@@ -43,6 +44,7 @@
   "disable_sni": "Zakázat SNI",
   "disabled": "Deaktivováno",
   "disk": "Disk",
+  "down_mbps": "Šířka pásma stahování",
   "drawerCreateTitle": "Vytvořit server",
   "drawerEditTitle": "Upravit server",
   "edit": "Upravit",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Režim UDP relé",
   "unitSecondsShort": "S",
   "unlimited": "Neomezeno",
+  "up_mbps": "Šířka pásma nahrávání",
   "updated": "Úspěšně aktualizováno",
   "user": "Uživatel",
   "validation_failed": "Ověření selhalo. Zkontrolujte formulář."

@@ -1,6 +1,7 @@
 {
   "address": "ที่อยู่",
   "address_placeholder": "ที่อยู่เซิร์ฟเวอร์",
+  "bandwidth_placeholder": "กรุณากรอกแบนด์วิธ ทิ้งว่างไว้สำหรับ BBR",
   "basic": "การตั้งค่าพื้นฐาน",
   "cancel": "ยกเลิก",
   "city": "เมือง",
@@ -43,6 +44,7 @@
   "disable_sni": "ปิดการใช้งาน SNI",
   "disabled": "ปิดใช้งาน",
   "disk": "ดิสก์",
+  "down_mbps": "แบนด์วิธการดาวน์โหลด",
   "drawerCreateTitle": "สร้างเซิร์ฟเวอร์",
   "drawerEditTitle": "แก้ไขเซิร์ฟเวอร์",
   "edit": "แก้ไข",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "โหมดการส่งต่อ UDP",
   "unitSecondsShort": "ว",
   "unlimited": "ไม่จำกัด",
+  "up_mbps": "แบนด์วิธการอัปโหลด",
   "updated": "อัปเดตสำเร็จ",
   "user": "ผู้ใช้",
   "validation_failed": "การตรวจสอบล้มเหลว กรุณาตรวจสอบแบบฟอร์ม"

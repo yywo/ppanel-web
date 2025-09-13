@@ -1,6 +1,7 @@
 {
   "address": "주소",
   "address_placeholder": "서버 주소",
+  "bandwidth_placeholder": "대역폭을 입력하세요. BBR을 사용하려면 비워 두세요.",
   "basic": "기본 설정",
   "cancel": "취소",
   "city": "도시",
@@ -43,6 +44,7 @@
   "disable_sni": "SNI 비활성화",
   "disabled": "비활성화됨",
   "disk": "디스크",
+  "down_mbps": "다운로드 대역폭",
   "drawerCreateTitle": "서버 생성",
   "drawerEditTitle": "서버 편집",
   "edit": "편집",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "UDP 릴레이 모드",
   "unitSecondsShort": "초",
   "unlimited": "무제한",
+  "up_mbps": "업로드 대역폭",
   "updated": "성공적으로 업데이트됨",
   "user": "사용자",
   "validation_failed": "유효성 검사 실패. 양식을 확인하세요."

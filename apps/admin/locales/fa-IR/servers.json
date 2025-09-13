@@ -1,6 +1,7 @@
 {
   "address": "آدرس",
   "address_placeholder": "آدرس سرور",
+  "bandwidth_placeholder": "عرض پهنای باند، برای BBR خالی بگذارید",
   "basic": "پیکربندی پایه",
   "cancel": "لغو",
   "city": "شهر",
@@ -43,6 +44,7 @@
   "disable_sni": "غیرفعال کردن SNI",
   "disabled": "غیرفعال",
   "disk": "دیسک",
+  "down_mbps": "پهنای باند دانلود",
   "drawerCreateTitle": "ایجاد سرور",
   "drawerEditTitle": "ویرایش سرور",
   "edit": "ویرایش",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "حالت رله UDP",
   "unitSecondsShort": "ث",
   "unlimited": "نامحدود",
+  "up_mbps": "پهنای باند آپلود",
   "updated": "با موفقیت به‌روزرسانی شد",
   "user": "کاربر",
   "validation_failed": "اعتبارسنجی ناموفق بود. لطفاً فرم را بررسی کنید."

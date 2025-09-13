@@ -1,6 +1,7 @@
 {
   "address": "Adresă",
   "address_placeholder": "Adresă server",
+  "bandwidth_placeholder": "Introduceți lățimea de bandă, lăsați liber pentru BBR",
   "basic": "Configurare de bază",
   "cancel": "Anulează",
   "city": "Oraș",
@@ -43,6 +44,7 @@
   "disable_sni": "Dezactivează SNI",
   "disabled": "Dezactivat",
   "disk": "Disc",
+  "down_mbps": "Lățimea de bandă la descărcare",
   "drawerCreateTitle": "Creează Server",
   "drawerEditTitle": "Editează Server",
   "edit": "Editează",
@@ -110,6 +112,7 @@
   "udp_relay_mode": "Mod relay UDP",
   "unitSecondsShort": "S",
   "unlimited": "Nelimitat",
+  "up_mbps": "Lățimea de bandă la încărcare",
   "updated": "Actualizat cu succes",
   "user": "Utilizator",
   "validation_failed": "Validarea a eșuat. Te rog verifică formularul."
