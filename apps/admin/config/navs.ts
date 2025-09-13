@@ -77,7 +77,6 @@ export const navs = [
         icon: 'flat-color-icons:currency-exchange',
       },
       { title: 'ADS Config', url: '/dashboard/ads', icon: 'flat-color-icons:electrical-sensor' },
-      { title: 'System Tool', url: '/dashboard/tool', icon: 'flat-color-icons:info' },
     ],
   },
 

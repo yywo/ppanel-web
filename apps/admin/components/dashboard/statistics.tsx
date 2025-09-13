@@ -22,6 +22,7 @@ import { useState } from 'react';
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from 'recharts';
 import { Empty } from '../empty';
 import { RevenueStatisticsCard } from './revenue-statistics-card';
+import SystemVersionCard from './system-version-card';
 import { UserStatisticsCard } from './user-statistics-card';
 
 export default function Statistics() {
@@ -78,26 +79,18 @@ export default function Statistics() {
 
   return (
     <>
-      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5'>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
         {[
           {
             title: t('onlineUsersCount'),
             value: ServerTotal?.online_users || 0,
             subtitle: t('currentlyOnline'),
             icon: 'uil:users-alt',
-            href: '/dashboard/servers',
+            href: '/dashboard/users',
             color: 'text-blue-600 dark:text-blue-400',
             iconBg: 'bg-blue-100 dark:bg-blue-900/30',
           },
-          {
-            title: t('totalServers'),
-            value: (ServerTotal?.online_servers || 0) + (ServerTotal?.offline_servers || 0),
-            subtitle: `${t('online')} ${ServerTotal?.online_servers || 0} ${t('offline')} ${ServerTotal?.offline_servers || 0}`,
-            icon: 'uil:server-network',
-            href: '/dashboard/servers',
-            color: 'text-green-600 dark:text-green-400',
-            iconBg: 'bg-green-100 dark:bg-green-900/30',
-          },
+
           {
             title: t('todayTraffic'),
             value: formatBytes(
@@ -117,6 +110,15 @@ export default function Statistics() {
             icon: 'uil:cloud-data-connection',
             color: 'text-orange-600 dark:text-orange-400',
             iconBg: 'bg-orange-100 dark:bg-orange-900/30',
+          },
+          {
+            title: t('totalServers'),
+            value: (ServerTotal?.online_servers || 0) + (ServerTotal?.offline_servers || 0),
+            subtitle: `${t('online')} ${ServerTotal?.online_servers || 0} ${t('offline')} ${ServerTotal?.offline_servers || 0}`,
+            icon: 'uil:server-network',
+            href: '/dashboard/servers',
+            color: 'text-green-600 dark:text-green-400',
+            iconBg: 'bg-green-100 dark:bg-green-900/30',
           },
           {
             title: t('pendingTickets'),
@@ -151,6 +153,7 @@ export default function Statistics() {
             </Card>
           </Link>
         ))}
+        <SystemVersionCard />
       </div>
       <div className='grid gap-3 md:grid-cols-2 lg:grid-cols-3'>
         <RevenueStatisticsCard />
