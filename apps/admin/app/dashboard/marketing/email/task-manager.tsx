@@ -1,11 +1,7 @@
 'use client';
 
-import { ProTable } from '@/components/pro-table';
-import {
-  getBatchSendEmailTaskList,
-  getBatchSendEmailTaskStatus,
-  stopBatchSendEmailTask,
-} from '@/services/admin/marketing';
+import { ProTable, ProTableActions } from '@/components/pro-table';
+import { getBatchSendEmailTaskList, stopBatchSendEmailTask } from '@/services/admin/marketing';
 import { formatDate } from '@/utils/common';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -26,45 +22,23 @@ import {
 } from '@workspace/ui/components/sheet';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 
 export default function EmailTaskManager() {
   const t = useTranslations('marketing');
-  const [refreshing, setRefreshing] = useState<Record<number, boolean>>({});
+  const ref = useRef<ProTableActions>(null);
+
   const [selectedTask, setSelectedTask] = useState<API.BatchSendEmailTask | null>(null);
   const [open, setOpen] = useState(false);
 
-  // Get task status
-  const refreshTaskStatus = async (taskId: number) => {
-    setRefreshing((prev) => ({ ...prev, [taskId]: true }));
-    try {
-      const response = await getBatchSendEmailTaskStatus({
-        id: taskId,
-      });
-
-      const taskStatus = response.data?.data;
-      if (taskStatus) {
-        // Just show success message, ProTable will auto-refresh
-        toast.success(t('taskStatusRefreshed'));
-      }
-    } catch (error) {
-      console.error('Failed to refresh task status:', error);
-      toast.error(t('failedToRefreshTaskStatus'));
-    } finally {
-      setRefreshing((prev) => ({ ...prev, [taskId]: false }));
-    }
-  };
-
-  // Stop task
   const stopTask = async (taskId: number) => {
     try {
       await stopBatchSendEmailTask({
         id: taskId,
       });
-
       toast.success(t('taskStoppedSuccessfully'));
-      await refreshTaskStatus(taskId);
+      ref.current?.refresh();
     } catch (error) {
       console.error('Failed to stop task:', error);
       toast.error(t('failedToStopTask'));
@@ -111,6 +85,7 @@ export default function EmailTaskManager() {
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-env(safe-area-inset-top))] px-6'>
           <div className='mt-4 space-y-4'>
             <ProTable<API.BatchSendEmailTask, API.GetBatchSendEmailTaskListParams>
+              action={ref}
               columns={[
                 {
                   accessorKey: 'subject',
@@ -265,19 +240,6 @@ export default function EmailTaskManager() {
                         </ScrollArea>
                       </DialogContent>
                     </Dialog>,
-                    <Button
-                      key='refresh'
-                      variant='outline'
-                      size='icon'
-                      onClick={() => refreshTaskStatus(row.id)}
-                      disabled={refreshing[row.id]}
-                    >
-                      {refreshing[row.id] ? (
-                        <Icon icon='mdi:loading' className='h-3 w-3 animate-spin' />
-                      ) : (
-                        <Icon icon='mdi:refresh' className='h-3 w-3' />
-                      )}
-                    </Button>,
                     ...([0, 1].includes(row.status)
                       ? [
                           <Button key='stop' variant='destructive' onClick={() => stopTask(row.id)}>

@@ -94,11 +94,11 @@ export default function QuotaBroadcastForm() {
       let end_time: number = 0;
 
       if (formData.start_time) {
-        start_time = Math.floor(new Date(formData.start_time).getTime() / 1000);
+        start_time = new Date(formData.start_time).getTime();
       }
 
       if (formData.end_time) {
-        end_time = Math.floor(new Date(formData.end_time).getTime() / 1000);
+        end_time = new Date(formData.end_time).getTime();
       }
 
       const response = await queryQuotaTaskPreCount({
