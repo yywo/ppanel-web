@@ -33,6 +33,16 @@
     "saveSuccess": "Zapisano pomyślnie",
     "title": "Ustawienia zaproszeń"
   },
+  "logCleanup": {
+    "autoClear": "Włącz automatyczne czyszczenie",
+    "autoClearDescription": "Po włączeniu system automatycznie usunie przestarzałe rekordy logów",
+    "clearDays": "Dni przechowywania",
+    "clearDaysDescription": "Liczba dni, przez które logi będą przechowywane; logi starsze niż ten okres zostaną usunięte",
+    "clearDaysPlaceholder": "Wprowadź dni przechowywania",
+    "description": "Skonfiguruj zasady automatycznego czyszczenia logów i okres przechowywania",
+    "title": "Ustawienia czyszczenia logów"
+  },
+  "logSettings": "Ustawienia logów",
   "privacyPolicy": {
     "description": "Edytuj i zarządzaj treścią polityki prywatności",
     "title": "Polityka prywatności"

@@ -33,6 +33,16 @@
     "saveSuccess": "Lưu thành công",
     "title": "Cài đặt mời"
   },
+  "logCleanup": {
+    "autoClear": "Bật Dọn dẹp Tự động",
+    "autoClearDescription": "Khi được bật, hệ thống sẽ tự động xóa các bản ghi nhật ký đã hết hạn",
+    "clearDays": "Số Ngày Lưu giữ",
+    "clearDaysDescription": "Số ngày để lưu giữ nhật ký; nhật ký cũ hơn sẽ bị xóa",
+    "clearDaysPlaceholder": "Nhập số ngày lưu giữ",
+    "description": "Cấu hình quy tắc dọn dẹp nhật ký tự động và thời gian lưu giữ",
+    "title": "Cài đặt Dọn dẹp Nhật ký"
+  },
+  "logSettings": "Cài đặt Nhật ký",
   "privacyPolicy": {
     "description": "Chỉnh sửa và quản lý nội dung chính sách bảo mật",
     "title": "Chính sách bảo mật"

@@ -1,11 +1,8 @@
 'use client';
 
-import { ProTable } from '@/components/pro-table';
-import {
-  getBatchSendEmailTaskList,
-  getBatchSendEmailTaskStatus,
-  stopBatchSendEmailTask,
-} from '@/services/admin/marketing';
+import { ProTable, ProTableActions } from '@/components/pro-table';
+import { getBatchSendEmailTaskList, stopBatchSendEmailTask } from '@/services/admin/marketing';
+import { formatDate } from '@/utils/common';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
@@ -24,46 +21,24 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { Icon } from '@workspace/ui/custom-components/icon';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'sonner';
 
 export default function EmailTaskManager() {
   const t = useTranslations('marketing');
-  const [refreshing, setRefreshing] = useState<Record<number, boolean>>({});
+  const ref = useRef<ProTableActions>(null);
+
   const [selectedTask, setSelectedTask] = useState<API.BatchSendEmailTask | null>(null);
+  const [open, setOpen] = useState(false);
 
-  // Get task status
-  const refreshTaskStatus = async (taskId: number) => {
-    setRefreshing((prev) => ({ ...prev, [taskId]: true }));
-    try {
-      const response = await getBatchSendEmailTaskStatus({
-        id: taskId,
-      });
-
-      const taskStatus = response.data?.data;
-      if (taskStatus) {
-        // Just show success message, ProTable will auto-refresh
-        toast.success(t('taskStatusRefreshed'));
-      }
-    } catch (error) {
-      console.error('Failed to refresh task status:', error);
-      toast.error(t('failedToRefreshTaskStatus'));
-    } finally {
-      setRefreshing((prev) => ({ ...prev, [taskId]: false }));
-    }
-  };
-
-  // Stop task
   const stopTask = async (taskId: number) => {
     try {
       await stopBatchSendEmailTask({
         id: taskId,
       });
-
       toast.success(t('taskStoppedSuccessfully'));
-      await refreshTaskStatus(taskId);
+      ref.current?.refresh();
     } catch (error) {
       console.error('Failed to stop task:', error);
       toast.error(t('failedToStopTask'));
@@ -86,7 +61,7 @@ export default function EmailTaskManager() {
   };
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <div className='flex cursor-pointer items-center justify-between transition-colors'>
           <div className='flex items-center gap-3'>
@@ -110,11 +85,11 @@ export default function EmailTaskManager() {
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-env(safe-area-inset-top))] px-6'>
           <div className='mt-4 space-y-4'>
             <ProTable<API.BatchSendEmailTask, API.GetBatchSendEmailTaskListParams>
+              action={ref}
               columns={[
                 {
                   accessorKey: 'subject',
                   header: t('subject'),
-                  size: 200,
                   cell: ({ row }) => (
                     <div
                       className='max-w-[200px] truncate font-medium'
@@ -127,29 +102,28 @@ export default function EmailTaskManager() {
                 {
                   accessorKey: 'scope',
                   header: t('recipientType'),
-                  size: 120,
                   cell: ({ row }) => {
-                    const scope = row.getValue('scope') as string;
+                    const scope = row.original.scope;
                     const scopeLabels = {
-                      all: t('allUsers'),
-                      active: t('subscribedUsers'),
-                      expired: t('expiredUsers'),
-                      none: t('nonSubscribers'),
-                      skip: t('specificUsers'),
+                      1: t('allUsers'), // ScopeAll
+                      2: t('subscribedUsers'), // ScopeActive
+                      3: t('expiredUsers'), // ScopeExpired
+                      4: t('nonSubscribers'), // ScopeNone
+                      5: t('specificUsers'), // ScopeSkip
                     };
-                    return scopeLabels[scope as keyof typeof scopeLabels] || scope;
+                    return (
+                      scopeLabels[scope as keyof typeof scopeLabels] || `${t('scope')} ${scope}`
+                    );
                   },
                 },
                 {
                   accessorKey: 'status',
                   header: t('status'),
-                  size: 100,
                   cell: ({ row }) => getStatusBadge(row.getValue('status') as number),
                 },
                 {
                   accessorKey: 'progress',
                   header: t('progress'),
-                  size: 150,
                   cell: ({ row }) => {
                     const task = row.original as API.BatchSendEmailTask;
                     const progress = task.total > 0 ? (task.current / task.total) * 100 : 0;
@@ -172,21 +146,19 @@ export default function EmailTaskManager() {
                   },
                 },
                 {
-                  accessorKey: 'created_at',
-                  header: t('createdAt'),
-                  size: 150,
-                  cell: ({ row }) => {
-                    const createdAt = row.getValue('created_at') as number;
-                    return formatDate(createdAt);
-                  },
-                },
-                {
                   accessorKey: 'scheduled',
                   header: t('sendTime'),
-                  size: 150,
                   cell: ({ row }) => {
                     const scheduled = row.getValue('scheduled') as number;
                     return scheduled && scheduled > 0 ? formatDate(scheduled) : '--';
+                  },
+                },
+                {
+                  accessorKey: 'created_at',
+                  header: t('createdAt'),
+                  cell: ({ row }) => {
+                    const createdAt = row.getValue('created_at') as number;
+                    return formatDate(createdAt);
                   },
                 },
               ]}
@@ -215,11 +187,11 @@ export default function EmailTaskManager() {
                   key: 'scope',
                   placeholder: t('sendScope'),
                   options: [
-                    { label: t('allUsers'), value: 'all' },
-                    { label: t('subscribedUsers'), value: 'active' },
-                    { label: t('expiredUsers'), value: 'expired' },
-                    { label: t('nonSubscribers'), value: 'none' },
-                    { label: t('specificUsers'), value: 'skip' },
+                    { label: t('allUsers'), value: '1' },
+                    { label: t('subscribedUsers'), value: '2' },
+                    { label: t('expiredUsers'), value: '3' },
+                    { label: t('nonSubscribers'), value: '4' },
+                    { label: t('specificUsers'), value: '5' },
                   ],
                 },
               ]}
@@ -253,10 +225,7 @@ export default function EmailTaskManager() {
                                 <h4 className='text-muted-foreground mb-2 text-sm font-medium'>
                                   {t('content')}
                                 </h4>
-                                <div
-                                  className='prose prose-sm max-w-none'
-                                  dangerouslySetInnerHTML={{ __html: selectedTask.content }}
-                                />
+                                <div dangerouslySetInnerHTML={{ __html: selectedTask.content }} />
                               </div>
                               {selectedTask.additional && (
                                 <div>
@@ -271,18 +240,6 @@ export default function EmailTaskManager() {
                         </ScrollArea>
                       </DialogContent>
                     </Dialog>,
-                    <Button
-                      key='refresh'
-                      variant='outline'
-                      size='icon'
-                      onClick={() => refreshTaskStatus(row.id)}
-                      disabled={refreshing[row.id]}
-                    >
-                      {refreshing[row.id] && (
-                        <Icon icon='mdi:loading' className='mr-2 h-3 w-3 animate-spin' />
-                      )}
-                      <Icon icon='mdi:refresh' className='h-3 w-3' />
-                    </Button>,
                     ...([0, 1].includes(row.status)
                       ? [
                           <Button key='stop' variant='destructive' onClick={() => stopTask(row.id)}>

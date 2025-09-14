@@ -40,23 +40,23 @@ import { z } from 'zod';
 
 const emailSettingsSchema = z.object({
   id: z.number(),
-  method: z.string().default('email'),
-  enabled: z.boolean().default(false),
+  method: z.string(),
+  enabled: z.boolean(),
   config: z
     .object({
-      enable_verify: z.boolean().default(false),
-      enable_domain_suffix: z.boolean().default(false),
+      enable_verify: z.boolean(),
+      enable_domain_suffix: z.boolean(),
       domain_suffix_list: z.string().optional(),
       verify_email_template: z.string().optional(),
       expiration_email_template: z.string().optional(),
       maintenance_email_template: z.string().optional(),
       traffic_exceed_email_template: z.string().optional(),
-      platform: z.string().default('smtp'),
+      platform: z.string(),
       platform_config: z
         .object({
           host: z.string().optional(),
-          port: z.coerce.number().optional(),
-          ssl: z.boolean().default(false),
+          port: z.number().optional(),
+          ssl: z.boolean(),
           user: z.string().optional(),
           pass: z.string().optional(),
           from: z.string().optional(),

@@ -2,14 +2,23 @@
 
 import { Display } from '@/components/display';
 import { getUserDetail, getUserSubscribeById } from '@/services/admin/user';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
-import { formatBytes, formatDate } from '@workspace/ui/utils';
+import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
-export function UserSubscribeDetail({ id, enabled }: { id: number; enabled: boolean }) {
+export function UserSubscribeDetail({
+  id,
+  enabled,
+  hoverCard = false,
+}: {
+  id: number;
+  enabled: boolean;
+  hoverCard?: boolean;
+}) {
   const t = useTranslations('user');
 
   const { data } = useQuery({
@@ -26,7 +35,7 @@ export function UserSubscribeDetail({ id, enabled }: { id: number; enabled: bool
   const usedTraffic = data ? data.upload + data.download : 0;
   const totalTraffic = data?.traffic || 0;
 
-  return (
+  const subscribeContent = (
     <div className='space-y-4'>
       <div>
         <h3 className='mb-2 text-sm font-medium'>{t('subscriptionInfo')}</h3>
@@ -68,51 +77,59 @@ export function UserSubscribeDetail({ id, enabled }: { id: number; enabled: bool
         </div>
       </div>
 
-      <div>
-        <h3 className='mb-2 text-sm font-medium'>
-          {t('userInfo')}
-          {data?.user_id && (
-            <Button
-              variant='link'
-              size='sm'
-              className='text-primary ml-2 h-auto p-0 text-xs'
-              asChild
-            >
-              <Link href={`/dashboard/user/${data.user_id}`}>{t('viewDetails')}</Link>
-            </Button>
-          )}
-        </h3>
-        <ul className='grid gap-3'>
-          <li className='flex items-center justify-between font-semibold'>
-            <span className='text-muted-foreground'>{t('userId')}</span>
-            <span>{data?.user_id}</span>
-          </li>
-          <li className='flex items-center justify-between font-semibold'>
-            <span className='text-muted-foreground'>{t('balance')}</span>
-            <span>
-              <Display type='currency' value={data?.user.balance} />
-            </span>
-          </li>
-          <li className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>{t('giftAmount')}</span>
-            <span>
-              <Display type='currency' value={data?.user?.gift_amount} />
-            </span>
-          </li>
-          <li className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>{t('commission')}</span>
-            <span>
-              <Display type='currency' value={data?.user?.commission} />
-            </span>
-          </li>
-          <li className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>{t('createdAt')}</span>
-            <span>{data?.user?.created_at && formatDate(data?.user?.created_at)}</span>
-          </li>
-        </ul>
-      </div>
+      {!hoverCard && (
+        <div>
+          <h3 className='mb-2 text-sm font-medium'>
+            {t('userInfo')}
+            {/* Removed link to legacy user detail page */}
+          </h3>
+          <ul className='grid gap-3'>
+            <li className='flex items-center justify-between font-semibold'>
+              <span className='text-muted-foreground'>{t('userId')}</span>
+              <span>{data?.user_id}</span>
+            </li>
+            <li className='flex items-center justify-between font-semibold'>
+              <span className='text-muted-foreground'>{t('balance')}</span>
+              <span>
+                <Display type='currency' value={data?.user.balance} />
+              </span>
+            </li>
+            <li className='flex items-center justify-between'>
+              <span className='text-muted-foreground'>{t('giftAmount')}</span>
+              <span>
+                <Display type='currency' value={data?.user?.gift_amount} />
+              </span>
+            </li>
+            <li className='flex items-center justify-between'>
+              <span className='text-muted-foreground'>{t('commission')}</span>
+              <span>
+                <Display type='currency' value={data?.user?.commission} />
+              </span>
+            </li>
+            <li className='flex items-center justify-between'>
+              <span className='text-muted-foreground'>{t('createdAt')}</span>
+              <span>{data?.user?.created_at && formatDate(data?.user?.created_at)}</span>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
+
+  if (hoverCard) {
+    return (
+      <HoverCard>
+        <HoverCardTrigger asChild>
+          <Button variant='link' className='p-0'>
+            {data?.subscribe?.name || t('loading')}
+          </Button>
+        </HoverCardTrigger>
+        <HoverCardContent className='w-96'>{subscribeContent}</HoverCardContent>
+      </HoverCard>
+    );
+  }
+
+  return subscribeContent;
 }
 
 export function UserDetail({ id }: { id: number }) {
@@ -129,13 +146,15 @@ export function UserDetail({ id }: { id: number }) {
 
   if (!id) return '--';
 
+  const identifier =
+    data?.auth_methods.find((m) => m.auth_type === 'email')?.auth_identifier ||
+    data?.auth_methods[0]?.auth_identifier;
+
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
         <Button variant='link' className='p-0' asChild>
-          <Link href={`/dashboard/user/${id}`}>
-            {data?.auth_methods[0]?.auth_identifier || t('loading')}
-          </Link>
+          <Link href={`/dashboard/user?user_id=${id}`}>{identifier || t('loading')}</Link>
         </Button>
       </HoverCardTrigger>
       <HoverCardContent>

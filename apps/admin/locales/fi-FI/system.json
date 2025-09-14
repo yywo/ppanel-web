@@ -33,6 +33,16 @@
     "saveSuccess": "Tallennus onnistui",
     "title": "Kutsuasetukset"
   },
+  "logCleanup": {
+    "autoClear": "Ota automaattinen puhdistus käyttöön",
+    "autoClearDescription": "Kun tämä on käytössä, järjestelmä puhdistaa automaattisesti vanhentuneet lokitiedot",
+    "clearDays": "Säilytyspäivät",
+    "clearDaysDescription": "Päivien määrä, jolloin lokit säilytetään; tätä vanhemmat lokit poistetaan",
+    "clearDaysPlaceholder": "Syötä säilytyspäivät",
+    "description": "Määritä automaattiset lokin puhdistus säännöt ja säilytysaika",
+    "title": "Lokin puhdistuksen asetukset"
+  },
+  "logSettings": "Lokiasetukset",
   "privacyPolicy": {
     "description": "Muokkaa ja hallinnoi tietosuojakäytännön sisältöä",
     "title": "Tietosuojakäytäntö"

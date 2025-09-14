@@ -33,6 +33,16 @@
     "saveSuccess": "保存成功",
     "title": "邀請設置"
   },
+  "logCleanup": {
+    "autoClear": "啟用自動清理",
+    "autoClearDescription": "啟用後，系統將自動清除過期的日誌記錄",
+    "clearDays": "保留天數",
+    "clearDaysDescription": "保留日誌的天數；超過此天數的日誌將被清除",
+    "clearDaysPlaceholder": "輸入保留天數",
+    "description": "配置自動日誌清理規則和保留期限",
+    "title": "日誌清理設置"
+  },
+  "logSettings": "日誌設置",
   "privacyPolicy": {
     "description": "編輯和管理隱私政策內容",
     "title": "隱私政策"

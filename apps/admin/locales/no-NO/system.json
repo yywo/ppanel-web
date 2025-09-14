@@ -33,6 +33,16 @@
     "saveSuccess": "Lagring vellykket",
     "title": "Invitasjonsinnstillinger"
   },
+  "logCleanup": {
+    "autoClear": "Aktiver automatisk rensing",
+    "autoClearDescription": "Når aktivert, vil systemet automatisk fjerne utløpte loggposter",
+    "clearDays": "Oppbevaringsdager",
+    "clearDaysDescription": "Antall dager for å oppbevare logger; logger eldre enn dette vil bli renset",
+    "clearDaysPlaceholder": "Skriv inn oppbevaringsdager",
+    "description": "Konfigurer automatiske regler for loggrensing og oppbevaringsperiode",
+    "title": "Innstillinger for loggrensing"
+  },
+  "logSettings": "Logginnstillinger",
   "privacyPolicy": {
     "description": "Rediger og administrer innholdet i personvernerklæringen",
     "title": "Personvernerklæring"

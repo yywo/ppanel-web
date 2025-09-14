@@ -58,6 +58,8 @@ export default function UserForm<T extends Record<string, any>>({
     password: z.string().optional(),
     referer_id: z.number().optional(),
     refer_code: z.string().optional(),
+    referral_percentage: z.number().optional(),
+    only_first_purchase: z.boolean().optional(),
     is_admin: z.boolean().optional(),
     balance: z.number().optional(),
     gift_amount: z.number().optional(),
@@ -140,7 +142,7 @@ export default function UserForm<T extends Record<string, any>>({
                                     placeholder={t('areaCodePlaceholder')}
                                     value={field.value}
                                     onChange={(value) => {
-                                      form.setValue(field.name, value.phone);
+                                      form.setValue(field.name, value.phone as string);
                                     }}
                                   />
                                 </FormControl>
@@ -215,6 +217,41 @@ export default function UserForm<T extends Record<string, any>>({
                       />
                     </FormControl>
                     <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='referral_percentage'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t('referralPercentage')}</FormLabel>
+                    <FormControl>
+                      <EnhancedInput
+                        type='number'
+                        min={0}
+                        max={100}
+                        placeholder={t('referralPercentagePlaceholder')}
+                        {...field}
+                        suffix='%'
+                        onValueChange={(value) => {
+                          form.setValue(field.name, Number(value));
+                        }}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='only_first_purchase'
+                render={({ field }) => (
+                  <FormItem className='flex items-center justify-between space-x-2'>
+                    <FormLabel>{t('onlyFirstPurchase')}</FormLabel>
+                    <FormControl>
+                      <Switch checked={field.value} onCheckedChange={field.onChange} />
+                    </FormControl>
                   </FormItem>
                 )}
               />

@@ -30,6 +30,7 @@ import { ColumnToggle } from '@workspace/ui/custom-components/pro-table/column-t
 import { Pagination } from '@workspace/ui/custom-components/pro-table/pagination';
 import { SortableRow } from '@workspace/ui/custom-components/pro-table/sortable-row';
 import { ProTableWrapper } from '@workspace/ui/custom-components/pro-table/wrapper';
+import { cn } from '@workspace/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { GripVertical, ListRestart, Loader, RefreshCcw } from 'lucide-react';
 import React, { Fragment, useEffect, useImperativeHandle, useRef, useState } from 'react';
@@ -69,6 +70,7 @@ export interface ProTableProps<TData, TValue> {
     targetId: string | number | null,
     items: TData[],
   ) => Promise<TData[]>;
+  initialFilters?: Record<string, unknown>;
 }
 
 export interface ProTableActions {
@@ -89,9 +91,18 @@ export function ProTable<
   texts,
   empty,
   onSort,
+  initialFilters,
 }: ProTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(() => {
+    if (initialFilters) {
+      return Object.entries(initialFilters).map(([id, value]) => ({
+        id,
+        value,
+      })) as ColumnFiltersState;
+    }
+    return [];
+  });
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState({});
   const [data, setData] = useState<TData[]>([]);
@@ -100,7 +111,7 @@ export function ProTable<
     pageIndex: 0,
     pageSize: 10,
   });
-  const [loading, setLoading] = useState(false);
+  const loading = useRef(false);
 
   const table = useReactTable({
     data,
@@ -166,7 +177,8 @@ export function ProTable<
   });
 
   const fetchData = async () => {
-    setLoading(true);
+    if (loading.current) return;
+    loading.current = true;
     try {
       const response = await request(
         {
@@ -180,7 +192,7 @@ export function ProTable<
     } catch (error) {
       console.log('Fetch data error:', error);
     } finally {
-      setLoading(false);
+      loading.current = false;
     }
   };
   const reset = async () => {
@@ -202,7 +214,7 @@ export function ProTable<
   useEffect(() => {
     fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pagination.pageIndex, pagination.pageSize, columnFilters]);
+  }, [pagination.pageIndex, pagination.pageSize, JSON.stringify(columnFilters)]);
 
   const selectedRows = table.getSelectedRowModel().flatRows.map((row) => row.original);
   const selectedCount = selectedRows.length;
@@ -258,7 +270,10 @@ export function ProTable<
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <TableHead key={header.id} className={getTableHeaderClass(header.column.id)}>
+                    <TableHead
+                      key={header.id}
+                      className={cn('!z-auto', getTableHeaderClass(header.column.id))}
+                    >
                       <ColumnHeader
                         header={header}
                         text={{
@@ -316,7 +331,7 @@ export function ProTable<
           </Table>
         </ProTableWrapper>
 
-        {loading && (
+        {loading.current && (
           <div className='bg-muted/80 absolute top-0 z-20 flex h-full w-full items-center justify-center'>
             <Loader className='h-4 w-4 animate-spin' />
           </div>

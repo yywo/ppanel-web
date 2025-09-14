@@ -33,6 +33,16 @@
     "saveSuccess": "Başarıyla Kaydedildi",
     "title": "Davet Ayarları"
   },
+  "logCleanup": {
+    "autoClear": "Otomatik Temizlemeyi Etkinleştir",
+    "autoClearDescription": "Etkinleştirildiğinde, sistem süresi dolmuş log kayıtlarını otomatik olarak temizleyecektir",
+    "clearDays": "Saklama Günleri",
+    "clearDaysDescription": "Logların saklanacağı gün sayısı; bu süreden daha eski loglar temizlenecektir",
+    "clearDaysPlaceholder": "Saklama günlerini girin",
+    "description": "Otomatik log temizleme kurallarını ve saklama süresini yapılandırın",
+    "title": "Log Temizleme Ayarları"
+  },
+  "logSettings": "Log Ayarları",
   "privacyPolicy": {
     "description": "Gizlilik politikası içeriğini düzenleyin ve yönetin",
     "title": "Gizlilik Politikası"

@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation';
 import { Fragment, useMemo } from 'react';
 import LanguageSwitch from './language-switch';
 import ThemeSwitch from './theme-switch';
+import TimezoneSwitch from './timezone-switch';
 import { UserNav } from './user-nav';
 
 export function Header() {
@@ -48,6 +49,7 @@ export function Header() {
       </div>
       <div className='flex items-center gap-2 px-3'>
         <LanguageSwitch />
+        <TimezoneSwitch />
         <ThemeSwitch />
         <UserNav />
       </div>

@@ -33,6 +33,16 @@
     "saveSuccess": "Mentés sikeres",
     "title": "Meghívási beállítások"
   },
+  "logCleanup": {
+    "autoClear": "Automatikus Tisztítás Engedélyezése",
+    "autoClearDescription": "Ha engedélyezve van, a rendszer automatikusan törli a lejárt naplóbejegyzéseket",
+    "clearDays": "Megőrzési Napok",
+    "clearDaysDescription": "A naplók megőrzésének napjai; a régebbi naplók törlésre kerülnek",
+    "clearDaysPlaceholder": "Adja meg a megőrzési napokat",
+    "description": "Automatikus napló tisztítási szabályok és megőrzési időszak konfigurálása",
+    "title": "Napló Tisztítási Beállítások"
+  },
+  "logSettings": "Napló Beállítások",
   "privacyPolicy": {
     "description": "Adatvédelmi irányelvek tartalmának szerkesztése és kezelése",
     "title": "Adatvédelmi irányelvek"

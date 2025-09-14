@@ -1,39 +1,112 @@
 <a name="readme-top"></a>
 # Changelog
 
-# [1.3.0](https://github.com/perfect-panel/ppanel-web/compare/v1.2.0...v1.3.0) (2025-08-15)
+# [1.4.0](https://github.com/perfect-panel/ppanel-web/compare/v1.3.0...v1.4.0) (2025-09-14)
 
 
 ### ♻ Code Refactoring
 
-* Refactoring and adding multiple features ([65c9b9f](https://github.com/perfect-panel/ppanel-web/commit/65c9b9f))
+* **logs**: Add localization files and update existing translations for multiple languages ([2f20ac9](https://github.com/perfect-panel/ppanel-web/commit/2f20ac9))
+* **subscribe-form**: Replace server_group and server with node_tags and nodes in default values and form schema ([38dda84](https://github.com/perfect-panel/ppanel-web/commit/38dda84))
+* Add localization updates for log and server files across multiple languages ([2bcd4cf](https://github.com/perfect-panel/ppanel-web/commit/2bcd4cf))
+* Clean up NodeForm and ServerForm components by removing unused functions and optimizing state management ([10250d9](https://github.com/perfect-panel/ppanel-web/commit/10250d9))
+* Enhance log pages with Badge component and update translations ([a4de9df](https://github.com/perfect-panel/ppanel-web/commit/a4de9df))
+* Make 'scheme' field optional in client form schema ([f4a1237](https://github.com/perfect-panel/ppanel-web/commit/f4a1237))
+* Refactor server management API endpoints and typings ([4f7cc80](https://github.com/perfect-panel/ppanel-web/commit/4f7cc80))
+* Remove application management forms and related configurations ([0c43844](https://github.com/perfect-panel/ppanel-web/commit/0c43844))
+* Remove default options from TagInput component for improved flexibility ([6a3bb70](https://github.com/perfect-panel/ppanel-web/commit/6a3bb70))
+* Remove unused preview state variables and add sort order to node properties ([e63f823](https://github.com/perfect-panel/ppanel-web/commit/e63f823))
+* Rename buildScheme to buildSchema and update imports in server form components ([ee98e7e](https://github.com/perfect-panel/ppanel-web/commit/ee98e7e))
+* Simplify node display in subscribe form and remove unused Badge import ([551135d](https://github.com/perfect-panel/ppanel-web/commit/551135d))
+* Update bun.lockb to reflect dependency changes ([ba2b50e](https://github.com/perfect-panel/ppanel-web/commit/ba2b50e))
+* Update component imports and improve code consistency ([59faeab](https://github.com/perfect-panel/ppanel-web/commit/59faeab))
+* Update dependencies and improve code consistency across multiple files ([e37ae49](https://github.com/perfect-panel/ppanel-web/commit/e37ae49))
+* Update localization files and service imports ([d4b37e4](https://github.com/perfect-panel/ppanel-web/commit/d4b37e4))
 
 
 ### ✨ Features
 
-* **api**: Add getClient API endpoint to retrieve subscription applications ([7a279e6](https://github.com/perfect-panel/ppanel-web/commit/7a279e6))
-* **marketing**: Add marketing management features and localization updates ([ea08de0](https://github.com/perfect-panel/ppanel-web/commit/ea08de0))
-* **protocol**: Add template preview functionality with localization support ([0448d21](https://github.com/perfect-panel/ppanel-web/commit/0448d21))
-* **subscribe**: Update subscription management localization and add new fields ([1d9b0a4](https://github.com/perfect-panel/ppanel-web/commit/1d9b0a4))
+* **config**: Add translations for server configuration in multiple languages ([f9a7ece](https://github.com/perfect-panel/ppanel-web/commit/f9a7ece))
+* **logs**: Add various log pages for tracking user activities and system events ([d85af49](https://github.com/perfect-panel/ppanel-web/commit/d85af49))
+* Add bandwidth fields and placeholders for upload and download in server configuration forms; update localization files for multiple languages ([3e5402f](https://github.com/perfect-panel/ppanel-web/commit/3e5402f))
+* Add batch delete functionality and enhance chart tooltips in statistics cards ([c4f536e](https://github.com/perfect-panel/ppanel-web/commit/c4f536e))
+* Add language support and descriptions in product localization files ([fd48856](https://github.com/perfect-panel/ppanel-web/commit/fd48856))
+* Add log cleanup settings and update localization files ([6ccf9b8](https://github.com/perfect-panel/ppanel-web/commit/6ccf9b8))
+* Add queryNodeTag function and integrate tag retrieval in NodeForm and SubscribeForm components ([4563c57](https://github.com/perfect-panel/ppanel-web/commit/4563c57))
+* Add quota management features and localization updates ([fce627b](https://github.com/perfect-panel/ppanel-web/commit/fce627b))
+* Add server form component with protocol configuration and localization support ([217ddce](https://github.com/perfect-panel/ppanel-web/commit/217ddce))
+* Enhance TagInput component with option handling and improved tag addition logic ([b6e778d](https://github.com/perfect-panel/ppanel-web/commit/b6e778d))
+* Implement data migration functionality and update localization files ([6d81bfd](https://github.com/perfect-panel/ppanel-web/commit/6d81bfd))
+* Refactor user detail and subscription management components ([973c06f](https://github.com/perfect-panel/ppanel-web/commit/973c06f))
+* Update server list fetching logic and adjust query parameters ([5272360](https://github.com/perfect-panel/ppanel-web/commit/5272360))
 
 
 ### 🐛 Bug Fixes
 
-* **bun**: Update bun.lockb to reflect dependency changes ([bbcd018](https://github.com/perfect-panel/ppanel-web/commit/bbcd018))
-* **editor**: Add Go template editor component and update related schemas ([9d9c3cd](https://github.com/perfect-panel/ppanel-web/commit/9d9c3cd))
-* **editor**: Enhance Go Template Editor to support trimmed template tags and improve range/end matching ([641ed5e](https://github.com/perfect-panel/ppanel-web/commit/641ed5e))
-* **editor**: Enhance Go Template Editor with schema support and improved completion ([5b21d8a](https://github.com/perfect-panel/ppanel-web/commit/5b21d8a))
-* **enhaced-input**: Disable autocomplete for EnhancedInput component ([f190c68](https://github.com/perfect-panel/ppanel-web/commit/f190c68))
-* **global**: Add user agent limit settings to subscription configuration ([822416d](https://github.com/perfect-panel/ppanel-web/commit/822416d))
-* **locales**: Update 'conf' output format to use uppercase 'CONF' ([fce9119](https://github.com/perfect-panel/ppanel-web/commit/fce9119))
-* **locales**: Update "userAccount" label to "user" in multiple localization files ([48415e9](https://github.com/perfect-panel/ppanel-web/commit/48415e9))
-* **protocol-form**: Swap 'description' and 'user_agent' columns for improved clarity in the table ([72a4106](https://github.com/perfect-panel/ppanel-web/commit/72a4106))
-* **protocol-form**: Update protocol options descriptions for clarity and add new security and transport options ([e5d4deb](https://github.com/perfect-panel/ppanel-web/commit/e5d4deb))
-* **protocol**: Add 'conf' output format option and update translations ([292efdf](https://github.com/perfect-panel/ppanel-web/commit/292efdf))
-* **protpcp-form**: Rename 'schema' to 'scheme' for consistency across the application ([6ab2ba9](https://github.com/perfect-panel/ppanel-web/commit/6ab2ba9))
-* **register**: Update localization files to include trial subscription settings and descriptions ([33daa1f](https://github.com/perfect-panel/ppanel-web/commit/33daa1f))
-* **system**: Add time unit translations for user registration settings in multiple languages ([296a6c1](https://github.com/perfect-panel/ppanel-web/commit/296a6c1))
-* Update privacy policy and terms of service schemas to use correct field names ([0e6ba5b](https://github.com/perfect-panel/ppanel-web/commit/0e6ba5b))
+* **page**: Refine version checking logic and remove unnecessary comments for clarity ([26176a7](https://github.com/perfect-panel/ppanel-web/commit/26176a7))
+* Add localization updates and new utility functions ([4da5960](https://github.com/perfect-panel/ppanel-web/commit/4da5960))
+* Add user_subscribe_id filter to SubscribeLogPage and update typings; disable eslint in service index files ([ab6f6a6](https://github.com/perfect-panel/ppanel-web/commit/ab6f6a6))
+* Added system version card and system log dialog components; updated statistics page to include total server and user statistics ([fe69980](https://github.com/perfect-panel/ppanel-web/commit/fe69980))
+* Adjust timestamp calculations to use milliseconds instead of seconds in quota broadcast form submission ([8dffd69](https://github.com/perfect-panel/ppanel-web/commit/8dffd69))
+* Correct cookie key format for sidebar state retrieval ([9e01f4f](https://github.com/perfect-panel/ppanel-web/commit/9e01f4f))
+* Improve UI for protocol status display in server form component ([461fdb1](https://github.com/perfect-panel/ppanel-web/commit/461fdb1))
+* Increase pagination size limit for server and node lists to improve data retrieval ([7c0a312](https://github.com/perfect-panel/ppanel-web/commit/7c0a312))
+* Optimize Task Manager to use milliseconds to calculate timers, and simplify import statements ([d8fa13b](https://github.com/perfect-panel/ppanel-web/commit/d8fa13b))
+* Refactor protocol status display for improved readability in server form component ([f700be0](https://github.com/perfect-panel/ppanel-web/commit/f700be0))
+* Remove GroupTable and related components, simplify SubscribeTable and update language handling in subscription forms ([1ab9b39](https://github.com/perfect-panel/ppanel-web/commit/1ab9b39))
+* Remove redundant transport label from localization files ([88ce8d7](https://github.com/perfect-panel/ppanel-web/commit/88ce8d7))
+* Remove unnecessary comments and improve variable handling in GoTemplateEditor; ensure zero value displays as empty in EnhancedInput ([c4a47a4](https://github.com/perfect-panel/ppanel-web/commit/c4a47a4))
+* Remove unnecessary comments to simplify code readability ([a988cb3](https://github.com/perfect-panel/ppanel-web/commit/a988cb3))
+* Replace MarkdownEditor with HTMLEditor in EmailBroadcastForm; simplify content rendering in EmailTaskManager; disable eslint in service index files ([e2d83ec](https://github.com/perfect-panel/ppanel-web/commit/e2d83ec))
+* Replace redundant icon rendering with a single instance in system version card component ([e4429a5](https://github.com/perfect-panel/ppanel-web/commit/e4429a5))
+* Update billing URL fetching logic and improve version handling in system version card component ([1c8d4af](https://github.com/perfect-panel/ppanel-web/commit/1c8d4af))
+* Update condition for plugin field in PROTOCOL_FIELDS to include specific plugins ([6376ec1](https://github.com/perfect-panel/ppanel-web/commit/6376ec1))
+* Update getAppSubLink function to improve URL handling and encoding logic ([351fffc](https://github.com/perfect-panel/ppanel-web/commit/351fffc))
+* Update order_id to order_no in BalanceLogPage and related typings; enhance timezone switch component with additional features and localization updates ([ac36075](https://github.com/perfect-panel/ppanel-web/commit/ac36075))
+* Update protocol plugin handling and add new options in typings ([6ca2433](https://github.com/perfect-panel/ppanel-web/commit/6ca2433))
+* Update release URLs to include 'v' prefix for versioning in system version card component ([1d526b5](https://github.com/perfect-panel/ppanel-web/commit/1d526b5))
+* Update SidebarLeft component styles to enhance hover effects ([e4fbd5c](https://github.com/perfect-panel/ppanel-web/commit/e4fbd5c))
+* Update validation for days and gift_value fields in QuotaBroadcastForm; set default values to avoid errors ([39d746f](https://github.com/perfect-panel/ppanel-web/commit/39d746f))
+
+
+### 📝 Documentation
+
+* Merge branch 'main' into develop ([d7f8b3b](https://github.com/perfect-panel/ppanel-web/commit/d7f8b3b))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+# [1.3.0](https://github.com/perfect-panel/ppanel-web/compare/v1.2.0...v1.3.0) (2025-08-15)
+
+### ♻ Code Refactoring
+
+- Refactoring and adding multiple features ([65c9b9f](https://github.com/perfect-panel/ppanel-web/commit/65c9b9f))
+
+### ✨ Features
+
+- **api**: Add getClient API endpoint to retrieve subscription applications ([7a279e6](https://github.com/perfect-panel/ppanel-web/commit/7a279e6))
+- **marketing**: Add marketing management features and localization updates ([ea08de0](https://github.com/perfect-panel/ppanel-web/commit/ea08de0))
+- **protocol**: Add template preview functionality with localization support ([0448d21](https://github.com/perfect-panel/ppanel-web/commit/0448d21))
+- **subscribe**: Update subscription management localization and add new fields ([1d9b0a4](https://github.com/perfect-panel/ppanel-web/commit/1d9b0a4))
+
+### 🐛 Bug Fixes
+
+- **bun**: Update bun.lockb to reflect dependency changes ([bbcd018](https://github.com/perfect-panel/ppanel-web/commit/bbcd018))
+- **editor**: Add Go template editor component and update related schemas ([9d9c3cd](https://github.com/perfect-panel/ppanel-web/commit/9d9c3cd))
+- **editor**: Enhance Go Template Editor to support trimmed template tags and improve range/end matching ([641ed5e](https://github.com/perfect-panel/ppanel-web/commit/641ed5e))
+- **editor**: Enhance Go Template Editor with schema support and improved completion ([5b21d8a](https://github.com/perfect-panel/ppanel-web/commit/5b21d8a))
+- **enhaced-input**: Disable autocomplete for EnhancedInput component ([f190c68](https://github.com/perfect-panel/ppanel-web/commit/f190c68))
+- **global**: Add user agent limit settings to subscription configuration ([822416d](https://github.com/perfect-panel/ppanel-web/commit/822416d))
+- **locales**: Update 'conf' output format to use uppercase 'CONF' ([fce9119](https://github.com/perfect-panel/ppanel-web/commit/fce9119))
+- **locales**: Update "userAccount" label to "user" in multiple localization files ([48415e9](https://github.com/perfect-panel/ppanel-web/commit/48415e9))
+- **protocol-form**: Swap 'description' and 'user_agent' columns for improved clarity in the table ([72a4106](https://github.com/perfect-panel/ppanel-web/commit/72a4106))
+- **protocol-form**: Update protocol options descriptions for clarity and add new security and transport options ([e5d4deb](https://github.com/perfect-panel/ppanel-web/commit/e5d4deb))
+- **protocol**: Add 'conf' output format option and update translations ([292efdf](https://github.com/perfect-panel/ppanel-web/commit/292efdf))
+- **protpcp-form**: Rename 'schema' to 'scheme' for consistency across the application ([6ab2ba9](https://github.com/perfect-panel/ppanel-web/commit/6ab2ba9))
+- **register**: Update localization files to include trial subscription settings and descriptions ([33daa1f](https://github.com/perfect-panel/ppanel-web/commit/33daa1f))
+- **system**: Add time unit translations for user registration settings in multiple languages ([296a6c1](https://github.com/perfect-panel/ppanel-web/commit/296a6c1))
+- Update privacy policy and terms of service schemas to use correct field names ([0e6ba5b](https://github.com/perfect-panel/ppanel-web/commit/0e6ba5b))
 
 <a name="readme-top"></a>
 

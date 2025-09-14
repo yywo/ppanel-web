@@ -46,7 +46,8 @@ export default function Affiliate() {
               <Display type='currency' value={data?.total_commission} />
             </span>
             <span className='text-muted-foreground text-sm'>
-              ({t('commissionRate')}: {common?.invite?.referral_percentage}%)
+              ({t('commissionRate')}:{' '}
+              {user?.referral_percentage || common?.invite?.referral_percentage}%)
             </span>
           </div>
         </CardContent>

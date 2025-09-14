@@ -34,8 +34,8 @@ import { z } from 'zod';
 
 const deviceSchema = z.object({
   id: z.number(),
-  method: z.string().default('device'),
-  enabled: z.boolean().default(false),
+  method: z.string(),
+  enabled: z.boolean(),
   config: z
     .object({
       show_ads: z.boolean().optional(),

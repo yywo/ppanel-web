@@ -33,6 +33,16 @@
     "saveSuccess": "保存成功",
     "title": "招待設定"
   },
+  "logCleanup": {
+    "autoClear": "自動クリーンアップを有効にする",
+    "autoClearDescription": "有効にすると、システムは期限切れのログレコードを自動的にクリアします",
+    "clearDays": "保持日数",
+    "clearDaysDescription": "ログを保持する日数; これを超える古いログはクリーンアップされます",
+    "clearDaysPlaceholder": "保持日数を入力してください",
+    "description": "自動ログクリーンアップルールと保持期間を設定します",
+    "title": "ログクリーンアップ設定"
+  },
+  "logSettings": "ログ設定",
   "privacyPolicy": {
     "description": "プライバシーポリシーの内容を編集・管理します",
     "title": "プライバシーポリシー"

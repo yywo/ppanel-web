@@ -1,27 +1,43 @@
 {
   "ADS Config": "ADS Config",
   "Announcement Management": "Announcement Management",
-  "Application Management": "Application Management",
+
   "Auth Control": "Auth Control",
+  "Balance": "Balance",
+  "Commerce": "Commerce",
+  "Commission": "Commission",
   "Coupon Management": "Coupon Management",
   "Dashboard": "Dashboard",
+
   "Document Management": "Document Management",
-  "Finance": "Finance",
+
+  "Email": "Email",
+  "Gift": "Gift",
+  "Login": "Login",
+  "Logs & Analytics": "Logs & Analytics",
+  "Maintenance": "Maintenance",
   "Marketing Management": "Marketing Management",
+  "Message": "Message",
+  "Mobile": "SMS",
+  "Node Management": "Node Management",
   "Order Management": "Order Management",
   "Payment Config": "Payment Config",
   "Product Management": "Product Management",
-  "Protocol Management": "Protocol Management",
-  "Rule Management": "Rule Management",
-  "Server": "Server",
+
+  "Register": "Register",
+  "Reset Subscribe": "Reset Subscribe",
   "Server Management": "Server Management",
-  "Settings": "Settings",
+  "Server Traffic": "Server Traffic",
+  "Subscribe": "Subscribe",
   "Subscribe Config": "Subscribe Config",
+  "Subscribe Traffic": "Subscribe Traffic",
+  "System": "System",
   "System Config": "System Config",
-  "System Management": "System Management",
   "System Tool": "System Tool",
+
   "Ticket Management": "Ticket Management",
-  "User": "User",
+  "Traffic Details": "Traffic Details",
   "User Detail": "User Detail",
-  "User Management": "User Management"
+  "User Management": "User Management",
+  "Users & Support": "Users & Support"
 }

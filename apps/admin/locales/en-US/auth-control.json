@@ -51,8 +51,6 @@
     "enable": "Enable",
     "enableDescription": "When enabled, enables email registration, login, binding, and unbinding functions",
     "inputPlaceholder": "Enter value...",
-    "logs": "Email Logs",
-    "logsDescription": "View history of sent emails and their status",
     "sendFailure": "Test email send failed, please check configuration.",
     "sendSuccess": "Test email sent successfully.",
     "sendTestEmail": "Send Test Email",
@@ -145,19 +143,7 @@
     "enable": "Enable",
     "enableDescription": "When enabled, users can sign in with their Google account"
   },
-  "log": {
-    "emailLog": "Email Log",
-    "mobileLog": "SMS Log",
-    "platform": "Platform",
-    "to": "Recipient",
-    "subject": "Subject",
-    "content": "Content",
-    "status": "Status",
-    "sendSuccess": "Sent Successfully",
-    "sendFailed": "Send Failed",
-    "createdAt": "Created At",
-    "updatedAt": "Updated At"
-  },
+
   "phone": {
     "title": "Phone Authentication",
     "description": "Authenticate users with phone numbers",
@@ -188,9 +174,7 @@
     "sendSuccess": "Sent successfully",
     "sendFailed": "Send failed",
     "updateSuccess": "Updated successfully",
-    "settings": "Settings",
-    "logs": "SMS Logs",
-    "logsDescription": "View history of sent SMS messages and their status"
+    "settings": "Settings"
   },
   "socialAuthMethods": "Social Authentication Methods",
   "telegram": {

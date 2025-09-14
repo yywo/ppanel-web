@@ -52,7 +52,7 @@ export default function FacebookForm() {
       });
       return data.data;
     },
-    // 移除 enabled: open，现在默认加载数据
+    enabled: open,
   });
 
   const form = useForm<FacebookFormData>({

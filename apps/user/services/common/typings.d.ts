@@ -47,15 +47,6 @@ declare namespace API {
     subscribe_type: string;
   };
 
-  type ApplicationConfig = {
-    app_id: number;
-    encryption_key: string;
-    encryption_method: string;
-    domains: string[];
-    startup_picture: string;
-    startup_picture_skip_time: number;
-  };
-
   type ApplicationPlatform = {
     ios?: ApplicationVersion[];
     macos?: ApplicationVersion[];
@@ -133,6 +124,15 @@ declare namespace API {
     enabled: boolean;
   };
 
+  type BalanceLog = {
+    type: number;
+    user_id: number;
+    amount: number;
+    order_no?: string;
+    balance: number;
+    timestamp: number;
+  };
+
   type CheckoutOrderRequest = {
     orderNo: string;
     returnUrl?: string;
@@ -173,6 +173,14 @@ declare namespace API {
 
   type CloseOrderRequest = {
     orderNo: string;
+  };
+
+  type CommissionLog = {
+    type: number;
+    user_id: number;
+    amount: number;
+    order_no: string;
+    timestamp: number;
   };
 
   type Coupon = {
@@ -265,11 +273,6 @@ declare namespace API {
     list: Ads[];
   };
 
-  type GetAppcationResponse = {
-    config: ApplicationConfig;
-    applications: ApplicationResponseInfo[];
-  };
-
   type GetAvailablePaymentMethodsResponse = {
     list: PaymentMethod[];
   };
@@ -341,14 +344,13 @@ declare namespace API {
 
   type MessageLog = {
     id: number;
-    type: string;
+    type: number;
     platform: string;
     to: string;
     subject: string;
-    content: string;
+    content: Record<string, any>;
     status: number;
     created_at: number;
-    updated_at: number;
   };
 
   type MobileAuthenticateConfig = {
@@ -369,14 +371,6 @@ declare namespace API {
     prefix: string;
   };
 
-  type NodeStatus = {
-    online: Record<string, any>;
-    cpu: number;
-    mem: number;
-    disk: number;
-    updated_at: number;
-  };
-
   type OAthLoginRequest = {
     /** google, facebook, apple, telegram, github etc. */
     method: string;
@@ -391,11 +385,6 @@ declare namespace API {
 
   type OAuthLoginResponse = {
     redirect: string;
-  };
-
-  type OnlineUser = {
-    uid: number;
-    ip: string;
   };
 
   type Order = {
@@ -510,6 +499,46 @@ declare namespace API {
 
   type PrivacyPolicyConfig = {
     privacy_policy: string;
+  };
+
+  type Protocol = {
+    type: string;
+    port: number;
+    security?: string;
+    sni?: string;
+    allow_insecure?: boolean;
+    fingerprint?: string;
+    reality_server_addr?: string;
+    reality_server_port?: number;
+    reality_private_key?: string;
+    reality_public_key?: string;
+    reality_short_id?: string;
+    transport?: string;
+    host?: string;
+    path?: string;
+    service_name?: string;
+    cipher?: string;
+    server_key?: string;
+    flow?: string;
+    hop_ports?: string;
+    hop_interval?: number;
+    obfs_password?: string;
+    disable_sni?: boolean;
+    reduce_rtt?: boolean;
+    udp_relay_mode?: string;
+    congestion_controller?: string;
+    /** obfs, v2ray-plugin, simple-obfs */
+    plugin?: string;
+    /** plugin options, eg: obfs=http;obfs-host=www.bing.com */
+    plugin_options?: string;
+    /** mux, eg: off/low/medium/high */
+    multiplex?: string;
+    /** padding scheme */
+    padding_scheme?: string;
+    /** upload speed limit */
+    up_mbps?: number;
+    /** download speed limit */
+    down_mbps?: number;
   };
 
   type PubilcRegisterConfig = {
@@ -632,6 +661,14 @@ declare namespace API {
     cf_token?: string;
   };
 
+  type ResetSubscribeTrafficLog = {
+    id: number;
+    type: number;
+    user_subscribe_id: number;
+    order_no?: string;
+    timestamp: number;
+  };
+
   type ResetTrafficOrderRequest = {
     user_subscribe_id: number;
     payment: number;
@@ -675,27 +712,6 @@ declare namespace API {
     type: number;
     telephone: string;
     telephone_area_code: string;
-  };
-
-  type Server = {
-    id: number;
-    tags: string[];
-    country: string;
-    city: string;
-    name: string;
-    server_addr: string;
-    relay_mode: string;
-    relay_node: NodeRelay[];
-    speed_limit: number;
-    traffic_ratio: number;
-    group_id: number;
-    protocol: string;
-    config: Record<string, any>;
-    enable: boolean;
-    created_at: number;
-    updated_at: number;
-    status: NodeStatus;
-    sort: number;
   };
 
   type ServerGroup = {
@@ -755,6 +771,7 @@ declare namespace API {
   type Subscribe = {
     id: number;
     name: string;
+    language: string;
     description: string;
     unit_price: number;
     unit_time: string;
@@ -765,9 +782,8 @@ declare namespace API {
     speed_limit: number;
     device_limit: number;
     quota: number;
-    group_id: number;
-    server_group: number[];
-    server: number[];
+    nodes: number[];
+    node_tags: string[];
     show: boolean;
     sell: boolean;
     sort: number;
@@ -914,6 +930,8 @@ declare namespace API {
     avatar: string;
     balance: number;
     commission: number;
+    referral_percentage: number;
+    only_first_purchase: boolean;
     gift_amount: number;
     telegram: number;
     refer_code: string;
@@ -945,16 +963,6 @@ declare namespace API {
     verified: boolean;
   };
 
-  type UserBalanceLog = {
-    id: number;
-    user_id: number;
-    amount: number;
-    type: number;
-    order_id: number;
-    balance: number;
-    created_at: number;
-  };
-
   type UserDevice = {
     id: number;
     ip: string;
@@ -972,7 +980,7 @@ declare namespace API {
     login_ip: string;
     user_agent: string;
     success: boolean;
-    created_at: number;
+    timestamp: number;
   };
 
   type UserLoginRequest = {
@@ -1015,7 +1023,7 @@ declare namespace API {
     token: string;
     ip: string;
     user_agent: string;
-    created_at: number;
+    timestamp: number;
   };
 
   type VeifyConfig = {

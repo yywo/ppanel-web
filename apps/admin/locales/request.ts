@@ -17,7 +17,8 @@ export default getRequestConfig(async () => {
     'auth-control': (await import(`./${locale}/auth-control.json`)).default,
     'ads': (await import(`./${locale}/ads.json`)).default,
     'payment': (await import(`./${locale}/payment.json`)).default,
-    'server': (await import(`./${locale}/server.json`)).default,
+    'servers': (await import(`./${locale}/servers.json`)).default,
+    'nodes': (await import(`./${locale}/nodes.json`)).default,
     'product': (await import(`./${locale}/product.json`)).default,
     'order': (await import(`./${locale}/order.json`)).default,
     'coupon': (await import(`./${locale}/coupon.json`)).default,
@@ -29,6 +30,7 @@ export default getRequestConfig(async () => {
     'index': (await import(`./${locale}/index.json`)).default,
     'subscribe': (await import(`./${locale}/subscribe.json`)).default,
     'marketing': (await import(`./${locale}/marketing.json`)).default,
+    'log': (await import(`./${locale}/log.json`)).default,
   };
 
   return {

@@ -34,6 +34,7 @@ import { Empty } from '../empty';
 
 export function UserStatisticsCard() {
   const t = useTranslations('index');
+  const locale = useLocale();
 
   const UserStatisticsConfig = {
     register: {
@@ -49,7 +50,6 @@ export function UserStatisticsCard() {
       color: 'hsl(var(--chart-3))',
     },
   };
-  const locale = useLocale();
 
   const { data: UserStatistics } = useQuery({
     queryKey: ['queryUserStatistics'],
@@ -192,15 +192,31 @@ export function UserStatisticsCard() {
                     tickMargin={10}
                     axisLine={false}
                     tickFormatter={(value) => {
-                      return new Date(value).toLocaleDateString(locale, {
+                      const [year, month, day] = value.split('-');
+                      return new Date(year, month - 1, day).toLocaleDateString(locale, {
                         month: 'short',
                         day: 'numeric',
                       });
                     }}
                   />
-                  <Bar dataKey='register' fill='var(--color-register)' radius={4} />
-                  <Bar dataKey='new_purchase' fill='var(--color-new_purchase)' radius={4} />
-                  <Bar dataKey='repurchase' fill='var(--color-repurchase)' radius={4} />
+                  <Bar
+                    dataKey='register'
+                    fill='var(--color-register)'
+                    radius={[0, 0, 4, 4]}
+                    stackId='a'
+                  />
+                  <Bar
+                    dataKey='new_purchase'
+                    fill='var(--color-new_purchase)'
+                    radius={0}
+                    stackId='a'
+                  />
+                  <Bar
+                    dataKey='repurchase'
+                    fill='var(--color-repurchase)'
+                    radius={[4, 4, 0, 0]}
+                    stackId='a'
+                  />
                   <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
                   <ChartLegend content={<ChartLegendContent />} />
                 </BarChart>
@@ -267,9 +283,9 @@ export function UserStatisticsCard() {
                     dataKey='date'
                     tickLine={false}
                     axisLine={false}
-                    tickMargin={8}
                     tickFormatter={(value) => {
-                      return new Date(value).toLocaleDateString(locale, {
+                      const [year, month] = value.split('-');
+                      return new Date(year, month - 1).toLocaleDateString(locale, {
                         month: 'short',
                       });
                     }}

@@ -267,7 +267,7 @@ export default function CouponForm<T extends Record<string, any>>({
                       <DatePicker
                         placeholder={t('form.enterValue')}
                         value={field.value}
-                        disabled={(date) => date < new Date(Date.now() - 24 * 60 * 60 * 1000)}
+                        disabled={(date: Date) => date < new Date(Date.now() - 24 * 60 * 60 * 1000)}
                         onChange={(value) => {
                           form.setValue(field.name, value);
                         }}

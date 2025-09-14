@@ -33,8 +33,8 @@ import { z } from 'zod';
 
 const googleSchema = z.object({
   id: z.number(),
-  method: z.string().default('google'),
-  enabled: z.boolean().default(false),
+  method: z.string().default('google').optional(),
+  enabled: z.boolean().default(false).optional(),
   config: z
     .object({
       client_id: z.string().optional(),

@@ -93,7 +93,7 @@ export default function PaymentTable() {
         {
           accessorKey: 'platform',
           header: t('platform'),
-          cell: ({ row }) => <Badge>{t(row.getValue('platform'))}</Badge>,
+          cell: ({ row }) => <Badge>{t(row.original.platform)}</Badge>,
         },
         {
           accessorKey: 'notify_url',

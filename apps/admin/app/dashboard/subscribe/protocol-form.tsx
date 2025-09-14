@@ -64,9 +64,9 @@ const createClientFormSchema = (t: any) =>
     description: z.string().optional(),
     icon: z.string().optional(),
     user_agent: z.string().min(1, `User-Agent ${t('form.validation.userAgentRequiredSuffix')}`),
-    scheme: z.string().default(''),
-    template: z.string().default(''),
-    output_format: z.string().default(''),
+    scheme: z.string().optional(),
+    template: z.string(),
+    output_format: z.string(),
     download_link: z.object({
       windows: z.string().optional(),
       mac: z.string().optional(),
@@ -83,8 +83,6 @@ export function ProtocolForm() {
   const t = useTranslations('subscribe');
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
-  const [previewOpen, setPreviewOpen] = useState(false);
-  const [previewApplicationId, setPreviewApplicationId] = useState<number | null>(null);
   const [editingClient, setEditingClient] = useState<API.SubscribeApplication | null>(null);
   const tableRef = useRef<ProTableActions>(null);
 
@@ -111,7 +109,6 @@ export function ProtocolForm() {
     },
   });
 
-  // API请求函数
   const request = async (
     pagination: { page: number; size: number },
     filter: Record<string, unknown>,
@@ -127,7 +124,6 @@ export function ProtocolForm() {
     };
   };
 
-  // 表格列定义
   const columns: ColumnDef<API.SubscribeApplication, any>[] = [
     {
       accessorKey: 'is_default',
@@ -138,7 +134,6 @@ export function ProtocolForm() {
           onCheckedChange={async (checked) => {
             await updateSubscribeApplication({
               ...row.original,
-              proxy_template: '',
               is_default: checked,
             });
             tableRef.current?.refresh();
@@ -289,7 +284,6 @@ export function ProtocolForm() {
       if (editingClient) {
         await updateSubscribeApplication({
           ...data,
-          proxy_template: '',
           is_default: editingClient.is_default,
           id: editingClient.id,
         });
@@ -672,6 +666,7 @@ export function ProtocolForm() {
                                         description: 'Node tags',
                                         items: { type: 'string' },
                                       },
+                                      Sort: { type: 'number', description: 'Node sort order' },
                                       // Security Options
                                       Security: {
                                         type: 'string',

@@ -1,5 +1,6 @@
 import { locales, NEXT_PUBLIC_DEFAULT_LANGUAGE } from '@/config/constants';
 import { isBrowser } from '@workspace/ui/utils';
+import { intlFormat } from 'date-fns';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies(null, {
@@ -48,4 +49,21 @@ export function Logout() {
     setRedirectUrl(location.pathname);
     location.href = `/`;
   }
+}
+
+export function formatDate(date?: Date | number, showTime: boolean = true) {
+  if (!date) return;
+  const timeZone = localStorage.getItem('timezone') || 'UTC';
+  return intlFormat(date, {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    ...(showTime && {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    }),
+    hour12: false,
+    timeZone,
+  });
 }

@@ -2,19 +2,20 @@ import { Input } from '@workspace/ui/components/input';
 import { cn } from '@workspace/ui/lib/utils';
 import { ChangeEvent, ReactNode, useEffect, useState } from 'react';
 
-export interface EnhancedInputProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix'> {
+export interface EnhancedInputProps<T = string>
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'prefix' | 'value' | 'onChange'> {
   prefix?: string | ReactNode;
   suffix?: string | ReactNode;
-  formatInput?: (value: string | number) => string | number;
-  formatOutput?: (value: string | number) => string | number;
-  onValueChange?: (value: string | number) => void;
-  onValueBlur?: (value: string | number) => void;
+  value?: T;
+  formatInput?: (value: T) => string | number;
+  formatOutput?: (value: string | number) => T;
+  onValueChange?: (value: T) => void;
+  onValueBlur?: (value: T) => void;
   min?: number;
   max?: number;
 }
 
-export function EnhancedInput({
+export function EnhancedInput<T = string>({
   suffix,
   prefix,
   formatInput,
@@ -24,38 +25,36 @@ export function EnhancedInput({
   onValueChange,
   onValueBlur,
   ...props
-}: EnhancedInputProps) {
+}: EnhancedInputProps<T>) {
   const getProcessedValue = (inputValue: unknown) => {
     if (inputValue === '' || inputValue === 0 || inputValue === '0') return '';
     const newValue = String(inputValue ?? '');
-    return formatInput ? formatInput(newValue) : newValue;
+    return formatInput ? formatInput(inputValue as T) : newValue;
   };
 
   const [value, setValue] = useState<string | number>(() => getProcessedValue(initialValue));
-  // @ts-expect-error - This is a controlled component
-  const [internalValue, setInternalValue] = useState<string | number>(initialValue ?? '');
+  const [internalValue, setInternalValue] = useState<T | string | number>(initialValue ?? '');
 
   useEffect(() => {
     if (initialValue !== internalValue) {
       const newValue = getProcessedValue(initialValue);
       if (value !== newValue) {
         setValue(newValue);
-        // @ts-expect-error - This is a controlled component
         setInternalValue(initialValue ?? '');
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialValue, formatInput]);
 
-  const processValue = (inputValue: string | number) => {
+  const processValue = (inputValue: string | number): T => {
     let processedValue: number | string = inputValue?.toString().trim();
 
     if (processedValue === '0' && props.type === 'number') {
-      return 0;
+      return (formatOutput ? formatOutput(0) : 0) as T;
     }
 
     if (processedValue && props.type === 'number') processedValue = Number(processedValue);
-    return formatOutput ? formatOutput(processedValue) : processedValue;
+    return formatOutput ? formatOutput(processedValue) : (processedValue as T);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -65,7 +64,7 @@ export function EnhancedInput({
       if (inputValue === '0') {
         setValue('');
         setInternalValue(0);
-        onValueChange?.(0);
+        onValueChange?.(processValue(0));
         return;
       }
 
@@ -96,14 +95,13 @@ export function EnhancedInput({
       if (value === '-' || value === '.') {
         setValue('');
         setInternalValue('');
-        onValueBlur?.('');
+        onValueBlur?.('' as T);
         return;
       }
 
-      // 确保0值显示为空
       if (value === '0') {
         setValue('');
-        onValueBlur?.(0);
+        onValueBlur?.(processValue(0));
         return;
       }
     }

@@ -6,6 +6,7 @@ import CurrencyForm from './basic-settings/currency-form';
 import PrivacyPolicyForm from './basic-settings/privacy-policy-form';
 import SiteForm from './basic-settings/site-form';
 import TosForm from './basic-settings/tos-form';
+import LogCleanupForm from './log-cleanup/log-cleanup-form';
 import InviteForm from './user-security/invite-form';
 import RegisterForm from './user-security/register-form';
 import VerifyCodeForm from './user-security/verify-code-form';
@@ -14,7 +15,6 @@ import VerifyForm from './user-security/verify-form';
 export default function Page() {
   const t = useTranslations('system');
 
-  // 定义表单配置
   const formSections = [
     {
       title: t('basicSettings'),
@@ -33,6 +33,10 @@ export default function Page() {
         { component: VerifyForm },
         { component: VerifyCodeForm },
       ],
+    },
+    {
+      title: t('logSettings'),
+      forms: [{ component: LogCleanupForm }],
     },
   ];
 

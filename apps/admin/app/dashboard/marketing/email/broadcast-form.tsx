@@ -31,7 +31,7 @@ import {
 } from '@workspace/ui/components/sheet';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@workspace/ui/components/tabs';
 import { Textarea } from '@workspace/ui/components/textarea';
-import { MarkdownEditor } from '@workspace/ui/custom-components/editor';
+import { HTMLEditor } from '@workspace/ui/custom-components/editor';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
@@ -47,7 +47,7 @@ export default function EmailBroadcastForm() {
   const emailBroadcastSchema = z.object({
     subject: z.string().min(1, t('subject') + ' ' + t('cannotBeEmpty')),
     content: z.string().min(1, t('content') + ' ' + t('cannotBeEmpty')),
-    scope: z.string().default('all'),
+    scope: z.number(),
     register_start_time: z.string().optional(),
     register_end_time: z.string().optional(),
     additional: z
@@ -83,7 +83,7 @@ export default function EmailBroadcastForm() {
     defaultValues: {
       subject: '',
       content: '',
-      scope: 'all',
+      scope: 1, // ScopeAll
       register_start_time: '',
       register_end_time: '',
       additional: '',
@@ -99,7 +99,7 @@ export default function EmailBroadcastForm() {
 
     try {
       // Call API to get actual recipient count
-      const scope = formData.scope || 'all';
+      const scope = formData.scope || 1; // Default to ScopeAll
 
       // Convert dates to timestamps if they exist
       let register_start_time: number = 0;
@@ -153,8 +153,10 @@ export default function EmailBroadcastForm() {
   // Listen to form changes
   const watchedValues = form.watch();
 
-  // Use useEffect to respond to form changes
+  // Use useEffect to respond to form changes, but only when sheet is open
   useEffect(() => {
+    if (!open) return; // Only calculate when sheet is open
+
     const debounceTimer = setTimeout(() => {
       calculateRecipients();
     }, 500); // Add debounce to avoid too frequent API calls
@@ -162,6 +164,7 @@ export default function EmailBroadcastForm() {
     return () => clearTimeout(debounceTimer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
+    open, // Add open dependency
     watchedValues.scope,
     watchedValues.register_start_time,
     watchedValues.register_end_time,
@@ -286,7 +289,7 @@ export default function EmailBroadcastForm() {
                       <FormItem>
                         <FormLabel>{t('content')}</FormLabel>
                         <FormControl>
-                          <MarkdownEditor
+                          <HTMLEditor
                             value={field.value}
                             onChange={(value) => {
                               form.setValue(field.name, value || '');
@@ -310,20 +313,27 @@ export default function EmailBroadcastForm() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>{t('sendScope')}</FormLabel>
-                          <Select onValueChange={field.onChange} value={field.value || 'all'}>
+                          <Select
+                            onValueChange={(value) => field.onChange(parseInt(value))}
+                            value={field.value?.toString() || '1'}
+                          >
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder={t('selectSendScope')} />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value='all'>{t('allUsers')}</SelectItem>
-                              <SelectItem value='active'>{t('subscribedUsersOnly')}</SelectItem>
-                              <SelectItem value='expired'>
+                              <SelectItem value='1'>{t('allUsers')}</SelectItem> {/* ScopeAll */}
+                              <SelectItem value='2'>{t('subscribedUsersOnly')}</SelectItem>{' '}
+                              {/* ScopeActive */}
+                              <SelectItem value='3'>
                                 {t('expiredSubscriptionUsersOnly')}
-                              </SelectItem>
-                              <SelectItem value='none'>{t('noSubscriptionUsersOnly')}</SelectItem>
-                              <SelectItem value='skip'>{t('specificUsersOnly')}</SelectItem>
+                              </SelectItem>{' '}
+                              {/* ScopeExpired */}
+                              <SelectItem value='4'>{t('noSubscriptionUsersOnly')}</SelectItem>{' '}
+                              {/* ScopeNone */}
+                              <SelectItem value='5'>{t('specificUsersOnly')}</SelectItem>{' '}
+                              {/* ScopeSkip */}
                             </SelectContent>
                           </Select>
                           <FormDescription>{t('sendScopeDescription')}</FormDescription>
@@ -356,7 +366,7 @@ export default function EmailBroadcastForm() {
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
-                              disabled={form.watch('scope') === 'skip'}
+                              disabled={form.watch('scope') === 5} // ScopeSkip
                               value={field.value}
                               onValueChange={field.onChange}
                             />
@@ -374,7 +384,7 @@ export default function EmailBroadcastForm() {
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
-                              disabled={form.watch('scope') === 'skip'}
+                              disabled={form.watch('scope') === 5} // ScopeSkip
                               value={field.value}
                               onValueChange={field.onChange}
                             />

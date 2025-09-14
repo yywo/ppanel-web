@@ -13,10 +13,10 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 const FormSchema = z.object({
-  enable_balance_notify: z.boolean().default(false),
-  enable_login_notify: z.boolean().default(false),
-  enable_subscribe_notify: z.boolean().default(false),
-  enable_trade_notify: z.boolean().default(false),
+  enable_balance_notify: z.boolean(),
+  enable_login_notify: z.boolean(),
+  enable_subscribe_notify: z.boolean(),
+  enable_trade_notify: z.boolean(),
 });
 
 export default function NotifySettings() {

@@ -33,6 +33,16 @@
     "saveSuccess": "Salvo com Sucesso",
     "title": "Configurações de Convite"
   },
+  "logCleanup": {
+    "autoClear": "Ativar Limpeza Automática",
+    "autoClearDescription": "Quando ativado, o sistema limpará automaticamente os registros de log expirados",
+    "clearDays": "Dias de Retenção",
+    "clearDaysDescription": "Número de dias para reter logs; logs mais antigos que isso serão limpos",
+    "clearDaysPlaceholder": "Insira os dias de retenção",
+    "description": "Configure regras de limpeza automática de logs e período de retenção",
+    "title": "Configurações de Limpeza de Logs"
+  },
+  "logSettings": "Configurações de Logs",
   "privacyPolicy": {
     "description": "Edite e gerencie o conteúdo da política de privacidade",
     "title": "Política de Privacidade"

@@ -1,7 +1,6 @@
 'use client';
 
-import { getNodeGroupList, getNodeList } from '@/services/admin/server';
-import { getSubscribeGroupList } from '@/services/admin/subscribe';
+import { filterNodeList, queryNodeTag } from '@/services/admin/server';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -62,8 +61,9 @@ const defaultValues = {
   traffic: 0,
   quota: 0,
   discount: [],
-  server_group: [],
-  server: [],
+  language: '',
+  node_tags: [],
+  nodes: [],
   unit_time: 'Month',
   deduction_ratio: 0,
   purchase_with_discount: false,
@@ -87,7 +87,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     name: z.string(),
     description: z.string().optional(),
     unit_price: z.number(),
-    unit_time: z.string().default('Month'),
+    unit_time: z.string(),
     replacement: z.number().optional(),
     discount: z
       .array(
@@ -97,21 +97,21 @@ export default function SubscribeForm<T extends Record<string, any>>({
         }),
       )
       .optional(),
-    inventory: z.number().optional().default(-1),
-    speed_limit: z.number().optional().default(0),
-    device_limit: z.number().optional().default(0),
-    traffic: z.number().optional().default(0),
-    quota: z.number().optional().default(0),
-    group_id: z.number().optional().nullish(),
-    server_group: z.array(z.number()).optional().default([]),
-    server: z.array(z.number()).optional().default([]),
-    deduction_ratio: z.number().optional().default(0),
-    allow_deduction: z.boolean().optional().default(false),
-    reset_cycle: z.number().optional().default(0),
-    renewal_reset: z.boolean().optional().default(false),
+    inventory: z.number().optional(),
+    speed_limit: z.number().optional(),
+    device_limit: z.number().optional(),
+    traffic: z.number().optional(),
+    quota: z.number().optional(),
+    language: z.string().optional(),
+    node_tags: z.array(z.string()).optional(),
+    nodes: z.array(z.number()).optional(),
+    deduction_ratio: z.number().optional(),
+    allow_deduction: z.boolean().optional(),
+    reset_cycle: z.number().optional(),
+    renewal_reset: z.boolean().optional(),
   });
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: assign(
       defaultValues,
@@ -203,7 +203,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
         });
 
         if (hasChanges) {
-          form.setValue(fieldName, calculatedValues, { shouldDirty: true });
+          form.setValue(fieldName as any, calculatedValues, { shouldDirty: true });
         }
       }, 300);
     },
@@ -229,35 +229,37 @@ export default function SubscribeForm<T extends Record<string, any>>({
     if (bool) setOpen(false);
   }
 
-  const { data: group } = useQuery({
-    queryKey: ['getSubscribeGroupList'],
+  const { data: nodes } = useQuery({
+    queryKey: ['filterNodeListAll'],
     queryFn: async () => {
-      const { data } = await getSubscribeGroupList();
-      return data.data?.list as API.SubscribeGroup[];
+      const { data } = await filterNodeList({ page: 1, size: 999999999 });
+      return (data.data?.list || []) as API.Node[];
     },
   });
 
-  const { data: server } = useQuery({
-    queryKey: ['getNodeList', 'all'],
+  const { data: allTagsData } = useQuery({
+    queryKey: ['queryNodeTag'],
     queryFn: async () => {
-      const { data } = await getNodeList({
-        page: 1,
-        size: 9999,
-      });
-      return data.data?.list;
+      const { data } = await queryNodeTag();
+      return data?.data?.tags || [];
     },
   });
 
-  const { data: server_groups } = useQuery({
-    queryKey: ['getNodeGroupList'],
-    queryFn: async () => {
-      const { data } = await getNodeGroupList();
-      return (data.data?.list || []) as API.ServerGroup[];
-    },
-  });
+  const nodeExtractedTags = Array.from(
+    new Set(
+      ((nodes as API.Node[]) || [])
+        .flatMap((n) => (Array.isArray(n.tags) ? n.tags : []))
+        .filter(Boolean),
+    ),
+  ) as string[];
+
+  const allAvailableTags = (allTagsData as string[]) || [];
+
+  const tagGroups = Array.from(new Set([...allAvailableTags, ...nodeExtractedTags])).filter(
+    Boolean,
+  );
 
   const unit_time = form.watch('unit_time');
-  const unit_price = form.watch('unit_price');
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -275,7 +277,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
         </SheetHeader>
-        <ScrollArea className='h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))]'>
+        <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))] px-6'>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmit)} className='pt-4'>
               <Tabs defaultValue='basic' className='w-full'>
@@ -290,7 +292,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                   </TabsTrigger>
                   <TabsTrigger value='servers' className='flex items-center gap-2'>
                     <Server className='h-4 w-4' />
-                    {t('form.servers')}
+                    {t('form.nodes')}
                   </TabsTrigger>
                 </TabsList>
 
@@ -317,21 +319,20 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       />
                       <FormField
                         control={form.control}
-                        name='group_id'
+                        name='language'
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>{t('form.groupId')}</FormLabel>
+                            <FormLabel>
+                              {t('form.language')}
+                              <span className='text-muted-foreground ml-1 text-[0.8rem]'>
+                                {t('form.languageDescription')}
+                              </span>
+                            </FormLabel>
                             <FormControl>
-                              <Combobox<number, false>
-                                placeholder={t('form.selectSubscribeGroup')}
+                              <EnhancedInput
                                 {...field}
-                                onChange={(value) => {
-                                  form.setValue(field.name, value || 0);
-                                }}
-                                options={group?.map((item) => ({
-                                  label: item.name,
-                                  value: item.id,
-                                }))}
+                                placeholder={t('form.languagePlaceholder')}
+                                onValueChange={(v) => form.setValue(field.name, v as string)}
                               />
                             </FormControl>
                             <FormMessage />
@@ -669,7 +670,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   min: 0,
                                   step: 0.01,
                                   formatInput: (value) => unitConversion('centsToDollars', value),
-                                  formatOutput: (value) => unitConversion('dollarsToCents', value),
+                                  formatOutput: (value) =>
+                                    unitConversion('dollarsToCents', value).toString(),
                                 },
                               ]}
                               value={field.value}
@@ -795,53 +797,61 @@ export default function SubscribeForm<T extends Record<string, any>>({
                   <div className='space-y-6'>
                     <FormField
                       control={form.control}
-                      name='server_group'
+                      name='node_tags'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.serverGroup')}</FormLabel>
+                          <FormLabel>{t('form.nodeGroup')}</FormLabel>
                           <FormControl>
                             <Accordion type='single' collapsible className='w-full'>
-                              {server_groups?.map((group: API.ServerGroup) => {
+                              {tagGroups.map((tag) => {
                                 const value = field.value || [];
+                                const tagId = tag;
+                                const nodesWithTag =
+                                  (nodes as API.Node[])?.filter((n) =>
+                                    (n.tags || []).includes(tag),
+                                  ) || [];
 
                                 return (
-                                  <AccordionItem key={group.id} value={String(group.id)}>
+                                  <AccordionItem key={tag} value={String(tag)}>
                                     <AccordionTrigger>
                                       <div className='flex items-center gap-2'>
                                         <Checkbox
-                                          checked={value.includes(group.id!)}
+                                          checked={value.includes(tagId as any)}
                                           onCheckedChange={(checked) => {
                                             return checked
-                                              ? form.setValue(field.name, [...value, group.id])
+                                              ? form.setValue(field.name, [...value, tagId] as any)
                                               : form.setValue(
                                                   field.name,
-                                                  value.filter(
-                                                    (value: number) => value !== group.id,
-                                                  ),
+                                                  value.filter((v: any) => v !== tagId),
                                                 );
                                           }}
                                         />
-                                        <Label>{group.name}</Label>
+                                        <Label>
+                                          {tag}
+                                          <span className='text-muted-foreground ml-2 text-xs'>
+                                            ({nodesWithTag.length})
+                                          </span>
+                                        </Label>
                                       </div>
                                     </AccordionTrigger>
                                     <AccordionContent>
-                                      <ul className='list-disc [&>li]:mt-2'>
-                                        {server
-                                          ?.filter(
-                                            (server: API.Server) => server.group_id === group.id,
-                                          )
-                                          ?.map((node: API.Server) => {
-                                            return (
-                                              <li
-                                                key={node.id}
-                                                className='flex items-center justify-between *:flex-1'
-                                              >
-                                                <span>{node.name}</span>
-                                                <span>{node.server_addr}</span>
-                                                <span className='text-right'>{node.protocol}</span>
-                                              </li>
-                                            );
-                                          })}
+                                      <ul className='space-y-1'>
+                                        {(nodes as API.Node[])
+                                          ?.filter((n) => (n.tags || []).includes(tag))
+                                          ?.map((node) => (
+                                            <li
+                                              key={node.id}
+                                              className='flex items-center justify-between gap-3'
+                                            >
+                                              <span className='flex-1'>{node.name}</span>
+                                              <span className='flex-1'>
+                                                {node.address}:{node.port}
+                                              </span>
+                                              <span className='flex-1 text-right'>
+                                                {node.protocol}
+                                              </span>
+                                            </li>
+                                          ))}
                                       </ul>
                                     </AccordionContent>
                                   </AccordionItem>
@@ -856,15 +866,15 @@ export default function SubscribeForm<T extends Record<string, any>>({
 
                     <FormField
                       control={form.control}
-                      name='server'
+                      name='nodes'
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>{t('form.server')}</FormLabel>
+                          <FormLabel>{t('form.node')}</FormLabel>
                           <FormControl>
                             <div className='flex flex-col gap-2'>
-                              {server
-                                ?.filter((item: API.Server) => !item.group_id)
-                                ?.map((item: API.Server) => {
+                              {(nodes as API.Node[])
+                                ?.filter((item) => (item.tags || []).length === 0)
+                                ?.map((item) => {
                                   const value = field.value || [];
 
                                   return (
@@ -880,10 +890,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                               );
                                         }}
                                       />
-                                      <Label className='flex w-full items-center justify-between *:flex-1'>
-                                        <span>{item.name}</span>
-                                        <span>{item.server_addr}</span>
-                                        <span className='text-right'>{item.protocol}</span>
+                                      <Label className='flex w-full items-center justify-between gap-3'>
+                                        <span className='flex-1'>{item.name}</span>
+                                        <span className='flex-1'>
+                                          {item.address}:{item.port}
+                                        </span>
+                                        <span className='flex-1 text-right'>{item.protocol}</span>
                                       </Label>
                                     </div>
                                   );
@@ -916,7 +928,8 @@ export default function SubscribeForm<T extends Record<string, any>>({
               const keys = Object.keys(errors);
               for (const key of keys) {
                 const formattedKey = key.replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
-                toast.error(`${t(`form.${formattedKey}`)} is ${errors[key]?.message}`);
+                const error = (errors as any)[key];
+                toast.error(`${t(`form.${formattedKey}`)} is ${error?.message}`);
                 return false;
               }
             })}

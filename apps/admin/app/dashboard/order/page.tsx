@@ -2,23 +2,25 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { useRef } from 'react';
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import { getOrderList, updateOrderStatus } from '@/services/admin/order';
 import { getSubscribeList } from '@/services/admin/subscribe';
+import { formatDate } from '@/utils/common';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '@workspace/ui/components/hover-card';
 import { Separator } from '@workspace/ui/components/separator';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { cn } from '@workspace/ui/lib/utils';
-import { formatDate } from '@workspace/ui/utils';
 import { UserDetail } from '../user/user-detail';
 
-export default function Page(props: any) {
+export default function Page() {
   const t = useTranslations('order');
+  const sp = useSearchParams();
 
   const statusOptions = [
     { value: 1, label: t('status.1'), className: 'bg-orange-500' },
@@ -35,15 +37,23 @@ export default function Page(props: any) {
     queryFn: async () => {
       const { data } = await getSubscribeList({
         page: 1,
-        size: 9999,
+        size: 999999999,
       });
       return data.data?.list as API.SubscribeGroup[];
     },
   });
 
+  const initialFilters = {
+    search: sp.get('search') || undefined,
+    status: sp.get('status') || undefined,
+    subscribe_id: sp.get('subscribe_id') || undefined,
+    user_id: sp.get('user_id') || undefined,
+  };
+
   return (
     <ProTable<API.Order, any>
       action={ref}
+      initialFilters={initialFilters}
       columns={[
         {
           accessorKey: 'order_no',
@@ -146,7 +156,7 @@ export default function Page(props: any) {
             if ([1, 3, 4].includes(row.getValue('status'))) {
               return (
                 <Combobox<number, false>
-                  placeholder='状态'
+                  placeholder={t('status.0')}
                   value={row.original.status}
                   onChange={async (value) => {
                     await updateOrderStatus({
@@ -182,19 +192,14 @@ export default function Page(props: any) {
           })),
         },
         { key: 'search' },
-      ].concat(
-        props.userId
-          ? []
-          : [
-              {
-                key: 'user_id',
-                placeholder: `${t('user')} ID`,
-                options: undefined,
-              },
-            ],
-      )}
+        {
+          key: 'user_id',
+          placeholder: `${t('user')} ID`,
+          options: undefined,
+        },
+      ]}
       request={async (pagination, filter) => {
-        const { data } = await getOrderList({ ...pagination, ...filter, user_id: props.userId });
+        const { data } = await getOrderList({ ...pagination, ...filter });
         return {
           list: data.data?.list || [],
           total: data.data?.total || 0,

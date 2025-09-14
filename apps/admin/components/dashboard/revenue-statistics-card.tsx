@@ -36,6 +36,7 @@ import { Empty } from '../empty';
 
 export function RevenueStatisticsCard() {
   const t = useTranslations('index');
+  const locale = useLocale();
 
   const IncomeStatisticsConfig = {
     new_purchase: {
@@ -46,9 +47,12 @@ export function RevenueStatisticsCard() {
       label: t('repurchase'),
       color: 'hsl(var(--chart-2))',
     },
+    total: {
+      label: t('totalIncome'),
+      color: 'hsl(var(--chart-3))',
+    },
   };
 
-  const locale = useLocale();
   const { data: RevenueStatistics } = useQuery({
     queryKey: ['queryRevenueStatistics'],
     queryFn: async () => {
@@ -175,6 +179,10 @@ export function RevenueStatisticsCard() {
                       date: item.date,
                       new_purchase: unitConversion('centsToDollars', item.new_order_amount),
                       repurchase: unitConversion('centsToDollars', item.renewal_order_amount),
+                      total: unitConversion(
+                        'centsToDollars',
+                        item.new_order_amount + item.renewal_order_amount,
+                      ),
                     })) || []
                   }
                 >
@@ -182,18 +190,60 @@ export function RevenueStatisticsCard() {
                   <XAxis
                     dataKey='date'
                     tickLine={false}
-                    tickMargin={10}
                     axisLine={false}
+                    tickMargin={10}
                     tickFormatter={(value) => {
-                      return new Date(value).toLocaleDateString(locale, {
+                      const [year, month, day] = value.split('-');
+                      return new Date(year, month - 1, day).toLocaleDateString(locale, {
                         month: 'short',
                         day: 'numeric',
                       });
                     }}
                   />
-                  <Bar dataKey='new_purchase' fill='var(--color-new_purchase)' radius={4} />
-                  <Bar dataKey='repurchase' fill='var(--color-repurchase)' radius={4} />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+                  <Bar
+                    dataKey='new_purchase'
+                    fill='var(--color-new_purchase)'
+                    radius={[0, 0, 4, 4]}
+                    stackId='a'
+                  />
+                  <Bar
+                    dataKey='repurchase'
+                    fill='var(--color-repurchase)'
+                    radius={[4, 4, 0, 0]}
+                    stackId='a'
+                  />
+                  <ChartTooltip
+                    content={
+                      <ChartTooltipContent
+                        formatter={(value, name, item, index) => (
+                          <>
+                            <div
+                              className='h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[--color-bg]'
+                              style={
+                                {
+                                  '--color-bg': `var(--color-${name})`,
+                                } as React.CSSProperties
+                              }
+                            />
+                            {IncomeStatisticsConfig[name as keyof typeof IncomeStatisticsConfig]
+                              ?.label || name}
+                            <div className='text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums'>
+                              {value}
+                            </div>
+                            {index === 1 && (
+                              <div className='text-foreground flex basis-full items-center border-t pt-1.5 text-xs font-medium'>
+                                {t('totalIncome')}
+                                <div className='text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums'>
+                                  {item.payload.total}
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      />
+                    }
+                    cursor={false}
+                  />
                   <ChartLegend content={<ChartLegendContent />} />
                 </BarChart>
               </ChartContainer>
@@ -247,6 +297,10 @@ export function RevenueStatisticsCard() {
                       date: item.date,
                       new_purchase: unitConversion('centsToDollars', item.new_order_amount),
                       repurchase: unitConversion('centsToDollars', item.renewal_order_amount),
+                      total: unitConversion(
+                        'centsToDollars',
+                        item.new_order_amount + item.renewal_order_amount,
+                      ),
                     })) || []
                   }
                   margin={{
@@ -259,14 +313,45 @@ export function RevenueStatisticsCard() {
                     dataKey='date'
                     tickLine={false}
                     axisLine={false}
-                    tickMargin={8}
                     tickFormatter={(value) => {
-                      return new Date(value).toLocaleDateString(locale, {
+                      const [year, month] = value.split('-');
+                      return new Date(year, month - 1).toLocaleDateString(locale, {
                         month: 'short',
                       });
                     }}
                   />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent indicator='dot' />} />
+                  <ChartTooltip
+                    cursor={false}
+                    content={
+                      <ChartTooltipContent
+                        formatter={(value, name, item, index) => (
+                          <>
+                            <div
+                              className='h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[--color-bg]'
+                              style={
+                                {
+                                  '--color-bg': `var(--color-${name})`,
+                                } as React.CSSProperties
+                              }
+                            />
+                            {IncomeStatisticsConfig[name as keyof typeof IncomeStatisticsConfig]
+                              ?.label || name}
+                            <div className='text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums'>
+                              {value}
+                            </div>
+                            {index === 1 && (
+                              <div className='text-foreground flex basis-full items-center border-t pt-1.5 text-xs font-medium'>
+                                {t('totalIncome')}
+                                <div className='text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums'>
+                                  {item.payload.total}
+                                </div>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      />
+                    }
+                  />
                   <Area
                     dataKey='new_purchase'
                     type='natural'

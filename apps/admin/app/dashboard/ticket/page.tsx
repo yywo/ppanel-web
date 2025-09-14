@@ -7,12 +7,12 @@ import {
   getTicketList,
   updateTicketStatus,
 } from '@/services/admin/ticket';
+import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Drawer,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
@@ -23,9 +23,7 @@ import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
-import { formatDate } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
-import NextImage from 'next/legacy/image';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { UserDetail } from '../user/user-detail';
@@ -130,7 +128,7 @@ export default function Page() {
           render(row) {
             if (row.status !== 4) {
               return [
-                <Button key='reply' size='sm' onClick={() => setTicketId(row.id)}>
+                <Button key='reply' onClick={() => setTicketId(row.id)}>
                   {t('reply')}
                 </Button>,
                 <ConfirmButton
@@ -166,13 +164,25 @@ export default function Page() {
           if (!open) setTicketId(null);
         }}
       >
-        <DrawerContent className='container mx-auto h-screen'>
+        <DrawerContent className='container mx-auto h-screen *:select-text'>
           <DrawerHeader className='border-b text-left'>
             <DrawerTitle>{ticket?.title}</DrawerTitle>
-            <DrawerDescription>{ticket?.description}</DrawerDescription>
           </DrawerHeader>
           <ScrollArea className='h-full overflow-hidden' ref={scrollRef}>
             <div className='flex h-full flex-col gap-4 p-4'>
+              {/* 显示工单描述作为第一条用户消息 */}
+              {ticket?.description && (
+                <div className='flex items-center gap-4'>
+                  <div className='flex flex-col gap-1'>
+                    <p className='text-muted-foreground text-sm'>{formatDate(ticket.created_at)}</p>
+                    <p className='bg-accent w-fit rounded-lg p-2 font-medium'>
+                      {ticket.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* 显示后续跟进消息 */}
               {ticket?.follow?.map((item) => (
                 <div
                   key={item.id}
@@ -193,7 +203,8 @@ export default function Page() {
                     >
                       {item.type === 1 && item.content}
                       {item.type === 2 && (
-                        <NextImage
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
                           src={item.content!}
                           width={300}
                           height={300}

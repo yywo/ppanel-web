@@ -927,10 +927,8 @@ export function GoTemplateEditor({ schema, enableSprig = true, ...props }: GoTem
               let fieldPath = '';
 
               if (isVarDot && varDotMatch) {
-                // 处理变量后跟点的情况 ($n.)
                 const variableName = varDotMatch[1];
                 if (variableName === rangeVariable && activeRangeField) {
-                  // 使用activeRangeField作为字段路径
                   fieldPath = activeRangeField;
                 }
               } else if (dotMatches && dotMatches[1]) {
