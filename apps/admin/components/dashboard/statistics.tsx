@@ -86,7 +86,7 @@ export default function Statistics() {
             value: ServerTotal?.online_users || 0,
             subtitle: t('currentlyOnline'),
             icon: 'uil:users-alt',
-            href: '/dashboard/users',
+            href: '/dashboard/user',
             color: 'text-blue-600 dark:text-blue-400',
             iconBg: 'bg-blue-100 dark:bg-blue-900/30',
           },
