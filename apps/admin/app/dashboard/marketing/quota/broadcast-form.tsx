@@ -147,11 +147,11 @@ export default function QuotaBroadcastForm() {
       let end_time: number = 0;
 
       if (data.start_time) {
-        start_time = Math.floor(new Date(data.start_time).getTime() / 1000);
+        start_time = Math.floor(new Date(data.start_time).getTime());
       }
 
       if (data.end_time) {
-        end_time = Math.floor(new Date(data.end_time).getTime() / 1000);
+        end_time = Math.floor(new Date(data.end_time).getTime());
       }
 
       await createQuotaTask({
