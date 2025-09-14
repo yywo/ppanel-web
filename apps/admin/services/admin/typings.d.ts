@@ -1519,6 +1519,18 @@ declare namespace API {
     reduce_rtt?: boolean;
     udp_relay_mode?: string;
     congestion_controller?: string;
+    /** obfs, v2ray-plugin, simple-obfs */
+    plugin?: string;
+    /** plugin options, eg: obfs=http;obfs-host=www.bing.com */
+    plugin_options?: string;
+    /** mux, eg: off/low/medium/high */
+    multiplex?: string;
+    /** padding scheme */
+    padding_scheme?: string;
+    /** upload speed limit */
+    up_mbps?: number;
+    /** download speed limit */
+    down_mbps?: number;
   };
 
   type PubilcRegisterConfig = {

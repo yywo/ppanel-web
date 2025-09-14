@@ -501,6 +501,46 @@ declare namespace API {
     privacy_policy: string;
   };
 
+  type Protocol = {
+    type: string;
+    port: number;
+    security?: string;
+    sni?: string;
+    allow_insecure?: boolean;
+    fingerprint?: string;
+    reality_server_addr?: string;
+    reality_server_port?: number;
+    reality_private_key?: string;
+    reality_public_key?: string;
+    reality_short_id?: string;
+    transport?: string;
+    host?: string;
+    path?: string;
+    service_name?: string;
+    cipher?: string;
+    server_key?: string;
+    flow?: string;
+    hop_ports?: string;
+    hop_interval?: number;
+    obfs_password?: string;
+    disable_sni?: boolean;
+    reduce_rtt?: boolean;
+    udp_relay_mode?: string;
+    congestion_controller?: string;
+    /** obfs, v2ray-plugin, simple-obfs */
+    plugin?: string;
+    /** plugin options, eg: obfs=http;obfs-host=www.bing.com */
+    plugin_options?: string;
+    /** mux, eg: off/low/medium/high */
+    multiplex?: string;
+    /** padding scheme */
+    padding_scheme?: string;
+    /** upload speed limit */
+    up_mbps?: number;
+    /** download speed limit */
+    down_mbps?: number;
+  };
+
   type PubilcRegisterConfig = {
     stop_register: boolean;
     enable_ip_register_limit: boolean;

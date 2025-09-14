@@ -60,8 +60,8 @@ export const LABELS = {
   'middle': 'Middle',
   'high': 'High',
   // ss plugins
-  'obfs': 'Simple Obfs',
   'v2ray-plugin': 'V2Ray Plugin',
+  'simple-obfs': 'Simple Obfs',
 } as const;
 
 // Flat arrays for enum-like sets
@@ -75,7 +75,7 @@ export const SS_CIPHERS = [
   '2022-blake3-chacha20-poly1305',
 ] as const;
 
-export const SS_PLUGINS = ['none', 'obfs', 'v2ray-plugin'] as const;
+export const SS_PLUGINS = ['none', 'simple-obfs', 'v2ray-plugin'] as const;
 
 export const TRANSPORTS = {
   vmess: ['tcp', 'websocket', 'grpc'] as const,
@@ -130,7 +130,7 @@ const ss = z.object({
   cipher: z.enum(SS_CIPHERS as any).nullish(),
   server_key: nullableString,
   plugin: z.enum(SS_PLUGINS as any).nullish(),
-  plugin_opts: nullableString,
+  plugin_options: nullableString,
 });
 
 const vmess = z.object({
@@ -399,7 +399,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       label: 'plugin_opts',
       placeholder: (t: (key: string) => string, p: any) => {
         switch (p.plugin) {
-          case 'obfs':
+          case 'simple-obfs':
             return 'obfs=http;obfs-host=www.bing.com;path=/';
           case 'v2ray-plugin':
             return 'WebSocket: mode=websocket;host=mydomain.me;path=/;tls=true\n\nQUIC: mode=quic;host=mydomain.me';
@@ -408,7 +408,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
         }
       },
       group: 'plugin',
-      condition: (p) => ['obfs', 'v2ray-plugin'].includes(p.plugin),
+      condition: (p) => ['simple-obfs', 'v2ray-plugin'].includes(p.plugin),
     },
   ],
   vmess: [
