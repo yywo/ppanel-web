@@ -36,6 +36,7 @@ import {
 import { Switch } from '@workspace/ui/components/switch';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
+import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { uid } from 'radash';
 import { useEffect, useState } from 'react';
@@ -509,27 +510,18 @@ export default function ServerForm(props: {
                     <AccordionItem key={type} value={type} className='mb-2 rounded-lg border'>
                       <AccordionTrigger className='px-4 py-3 hover:no-underline'>
                         <div className='flex w-full items-center justify-between'>
-                          <div className='flex items-center'>
-                            <div
-                              className={`mr-3 flex size-9 items-center justify-center rounded-md ${
-                                isEnabled
-                                  ? 'bg-green-100 text-green-600 dark:border-green-800 dark:bg-green-950 dark:text-green-400'
-                                  : 'bg-muted text-muted-foreground'
-                              }`}
+                          <div className='flex flex-col items-start'>
+                            <div className='flex items-center gap-2'>
+                              <span className='font-medium capitalize'>{type}</span>
+                            </div>
+                            <span
+                              className={cn(
+                                'text-muted-foreground text-xs',
+                                isEnabled && 'text-green-500',
+                              )}
                             >
-                              <Icon
-                                icon={isEnabled ? 'mdi:check' : 'mdi:minus'}
-                                className='size-5'
-                              />
-                            </div>
-                            <div className='flex flex-col items-start'>
-                              <div className='flex items-center gap-2'>
-                                <span className='font-medium capitalize'>{type}</span>
-                              </div>
-                              <span className='text-muted-foreground text-xs'>
-                                {isEnabled ? t('enabled') : t('disabled')}
-                              </span>
-                            </div>
+                              {isEnabled ? t('enabled') : t('disabled')}
+                            </span>
                           </div>
                           <div className='mr-2 flex items-center gap-1'>
                             {current.transport && (
