@@ -39,7 +39,7 @@ export function UserNav() {
             <span className='max-w-[40px] truncate text-sm sm:max-w-[100px]'>
               {user?.auth_methods?.[0]?.auth_identifier.split('@')[0]}
             </span>
-            <Icon icon='lucide:chevron-down' className='text-muted-foreground size-4' />
+            <Icon icon='mdi:chevron-down' className='text-muted-foreground size-4' />
           </div>
         </DropdownMenuTrigger>
         <DropdownMenuContent forceMount align='end' className='w-64'>

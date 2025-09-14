@@ -208,7 +208,7 @@ export function SidebarLeft({ ...props }: React.ComponentProps<typeof Sidebar>) 
                           <span className='truncate text-sm'>{t(nav.title)}</span>
                         </span>
                         <Icon
-                          icon='lucide:chevron-down'
+                          icon='mdi:chevron-down'
                           className={`ml-2 size-4 transition-transform ${isOpen ? '' : '-rotate-90'}`}
                         />
                       </SidebarMenuButton>
