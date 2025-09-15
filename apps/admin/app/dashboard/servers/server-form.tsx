@@ -38,7 +38,6 @@ import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
-import { uid } from 'radash';
 import { useEffect, useState } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { toast } from 'sonner';
@@ -55,12 +54,14 @@ import {
 function DynamicField({
   field,
   control,
+  form,
   protocolIndex,
   protocolData,
   t,
 }: {
   field: FieldConfig;
   control: any;
+  form: any;
   protocolIndex: number;
   protocolData: any;
   t: (key: string) => string;
@@ -97,17 +98,29 @@ function DynamicField({
                   }
                   onValueChange={(v) => fieldProps.onChange(v)}
                   suffix={
-                    field.password ? (
+                    field.generate ? (
                       <Button
                         type='button'
                         variant='ghost'
                         onClick={() => {
-                          const length = field.password || 16;
-                          const result = uid(length).toLowerCase();
-                          fieldProps.onChange(result);
+                          const result = field.generate!.function();
+                          if (typeof result === 'string') {
+                            fieldProps.onChange(result);
+                          } else if (field.generate!.updateFields) {
+                            Object.entries(field.generate!.updateFields).forEach(
+                              ([fieldName, resultKey]) => {
+                                const fullFieldName = `protocols.${protocolIndex}.${fieldName}`;
+                                form.setValue(fullFieldName, (result as any)[resultKey]);
+                              },
+                            );
+                          } else {
+                            if (result.privateKey) {
+                              fieldProps.onChange(result.privateKey);
+                            }
+                          }
                         }}
                       >
-                        <Icon icon='mdi:refresh' className='h-4 w-4' />
+                        <Icon icon='mdi:key' className='h-4 w-4' />
                       </Button>
                     ) : (
                       field.suffix
@@ -225,7 +238,7 @@ function DynamicField({
                     field.placeholder
                       ? typeof field.placeholder === 'function'
                         ? field.placeholder(t, protocolData)
-                        : t(field.placeholder)
+                        : field.placeholder
                       : undefined
                   }
                   onChange={(e) => fieldProps.onChange(e.target.value)}
@@ -246,6 +259,7 @@ function renderFieldsByGroup(
   fields: FieldConfig[],
   group: string,
   control: any,
+  form: any,
   protocolIndex: number,
   protocolData: any,
   t: (key: string) => string,
@@ -260,6 +274,7 @@ function renderFieldsByGroup(
           key={field.name}
           field={field}
           control={control}
+          form={form}
           protocolIndex={protocolIndex}
           protocolData={protocolData}
           t={t}
@@ -274,6 +289,7 @@ function renderGroupCard(
   fields: FieldConfig[],
   group: string,
   control: any,
+  form: any,
   protocolIndex: number,
   protocolData: any,
   t: (key: string) => string,
@@ -294,7 +310,7 @@ function renderGroupCard(
           {t(title)}
         </legend>
         <div className='p-4 pt-2'>
-          {renderFieldsByGroup(fields, group, control, protocolIndex, protocolData, t)}
+          {renderFieldsByGroup(fields, group, control, form, protocolIndex, protocolData, t)}
         </div>
       </fieldset>
     </div>
@@ -541,19 +557,48 @@ export default function ServerForm(props: {
                       </AccordionTrigger>
                       <AccordionContent className='px-4 pb-4 pt-0'>
                         <div className='-mx-4 space-y-4 rounded-b-lg border-t px-4 pt-4'>
-                          {renderGroupCard('basic', fields, 'basic', control, i, current, t)}
-                          {renderGroupCard('plugin', fields, 'plugin', control, i, current, t)}
+                          {renderGroupCard('basic', fields, 'basic', control, form, i, current, t)}
+                          {renderGroupCard('obfs', fields, 'obfs', control, form, i, current, t)}
                           {renderGroupCard(
                             'transport',
                             fields,
                             'transport',
                             control,
+                            form,
                             i,
                             current,
                             t,
                           )}
-                          {renderGroupCard('security', fields, 'security', control, i, current, t)}
-                          {renderGroupCard('reality', fields, 'reality', control, i, current, t)}
+                          {renderGroupCard(
+                            'security',
+                            fields,
+                            'security',
+                            control,
+                            form,
+                            i,
+                            current,
+                            t,
+                          )}
+                          {renderGroupCard(
+                            'reality',
+                            fields,
+                            'reality',
+                            control,
+                            form,
+                            i,
+                            current,
+                            t,
+                          )}
+                          {renderGroupCard(
+                            'encryption',
+                            fields,
+                            'encryption',
+                            control,
+                            form,
+                            i,
+                            current,
+                            t,
+                          )}
                         </div>
                       </AccordionContent>
                     </AccordionItem>
