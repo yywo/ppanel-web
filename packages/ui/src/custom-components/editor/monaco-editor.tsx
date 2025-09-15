@@ -112,9 +112,9 @@ export function MonacoEditor({
             </div>
           </div>
 
-          <div className={cn('relative flex flex-1 overflow-hidden')}>
+          <div className={cn('relative flex flex-1')}>
             <div
-              className={cn('flex-1 overflow-hidden p-4 invert dark:invert-0', {
+              className={cn('flex-1 overflow-auto p-4 invert dark:invert-0', {
                 'w-1/2': isPreviewVisible,
               })}
             >
@@ -142,10 +142,11 @@ export function MonacoEditor({
                   scrollBeyondLastLine: false,
                   scrollbar: {
                     useShadows: false,
-                    vertical: 'hidden',
+                    vertical: 'auto',
                   },
                   tabSize: 2,
                   wordWrap: 'off',
+                  readOnly: !onChange,
                 }}
                 theme='transparentTheme'
                 beforeMount={(monaco: Monaco) => {
