@@ -17,6 +17,8 @@
   "confirm": "確認",
   "confirmDelete": "削除してもよろしいですか？",
   "confirmOffline": "オフラインを確認",
+  "copySubscription": "サブスクリプションをコピー",
+  "copySuccess": "コピーが成功しました",
   "create": "作成",
   "createSubscription": "サブスクリプションを作成",
   "createSuccess": "作成成功",

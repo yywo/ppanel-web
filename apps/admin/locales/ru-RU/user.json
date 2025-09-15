@@ -17,6 +17,8 @@
   "confirm": "Подтвердить",
   "confirmDelete": "Вы уверены, что хотите удалить?",
   "confirmOffline": "Подтвердить офлайн",
+  "copySubscription": "Копировать подписку",
+  "copySuccess": "Копирование успешно",
   "create": "Создать",
   "createSubscription": "Создать подписку",
   "createSuccess": "Создание успешно",

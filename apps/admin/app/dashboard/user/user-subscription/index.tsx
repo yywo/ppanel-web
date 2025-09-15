@@ -2,6 +2,7 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
+import useGlobalStore from '@/config/use-global';
 import {
   createUserSubscribe,
   deleteUserSubscribe,
@@ -28,6 +29,7 @@ export default function UserSubscription({ userId }: { userId: number }) {
   const t = useTranslations('user');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
+  const { getUserSubscribeUrls } = useGlobalStore();
 
   return (
     <ProTable<API.UserSubscribe, Record<string, unknown>>
@@ -146,6 +148,16 @@ export default function UserSubscription({ userId }: { userId: number }) {
                 return true;
               }}
             />,
+            <Button
+              key='copy'
+              variant='secondary'
+              onClick={async () => {
+                await navigator.clipboard.writeText(getUserSubscribeUrls(row.token)[0] || '');
+                toast.success(t('copySuccess'));
+              }}
+            >
+              {t('copySubscription')}
+            </Button>,
             <ConfirmButton
               key='delete'
               trigger={<Button variant='destructive'>{t('delete')}</Button>}

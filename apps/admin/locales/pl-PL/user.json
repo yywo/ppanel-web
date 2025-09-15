@@ -17,6 +17,8 @@
   "confirm": "Potwierdź",
   "confirmDelete": "Czy na pewno chcesz usunąć?",
   "confirmOffline": "Potwierdź tryb offline",
+  "copySubscription": "Kopiuj subskrypcję",
+  "copySuccess": "Kopiowanie zakończone sukcesem",
   "create": "Utwórz",
   "createSubscription": "Utwórz subskrypcję",
   "createSuccess": "Utworzono pomyślnie",

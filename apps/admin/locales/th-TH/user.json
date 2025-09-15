@@ -17,6 +17,8 @@
   "confirm": "ยืนยัน",
   "confirmDelete": "คุณแน่ใจหรือว่าต้องการลบ?",
   "confirmOffline": "ยืนยันออฟไลน์",
+  "copySubscription": "คัดลอกการสมัครสมาชิก",
+  "copySuccess": "คัดลอกสำเร็จ",
   "create": "สร้าง",
   "createSubscription": "สร้างการสมัครสมาชิก",
   "createSuccess": "สร้างสำเร็จ",

@@ -17,6 +17,8 @@
   "confirm": "确认",
   "confirmDelete": "确认删除",
   "confirmOffline": "确认下线",
+  "copySubscription": "复制订阅",
+  "copySuccess": "复制成功",
   "create": "创建",
   "createSubscription": "创建订阅",
   "createSuccess": "创建成功",
