@@ -17,6 +17,8 @@
   "confirm": "Vahvista",
   "confirmDelete": "Oletko varma, että haluat poistaa?",
   "confirmOffline": "Vahvista offline-tila",
+  "copySubscription": "Kopioi tilaus",
+  "copySuccess": "Kopiointi onnistui",
   "create": "Luo",
   "createSubscription": "Luo tilaus",
   "createSuccess": "Luonti onnistui",

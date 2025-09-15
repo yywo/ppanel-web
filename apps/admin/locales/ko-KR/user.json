@@ -17,6 +17,8 @@
   "confirm": "확인",
   "confirmDelete": "삭제하시겠습니까?",
   "confirmOffline": "오프라인 확인",
+  "copySubscription": "구독 복사",
+  "copySuccess": "복사 성공",
   "create": "생성",
   "createSubscription": "구독 생성",
   "createSuccess": "생성 성공",
