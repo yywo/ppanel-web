@@ -1,6 +1,14 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.4.2](https://github.com/perfect-panel/ppanel-web/compare/v1.4.1...v1.4.2) (2025-09-15)
+
+
+### 🐛 Bug Fixes
+
+* Add GitHub template repository link to ProtocolForm header for easier access ([8a0baf3](https://github.com/perfect-panel/ppanel-web/commit/8a0baf3))
+* Add readOnly prop to MonacoEditor and TemplatePreview components for improved content handling ([c4c4d5a](https://github.com/perfect-panel/ppanel-web/commit/c4c4d5a))
+
 ## [1.4.1](https://github.com/perfect-panel/ppanel-web/compare/v1.4.0...v1.4.1) (2025-09-15)
 
 
