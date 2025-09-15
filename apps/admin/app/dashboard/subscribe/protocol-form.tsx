@@ -313,7 +313,21 @@ export function ProtocolForm() {
         columns={columns}
         request={request}
         header={{
-          title: <h2 className='text-lg font-semibold'>{t('protocol.title')}</h2>,
+          title: (
+            <div className='flex items-center justify-between'>
+              <h2 className='text-lg font-semibold'>{t('protocol.title')}</h2>
+              <a
+                href='https://github.com/perfect-panel/subscription-template'
+                target='_blank'
+                rel='noreferrer'
+                className='text-primary inline-flex items-center gap-2 rounded-md px-3 py-1 text-sm font-medium hover:underline'
+              >
+                <Icon icon='mdi:github' className='h-4 w-4' />
+                <span>Template Repo</span>
+                <Icon icon='mdi:open-in-new' className='text-muted-foreground h-4 w-4' />
+              </a>
+            </div>
+          ),
           toolbar: <Button onClick={handleAdd}>{t('actions.add')}</Button>,
         }}
         actions={{
