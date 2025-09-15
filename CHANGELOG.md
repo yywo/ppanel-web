@@ -1,4 +1,17 @@
 <a name="readme-top"></a>
+# Changelog
+
+## [1.4.1](https://github.com/perfect-panel/ppanel-web/compare/v1.4.0...v1.4.1) (2025-09-15)
+
+
+### 🐛 Bug Fixes
+
+* Add copy subscription functionality to user subscription dashboard and improve localization for new features ([e2a357f](https://github.com/perfect-panel/ppanel-web/commit/e2a357f))
+* Simplify handleInputBlur function by removing unnecessary setTimeout ([6341562](https://github.com/perfect-panel/ppanel-web/commit/6341562))
+* Update TemplatePreview to use MonacoEditor for content display and improve error handling ([1d52642](https://github.com/perfect-panel/ppanel-web/commit/1d52642))
+* Update user dashboard link to correct path ([131693b](https://github.com/perfect-panel/ppanel-web/commit/131693b))
+
+<a name="readme-top"></a>
 
 # Changelog
 
