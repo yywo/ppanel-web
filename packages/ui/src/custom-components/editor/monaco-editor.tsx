@@ -21,6 +21,7 @@ export interface MonacoEditorProps {
   language?: string;
   className?: string;
   showLineNumbers?: boolean;
+  readOnly?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,6 +46,7 @@ export function MonacoEditor({
   language = 'markdown',
   className,
   showLineNumbers = false,
+  readOnly = false,
 }: MonacoEditorProps) {
   const [internalValue, setInternalValue] = useState<string | undefined>(propValue);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -146,7 +148,7 @@ export function MonacoEditor({
                   },
                   tabSize: 2,
                   wordWrap: 'off',
-                  readOnly: !onChange,
+                  readOnly,
                 }}
                 theme='transparentTheme'
                 beforeMount={(monaco: Monaco) => {
