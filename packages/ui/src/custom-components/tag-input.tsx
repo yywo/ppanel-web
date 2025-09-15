@@ -85,12 +85,8 @@ export function TagInput({
   }
 
   function handleInputBlur() {
-    setTimeout(() => {
-      if (inputValue.trim()) {
-        addTag();
-      }
-      setOpen(false);
-    }, 200);
+    if (inputValue.trim()) addTag();
+    setOpen(false);
   }
 
   function handleRemoveTag(index: number) {
