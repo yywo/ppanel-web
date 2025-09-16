@@ -128,8 +128,8 @@ export default function NodeForm(props: {
   const availableProtocols = useMemo(() => {
     if (!currentServer?.protocols) return [];
 
-    return (currentServer.protocols as Array<{ type: ProtocolName; port?: number }>)
-      .filter((p) => p.type)
+    return currentServer.protocols
+      .filter((p) => p.enable !== false)
       .map((p) => ({
         protocol: p.type,
         port: p.port,
