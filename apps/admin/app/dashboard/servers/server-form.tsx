@@ -102,8 +102,8 @@ function DynamicField({
                       <Button
                         type='button'
                         variant='ghost'
-                        onClick={() => {
-                          const result = field.generate!.function();
+                        onClick={async () => {
+                          const result = await field.generate!.function();
                           if (typeof result === 'string') {
                             fieldProps.onChange(result);
                           } else if (field.generate!.updateFields) {
