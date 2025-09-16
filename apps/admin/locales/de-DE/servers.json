@@ -116,6 +116,7 @@
   "select_encryption_method": "Verschlüsselungsmethode auswählen",
   "server_key": "Server-Schlüssel",
   "service_name": "Dienstname",
+  "sorted_success": "Erfolgreich sortiert",
   "status": "Status",
   "subscribeId": "Abonnement-ID",
   "subscription": "Abonnement",

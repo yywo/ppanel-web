@@ -30,6 +30,7 @@
   "select_protocol": "Seleccionar protocolo…",
   "select_server": "Seleccionar servidor…",
   "server": "Servidor",
+  "sorted_success": "Ordenado con éxito",
   "tags": "Etiquetas",
   "tags_description": "Etiqueta de agrupación de permisos (incl. vinculación de planes y políticas de entrega).",
   "tags_placeholder": "Usa Enter o coma (,) para agregar múltiples etiquetas",

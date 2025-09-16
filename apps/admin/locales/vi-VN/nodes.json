@@ -30,6 +30,7 @@
   "select_protocol": "Chọn giao thức…",
   "select_server": "Chọn máy chủ…",
   "server": "Máy chủ",
+  "sorted_success": "Sắp xếp thành công",
   "tags": "Thẻ",
   "tags_description": "Thẻ nhóm quyền (bao gồm ràng buộc kế hoạch và chính sách giao hàng).",
   "tags_placeholder": "Sử dụng Enter hoặc dấu phẩy (,) để thêm nhiều thẻ",

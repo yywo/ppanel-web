@@ -30,6 +30,7 @@
   "select_protocol": "Vyberte protokol…",
   "select_server": "Vyberte server…",
   "server": "Server",
+  "sorted_success": "Úspěšně seřazeno",
   "tags": "Štítky",
   "tags_description": "Štítek pro skupinování oprávnění (včetně vazby na plán a dodací politiky).",
   "tags_placeholder": "Použijte Enter nebo čárku (,) pro přidání více štítků",

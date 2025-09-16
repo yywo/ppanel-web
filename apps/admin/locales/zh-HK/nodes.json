@@ -30,6 +30,7 @@
   "select_protocol": "選擇協議…",
   "select_server": "選擇伺服器…",
   "server": "伺服器",
+  "sorted_success": "排序成功",
   "tags": "標籤",
   "tags_description": "權限分組標籤（包括計劃綁定和交付政策）。",
   "tags_placeholder": "使用 Enter 或逗號 (,) 添加多個標籤",

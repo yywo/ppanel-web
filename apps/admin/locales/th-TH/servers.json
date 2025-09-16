@@ -116,6 +116,7 @@
   "select_encryption_method": "เลือกวิธีการเข้ารหัส",
   "server_key": "คีย์เซิร์ฟเวอร์",
   "service_name": "ชื่อบริการ",
+  "sorted_success": "เรียงลำดับเรียบร้อยแล้ว",
   "status": "สถานะ",
   "subscribeId": "ID การสมัครสมาชิก",
   "subscription": "การสมัครสมาชิก",

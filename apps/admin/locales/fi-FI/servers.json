@@ -116,6 +116,7 @@
   "select_encryption_method": "Valitse salausmenetelmä",
   "server_key": "Palvelimen avain",
   "service_name": "Palvelun nimi",
+  "sorted_success": "Lajiteltu onnistuneesti",
   "status": "Tila",
   "subscribeId": "Tilauksen ID",
   "subscription": "Tilauksen",

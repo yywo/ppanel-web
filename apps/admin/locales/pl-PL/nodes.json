@@ -30,6 +30,7 @@
   "select_protocol": "Wybierz protokół…",
   "select_server": "Wybierz serwer…",
   "server": "Serwer",
+  "sorted_success": "Posortowano pomyślnie",
   "tags": "Tagi",
   "tags_description": "Tag grupujący uprawnienia (w tym powiązania planu i polityki dostarczania).",
   "tags_placeholder": "Użyj Enter lub przecinka (,) aby dodać wiele tagów",

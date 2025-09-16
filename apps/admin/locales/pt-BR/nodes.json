@@ -30,6 +30,7 @@
   "select_protocol": "Selecionar protocolo…",
   "select_server": "Selecionar servidor…",
   "server": "Servidor",
+  "sorted_success": "Ordenado com sucesso",
   "tags": "Tags",
   "tags_description": "Tag de agrupamento de permissões (incl. vinculação de plano e políticas de entrega).",
   "tags_placeholder": "Use Enter ou vírgula (,) para adicionar várias tags",

@@ -244,6 +244,7 @@ export default function NodesPage() {
               sort: item.sort,
             })) as API.SortItem[],
           });
+          toast.success(t('sorted_success'));
         }
         return updatedItems;
       }}

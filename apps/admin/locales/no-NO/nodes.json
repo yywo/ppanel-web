@@ -30,6 +30,7 @@
   "select_protocol": "Velg protokoll…",
   "select_server": "Velg server…",
   "server": "Server",
+  "sorted_success": "Sortert med suksess",
   "tags": "Tagger",
   "tags_description": "Tillatelsesgrupperingstagg (inkl. planbinding og leveringspolicyer).",
   "tags_placeholder": "Bruk Enter eller komma (,) for å legge til flere tagger",

@@ -116,6 +116,7 @@
   "select_encryption_method": "Válassza ki a titkosítási módszert",
   "server_key": "Szerver kulcs",
   "service_name": "Szolgáltatás neve",
+  "sorted_success": "Sikeresen rendezve",
   "status": "Állapot",
   "subscribeId": "Előfizetési ID",
   "subscription": "Előfizetés",

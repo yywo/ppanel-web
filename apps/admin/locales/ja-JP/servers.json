@@ -116,6 +116,7 @@
   "select_encryption_method": "暗号化方式を選択",
   "server_key": "サーバーキー",
   "service_name": "サービス名",
+  "sorted_success": "正常にソートされました",
   "status": "ステータス",
   "subscribeId": "サブスクリプションID",
   "subscription": "サブスクリプション",

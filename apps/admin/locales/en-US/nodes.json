@@ -30,6 +30,7 @@
   "select_protocol": "Select protocol…",
   "select_server": "Select server…",
   "server": "Server",
+  "sorted_success": "Sorted successfully",
   "tags": "Tags",
   "tags_description": "Permission grouping tag (incl. plan binding and delivery policies).",
   "tags_placeholder": "Use Enter or comma (,) to add multiple tags",

@@ -30,6 +30,7 @@
   "select_protocol": "Protokol seçin…",
   "select_server": "Sunucu seçin…",
   "server": "Sunucu",
+  "sorted_success": "Başarıyla sıralandı",
   "tags": "Etiketler",
   "tags_description": "İzin gruplama etiketi (plan bağlama ve teslimat politikaları dahil).",
   "tags_placeholder": "Birden fazla etiket eklemek için Enter veya virgül (,) kullanın",
