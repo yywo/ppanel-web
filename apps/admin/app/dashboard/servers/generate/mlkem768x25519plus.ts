@@ -1,11 +1,13 @@
 import { x25519 } from '@noble/curves/ed25519';
 
-const toB64 = (u8: Uint8Array): string => {
-  if (typeof Buffer !== 'undefined') return Buffer.from(u8).toString('base64');
-  let s = '';
-  for (const b of u8) s += String.fromCharCode(b);
-  return btoa(s);
-};
+const toB64Url = (u8: Uint8Array) =>
+  (typeof Buffer !== 'undefined'
+    ? Buffer.from(u8).toString('base64')
+    : btoa(String.fromCharCode(...u8))
+  )
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_')
+    .replace(/=+$/g, '');
 
 export type VlessX25519Pair = {
   passwordB64: string;
@@ -15,7 +17,7 @@ export type VlessX25519Pair = {
 export function generateVlessX25519Pair(): VlessX25519Pair {
   const { secretKey, publicKey } = x25519.keygen();
   return {
-    passwordB64: toB64(publicKey),
-    privateKeyB64: toB64(secretKey),
+    passwordB64: toB64Url(publicKey),
+    privateKeyB64: toB64Url(secretKey),
   };
 }
