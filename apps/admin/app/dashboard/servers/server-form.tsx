@@ -102,8 +102,8 @@ function DynamicField({
                       <Button
                         type='button'
                         variant='ghost'
-                        onClick={() => {
-                          const result = field.generate!.function();
+                        onClick={async () => {
+                          const result = await field.generate!.function();
                           if (typeof result === 'string') {
                             fieldProps.onChange(result);
                           } else if (field.generate!.updateFields) {
@@ -364,24 +364,18 @@ export default function ServerForm(props: {
   }, [initialValues]);
 
   async function handleSubmit(values: Record<string, any>) {
-    const filtered = (values?.protocols || []).filter((p: any, index: number) => {
-      const port = Number(p?.port);
-      const protocolType = PROTOCOLS[index];
-      return protocolType && p && Number.isFinite(port) && port > 0 && port <= 65535;
+    const filteredProtocols = (values?.protocols || []).filter((protocol: any) => {
+      const port = Number(protocol?.port);
+      return protocol && Number.isFinite(port) && port > 0 && port <= 65535;
     });
-
-    if (filtered.length === 0) {
-      toast.error(t('validation_failed'));
-      return;
-    }
 
     const result = {
       name: values.name,
       country: values.country,
       city: values.city,
-      ratio: Number(values.ratio || 1),
+      ratio: values.ratio || 1,
       address: values.address,
-      protocols: filtered,
+      protocols: filteredProtocols,
     };
 
     const ok = await onSubmit(result);
@@ -507,6 +501,7 @@ export default function ServerForm(props: {
                   {t('protocol_configurations_desc')}
                 </p>
               </div>
+
               <Accordion
                 type='single'
                 collapsible
@@ -520,39 +515,45 @@ export default function ServerForm(props: {
                     PROTOCOLS.findIndex((t) => t === type),
                   );
                   const current = (protocolsValues[i] || {}) as Record<string, any>;
-                  const isEnabled = current.port && Number(current.port) > 0;
                   const fields = PROTOCOL_FIELDS[type] || [];
                   return (
                     <AccordionItem key={type} value={type} className='mb-2 rounded-lg border'>
                       <AccordionTrigger className='px-4 py-3 hover:no-underline'>
                         <div className='flex w-full items-center justify-between'>
-                          <div className='flex flex-col items-start'>
-                            <div className='flex items-center gap-2'>
+                          <div className='flex flex-col items-start gap-1'>
+                            <div className='flex items-center gap-1'>
                               <span className='font-medium capitalize'>{type}</span>
-                            </div>
-                            <span
-                              className={cn(
-                                'text-muted-foreground text-xs',
-                                isEnabled && 'text-green-500',
+                              {current.transport && (
+                                <Badge variant='secondary' className='text-xs'>
+                                  {current.transport.toUpperCase()}
+                                </Badge>
                               )}
-                            >
-                              {isEnabled ? t('enabled') : t('disabled')}
-                            </span>
+                              {current.security && current.security !== 'none' && (
+                                <Badge variant='outline' className='text-xs'>
+                                  {current.security.toUpperCase()}
+                                </Badge>
+                              )}
+                              {current.port && <Badge className='text-xs'>{current.port}</Badge>}
+                            </div>
+                            <div className='flex items-center gap-1'>
+                              <span
+                                className={cn(
+                                  'text-xs',
+                                  current.enable ? 'text-green-500' : 'text-muted-foreground',
+                                )}
+                              >
+                                {current.enable ? t('enabled') : t('disabled')}
+                              </span>
+                            </div>
                           </div>
-                          <div className='mr-2 flex items-center gap-1'>
-                            {current.transport && (
-                              <Badge variant='secondary' className='text-xs'>
-                                {current.transport.toUpperCase()}
-                              </Badge>
-                            )}
-                            {current.security && current.security !== 'none' && (
-                              <Badge variant='outline' className='text-xs'>
-                                {current.security.toUpperCase()}
-                              </Badge>
-                            )}
-
-                            {current.port && <Badge className='text-xs'>{current.port}</Badge>}
-                          </div>
+                          <Switch
+                            className='mr-2'
+                            checked={!!current.enable}
+                            onCheckedChange={(checked) => {
+                              form.setValue(`protocols.${i}.enable`, checked);
+                            }}
+                            onClick={(e) => e.stopPropagation()}
+                          />
                         </div>
                       </AccordionTrigger>
                       <AccordionContent className='px-4 pb-4 pt-0'>
@@ -621,7 +622,8 @@ export default function ServerForm(props: {
               return false;
             })}
           >
-            {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />} {t('confirm')}
+            {loading && <Icon icon='mdi:loading' className='mr-2 animate-spin' />}
+            {t('confirm')}
           </Button>
         </SheetFooter>
       </SheetContent>

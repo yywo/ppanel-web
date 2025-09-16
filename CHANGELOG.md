@@ -1,16 +1,30 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.4.3](https://github.com/perfect-panel/ppanel-web/compare/v1.4.2...v1.4.3) (2025-09-16)
+## [1.4.4](https://github.com/perfect-panel/ppanel-web/compare/v1.4.3...v1.4.4) (2025-09-16)
 
 
 ### 🐛 Bug Fixes
 
-* Add success toast message for sorting in nodes and servers pages ([2d5175d](https://github.com/perfect-panel/ppanel-web/commit/2d5175d))
-* Implement encryption and obfuscation features in protocol configuration ([54de16b](https://github.com/perfect-panel/ppanel-web/commit/54de16b))
-* Refactor toB64 function to toB64Url for URL-safe base64 encoding in VlessX25519Pair generation ([8700cf6](https://github.com/perfect-panel/ppanel-web/commit/8700cf6))
-* Simplify initialValues assignment and update node submission logic in NodesPage ([05d6c89](https://github.com/perfect-panel/ppanel-web/commit/05d6c89))
-* Update bun.lockb to reflect dependency changes ([ebcebd7](https://github.com/perfect-panel/ppanel-web/commit/ebcebd7))
+* Add minimum value constraint for count and user limit inputs in CouponForm ([6991b69](https://github.com/perfect-panel/ppanel-web/commit/6991b69))
+* Add protocol-related constants, default configurations, field definitions, and validation modes ([d685407](https://github.com/perfect-panel/ppanel-web/commit/d685407))
+* Added the enabled field in the protocol configuration, updated the related type definition and default configuration ([2b0cf9a](https://github.com/perfect-panel/ppanel-web/commit/2b0cf9a))
+* Filter available protocols to exclude disabled ones in NodeForm ([982d288](https://github.com/perfect-panel/ppanel-web/commit/982d288))
+* Refactor key generation logic and update dependencies for ML-KEM-768 integration ([b8f630f](https://github.com/perfect-panel/ppanel-web/commit/b8f630f))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.4.3](https://github.com/perfect-panel/ppanel-web/compare/v1.4.2...v1.4.3) (2025-09-16)
+
+### 🐛 Bug Fixes
+
+- Add success toast message for sorting in nodes and servers pages ([2d5175d](https://github.com/perfect-panel/ppanel-web/commit/2d5175d))
+- Implement encryption and obfuscation features in protocol configuration ([54de16b](https://github.com/perfect-panel/ppanel-web/commit/54de16b))
+- Refactor toB64 function to toB64Url for URL-safe base64 encoding in VlessX25519Pair generation ([8700cf6](https://github.com/perfect-panel/ppanel-web/commit/8700cf6))
+- Simplify initialValues assignment and update node submission logic in NodesPage ([05d6c89](https://github.com/perfect-panel/ppanel-web/commit/05d6c89))
+- Update bun.lockb to reflect dependency changes ([ebcebd7](https://github.com/perfect-panel/ppanel-web/commit/ebcebd7))
 
 <a name="readme-top"></a>
 

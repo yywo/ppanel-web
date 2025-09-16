@@ -543,6 +543,7 @@ declare namespace API {
   type Protocol = {
     type: string;
     port: number;
+    enable: boolean;
     security?: string;
     sni?: string;
     allow_insecure?: boolean;
@@ -566,10 +567,6 @@ declare namespace API {
     reduce_rtt?: boolean;
     udp_relay_mode?: string;
     congestion_controller?: string;
-    /** obfs, v2ray-plugin, simple-obfs */
-    plugin?: string;
-    /** plugin options, eg: obfs=http;obfs-host=www.bing.com */
-    plugin_options?: string;
     /** mux, eg: off/low/medium/high */
     multiplex?: string;
     /** padding scheme */
@@ -578,6 +575,32 @@ declare namespace API {
     up_mbps?: number;
     /** download speed limit */
     down_mbps?: number;
+    /** obfs, 'none', 'http', 'tls' */
+    obfs?: string;
+    /** obfs host */
+    obfs_host?: string;
+    /** obfs path */
+    obfs_path?: string;
+    /** xhttp mode */
+    xhttp_mode?: string;
+    /** xhttp extra path */
+    xhttp_extra?: string;
+    /** encryption，'none', 'mlkem768x25519plus' */
+    encryption?: string;
+    /** encryption mode，'native', 'xorpub', 'random' */
+    encryption_mode?: string;
+    /** encryption rtt，'0rtt', '1rtt' */
+    encryption_rtt?: string;
+    /** encryption ticket */
+    encryption_ticket?: string;
+    /** encryption server padding */
+    encryption_server_padding?: string;
+    /** encryption private key */
+    encryption_private_key?: string;
+    /** encryption client padding */
+    encryption_client_padding?: string;
+    /** encryption password */
+    encryption_password?: string;
   };
 
   type PubilcRegisterConfig = {
