@@ -1,6 +1,10 @@
 import { z } from 'zod';
-import { generatePassword, generateRealityKeyPair, generateRealityShortId } from './generate';
-import { generateVlessX25519Pair } from './generate/mlkem768x25519plus';
+import {
+  generateMLKEM768KeyPair,
+  generatePassword,
+  generateRealityKeyPair,
+  generateRealityShortId,
+} from './generate';
 
 export const protocols = [
   'shadowsocks',
@@ -700,10 +704,10 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       placeholder: (t) => t('encryption_private_key_placeholder'),
       group: 'encryption',
       generate: {
-        function: () => generateVlessX25519Pair(),
+        function: generateMLKEM768KeyPair,
         updateFields: {
-          encryption_private_key: 'privateKeyB64',
-          encryption_password: 'passwordB64',
+          encryption_private_key: 'privateKey',
+          encryption_password: 'publicKey',
         },
       },
       condition: (p) => p.encryption === 'mlkem768x25519plus',
