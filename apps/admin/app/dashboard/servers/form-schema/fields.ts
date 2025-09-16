@@ -211,7 +211,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       condition: (p) => p.transport === 'grpc',
     },
     {
-      name: 'mode',
+      name: 'xhttp_mode',
       type: 'select',
       label: 'mode',
       options: XHTTP_MODES,
@@ -220,7 +220,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       condition: (p) => p.transport === 'xhttp',
     },
     {
-      name: 'extra',
+      name: 'xhttp_extra',
       type: 'textarea',
       label: 'extra',
       placeholder: '{}',

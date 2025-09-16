@@ -10,6 +10,7 @@ import {
   TRANSPORTS,
   TUIC_CONGESTION,
   TUIC_UDP_RELAY_MODES,
+  XHTTP_MODES,
 } from './constants';
 
 const nullableString = z.string().nullish();
@@ -18,9 +19,10 @@ const nullablePort = z.number().int().min(0).max(65535).nullish();
 
 const ss = z.object({
   type: z.literal('shadowsocks'),
+  enable: nullableBool,
   host: nullableString,
   port: nullablePort,
-  cipher: z.enum(SS_CIPHERS as any).nullish(),
+  cipher: z.enum(SS_CIPHERS).nullish(),
   server_key: nullableString,
   obfs: z.enum(['none', 'http', 'tls'] as const).nullish(),
   obfs_host: nullableString,
@@ -29,10 +31,11 @@ const ss = z.object({
 
 const vmess = z.object({
   type: z.literal('vmess'),
+  enable: nullableBool,
   host: nullableString,
   port: nullablePort,
-  transport: z.enum(TRANSPORTS.vmess as any).nullish(),
-  security: z.enum(SECURITY.vmess as any).nullish(),
+  transport: z.enum(TRANSPORTS.vmess).nullish(),
+  security: z.enum(SECURITY.vmess).nullish(),
   path: nullableString,
   service_name: nullableString,
   sni: nullableString,
@@ -42,13 +45,14 @@ const vmess = z.object({
 
 const vless = z.object({
   type: z.literal('vless'),
+  enable: nullableBool,
   host: nullableString,
   port: nullablePort,
-  transport: z.enum(TRANSPORTS.vless as any).nullish(),
-  security: z.enum(SECURITY.vless as any).nullish(),
+  transport: z.enum(TRANSPORTS.vless).nullish(),
+  security: z.enum(SECURITY.vless).nullish(),
   path: nullableString,
   service_name: nullableString,
-  flow: z.enum(FLOWS.vless as any).nullish(),
+  flow: z.enum(FLOWS.vless).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -57,11 +61,11 @@ const vless = z.object({
   reality_private_key: nullableString,
   reality_public_key: nullableString,
   reality_short_id: nullableString,
-  mode: nullableString,
-  extra: nullableString,
-  encryption: z.enum(ENCRYPTION_TYPES as any).nullish(),
-  encryption_mode: z.enum(ENCRYPTION_MODES as any).nullish(),
-  encryption_rtt: z.enum(ENCRYPTION_RTT as any).nullish(),
+  xhttp_mode: z.enum(XHTTP_MODES).nullish(),
+  xhttp_extra: nullableString,
+  encryption: z.enum(ENCRYPTION_TYPES).nullish(),
+  encryption_mode: z.enum(ENCRYPTION_MODES).nullish(),
+  encryption_rtt: z.enum(ENCRYPTION_RTT).nullish(),
   encryption_ticket: nullableString,
   encryption_server_padding: nullableString,
   encryption_private_key: nullableString,
@@ -71,10 +75,11 @@ const vless = z.object({
 
 const trojan = z.object({
   type: z.literal('trojan'),
+  enable: nullableBool,
   host: nullableString,
   port: nullablePort,
-  transport: z.enum(TRANSPORTS.trojan as any).nullish(),
-  security: z.enum(SECURITY.trojan as any).nullish(),
+  transport: z.enum(TRANSPORTS.trojan).nullish(),
+  security: z.enum(SECURITY.trojan).nullish(),
   path: nullableString,
   service_name: nullableString,
   sni: nullableString,
@@ -84,12 +89,13 @@ const trojan = z.object({
 
 const hysteria2 = z.object({
   type: z.literal('hysteria2'),
+  enable: nullableBool,
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
   obfs: z.enum(['none', 'salamander'] as const).nullish(),
   port: nullablePort,
-  security: z.enum(SECURITY.hysteria2 as any).nullish(),
+  security: z.enum(SECURITY.hysteria2).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -99,13 +105,14 @@ const hysteria2 = z.object({
 
 const tuic = z.object({
   type: z.literal('tuic'),
+  enable: nullableBool,
   host: nullableString,
   port: nullablePort,
   disable_sni: z.boolean().nullish(),
   reduce_rtt: z.boolean().nullish(),
-  udp_relay_mode: z.enum(TUIC_UDP_RELAY_MODES as any).nullish(),
-  congestion_controller: z.enum(TUIC_CONGESTION as any).nullish(),
-  security: z.enum(SECURITY.tuic as any).nullish(),
+  udp_relay_mode: z.enum(TUIC_UDP_RELAY_MODES).nullish(),
+  congestion_controller: z.enum(TUIC_CONGESTION).nullish(),
+  security: z.enum(SECURITY.tuic).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -113,8 +120,9 @@ const tuic = z.object({
 
 const anytls = z.object({
   type: z.literal('anytls'),
+  enable: nullableBool,
   port: nullablePort,
-  security: z.enum(SECURITY.anytls as any).nullish(),
+  security: z.enum(SECURITY.anytls).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -123,13 +131,15 @@ const anytls = z.object({
 
 const socks = z.object({
   type: z.literal('socks'),
+  enable: nullableBool,
   port: nullablePort,
 });
 
 const naive = z.object({
   type: z.literal('naive'),
+  enable: nullableBool,
   port: nullablePort,
-  security: z.enum(SECURITY.naive as any).nullish(),
+  security: z.enum(SECURITY.naive).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -137,8 +147,9 @@ const naive = z.object({
 
 const http = z.object({
   type: z.literal('http'),
+  enable: nullableBool,
   port: nullablePort,
-  security: z.enum(SECURITY.http as any).nullish(),
+  security: z.enum(SECURITY.http).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -146,9 +157,10 @@ const http = z.object({
 
 const mieru = z.object({
   type: z.literal('mieru'),
+  enable: nullableBool,
   port: nullablePort,
   multiplex: z.enum(multiplexLevels).nullish(),
-  transport: z.enum(TRANSPORTS.mieru as any).nullish(),
+  transport: z.enum(TRANSPORTS.mieru).nullish(),
 });
 
 export const protocolApiScheme = z.discriminatedUnion('type', [
