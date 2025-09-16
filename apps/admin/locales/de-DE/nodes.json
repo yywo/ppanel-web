@@ -30,6 +30,7 @@
   "select_protocol": "Protokoll auswählen…",
   "select_server": "Server auswählen…",
   "server": "Server",
+  "sorted_success": "Erfolgreich sortiert",
   "tags": "Tags",
   "tags_description": "Berechtigungsgruppierungs-Tag (einschließlich Planbindung und Lieferrichtlinien).",
   "tags_placeholder": "Verwenden Sie Enter oder Komma (,) um mehrere Tags hinzuzufügen",

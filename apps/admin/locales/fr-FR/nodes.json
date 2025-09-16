@@ -30,6 +30,7 @@
   "select_protocol": "Sélectionner un protocole…",
   "select_server": "Sélectionner un serveur…",
   "server": "Serveur",
+  "sorted_success": "Trié avec succès",
   "tags": "Étiquettes",
   "tags_description": "Étiquette de regroupement de permissions (y compris l'association de plan et les politiques de livraison).",
   "tags_placeholder": "Utilisez Entrée ou une virgule (,) pour ajouter plusieurs étiquettes",

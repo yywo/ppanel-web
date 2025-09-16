@@ -361,6 +361,7 @@ export default function ServersPage() {
                 sort: item.sort,
               })) as API.SortItem[],
             });
+            toast.success(t('sorted_success'));
           }
           return updatedItems;
         }}

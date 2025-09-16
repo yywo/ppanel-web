@@ -30,6 +30,7 @@
   "select_protocol": "Valitse protokolla…",
   "select_server": "Valitse palvelin…",
   "server": "Palvelin",
+  "sorted_success": "Lajiteltu onnistuneesti",
   "tags": "Tunnisteet",
   "tags_description": "Oikeuksien ryhmittelytunniste (mukaan lukien suunnitelman sitominen ja toimituskäytännöt).",
   "tags_placeholder": "Käytä Enteriä tai pilkkua (,) lisätäksesi useita tunnisteita",

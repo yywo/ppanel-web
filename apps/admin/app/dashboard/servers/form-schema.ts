@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { generatePassword, generateRealityKeyPair, generateRealityShortId } from './generate';
+import { generateVlessX25519Pair } from './generate/mlkem768x25519plus';
 
 export const protocols = [
   'shadowsocks',
@@ -25,9 +27,12 @@ export type FieldConfig = {
   max?: number;
   step?: number;
   suffix?: string;
-  password?: number;
+  generate?: {
+    function: () => any;
+    updateFields?: Record<string, string>;
+  };
   condition?: (protocol: any, values: any) => boolean;
-  group?: 'basic' | 'transport' | 'security' | 'reality' | 'plugin';
+  group?: 'basic' | 'transport' | 'security' | 'reality' | 'obfs' | 'encryption';
   gridSpan?: 1 | 2;
 };
 
@@ -55,13 +60,9 @@ export const LABELS = {
   '360': '360',
   'qq': 'QQ',
   // multiplex
-  'off': 'Off',
   'low': 'Low',
   'middle': 'Middle',
   'high': 'High',
-  // ss plugins
-  'v2ray-plugin': 'V2Ray Plugin',
-  'simple-obfs': 'Simple Obfs',
 } as const;
 
 // Flat arrays for enum-like sets
@@ -74,8 +75,6 @@ export const SS_CIPHERS = [
   '2022-blake3-aes-256-gcm',
   '2022-blake3-chacha20-poly1305',
 ] as const;
-
-export const SS_PLUGINS = ['none', 'simple-obfs', 'v2ray-plugin'] as const;
 
 export const TRANSPORTS = {
   vmess: ['tcp', 'websocket', 'grpc'] as const,
@@ -101,6 +100,10 @@ export const FLOWS = {
 
 export const TUIC_UDP_RELAY_MODES = ['native', 'quic'] as const;
 export const TUIC_CONGESTION = ['bbr', 'cubic', 'new_reno'] as const;
+export const XHTTP_MODES = ['auto', 'packet-up', 'stream-up', 'stream-one'] as const;
+export const ENCRYPTION_TYPES = ['none', 'mlkem768x25519plus'] as const;
+export const ENCRYPTION_MODES = ['native', 'xorpub', 'random'] as const;
+export const ENCRYPTION_RTT = ['0rtt', '1rtt'] as const;
 export const FINGERPRINTS = [
   'chrome',
   'firefox',
@@ -112,7 +115,7 @@ export const FINGERPRINTS = [
   'qq',
 ] as const;
 
-export const multiplexLevels = ['off', 'low', 'middle', 'high'] as const;
+export const multiplexLevels = ['none', 'low', 'middle', 'high'] as const;
 
 export function getLabel(value: string): string {
   const label = (LABELS as Record<string, string>)[value];
@@ -129,8 +132,9 @@ const ss = z.object({
   port: nullablePort,
   cipher: z.enum(SS_CIPHERS as any).nullish(),
   server_key: nullableString,
-  plugin: z.enum(SS_PLUGINS as any).nullish(),
-  plugin_options: nullableString,
+  obfs: z.enum(['none', 'http', 'tls'] as const).nullish(),
+  obfs_host: nullableString,
+  obfs_path: nullableString,
 });
 
 const vmess = z.object({
@@ -163,6 +167,16 @@ const vless = z.object({
   reality_private_key: nullableString,
   reality_public_key: nullableString,
   reality_short_id: nullableString,
+  mode: nullableString,
+  extra: nullableString,
+  encryption: z.enum(ENCRYPTION_TYPES as any).nullish(),
+  encryption_mode: z.enum(ENCRYPTION_MODES as any).nullish(),
+  encryption_rtt: z.enum(ENCRYPTION_RTT as any).nullish(),
+  encryption_ticket: nullableString,
+  encryption_server_padding: nullableString,
+  encryption_private_key: nullableString,
+  encryption_client_padding: nullableString,
+  encryption_password: nullableString,
 });
 
 const trojan = z.object({
@@ -183,6 +197,7 @@ const hysteria2 = z.object({
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
+  obfs: z.enum(['none', 'salamander'] as const).nullish(),
   port: nullablePort,
   security: z.enum(SECURITY.hysteria2 as any).nullish(),
   sni: nullableString,
@@ -281,8 +296,9 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         port: null,
         cipher: 'chacha20-ietf-poly1305',
         server_key: null,
-        plugin: 'none',
-        plugin_opts: null,
+        obfs: 'none',
+        obfs_host: null,
+        obfs_path: null,
       } as any;
     case 'vmess':
       return { type: 'vmess', port: null, transport: 'tcp', security: 'none' } as any;
@@ -296,6 +312,7 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         port: null,
         hop_ports: null,
         hop_interval: null,
+        obfs: 'none',
         obfs_password: null,
         security: 'tls',
         up_mbps: null,
@@ -335,7 +352,7 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
       return {
         type: 'meru',
         port: null,
-        multiplex: 'off',
+        multiplex: 'none',
         transport: 'tcp',
       } as any;
     case 'anytls':
@@ -367,7 +384,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
     {
       name: 'cipher',
       type: 'select',
-      label: 'encryption_method',
+      label: 'cipher',
       options: SS_CIPHERS,
       defaultValue: 'chacha20-ietf-poly1305',
       group: 'basic',
@@ -376,7 +393,9 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'server_key',
       type: 'input',
       label: 'server_key',
-      password: 32,
+      generate: {
+        function: () => generatePassword(32),
+      },
       group: 'basic',
       condition: (p) =>
         [
@@ -386,29 +405,28 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
         ].includes(p.cipher),
     },
     {
-      name: 'plugin',
+      name: 'obfs',
       type: 'select',
-      label: 'plugin',
-      options: SS_PLUGINS,
+      label: 'obfs',
+      options: ['none', 'http', 'tls'],
       defaultValue: 'none',
-      group: 'plugin',
+      group: 'obfs',
     },
     {
-      name: 'plugin_opts',
-      type: 'textarea',
-      label: 'plugin_opts',
-      placeholder: (t: (key: string) => string, p: any) => {
-        switch (p.plugin) {
-          case 'simple-obfs':
-            return 'obfs=http;obfs-host=www.bing.com;path=/';
-          case 'v2ray-plugin':
-            return 'WebSocket: mode=websocket;host=mydomain.me;path=/;tls=true\n\nQUIC: mode=quic;host=mydomain.me';
-          default:
-            return 'key=value;key2=value2';
-        }
-      },
-      group: 'plugin',
-      condition: (p) => ['simple-obfs', 'v2ray-plugin'].includes(p.plugin),
+      name: 'obfs_host',
+      type: 'input',
+      label: 'obfs_host',
+      placeholder: 'e.g. www.bing.com',
+      group: 'obfs',
+      condition: (p) => p.obfs && p.obfs !== 'none',
+    },
+    {
+      name: 'obfs_path',
+      type: 'input',
+      label: 'obfs_path',
+      placeholder: 'e.g. /path/to/obfs',
+      group: 'obfs',
+      condition: (p) => p.obfs && p.obfs !== 'none',
     },
   ],
   vmess: [
@@ -441,6 +459,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'host',
       type: 'input',
       label: 'host',
+      placeholder: 'e.g. www.bing.com',
       group: 'transport',
       condition: (p) => ['websocket', 'xhttp', 'httpupgrade'].includes(p.transport),
     },
@@ -448,6 +467,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'path',
       type: 'input',
       label: 'path',
+      placeholder: 'e.g. /path/to/obfs',
       group: 'transport',
       condition: (p) => ['websocket', 'xhttp', 'httpupgrade'].includes(p.transport),
     },
@@ -493,20 +513,21 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       group: 'basic',
     },
     {
-      name: 'flow',
-      type: 'select',
-      label: 'flow',
-      options: FLOWS.vless,
-      defaultValue: 'none',
-      group: 'basic',
-    },
-    {
       name: 'transport',
       type: 'select',
       label: 'transport',
       options: TRANSPORTS.vless,
       defaultValue: 'tcp',
       group: 'transport',
+    },
+    {
+      name: 'flow',
+      type: 'select',
+      label: 'flow',
+      options: FLOWS.vless,
+      defaultValue: 'none',
+      group: 'transport',
+      condition: (p) => p.transport === 'tcp',
     },
     {
       name: 'security',
@@ -520,6 +541,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'host',
       type: 'input',
       label: 'host',
+      placeholder: 'e.g. www.bing.com',
       group: 'transport',
       condition: (p) => ['websocket', 'mkcp', 'httpupgrade', 'xhttp'].includes(p.transport),
     },
@@ -527,6 +549,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'path',
       type: 'input',
       label: 'path',
+      placeholder: 'e.g. /path/to/obfs',
       group: 'transport',
       condition: (p) => ['websocket', 'mkcp', 'httpupgrade', 'xhttp'].includes(p.transport),
     },
@@ -536,6 +559,23 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       label: 'service_name',
       group: 'transport',
       condition: (p) => p.transport === 'grpc',
+    },
+    {
+      name: 'mode',
+      type: 'select',
+      label: 'mode',
+      options: XHTTP_MODES,
+      defaultValue: 'auto',
+      group: 'transport',
+      condition: (p) => p.transport === 'xhttp',
+    },
+    {
+      name: 'extra',
+      type: 'textarea',
+      label: 'extra',
+      placeholder: '{}',
+      group: 'transport',
+      condition: (p) => p.transport === 'xhttp',
     },
     {
       name: 'sni',
@@ -584,6 +624,13 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       label: 'security_private_key',
       placeholder: (t) => t('security_private_key_placeholder'),
       group: 'reality',
+      generate: {
+        function: generateRealityKeyPair,
+        updateFields: {
+          reality_private_key: 'privateKey',
+          reality_public_key: 'publicKey',
+        },
+      },
       condition: (p) => p.security === 'reality',
     },
     {
@@ -599,7 +646,83 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       type: 'input',
       label: 'security_short_id',
       group: 'reality',
+      generate: {
+        function: generateRealityShortId,
+      },
       condition: (p) => p.security === 'reality',
+    },
+    {
+      name: 'encryption',
+      type: 'select',
+      label: 'encryption',
+      options: ENCRYPTION_TYPES,
+      defaultValue: 'none',
+      group: 'encryption',
+    },
+    {
+      name: 'encryption_mode',
+      type: 'select',
+      label: 'encryption_mode',
+      options: ENCRYPTION_MODES,
+      defaultValue: 'native',
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
+    },
+    {
+      name: 'encryption_rtt',
+      type: 'select',
+      label: 'encryption_rtt',
+      options: ENCRYPTION_RTT,
+      defaultValue: '1rtt',
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
+    },
+    {
+      name: 'encryption_ticket',
+      type: 'input',
+      label: 'encryption_ticket',
+      placeholder: 'e.g. 600s',
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus' && p.encryption_rtt === '0rtt',
+    },
+    {
+      name: 'encryption_server_padding',
+      type: 'input',
+      label: 'encryption_server_padding',
+      placeholder: 'e.g. 100-111-1111.75-0-111.50-0-3333',
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
+    },
+    {
+      name: 'encryption_private_key',
+      type: 'input',
+      label: 'encryption_private_key',
+      placeholder: (t) => t('encryption_private_key_placeholder'),
+      group: 'encryption',
+      generate: {
+        function: () => generateVlessX25519Pair(),
+        updateFields: {
+          encryption_private_key: 'privateKeyB64',
+          encryption_password: 'passwordB64',
+        },
+      },
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
+    },
+    {
+      name: 'encryption_client_padding',
+      type: 'input',
+      label: 'encryption_client_padding',
+      placeholder: 'e.g. 100-111-1111.75-0-111.50-0-3333',
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
+    },
+    {
+      name: 'encryption_password',
+      type: 'input',
+      label: 'encryption_password',
+      placeholder: (t) => t('encryption_password_placeholder'),
+      group: 'encryption',
+      condition: (p) => p.encryption === 'mlkem768x25519plus',
     },
   ],
   trojan: [
@@ -632,6 +755,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'host',
       type: 'input',
       label: 'host',
+      placeholder: 'e.g. www.bing.com',
       group: 'transport',
       condition: (p) => ['websocket', 'xhttp', 'httpupgrade'].includes(p.transport),
     },
@@ -639,6 +763,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       name: 'path',
       type: 'input',
       label: 'path',
+      placeholder: 'e.g. /path/to/obfs',
       group: 'transport',
       condition: (p) => ['websocket', 'xhttp', 'httpupgrade'].includes(p.transport),
     },
@@ -700,12 +825,23 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       group: 'basic',
     },
     {
+      name: 'obfs',
+      type: 'select',
+      label: 'obfs',
+      options: ['none', 'salamander'],
+      defaultValue: 'none',
+      group: 'obfs',
+    },
+    {
       name: 'obfs_password',
       type: 'input',
       label: 'obfs_password',
       placeholder: (t) => t('obfs_password_placeholder'),
-      password: 16,
-      group: 'basic',
+      generate: {
+        function: () => generatePassword(16),
+      },
+      group: 'obfs',
+      condition: (p) => p.obfs && p.obfs !== 'none',
     },
     {
       name: 'up_mbps',

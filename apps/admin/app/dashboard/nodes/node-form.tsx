@@ -74,6 +74,20 @@ export default function NodeForm(props: {
   const Scheme = useMemo(() => buildSchema(t), [t]);
   const [open, setOpen] = useState(false);
 
+  const [autoFilledFields, setAutoFilledFields] = useState<Set<string>>(new Set());
+
+  const addAutoFilledField = (fieldName: string) => {
+    setAutoFilledFields((prev) => new Set(prev).add(fieldName));
+  };
+
+  const removeAutoFilledField = (fieldName: string) => {
+    setAutoFilledFields((prev) => {
+      const newSet = new Set(prev);
+      newSet.delete(fieldName);
+      return newSet;
+    });
+  };
+
   const form = useForm<NodeFormValues>({
     resolver: zodResolver(Scheme),
     defaultValues: {
@@ -112,12 +126,14 @@ export default function NodeForm(props: {
   const currentServer = useMemo(() => servers?.find((s) => s.id === serverId), [servers, serverId]);
 
   const availableProtocols = useMemo(() => {
-    return (currentServer?.protocols || [])
+    if (!currentServer?.protocols) return [];
+
+    return (currentServer.protocols as Array<{ type: ProtocolName; port?: number }>)
+      .filter((p) => p.type)
       .map((p) => ({
-        protocol: (p as any).type as ProtocolName,
-        port: (p as any).port as number | undefined,
-      }))
-      .filter((p) => !!p.protocol);
+        protocol: p.type,
+        port: p.port,
+      }));
   }, [currentServer]);
 
   useEffect(() => {
@@ -139,60 +155,96 @@ export default function NodeForm(props: {
     const id = nextId ?? undefined;
     form.setValue('server_id', id);
 
-    const sel = servers.find((s) => s.id === id);
-    const dirty = form.formState.dirtyFields as Record<string, any>;
+    if (!id) {
+      setAutoFilledFields(new Set());
+      return;
+    }
+
+    const selectedServer = servers.find((s) => s.id === id);
+    if (!selectedServer) return;
+
     const currentValues = form.getValues();
+    const fieldsToFill: string[] = [];
 
-    if (!dirty.name) {
-      form.setValue('name', (sel?.name as string) || '', { shouldDirty: false });
+    if (!currentValues.name || autoFilledFields.has('name')) {
+      form.setValue('name', selectedServer.name as string, { shouldDirty: false });
+      fieldsToFill.push('name');
     }
 
-    if (
-      !dirty.address &&
-      (!currentValues.address || currentValues.address === (sel?.address as string))
-    ) {
-      form.setValue('address', (sel?.address as string) || '', { shouldDirty: false });
+    if (!currentValues.address || autoFilledFields.has('address')) {
+      form.setValue('address', selectedServer.address as string, { shouldDirty: false });
+      fieldsToFill.push('address');
     }
 
-    const allowed = (sel?.protocols || [])
-      .map((p) => (p as any).type as ProtocolName)
-      .filter(Boolean);
+    const protocols =
+      (selectedServer.protocols as Array<{ type: ProtocolName; port?: number }>) || [];
+    const firstProtocol = protocols[0];
 
-    const currentProtocol = form.getValues('protocol') as ProtocolName;
+    if (firstProtocol && (!currentValues.protocol || autoFilledFields.has('protocol'))) {
+      form.setValue('protocol', firstProtocol.type, { shouldDirty: false });
+      fieldsToFill.push('protocol');
 
-    if (!allowed.includes(currentProtocol)) {
-      const firstProtocol = allowed[0] || '';
-      form.setValue('protocol', firstProtocol as any);
+      if (!currentValues.port || currentValues.port === 0 || autoFilledFields.has('port')) {
+        const port = firstProtocol.port || 0;
+        form.setValue('port', port, { shouldDirty: false });
+        fieldsToFill.push('port');
+      }
+    }
 
-      if (firstProtocol) {
-        handleProtocolChange(firstProtocol);
+    setAutoFilledFields(new Set(fieldsToFill));
+  }
+
+  const handleManualFieldChange = (fieldName: keyof NodeFormValues, value: any) => {
+    form.setValue(fieldName, value);
+    removeAutoFilledField(fieldName);
+  };
+
+  function handleProtocolChange(nextProto?: ProtocolName | null) {
+    const protocol = (nextProto || '') as ProtocolName | '';
+    form.setValue('protocol', protocol);
+
+    if (!protocol || !currentServer) {
+      removeAutoFilledField('protocol');
+      return;
+    }
+
+    const currentValues = form.getValues();
+    const isPortAutoFilled = autoFilledFields.has('port');
+
+    removeAutoFilledField('protocol');
+
+    if (!currentValues.port || currentValues.port === 0 || isPortAutoFilled) {
+      const protocolData = (
+        currentServer.protocols as Array<{ type: ProtocolName; port?: number }>
+      )?.find((p) => p.type === protocol);
+
+      if (protocolData) {
+        const port = protocolData.port || 0;
+        form.setValue('port', port, { shouldDirty: false });
+        addAutoFilledField('port');
       }
     }
   }
 
-  function handleProtocolChange(nextProto?: ProtocolName | null) {
-    const p = (nextProto || '') as ProtocolName | '';
-    form.setValue('protocol', p);
-    if (!p || !currentServer) return;
-
-    const dirty = form.formState.dirtyFields as Record<string, any>;
-    const currentValues = form.getValues();
-
-    if (!dirty.port) {
-      const hit = (currentServer.protocols as any[]).find((x) => (x as any).type === p);
-      const port = (hit as any)?.port as number | undefined;
-      const newPort = typeof port === 'number' && port > 0 ? port : 0;
-
-      if (!currentValues.port || currentValues.port === 0 || currentValues.port === newPort) {
-        form.setValue('port', newPort, { shouldDirty: false });
-      }
+  async function handleSubmit(values: NodeFormValues) {
+    const result = await onSubmit(values);
+    if (result) {
+      setOpen(false);
+      setAutoFilledFields(new Set());
     }
   }
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button onClick={() => form.reset()}>{trigger}</Button>
+        <Button
+          onClick={() => {
+            form.reset();
+            setAutoFilledFields(new Set());
+          }}
+        >
+          {trigger}
+        </Button>
       </SheetTrigger>
 
       <SheetContent className='w-[560px] max-w-full'>
@@ -253,7 +305,7 @@ export default function NodeForm(props: {
                     <FormControl>
                       <EnhancedInput
                         {...field}
-                        onValueChange={(v) => form.setValue(field.name, v as string)}
+                        onValueChange={(v) => handleManualFieldChange('name', v as string)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -270,7 +322,7 @@ export default function NodeForm(props: {
                     <FormControl>
                       <EnhancedInput
                         {...field}
-                        onValueChange={(v) => form.setValue(field.name, v as string)}
+                        onValueChange={(v) => handleManualFieldChange('address', v as string)}
                       />
                     </FormControl>
                     <FormMessage />
@@ -291,7 +343,7 @@ export default function NodeForm(props: {
                         min={1}
                         max={65535}
                         placeholder='1-65535'
-                        onValueChange={(v) => form.setValue(field.name, Number(v))}
+                        onValueChange={(v) => handleManualFieldChange('port', Number(v))}
                       />
                     </FormControl>
                     <FormMessage />
@@ -327,7 +379,7 @@ export default function NodeForm(props: {
           </Button>
           <Button
             disabled={loading}
-            onClick={form.handleSubmit(onSubmit, (errors) => {
+            onClick={form.handleSubmit(handleSubmit, (errors) => {
               const key = Object.keys(errors)[0] as keyof typeof errors;
               if (key) toast.error(String(errors[key]?.message));
               return false;

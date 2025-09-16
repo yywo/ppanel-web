@@ -30,6 +30,7 @@
   "select_protocol": "Selectează protocolul…",
   "select_server": "Selectează serverul…",
   "server": "Server",
+  "sorted_success": "Sortat cu succes",
   "tags": "Etichete",
   "tags_description": "Etichetă de grupare a permisiunilor (incluzând legarea planului și politicile de livrare).",
   "tags_placeholder": "Folosește Enter sau virgulă (,) pentru a adăuga mai multe etichete",

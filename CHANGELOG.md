@@ -1,23 +1,36 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.4.2](https://github.com/perfect-panel/ppanel-web/compare/v1.4.1...v1.4.2) (2025-09-15)
+## [1.4.3](https://github.com/perfect-panel/ppanel-web/compare/v1.4.2...v1.4.3) (2025-09-16)
 
 
 ### 🐛 Bug Fixes
 
-* Add GitHub template repository link to ProtocolForm header for easier access ([8a0baf3](https://github.com/perfect-panel/ppanel-web/commit/8a0baf3))
-* Add readOnly prop to MonacoEditor and TemplatePreview components for improved content handling ([c4c4d5a](https://github.com/perfect-panel/ppanel-web/commit/c4c4d5a))
+* Add success toast message for sorting in nodes and servers pages ([2d5175d](https://github.com/perfect-panel/ppanel-web/commit/2d5175d))
+* Implement encryption and obfuscation features in protocol configuration ([54de16b](https://github.com/perfect-panel/ppanel-web/commit/54de16b))
+* Refactor toB64 function to toB64Url for URL-safe base64 encoding in VlessX25519Pair generation ([8700cf6](https://github.com/perfect-panel/ppanel-web/commit/8700cf6))
+* Simplify initialValues assignment and update node submission logic in NodesPage ([05d6c89](https://github.com/perfect-panel/ppanel-web/commit/05d6c89))
+* Update bun.lockb to reflect dependency changes ([ebcebd7](https://github.com/perfect-panel/ppanel-web/commit/ebcebd7))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.4.2](https://github.com/perfect-panel/ppanel-web/compare/v1.4.1...v1.4.2) (2025-09-15)
+
+### 🐛 Bug Fixes
+
+- Add GitHub template repository link to ProtocolForm header for easier access ([8a0baf3](https://github.com/perfect-panel/ppanel-web/commit/8a0baf3))
+- Add readOnly prop to MonacoEditor and TemplatePreview components for improved content handling ([c4c4d5a](https://github.com/perfect-panel/ppanel-web/commit/c4c4d5a))
 
 ## [1.4.1](https://github.com/perfect-panel/ppanel-web/compare/v1.4.0...v1.4.1) (2025-09-15)
 
-
 ### 🐛 Bug Fixes
 
-* Add copy subscription functionality to user subscription dashboard and improve localization for new features ([e2a357f](https://github.com/perfect-panel/ppanel-web/commit/e2a357f))
-* Simplify handleInputBlur function by removing unnecessary setTimeout ([6341562](https://github.com/perfect-panel/ppanel-web/commit/6341562))
-* Update TemplatePreview to use MonacoEditor for content display and improve error handling ([1d52642](https://github.com/perfect-panel/ppanel-web/commit/1d52642))
-* Update user dashboard link to correct path ([131693b](https://github.com/perfect-panel/ppanel-web/commit/131693b))
+- Add copy subscription functionality to user subscription dashboard and improve localization for new features ([e2a357f](https://github.com/perfect-panel/ppanel-web/commit/e2a357f))
+- Simplify handleInputBlur function by removing unnecessary setTimeout ([6341562](https://github.com/perfect-panel/ppanel-web/commit/6341562))
+- Update TemplatePreview to use MonacoEditor for content display and improve error handling ([1d52642](https://github.com/perfect-panel/ppanel-web/commit/1d52642))
+- Update user dashboard link to correct path ([131693b](https://github.com/perfect-panel/ppanel-web/commit/131693b))
 
 <a name="readme-top"></a>
 

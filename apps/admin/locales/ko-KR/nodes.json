@@ -30,6 +30,7 @@
   "select_protocol": "프로토콜 선택…",
   "select_server": "서버 선택…",
   "server": "서버",
+  "sorted_success": "정렬이 완료되었습니다.",
   "tags": "태그",
   "tags_description": "권한 그룹화 태그(계획 바인딩 및 배포 정책 포함).",
   "tags_placeholder": "여러 태그를 추가하려면 Enter 또는 쉼표(,)를 사용하세요",
