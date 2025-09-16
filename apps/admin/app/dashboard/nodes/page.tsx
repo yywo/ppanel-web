@@ -152,26 +152,13 @@ export default function NodesPage() {
             trigger={t('edit')}
             title={t('drawerEditTitle')}
             loading={loading}
-            initialValues={{
-              name: row.name,
-              server_id: row.server_id,
-              protocol: row.protocol as any,
-              address: row.address as any,
-              port: row.port as any,
-              tags: (row.tags as any) || [],
-            }}
+            initialValues={row}
             onSubmit={async (values) => {
               setLoading(true);
               try {
                 const body: API.UpdateNodeRequest = {
-                  id: row.id,
-                  name: values.name,
-                  server_id: Number(values.server_id!),
-                  protocol: values.protocol,
-                  address: values.address,
-                  port: Number(values.port!),
-                  tags: values.tags || [],
-                  enabled: row.enabled,
+                  ...row,
+                  ...values,
                 } as any;
                 await updateNode(body);
                 toast.success(t('updated'));
@@ -201,16 +188,11 @@ export default function NodesPage() {
             key='copy'
             variant='outline'
             onClick={async () => {
-              const { id, enabled, created_at, updated_at, ...rest } = row as any;
+              const { id, enabled, created_at, updated_at, sort, ...rest } = row as any;
               await createNode({
-                name: rest.name,
-                server_id: rest.server_id,
-                protocol: rest.protocol,
-                address: rest.address,
-                port: rest.port,
-                tags: rest.tags || [],
+                ...rest,
                 enabled: false,
-              } as any);
+              });
               toast.success(t('copied'));
               ref.current?.refresh();
             }}
