@@ -5,6 +5,9 @@ interface SubscribeState {
   // Data
   subscribes: API.SubscribeItem[];
 
+  // Loading states
+  loading: boolean;
+
   // Actions
   fetchSubscribes: () => Promise<void>;
 
@@ -16,14 +19,20 @@ interface SubscribeState {
 export const useSubscribeStore = create<SubscribeState>((set, get) => ({
   // Initial state
   subscribes: [],
+  loading: false,
 
   // Actions
   fetchSubscribes: async () => {
+    if (get().loading) return;
+
+    set({ loading: true });
     try {
       const { data } = await getSubscribeList({ page: 1, size: 999999999 });
       set({ subscribes: data?.data?.list || [] });
     } catch (error) {
       // Handle error silently
+    } finally {
+      set({ loading: false });
     }
   },
 
@@ -43,12 +52,13 @@ export const useSubscribe = () => {
   const store = useSubscribeStore();
 
   // Auto-fetch subscribes
-  if (store.subscribes.length === 0) {
+  if (store.subscribes.length === 0 && !store.loading) {
     store.fetchSubscribes();
   }
 
   return {
     subscribes: store.subscribes,
+    loading: store.loading,
     fetchSubscribes: store.fetchSubscribes,
     getSubscribeName: store.getSubscribeName,
     getSubscribeById: store.getSubscribeById,

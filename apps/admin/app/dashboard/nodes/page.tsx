@@ -27,7 +27,7 @@ export default function NodesPage() {
 
   // Use our zustand store for server data
   const { getServerName, getServerAddress, getProtocolPort } = useServer();
-  const { fetchNodes } = useNode();
+  const { fetchNodes, fetchTags } = useNode();
 
   return (
     <ProTable<API.Node, { search: string }>
@@ -55,6 +55,7 @@ export default function NodesPage() {
                 toast.success(t('created'));
                 ref.current?.refresh();
                 fetchNodes();
+                fetchTags();
                 setLoading(false);
                 return true;
               } catch (e) {
@@ -77,6 +78,7 @@ export default function NodesPage() {
                 toast.success(v ? t('enabled_on') : t('enabled_off'));
                 ref.current?.refresh();
                 fetchNodes();
+                fetchTags();
               }}
             />
           ),
@@ -151,6 +153,7 @@ export default function NodesPage() {
                 toast.success(t('updated'));
                 ref.current?.refresh();
                 fetchNodes();
+                fetchTags();
                 setLoading(false);
                 return true;
               } catch (e) {
@@ -169,6 +172,7 @@ export default function NodesPage() {
               toast.success(t('deleted'));
               ref.current?.refresh();
               fetchNodes();
+              fetchTags();
             }}
             cancelText={t('cancel')}
             confirmText={t('confirm')}
@@ -185,6 +189,7 @@ export default function NodesPage() {
               toast.success(t('copied'));
               ref.current?.refresh();
               fetchNodes();
+              fetchTags();
             }}
           >
             {t('copy')}
@@ -202,6 +207,7 @@ export default function NodesPage() {
                 toast.success(t('deleted'));
                 ref.current?.refresh();
                 fetchNodes();
+                fetchTags();
               }}
               cancelText={t('cancel')}
               confirmText={t('confirm')}

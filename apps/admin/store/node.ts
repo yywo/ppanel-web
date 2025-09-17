@@ -6,6 +6,10 @@ interface NodeState {
   nodes: API.Node[];
   tags: string[];
 
+  // Loading states
+  loading: boolean;
+  loadingTags: boolean;
+
   // Actions
   fetchNodes: () => Promise<void>;
   fetchTags: () => Promise<void>;
@@ -24,23 +28,35 @@ export const useNodeStore = create<NodeState>((set, get) => ({
   // Initial state
   nodes: [],
   tags: [],
+  loading: false,
+  loadingTags: false,
 
   // Actions
   fetchNodes: async () => {
+    if (get().loading) return;
+
+    set({ loading: true });
     try {
       const { data } = await filterNodeList({ page: 1, size: 999999999 });
       set({ nodes: data?.data?.list || [] });
     } catch (error) {
       // Handle error silently
+    } finally {
+      set({ loading: false });
     }
   },
 
   fetchTags: async () => {
+    if (get().loadingTags) return;
+
+    set({ loadingTags: true });
     try {
       const { data } = await queryNodeTag();
       set({ tags: data?.data?.tags || [] });
     } catch (error) {
       // Handle error silently
+    } finally {
+      set({ loadingTags: false });
     }
   },
 
@@ -88,16 +104,18 @@ export const useNode = () => {
   const store = useNodeStore();
 
   // Auto-fetch nodes and tags
-  if (store.nodes.length === 0) {
+  if (store.nodes.length === 0 && !store.loading) {
     store.fetchNodes();
   }
-  if (store.tags.length === 0) {
+  if (store.tags.length === 0 && !store.loadingTags) {
     store.fetchTags();
   }
 
   return {
     nodes: store.nodes,
     tags: store.tags,
+    loading: store.loading,
+    loadingTags: store.loadingTags,
     fetchNodes: store.fetchNodes,
     fetchTags: store.fetchTags,
     getNodeById: store.getNodeById,

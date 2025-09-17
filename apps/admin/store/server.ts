@@ -5,6 +5,9 @@ interface ServerState {
   // Data
   servers: API.Server[];
 
+  // Loading states
+  loading: boolean;
+
   // Actions
   fetchServers: () => Promise<void>;
 
@@ -20,14 +23,20 @@ interface ServerState {
 export const useServerStore = create<ServerState>((set, get) => ({
   // Initial state
   servers: [],
+  loading: false,
 
   // Actions
   fetchServers: async () => {
+    if (get().loading) return;
+
+    set({ loading: true });
     try {
       const { data } = await filterServerList({ page: 1, size: 999999999 });
       set({ servers: data?.data?.list || [] });
     } catch (error) {
       // Handle error silently
+    } finally {
+      set({ loading: false });
     }
   },
 
@@ -75,12 +84,13 @@ export const useServer = () => {
   const store = useServerStore();
 
   // Auto-fetch servers
-  if (store.servers.length === 0) {
+  if (store.servers.length === 0 && !store.loading) {
     store.fetchServers();
   }
 
   return {
     servers: store.servers,
+    loading: store.loading,
     fetchServers: store.fetchServers,
     getServerById: store.getServerById,
     getServerName: store.getServerName,
