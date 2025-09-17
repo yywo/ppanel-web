@@ -37,7 +37,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from 'sonner';
 import Subscribe from '../subscribe/page';
@@ -75,9 +75,39 @@ export default function Content() {
       return data.data?.list || [];
     },
   });
-  const [platform, setPlatform] = useState<keyof API.DownloadLink>(
-    getPlatform() === 'macos' ? 'mac' : (getPlatform() as keyof API.DownloadLink),
-  );
+
+  const availablePlatforms = React.useMemo(() => {
+    if (!applications || applications.length === 0) return platforms;
+
+    const platformsSet = new Set<keyof API.DownloadLink>();
+
+    applications.forEach((app) => {
+      if (app.download_link) {
+        platforms.forEach((platform) => {
+          if (app.download_link?.[platform]) {
+            platformsSet.add(platform);
+          }
+        });
+      }
+    });
+
+    return platforms.filter((platform) => platformsSet.has(platform));
+  }, [applications]);
+
+  const [platform, setPlatform] = useState<keyof API.DownloadLink>(() => {
+    const detectedPlatform =
+      getPlatform() === 'macos' ? 'mac' : (getPlatform() as keyof API.DownloadLink);
+    return detectedPlatform;
+  });
+
+  React.useEffect(() => {
+    if (availablePlatforms.length > 0 && !availablePlatforms.includes(platform)) {
+      const firstAvailablePlatform = availablePlatforms[0];
+      if (firstAvailablePlatform) {
+        setPlatform(firstAvailablePlatform);
+      }
+    }
+  }, [availablePlatforms, platform]);
 
   const { data } = useQuery({
     queryKey: ['getStat'],
@@ -122,31 +152,33 @@ export default function Content() {
             </div>
           </div>
           <div className='flex flex-wrap justify-between gap-4'>
-            <Tabs
-              value={platform}
-              onValueChange={(value) => setPlatform(value as keyof API.DownloadLink)}
-              className='w-full max-w-full md:w-auto'
-            >
-              <TabsList className='flex *:flex-auto'>
-                {platforms.map((item) => (
-                  <TabsTrigger value={item} key={item} className='px-1 lg:px-3'>
-                    <Icon
-                      icon={`${
-                        {
-                          windows: 'mdi:microsoft-windows',
-                          mac: 'uil:apple',
-                          linux: 'uil:linux',
-                          ios: 'simple-icons:ios',
-                          android: 'uil:android',
-                          harmony: 'simple-icons:harmonyos',
-                        }[item]
-                      }`}
-                      className='size-5'
-                    />
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </Tabs>
+            {availablePlatforms.length > 0 && (
+              <Tabs
+                value={platform}
+                onValueChange={(value) => setPlatform(value as keyof API.DownloadLink)}
+                className='w-full max-w-full md:w-auto'
+              >
+                <TabsList className='flex *:flex-auto'>
+                  {availablePlatforms.map((item) => (
+                    <TabsTrigger value={item} key={item} className='px-1 lg:px-3'>
+                      <Icon
+                        icon={`${
+                          {
+                            windows: 'mdi:microsoft-windows',
+                            mac: 'uil:apple',
+                            linux: 'uil:linux',
+                            ios: 'simple-icons:ios',
+                            android: 'uil:android',
+                            harmony: 'simple-icons:harmonyos',
+                          }[item]
+                        }`}
+                        className='size-5'
+                      />
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </Tabs>
+            )}
             {data?.protocol && data?.protocol.length > 1 && (
               <Tabs
                 value={protocol}
@@ -325,9 +357,8 @@ export default function Content() {
                           <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
                             {applications
                               ?.filter((application) => {
-                                if (!application.download_link && !application.scheme) return false;
-                                return (
-                                  !!application.download_link?.[platform] || !!application.scheme
+                                return !!(
+                                  application.download_link?.[platform] && application.scheme
                                 );
                               })
                               .map((application) => {
