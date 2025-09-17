@@ -3,7 +3,13 @@
 import { previewSubscribeTemplate } from '@/services/admin/application';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@workspace/ui/components/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@workspace/ui/components/sheet';
 import { MonacoEditor } from '@workspace/ui/custom-components/editor/monaco-editor';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { useTranslations } from 'next-intl';
@@ -68,36 +74,32 @@ export function TemplatePreview({ applicationId, output_format }: TemplatePrevie
     }
   };
 
-  const handleOpenChange = (newOpen: boolean) => {
-    setIsOpen(newOpen);
-  };
-
   return (
-    <>
-      <Button variant='ghost' size='sm' onClick={() => setIsOpen(true)}>
-        <Icon icon='mdi:eye' className='mr-2 h-4 w-4' />
-        {t('preview')}
-      </Button>
-      <Sheet open={isOpen} onOpenChange={handleOpenChange}>
-        <SheetHeader>
-          <SheetTitle></SheetTitle>
-        </SheetHeader>
-        <SheetContent className='w-[800px] max-w-[90vw] md:max-w-screen-md'>
-          {isLoading ? (
-            <div className='flex items-center justify-center'>
-              <Icon icon='mdi:loading' className='h-6 w-6 animate-spin' />
-              <span className='ml-2'>{t('loading')}</span>
-            </div>
-          ) : (
-            <MonacoEditor
-              title={t('title')}
-              value={getDisplayContent()}
-              language={mapLanguage(output_format)}
-              readOnly
-            />
-          )}
-        </SheetContent>
-      </Sheet>
-    </>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <Button variant='ghost'>
+          <Icon icon='mdi:eye' className='h-4 w-4' />
+          {t('preview')}
+        </Button>
+      </SheetTrigger>
+      <SheetHeader>
+        <SheetTitle></SheetTitle>
+      </SheetHeader>
+      <SheetContent className='w-[800px] max-w-[90vw] pt-10 md:max-w-screen-md'>
+        {isLoading ? (
+          <div className='flex items-center justify-center'>
+            <Icon icon='mdi:loading' className='h-6 w-6 animate-spin' />
+            <span className='ml-2'>{t('loading')}</span>
+          </div>
+        ) : (
+          <MonacoEditor
+            title={t('title')}
+            value={getDisplayContent()}
+            language={mapLanguage(output_format)}
+            readOnly
+          />
+        )}
+      </SheetContent>
+    </Sheet>
   );
 }
