@@ -1,6 +1,19 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.4.6](https://github.com/perfect-panel/ppanel-web/compare/v1.4.5...v1.4.6) (2025-09-17)
+
+
+### 🎫 Chores
+
+* Merge branch 'main' into develop ([41f06bf](https://github.com/perfect-panel/ppanel-web/commit/41f06bf))
+
+
+### 🐛 Bug Fixes
+
+* Add loaded state to node, server, and subscribe stores for better loading management ([13dce0c](https://github.com/perfect-panel/ppanel-web/commit/13dce0c))
+* Removed node metadata fields in subscription schema to simplify structure ([0cadd83](https://github.com/perfect-panel/ppanel-web/commit/0cadd83))
+
 ## [1.4.5](https://github.com/perfect-panel/ppanel-web/compare/v1.4.4...v1.4.5) (2025-09-17)
 
 

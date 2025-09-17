@@ -7,6 +7,7 @@ interface ServerState {
 
   // Loading states
   loading: boolean;
+  loaded: boolean;
 
   // Actions
   fetchServers: () => Promise<void>;
@@ -24,6 +25,7 @@ export const useServerStore = create<ServerState>((set, get) => ({
   // Initial state
   servers: [],
   loading: false,
+  loaded: false,
 
   // Actions
   fetchServers: async () => {
@@ -32,9 +34,13 @@ export const useServerStore = create<ServerState>((set, get) => ({
     set({ loading: true });
     try {
       const { data } = await filterServerList({ page: 1, size: 999999999 });
-      set({ servers: data?.data?.list || [] });
+      set({
+        servers: data?.data?.list || [],
+        loaded: true,
+      });
     } catch (error) {
       // Handle error silently
+      set({ loaded: true });
     } finally {
       set({ loading: false });
     }
@@ -84,13 +90,14 @@ export const useServer = () => {
   const store = useServerStore();
 
   // Auto-fetch servers
-  if (store.servers.length === 0 && !store.loading) {
+  if (!store.loaded && !store.loading) {
     store.fetchServers();
   }
 
   return {
     servers: store.servers,
     loading: store.loading,
+    loaded: store.loaded,
     fetchServers: store.fetchServers,
     getServerById: store.getServerById,
     getServerName: store.getServerName,
