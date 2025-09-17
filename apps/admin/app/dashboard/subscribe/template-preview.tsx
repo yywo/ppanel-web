@@ -96,6 +96,7 @@ export function TemplatePreview({ applicationId, output_format }: TemplatePrevie
             title={t('title')}
             value={getDisplayContent()}
             language={mapLanguage(output_format)}
+            showLineNumbers
             readOnly
           />
         )}
