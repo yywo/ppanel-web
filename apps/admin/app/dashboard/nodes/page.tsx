@@ -5,12 +5,12 @@ import {
   createNode,
   deleteNode,
   filterNodeList,
-  filterServerList,
   resetSortWithNode,
   toggleNodeStatus,
   updateNode,
 } from '@/services/admin/server';
-import { useQuery } from '@tanstack/react-query';
+import { useNode } from '@/store/node';
+import { useServer } from '@/store/server';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
@@ -25,24 +25,9 @@ export default function NodesPage() {
   const ref = useRef<ProTableActions>(null);
   const [loading, setLoading] = useState(false);
 
-  const { data: servers = [] } = useQuery({
-    queryKey: ['filterServerListAll'],
-    queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 999999999 });
-      return data?.data?.list || [];
-    },
-  });
-
-  const getServerName = (id?: number) =>
-    id ? (servers.find((s) => s.id === id)?.name ?? `#${id}`) : '—';
-  const getServerOriginAddr = (id?: number) =>
-    id ? (servers.find((s) => s.id === id)?.address ?? '—') : '—';
-  const getProtocolOriginPort = (id?: number, proto?: string) => {
-    if (!id || !proto) return '—';
-    const hit = servers.find((s) => s.id === id)?.protocols?.find((p) => (p as any).type === proto);
-    const p = (hit as any)?.port as number | undefined;
-    return typeof p === 'number' ? String(p) : '—';
-  };
+  // Use our zustand store for server data
+  const { getServerName, getServerAddress, getProtocolPort } = useServer();
+  const { fetchNodes } = useNode();
 
   return (
     <ProTable<API.Node, { search: string }>
@@ -69,6 +54,7 @@ export default function NodesPage() {
                 await createNode(body);
                 toast.success(t('created'));
                 ref.current?.refresh();
+                fetchNodes();
                 setLoading(false);
                 return true;
               } catch (e) {
@@ -90,6 +76,7 @@ export default function NodesPage() {
                 await toggleNodeStatus({ id: row.original.id, enable: v });
                 toast.success(v ? t('enabled_on') : t('enabled_off'));
                 ref.current?.refresh();
+                fetchNodes();
               }}
             />
           ),
@@ -106,14 +93,14 @@ export default function NodesPage() {
           id: 'server_id',
           header: t('server'),
           cell: ({ row }) => (
-            <div className='flex flex-wrap gap-2'>
+            <div className='space-y-1'>
               <Badge variant='outline'>
-                {getServerName(row.original.server_id)} ·{' '}
-                {getServerOriginAddr(row.original.server_id)}
+                {getServerName(row.original.server_id)} : {getServerAddress(row.original.server_id)}
               </Badge>
+              <br />
               <Badge variant='outline'>
-                {row.original.protocol || '—'} ·{' '}
-                {getProtocolOriginPort(row.original.server_id, row.original.protocol)}
+                {row.original.protocol || '—'} :{' '}
+                {getProtocolPort(row.original.server_id, row.original.protocol)}
               </Badge>
             </div>
           ),
@@ -163,6 +150,7 @@ export default function NodesPage() {
                 await updateNode(body);
                 toast.success(t('updated'));
                 ref.current?.refresh();
+                fetchNodes();
                 setLoading(false);
                 return true;
               } catch (e) {
@@ -180,6 +168,7 @@ export default function NodesPage() {
               await deleteNode({ id: row.id } as any);
               toast.success(t('deleted'));
               ref.current?.refresh();
+              fetchNodes();
             }}
             cancelText={t('cancel')}
             confirmText={t('confirm')}
@@ -195,6 +184,7 @@ export default function NodesPage() {
               });
               toast.success(t('copied'));
               ref.current?.refresh();
+              fetchNodes();
             }}
           >
             {t('copy')}
@@ -211,6 +201,7 @@ export default function NodesPage() {
                 await Promise.all(rows.map((r) => deleteNode({ id: r.id } as any)));
                 toast.success(t('deleted'));
                 ref.current?.refresh();
+                fetchNodes();
               }}
               cancelText={t('cancel')}
               confirmText={t('confirm')}

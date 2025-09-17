@@ -1,6 +1,4 @@
-import { z } from 'zod';
 import { protocols } from './constants';
-import { formSchema } from './schemas';
 
 export type FieldConfig = {
   name: string;
@@ -21,7 +19,5 @@ export type FieldConfig = {
   group?: 'basic' | 'transport' | 'security' | 'reality' | 'obfs' | 'encryption';
   gridSpan?: 1 | 2;
 };
-
-export type ServerFormValues = z.infer<typeof formSchema>;
 
 export type ProtocolType = (typeof protocols)[number];

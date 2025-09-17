@@ -3,9 +3,8 @@
 import { Display } from '@/components/display';
 import { ProTable } from '@/components/pro-table';
 import { queryQuotaTaskList } from '@/services/admin/marketing';
-import { getSubscribeList } from '@/services/admin/subscribe';
+import { useSubscribe } from '@/store/subscribe';
 import { formatDate } from '@/utils/common';
-import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
@@ -23,21 +22,9 @@ export default function QuotaTaskManager() {
   const t = useTranslations('marketing');
   const [open, setOpen] = useState(false);
 
-  // Get subscribe list to show subscription names
-  const { data: subscribeList } = useQuery({
-    queryKey: ['getSubscribeList', 'all'],
-    queryFn: async () => {
-      const { data } = await getSubscribeList({
-        page: 1,
-        size: 999999999,
-      });
-      return data.data?.list as API.SubscribeItem[];
-    },
-  });
-
-  // Create a map for quick lookup of subscription names
+  const { subscribes } = useSubscribe();
   const subscribeMap =
-    subscribeList?.reduce(
+    subscribes?.reduce(
       (acc, subscribe) => {
         acc[subscribe.id!] = subscribe.name!;
         return acc;

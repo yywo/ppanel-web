@@ -1,5 +1,5 @@
 'use client';
-// Online users detail moved to separate component
+
 import { ProTable, ProTableActions } from '@/components/pro-table';
 import {
   createServer,
@@ -10,6 +10,8 @@ import {
   resetSortWithServer,
   updateServer,
 } from '@/services/admin/server';
+import { useNode } from '@/store/node';
+import { useServer } from '@/store/server';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
@@ -22,18 +24,6 @@ import { toast } from 'sonner';
 import OnlineUsersCell from './online-users-cell';
 import ServerConfig from './server-config';
 import ServerForm from './server-form';
-
-type ProtocolName = 'shadowsocks' | 'vmess' | 'vless' | 'trojan' | 'hysteria2' | 'tuic' | 'anytls';
-
-const PROTOCOL_COLORS: Record<ProtocolName, string> = {
-  shadowsocks: 'bg-green-500',
-  vmess: 'bg-rose-500',
-  vless: 'bg-blue-500',
-  trojan: 'bg-yellow-500',
-  hysteria2: 'bg-purple-500',
-  tuic: 'bg-cyan-500',
-  anytls: 'bg-gray-500',
-};
 
 function PctBar({ value }: { value: number }) {
   const v = value.toFixed(2);
@@ -69,6 +59,8 @@ function RegionIpCell({
 
 export default function ServersPage() {
   const t = useTranslations('servers');
+  const { isServerReferencedByNodes } = useNode();
+  const { fetchServers } = useServer();
 
   const [loading, setLoading] = useState(false);
   const [migrating, setMigrating] = useState(false);
@@ -129,6 +121,7 @@ export default function ServersPage() {
                     await createServer(values as unknown as API.CreateServerRequest);
                     toast.success(t('created'));
                     ref.current?.refresh();
+                    fetchServers();
                     setLoading(false);
                     return true;
                   } catch (e) {
@@ -163,23 +156,16 @@ export default function ServersPage() {
             accessorKey: 'protocols',
             header: t('protocols'),
             cell: ({ row }) => {
-              const list = (row.original.protocols || []) as API.Protocol[];
-              if (!list.length) return t('noData');
+              const list = row.original.protocols.filter(
+                (p) => p.enable !== false,
+              ) as API.Protocol[];
+              if (!list.length) return '—';
               return (
                 <div className='flex flex-wrap gap-1'>
                   {list.map((p, idx) => {
-                    const proto = ((p as any)?.type || '') as ProtocolName | '';
-                    if (!proto) return null;
-                    const color = PROTOCOL_COLORS[proto as ProtocolName];
-                    const port = (p as any)?.port as number | undefined;
-                    const label = `${proto}${port ? ` (${port})` : ''}`;
                     return (
-                      <Badge
-                        key={idx}
-                        variant='outline'
-                        className={cn('text-primary-foreground', color)}
-                      >
-                        {label}
+                      <Badge key={idx} variant='outline'>
+                        {p.type} ({p.port})
                       </Badge>
                     );
                   })}
@@ -272,6 +258,7 @@ export default function ServersPage() {
                   });
                   toast.success(t('updated'));
                   ref.current?.refresh();
+                  fetchServers();
                   setLoading(false);
                   return true;
                 } catch (e) {
@@ -282,13 +269,18 @@ export default function ServersPage() {
             />,
             <ConfirmButton
               key='delete'
-              trigger={<Button variant='destructive'>{t('delete')}</Button>}
+              trigger={
+                <Button variant='destructive' disabled={isServerReferencedByNodes(row.id)}>
+                  {t('delete')}
+                </Button>
+              }
               title={t('confirmDeleteTitle')}
               description={t('confirmDeleteDesc')}
               onConfirm={async () => {
                 await deleteServer({ id: row.id } as any);
                 toast.success(t('deleted'));
                 ref.current?.refresh();
+                fetchServers();
               }}
               cancelText={t('cancel')}
               confirmText={t('confirm')}
@@ -311,6 +303,7 @@ export default function ServersPage() {
                 await createServer(body);
                 toast.success(t('copied'));
                 ref.current?.refresh();
+                fetchServers();
                 setLoading(false);
               }}
             >
@@ -318,16 +311,22 @@ export default function ServersPage() {
             </Button>,
           ],
           batchRender(rows) {
+            const hasReferencedServers = rows.some((row) => isServerReferencedByNodes(row.id));
             return [
               <ConfirmButton
                 key='delete'
-                trigger={<Button variant='destructive'>{t('delete')}</Button>}
+                trigger={
+                  <Button variant='destructive' disabled={hasReferencedServers}>
+                    {t('delete')}
+                  </Button>
+                }
                 title={t('confirmDeleteTitle')}
                 description={t('confirmDeleteDesc')}
                 onConfirm={async () => {
                   await Promise.all(rows.map((r) => deleteServer({ id: r.id })));
                   toast.success(t('deleted'));
                   ref.current?.refresh();
+                  fetchServers();
                 }}
                 cancelText={t('cancel')}
                 confirmText={t('confirm')}

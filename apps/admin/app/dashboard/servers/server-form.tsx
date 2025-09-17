@@ -1,5 +1,6 @@
 'use client';
 
+import { useNode } from '@/store/node';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Accordion,
@@ -48,7 +49,6 @@ import {
   getProtocolDefaultConfig,
   PROTOCOL_FIELDS,
   protocols as PROTOCOLS,
-  ServerFormValues,
 } from './form-schema';
 
 function DynamicField({
@@ -321,13 +321,15 @@ export default function ServerForm(props: {
   trigger: string;
   title: string;
   loading?: boolean;
-  initialValues?: Partial<ServerFormValues>;
-  onSubmit: (values: ServerFormValues) => Promise<boolean> | boolean;
+  initialValues?: Partial<API.Server>;
+  onSubmit: (values: Partial<API.Server>) => Promise<boolean> | boolean;
 }) {
   const { trigger, title, loading, initialValues, onSubmit } = props;
   const t = useTranslations('servers');
   const [open, setOpen] = useState(false);
   const [accordionValue, setAccordionValue] = useState<string>();
+
+  const { isProtocolUsedInNodes } = useNode();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -337,7 +339,7 @@ export default function ServerForm(props: {
       country: '',
       city: '',
       ratio: 1,
-      protocols: [],
+      protocols: [] as any[],
       ...initialValues,
     },
   });
@@ -515,6 +517,7 @@ export default function ServerForm(props: {
                     PROTOCOLS.findIndex((t) => t === type),
                   );
                   const current = (protocolsValues[i] || {}) as Record<string, any>;
+                  const isEnabled = current?.enable !== false;
                   const fields = PROTOCOL_FIELDS[type] || [];
                   return (
                     <AccordionItem key={type} value={type} className='mb-2 rounded-lg border'>
@@ -539,16 +542,20 @@ export default function ServerForm(props: {
                               <span
                                 className={cn(
                                   'text-xs',
-                                  current.enable ? 'text-green-500' : 'text-muted-foreground',
+                                  isEnabled ? 'text-green-500' : 'text-muted-foreground',
                                 )}
                               >
-                                {current.enable ? t('enabled') : t('disabled')}
+                                {isEnabled ? t('enabled') : t('disabled')}
                               </span>
                             </div>
                           </div>
                           <Switch
                             className='mr-2'
-                            checked={!!current.enable}
+                            checked={!!isEnabled}
+                            disabled={Boolean(
+                              initialValues?.id &&
+                                isProtocolUsedInNodes(initialValues?.id || 0, type),
+                            )}
                             onCheckedChange={(checked) => {
                               form.setValue(`protocols.${i}.enable`, checked);
                             }}

@@ -1,8 +1,7 @@
 'use client';
 
-import { filterNodeList, queryNodeTag } from '@/services/admin/server';
+import { useNode } from '@/store/node';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useQuery } from '@tanstack/react-query';
 import {
   Accordion,
   AccordionContent,
@@ -229,35 +228,9 @@ export default function SubscribeForm<T extends Record<string, any>>({
     if (bool) setOpen(false);
   }
 
-  const { data: nodes } = useQuery({
-    queryKey: ['filterNodeListAll'],
-    queryFn: async () => {
-      const { data } = await filterNodeList({ page: 1, size: 999999999 });
-      return (data.data?.list || []) as API.Node[];
-    },
-  });
+  const { nodes, getAllAvailableTags, getNodesByTag, getNodesWithoutTags } = useNode();
 
-  const { data: allTagsData } = useQuery({
-    queryKey: ['queryNodeTag'],
-    queryFn: async () => {
-      const { data } = await queryNodeTag();
-      return data?.data?.tags || [];
-    },
-  });
-
-  const nodeExtractedTags = Array.from(
-    new Set(
-      ((nodes as API.Node[]) || [])
-        .flatMap((n) => (Array.isArray(n.tags) ? n.tags : []))
-        .filter(Boolean),
-    ),
-  ) as string[];
-
-  const allAvailableTags = (allTagsData as string[]) || [];
-
-  const tagGroups = Array.from(new Set([...allAvailableTags, ...nodeExtractedTags])).filter(
-    Boolean,
-  );
+  const tagGroups = getAllAvailableTags();
 
   const unit_time = form.watch('unit_time');
 
@@ -806,10 +779,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                               {tagGroups.map((tag) => {
                                 const value = field.value || [];
                                 const tagId = tag;
-                                const nodesWithTag =
-                                  (nodes as API.Node[])?.filter((n) =>
-                                    (n.tags || []).includes(tag),
-                                  ) || [];
+                                const nodesWithTag = getNodesByTag(tag);
 
                                 return (
                                   <AccordionItem key={tag} value={String(tag)}>
@@ -836,22 +806,20 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                     </AccordionTrigger>
                                     <AccordionContent>
                                       <ul className='space-y-1'>
-                                        {(nodes as API.Node[])
-                                          ?.filter((n) => (n.tags || []).includes(tag))
-                                          ?.map((node) => (
-                                            <li
-                                              key={node.id}
-                                              className='flex items-center justify-between gap-3'
-                                            >
-                                              <span className='flex-1'>{node.name}</span>
-                                              <span className='flex-1'>
-                                                {node.address}:{node.port}
-                                              </span>
-                                              <span className='flex-1 text-right'>
-                                                {node.protocol}
-                                              </span>
-                                            </li>
-                                          ))}
+                                        {getNodesByTag(tag).map((node) => (
+                                          <li
+                                            key={node.id}
+                                            className='flex items-center justify-between gap-3'
+                                          >
+                                            <span className='flex-1'>{node.name}</span>
+                                            <span className='flex-1'>
+                                              {node.address}:{node.port}
+                                            </span>
+                                            <span className='flex-1 text-right'>
+                                              {node.protocol}
+                                            </span>
+                                          </li>
+                                        ))}
                                       </ul>
                                     </AccordionContent>
                                   </AccordionItem>
@@ -872,34 +840,32 @@ export default function SubscribeForm<T extends Record<string, any>>({
                           <FormLabel>{t('form.node')}</FormLabel>
                           <FormControl>
                             <div className='flex flex-col gap-2'>
-                              {(nodes as API.Node[])
-                                ?.filter((item) => (item.tags || []).length === 0)
-                                ?.map((item) => {
-                                  const value = field.value || [];
+                              {getNodesWithoutTags().map((item) => {
+                                const value = field.value || [];
 
-                                  return (
-                                    <div className='flex items-center gap-2' key={item.id}>
-                                      <Checkbox
-                                        checked={value.includes(item.id!)}
-                                        onCheckedChange={(checked) => {
-                                          return checked
-                                            ? form.setValue(field.name, [...value, item.id])
-                                            : form.setValue(
-                                                field.name,
-                                                value.filter((value: number) => value !== item.id),
-                                              );
-                                        }}
-                                      />
-                                      <Label className='flex w-full items-center justify-between gap-3'>
-                                        <span className='flex-1'>{item.name}</span>
-                                        <span className='flex-1'>
-                                          {item.address}:{item.port}
-                                        </span>
-                                        <span className='flex-1 text-right'>{item.protocol}</span>
-                                      </Label>
-                                    </div>
-                                  );
-                                })}
+                                return (
+                                  <div className='flex items-center gap-2' key={item.id}>
+                                    <Checkbox
+                                      checked={value.includes(item.id!)}
+                                      onCheckedChange={(checked) => {
+                                        return checked
+                                          ? form.setValue(field.name, [...value, item.id])
+                                          : form.setValue(
+                                              field.name,
+                                              value.filter((value: number) => value !== item.id),
+                                            );
+                                      }}
+                                    />
+                                    <Label className='flex w-full items-center justify-between gap-3'>
+                                      <span className='flex-1'>{item.name}</span>
+                                      <span className='flex-1'>
+                                        {item.address}:{item.port}
+                                      </span>
+                                      <span className='flex-1 text-right'>{item.protocol}</span>
+                                    </Label>
+                                  </div>
+                                );
+                              })}
                             </div>
                           </FormControl>
                           <FormMessage />

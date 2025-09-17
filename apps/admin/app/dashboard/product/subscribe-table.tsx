@@ -10,6 +10,7 @@ import {
   subscribeSort,
   updateSubscribe,
 } from '@/services/admin/subscribe';
+import { useSubscribe } from '@/store/subscribe';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { Switch } from '@workspace/ui/components/switch';
@@ -23,6 +24,7 @@ export default function SubscribeTable() {
   const t = useTranslations('product');
   const [loading, setLoading] = useState(false);
   const ref = useRef<ProTableActions>(null);
+  const { fetchSubscribes } = useSubscribe();
   return (
     <ProTable<API.SubscribeItem, { group_id: number; query: string }>
       action={ref}
@@ -42,6 +44,7 @@ export default function SubscribeTable() {
                 });
                 toast.success(t('createSuccess'));
                 ref.current?.refresh();
+                fetchSubscribes();
                 setLoading(false);
 
                 return true;
@@ -83,6 +86,7 @@ export default function SubscribeTable() {
                     show: checked,
                   } as API.UpdateSubscribeRequest);
                   ref.current?.refresh();
+                  fetchSubscribes();
                 }}
               />
             );
@@ -101,6 +105,7 @@ export default function SubscribeTable() {
                     sell: checked,
                   } as API.UpdateSubscribeRequest);
                   ref.current?.refresh();
+                  fetchSubscribes();
                 }}
               />
             );
@@ -186,6 +191,7 @@ export default function SubscribeTable() {
                 } as API.UpdateSubscribeRequest);
                 toast.success(t('updateSuccess'));
                 ref.current?.refresh();
+                fetchSubscribes();
                 setLoading(false);
                 return true;
               } catch (error) {
@@ -206,6 +212,7 @@ export default function SubscribeTable() {
               });
               toast.success(t('deleteSuccess'));
               ref.current?.refresh();
+              fetchSubscribes();
             }}
             cancelText={t('cancel')}
             confirmText={t('confirm')}
@@ -224,6 +231,7 @@ export default function SubscribeTable() {
                 } as API.CreateSubscribeRequest);
                 toast.success(t('copySuccess'));
                 ref.current?.refresh();
+                fetchSubscribes();
                 setLoading(false);
                 return true;
               } catch (error) {
@@ -248,6 +256,7 @@ export default function SubscribeTable() {
 
               toast.success(t('deleteSuccess'));
               ref.current?.reset();
+              fetchSubscribes();
             }}
             cancelText={t('cancel')}
             confirmText={t('confirm')}

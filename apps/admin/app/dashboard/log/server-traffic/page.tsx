@@ -2,8 +2,7 @@
 
 import { ProTable } from '@/components/pro-table';
 import { filterServerTrafficLog } from '@/services/admin/log';
-import { filterServerList } from '@/services/admin/server';
-import { useQuery } from '@tanstack/react-query';
+import { useServer } from '@/store/server';
 import { Button } from '@workspace/ui/components/button';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
@@ -13,19 +12,9 @@ import { useSearchParams } from 'next/navigation';
 export default function ServerTrafficLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
+  const { getServerName } = useServer();
 
   const today = new Date().toISOString().split('T')[0];
-
-  const { data: servers = [] } = useQuery({
-    queryKey: ['filterServerListAll'],
-    queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 999999999 });
-      return data?.data?.list || [];
-    },
-  });
-
-  const getServerName = (id?: number) =>
-    id ? (servers.find((s) => s.id === id)?.name ?? `Server ${id}`) : 'Unknown';
 
   const initialFilters = {
     date: sp.get('date') || today,

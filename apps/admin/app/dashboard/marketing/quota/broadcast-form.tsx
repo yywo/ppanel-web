@@ -2,9 +2,8 @@
 
 import { Display } from '@/components/display';
 import { createQuotaTask, queryQuotaTaskPreCount } from '@/services/admin/marketing';
-import { getSubscribeList } from '@/services/admin/subscribe';
+import { useSubscribe } from '@/store/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -73,17 +72,7 @@ export default function QuotaBroadcastForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [open, setOpen] = useState(false);
 
-  // Get subscribe list
-  const { data: subscribeList } = useQuery({
-    queryKey: ['getSubscribeList', 'all'],
-    queryFn: async () => {
-      const { data } = await getSubscribeList({
-        page: 1,
-        size: 999999999,
-      });
-      return data.data?.list as API.SubscribeItem[];
-    },
-  });
+  const { subscribes } = useSubscribe();
 
   // Calculate recipient count
   const calculateRecipients = async () => {
@@ -217,21 +206,19 @@ export default function QuotaBroadcastForm() {
                         value={field.value || []}
                         onChange={field.onChange}
                         placeholder={t('pleaseSelectSubscribers')}
-                        options={
-                          subscribeList?.map((subscribe) => ({
-                            value: subscribe.id!,
-                            label: subscribe.name!,
-                            children: (
-                              <div>
-                                <div>{subscribe.name}</div>
-                                <div className='text-muted-foreground text-xs'>
-                                  <Display type='traffic' value={subscribe.traffic || 0} /> /{' '}
-                                  <Display type='currency' value={subscribe.unit_price || 0} />
-                                </div>
+                        options={subscribes?.map((subscribe) => ({
+                          value: subscribe.id!,
+                          label: subscribe.name!,
+                          children: (
+                            <div>
+                              <div>{subscribe.name}</div>
+                              <div className='text-muted-foreground text-xs'>
+                                <Display type='traffic' value={subscribe.traffic || 0} /> /{' '}
+                                <Display type='currency' value={subscribe.unit_price || 0} />
                               </div>
-                            ),
-                          })) || []
-                        }
+                            </div>
+                          ),
+                        }))}
                       />
                     </FormControl>
                     <FormMessage />
