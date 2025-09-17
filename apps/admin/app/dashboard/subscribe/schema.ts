@@ -189,19 +189,6 @@ export const subscribeSchema = {
           type: 'boolean',
           description: 'Whether this protocol is enabled',
         },
-        // Node metadata
-        Country: {
-          type: 'string',
-          description: 'Node country',
-        },
-        City: {
-          type: 'string',
-          description: 'Node city',
-        },
-        Ratio: {
-          type: 'number',
-          description: 'Traffic ratio multiplier',
-        },
         // UUID for vmess/vless
         UUID: {
           type: 'string',
