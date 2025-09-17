@@ -3,6 +3,7 @@
 import { ProTable } from '@/components/pro-table';
 import { filterServerTrafficLog } from '@/services/admin/log';
 import { useServer } from '@/store/server';
+import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { formatBytes } from '@workspace/ui/utils';
 import { useTranslations } from 'next-intl';
@@ -12,7 +13,7 @@ import { useSearchParams } from 'next/navigation';
 export default function ServerTrafficLogPage() {
   const t = useTranslations('log');
   const sp = useSearchParams();
-  const { getServerName } = useServer();
+  const { getServerName, getServerById } = useServer();
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -39,11 +40,17 @@ export default function ServerTrafficLogPage() {
         {
           accessorKey: 'server_id',
           header: t('column.server'),
-          cell: ({ row }) => (
-            <span>
-              {getServerName(row.original.server_id)} ({row.original.server_id})
-            </span>
-          ),
+          cell: ({ row }) => {
+            const server = getServerById(row.original.server_id);
+            const ratio = server?.ratio || 1;
+            return (
+              <div className='flex items-center gap-2'>
+                <Badge>{row.original.server_id}</Badge>
+                <span>{getServerName(row.original.server_id)}</span>
+                <Badge variant='outline'>{ratio}X</Badge>
+              </div>
+            );
+          },
         },
         {
           accessorKey: 'upload',
