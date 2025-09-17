@@ -168,7 +168,12 @@ export function MonacoEditor({
               />
               {!internalValue?.trim() && placeholder && (
                 <pre
-                  className='text-muted-foreground pointer-events-none absolute left-7 top-4 text-sm'
+                  className={cn(
+                    'text-muted-foreground pointer-events-none absolute left-7 top-4 text-sm',
+                    {
+                      'left-16': showLineNumbers,
+                    },
+                  )}
                   style={{ userSelect: 'none' }}
                 >
                   {placeholder}

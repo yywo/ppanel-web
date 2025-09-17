@@ -1,8 +1,8 @@
 'use client';
 
-import { filterServerList, queryNodeTag } from '@/services/admin/server';
+import { useNode } from '@/store/node';
+import { useServer } from '@/store/server';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -39,8 +39,6 @@ export type ProtocolName =
   | 'hysteria2'
   | 'tuic'
   | 'anytls';
-
-type ServerRow = API.Server;
 
 const buildSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({
@@ -103,38 +101,12 @@ export default function NodeForm(props: {
 
   const serverId = form.watch('server_id');
 
-  const { data } = useQuery({
-    enabled: open,
-    queryKey: ['filterServerListAll'],
-    queryFn: async () => {
-      const { data } = await filterServerList({ page: 1, size: 999999999 });
-      return data?.data?.list || [];
-    },
-  });
-  const servers: ServerRow[] = data as ServerRow[];
+  const { servers, getAvailableProtocols } = useServer();
+  const { tags } = useNode();
 
-  const { data: tagsData } = useQuery({
-    enabled: open,
-    queryKey: ['queryNodeTag'],
-    queryFn: async () => {
-      const { data } = await queryNodeTag();
-      return data?.data?.tags || [];
-    },
-  });
-  const existingTags: string[] = tagsData as string[];
+  const existingTags: string[] = tags || [];
 
-  const currentServer = useMemo(() => servers?.find((s) => s.id === serverId), [servers, serverId]);
-
-  const availableProtocols = useMemo(() => {
-    if (!currentServer?.protocols) return [];
-
-    return currentServer.protocols
-      .filter((p) => p.enable !== false)
-      .map((p) => ({
-        protocol: p.type,
-        port: p.port,
-      }));
-  }, [currentServer]);
+  const availableProtocols = getAvailableProtocols(serverId);
 
   useEffect(() => {
     if (initialValues) {
@@ -176,12 +148,11 @@ export default function NodeForm(props: {
       fieldsToFill.push('address');
     }
 
-    const protocols =
-      (selectedServer.protocols as Array<{ type: ProtocolName; port?: number }>) || [];
+    const protocols = getAvailableProtocols(id);
     const firstProtocol = protocols[0];
 
     if (firstProtocol && (!currentValues.protocol || autoFilledFields.has('protocol'))) {
-      form.setValue('protocol', firstProtocol.type, { shouldDirty: false });
+      form.setValue('protocol', firstProtocol.protocol, { shouldDirty: false });
       fieldsToFill.push('protocol');
 
       if (!currentValues.port || currentValues.port === 0 || autoFilledFields.has('port')) {
@@ -203,7 +174,7 @@ export default function NodeForm(props: {
     const protocol = (nextProto || '') as ProtocolName | '';
     form.setValue('protocol', protocol);
 
-    if (!protocol || !currentServer) {
+    if (!protocol || !serverId) {
       removeAutoFilledField('protocol');
       return;
     }
@@ -214,9 +185,7 @@ export default function NodeForm(props: {
     removeAutoFilledField('protocol');
 
     if (!currentValues.port || currentValues.port === 0 || isPortAutoFilled) {
-      const protocolData = (
-        currentServer.protocols as Array<{ type: ProtocolName; port?: number }>
-      )?.find((p) => p.type === protocol);
+      const protocolData = availableProtocols.find((p) => p.protocol === protocol);
 
       if (protocolData) {
         const port = protocolData.port || 0;

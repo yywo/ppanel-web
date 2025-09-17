@@ -2,7 +2,6 @@
 
 import { Display } from '@/components/display';
 import { ProTable, ProTableActions } from '@/components/pro-table';
-import { getSubscribeList } from '@/services/admin/subscribe';
 import {
   createUser,
   deleteUser,
@@ -10,6 +9,7 @@ import {
   getUserList,
   updateUserBasicInfo,
 } from '@/services/admin/user';
+import { useSubscribe } from '@/store/subscribe';
 import { formatDate } from '@/utils/common';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
@@ -49,16 +49,7 @@ export default function Page() {
   const ref = useRef<ProTableActions>(null);
   const sp = useSearchParams();
 
-  const { data: subscribeList } = useQuery({
-    queryKey: ['getSubscribeList', 'all'],
-    queryFn: async () => {
-      const { data } = await getSubscribeList({
-        page: 1,
-        size: 9999,
-      });
-      return data.data?.list as API.SubscribeGroup[];
-    },
-  });
+  const { subscribes } = useSubscribe();
 
   const initialFilters = {
     search: sp.get('search') || undefined,
@@ -194,9 +185,9 @@ export default function Page() {
         {
           key: 'subscribe_id',
           placeholder: t('subscription'),
-          options: subscribeList?.map((item) => ({
-            label: item.name,
-            value: String(item.id),
+          options: subscribes?.map((item) => ({
+            label: item.name!,
+            value: String(item.id!),
           })),
         },
         {

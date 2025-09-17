@@ -18,7 +18,7 @@ export {
 } from './constants';
 
 // Re-export all types
-export type { FieldConfig, ProtocolType, ServerFormValues } from './types';
+export type { FieldConfig, ProtocolType } from './types';
 
 // Re-export all schemas
 export { formSchema, protocolApiScheme } from './schemas';

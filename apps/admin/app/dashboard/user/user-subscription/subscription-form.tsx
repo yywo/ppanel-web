@@ -1,8 +1,7 @@
 'use client';
 
-import { getSubscribeList } from '@/services/admin/subscribe';
+import { useSubscribe } from '@/store/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
 import {
   Form,
@@ -74,16 +73,7 @@ export function SubscriptionForm({ trigger, title, loading, initialData, onSubmi
     }
   };
 
-  const { data: subscribe } = useQuery({
-    queryKey: ['getSubscribeList', 'all'],
-    queryFn: async () => {
-      const { data } = await getSubscribeList({
-        page: 1,
-        size: 9999,
-      });
-      return data.data?.list as API.Subscribe[];
-    },
-  });
+  const { subscribes } = useSubscribe();
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -117,9 +107,9 @@ export function SubscriptionForm({ trigger, title, loading, initialData, onSubmi
                         onChange={(value) => {
                           form.setValue(field.name, value);
                         }}
-                        options={subscribe?.map((item: API.Subscribe) => ({
-                          value: item.id,
-                          label: item.name,
+                        options={subscribes?.map((item) => ({
+                          value: item.id!,
+                          label: item.name!,
                         }))}
                       />
                     </FormControl>

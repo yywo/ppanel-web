@@ -1,5 +1,6 @@
 'use client';
 
+import { NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT } from '@/config/constants';
 import { queryDocumentList } from '@/services/user/document';
 import { getTutorialList } from '@/utils/tutorial';
 import { useQuery } from '@tanstack/react-query';
@@ -31,6 +32,7 @@ export default function Page() {
       const list = await getTutorialList();
       return list.get(locale);
     },
+    enabled: NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT !== 'true',
   });
 
   return (

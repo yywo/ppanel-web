@@ -1,7 +1,7 @@
 'use client';
 
-import { getSubscribeList } from '@/services/admin/subscribe';
 import { getRegisterConfig, updateRegisterConfig } from '@/services/admin/system';
+import { useSubscribe } from '@/store/subscribe';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
@@ -61,17 +61,7 @@ export default function RegisterConfig() {
     enabled: open,
   });
 
-  const { data: subscribe } = useQuery({
-    queryKey: ['getSubscribeList', 'all'],
-    queryFn: async () => {
-      const { data } = await getSubscribeList({
-        page: 1,
-        size: 9999,
-      });
-      return data.data?.list as API.Subscribe[];
-    },
-    enabled: open,
-  });
+  const { subscribes } = useSubscribe();
 
   const form = useForm<RegisterFormData>({
     resolver: zodResolver(registerSchema),
@@ -268,12 +258,10 @@ export default function RegisterConfig() {
                                           field.onChange(value);
                                         }
                                       }}
-                                      options={
-                                        subscribe?.map((item) => ({
-                                          label: item.name,
-                                          value: item.id,
-                                        })) || []
-                                      }
+                                      options={subscribes?.map((item) => ({
+                                        label: item.name!,
+                                        value: item.id!,
+                                      }))}
                                       className='bg-secondary w-32 rounded-r-none'
                                     />
                                   )}

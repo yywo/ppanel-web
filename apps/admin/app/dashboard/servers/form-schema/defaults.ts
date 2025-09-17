@@ -91,6 +91,7 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
     case 'mieru':
       return {
         type: 'mieru',
+        enable: false,
         port: null,
         multiplex: 'none',
         transport: 'tcp',
@@ -98,6 +99,7 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
     case 'anytls':
       return {
         type: 'anytls',
+        enable: false,
         port: null,
         security: 'tls',
         padding_scheme: null,

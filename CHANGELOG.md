@@ -1,16 +1,37 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.4.4](https://github.com/perfect-panel/ppanel-web/compare/v1.4.3...v1.4.4) (2025-09-16)
+## [1.4.5](https://github.com/perfect-panel/ppanel-web/compare/v1.4.4...v1.4.5) (2025-09-17)
+
+
+### ♻ Code Refactoring
+
+* Replace useQuery with Zustand store for subscription and node data management ([c6dd0b6](https://github.com/perfect-panel/ppanel-web/commit/c6dd0b6))
+* Simplify TemplatePreview component structure by consolidating Sheet and Button elements ([1b715c5](https://github.com/perfect-panel/ppanel-web/commit/1b715c5))
 
 
 ### 🐛 Bug Fixes
 
-* Add minimum value constraint for count and user limit inputs in CouponForm ([6991b69](https://github.com/perfect-panel/ppanel-web/commit/6991b69))
-* Add protocol-related constants, default configurations, field definitions, and validation modes ([d685407](https://github.com/perfect-panel/ppanel-web/commit/d685407))
-* Added the enabled field in the protocol configuration, updated the related type definition and default configuration ([2b0cf9a](https://github.com/perfect-panel/ppanel-web/commit/2b0cf9a))
-* Filter available protocols to exclude disabled ones in NodeForm ([982d288](https://github.com/perfect-panel/ppanel-web/commit/982d288))
-* Refactor key generation logic and update dependencies for ML-KEM-768 integration ([b8f630f](https://github.com/perfect-panel/ppanel-web/commit/b8f630f))
+*  Add showLineNumbers prop handling in MonacoEditor for improved placeholder positioning ([bd67ece](https://github.com/perfect-panel/ppanel-web/commit/bd67ece))
+* Add fetchTags method to NodesPage and ensure tags are fetched alongside nodes ([a3c5e31](https://github.com/perfect-panel/ppanel-web/commit/a3c5e31))
+* Add NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT to control tutorial visibility and update page query accordingly ([e94405d](https://github.com/perfect-panel/ppanel-web/commit/e94405d))
+* Add subscribeSchema for subscription management with detailed proxy and user information ([49b3dcc](https://github.com/perfect-panel/ppanel-web/commit/49b3dcc))
+* Enhance server ID display in ServerTrafficLogPage with badges and server ratio ([6dfac27](https://github.com/perfect-panel/ppanel-web/commit/6dfac27))
+* Update platform handling in Content component to ensure available platforms are correctly filtered and displayed ([1dde708](https://github.com/perfect-panel/ppanel-web/commit/1dde708))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.4.4](https://github.com/perfect-panel/ppanel-web/compare/v1.4.3...v1.4.4) (2025-09-16)
+
+### 🐛 Bug Fixes
+
+- Add minimum value constraint for count and user limit inputs in CouponForm ([6991b69](https://github.com/perfect-panel/ppanel-web/commit/6991b69))
+- Add protocol-related constants, default configurations, field definitions, and validation modes ([d685407](https://github.com/perfect-panel/ppanel-web/commit/d685407))
+- Added the enabled field in the protocol configuration, updated the related type definition and default configuration ([2b0cf9a](https://github.com/perfect-panel/ppanel-web/commit/2b0cf9a))
+- Filter available protocols to exclude disabled ones in NodeForm ([982d288](https://github.com/perfect-panel/ppanel-web/commit/982d288))
+- Refactor key generation logic and update dependencies for ML-KEM-768 integration ([b8f630f](https://github.com/perfect-panel/ppanel-web/commit/b8f630f))
 
 <a name="readme-top"></a>
 
