@@ -58,6 +58,9 @@ export default function Page() {
           accessorKey: 'subscribe_id',
           header: t('subscribe'),
           cell: ({ row }) => {
+            if (row.original.type === 4) {
+              return t(`type.${row.getValue('type')}`);
+            }
             const name = getSubscribeName(row.getValue('subscribe_id'));
             const quantity = row.original.quantity;
             return name ? `${name} × ${quantity}` : '';
