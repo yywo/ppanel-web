@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
 import { formatBytes } from '@workspace/ui/utils';
+import { Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
@@ -92,8 +93,7 @@ export default function OnlineUsersCell({ status }: { status?: API.ServerStatus 
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <button className='hover:text-foreground text-muted-foreground flex items-center gap-2 bg-transparent p-0 text-sm'>
-          <Badge variant='secondary'>{status?.online.length}</Badge>
-          <span>{t('onlineUsers')}</span>
+          <Users className='h-4 w-4' /> {status?.online.length}
         </button>
       </SheetTrigger>
       <SheetContent className='h-screen w-screen max-w-none sm:h-auto sm:w-[900px] sm:max-w-[90vw]'>
