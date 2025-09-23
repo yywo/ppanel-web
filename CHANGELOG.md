@@ -1,6 +1,15 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.4.8](https://github.com/perfect-panel/ppanel-web/compare/v1.4.7...v1.4.8) (2025-09-23)
+
+
+### 🐛 Bug Fixes
+
+* Rename 'server_id' to 'protocol' in NodesPage and clean up unused imports and code in ServerConfig ([70b3484](https://github.com/perfect-panel/ppanel-web/commit/70b3484))
+* Update announcement page to display timeline of announcements with Markdown content ([3c036eb](https://github.com/perfect-panel/ppanel-web/commit/3c036eb))
+* Update Empty component to support border prop and adjust usage in various pages ([ce9ab89](https://github.com/perfect-panel/ppanel-web/commit/ce9ab89))
+
 ## [1.4.7](https://github.com/perfect-panel/ppanel-web/compare/v1.4.6...v1.4.7) (2025-09-23)
 
 
