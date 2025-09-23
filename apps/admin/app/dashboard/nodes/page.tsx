@@ -98,7 +98,7 @@ export default function NodesPage() {
             `${getServerName(row.original.server_id)}:${getServerAddress(row.original.server_id)}`,
         },
         {
-          id: 'server_id',
+          id: 'protocol',
           header: ` ${t('protocol')}:${t('port')}`,
           cell: ({ row }) =>
             `${row.original.protocol}:${getProtocolPort(row.original.server_id, row.original.protocol)}`,
