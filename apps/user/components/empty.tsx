@@ -4,7 +4,10 @@ import { default as _Empty } from '@workspace/ui/custom-components/empty';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 
-export function Empty() {
+interface EmptyProps {
+  border?: boolean;
+}
+export function Empty({ border }: EmptyProps) {
   const t = useTranslations('common');
 
   const [description, setDescription] = useState('');
@@ -14,5 +17,5 @@ export function Empty() {
     setDescription(t(`empty.${random}`));
   }, [t]);
 
-  return <_Empty description={description} />;
+  return <_Empty description={description} border={border} />;
 }

@@ -121,7 +121,7 @@ export function TutorialButton({ items }: { items: Item[] }) {
             layoutId={`card-${item.title}-${id}`}
             key={`card-${item.title}-${id}`}
             onClick={() => setActive(item)}
-            className='bg-background hover:bg-accent flex cursor-pointer items-center justify-between rounded border p-4'
+            className='bg-background hover:bg-accent flex cursor-pointer items-center justify-between rounded-xl border p-4'
           >
             <div className='flex flex-row items-center gap-4'>
               <motion.div layoutId={`image-${item.title}-${id}`}>

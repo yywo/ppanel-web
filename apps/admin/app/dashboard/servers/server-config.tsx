@@ -9,7 +9,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
-import { ChartContainer, ChartTooltip } from '@workspace/ui/components/chart';
+
 import {
   Form,
   FormControl,
@@ -35,64 +35,10 @@ import { Icon } from '@workspace/ui/custom-components/icon';
 import { DicesIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { uid } from 'radash';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Cell, Legend, Pie, PieChart } from 'recharts';
 import { toast } from 'sonner';
 import { z } from 'zod';
-
-const COLORS = [
-  'hsl(var(--chart-1))',
-  'hsl(var(--chart-2))',
-  'hsl(var(--chart-3))',
-  'hsl(var(--chart-4))',
-  'hsl(var(--chart-5))',
-];
-
-const MINUTES_IN_DAY = 1440;
-
-function getTimeRangeData(slots: API.TimePeriod[]) {
-  const timePoints = slots
-    .filter((slot) => slot.start_time && slot.end_time)
-    .flatMap((slot) => {
-      const [startH = 0, startM = 0] = slot.start_time.split(':').map(Number);
-      const [endH = 0, endM = 0] = slot.end_time.split(':').map(Number);
-      const start = startH * 60 + startM;
-      let end = endH * 60 + endM;
-      if (end < start) end += MINUTES_IN_DAY;
-      return { start, end, multiplier: slot.multiplier };
-    })
-    .sort((a, b) => a.start - b.start);
-
-  const result: { name: string; value: number; multiplier: number }[] = [];
-  let currentMinute = 0;
-
-  timePoints.forEach((point) => {
-    if (point.start > currentMinute) {
-      result.push({
-        name: `${Math.floor(currentMinute / 60)}:${String(currentMinute % 60).padStart(2, '0')} - ${Math.floor(point.start / 60)}:${String(point.start % 60).padStart(2, '0')}`,
-        value: point.start - currentMinute,
-        multiplier: 1,
-      });
-    }
-    result.push({
-      name: `${Math.floor(point.start / 60)}:${String(point.start % 60).padStart(2, '0')} - ${Math.floor((point.end / 60) % 24)}:${String(point.end % 60).padStart(2, '0')}`,
-      value: point.end - point.start,
-      multiplier: point.multiplier,
-    });
-    currentMinute = point.end % MINUTES_IN_DAY;
-  });
-
-  if (currentMinute < MINUTES_IN_DAY) {
-    result.push({
-      name: `${Math.floor(currentMinute / 60)}:${String(currentMinute % 60).padStart(2, '0')} - 24:00`,
-      value: MINUTES_IN_DAY - currentMinute,
-      multiplier: 1,
-    });
-  }
-
-  return result;
-}
 
 const nodeConfigSchema = z.object({
   node_secret: z.string().optional(),
@@ -149,20 +95,6 @@ export default function ServerConfig() {
       setTimeSlots(periodsResp);
     }
   }, [periodsResp]);
-
-  const chartTimeSlots = useMemo(() => getTimeRangeData(timeSlots), [timeSlots]);
-  const chartConfig = useMemo(() => {
-    return chartTimeSlots.reduce(
-      (acc, item, index) => {
-        acc[item.name] = {
-          label: item.name,
-          color: COLORS[index % COLORS.length] || 'hsl(var(--default-chart-color))',
-        };
-        return acc;
-      },
-      {} as Record<string, { label: string; color: string }>,
-    );
-  }, [chartTimeSlots]);
 
   async function onSubmit(values: NodeConfigFormData) {
     setSaving(true);
@@ -293,8 +225,8 @@ export default function ServerConfig() {
                   {t('config.dynamicMultiplierDescription')}
                 </p>
 
-                <div className='flex flex-col-reverse gap-2 md:flex-row md:items-start'>
-                  <div className='w-full md:w-1/2'>
+                <div className='flex flex-col gap-2'>
+                  <div className='w-full'>
                     <ArrayInput<API.TimePeriod>
                       fields={[
                         { name: 'start_time', prefix: t('config.startTime'), type: 'time' },
@@ -311,70 +243,17 @@ export default function ServerConfig() {
                     />
                     <div className='mt-3 flex gap-2'>
                       <Button
+                        type='button'
                         size='sm'
                         variant='outline'
                         onClick={() => setTimeSlots(periodsResp || [])}
                       >
                         {t('config.reset')}
                       </Button>
-                      <Button size='sm' onClick={savePeriods}>
+                      <Button size='sm' type='button' onClick={savePeriods}>
                         {t('config.save')}
                       </Button>
                     </div>
-                  </div>
-
-                  <div className='w-full md:w-1/2'>
-                    <ChartContainer config={chartConfig} className='mx-auto aspect-[5/3] w-full'>
-                      <PieChart>
-                        <Pie
-                          data={chartTimeSlots}
-                          cx='50%'
-                          cy='50%'
-                          labelLine={false}
-                          outerRadius='80%'
-                          fill='#8884d8'
-                          dataKey='value'
-                          label={({ percent, multiplier }) =>
-                            `${(multiplier || 0)?.toFixed(2)}x (${(percent * 100).toFixed(0)}%)`
-                          }
-                        >
-                          {chartTimeSlots.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                          ))}
-                        </Pie>
-                        <ChartTooltip
-                          content={({ payload }) => {
-                            if (payload && payload.length) {
-                              const d = payload[0]?.payload as any;
-                              return (
-                                <div className='bg-background rounded-lg border p-2 shadow-sm'>
-                                  <div className='grid grid-cols-2 gap-2'>
-                                    <div className='flex flex-col'>
-                                      <span className='text-muted-foreground text-[0.70rem] uppercase'>
-                                        {t('config.timeSlot')}
-                                      </span>
-                                      <span className='text-muted-foreground font-bold'>
-                                        {d.name || '—'}
-                                      </span>
-                                    </div>
-                                    <div className='flex flex-col'>
-                                      <span className='text-muted-foreground text-[0.70rem] uppercase'>
-                                        {t('config.multiplier')}
-                                      </span>
-                                      <span className='font-bold'>
-                                        {Number(d.multiplier).toFixed(2)}x
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              );
-                            }
-                            return null;
-                          }}
-                        />
-                        <Legend />
-                      </PieChart>
-                    </ChartContainer>
                   </div>
                 </div>
               </div>

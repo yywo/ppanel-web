@@ -35,7 +35,14 @@ export default function Page() {
     },
     enabled: NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT !== 'true',
   });
-  if (!DocumentList && !TutorialList) return <Empty />;
+
+  if (
+    (!DocumentList || DocumentList.length === 0) &&
+    (!TutorialList || TutorialList.length === 0)
+  ) {
+    return <Empty border />;
+  }
+
   return (
     <div className='space-y-4'>
       {DocumentList?.length > 0 && (

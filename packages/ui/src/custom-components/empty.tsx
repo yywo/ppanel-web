@@ -1,6 +1,14 @@
-export default function Empty({ description }: { description?: React.ReactNode }) {
+export default function Empty({
+  description,
+  border,
+}: {
+  description?: React.ReactNode;
+  border?: boolean;
+}) {
   return (
-    <div className='flex flex-col items-center justify-center p-6 py-16'>
+    <div
+      className={`flex flex-col items-center justify-center p-6 py-16 ${border ? 'rounded-xl border' : ''}`}
+    >
       <svg
         width='64'
         height='41'

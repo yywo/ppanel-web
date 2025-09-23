@@ -5,7 +5,6 @@ import { queryAnnouncement } from '@/services/user/announcement';
 import { useQuery } from '@tanstack/react-query';
 import { Timeline } from '@workspace/ui/components/timeline';
 import { Markdown } from '@workspace/ui/custom-components/markdown';
-import { formatDate } from '@workspace/ui/utils';
 
 export default function Page() {
   const { data } = useQuery({
@@ -24,12 +23,12 @@ export default function Page() {
     <Timeline
       data={
         data.map((item) => ({
-          title: String(formatDate(item.created_at, false)),
-          content: <Markdown>{`### ${item.title}\n${item.content}`}</Markdown>,
+          title: item.title,
+          content: <Markdown>{item.content}</Markdown>,
         })) || []
       }
     />
   ) : (
-    <Empty />
+    <Empty border />
   );
 }
