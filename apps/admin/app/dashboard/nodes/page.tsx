@@ -88,24 +88,20 @@ export default function NodesPage() {
         {
           id: 'address_port',
           header: `${t('address')}:${t('port')}`,
-          cell: ({ row }) => (row.original.address || '—') + ':' + (row.original.port ?? '—'),
+          cell: ({ row }) => `${row.original.address || '—'}:${row.original.port || '—'}`,
         },
 
         {
           id: 'server_id',
           header: t('server'),
-          cell: ({ row }) => (
-            <div className='space-y-1'>
-              <Badge variant='outline'>
-                {getServerName(row.original.server_id)} : {getServerAddress(row.original.server_id)}
-              </Badge>
-              <br />
-              <Badge variant='outline'>
-                {row.original.protocol || '—'} :{' '}
-                {getProtocolPort(row.original.server_id, row.original.protocol)}
-              </Badge>
-            </div>
-          ),
+          cell: ({ row }) =>
+            `${getServerName(row.original.server_id)}:${getServerAddress(row.original.server_id)}`,
+        },
+        {
+          id: 'server_id',
+          header: ` ${t('protocol')}:${t('port')}`,
+          cell: ({ row }) =>
+            `${row.original.protocol}:${getProtocolPort(row.original.server_id, row.original.protocol)}`,
         },
         {
           accessorKey: 'tags',
