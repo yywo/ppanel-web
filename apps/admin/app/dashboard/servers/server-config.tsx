@@ -293,7 +293,7 @@ export default function ServerConfig() {
                   {t('config.dynamicMultiplierDescription')}
                 </p>
 
-                <div className='flex flex-col-reverse gap-8 md:flex-row md:items-start'>
+                <div className='flex flex-col-reverse gap-2 md:flex-row md:items-start'>
                   <div className='w-full md:w-1/2'>
                     <ArrayInput<API.TimePeriod>
                       fields={[
@@ -324,10 +324,7 @@ export default function ServerConfig() {
                   </div>
 
                   <div className='w-full md:w-1/2'>
-                    <ChartContainer
-                      config={chartConfig}
-                      className='mx-auto aspect-[4/3] max-w-[400px]'
-                    >
+                    <ChartContainer config={chartConfig} className='mx-auto aspect-[5/3] w-full'>
                       <PieChart>
                         <Pie
                           data={chartTimeSlots}

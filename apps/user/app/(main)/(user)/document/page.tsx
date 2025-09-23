@@ -1,5 +1,6 @@
 'use client';
 
+import { Empty } from '@/components/empty';
 import { NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT } from '@/config/constants';
 import { queryDocumentList } from '@/services/user/document';
 import { getTutorialList } from '@/utils/tutorial';
@@ -34,7 +35,7 @@ export default function Page() {
     },
     enabled: NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT !== 'true',
   });
-
+  if (!DocumentList && !TutorialList) return <Empty />;
   return (
     <div className='space-y-4'>
       {DocumentList?.length > 0 && (

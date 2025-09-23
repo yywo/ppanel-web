@@ -60,6 +60,7 @@ export default function Page() {
 
   return (
     <ProTable<API.User, API.GetUserListParams>
+      key={initialFilters.user_id}
       action={ref}
       initialFilters={initialFilters}
       header={{

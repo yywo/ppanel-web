@@ -1,6 +1,18 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.4.7](https://github.com/perfect-panel/ppanel-web/compare/v1.4.6...v1.4.7) (2025-09-23)
+
+
+### 🐛 Bug Fixes
+
+* Add unique key to ProTable for improved rendering with user ID filters ([2bff15f](https://github.com/perfect-panel/ppanel-web/commit/2bff15f))
+* Adjust layout spacing and chart aspect ratio in ServerConfig component ([05a61d8](https://github.com/perfect-panel/ppanel-web/commit/05a61d8))
+* Refactor server ID cell rendering for improved readability and consistency ([0345b7c](https://github.com/perfect-panel/ppanel-web/commit/0345b7c))
+* Update announcement page to format creation date and enhance content display ([8445e30](https://github.com/perfect-panel/ppanel-web/commit/8445e30))
+* Update OnlineUsersCell to display user count with icon instead of badge ([7a4ebdf](https://github.com/perfect-panel/ppanel-web/commit/7a4ebdf))
+* Update subscribe name fallback to return '--' instead of 'Unknown' ([0a07d25](https://github.com/perfect-panel/ppanel-web/commit/0a07d25))
+
 ## [1.4.6](https://github.com/perfect-panel/ppanel-web/compare/v1.4.5...v1.4.6) (2025-09-17)
 
 
