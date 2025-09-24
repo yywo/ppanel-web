@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import {
+  CERT_MODES,
   ENCRYPTION_MODES,
   ENCRYPTION_RTT,
   ENCRYPTION_TYPES,
@@ -16,20 +17,25 @@ import {
 const nullableString = z.string().nullish();
 const nullableBool = z.boolean().nullish();
 const nullablePort = z.number().int().min(0).max(65535).nullish();
+const nullableRatio = z.number().min(1).nullish();
 
 const ss = z.object({
+  ratio: nullableRatio,
   type: z.literal('shadowsocks'),
   enable: nullableBool,
-  host: nullableString,
   port: nullablePort,
   cipher: z.enum(SS_CIPHERS).nullish(),
   server_key: nullableString,
-  obfs: z.enum(['none', 'http', 'tls'] as const).nullish(),
-  obfs_host: nullableString,
-  obfs_path: nullableString,
+  security: z.enum(SECURITY.shadowsocks).nullish(),
+  host: nullableString,
+  path: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const vmess = z.object({
+  ratio: nullableRatio,
   type: z.literal('vmess'),
   enable: nullableBool,
   host: nullableString,
@@ -41,9 +47,13 @@ const vmess = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const vless = z.object({
+  ratio: nullableRatio,
   type: z.literal('vless'),
   enable: nullableBool,
   host: nullableString,
@@ -71,9 +81,13 @@ const vless = z.object({
   encryption_private_key: nullableString,
   encryption_client_padding: nullableString,
   encryption_password: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const trojan = z.object({
+  ratio: nullableRatio,
   type: z.literal('trojan'),
   enable: nullableBool,
   host: nullableString,
@@ -85,9 +99,13 @@ const trojan = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const hysteria2 = z.object({
+  ratio: nullableRatio,
   type: z.literal('hysteria2'),
   enable: nullableBool,
   hop_ports: nullableString,
@@ -101,9 +119,13 @@ const hysteria2 = z.object({
   fingerprint: nullableString,
   up_mbps: z.number().nullish(),
   down_mbps: z.number().nullish(),
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const tuic = z.object({
+  ratio: nullableRatio,
   type: z.literal('tuic'),
   enable: nullableBool,
   host: nullableString,
@@ -116,9 +138,13 @@ const tuic = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const anytls = z.object({
+  ratio: nullableRatio,
   type: z.literal('anytls'),
   enable: nullableBool,
   port: nullablePort,
@@ -127,15 +153,20 @@ const anytls = z.object({
   allow_insecure: nullableBool,
   fingerprint: nullableString,
   padding_scheme: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const socks = z.object({
+  ratio: nullableRatio,
   type: z.literal('socks'),
   enable: nullableBool,
   port: nullablePort,
 });
 
 const naive = z.object({
+  ratio: nullableRatio,
   type: z.literal('naive'),
   enable: nullableBool,
   port: nullablePort,
@@ -143,9 +174,13 @@ const naive = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const http = z.object({
+  ratio: nullableRatio,
   type: z.literal('http'),
   enable: nullableBool,
   port: nullablePort,
@@ -153,9 +188,13 @@ const http = z.object({
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
+  cert_mode: z.enum(CERT_MODES).nullish(),
+  cert_dns_provider: nullableString,
+  cert_dns_env: nullableString,
 });
 
 const mieru = z.object({
+  ratio: nullableRatio,
   type: z.literal('mieru'),
   enable: nullableBool,
   port: nullablePort,
@@ -182,6 +221,5 @@ export const formSchema = z.object({
   address: z.string().min(1),
   country: z.string().optional(),
   city: z.string().optional(),
-  ratio: z.number().default(1),
   protocols: z.array(protocolApiScheme),
 });

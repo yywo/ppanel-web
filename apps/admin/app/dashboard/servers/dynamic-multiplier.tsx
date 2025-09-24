@@ -41,14 +41,10 @@ export default function DynamicMultiplier() {
   }, [periodsResp]);
 
   async function savePeriods() {
-    try {
-      await setNodeMultiplier({ periods: timeSlots });
-      await refetchPeriods();
-      toast.success(t('config.saveSuccess'));
-      setOpen(false);
-    } catch (error) {
-      toast.error(t('config.saveError'));
-    }
+    await setNodeMultiplier({ periods: timeSlots });
+    await refetchPeriods();
+    toast.success(t('server_config.saveSuccess'));
+    setOpen(false);
   }
 
   return (
@@ -62,9 +58,9 @@ export default function DynamicMultiplier() {
                   <Icon icon='mdi:clock-time-eight' className='text-primary h-5 w-5' />
                 </div>
                 <div className='flex-1'>
-                  <p className='font-medium'>{t('config.dynamicMultiplier')}</p>
+                  <p className='font-medium'>{t('server_config.dynamic_multiplier')}</p>
                   <p className='text-muted-foreground truncate text-sm'>
-                    {t('config.dynamicMultiplierDescription')}
+                    {t('server_config.dynamic_multiplier_desc')}
                   </p>
                 </div>
               </div>
@@ -76,18 +72,18 @@ export default function DynamicMultiplier() {
 
       <SheetContent className='w-[600px] max-w-full md:max-w-screen-md'>
         <SheetHeader>
-          <SheetTitle>{t('config.dynamicMultiplier')}</SheetTitle>
-          <SheetDescription>{t('config.dynamicMultiplierDescription')}</SheetDescription>
+          <SheetTitle>{t('server_config.dynamic_multiplier')}</SheetTitle>
+          <SheetDescription>{t('server_config.dynamic_multiplier_desc')}</SheetDescription>
         </SheetHeader>
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-60px-env(safe-area-inset-top))] px-6'>
           <div className='space-y-4 pt-4'>
             <ArrayInput<API.TimePeriod>
               fields={[
-                { name: 'start_time', prefix: t('config.startTime'), type: 'time' },
-                { name: 'end_time', prefix: t('config.endTime'), type: 'time' },
+                { name: 'start_time', prefix: t('server_config.fields.start_time'), type: 'time' },
+                { name: 'end_time', prefix: t('server_config.fields.end_time'), type: 'time' },
                 {
                   name: 'multiplier',
-                  prefix: t('config.multiplier'),
+                  prefix: t('server_config.fields.multiplier'),
                   type: 'number',
                   placeholder: '0',
                 },
@@ -100,13 +96,13 @@ export default function DynamicMultiplier() {
 
         <SheetFooter className='flex-row justify-between pt-3'>
           <Button variant='outline' onClick={() => setTimeSlots(periodsResp || [])}>
-            {t('config.reset')}
+            {t('server_config.fields.reset')}
           </Button>
           <div className='flex gap-2'>
             <Button variant='outline' onClick={() => setOpen(false)}>
-              {t('config.actions.cancel')}
+              {t('actions.cancel')}
             </Button>
-            <Button onClick={savePeriods}>{t('config.actions.save')}</Button>
+            <Button onClick={savePeriods}>{t('actions.save')}</Button>
           </div>
         </SheetFooter>
       </SheetContent>

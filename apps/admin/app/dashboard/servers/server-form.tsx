@@ -338,7 +338,6 @@ export default function ServerForm(props: {
       address: '',
       country: '',
       city: '',
-      ratio: 1,
       protocols: [] as any[],
       ...initialValues,
     },
@@ -375,7 +374,6 @@ export default function ServerForm(props: {
       name: values.name,
       country: values.country,
       city: values.city,
-      ratio: values.ratio || 1,
       address: values.address,
       protocols: filteredProtocols,
     };
@@ -399,7 +397,6 @@ export default function ServerForm(props: {
                 address: '',
                 country: '',
                 city: '',
-                ratio: 1,
                 protocols: full,
               });
             }
@@ -416,7 +413,7 @@ export default function ServerForm(props: {
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))]'>
           <Form {...form}>
             <form className='grid grid-cols-1 gap-2 px-6 pt-4'>
-              <div className='grid grid-cols-3 gap-2'>
+              <div className='grid grid-cols-2 gap-2 md:grid-cols-4'>
                 <FormField
                   control={control}
                   name='name'
@@ -425,6 +422,23 @@ export default function ServerForm(props: {
                       <FormLabel>{t('name')}</FormLabel>
                       <FormControl>
                         <EnhancedInput {...field} onValueChange={(v) => field.onChange(v)} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={control}
+                  name='address'
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t('address')}</FormLabel>
+                      <FormControl>
+                        <EnhancedInput
+                          {...field}
+                          placeholder={t('address_placeholder')}
+                          onValueChange={(v) => field.onChange(v)}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -451,44 +465,6 @@ export default function ServerForm(props: {
                       <FormLabel>{t('city')}</FormLabel>
                       <FormControl>
                         <EnhancedInput {...field} onValueChange={(v) => field.onChange(v)} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div className='grid grid-cols-2 gap-2'>
-                <FormField
-                  control={control}
-                  name='address'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('address')}</FormLabel>
-                      <FormControl>
-                        <EnhancedInput
-                          {...field}
-                          placeholder={t('address_placeholder')}
-                          onValueChange={(v) => field.onChange(v)}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={control}
-                  name='ratio'
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>{t('traffic_ratio')}</FormLabel>
-                      <FormControl>
-                        <EnhancedInput
-                          {...field}
-                          type='number'
-                          step={0.1}
-                          min={0}
-                          onValueChange={(v) => field.onChange(v)}
-                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

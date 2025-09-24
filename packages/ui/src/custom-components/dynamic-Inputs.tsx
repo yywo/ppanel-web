@@ -1,6 +1,7 @@
 import { Button } from '@workspace/ui/components/button';
 import { Label } from '@workspace/ui/components/label';
 import { Switch } from '@workspace/ui/components/switch';
+import { Textarea } from '@workspace/ui/components/textarea';
 import { Combobox } from '@workspace/ui/custom-components/combobox';
 import { EnhancedInput, EnhancedInputProps } from '@workspace/ui/custom-components/enhanced-input';
 import { cn } from '@workspace/ui/lib/utils';
@@ -9,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
-  type: 'text' | 'number' | 'select' | 'time' | 'boolean';
+  type: 'text' | 'number' | 'select' | 'time' | 'boolean' | 'textarea';
   options?: { label: string; value: string }[];
 }
 
@@ -59,6 +60,18 @@ export function ObjectInput<T extends Record<string, any>>({
               onCheckedChange={(fieldValue) => updateField(field.name, fieldValue)}
             />
             {field.placeholder && <Label>{field.placeholder}</Label>}
+          </div>
+        );
+      case 'textarea':
+        return (
+          <div className='w-full space-y-2'>
+            {field.prefix && <Label className='text-sm font-medium'>{field.prefix}</Label>}
+            <Textarea
+              value={internalState[field.name] || ''}
+              onChange={(e) => updateField(field.name, e.target.value)}
+              placeholder={field.placeholder}
+              className='min-h-32'
+            />
           </div>
         );
       default:
