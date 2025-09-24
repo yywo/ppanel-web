@@ -1,15 +1,10 @@
 'use client';
 
-import {
-  getNodeConfig,
-  getNodeMultiplier,
-  setNodeMultiplier,
-  updateNodeConfig,
-} from '@/services/admin/system';
+import { getNodeConfig, updateNodeConfig } from '@/services/admin/system';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from '@workspace/ui/components/button';
-
+import { Card, CardContent } from '@workspace/ui/components/card';
 import {
   Form,
   FormControl,
@@ -19,7 +14,6 @@ import {
   FormLabel,
   FormMessage,
 } from '@workspace/ui/components/form';
-import { Label } from '@workspace/ui/components/label';
 import { ScrollArea } from '@workspace/ui/components/scroll-area';
 import {
   Sheet,
@@ -29,7 +23,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@workspace/ui/components/sheet';
-import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
 import { DicesIcon } from 'lucide-react';
@@ -51,22 +44,12 @@ export default function ServerConfig() {
   const t = useTranslations('servers');
   const [open, setOpen] = useState(false);
   const [saving, setSaving] = useState(false);
-  const [timeSlots, setTimeSlots] = useState<API.TimePeriod[]>([]);
 
   const { data: cfgResp, refetch: refetchCfg } = useQuery({
     queryKey: ['getNodeConfig'],
     queryFn: async () => {
       const { data } = await getNodeConfig();
       return data.data as API.NodeConfig | undefined;
-    },
-    enabled: open,
-  });
-
-  const { data: periodsResp, refetch: refetchPeriods } = useQuery({
-    queryKey: ['getNodeMultiplier'],
-    queryFn: async () => {
-      const { data } = await getNodeMultiplier();
-      return (data.data?.periods || []) as API.TimePeriod[];
     },
     enabled: open,
   });
@@ -90,12 +73,6 @@ export default function ServerConfig() {
     }
   }, [cfgResp, form]);
 
-  useEffect(() => {
-    if (periodsResp) {
-      setTimeSlots(periodsResp);
-    }
-  }, [periodsResp]);
-
   async function onSubmit(values: NodeConfigFormData) {
     setSaving(true);
     try {
@@ -108,32 +85,32 @@ export default function ServerConfig() {
     }
   }
 
-  async function savePeriods() {
-    await setNodeMultiplier({ periods: timeSlots });
-    await refetchPeriods();
-    toast.success(t('config.saveSuccess'));
-  }
-
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <div className='flex cursor-pointer items-center justify-between'>
-          <div className='flex items-center gap-3'>
-            <div className='bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg'>
-              <Icon icon='mdi:resistor-nodes' className='text-primary h-5 w-5' />
+        <Card>
+          <CardContent className='p-4'>
+            <div className='flex cursor-pointer items-center justify-between'>
+              <div className='flex items-center gap-3'>
+                <div className='bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg'>
+                  <Icon icon='mdi:resistor-nodes' className='text-primary h-5 w-5' />
+                </div>
+                <div className='flex-1'>
+                  <p className='font-medium'>{t('config.title')}</p>
+                  <p className='text-muted-foreground truncate text-sm'>
+                    {t('config.description')}
+                  </p>
+                </div>
+              </div>
+              <Icon icon='mdi:chevron-right' className='size-6' />
             </div>
-            <div className='flex-1'>
-              <p className='font-medium'>{t('config.title')}</p>
-              <p className='text-muted-foreground text-sm'>{t('config.description')}</p>
-            </div>
-          </div>
-          <Icon icon='mdi:chevron-right' className='size-6' />
-        </div>
+          </CardContent>
+        </Card>
       </SheetTrigger>
 
       <SheetContent className='w-[720px] max-w-full md:max-w-screen-md'>
         <SheetHeader>
-          <SheetTitle>{t('config.title')}</SheetTitle>
+          <SheetTitle>节点配置</SheetTitle>
         </SheetHeader>
 
         <ScrollArea className='-mx-6 h-[calc(100dvh-48px-36px-36px-env(safe-area-inset-top))] px-6'>
@@ -218,45 +195,6 @@ export default function ServerConfig() {
                   </FormItem>
                 )}
               />
-
-              <div className='mt-6 space-y-3'>
-                <Label className='text-base'>{t('config.dynamicMultiplier')}</Label>
-                <p className='text-muted-foreground text-sm'>
-                  {t('config.dynamicMultiplierDescription')}
-                </p>
-
-                <div className='flex flex-col gap-2'>
-                  <div className='w-full'>
-                    <ArrayInput<API.TimePeriod>
-                      fields={[
-                        { name: 'start_time', prefix: t('config.startTime'), type: 'time' },
-                        { name: 'end_time', prefix: t('config.endTime'), type: 'time' },
-                        {
-                          name: 'multiplier',
-                          prefix: t('config.multiplier'),
-                          type: 'number',
-                          placeholder: '0',
-                        },
-                      ]}
-                      value={timeSlots}
-                      onChange={setTimeSlots}
-                    />
-                    <div className='mt-3 flex gap-2'>
-                      <Button
-                        type='button'
-                        size='sm'
-                        variant='outline'
-                        onClick={() => setTimeSlots(periodsResp || [])}
-                      >
-                        {t('config.reset')}
-                      </Button>
-                      <Button size='sm' type='button' onClick={savePeriods}>
-                        {t('config.save')}
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </form>
           </Form>
         </ScrollArea>

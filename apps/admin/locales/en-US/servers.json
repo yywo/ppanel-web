@@ -8,7 +8,7 @@
   "city": "City",
   "config": {
     "title": "Node configuration",
-    "description": "Manage node communication keys, pull/push intervals, and dynamic multipliers.",
+    "description": "Manage node communication keys, pull/push intervals.",
     "saveSuccess": "Saved successfully",
     "communicationKey": "Communication key",
     "inputPlaceholder": "Please enter",

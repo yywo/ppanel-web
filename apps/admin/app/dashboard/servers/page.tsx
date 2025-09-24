@@ -15,12 +15,12 @@ import { useServer } from '@/store/server';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
-import { Card, CardContent } from '@workspace/ui/components/card';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
+import DynamicMultiplier from './dynamic-multiplier';
 import OnlineUsersCell from './online-users-cell';
 import ServerConfig from './server-config';
 import ServerForm from './server-form';
@@ -95,11 +95,10 @@ export default function ServersPage() {
 
   return (
     <div className='space-y-4'>
-      <Card>
-        <CardContent className='p-4'>
-          <ServerConfig />
-        </CardContent>
-      </Card>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+        <DynamicMultiplier />
+        <ServerConfig />
+      </div>
       <ProTable<API.Server, { search: string }>
         action={ref}
         header={{

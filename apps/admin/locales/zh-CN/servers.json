@@ -13,7 +13,7 @@
     },
     "communicationKey": "通信密钥",
     "communicationKeyDescription": "用于节点鉴权。",
-    "description": "管理节点通信密钥、拉取/推送间隔与动态倍率。",
+    "description": "管理节点通信密钥、拉取/推送间隔。",
     "dynamicMultiplier": "动态倍率",
     "dynamicMultiplierDescription": "按时间段设置倍率，用于调节流量或计费。",
     "endTime": "结束时间",
