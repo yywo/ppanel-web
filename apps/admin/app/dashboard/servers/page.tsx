@@ -245,7 +245,7 @@ export default function ServersPage() {
               key='edit'
               trigger={t('edit')}
               title={t('drawerEditTitle')}
-              initialValues={row as any}
+              initialValues={row}
               loading={loading}
               onSubmit={async (values) => {
                 setLoading(true);

@@ -44,30 +44,31 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 const dnsConfigSchema = z.object({
-  proto: z.enum(['tcp', 'udp', 'tls', 'https', 'quic']),
+  proto: z.string(), // z.enum(['tcp', 'udp', 'tls', 'https', 'quic']),
   address: z.string(),
   domains: z.array(z.string()),
 });
 
 const outboundConfigSchema = z.object({
   name: z.string(),
-  protocol: z.enum([
-    'http',
-    'https',
-    'socks5',
-    'shadowsocks',
-    'vmess',
-    'vless',
-    'trojan',
-    'hysteria2',
-    'tuic',
-    'naive',
-    'brook',
-    'snell',
-    'wireguard',
-    'direct',
-    'reject',
-  ]),
+  protocol: z.string(),
+  // z.enum([
+  //   'http',
+  //   'https',
+  //   'socks5',
+  //   'shadowsocks',
+  //   'vmess',
+  //   'vless',
+  //   'trojan',
+  //   'hysteria2',
+  //   'tuic',
+  //   'naive',
+  //   'brook',
+  //   'snell',
+  //   'wireguard',
+  //   'direct',
+  //   'reject',
+  // ]),
   address: z.string(),
   port: z.number(),
   password: z.string().optional(),
@@ -120,11 +121,11 @@ export default function ServerConfig() {
         node_secret: cfgResp.node_secret ?? '',
         node_pull_interval: cfgResp.node_pull_interval as number | undefined,
         node_push_interval: cfgResp.node_push_interval as number | undefined,
-        traffic_report_threshold: (cfgResp as any).traffic_report_threshold as number | undefined,
-        ip_strategy: (cfgResp as any).ip_strategy as 'prefer_ipv4' | 'prefer_ipv6' | undefined,
-        dns: (cfgResp as any).dns || [],
-        block: (cfgResp as any).block || [],
-        outbound: (cfgResp as any).outbound || [],
+        traffic_report_threshold: cfgResp.traffic_report_threshold as number | undefined,
+        ip_strategy: cfgResp.ip_strategy as 'prefer_ipv4' | 'prefer_ipv6' | undefined,
+        dns: cfgResp.dns || [],
+        block: cfgResp.block || [],
+        outbound: cfgResp.outbound || [],
       });
     }
   }, [cfgResp, form]);
@@ -355,16 +356,12 @@ export default function ServerConfig() {
                               domains: Array.isArray(item.domains) ? item.domains.join('\n') : '',
                             }))}
                             onChange={(values) => {
-                              // 转换 domains 字符串为数组
                               const converted = values.map((item: any) => ({
                                 proto: item.proto,
                                 address: item.address,
                                 domains:
                                   typeof item.domains === 'string'
-                                    ? item.domains
-                                        .split('\n')
-                                        .map((d: string) => d.trim())
-                                        .filter(Boolean)
+                                    ? item.domains.split('\n').map((d: string) => d.trim())
                                     : item.domains || [],
                               }));
                               field.onChange(converted);
@@ -446,7 +443,6 @@ export default function ServerConfig() {
                               rules: Array.isArray(item.rules) ? item.rules.join('\n') : '',
                             }))}
                             onChange={(values) => {
-                              // 转换 rules 字符串为数组
                               const converted = values.map((item: any) => ({
                                 name: item.name,
                                 protocol: item.protocol,
@@ -455,10 +451,7 @@ export default function ServerConfig() {
                                 password: item.password,
                                 rules:
                                   typeof item.rules === 'string'
-                                    ? item.rules
-                                        .split('\n')
-                                        .map((r: string) => r.trim())
-                                        .filter(Boolean)
+                                    ? item.rules.split('\n').map((r: string) => r.trim())
                                     : item.rules || [],
                               }));
                               field.onChange(converted);
@@ -482,10 +475,7 @@ export default function ServerConfig() {
                             placeholder={t('server_config.fields.block_rules_placeholder')}
                             value={(field.value || []).join('\n')}
                             onChange={(e) => {
-                              const lines = e.target.value
-                                .split('\n')
-                                .map((line) => line.trim())
-                                .filter(Boolean);
+                              const lines = e.target.value.split('\n').map((line) => line.trim());
                               field.onChange(lines);
                             }}
                             rows={10}

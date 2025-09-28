@@ -225,7 +225,6 @@ export default function Content() {
                       {Array.from({ length: 16 }).map((_, i) => {
                         const row = Math.floor(i / 4);
                         const col = i % 4;
-                        // 计算位置百分比
                         const top = 10 + row * 25 + (col % 2 === 0 ? 5 : -5);
                         const left = 5 + col * 30 + (row % 2 === 0 ? 0 : 10);
 
