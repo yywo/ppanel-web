@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.5.1](https://github.com/perfect-panel/ppanel-web/compare/v1.5.0...v1.5.1) (2025-09-28)
+
+
+### 🐛 Bug Fixes
+
+* Simplify protocol enable checks by removing unnecessary false comparisons ([4828700](https://github.com/perfect-panel/ppanel-web/commit/4828700))
+
 # [1.5.0](https://github.com/perfect-panel/ppanel-web/compare/v1.4.8...v1.5.0) (2025-09-28)
 
 
