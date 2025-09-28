@@ -52,7 +52,7 @@ function RegionIpCell({
   return (
     <div className='flex items-center gap-1'>
       <Badge variant='outline'>{region}</Badge>
-      <Badge variant='outline'>{ip || t('notAvailable')}</Badge>
+      <Badge variant='secondary'>{ip || t('notAvailable')}</Badge>
     </div>
   );
 }
@@ -160,12 +160,15 @@ export default function ServersPage() {
               ) as API.Protocol[];
               if (!list.length) return '—';
               return (
-                <div className='flex flex-wrap gap-1'>
+                <div className='flex flex-col gap-1'>
                   {list.map((p, idx) => {
+                    const ratio = Number(p.ratio ?? 1) || 1;
                     return (
-                      <Badge key={idx} variant='outline'>
-                        {p.type} ({p.port})
-                      </Badge>
+                      <div key={idx} className='flex items-center gap-2'>
+                        <Badge variant='outline'>{ratio.toFixed(2)}x</Badge>
+                        <Badge variant='secondary'>{p.type}</Badge>
+                        <Badge variant='secondary'>{p.port}</Badge>
+                      </div>
                     );
                   })}
                 </div>
@@ -218,15 +221,7 @@ export default function ServersPage() {
             header: t('onlineUsers'),
             cell: ({ row }) => <OnlineUsersCell status={row.original.status as API.ServerStatus} />,
           },
-          {
-            id: 'traffic_ratio',
-            header: t('traffic_ratio'),
-            cell: ({ row }) => {
-              const raw = row.original.ratio as unknown;
-              const ratio = Number(raw ?? 1) || 1;
-              return <span className='text-sm'>{ratio.toFixed(2)}x</span>;
-            },
-          },
+          // traffic ratio moved to per-protocol configs; column removed
         ]}
         params={[{ key: 'search' }]}
         request={async (pagination, filter) => {
@@ -291,11 +286,11 @@ export default function ServersPage() {
                 setLoading(true);
                 const { id, created_at, updated_at, last_reported_at, status, ...others } =
                   row as any;
+                // @ts-expect-error
                 const body: API.CreateServerRequest = {
                   name: others.name,
                   country: others.country,
                   city: others.city,
-                  ratio: others.ratio,
                   address: others.address,
                   protocols: others.protocols || [],
                 };
