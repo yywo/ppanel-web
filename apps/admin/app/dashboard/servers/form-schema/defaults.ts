@@ -13,33 +13,82 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         obfs: 'none',
         obfs_host: null,
         obfs_path: null,
+        sni: null,
+        allow_insecure: null,
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'vmess':
       return {
         type: 'vmess',
         enable: false,
+        host: null,
         port: null,
         transport: 'tcp',
         security: 'none',
+        path: null,
+        service_name: null,
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'vless':
       return {
         type: 'vless',
         enable: false,
+        host: null,
         port: null,
         transport: 'tcp',
         security: 'none',
         flow: 'none',
+        path: null,
+        service_name: null,
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        reality_server_addr: null,
+        reality_server_port: null,
+        reality_private_key: null,
+        reality_public_key: null,
+        reality_short_id: null,
         xhttp_mode: XHTTP_MODES[0], // 'auto'
         xhttp_extra: null,
+        encryption: 'none',
+        encryption_mode: null,
+        encryption_rtt: null,
+        encryption_ticket: null,
+        encryption_server_padding: null,
+        encryption_private_key: null,
+        encryption_client_padding: null,
+        encryption_password: null,
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'trojan':
       return {
         type: 'trojan',
         enable: false,
+        host: null,
         port: null,
         transport: 'tcp',
         security: 'tls',
+        path: null,
+        service_name: null,
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'hysteria2':
       return {
@@ -53,6 +102,13 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         security: 'tls',
         up_mbps: null,
         down_mbps: null,
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'tuic':
       return {
@@ -67,12 +123,17 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         sni: null,
         allow_insecure: false,
         fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'socks':
       return {
         type: 'socks',
         enable: false,
         port: null,
+        ratio: 1,
       } as any;
     case 'naive':
       return {
@@ -80,6 +141,13 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         enable: false,
         port: null,
         security: 'none',
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'http':
       return {
@@ -87,6 +155,13 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         enable: false,
         port: null,
         security: 'none',
+        sni: null,
+        allow_insecure: null,
+        fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     case 'mieru':
       return {
@@ -106,6 +181,10 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         sni: null,
         allow_insecure: false,
         fingerprint: 'chrome',
+        cert_mode: 'none',
+        cert_dns_provider: null,
+        cert_dns_env: null,
+        ratio: 1,
       } as any;
     default:
       return {} as any;

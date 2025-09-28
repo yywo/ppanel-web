@@ -378,6 +378,26 @@ declare namespace API {
     node_secret: string;
     node_pull_interval: number;
     node_push_interval: number;
+    traffic_report_threshold: number;
+    ip_strategy: string;
+    dns: NodeDNS[];
+    block: string[];
+    outbound: NodeOutbound[];
+  };
+
+  type NodeDNS = {
+    proto: string;
+    address: string;
+    domains: string[];
+  };
+
+  type NodeOutbound = {
+    name: string;
+    protocol: string;
+    address: string;
+    port: number;
+    password: string;
+    rules: string[];
   };
 
   type NodeRelay = {
@@ -601,6 +621,14 @@ declare namespace API {
     encryption_client_padding?: string;
     /** encryption password */
     encryption_password?: string;
+    /** Traffic ratio, default is 1 */
+    ratio?: number;
+    /** Certificate mode, `none`｜`http`｜`dns`｜`self` */
+    cert_mode?: string;
+    /** DNS provider for certificate */
+    cert_dns_provider?: string;
+    /** Environment for DNS provider */
+    cert_dns_env?: string;
   };
 
   type PubilcRegisterConfig = {

@@ -60,6 +60,7 @@ export const TRANSPORTS = {
 } as const;
 
 export const SECURITY = {
+  shadowsocks: ['none', 'http', 'tls'] as const,
   vmess: ['none', 'tls'] as const,
   vless: ['none', 'tls', 'reality'] as const,
   trojan: ['tls'] as const,
@@ -90,6 +91,8 @@ export const FINGERPRINTS = [
   '360',
   'qq',
 ] as const;
+
+export const CERT_MODES = ['none', 'http', 'dns', 'self'] as const;
 
 export const multiplexLevels = ['none', 'low', 'middle', 'high'] as const;
 

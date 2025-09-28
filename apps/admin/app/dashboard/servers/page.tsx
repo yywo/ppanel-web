@@ -15,12 +15,12 @@ import { useServer } from '@/store/server';
 import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
-import { Card, CardContent } from '@workspace/ui/components/card';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
 import { cn } from '@workspace/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import { toast } from 'sonner';
+import DynamicMultiplier from './dynamic-multiplier';
 import OnlineUsersCell from './online-users-cell';
 import ServerConfig from './server-config';
 import ServerForm from './server-form';
@@ -52,7 +52,7 @@ function RegionIpCell({
   return (
     <div className='flex items-center gap-1'>
       <Badge variant='outline'>{region}</Badge>
-      <Badge variant='outline'>{ip || t('notAvailable')}</Badge>
+      <Badge variant='secondary'>{ip || t('notAvailable')}</Badge>
     </div>
   );
 }
@@ -95,11 +95,10 @@ export default function ServersPage() {
 
   return (
     <div className='space-y-4'>
-      <Card>
-        <CardContent className='p-4'>
-          <ServerConfig />
-        </CardContent>
-      </Card>
+      <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+        <DynamicMultiplier />
+        <ServerConfig />
+      </div>
       <ProTable<API.Server, { search: string }>
         action={ref}
         header={{
@@ -156,17 +155,18 @@ export default function ServersPage() {
             accessorKey: 'protocols',
             header: t('protocols'),
             cell: ({ row }) => {
-              const list = row.original.protocols.filter(
-                (p) => p.enable !== false,
-              ) as API.Protocol[];
+              const list = row.original.protocols.filter((p) => p.enable) as API.Protocol[];
               if (!list.length) return '—';
               return (
-                <div className='flex flex-wrap gap-1'>
+                <div className='flex flex-col gap-1'>
                   {list.map((p, idx) => {
+                    const ratio = Number(p.ratio ?? 1) || 1;
                     return (
-                      <Badge key={idx} variant='outline'>
-                        {p.type} ({p.port})
-                      </Badge>
+                      <div key={idx} className='flex items-center gap-2'>
+                        <Badge variant='outline'>{ratio.toFixed(2)}x</Badge>
+                        <Badge variant='secondary'>{p.type}</Badge>
+                        <Badge variant='secondary'>{p.port}</Badge>
+                      </div>
                     );
                   })}
                 </div>
@@ -219,15 +219,7 @@ export default function ServersPage() {
             header: t('onlineUsers'),
             cell: ({ row }) => <OnlineUsersCell status={row.original.status as API.ServerStatus} />,
           },
-          {
-            id: 'traffic_ratio',
-            header: t('traffic_ratio'),
-            cell: ({ row }) => {
-              const raw = row.original.ratio as unknown;
-              const ratio = Number(raw ?? 1) || 1;
-              return <span className='text-sm'>{ratio.toFixed(2)}x</span>;
-            },
-          },
+          // traffic ratio moved to per-protocol configs; column removed
         ]}
         params={[{ key: 'search' }]}
         request={async (pagination, filter) => {
@@ -246,7 +238,7 @@ export default function ServersPage() {
               key='edit'
               trigger={t('edit')}
               title={t('drawerEditTitle')}
-              initialValues={row as any}
+              initialValues={row}
               loading={loading}
               onSubmit={async (values) => {
                 setLoading(true);
@@ -296,7 +288,6 @@ export default function ServersPage() {
                   name: others.name,
                   country: others.country,
                   city: others.city,
-                  ratio: others.ratio,
                   address: others.address,
                   protocols: others.protocols || [],
                 };

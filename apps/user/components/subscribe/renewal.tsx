@@ -52,7 +52,6 @@ export default function Renewal({ id, subscribe }: Readonly<RenewalProps>) {
           subscribe_id: subscribe.id,
         } as API.PurchaseOrderRequest);
         const result = data.data;
-        // 请求成功时保存数据
         if (result) {
           lastSuccessOrderRef.current = result;
         }

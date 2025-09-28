@@ -170,6 +170,7 @@ export default function UserForm<T extends Record<string, any>>({
                     <FormLabel>{t('password')}</FormLabel>
                     <FormControl>
                       <EnhancedInput
+                        autoComplete='new-password'
                         placeholder={t('passwordPlaceholder')}
                         {...field}
                         onValueChange={(value) => {

@@ -1,57 +1,79 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.4.8](https://github.com/perfect-panel/ppanel-web/compare/v1.4.7...v1.4.8) (2025-09-23)
+## [1.5.1](https://github.com/perfect-panel/ppanel-web/compare/v1.5.0...v1.5.1) (2025-09-28)
 
 
 ### 🐛 Bug Fixes
 
-* Rename 'server_id' to 'protocol' in NodesPage and clean up unused imports and code in ServerConfig ([70b3484](https://github.com/perfect-panel/ppanel-web/commit/70b3484))
-* Update announcement page to display timeline of announcements with Markdown content ([3c036eb](https://github.com/perfect-panel/ppanel-web/commit/3c036eb))
-* Update Empty component to support border prop and adjust usage in various pages ([ce9ab89](https://github.com/perfect-panel/ppanel-web/commit/ce9ab89))
+* Simplify protocol enable checks by removing unnecessary false comparisons ([4828700](https://github.com/perfect-panel/ppanel-web/commit/4828700))
+
+# [1.5.0](https://github.com/perfect-panel/ppanel-web/compare/v1.4.8...v1.5.0) (2025-09-28)
+
+
+### ✨ Features
+
+* Update server configuration translations for multiple languages ([fc43de1](https://github.com/perfect-panel/ppanel-web/commit/fc43de1))
+
+
+### 🐛 Bug Fixes
+
+* Add DynamicMultiplier component for managing node multipliers and update ServersPage layout ([bb6671c](https://github.com/perfect-panel/ppanel-web/commit/bb6671c))
+* Remove unnecessary blank lines in multiple index files for cleaner code structure ([6a823b8](https://github.com/perfect-panel/ppanel-web/commit/6a823b8))
+* Remove unused ratio variable from server traffic log and server form for cleaner code ([55034dc](https://github.com/perfect-panel/ppanel-web/commit/55034dc))
+* Update Badge variants and restructure traffic ratio display in ServersPage ([3d778e5](https://github.com/perfect-panel/ppanel-web/commit/3d778e5))
+* Update minimum ratio value to 0 in protocol fields and adjust related schemas; enhance unit conversion in ServerConfig ([3b6ef17](https://github.com/perfect-panel/ppanel-web/commit/3b6ef17))
+* Update protocol fields to use 'obfs' instead of 'security' and adjust related configurations ([4abdd36](https://github.com/perfect-panel/ppanel-web/commit/4abdd36))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.4.8](https://github.com/perfect-panel/ppanel-web/compare/v1.4.7...v1.4.8) (2025-09-23)
+
+### 🐛 Bug Fixes
+
+- Rename 'server_id' to 'protocol' in NodesPage and clean up unused imports and code in ServerConfig ([70b3484](https://github.com/perfect-panel/ppanel-web/commit/70b3484))
+- Update announcement page to display timeline of announcements with Markdown content ([3c036eb](https://github.com/perfect-panel/ppanel-web/commit/3c036eb))
+- Update Empty component to support border prop and adjust usage in various pages ([ce9ab89](https://github.com/perfect-panel/ppanel-web/commit/ce9ab89))
 
 ## [1.4.7](https://github.com/perfect-panel/ppanel-web/compare/v1.4.6...v1.4.7) (2025-09-23)
 
-
 ### 🐛 Bug Fixes
 
-* Add unique key to ProTable for improved rendering with user ID filters ([2bff15f](https://github.com/perfect-panel/ppanel-web/commit/2bff15f))
-* Adjust layout spacing and chart aspect ratio in ServerConfig component ([05a61d8](https://github.com/perfect-panel/ppanel-web/commit/05a61d8))
-* Refactor server ID cell rendering for improved readability and consistency ([0345b7c](https://github.com/perfect-panel/ppanel-web/commit/0345b7c))
-* Update announcement page to format creation date and enhance content display ([8445e30](https://github.com/perfect-panel/ppanel-web/commit/8445e30))
-* Update OnlineUsersCell to display user count with icon instead of badge ([7a4ebdf](https://github.com/perfect-panel/ppanel-web/commit/7a4ebdf))
-* Update subscribe name fallback to return '--' instead of 'Unknown' ([0a07d25](https://github.com/perfect-panel/ppanel-web/commit/0a07d25))
+- Add unique key to ProTable for improved rendering with user ID filters ([2bff15f](https://github.com/perfect-panel/ppanel-web/commit/2bff15f))
+- Adjust layout spacing and chart aspect ratio in ServerConfig component ([05a61d8](https://github.com/perfect-panel/ppanel-web/commit/05a61d8))
+- Refactor server ID cell rendering for improved readability and consistency ([0345b7c](https://github.com/perfect-panel/ppanel-web/commit/0345b7c))
+- Update announcement page to format creation date and enhance content display ([8445e30](https://github.com/perfect-panel/ppanel-web/commit/8445e30))
+- Update OnlineUsersCell to display user count with icon instead of badge ([7a4ebdf](https://github.com/perfect-panel/ppanel-web/commit/7a4ebdf))
+- Update subscribe name fallback to return '--' instead of 'Unknown' ([0a07d25](https://github.com/perfect-panel/ppanel-web/commit/0a07d25))
 
 ## [1.4.6](https://github.com/perfect-panel/ppanel-web/compare/v1.4.5...v1.4.6) (2025-09-17)
 
-
 ### 🎫 Chores
 
-* Merge branch 'main' into develop ([41f06bf](https://github.com/perfect-panel/ppanel-web/commit/41f06bf))
-
+- Merge branch 'main' into develop ([41f06bf](https://github.com/perfect-panel/ppanel-web/commit/41f06bf))
 
 ### 🐛 Bug Fixes
 
-* Add loaded state to node, server, and subscribe stores for better loading management ([13dce0c](https://github.com/perfect-panel/ppanel-web/commit/13dce0c))
-* Removed node metadata fields in subscription schema to simplify structure ([0cadd83](https://github.com/perfect-panel/ppanel-web/commit/0cadd83))
+- Add loaded state to node, server, and subscribe stores for better loading management ([13dce0c](https://github.com/perfect-panel/ppanel-web/commit/13dce0c))
+- Removed node metadata fields in subscription schema to simplify structure ([0cadd83](https://github.com/perfect-panel/ppanel-web/commit/0cadd83))
 
 ## [1.4.5](https://github.com/perfect-panel/ppanel-web/compare/v1.4.4...v1.4.5) (2025-09-17)
 
-
 ### ♻ Code Refactoring
 
-* Replace useQuery with Zustand store for subscription and node data management ([c6dd0b6](https://github.com/perfect-panel/ppanel-web/commit/c6dd0b6))
-* Simplify TemplatePreview component structure by consolidating Sheet and Button elements ([1b715c5](https://github.com/perfect-panel/ppanel-web/commit/1b715c5))
-
+- Replace useQuery with Zustand store for subscription and node data management ([c6dd0b6](https://github.com/perfect-panel/ppanel-web/commit/c6dd0b6))
+- Simplify TemplatePreview component structure by consolidating Sheet and Button elements ([1b715c5](https://github.com/perfect-panel/ppanel-web/commit/1b715c5))
 
 ### 🐛 Bug Fixes
 
-*  Add showLineNumbers prop handling in MonacoEditor for improved placeholder positioning ([bd67ece](https://github.com/perfect-panel/ppanel-web/commit/bd67ece))
-* Add fetchTags method to NodesPage and ensure tags are fetched alongside nodes ([a3c5e31](https://github.com/perfect-panel/ppanel-web/commit/a3c5e31))
-* Add NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT to control tutorial visibility and update page query accordingly ([e94405d](https://github.com/perfect-panel/ppanel-web/commit/e94405d))
-* Add subscribeSchema for subscription management with detailed proxy and user information ([49b3dcc](https://github.com/perfect-panel/ppanel-web/commit/49b3dcc))
-* Enhance server ID display in ServerTrafficLogPage with badges and server ratio ([6dfac27](https://github.com/perfect-panel/ppanel-web/commit/6dfac27))
-* Update platform handling in Content component to ensure available platforms are correctly filtered and displayed ([1dde708](https://github.com/perfect-panel/ppanel-web/commit/1dde708))
+- Add showLineNumbers prop handling in MonacoEditor for improved placeholder positioning ([bd67ece](https://github.com/perfect-panel/ppanel-web/commit/bd67ece))
+- Add fetchTags method to NodesPage and ensure tags are fetched alongside nodes ([a3c5e31](https://github.com/perfect-panel/ppanel-web/commit/a3c5e31))
+- Add NEXT_PUBLIC_HIDDEN_TUTORIAL_DOCUMENT to control tutorial visibility and update page query accordingly ([e94405d](https://github.com/perfect-panel/ppanel-web/commit/e94405d))
+- Add subscribeSchema for subscription management with detailed proxy and user information ([49b3dcc](https://github.com/perfect-panel/ppanel-web/commit/49b3dcc))
+- Enhance server ID display in ServerTrafficLogPage with badges and server ratio ([6dfac27](https://github.com/perfect-panel/ppanel-web/commit/6dfac27))
+- Update platform handling in Content component to ensure available platforms are correctly filtered and displayed ([1dde708](https://github.com/perfect-panel/ppanel-web/commit/1dde708))
 
 <a name="readme-top"></a>
 
