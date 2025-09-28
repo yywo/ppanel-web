@@ -35,6 +35,7 @@ import { Textarea } from '@workspace/ui/components/textarea';
 import { ArrayInput } from '@workspace/ui/custom-components/dynamic-Inputs';
 import { EnhancedInput } from '@workspace/ui/custom-components/enhanced-input';
 import { Icon } from '@workspace/ui/custom-components/icon';
+import { unitConversion } from '@workspace/ui/utils';
 import { DicesIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { uid } from 'radash';
@@ -275,8 +276,10 @@ export default function ServerConfig() {
                             type='number'
                             min={0}
                             suffix='MB'
-                            value={field.value as any}
-                            onValueChange={field.onChange}
+                            value={unitConversion('bitsToMb', field.value as number | undefined)}
+                            onValueChange={(value) => {
+                              field.onChange(unitConversion('mbToBits', value));
+                            }}
                             placeholder='1'
                           />
                         </FormControl>

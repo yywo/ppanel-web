@@ -1,5 +1,6 @@
 'use client';
 
+import useGlobalStore from '@/config/use-global';
 import { useNode } from '@/store/node';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -78,6 +79,9 @@ export default function SubscribeForm<T extends Record<string, any>>({
   trigger,
   title,
 }: Readonly<SubscribeFormProps<T>>) {
+  const { common } = useGlobalStore();
+  const { currency } = common;
+
   const t = useTranslations('product');
   const [open, setOpen] = useState(false);
   const updateTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -213,7 +217,11 @@ export default function SubscribeForm<T extends Record<string, any>>({
     form?.reset(
       assign(defaultValues, shake(initialValues, (value) => value === null) as Record<string, any>),
     );
-  }, [form, initialValues]);
+    const discount = form.getValues('discount') || [];
+    if (discount.length > 0) {
+      debouncedCalculateDiscount(discount, 'discount');
+    }
+  }, [form, initialValues, open]);
 
   useEffect(() => {
     return () => {
@@ -228,7 +236,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     if (bool) setOpen(false);
   }
 
-  const { nodes, getAllAvailableTags, getNodesByTag, getNodesWithoutTags } = useNode();
+  const { getAllAvailableTags, getNodesByTag, getNodesWithoutTags } = useNode();
 
   const tagGroups = getAllAvailableTags();
 
@@ -630,9 +638,9 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 {
                                   name: 'discount',
                                   type: 'number',
-                                  min: 0.01,
+                                  min: 1,
                                   max: 100,
-                                  step: 0.01,
+                                  step: 1,
                                   placeholder: t('form.discountPercent'),
                                   suffix: '%',
                                 },
@@ -642,6 +650,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   type: 'number',
                                   min: 0,
                                   step: 0.01,
+                                  prefix: currency.currency_symbol,
                                   formatInput: (value) => unitConversion('centsToDollars', value),
                                   formatOutput: (value) =>
                                     unitConversion('dollarsToCents', value).toString(),
