@@ -41,13 +41,10 @@ export default function ServerTrafficLogPage() {
           accessorKey: 'server_id',
           header: t('column.server'),
           cell: ({ row }) => {
-            const server = getServerById(row.original.server_id);
-            const ratio = server?.ratio || 1;
             return (
               <div className='flex items-center gap-2'>
                 <Badge>{row.original.server_id}</Badge>
                 <span>{getServerName(row.original.server_id)}</span>
-                <Badge variant='outline'>{ratio}X</Badge>
               </div>
             );
           },

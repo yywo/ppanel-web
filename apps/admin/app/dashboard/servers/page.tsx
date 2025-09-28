@@ -286,7 +286,6 @@ export default function ServersPage() {
                 setLoading(true);
                 const { id, created_at, updated_at, last_reported_at, status, ...others } =
                   row as any;
-                // @ts-expect-error
                 const body: API.CreateServerRequest = {
                   name: others.name,
                   country: others.country,

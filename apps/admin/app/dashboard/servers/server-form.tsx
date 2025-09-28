@@ -353,7 +353,6 @@ export default function ServerForm(props: {
         address: '',
         country: '',
         city: '',
-        ratio: 1,
         ...initialValues,
         protocols: PROTOCOLS.map((type) => {
           const existingProtocol = initialValues.protocols?.find((p) => p.type === type);
