@@ -65,7 +65,7 @@ export const useServerStore = create<ServerState>((set, get) => ({
 
   getServerEnabledProtocols: (serverId: number) => {
     const server = get().servers.find((s) => s.id === serverId);
-    return server?.protocols?.filter((p) => p.enable !== false) || [];
+    return server?.protocols?.filter((p) => p.enable) || [];
   },
 
   getProtocolPort: (serverId?: number, protocol?: string) => {

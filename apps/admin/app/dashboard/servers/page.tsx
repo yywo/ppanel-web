@@ -155,9 +155,7 @@ export default function ServersPage() {
             accessorKey: 'protocols',
             header: t('protocols'),
             cell: ({ row }) => {
-              const list = row.original.protocols.filter(
-                (p) => p.enable !== false,
-              ) as API.Protocol[];
+              const list = row.original.protocols.filter((p) => p.enable) as API.Protocol[];
               if (!list.length) return '—';
               return (
                 <div className='flex flex-col gap-1'>

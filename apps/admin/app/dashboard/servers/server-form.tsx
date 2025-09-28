@@ -492,7 +492,7 @@ export default function ServerForm(props: {
                     PROTOCOLS.findIndex((t) => t === type),
                   );
                   const current = (protocolsValues[i] || {}) as Record<string, any>;
-                  const isEnabled = current?.enable !== false;
+                  const isEnabled = current?.enable;
                   const fields = PROTOCOL_FIELDS[type] || [];
                   return (
                     <AccordionItem key={type} value={type} className='mb-2 rounded-lg border'>
@@ -529,7 +529,8 @@ export default function ServerForm(props: {
                             checked={!!isEnabled}
                             disabled={Boolean(
                               initialValues?.id &&
-                                isProtocolUsedInNodes(initialValues?.id || 0, type),
+                                isProtocolUsedInNodes(initialValues?.id || 0, type) &&
+                                isEnabled,
                             )}
                             onCheckedChange={(checked) => {
                               form.setValue(`protocols.${i}.enable`, checked);
