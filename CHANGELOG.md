@@ -1,4 +1,24 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.5.0](https://github.com/perfect-panel/ppanel-web/compare/v1.4.8...v1.5.0) (2025-09-28)
+
+
+### ✨ Features
+
+* Update server configuration translations for multiple languages ([fc43de1](https://github.com/perfect-panel/ppanel-web/commit/fc43de1))
+
+
+### 🐛 Bug Fixes
+
+* Add DynamicMultiplier component for managing node multipliers and update ServersPage layout ([bb6671c](https://github.com/perfect-panel/ppanel-web/commit/bb6671c))
+* Remove unnecessary blank lines in multiple index files for cleaner code structure ([6a823b8](https://github.com/perfect-panel/ppanel-web/commit/6a823b8))
+* Remove unused ratio variable from server traffic log and server form for cleaner code ([55034dc](https://github.com/perfect-panel/ppanel-web/commit/55034dc))
+* Update Badge variants and restructure traffic ratio display in ServersPage ([3d778e5](https://github.com/perfect-panel/ppanel-web/commit/3d778e5))
+* Update minimum ratio value to 0 in protocol fields and adjust related schemas; enhance unit conversion in ServerConfig ([3b6ef17](https://github.com/perfect-panel/ppanel-web/commit/3b6ef17))
+* Update protocol fields to use 'obfs' instead of 'security' and adjust related configurations ([4abdd36](https://github.com/perfect-panel/ppanel-web/commit/4abdd36))
+
+<a name="readme-top"></a>
 
 # Changelog
 
