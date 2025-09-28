@@ -311,7 +311,6 @@ declare namespace API {
     name: string;
     country?: string;
     city?: string;
-    ratio: number;
     address: string;
     sort?: number;
     protocols: Protocol[];
@@ -1829,7 +1828,6 @@ declare namespace API {
     name: string;
     country: string;
     city: string;
-    ratio: number;
     address: string;
     sort: number;
     protocols: Protocol[];
@@ -2252,7 +2250,6 @@ declare namespace API {
     name: string;
     country?: string;
     city?: string;
-    ratio: number;
     address: string;
     sort?: number;
     protocols: Protocol[];
