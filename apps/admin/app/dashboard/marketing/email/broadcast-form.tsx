@@ -366,6 +366,7 @@ export default function EmailBroadcastForm() {
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
+                              step='1'
                               disabled={form.watch('scope') === 5} // ScopeSkip
                               value={field.value}
                               onValueChange={field.onChange}
@@ -384,6 +385,7 @@ export default function EmailBroadcastForm() {
                           <FormControl>
                             <EnhancedInput
                               type='datetime-local'
+                              step='1'
                               disabled={form.watch('scope') === 5} // ScopeSkip
                               value={field.value}
                               onValueChange={field.onChange}
@@ -425,6 +427,7 @@ export default function EmailBroadcastForm() {
                         <FormControl>
                           <EnhancedInput
                             type='datetime-local'
+                            step='1'
                             placeholder={t('leaveEmptyForImmediateSend')}
                             value={field.value}
                             onValueChange={field.onChange}

@@ -225,6 +225,7 @@ export default function AdsForm<T extends Record<string, any>>({
                     <FormControl>
                       <EnhancedInput
                         type='datetime-local'
+                        step='1'
                         placeholder={t('form.enterStartTime')}
                         value={field.value ? new Date(field.value).toISOString().slice(0, 16) : ''}
                         min={Number(new Date().toISOString().slice(0, 16))}
@@ -253,6 +254,7 @@ export default function AdsForm<T extends Record<string, any>>({
                       <FormControl>
                         <EnhancedInput
                           type='datetime-local'
+                          step='1'
                           placeholder={t('form.enterEndTime')}
                           value={
                             field.value ? new Date(field.value).toISOString().slice(0, 16) : ''

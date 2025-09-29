@@ -269,6 +269,7 @@ export default function QuotaBroadcastForm() {
                       <FormControl>
                         <EnhancedInput
                           type='datetime-local'
+                          step='1'
                           value={field.value}
                           onValueChange={field.onChange}
                         />
@@ -286,6 +287,7 @@ export default function QuotaBroadcastForm() {
                       <FormControl>
                         <EnhancedInput
                           type='datetime-local'
+                          step='1'
                           value={field.value}
                           onValueChange={field.onChange}
                         />
