@@ -324,7 +324,7 @@ declare namespace API {
     state: string;
   };
 
-  type Hysteria2 = {
+  type Hysteria = {
     port: number;
     hop_ports: string;
     hop_interval: number;

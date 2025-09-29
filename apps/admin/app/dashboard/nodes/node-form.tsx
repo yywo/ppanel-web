@@ -36,9 +36,13 @@ export type ProtocolName =
   | 'vmess'
   | 'vless'
   | 'trojan'
-  | 'hysteria2'
+  | 'hysteria'
   | 'tuic'
-  | 'anytls';
+  | 'anytls'
+  | 'naive'
+  | 'http'
+  | 'socks'
+  | 'mieru';
 
 const buildSchema = (t: ReturnType<typeof useTranslations>) =>
   z.object({

@@ -603,7 +603,7 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       condition: (p) => p.security === 'tls' && p.cert_mode === 'dns',
     },
   ],
-  hysteria2: [
+  hysteria: [
     {
       name: 'ratio',
       type: 'number',

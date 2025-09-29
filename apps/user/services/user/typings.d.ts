@@ -343,7 +343,7 @@ declare namespace API {
     list: Ticket[];
   };
 
-  type Hysteria2 = {
+  type Hysteria = {
     port: number;
     hop_ports: string;
     hop_interval: number;
