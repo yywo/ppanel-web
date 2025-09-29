@@ -79,8 +79,18 @@ export default function DynamicMultiplier() {
           <div className='space-y-4 pt-4'>
             <ArrayInput<API.TimePeriod>
               fields={[
-                { name: 'start_time', prefix: t('server_config.fields.start_time'), type: 'time' },
-                { name: 'end_time', prefix: t('server_config.fields.end_time'), type: 'time' },
+                {
+                  name: 'start_time',
+                  prefix: t('server_config.fields.start_time'),
+                  type: 'time',
+                  step: '1',
+                },
+                {
+                  name: 'end_time',
+                  prefix: t('server_config.fields.end_time'),
+                  type: 'time',
+                  step: '1',
+                },
                 {
                   name: 'multiplier',
                   prefix: t('server_config.fields.multiplier'),

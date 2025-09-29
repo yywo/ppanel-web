@@ -90,9 +90,9 @@ export function getProtocolDefaultConfig(proto: ProtocolType) {
         cert_dns_env: null,
         ratio: 1,
       } as any;
-    case 'hysteria2':
+    case 'hysteria':
       return {
-        type: 'hysteria2',
+        type: 'hysteria',
         enable: false,
         port: null,
         hop_ports: null,

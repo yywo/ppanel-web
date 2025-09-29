@@ -1272,7 +1272,7 @@ declare namespace API {
     has_migrate: boolean;
   };
 
-  type Hysteria2 = {
+  type Hysteria = {
     port: number;
     hop_ports: string;
     hop_interval: number;

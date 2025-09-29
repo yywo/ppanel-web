@@ -1,6 +1,15 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.5.2](https://github.com/perfect-panel/ppanel-web/compare/v1.5.1...v1.5.2) (2025-09-29)
+
+
+### 🐛 Bug Fixes
+
+* Add step attribute to datetime-local inputs for precise time selection in forms ([32fd181](https://github.com/perfect-panel/ppanel-web/commit/32fd181))
+* Rename 'hysteria2' to 'hysteria' across protocol definitions and schemas for consistency ([5816dd5](https://github.com/perfect-panel/ppanel-web/commit/5816dd5))
+* Update protocol options in ServerConfig for accuracy and consistency ([9266529](https://github.com/perfect-panel/ppanel-web/commit/9266529))
+
 ## [1.5.1](https://github.com/perfect-panel/ppanel-web/compare/v1.5.0...v1.5.1) (2025-09-28)
 
 

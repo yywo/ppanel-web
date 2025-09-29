@@ -104,16 +104,16 @@ const trojan = z.object({
   cert_dns_env: nullableString,
 });
 
-const hysteria2 = z.object({
+const hysteria = z.object({
   ratio: nullableRatio,
-  type: z.literal('hysteria2'),
+  type: z.literal('hysteria'),
   enable: nullableBool,
   hop_ports: nullableString,
   hop_interval: z.number().nullish(),
   obfs_password: nullableString,
   obfs: z.enum(['none', 'salamander'] as const).nullish(),
   port: nullablePort,
-  security: z.enum(SECURITY.hysteria2).nullish(),
+  security: z.enum(SECURITY.hysteria).nullish(),
   sni: nullableString,
   allow_insecure: nullableBool,
   fingerprint: nullableString,
@@ -207,7 +207,7 @@ export const protocolApiScheme = z.discriminatedUnion('type', [
   vmess,
   vless,
   trojan,
-  hysteria2,
+  hysteria,
   tuic,
   anytls,
   socks,
