@@ -19,3 +19,14 @@ export async function querySubscribeList(
     },
   );
 }
+
+/** Get user subscribe node info GET /v1/public/subscribe/node/list */
+export async function queryUserSubscribeNodeList(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.QueryUserSubscribeNodeListResponse }>(
+    '/v1/public/subscribe/node/list',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}

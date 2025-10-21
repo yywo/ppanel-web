@@ -19,6 +19,8 @@ export default function Certification({ platform, children }: CertificationProps
     oAuthLoginGetToken({
       method: platform,
       callback: searchParams,
+      // @ts-ignore
+      invite: localStorage.getItem('invite') || '',
     })
       .then((res) => {
         const token = res?.data?.data?.token;

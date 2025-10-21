@@ -128,6 +128,14 @@ export async function queryUserCommissionLog(
   );
 }
 
+/** Get Device List GET /v1/public/user/devices */
+export async function getDeviceList(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.GetDeviceListResponse }>('/v1/public/user/devices', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** Query User Info GET /v1/public/user/info */
 export async function queryUserInfo(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.User }>('/v1/public/user/info', {
@@ -227,6 +235,21 @@ export async function resetUserSubscribeToken(
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/public/user/subscribe_token', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** Unbind Device PUT /v1/public/user/unbind_device */
+export async function unbindDevice(
+  body: API.UnbindDeviceRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/public/user/unbind_device', {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

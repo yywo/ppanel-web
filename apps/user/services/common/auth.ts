@@ -47,6 +47,18 @@ export async function userLogin(body: API.UserLoginRequest, options?: { [key: st
   });
 }
 
+/** Device Login POST /v1/auth/login/device */
+export async function deviceLogin(body: API.DeviceLoginRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.LoginResponse }>('/v1/auth/login/device', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
 /** User Telephone login POST /v1/auth/login/telephone */
 export async function telephoneLogin(
   body: API.TelephoneLoginRequest,

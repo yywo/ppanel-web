@@ -43,6 +43,7 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
+import { SS_CIPHERS } from './form-schema';
 
 const dnsConfigSchema = z.object({
   proto: z.string(), // z.enum(['tcp', 'udp', 'tls', 'https', 'quic']),
@@ -55,6 +56,7 @@ const outboundConfigSchema = z.object({
   protocol: z.string(),
   address: z.string(),
   port: z.number(),
+  cipher: z.string().optional(),
   password: z.string().optional(),
   rules: z.array(z.string()).optional(),
 });
@@ -92,7 +94,7 @@ export default function ServerConfig() {
       node_pull_interval: undefined,
       node_push_interval: undefined,
       traffic_report_threshold: undefined,
-      ip_strategy: undefined,
+      ip_strategy: 'prefer_ipv4',
       dns: [],
       block: [],
       outbound: [],
@@ -106,7 +108,8 @@ export default function ServerConfig() {
         node_pull_interval: cfgResp.node_pull_interval as number | undefined,
         node_push_interval: cfgResp.node_push_interval as number | undefined,
         traffic_report_threshold: cfgResp.traffic_report_threshold as number | undefined,
-        ip_strategy: cfgResp.ip_strategy as 'prefer_ipv4' | 'prefer_ipv6' | undefined,
+        ip_strategy:
+          (cfgResp.ip_strategy as 'prefer_ipv4' | 'prefer_ipv6' | undefined) || 'prefer_ipv4',
         dns: cfgResp.dns || [],
         block: cfgResp.block || [],
         outbound: cfgResp.outbound || [],
@@ -364,89 +367,104 @@ export default function ServerConfig() {
                   <FormField
                     control={form.control}
                     name='outbound'
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <ArrayInput
-                            className='grid grid-cols-2 gap-2'
-                            fields={[
-                              {
-                                name: 'name',
-                                type: 'text',
-                                className: 'col-span-2',
-                                placeholder: t('server_config.fields.outbound_name_placeholder'),
-                              },
-                              {
-                                name: 'protocol',
-                                type: 'select',
-                                placeholder: t(
-                                  'server_config.fields.outbound_protocol_placeholder',
-                                ),
-                                options: [
-                                  { label: 'HTTP', value: 'http' },
-                                  { label: 'SOCKS', value: 'socks' },
-                                  { label: 'Shadowsocks', value: 'shadowsocks' },
-                                  { label: 'Brook', value: 'brook' },
-                                  { label: 'Snell', value: 'snell' },
-                                  { label: 'VMess', value: 'vmess' },
-                                  { label: 'VLESS', value: 'vless' },
-                                  { label: 'Trojan', value: 'trojan' },
-                                  { label: 'WireGuard', value: 'wireguard' },
-                                  { label: 'Hysteria', value: 'hysteria' },
-                                  { label: 'TUIC', value: 'tuic' },
-                                  { label: 'AnyTLS', value: 'anytls' },
-                                  { label: 'Naive', value: 'naive' },
-                                  { label: 'Direct', value: 'direct' },
-                                  { label: 'Reject', value: 'reject' },
-                                ],
-                              },
-                              {
-                                name: 'address',
-                                type: 'text',
-                                placeholder: t('server_config.fields.outbound_address_placeholder'),
-                              },
-                              {
-                                name: 'port',
-                                type: 'number',
-                                placeholder: t('server_config.fields.outbound_port_placeholder'),
-                              },
-                              {
-                                name: 'password',
-                                type: 'text',
-                                placeholder: t(
-                                  'server_config.fields.outbound_password_placeholder',
-                                ),
-                              },
-                              {
-                                name: 'rules',
-                                type: 'textarea',
-                                className: 'col-span-2',
-                                placeholder: t('server_config.fields.outbound_rules_placeholder'),
-                              },
-                            ]}
-                            value={(field.value || []).map((item) => ({
-                              ...item,
-                              rules: Array.isArray(item.rules) ? item.rules.join('\n') : '',
-                            }))}
-                            onChange={(values) => {
-                              const converted = values.map((item: any) => ({
-                                name: item.name,
-                                protocol: item.protocol,
-                                address: item.address,
-                                port: item.port,
-                                password: item.password,
-                                rules:
-                                  typeof item.rules === 'string'
-                                    ? item.rules.split('\n').map((r: string) => r.trim())
-                                    : item.rules || [],
-                              }));
-                              field.onChange(converted);
-                            }}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                    render={({ field }) => {
+                      return (
+                        <FormItem>
+                          <FormControl>
+                            <ArrayInput
+                              className='grid grid-cols-2 gap-2'
+                              fields={[
+                                {
+                                  name: 'name',
+                                  type: 'text',
+                                  className: 'col-span-2',
+                                  placeholder: t('server_config.fields.outbound_name_placeholder'),
+                                },
+                                {
+                                  name: 'protocol',
+                                  type: 'select',
+                                  placeholder: t(
+                                    'server_config.fields.outbound_protocol_placeholder',
+                                  ),
+                                  options: [
+                                    { label: 'HTTP', value: 'http' },
+                                    { label: 'SOCKS', value: 'socks' },
+                                    { label: 'Shadowsocks', value: 'shadowsocks' },
+                                    { label: 'Brook', value: 'brook' },
+                                    { label: 'Snell', value: 'snell' },
+                                    { label: 'VMess', value: 'vmess' },
+                                    { label: 'VLESS', value: 'vless' },
+                                    { label: 'Trojan', value: 'trojan' },
+                                    { label: 'WireGuard', value: 'wireguard' },
+                                    { label: 'Hysteria', value: 'hysteria' },
+                                    { label: 'TUIC', value: 'tuic' },
+                                    { label: 'AnyTLS', value: 'anytls' },
+                                    { label: 'Naive', value: 'naive' },
+                                    { label: 'Direct', value: 'direct' },
+                                    { label: 'Reject', value: 'reject' },
+                                  ],
+                                },
+                                {
+                                  name: 'cipher',
+                                  type: 'select',
+                                  options: SS_CIPHERS.map((cipher) => ({
+                                    label: cipher,
+                                    value: cipher,
+                                  })),
+                                  visible: (item: Record<string, any>) =>
+                                    item.protocol === 'shadowsocks',
+                                },
+                                {
+                                  name: 'address',
+                                  type: 'text',
+                                  placeholder: t(
+                                    'server_config.fields.outbound_address_placeholder',
+                                  ),
+                                },
+                                {
+                                  name: 'port',
+                                  type: 'number',
+                                  placeholder: t('server_config.fields.outbound_port_placeholder'),
+                                },
+                                {
+                                  name: 'password',
+                                  type: 'text',
+                                  placeholder: t(
+                                    'server_config.fields.outbound_password_placeholder',
+                                  ),
+                                },
+                                {
+                                  name: 'rules',
+                                  type: 'textarea',
+                                  className: 'col-span-2',
+                                  placeholder: t('server_config.fields.outbound_rules_placeholder'),
+                                },
+                              ]}
+                              value={(field.value || []).map((item) => ({
+                                ...item,
+                                rules: Array.isArray(item.rules) ? item.rules.join('\n') : '',
+                              }))}
+                              onChange={(values) => {
+                                const converted = values.map((item: any) => ({
+                                  name: item.name,
+                                  protocol: item.protocol,
+                                  address: item.address,
+                                  port: item.port,
+                                  cipher: item.cipher,
+                                  password: item.password,
+                                  rules:
+                                    typeof item.rules === 'string'
+                                      ? item.rules.split('\n').map((r: string) => r.trim())
+                                      : item.rules || [],
+                                }));
+                                field.onChange(converted);
+                              }}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
                   />
                 </TabsContent>
 

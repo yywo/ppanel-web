@@ -108,6 +108,7 @@ declare namespace API {
   type AuthConfig = {
     mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
+    device: DeviceAuthticateConfig;
     register: PubilcRegisterConfig;
   };
 
@@ -454,6 +455,13 @@ declare namespace API {
 
   type DeleteUserSubscribeRequest = {
     user_subscribe_id: number;
+  };
+
+  type DeviceAuthticateConfig = {
+    enable: boolean;
+    show_ads: boolean;
+    enable_security: boolean;
+    only_real_device: boolean;
   };
 
   type Document = {
@@ -1272,7 +1280,7 @@ declare namespace API {
     has_migrate: boolean;
   };
 
-  type Hysteria = {
+  type Hysteria2 = {
     port: number;
     hop_ports: string;
     hop_interval: number;
@@ -1493,6 +1501,11 @@ declare namespace API {
 
   type PreRenewalOrderResponse = {
     orderNo: string;
+  };
+
+  type PreViewNodeMultiplierResponse = {
+    current_time: string;
+    ratio: number;
   };
 
   type PreviewSubscribeTemplateParams = {

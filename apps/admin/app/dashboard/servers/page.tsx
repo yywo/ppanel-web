@@ -5,14 +5,11 @@ import {
   createServer,
   deleteServer,
   filterServerList,
-  hasMigrateSeverNode,
-  migrateServerNode,
   resetSortWithServer,
   updateServer,
 } from '@/services/admin/server';
 import { useNode } from '@/store/node';
 import { useServer } from '@/store/server';
-import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import { ConfirmButton } from '@workspace/ui/custom-components/confirm-button';
@@ -66,33 +63,6 @@ export default function ServersPage() {
   const [migrating, setMigrating] = useState(false);
   const ref = useRef<ProTableActions>(null);
 
-  const { data: hasMigrate, refetch: refetchHasMigrate } = useQuery({
-    queryKey: ['hasMigrateSeverNode'],
-    queryFn: async () => {
-      const { data } = await hasMigrateSeverNode();
-      return data.data?.has_migrate;
-    },
-  });
-
-  const handleMigrate = async () => {
-    setMigrating(true);
-    try {
-      const { data } = await migrateServerNode();
-      const fail = data.data?.fail || 0;
-      if (fail > 0) {
-        toast.error(data.data?.message);
-      } else {
-        toast.success(t('migrated'));
-      }
-      refetchHasMigrate();
-      ref.current?.refresh();
-    } catch (error) {
-      toast.error(t('migrateFailed'));
-    } finally {
-      setMigrating(false);
-    }
-  };
-
   return (
     <div className='space-y-4'>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
@@ -105,11 +75,6 @@ export default function ServersPage() {
           title: t('pageTitle'),
           toolbar: (
             <div className='flex gap-2'>
-              {hasMigrate && (
-                <Button variant='outline' onClick={handleMigrate} disabled={migrating}>
-                  {migrating ? t('migrating') : t('migrate')}
-                </Button>
-              )}
               <ServerForm
                 trigger={t('create')}
                 title={t('drawerCreateTitle')}

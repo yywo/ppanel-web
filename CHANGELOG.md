@@ -1,38 +1,48 @@
 <a name="readme-top"></a>
 # Changelog
 
-## [1.5.2](https://github.com/perfect-panel/ppanel-web/compare/v1.5.1...v1.5.2) (2025-09-29)
+## [1.5.3](https://github.com/perfect-panel/ppanel-web/compare/v1.5.2...v1.5.3) (2025-10-21)
 
 
 ### 🐛 Bug Fixes
 
-* Add step attribute to datetime-local inputs for precise time selection in forms ([32fd181](https://github.com/perfect-panel/ppanel-web/commit/32fd181))
-* Rename 'hysteria2' to 'hysteria' across protocol definitions and schemas for consistency ([5816dd5](https://github.com/perfect-panel/ppanel-web/commit/5816dd5))
-* Update protocol options in ServerConfig for accuracy and consistency ([9266529](https://github.com/perfect-panel/ppanel-web/commit/9266529))
+* Fix bugs ([a46657d](https://github.com/perfect-panel/ppanel-web/commit/a46657d))
+* Fix dependencies ([8bd25d6](https://github.com/perfect-panel/ppanel-web/commit/8bd25d6))
+* Remove unnecessary migration function code and add device configuration options ([521a7a9](https://github.com/perfect-panel/ppanel-web/commit/521a7a9))
+* Update bun.lockb to reflect dependency changes ([ca892dd](https://github.com/perfect-panel/ppanel-web/commit/ca892dd))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+## [1.5.2](https://github.com/perfect-panel/ppanel-web/compare/v1.5.1...v1.5.2) (2025-09-29)
+
+### 🐛 Bug Fixes
+
+- Add step attribute to datetime-local inputs for precise time selection in forms ([32fd181](https://github.com/perfect-panel/ppanel-web/commit/32fd181))
+- Rename 'hysteria2' to 'hysteria' across protocol definitions and schemas for consistency ([5816dd5](https://github.com/perfect-panel/ppanel-web/commit/5816dd5))
+- Update protocol options in ServerConfig for accuracy and consistency ([9266529](https://github.com/perfect-panel/ppanel-web/commit/9266529))
 
 ## [1.5.1](https://github.com/perfect-panel/ppanel-web/compare/v1.5.0...v1.5.1) (2025-09-28)
 
-
 ### 🐛 Bug Fixes
 
-* Simplify protocol enable checks by removing unnecessary false comparisons ([4828700](https://github.com/perfect-panel/ppanel-web/commit/4828700))
+- Simplify protocol enable checks by removing unnecessary false comparisons ([4828700](https://github.com/perfect-panel/ppanel-web/commit/4828700))
 
 # [1.5.0](https://github.com/perfect-panel/ppanel-web/compare/v1.4.8...v1.5.0) (2025-09-28)
 
-
 ### ✨ Features
 
-* Update server configuration translations for multiple languages ([fc43de1](https://github.com/perfect-panel/ppanel-web/commit/fc43de1))
-
+- Update server configuration translations for multiple languages ([fc43de1](https://github.com/perfect-panel/ppanel-web/commit/fc43de1))
 
 ### 🐛 Bug Fixes
 
-* Add DynamicMultiplier component for managing node multipliers and update ServersPage layout ([bb6671c](https://github.com/perfect-panel/ppanel-web/commit/bb6671c))
-* Remove unnecessary blank lines in multiple index files for cleaner code structure ([6a823b8](https://github.com/perfect-panel/ppanel-web/commit/6a823b8))
-* Remove unused ratio variable from server traffic log and server form for cleaner code ([55034dc](https://github.com/perfect-panel/ppanel-web/commit/55034dc))
-* Update Badge variants and restructure traffic ratio display in ServersPage ([3d778e5](https://github.com/perfect-panel/ppanel-web/commit/3d778e5))
-* Update minimum ratio value to 0 in protocol fields and adjust related schemas; enhance unit conversion in ServerConfig ([3b6ef17](https://github.com/perfect-panel/ppanel-web/commit/3b6ef17))
-* Update protocol fields to use 'obfs' instead of 'security' and adjust related configurations ([4abdd36](https://github.com/perfect-panel/ppanel-web/commit/4abdd36))
+- Add DynamicMultiplier component for managing node multipliers and update ServersPage layout ([bb6671c](https://github.com/perfect-panel/ppanel-web/commit/bb6671c))
+- Remove unnecessary blank lines in multiple index files for cleaner code structure ([6a823b8](https://github.com/perfect-panel/ppanel-web/commit/6a823b8))
+- Remove unused ratio variable from server traffic log and server form for cleaner code ([55034dc](https://github.com/perfect-panel/ppanel-web/commit/55034dc))
+- Update Badge variants and restructure traffic ratio display in ServersPage ([3d778e5](https://github.com/perfect-panel/ppanel-web/commit/3d778e5))
+- Update minimum ratio value to 0 in protocol fields and adjust related schemas; enhance unit conversion in ServerConfig ([3b6ef17](https://github.com/perfect-panel/ppanel-web/commit/3b6ef17))
+- Update protocol fields to use 'obfs' instead of 'security' and adjust related configurations ([4abdd36](https://github.com/perfect-panel/ppanel-web/commit/4abdd36))
 
 <a name="readme-top"></a>
 
