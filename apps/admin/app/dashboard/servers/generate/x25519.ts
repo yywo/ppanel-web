@@ -1,4 +1,4 @@
-import { x25519 } from '@noble/curves/ed25519';
+import * as x25519 from '@noble/ed25519';
 import { toB64Url } from './util';
 
 /**

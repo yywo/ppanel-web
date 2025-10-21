@@ -2,7 +2,6 @@
 
 import { Button } from '@workspace/ui/components/button';
 import { cn } from '@workspace/ui/lib/utils';
-import 'katex/dist/katex.min.css';
 import { Check, Copy } from 'lucide-react';
 import { useCallback, useState } from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';

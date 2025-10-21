@@ -143,9 +143,9 @@ export function ProTable<
               header: texts?.actions,
               cell: ({ row }) => (
                 <div className='flex items-center justify-end gap-2'>
-                  {actions
-                    ?.render?.(row.original)
-                    .map((item, index) => <Fragment key={index}>{item}</Fragment>)}
+                  {actions?.render?.(row.original).map((item, index) => (
+                    <Fragment key={index}>{item}</Fragment>
+                  ))}
                 </div>
               ),
               enableSorting: false,
