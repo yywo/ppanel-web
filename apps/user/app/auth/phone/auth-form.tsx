@@ -20,6 +20,7 @@ export default function PhoneAuthForm() {
   const [type, setType] = useState<'login' | 'register' | 'reset'>('login');
   const [loading, startTransition] = useTransition();
   const [initialValues, setInitialValues] = useState<API.TelephoneLoginRequest>({
+    identifier: '',
     telephone: '',
     telephone_area_code: '1',
     password: '',

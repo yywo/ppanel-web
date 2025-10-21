@@ -114,6 +114,7 @@ declare namespace API {
   type AuthConfig = {
     mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
+    device: DeviceAuthticateConfig;
     register: PubilcRegisterConfig;
   };
 
@@ -209,6 +210,19 @@ declare namespace API {
     access_key: string;
     currency_unit: string;
     currency_symbol: string;
+  };
+
+  type DeviceAuthticateConfig = {
+    enable: boolean;
+    show_ads: boolean;
+    enable_security: boolean;
+    only_real_device: boolean;
+  };
+
+  type DeviceLoginRequest = {
+    identifier: string;
+    user_agent: string;
+    cf_token?: string;
   };
 
   type Document = {
@@ -324,7 +338,7 @@ declare namespace API {
     state: string;
   };
 
-  type Hysteria = {
+  type Hysteria2 = {
     port: number;
     hop_ports: string;
     hop_interval: number;
@@ -706,6 +720,7 @@ declare namespace API {
   };
 
   type ResetPasswordRequest = {
+    identifier: string;
     email: string;
     password: string;
     code?: string;
@@ -898,6 +913,7 @@ declare namespace API {
   };
 
   type TelephoneLoginRequest = {
+    identifier: string;
     telephone: string;
     telephone_code: string;
     telephone_area_code: string;
@@ -906,6 +922,7 @@ declare namespace API {
   };
 
   type TelephoneRegisterRequest = {
+    identifier: string;
     telephone: string;
     telephone_area_code: string;
     password: string;
@@ -915,6 +932,7 @@ declare namespace API {
   };
 
   type TelephoneResetPasswordRequest = {
+    identifier: string;
     telephone: string;
     telephone_area_code: string;
     password: string;
@@ -1035,12 +1053,14 @@ declare namespace API {
   };
 
   type UserLoginRequest = {
+    identifier: string;
     email: string;
     password: string;
     cf_token?: string;
   };
 
   type UserRegisterRequest = {
+    identifier: string;
     email: string;
     password: string;
     invite?: string;

@@ -108,6 +108,7 @@ declare namespace API {
   type AuthConfig = {
     mobile: MobileAuthenticateConfig;
     email: EmailAuthticateConfig;
+    device: DeviceAuthticateConfig;
     register: PubilcRegisterConfig;
   };
 
@@ -204,6 +205,13 @@ declare namespace API {
     currency_symbol: string;
   };
 
+  type DeviceAuthticateConfig = {
+    enable: boolean;
+    show_ads: boolean;
+    enable_security: boolean;
+    only_real_device: boolean;
+  };
+
   type Document = {
     id: number;
     title: string;
@@ -254,6 +262,11 @@ declare namespace API {
 
   type GetAvailablePaymentMethodsResponse = {
     list: PaymentMethod[];
+  };
+
+  type GetDeviceListResponse = {
+    list: UserDevice[];
+    total: number;
   };
 
   type GetLoginLogParams = {
@@ -343,7 +356,7 @@ declare namespace API {
     list: Ticket[];
   };
 
-  type Hysteria = {
+  type Hysteria2 = {
     port: number;
     hop_ports: string;
     hop_interval: number;
@@ -799,6 +812,10 @@ declare namespace API {
     total: number;
   };
 
+  type QueryUserSubscribeNodeListResponse = {
+    list: UserSubscribeInfo[];
+  };
+
   type RechargeOrderRequest = {
     amount: number;
     payment: number;
@@ -1039,6 +1056,10 @@ declare namespace API {
     security_config: SecurityConfig;
   };
 
+  type UnbindDeviceRequest = {
+    id: number;
+  };
+
   type UnbindOAuthRequest = {
     method: string;
   };
@@ -1150,6 +1171,26 @@ declare namespace API {
     updated_at: number;
   };
 
+  type UserSubscribeInfo = {
+    id: number;
+    user_id: number;
+    order_id: number;
+    subscribe_id: number;
+    start_time: number;
+    expire_time: number;
+    finished_at: number;
+    reset_time: number;
+    traffic: number;
+    download: number;
+    upload: number;
+    token: string;
+    status: number;
+    created_at: number;
+    updated_at: number;
+    is_try_out: boolean;
+    nodes: UserSubscribeNodeInfo[];
+  };
+
   type UserSubscribeLog = {
     id: number;
     user_id: number;
@@ -1158,6 +1199,19 @@ declare namespace API {
     ip: string;
     user_agent: string;
     timestamp: number;
+  };
+
+  type UserSubscribeNodeInfo = {
+    id: number;
+    name: string;
+    uuid: string;
+    protocol: string;
+    port: number;
+    address: string;
+    tags: string[];
+    country: string;
+    city: string;
+    created_at: number;
   };
 
   type VerifyCodeConfig = {

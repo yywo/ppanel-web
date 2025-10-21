@@ -76,6 +76,17 @@ export async function updateNodeConfig(body: API.NodeConfig, options?: { [key: s
   });
 }
 
+/** PreView Node Multiplier GET /v1/admin/system/node_multiplier/preview */
+export async function preViewNodeMultiplier(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.PreViewNodeMultiplierResponse }>(
+    '/v1/admin/system/node_multiplier/preview',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** get Privacy Policy Config GET /v1/admin/system/privacy */
 export async function getPrivacyPolicyConfig(options?: { [key: string]: any }) {
   return request<API.Response & { data?: API.PrivacyPolicyConfig }>('/v1/admin/system/privacy', {
