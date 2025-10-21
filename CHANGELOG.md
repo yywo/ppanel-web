@@ -1,4 +1,17 @@
 <a name="readme-top"></a>
+# Changelog
+
+## [1.5.3](https://github.com/perfect-panel/ppanel-web/compare/v1.5.2...v1.5.3) (2025-10-21)
+
+
+### 🐛 Bug Fixes
+
+* Fix bugs ([a46657d](https://github.com/perfect-panel/ppanel-web/commit/a46657d))
+* Fix dependencies ([8bd25d6](https://github.com/perfect-panel/ppanel-web/commit/8bd25d6))
+* Remove unnecessary migration function code and add device configuration options ([521a7a9](https://github.com/perfect-panel/ppanel-web/commit/521a7a9))
+* Update bun.lockb to reflect dependency changes ([ca892dd](https://github.com/perfect-panel/ppanel-web/commit/ca892dd))
+
+<a name="readme-top"></a>
 
 # Changelog
 
