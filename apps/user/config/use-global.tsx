@@ -48,6 +48,12 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
         ip_register_limit: 0,
         ip_register_limit_duration: 0,
       },
+      device: {
+        enable: false,
+        show_ads: false,
+        enable_security: false,
+        only_real_device: false,
+      },
     },
     invite: {
       forced_invite: false,

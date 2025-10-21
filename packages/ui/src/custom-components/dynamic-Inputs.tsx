@@ -12,6 +12,8 @@ interface FieldConfig extends Omit<EnhancedInputProps, 'type'> {
   name: string;
   type: 'text' | 'number' | 'select' | 'time' | 'boolean' | 'textarea';
   options?: { label: string; value: string }[];
+  // optional per-item visibility function: returns true to show the field for the given item
+  visible?: (item: Record<string, any>) => boolean;
 }
 
 interface ObjectInputProps<T> {
@@ -40,6 +42,8 @@ export function ObjectInput<T extends Record<string, any>>({
     onChange(updatedInternalState);
   };
   const renderField = (field: FieldConfig) => {
+    // if visible callback exists and returns false for current item, don't render
+    if (field.visible && !field.visible(internalState)) return null;
     switch (field.type) {
       case 'select':
         return (
@@ -86,11 +90,15 @@ export function ObjectInput<T extends Record<string, any>>({
   };
   return (
     <div className={cn('flex flex-1 flex-wrap gap-4', className)}>
-      {fields.map((field) => (
-        <div key={field.name} className={cn('flex-1', field.className)}>
-          {renderField(field)}
-        </div>
-      ))}
+      {fields.map((field) => {
+        const node = renderField(field);
+        if (node === null) return null; // don't render wrapper if field hidden
+        return (
+          <div key={field.name} className={cn('flex-1', field.className)}>
+            {node}
+          </div>
+        );
+      })}
     </div>
   );
 }
