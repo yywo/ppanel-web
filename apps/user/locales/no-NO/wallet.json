@@ -13,6 +13,22 @@
     "3": "Kjøp",
     "4": "Refusjon",
     "5": "Belønning",
-    "6": "Kommisjon"
+    "6": "Kommisjon",
+    "231": "Automatisk tilbakestilling",
+    "232": "Forhåndstilbakestilling",
+    "233": "Betalt tilbakestilling",
+    "321": "Innskudd",
+    "322": "Uttak",
+    "323": "Betaling",
+    "324": "Refusjon",
+    "325": "Belønning",
+    "326": "Admin-justering",
+    "331": "Kjøp",
+    "332": "Fornyelse",
+    "333": "Refusjon",
+    "334": "Uttak",
+    "335": "Admin-justering",
+    "341": "Økning",
+    "342": "Reduksjon"
   }
 }

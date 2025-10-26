@@ -13,6 +13,22 @@
     "3": "compra",
     "4": "reembolso",
     "5": "recompensa",
-    "6": "comisión"
+    "6": "comisión",
+    "231": "restablecimiento automático",
+    "232": "restablecimiento anticipado",
+    "233": "restablecimiento de pago",
+    "321": "recarga",
+    "322": "retiro",
+    "323": "pago",
+    "324": "reembolso",
+    "325": "recompensa",
+    "326": "ajuste de administrador",
+    "331": "compra",
+    "332": "renovación",
+    "333": "reembolso",
+    "334": "retiro",
+    "335": "ajuste de administrador",
+    "341": "incremento",
+    "342": "reducción"
   }
 }

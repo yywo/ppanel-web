@@ -13,6 +13,22 @@
     "3": "Vásárlás",
     "4": "Visszatérítés",
     "5": "Jutalom",
-    "6": "Jutalék"
+    "6": "Jutalék",
+    "231": "Automatikus visszaállítás",
+    "232": "Előzetes visszaállítás",
+    "233": "Fizetős visszaállítás",
+    "321": "Feltöltés",
+    "322": "Kivétel",
+    "323": "Fizetés",
+    "324": "Visszatérítés",
+    "325": "Jutalom",
+    "326": "Admin módosítás",
+    "331": "Vásárlás",
+    "332": "Megújítás",
+    "333": "Visszatérítés",
+    "334": "Kivétel",
+    "335": "Admin módosítás",
+    "341": "Növelés",
+    "342": "Csökkentés"
   }
 }
