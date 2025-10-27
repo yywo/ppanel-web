@@ -13,6 +13,22 @@
     "3": "Achat",
     "4": "Remboursement",
     "5": "Récompense",
-    "6": "Commission"
+    "6": "Commission",
+    "231": "Réinitialisation automatique",
+    "232": "Réinitialisation anticipée",
+    "233": "Réinitialisation payante",
+    "321": "Recharge",
+    "322": "Retrait",
+    "323": "Paiement",
+    "324": "Remboursement",
+    "325": "Récompense",
+    "326": "Ajustement administrateur",
+    "331": "Achat",
+    "332": "Renouvellement",
+    "333": "Remboursement",
+    "334": "Retrait",
+    "335": "Ajustement administrateur",
+    "341": "Augmentation",
+    "342": "Réduction"
   }
 }

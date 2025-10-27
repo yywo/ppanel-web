@@ -1,6 +1,14 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.5.4](https://github.com/perfect-panel/ppanel-web/compare/v1.5.3...v1.5.4) (2025-10-26)
+
+
+### 🐛 Bug Fixes
+
+* Update generateRealityKeyPair to use async key generation ([e60e369](https://github.com/perfect-panel/ppanel-web/commit/e60e369))
+* Update the wallet localization file and add new fields such as automatic reset and recharge ([88aa965](https://github.com/perfect-panel/ppanel-web/commit/88aa965))
+
 ## [1.5.3](https://github.com/perfect-panel/ppanel-web/compare/v1.5.2...v1.5.3) (2025-10-21)
 
 
