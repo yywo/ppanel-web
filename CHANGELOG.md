@@ -1,23 +1,22 @@
 <a name="readme-top"></a>
+
 # Changelog
 
 ## [1.5.4](https://github.com/perfect-panel/ppanel-web/compare/v1.5.3...v1.5.4) (2025-10-26)
 
-
 ### 🐛 Bug Fixes
 
-* Update generateRealityKeyPair to use async key generation ([e60e369](https://github.com/perfect-panel/ppanel-web/commit/e60e369))
-* Update the wallet localization file and add new fields such as automatic reset and recharge ([88aa965](https://github.com/perfect-panel/ppanel-web/commit/88aa965))
+- Update generateRealityKeyPair to use async key generation ([e60e369](https://github.com/perfect-panel/ppanel-web/commit/e60e369))
+- Update the wallet localization file and add new fields such as automatic reset and recharge ([88aa965](https://github.com/perfect-panel/ppanel-web/commit/88aa965))
 
 ## [1.5.3](https://github.com/perfect-panel/ppanel-web/compare/v1.5.2...v1.5.3) (2025-10-21)
 
-
 ### 🐛 Bug Fixes
 
-* Fix bugs ([a46657d](https://github.com/perfect-panel/ppanel-web/commit/a46657d))
-* Fix dependencies ([8bd25d6](https://github.com/perfect-panel/ppanel-web/commit/8bd25d6))
-* Remove unnecessary migration function code and add device configuration options ([521a7a9](https://github.com/perfect-panel/ppanel-web/commit/521a7a9))
-* Update bun.lockb to reflect dependency changes ([ca892dd](https://github.com/perfect-panel/ppanel-web/commit/ca892dd))
+- Fix bugs ([a46657d](https://github.com/perfect-panel/ppanel-web/commit/a46657d))
+- Fix dependencies ([8bd25d6](https://github.com/perfect-panel/ppanel-web/commit/8bd25d6))
+- Remove unnecessary migration function code and add device configuration options ([521a7a9](https://github.com/perfect-panel/ppanel-web/commit/521a7a9))
+- Update bun.lockb to reflect dependency changes ([ca892dd](https://github.com/perfect-panel/ppanel-web/commit/ca892dd))
 
 <a name="readme-top"></a>
 
