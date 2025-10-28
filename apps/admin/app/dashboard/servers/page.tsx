@@ -21,6 +21,7 @@ import DynamicMultiplier from './dynamic-multiplier';
 import OnlineUsersCell from './online-users-cell';
 import ServerConfig from './server-config';
 import ServerForm from './server-form';
+import ServerInstall from './server-install';
 
 function PctBar({ value }: { value: number }) {
   const v = value.toFixed(2);
@@ -224,6 +225,7 @@ export default function ServersPage() {
                 }
               }}
             />,
+            <ServerInstall key='install' server={row} />,
             <ConfirmButton
               key='delete'
               trigger={
