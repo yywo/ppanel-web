@@ -356,7 +356,8 @@ export default function ServerForm(props: {
         ...initialValues,
         protocols: PROTOCOLS.map((type) => {
           const existingProtocol = initialValues.protocols?.find((p) => p.type === type);
-          return existingProtocol || getProtocolDefaultConfig(type);
+          const defaultConfig = getProtocolDefaultConfig(type);
+          return existingProtocol ? { ...defaultConfig, ...existingProtocol } : defaultConfig;
         }),
       });
     }
