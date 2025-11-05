@@ -11,6 +11,12 @@ import {
 import { Badge } from '@workspace/ui/components/badge';
 import { Button } from '@workspace/ui/components/button';
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@workspace/ui/components/dropdown-menu';
+import {
   Form,
   FormControl,
   FormField,
@@ -99,29 +105,68 @@ function DynamicField({
                   onValueChange={(v) => fieldProps.onChange(v)}
                   suffix={
                     field.generate ? (
-                      <Button
-                        type='button'
-                        variant='ghost'
-                        onClick={async () => {
-                          const result = await field.generate!.function();
-                          if (typeof result === 'string') {
-                            fieldProps.onChange(result);
-                          } else if (field.generate!.updateFields) {
-                            Object.entries(field.generate!.updateFields).forEach(
-                              ([fieldName, resultKey]) => {
-                                const fullFieldName = `protocols.${protocolIndex}.${fieldName}`;
-                                form.setValue(fullFieldName, (result as any)[resultKey]);
-                              },
-                            );
-                          } else {
-                            if (result.privateKey) {
-                              fieldProps.onChange(result.privateKey);
+                      field.generate.functions && field.generate.functions.length > 0 ? (
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button type='button' variant='ghost' size='sm'>
+                              <Icon icon='mdi:key' className='h-4 w-4' />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align='end'>
+                            {field.generate.functions.map((genFunc, idx) => (
+                              <DropdownMenuItem
+                                key={idx}
+                                onClick={async () => {
+                                  const result = await genFunc.function();
+                                  if (typeof result === 'string') {
+                                    fieldProps.onChange(result);
+                                  } else if (field.generate!.updateFields) {
+                                    Object.entries(field.generate!.updateFields).forEach(
+                                      ([fieldName, resultKey]) => {
+                                        const fullFieldName = `protocols.${protocolIndex}.${fieldName}`;
+                                        form.setValue(fullFieldName, (result as any)[resultKey]);
+                                      },
+                                    );
+                                  } else {
+                                    if (result.privateKey) {
+                                      fieldProps.onChange(result.privateKey);
+                                    }
+                                  }
+                                }}
+                              >
+                                {typeof genFunc.label === 'function'
+                                  ? genFunc.label(t, protocolData)
+                                  : genFunc.label}
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      ) : field.generate.function ? (
+                        <Button
+                          type='button'
+                          variant='ghost'
+                          size='sm'
+                          onClick={async () => {
+                            const result = await field.generate!.function!();
+                            if (typeof result === 'string') {
+                              fieldProps.onChange(result);
+                            } else if (field.generate!.updateFields) {
+                              Object.entries(field.generate!.updateFields).forEach(
+                                ([fieldName, resultKey]) => {
+                                  const fullFieldName = `protocols.${protocolIndex}.${fieldName}`;
+                                  form.setValue(fullFieldName, (result as any)[resultKey]);
+                                },
+                              );
+                            } else {
+                              if (result.privateKey) {
+                                fieldProps.onChange(result.privateKey);
+                              }
                             }
-                          }
-                        }}
-                      >
-                        <Icon icon='mdi:key' className='h-4 w-4' />
-                      </Button>
+                          }}
+                        >
+                          <Icon icon='mdi:key' className='h-4 w-4' />
+                        </Button>
+                      ) : null
                     ) : (
                       field.suffix
                     )
@@ -356,7 +401,8 @@ export default function ServerForm(props: {
         ...initialValues,
         protocols: PROTOCOLS.map((type) => {
           const existingProtocol = initialValues.protocols?.find((p) => p.type === type);
-          return existingProtocol || getProtocolDefaultConfig(type);
+          const defaultConfig = getProtocolDefaultConfig(type);
+          return existingProtocol ? { ...defaultConfig, ...existingProtocol } : defaultConfig;
         }),
       });
     }

@@ -50,6 +50,8 @@
   "expired": "Vypršelo",
   "extra": "Další konfigurace",
   "flow": "Tok",
+  "generate_quantum_resistant_key": "Generovat kvantově odolný klíč",
+  "generate_standard_encryption_key": "Generovat standardní šifrovací klíč",
   "hop_interval": "Interval skoku",
   "hop_ports": "Porty skoku",
   "hop_ports_placeholder": "např. 1-65535",

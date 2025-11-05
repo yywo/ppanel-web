@@ -61,7 +61,6 @@ export default function ServersPage() {
   const { fetchServers } = useServer();
 
   const [loading, setLoading] = useState(false);
-  const [migrating, setMigrating] = useState(false);
   const ref = useRef<ProTableActions>(null);
 
   return (

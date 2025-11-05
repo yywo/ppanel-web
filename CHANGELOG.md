@@ -1,17 +1,26 @@
 <a name="readme-top"></a>
 # Changelog
 
-# [1.6.0](https://github.com/perfect-panel/ppanel-web/compare/v1.5.4...v1.6.0) (2025-10-28)
-
-
-### ✨ Features
-
-* Add server installation dialog and commands ([4429c9d](https://github.com/perfect-panel/ppanel-web/commit/4429c9d))
+## [1.6.1](https://github.com/perfect-panel/ppanel-web/compare/v1.6.0...v1.6.1) (2025-11-05)
 
 
 ### 🐛 Bug Fixes
 
-* Add typeRoots configuration to ensure type definitions are resolved correctly ([ad60ea9](https://github.com/perfect-panel/ppanel-web/commit/ad60ea9))
+* Fixing issues with generating standard and quantum-resistant encryption keys ([5eac6a9](https://github.com/perfect-panel/ppanel-web/commit/5eac6a9))
+
+<a name="readme-top"></a>
+
+# Changelog
+
+# [1.6.0](https://github.com/perfect-panel/ppanel-web/compare/v1.5.4...v1.6.0) (2025-10-28)
+
+### ✨ Features
+
+- Add server installation dialog and commands ([4429c9d](https://github.com/perfect-panel/ppanel-web/commit/4429c9d))
+
+### 🐛 Bug Fixes
+
+- Add typeRoots configuration to ensure type definitions are resolved correctly ([ad60ea9](https://github.com/perfect-panel/ppanel-web/commit/ad60ea9))
 
 <a name="readme-top"></a>
 

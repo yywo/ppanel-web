@@ -12,7 +12,11 @@ export type FieldConfig = {
   step?: number;
   suffix?: string;
   generate?: {
-    function: () => Promise<string | Record<string, string>> | string | Record<string, string>;
+    function?: () => Promise<string | Record<string, string>> | string | Record<string, string>;
+    functions?: {
+      label: string | ((t: (key: string) => string, protocol: any) => string);
+      function: () => Promise<string | Record<string, string>> | string | Record<string, string>;
+    }[];
     updateFields?: Record<string, string>;
   };
   condition?: (protocol: any, values: any) => boolean;

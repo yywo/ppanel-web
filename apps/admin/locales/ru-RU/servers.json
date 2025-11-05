@@ -50,6 +50,8 @@
   "expired": "Истекло",
   "extra": "Дополнительная конфигурация",
   "flow": "Поток",
+  "generate_quantum_resistant_key": "Генерировать квантово-устойчивый ключ",
+  "generate_standard_encryption_key": "Генерировать стандартный ключ шифрования",
   "hop_interval": "Интервал перехода",
   "hop_ports": "Порты перехода",
   "hop_ports_placeholder": "например, 1-65535",

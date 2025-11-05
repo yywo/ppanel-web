@@ -50,6 +50,8 @@
   "expired": "समय समाप्त",
   "extra": "अतिरिक्त कॉन्फ़िगरेशन",
   "flow": "प्रवाह",
+  "generate_quantum_resistant_key": "क्वांटम-प्रतिरोधी कुंजी उत्पन्न करें",
+  "generate_standard_encryption_key": "मानक एन्क्रिप्शन कुंजी उत्पन्न करें",
   "hop_interval": "हॉप अंतराल",
   "hop_ports": "हॉप पोर्ट",
   "hop_ports_placeholder": "जैसे 1-65535",

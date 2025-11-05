@@ -50,6 +50,8 @@
   "expired": "หมดอายุ",
   "extra": "การกำหนดค่าพิเศษ",
   "flow": "การไหล",
+  "generate_quantum_resistant_key": "สร้างคีย์ต้านทานควอนตัม",
+  "generate_standard_encryption_key": "สร้างคีย์เข้ารหัสมาตรฐาน",
   "hop_interval": "ช่วงเวลาการกระโดด",
   "hop_ports": "พอร์ตการกระโดด",
   "hop_ports_placeholder": "เช่น 1-65535",
