@@ -1,4 +1,14 @@
 <a name="readme-top"></a>
+# Changelog
+
+## [1.6.1](https://github.com/perfect-panel/ppanel-web/compare/v1.6.0...v1.6.1) (2025-11-05)
+
+
+### 🐛 Bug Fixes
+
+* Fixing issues with generating standard and quantum-resistant encryption keys ([5eac6a9](https://github.com/perfect-panel/ppanel-web/commit/5eac6a9))
+
+<a name="readme-top"></a>
 
 # Changelog
 
