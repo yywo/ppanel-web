@@ -50,6 +50,8 @@
   "expired": "Expirat",
   "extra": "Configurație suplimentară",
   "flow": "Flux",
+  "generate_quantum_resistant_key": "Generează cheie rezistentă la cuantică",
+  "generate_standard_encryption_key": "Generează cheie de criptare standard",
   "hop_interval": "Interval de hop",
   "hop_ports": "Porturi hop",
   "hop_ports_placeholder": "de ex. 1-65535",

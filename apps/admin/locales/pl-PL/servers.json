@@ -50,6 +50,8 @@
   "expired": "Wygasł",
   "extra": "Dodatkowa konfiguracja",
   "flow": "Przepływ",
+  "generate_quantum_resistant_key": "Generuj klucz odporny na kwanty",
+  "generate_standard_encryption_key": "Generuj standardowy klucz szyfrowania",
   "hop_interval": "Interwał skoku",
   "hop_ports": "Porty skoku",
   "hop_ports_placeholder": "np. 1-65535",

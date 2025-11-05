@@ -50,6 +50,8 @@
   "expired": "Vanhentunut",
   "extra": "Lisäasetukset",
   "flow": "Virta",
+  "generate_quantum_resistant_key": "Luo kvanttikestävä avain",
+  "generate_standard_encryption_key": "Luo standardi salausavain",
   "hop_interval": "Hyppyvälit",
   "hop_ports": "Hyppysatamat",
   "hop_ports_placeholder": "esim. 1-65535",

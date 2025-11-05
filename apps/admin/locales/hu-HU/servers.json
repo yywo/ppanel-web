@@ -50,6 +50,8 @@
   "expired": "Lejárt",
   "extra": "További konfiguráció",
   "flow": "Forgalom",
+  "generate_quantum_resistant_key": "Kvantumálló kulcs generálása",
+  "generate_standard_encryption_key": "Szabványos titkosítási kulcs generálása",
   "hop_interval": "Ugrás időköz",
   "hop_ports": "Ugrás portok",
   "hop_ports_placeholder": "pl. 1-65535",

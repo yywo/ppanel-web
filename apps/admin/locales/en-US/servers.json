@@ -50,6 +50,8 @@
   "expired": "Expired",
   "extra": "Extra Configuration",
   "flow": "Flow",
+  "generate_quantum_resistant_key": "Generate Quantum-Resistant Key",
+  "generate_standard_encryption_key": "Generate Standard Encryption Key",
   "hop_interval": "Hop interval",
   "hop_ports": "Hop ports",
   "hop_ports_placeholder": "e.g. 1-65535",

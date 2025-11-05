@@ -444,7 +444,16 @@ export const PROTOCOL_FIELDS: Record<string, FieldConfig[]> = {
       placeholder: (t) => t('encryption_private_key_placeholder'),
       group: 'encryption',
       generate: {
-        function: generateMLKEM768KeyPair,
+        functions: [
+          {
+            label: (t) => t('generate_standard_encryption_key'),
+            function: generateRealityKeyPair,
+          },
+          {
+            label: (t) => t('generate_quantum_resistant_key'),
+            function: generateMLKEM768KeyPair,
+          },
+        ],
         updateFields: {
           encryption_private_key: 'privateKey',
           encryption_password: 'publicKey',

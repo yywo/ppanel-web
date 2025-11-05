@@ -50,6 +50,8 @@
   "expired": "منقضی شده",
   "extra": "پیکربندی اضافی",
   "flow": "جریان",
+  "generate_quantum_resistant_key": "تولید کلید مقاوم در برابر کوانتوم",
+  "generate_standard_encryption_key": "تولید کلید رمزگذاری استاندارد",
   "hop_interval": "فاصله پرش",
   "hop_ports": "پورت‌های پرش",
   "hop_ports_placeholder": "مثلاً 1-65535",

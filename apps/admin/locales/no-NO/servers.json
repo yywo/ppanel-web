@@ -50,6 +50,8 @@
   "expired": "Utløpt",
   "extra": "Ekstra konfigurasjon",
   "flow": "Flyt",
+  "generate_quantum_resistant_key": "Generer kvantumresistent nøkkel",
+  "generate_standard_encryption_key": "Generer standard krypteringsnøkkel",
   "hop_interval": "Hoppintervall",
   "hop_ports": "Hoppporter",
   "hop_ports_placeholder": "f.eks. 1-65535",

@@ -50,6 +50,8 @@
   "expired": "Đã hết hạn",
   "extra": "Cấu hình thêm",
   "flow": "Lưu lượng",
+  "generate_quantum_resistant_key": "Tạo khóa chống lượng tử",
+  "generate_standard_encryption_key": "Tạo khóa mã hóa tiêu chuẩn",
   "hop_interval": "Khoảng thời gian nhảy",
   "hop_ports": "Cổng nhảy",
   "hop_ports_placeholder": "vd. 1-65535",

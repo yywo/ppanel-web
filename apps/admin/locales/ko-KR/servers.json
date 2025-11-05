@@ -50,6 +50,8 @@
   "expired": "만료됨",
   "extra": "추가 구성",
   "flow": "흐름",
+  "generate_quantum_resistant_key": "양자 저항 키 생성",
+  "generate_standard_encryption_key": "표준 암호화 키 생성",
   "hop_interval": "홉 간격",
   "hop_ports": "홉 포트",
   "hop_ports_placeholder": "예: 1-65535",

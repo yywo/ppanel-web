@@ -50,6 +50,8 @@
   "expired": "Süresi dolmuş",
   "extra": "Ek Yapılandırma",
   "flow": "Akış",
+  "generate_quantum_resistant_key": "Kuantuma Dayanıklı Anahtar Oluştur",
+  "generate_standard_encryption_key": "Standart Şifreleme Anahtarı Oluştur",
   "hop_interval": "Atlama aralığı",
   "hop_ports": "Atlama portları",
   "hop_ports_placeholder": "örn. 1-65535",

@@ -53,6 +53,8 @@
   "expired": "已过期",
   "extra": "额外配置",
   "flow": "流控",
+  "generate_quantum_resistant_key": "生成抗量子密钥",
+  "generate_standard_encryption_key": "生成标准加密密钥",
   "hop_interval": "跳跃端口间隔",
   "hop_ports": "跳跃端口",
   "hop_ports_placeholder": "例如 1-65535",

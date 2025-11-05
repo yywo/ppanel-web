@@ -50,6 +50,8 @@
   "expired": "期限切れ",
   "extra": "追加設定",
   "flow": "フロー",
+  "generate_quantum_resistant_key": "量子耐性キーを生成",
+  "generate_standard_encryption_key": "標準暗号化キーを生成",
   "hop_interval": "ホップ間隔",
   "hop_ports": "ホップポート",
   "hop_ports_placeholder": "例: 1-65535",

@@ -50,6 +50,8 @@
   "expired": "Термін дії закінчився",
   "extra": "Додаткова конфігурація",
   "flow": "Потік",
+  "generate_quantum_resistant_key": "Згенерувати квантово-стійкий ключ",
+  "generate_standard_encryption_key": "Згенерувати стандартний ключ шифрування",
   "hop_interval": "Інтервал стрибка",
   "hop_ports": "Порти стрибка",
   "hop_ports_placeholder": "наприклад, 1-65535",
