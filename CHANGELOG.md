@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.6.2](https://github.com/perfect-panel/ppanel-web/compare/v1.6.1...v1.6.2) (2025-12-08)
+
+
+### 🐛 Bug Fixes
+
+* **package**: Update dependencies and upgrade React and Next.js versions. ([7d0866e](https://github.com/perfect-panel/ppanel-web/commit/7d0866e))
+
 ## [1.6.1](https://github.com/perfect-panel/ppanel-web/compare/v1.6.0...v1.6.1) (2025-11-05)
 
 
