@@ -1,6 +1,13 @@
 <a name="readme-top"></a>
 # Changelog
 
+## [1.6.3](https://github.com/perfect-panel/ppanel-web/compare/v1.6.2...v1.6.3) (2025-12-08)
+
+
+### 🐛 Bug Fixes
+
+* **docker**: Update Dockerfiles to create non-root user with proper permissions ([1bfebb6](https://github.com/perfect-panel/ppanel-web/commit/1bfebb6))
+
 ## [1.6.2](https://github.com/perfect-panel/ppanel-web/compare/v1.6.1...v1.6.2) (2025-12-08)
 
 
